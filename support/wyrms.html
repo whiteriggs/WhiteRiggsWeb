@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wyrms — Dragon Race &amp; Memory Board Game · Support</title>
+<meta name="description" content="Wyrms is a turn-based memory board game for iPhone &amp; iPad: race your dragons around the volcano. 1–4 players, offline, no ads.">
+<link rel="icon" href="../assets/wyrms-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=5">
+</head>
+<body class="body-app body-wyrms">
+
+  <!-- Volcano ambient backdrop -->
+  <div class="wyrms-backdrop" aria-hidden="true"></div>
+
+  <!-- Shared Header (wyrms warm variant) -->
+  <header class="header-wyrms">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-link">
+        <img src="../assets/riggs-logo.png?v=4" alt="Riggs Logo" class="brand-logo-img">
+        <span class="brand-title brand-title-light">The White Riggs</span>
+      </a>
+      <ul class="nav-links nav-links-wyrms">
+        <li><a href="#dragons" data-wyrm-en="Dragons" data-wyrm-es="Dragones">Dragons</a></li>
+        <li><a href="#how" data-wyrm-en="How to play" data-wyrm-es="Cómo jugar">How to play</a></li>
+        <li><a href="#features" data-wyrm-en="Features" data-wyrm-es="Características">Features</a></li>
+        <li><a href="#faq" data-wyrm-en="FAQ" data-wyrm-es="FAQ">FAQ</a></li>
+        <li>
+          <div class="wyrms-lang">
+            <button data-wyrmset="en" class="wlang active" onclick="setWyrms('en')">EN</button>
+            <button data-wyrmset="es" class="wlang" onclick="setWyrms('es')">ES</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wyrms-main">
+
+    <!-- ENGLISH -->
+    <div data-wyrmlang="en">
+
+      <section class="wyrms-hero wrap">
+        <img class="wyrms-logo" src="../assets/wyrms/wyrms-logo.png" alt="Wyrms logo">
+        <p class="wyrms-tag">Race your dragons around the volcano. Remember, dodge the pirate, and claim the crown.</p>
+        <p class="wyrms-tag2">A turn-based memory board game for iPhone &amp; iPad — for 1 to 4 players.</p>
+        <span class="wyrms-cta-soon">Coming soon<small>on the App Store</small></span>
+      </section>
+
+      <section id="dragons" class="wrap wyrms-section">
+        <h2>Meet the dragons</h2>
+        <p class="wyrms-lead">Four legendary wyrms, each with their own myth and temper. Pick yours and race.</p>
+        <div class="wyrms-grid">
+          <div class="wcard r" data-color="red"><img src="../assets/wyrms/dragon_red.png" alt="Smok"><div class="wc-name">Smok</div><div class="wc-tl">Pure fury</div></div>
+          <div class="wcard g" data-color="green"><img src="../assets/wyrms/dragon_green.png" alt="Tianlong"><div class="wc-name">Tianlong</div><div class="wc-tl">Always calm</div></div>
+          <div class="wcard b" data-color="blue"><img src="../assets/wyrms/dragon_blue.png" alt="Fáfnir"><div class="wc-name">Fáfnir</div><div class="wc-tl">Cold &amp; calculating</div></div>
+          <div class="wcard y" data-color="yellow"><img src="../assets/wyrms/dragon_yellow.png" alt="Druk"><div class="wc-name">Druk</div><div class="wc-tl">Pure energy</div></div>
+        </div>
+      </section>
+
+      <section id="how" class="wrap wyrms-section">
+        <h2>How to play</h2>
+        <p class="wyrms-lead">Simple to learn, tricky to master. A full tutorial is built into the game.</p>
+        <div class="wyrms-steps">
+          <div class="wstep"><div class="ws-n">1</div><div><h3>Your reference</h3><p>Your dragon always sits on a tile showing an animal. Memorise it — that's what you must find.</p></div></div>
+          <div class="wstep"><div class="ws-n">2</div><div><h3>Flip &amp; advance</h3><p>On your turn, flip a centre tile. If its animal matches yours, advance 1–3 spaces and keep playing. Miss, and your turn passes.</p></div></div>
+          <div class="wstep"><div class="ws-n">3</div><div><h3>Beware the pirate</h3><p>Flip a skull and you scuttle back 1–2 spaces… but never past your own cave. Remember where it was!</p></div></div>
+          <div class="wstep"><div class="ws-n">4</div><div><h3>Claim the crown</h3><p>Circle the volcano and return to your cave with the EXACT count to be crowned King of the Dragons.</p></div></div>
+        </div>
+      </section>
+
+      <section id="features" class="wrap wyrms-section">
+        <h2>Features</h2>
+        <ul class="wyrms-feat">
+          <li>2–4 players on one device</li>
+          <li>Play friends or the CPU</li>
+          <li>Three CPU difficulties</li>
+          <li>Built-in tutorial</li>
+          <li>Hand-crafted dragon art</li>
+          <li>Fully offline — no ads, no accounts</li>
+          <li>No data collected, ever</li>
+          <li>Universal: iPhone &amp; iPad</li>
+        </ul>
+      </section>
+
+      <section class="wrap wyrms-section">
+        <h2>Screenshots</h2>
+        <div class="wyrms-shots">
+          <img src="../assets/wyrms/shot-menu.png" alt="Menu">
+          <img src="../assets/wyrms/shot-play.png" alt="Gameplay">
+          <img src="../assets/wyrms/shot-tutorial.png" alt="Tutorial">
+          <img src="../assets/wyrms/shot-victory.png" alt="Victory">
+        </div>
+      </section>
+
+      <section id="faq" class="wrap wyrms-section">
+        <h2>FAQ</h2>
+        <details><summary>Is it free?</summary><p>Yes. Wyrms is free, with no ads and no in-app purchases.</p></details>
+        <details><summary>Do I need an internet connection?</summary><p>No. Wyrms works fully offline on a single device.</p></details>
+        <details><summary>Can I play against the computer?</summary><p>Yes — from 1 to 4 players, any mix of humans and CPU, with Easy / Normal / Hard difficulty.</p></details>
+        <details><summary>What languages are supported?</summary><p>English and Spanish. The app follows your device language.</p></details>
+        <details><summary>Does it collect my data?</summary><p>No. Wyrms collects nothing. See the <a href="../privacy/wyrms-privacy.html">Privacy Policy</a>.</p></details>
+      </section>
+
+      <section class="wrap wyrms-section wyrms-support">
+        <h2>Need help?</h2>
+        <p class="wyrms-lead" style="margin-left:auto;margin-right:auto">Questions, bugs or ideas? We'd love to hear from you.</p>
+        <a class="wyrms-mail" href="mailto:jcaboroca@gmail.com">jcaboroca@gmail.com</a>
+      </section>
+
+    </div>
+
+    <!-- ESPAÑOL -->
+    <div data-wyrmlang="es" style="display:none">
+
+      <section class="wyrms-hero wrap">
+        <img class="wyrms-logo" src="../assets/wyrms/wyrms-logo.png" alt="Logo de Wyrms">
+        <p class="wyrms-tag">Haz correr a tus dragones por el volcán. Memoriza, esquiva al pirata y llévate la corona.</p>
+        <p class="wyrms-tag2">Un juego de mesa de memoria por turnos para iPhone y iPad — de 1 a 4 jugadores.</p>
+        <span class="wyrms-cta-soon">Muy pronto<small>en la App Store</small></span>
+      </section>
+
+      <section id="dragons" class="wrap wyrms-section">
+        <h2>Conoce a los dragones</h2>
+        <p class="wyrms-lead">Cuatro wyrms legendarios, cada uno con su mito y su carácter. Elige el tuyo y a correr.</p>
+        <div class="wyrms-grid">
+          <div class="wcard r" data-color="red"><img src="../assets/wyrms/dragon_red.png" alt="Smok"><div class="wc-name">Smok</div><div class="wc-tl">Pura furia</div></div>
+          <div class="wcard g" data-color="green"><img src="../assets/wyrms/dragon_green.png" alt="Tianlong"><div class="wc-name">Tianlong</div><div class="wc-tl">Siempre tranquilo</div></div>
+          <div class="wcard b" data-color="blue"><img src="../assets/wyrms/dragon_blue.png" alt="Fáfnir"><div class="wc-name">Fáfnir</div><div class="wc-tl">Frío y calculador</div></div>
+          <div class="wcard y" data-color="yellow"><img src="../assets/wyrms/dragon_yellow.png" alt="Druk"><div class="wc-name">Druk</div><div class="wc-tl">Pura energía</div></div>
+        </div>
+      </section>
+
+      <section id="how" class="wrap wyrms-section">
+        <h2>Cómo se juega</h2>
+        <p class="wyrms-lead">Fácil de aprender, difícil de dominar. El juego incluye un tutorial completo.</p>
+        <div class="wyrms-steps">
+          <div class="wstep"><div class="ws-n">1</div><div><h3>Tu referencia</h3><p>Tu dragón siempre está sobre una casilla con un animal. Memorízalo: es el que tendrás que encontrar.</p></div></div>
+          <div class="wstep"><div class="ws-n">2</div><div><h3>Voltea y avanza</h3><p>En tu turno, gira una ficha del centro. Si su animal coincide con el tuyo, avanzas 1–3 casillas y sigues. Si fallas, pasa turno.</p></div></div>
+          <div class="wstep"><div class="ws-n">3</div><div><h3>Cuidado con el pirata</h3><p>Si giras una calavera, retrocedes 1–2 casillas… pero nunca más allá de tu cueva. ¡Recuerda dónde estaba!</p></div></div>
+          <div class="wstep"><div class="ws-n">4</div><div><h3>A por la corona</h3><p>Da la vuelta al volcán y vuelve a tu cueva con el número EXACTO de pasos para coronarte Rey de los Dragones.</p></div></div>
+        </div>
+      </section>
+
+      <section id="features" class="wrap wyrms-section">
+        <h2>Características</h2>
+        <ul class="wyrms-feat">
+          <li>2–4 jugadores en un dispositivo</li>
+          <li>Con amigos o contra la CPU</li>
+          <li>Tres niveles de CPU</li>
+          <li>Tutorial incluido</li>
+          <li>Dragones dibujados a mano</li>
+          <li>Sin conexión — sin anuncios ni cuentas</li>
+          <li>No recopila ningún dato</li>
+          <li>Universal: iPhone y iPad</li>
+        </ul>
+      </section>
+
+      <section class="wrap wyrms-section">
+        <h2>Capturas</h2>
+        <div class="wyrms-shots">
+          <img src="../assets/wyrms/shot-menu.png" alt="Menú">
+          <img src="../assets/wyrms/shot-play.png" alt="Partida">
+          <img src="../assets/wyrms/shot-tutorial.png" alt="Tutorial">
+          <img src="../assets/wyrms/shot-victory.png" alt="Victoria">
+        </div>
+      </section>
+
+      <section id="faq" class="wrap wyrms-section">
+        <h2>Preguntas frecuentes</h2>
+        <details><summary>¿Es gratis?</summary><p>Sí. Wyrms es gratis, sin anuncios ni compras dentro de la app.</p></details>
+        <details><summary>¿Necesito conexión a internet?</summary><p>No. Wyrms funciona totalmente sin conexión, en un solo dispositivo.</p></details>
+        <details><summary>¿Puedo jugar contra la máquina?</summary><p>Sí — de 1 a 4 jugadores, mezclando humanos y CPU, con dificultad Fácil / Normal / Difícil.</p></details>
+        <details><summary>¿Qué idiomas admite?</summary><p>Español e inglés. La app sigue el idioma de tu dispositivo.</p></details>
+        <details><summary>¿Recopila mis datos?</summary><p>No. Wyrms no recopila nada. Consulta la <a href="../privacy/wyrms-privacy.html#es">Política de Privacidad</a>.</p></details>
+      </section>
+
+      <section class="wrap wyrms-section wyrms-support">
+        <h2>¿Necesitas ayuda?</h2>
+        <p class="wyrms-lead" style="margin-left:auto;margin-right:auto">¿Dudas, fallos o ideas? Nos encantará leerte.</p>
+        <a class="wyrms-mail" href="mailto:jcaboroca@gmail.com">jcaboroca@gmail.com</a>
+      </section>
+
+    </div>
+
+    <!-- Dragon Modal -->
+    <div class="wyrms-modal" id="wyrmsModal" aria-hidden="true">
+      <div class="wyrms-modal-bg" data-wyrms-close></div>
+      <div class="wyrms-modal-card">
+        <button class="wyrms-modal-x" data-wyrms-close aria-label="Close">&times;</button>
+        <video id="wyrmsVideo" class="wyrms-modal-video" loop muted playsinline preload="none"></video>
+        <h3 id="wyrmsName" class="wyrms-modal-name"></h3>
+        <p id="wyrmsTl" class="wyrms-modal-tl"></p>
+        <p id="wyrmsLore" class="wyrms-modal-lore"></p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer-wyrms">
+    <div class="wrap">
+      <p>&copy; 2026 The White Riggs · <a href="../privacy/wyrms-privacy.html">Privacy Policy / Política de Privacidad</a></p>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=5"></script>
+  <script>
+    /* Wyrms: language toggle + dragon modal + scroll header + nav translation */
+    var WYRM_LORE={
+      red:{name:"Smok",tl:{en:"Pure fury",es:"Pura furia"},
+        en:"Smok Wawelski dwelt in a cave beneath Wawel Hill in Kraków. It breathed fire and spread terror through the city, devouring cattle and villagers alike: the most feared scourge of the realm.",
+        es:"Smok Wawelski habitaba una cueva bajo la colina de Wawel, en Cracovia. Escupía fuego y sembraba el terror en la ciudad, devorando ganado y aldeanos por igual: el azote más temido del reino."},
+      green:{name:"Tianlong",tl:{en:"Always calm",es:"Siempre tranquilo"},
+        en:"The Tianlong, China's «celestial dragon», guards the palaces of the gods and draws their chariots across the firmament. Serene and lofty, it watches over the order of the heavens.",
+        es:"El Tianlong, el «dragón celestial» de China, custodia los palacios de los dioses y tira de sus carros por el firmamento. Sereno y elevado, vela por el orden del cielo."},
+      blue:{name:"Fáfnir",tl:{en:"Cold & calculating",es:"Frío y calculador"},
+        en:"Fáfnir was a dwarf who, blinded by his greed for a cursed hoard, was transformed into a dragon to guard it. Sprawled over the gold and consumed by avarice, he watches his treasure without rest.",
+        es:"Fáfnir era un enano que, cegado por su codicia por un tesoro maldito, se transformó en dragón para custodiarlo. Tendido sobre el oro y consumido por la avaricia, vela su tesoro sin descanso."},
+      yellow:{name:"Druk",tl:{en:"Pure energy",es:"Pura energía"},
+        en:"The Druk is Bhutan's Thunder Dragon, whose name gives the country its own: Druk Yul, the «Land of the Thunder Dragon». The thunder that rumbles through the Himalayan valleys is said to be its roar.",
+        es:"El Druk es el Dragón del Trueno de Bután, cuyo nombre da nombre al propio país: Druk Yul, la «Tierra del Dragón del Trueno». Se dice que el trueno que retumba en los valles del Himalaya es su rugido."}
+    };
+
+    function setWyrms(lang){
+      document.documentElement.lang = lang;
+      try{ localStorage.setItem('wyrms_lang', lang); }catch(e){}
+      document.querySelectorAll('[data-wyrmlang]').forEach(function(el){
+        el.style.display = (el.getAttribute('data-wyrmlang')===lang)?'block':'none';
+      });
+      document.querySelectorAll('.wlang').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-wyrmset')===lang);
+      });
+      document.querySelectorAll('[data-wyrm-en]').forEach(function(el){
+        el.textContent = el.getAttribute('data-wyrm-'+lang);
+      });
+    }
+
+    function openWyrmDragon(color,lang){
+      var d = WYRM_LORE[color]; if(!d) return;
+      var v = document.getElementById('wyrmsVideo');
+      if(v){ v.src='../assets/wyrms/anim_'+color+'.mp4'; v.load(); var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+      var n=document.getElementById('wyrmsName'),t=document.getElementById('wyrmsTl'),l=document.getElementById('wyrmsLore');
+      if(n)n.textContent=d.name; if(t)t.textContent=d.tl[lang]; if(l)l.textContent=d[lang];
+      var m=document.getElementById('wyrmsModal');
+      if(m){ m.style.display='block'; m.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    }
+
+    function closeWyrmDragon(){
+      var m=document.getElementById('wyrmsModal'); if(!m) return;
+      m.style.display='none'; m.setAttribute('aria-hidden','true');
+      var v=document.getElementById('wyrmsVideo'); if(v){ v.pause(); v.removeAttribute('src'); v.load(); }
+      document.body.style.overflow='';
+    }
+
+    document.addEventListener('DOMContentLoaded',function(){
+      /* init language */
+      var saved=null; try{ saved=localStorage.getItem('wyrms_lang'); }catch(e){}
+      var browser=((navigator.language||'en').slice(0,2)==='es')?'es':'en';
+      setWyrms(saved||browser);
+
+      /* dragon cards */
+      document.querySelectorAll('.wcard').forEach(function(c){
+        c.addEventListener('click',function(){
+          var col=c.getAttribute('data-color')||'red';
+          var cur = document.documentElement.lang === 'es' ? 'es' : 'en';
+          openWyrmDragon(col,cur);
+        });
+      });
+      document.querySelectorAll('[data-wyrms-close]').forEach(function(el){
+        el.addEventListener('click',closeWyrmDragon);
+      });
+      document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeWyrmDragon(); });
+
+      /* scroll show/hide of header accent */
+      var hdr=document.querySelector('.header-wyrms');
+      window.addEventListener('scroll',function(){
+        if(hdr){ hdr.classList.toggle('scrolled', window.scrollY>40); }
+      });
+    });
+  </script>
+</body>
+</html>

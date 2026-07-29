@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GetMeOut — Support, Help &amp; Privacy</title>
+  <meta name="description" content="GetMeOut Escape for iOS — your professional pocket escape. Support, features, FAQ and privacy.">
+  <link rel="icon" type="image/png" href="../assets/getmeout-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=5">
+</head>
+<body class="body-app body-getmeout">
+
+  <!-- Liquid Background -->
+  <div class="liquid-bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <svg style="display:none"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="0.15"/><feFuncG type="linear" slope="0.15"/><feFuncB type="linear" slope="0.15"/></feComponentTransfer></filter></svg>
+    <div class="noise-overlay"></div>
+  </div>
+
+  <!-- Shared Header (light variant) -->
+  <header class="header-light">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-link brand-link-light">
+        <img src="../assets/riggs-logo.png?v=4" alt="Riggs Logo" class="brand-logo-img">
+        <span class="brand-title brand-title-light">The White Riggs</span>
+      </a>
+      <ul class="nav-links nav-links-light">
+        <li><a href="#features" data-es="Características" data-en="Features">Features</a></li>
+        <li><a href="#support" data-es="Ayuda" data-en="Help">Help</a></li>
+        <li><a href="#privacy" data-es="Privacidad" data-en="Privacy">Privacy</a></li>
+        <li>
+          <div class="lang-toggle-inline">
+            <button id="btn-es" class="lang-btn active" onclick="setGMO('es')">ES</button>
+            <button id="btn-en" class="lang-btn" onclick="setGMO('en')">EN</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="gmo-main">
+    <!-- Hero -->
+    <section class="gmo-hero container fade-in">
+      <div class="gmo-icon-wrap">
+        <img src="../assets/getmeout/icon.png" alt="GetMeOut App Icon" class="gmo-icon">
+        <div class="gmo-icon-shine"></div>
+      </div>
+      <h1 class="gmo-title">GetMeOut</h1>
+      <p class="gmo-tagline" data-es="Tu Escape Profesional de Bolsillo" data-en="Your Professional Pocket Escape">Your Professional Pocket Escape</p>
+      <div class="gmo-hero-actions">
+        <a href="https://apps.apple.com/us/app/getmeout-escape/id6761269060" target="_blank" rel="noopener noreferrer" class="gmo-download">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span data-es="Descargar en App Store" data-en="Download on App Store">Download on App Store</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="gmo-section container fade-in">
+      <h2 class="gmo-section-title" data-es="Características" data-en="Features">Features</h2>
+      <div class="gmo-features-grid">
+        <article class="gmo-glass gmo-feature">
+          <div class="gmo-feat-icon">🧠</div>
+          <h3 data-es="Coartadas Inteligentes" data-en="Smart Alibis">Smart Alibis</h3>
+          <p data-es="Generador profesional con cálculo de credibilidad en tiempo real para situaciones críticas." data-en="Professional generator with real-time credibility scoring for critical situations.">Professional generator with real-time credibility scoring for critical situations.</p>
+        </article>
+        <article class="gmo-glass gmo-feature">
+          <div class="gmo-feat-icon">📞</div>
+          <h3 data-es="Llamada de Escape" data-en="Emergency Escape">Emergency Escape</h3>
+          <p data-es="Simulación ultra-realista con estética iOS 26, haptics de sistema y cronómetro dinámico." data-en="Ultra-realistic simulation with iOS 26 aesthetics, system haptics, and dynamic timer.">Ultra-realistic simulation with iOS 26 aesthetics, system haptics, and dynamic timer.</p>
+        </article>
+        <article class="gmo-glass gmo-feature">
+          <div class="gmo-feat-icon">🎨</div>
+          <h3 data-es="Evidencias Visuales" data-en="Visual Evidence">Visual Evidence</h3>
+          <p data-es="Crea evidencias visuales con 21 temas premium listos para compartir en redes sociales." data-en="Create visual evidence with 21 premium themes ready to share on social media.">Create visual evidence with 21 premium themes ready to share on social media.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Support + FAQ -->
+    <section id="support" class="gmo-section container fade-in">
+      <div class="gmo-support-grid">
+        <div class="gmo-glass gmo-help-card">
+          <h2 data-es="Centro de Ayuda" data-en="Help Center">Help Center</h2>
+          <p data-es="Diseñado para ser intuitivo y discreto. Si necesitas ayuda técnica o tienes sugerencias para nuevas coartadas, estamos aquí." data-en="Designed to be intuitive and discreet. If you need technical help or have suggestions for new alibis, we're here.">Designed to be intuitive and discreet. If you need technical help or have suggestions for new alibis, we're here.</p>
+          <div class="gmo-contact-pill">
+            <span class="gmo-pill-label" data-es="Soporte Directo" data-en="Direct Support">Direct Support</span>
+            <a href="mailto:jcaboroca@gmail.com" class="gmo-pill-email">jcaboroca@gmail.com</a>
+          </div>
+        </div>
+        <div class="gmo-glass gmo-faq-card">
+          <h3 data-es="Preguntas Frecuentes" data-en="FAQ">FAQ</h3>
+          <details>
+            <summary data-es="¿Funciona sin conexión?" data-en="Does it work offline?">Does it work offline?</summary>
+            <p data-es="Sí. Toda la generación de excusas y evidencias ocurre 'on-device' para máxima privacidad." data-en="Yes. All excuse and evidence generation happens 'on-device' for maximum privacy.">Yes. All excuse and evidence generation happens 'on-device' for maximum privacy.</p>
+          </details>
+          <details>
+            <summary data-es="¿Es compatible con mi iPhone?" data-en="Is it compatible with my iPhone?">Is it compatible with my iPhone?</summary>
+            <p data-es="Requiere iOS 26.0+. Aprovecha al máximo los nuevos efectos Liquid Glass del sistema." data-en="Requires iOS 26.0+. It takes full advantage of the new system Liquid Glass effects.">Requires iOS 26.0+. It takes full advantage of the new system Liquid Glass effects.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section id="privacy" class="gmo-section container fade-in">
+      <div class="gmo-privacy-head">
+        <h2 data-es="Privacidad Total" data-en="Total Privacy">Total Privacy</h2>
+        <p class="gmo-privacy-date" data-es="Actualizado: 27 Mar 2026" data-en="Updated: Mar 27, 2026">Updated: Mar 27, 2026</p>
+      </div>
+      <div class="gmo-privacy-grid">
+        <div class="gmo-glass gmo-privacy-block">
+          <h3 data-es="Cero Recopilación" data-en="Zero Collection">Zero Collection</h3>
+          <p data-es="GetMeOut NO recopila, almacena ni transmite ningún dato. Lo que sucede en la app, se queda en la app." data-en="GetMeOut does NOT collect, store, or transmit any data. What happens in the app, stays in the app.">GetMeOut does NOT collect, store, or transmit any data. What happens in the app, stays in the app.</p>
+        </div>
+        <div class="gmo-glass gmo-privacy-block">
+          <h3 data-es="Permisos Transparentes" data-en="Transparent Permissions">Transparent Permissions</h3>
+          <p data-es="Utilizamos haptics para realismo y acceso a fotos solo si decides guardar una evidencia." data-en="We use haptics for realism and photo access only if you choose to save evidence.">We use haptics for realism and photo access only if you choose to save evidence.</p>
+        </div>
+        <div class="gmo-glass gmo-privacy-block">
+          <h3 data-es="Seguridad por Diseño" data-en="Security by Design">Security by Design</h3>
+          <p data-es="Al ser 100% offline, tus 'excusas' están seguras de cualquier filtración de datos externas." data-en="Being 100% offline, your 'excuses' are safe from any external data leaks.">Being 100% offline, your 'excuses' are safe from any external data leaks.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer (light variant) -->
+  <footer class="footer-light">
+    <div class="container footer-content">
+      <div class="footer-light-brand">
+        <span class="footer-light-logo">GetMeOut</span>
+        <p>© 2026 The White Riggs</p>
+      </div>
+      <div class="footer-light-tagline" data-es="A veces solo necesitas… ir de paseo con Riggs. 🐶" data-en="Sometimes you just need… to go for a walk with Riggs. 🐶">Sometimes you just need… to go for a walk with Riggs. 🐶</div>
+      <ul class="footer-links">
+        <li><a href="../index.html" data-es="Inicio" data-en="Home">Home</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=5"></script>
+  <script>
+    /* GetMeOut ES/EN toggle + blob parallax */
+    function setGMO(lang){
+      document.documentElement.lang = lang;
+      try{ localStorage.setItem('getmeout-lang', lang); }catch(e){}
+      document.querySelectorAll('[data-es]').forEach(function(el){
+        el.textContent = el.getAttribute('data-'+lang);
+      });
+      var bE=document.getElementById('btn-es'),bN=document.getElementById('btn-en');
+      if(bE) bE.classList.toggle('active',lang==='es');
+      if(bN) bN.classList.toggle('active',lang==='en');
+    }
+    document.addEventListener('DOMContentLoaded',function(){
+      var saved=null; try{ saved=localStorage.getItem('getmeout-lang'); }catch(e){}
+      var browser=(navigator.language||'en').slice(0,2)==='es'?'es':'en';
+      setGMO(saved||browser);
+      var blobs=document.querySelectorAll('.blob');
+      window.addEventListener('mousemove',function(e){
+        var x=(e.clientX-window.innerWidth/2)/(window.innerWidth/2);
+        var y=(e.clientY-window.innerHeight/2)/(window.innerHeight/2);
+        blobs.forEach(function(b,i){
+          var f=(i+1)*30;
+          b.style.transform='translate('+(x*f)+'px,'+(y*f)+'px)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
