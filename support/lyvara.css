@@ -1,0 +1,224 @@
+/* LYVARA support page. Aislado a propósito: no toca el styles.css compartido. */
+
+.body-lyvara {
+  background: #05070d;
+  color: #E8ECF5;
+}
+
+.lyv-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 45% at 18% 8%, rgba(52, 211, 153, 0.16), transparent 70%),
+    radial-gradient(55% 45% at 85% 22%, rgba(56, 189, 248, 0.14), transparent 70%),
+    radial-gradient(70% 50% at 50% 100%, rgba(52, 211, 153, 0.07), transparent 70%),
+    #05070d;
+}
+
+.lyv-main {
+  padding-top: 90px;
+}
+
+/* El selector de idioma compartido está pensado para cabecera clara. */
+.body-lyvara .lang-toggle-inline {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+.body-lyvara .lang-btn {
+  color: rgba(232, 236, 245, 0.75);
+}
+
+.body-lyvara .lang-btn.active {
+  background: #34D399;
+  color: #05070d;
+  box-shadow: 0 4px 12px rgba(52, 211, 153, 0.35);
+}
+
+/* Hero */
+.lyv-hero {
+  text-align: center;
+  padding: 60px 24px 40px;
+}
+
+.lyv-icon {
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(52, 211, 153, 0.22);
+}
+
+.lyv-title {
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  margin: 24px 0 10px;
+  background: linear-gradient(100deg, #34D399, #38BDF8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lyv-tagline {
+  font-size: 1.15rem;
+  color: #AEB8CC;
+  max-width: 34ch;
+  margin: 0 auto;
+}
+
+.lyv-soon {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 30px;
+  padding: 14px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  background: rgba(52, 211, 153, 0.08);
+  color: #34D399;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.lyv-soon small {
+  font-weight: 500;
+  font-size: 0.78rem;
+  color: #8C97AD;
+  letter-spacing: 0;
+}
+
+/* Secciones */
+.lyv-section {
+  padding: 56px 24px;
+}
+
+.lyv-section h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.lyv-lead {
+  color: #97A2B8;
+  margin-bottom: 28px;
+  max-width: 62ch;
+}
+
+.lyv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.lyv-card {
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lyv-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: #E8ECF5;
+}
+
+.lyv-card p {
+  color: #97A2B8;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.lyv-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+/* Fuentes de datos */
+.lyv-sources {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.lyv-sources li {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  color: #97A2B8;
+  font-size: 0.94rem;
+}
+
+.lyv-sources strong {
+  color: #E8ECF5;
+  font-weight: 600;
+}
+
+/* Ayuda */
+.lyv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: rgba(56, 189, 248, 0.06);
+}
+
+.lyv-contact span {
+  color: #8C97AD;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lyv-contact a {
+  color: #38BDF8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lyv-contact a:hover {
+  text-decoration: underline;
+}
+
+.lyv-section details {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.lyv-section summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #E8ECF5;
+}
+
+.lyv-section details p {
+  margin-top: 10px;
+  color: #97A2B8;
+  line-height: 1.6;
+}
+
+/* Nota legal */
+.lyv-note {
+  margin-top: 28px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  color: #8C97AD;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .lyv-main { padding-top: 76px; }
+  .lyv-hero { padding: 40px 20px 30px; }
+}

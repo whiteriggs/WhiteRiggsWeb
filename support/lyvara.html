@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LYVARA — Support &amp; Privacy</title>
+  <meta name="description" content="LYVARA for iOS — track your whole net worth: investments, property and debt, valued with official data and projected into the future. Support, FAQ and privacy.">
+  <link rel="icon" type="image/png" href="../assets/lyvara-icon.png?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=5">
+  <link rel="stylesheet" href="lyvara.css?v=1">
+</head>
+<body class="body-app body-lyvara">
+
+  <div class="lyv-backdrop" aria-hidden="true"></div>
+
+  <!-- Shared Header -->
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="brand-link">
+        <img src="../assets/riggs-logo.png?v=4" alt="Riggs Logo" class="brand-logo-img">
+        <span class="brand-title">The White Riggs</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features" data-es="Qué hace" data-en="What it does">What it does</a></li>
+        <li><a href="#data" data-es="Datos" data-en="Data">Data</a></li>
+        <li><a href="#support" data-es="Ayuda" data-en="Help">Help</a></li>
+        <li><a href="#privacy" data-es="Privacidad" data-en="Privacy">Privacy</a></li>
+        <li>
+          <div class="lang-toggle-inline">
+            <button id="lyv-es" class="lang-btn active" onclick="setLYV('es')">ES</button>
+            <button id="lyv-en" class="lang-btn" onclick="setLYV('en')">EN</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="lyv-main">
+
+    <!-- Hero -->
+    <section class="lyv-hero fade-in">
+      <img src="../assets/lyvara-icon.png?v=1" alt="LYVARA App Icon" class="lyv-icon">
+      <h1 class="lyv-title">LYVARA</h1>
+      <p class="lyv-tagline" data-es="Todo tu patrimonio en un sitio tranquilo." data-en="Your whole net worth in one calm place.">Your whole net worth in one calm place.</p>
+      <span class="lyv-soon">
+        <span data-es="Próximamente" data-en="Coming soon">Coming soon</span>
+        <small data-es="en la App Store" data-en="on the App Store">on the App Store</small>
+      </span>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="lyv-section wrap fade-in">
+      <h2 data-es="Qué hace" data-en="What it does">What it does</h2>
+      <p class="lyv-lead" data-es="Reúne lo que tienes y lo que debes, lo valora con datos oficiales y te enseña hacia dónde va." data-en="It gathers what you own and what you owe, values it with official data, and shows you where it is heading.">It gathers what you own and what you owe, values it with official data, and shows you where it is heading.</p>
+      <div class="lyv-grid">
+        <article class="lyv-card">
+          <div class="lyv-card-icon">📈</div>
+          <h3 data-es="Inversiones al día" data-en="Live investments">Live investments</h3>
+          <p data-es="Fondos, acciones y cripto con su cotización actual, convertidas a euros al tipo de cambio oficial del BCE." data-en="Funds, stocks and crypto at their current price, converted to euros at the official ECB exchange rate.">Funds, stocks and crypto at their current price, converted to euros at the official ECB exchange rate.</p>
+        </article>
+        <article class="lyv-card">
+          <div class="lyv-card-icon">🏠</div>
+          <h3 data-es="Inmuebles desde el Catastro" data-en="Property from the land registry">Property from the land registry</h3>
+          <p data-es="Escribes la dirección y la app trae superficie y año del Catastro, y estima el valor con el precio medio oficial de tu zona." data-en="Type the address and the app pulls surface and year from the Spanish land registry, then estimates the value from the official average price in your area.">Type the address and the app pulls surface and year from the Spanish land registry, then estimates the value from the official average price in your area.</p>
+        </article>
+        <article class="lyv-card">
+          <div class="lyv-card-icon">🔭</div>
+          <h3 data-es="El futuro, sin humo" data-en="An honest projection">An honest projection</h3>
+          <p data-es="Proyecta tu patrimonio a años vista con la inflación real del BCE, no con cifras inventadas." data-en="Projects your net worth years ahead using real ECB inflation, not made-up numbers.">Projects your net worth years ahead using real ECB inflation, not made-up numbers.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Data sources -->
+    <section id="data" class="lyv-section wrap fade-in">
+      <h2 data-es="De dónde salen los números" data-en="Where the numbers come from">Where the numbers come from</h2>
+      <p class="lyv-lead" data-es="Ninguna cifra de referencia es inventada. Estas son las fuentes, y la app te dice siempre a qué fecha corresponde cada dato." data-en="No reference figure is made up. These are the sources, and the app always tells you the date each figure belongs to.">No reference figure is made up. These are the sources, and the app always tells you the date each figure belongs to.</p>
+      <ul class="lyv-sources">
+        <li><strong>Banco Central Europeo</strong> — <span data-es="tipos de cambio e inflación de la zona euro." data-en="exchange rates and euro area inflation.">exchange rates and euro area inflation.</span></li>
+        <li><strong>Eurostat / INE</strong> — <span data-es="Índice de Precios de la Vivienda, para la revalorización de los inmuebles." data-en="House Price Index, used for property appreciation.">House Price Index, used for property appreciation.</span></li>
+        <li><strong>Ministerio de Vivienda y Agenda Urbana</strong> — <span data-es="valor tasado medio de vivienda libre, en euros por metro cuadrado y municipio." data-en="average appraised value of free-market housing, in euros per square metre by municipality.">average appraised value of free-market housing, in euros per square metre by municipality.</span></li>
+        <li><strong>Dirección General del Catastro</strong> — <span data-es="superficie, año de construcción y uso del inmueble." data-en="surface, construction year and use of the property.">surface, construction year and use of the property.</span></li>
+      </ul>
+      <p class="lyv-note" data-es="LYVARA no está afiliada a ninguno de estos organismos. Las estimaciones de valor son una referencia de mercado, no una tasación: no conocen el estado, la planta ni la orientación de tu vivienda. Nada de lo que muestra la app es asesoramiento financiero." data-en="LYVARA is not affiliated with any of these institutions. Value estimates are a market reference, not an appraisal: they know nothing about the condition, floor or orientation of your home. Nothing shown in the app is financial advice.">LYVARA is not affiliated with any of these institutions. Value estimates are a market reference, not an appraisal: they know nothing about the condition, floor or orientation of your home. Nothing shown in the app is financial advice.</p>
+    </section>
+
+    <!-- Support -->
+    <section id="support" class="lyv-section wrap fade-in">
+      <h2 data-es="Ayuda" data-en="Help">Help</h2>
+      <p class="lyv-lead" data-es="¿Algo no cuadra, falta tu municipio o se te ocurre una mejora? Escribe y te contesto." data-en="Something not adding up, your town missing, or an idea to make it better? Write and I'll reply.">Something not adding up, your town missing, or an idea to make it better? Write and I'll reply.</p>
+      <div class="lyv-contact">
+        <span data-es="Soporte" data-en="Support">Support</span>
+        <a href="mailto:thewhiteriggs@gmail.com">thewhiteriggs@gmail.com</a>
+      </div>
+
+      <details>
+        <summary data-es="¿Necesito conectar mi banco?" data-en="Do I need to connect my bank?">Do I need to connect my bank?</summary>
+        <p data-es="No. LYVARA no se conecta a ninguna entidad ni pide credenciales bancarias. Los datos los introduces tú." data-en="No. LYVARA does not connect to any bank and never asks for banking credentials. You enter your data yourself.">No. LYVARA does not connect to any bank and never asks for banking credentials. You enter your data yourself.</p>
+      </details>
+      <details>
+        <summary data-es="Mi municipio no aparece al estimar el valor" data-en="My town is missing when estimating value">My town is missing when estimating value</summary>
+        <p data-es="La tabla oficial de precios solo detalla municipios de más de 25.000 habitantes. En el resto se aplica la media de la provincia, y la app te lo indica. Siempre puedes escribir el valor a mano." data-en="The official price table only details municipalities above 25,000 inhabitants. Elsewhere the provincial average is used, and the app tells you so. You can always type the value yourself.">The official price table only details municipalities above 25,000 inhabitants. Elsewhere the provincial average is used, and the app tells you so. You can always type the value yourself.</p>
+      </details>
+      <details>
+        <summary data-es="¿Puedo cambiar los datos que trae puestos?" data-en="Can I change the pre-filled figures?">Can I change the pre-filled figures?</summary>
+        <p data-es="Sí. Las cifras oficiales son un punto de partida razonable, no una imposición: cualquier valor que escribas manda sobre ellas." data-en="Yes. Official figures are a sensible starting point, not a rule: any value you type overrides them.">Yes. Official figures are a sensible starting point, not a rule: any value you type overrides them.</p>
+      </details>
+      <details>
+        <summary data-es="¿Qué necesito para usarla?" data-en="What do I need to run it?">What do I need to run it?</summary>
+        <p data-es="Un iPhone con iOS 26 o posterior. Funciona sin conexión; internet solo se usa para actualizar cotizaciones y datos oficiales." data-en="An iPhone running iOS 26 or later. It works offline; the internet is only used to refresh quotes and official data.">An iPhone running iOS 26 or later. It works offline; the internet is only used to refresh quotes and official data.</p>
+      </details>
+    </section>
+
+    <!-- Privacy -->
+    <section id="privacy" class="lyv-section wrap fade-in">
+      <h2 data-es="Privacidad" data-en="Privacy">Privacy</h2>
+      <p class="lyv-lead" data-es="Tu patrimonio es asunto tuyo. La app está construida para que siga siéndolo." data-en="Your net worth is your business. The app is built so it stays that way.">Your net worth is your business. The app is built so it stays that way.</p>
+      <div class="lyv-grid">
+        <article class="lyv-card">
+          <h3 data-es="Se queda en tu iPhone" data-en="It stays on your iPhone">It stays on your iPhone</h3>
+          <p data-es="Saldos, inmuebles, deudas y movimientos se guardan solo en el dispositivo. No hay servidor con tus cifras." data-en="Balances, properties, debts and transactions are stored on the device only. There is no server holding your figures.">Balances, properties, debts and transactions are stored on the device only. There is no server holding your figures.</p>
+        </article>
+        <article class="lyv-card">
+          <h3 data-es="Qué sale a internet" data-en="What leaves the device">What leaves the device</h3>
+          <p data-es="Solo consultas públicas: precios de mercado, tipos de cambio, datos macro y la dirección que escribes al buscar en el Catastro. Nunca cuánto tienes." data-en="Only public lookups: market prices, exchange rates, macro data and the address you type when searching the land registry. Never how much you own.">Only public lookups: market prices, exchange rates, macro data and the address you type when searching the land registry. Never how much you own.</p>
+        </article>
+        <article class="lyv-card">
+          <h3 data-es="Sin anuncios ni rastreo" data-en="No ads, no tracking">No ads, no tracking</h3>
+          <p data-es="Ni publicidad, ni perfilado, ni venta de datos a terceros." data-en="No advertising, no profiling, no selling data to third parties.">No advertising, no profiling, no selling data to third parties.</p>
+        </article>
+      </div>
+      <p class="lyv-note" data-es="Si activas el asesor con inteligencia artificial, la consulta que escribas se envía para poder responderte; puedes desactivarlo en Ajustes y la app deja de consultarle nada. Esta página se actualizará con la política definitiva antes del lanzamiento." data-en="If you enable the AI advisor, the question you type is sent in order to answer it; you can turn it off in Settings and the app stops consulting it entirely. This page will be updated with the final policy before launch.">If you enable the AI advisor, the question you type is sent in order to answer it; you can turn it off in Settings and the app stops consulting it entirely. This page will be updated with the final policy before launch.</p>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>&copy; 2026 The White Riggs. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="../index.html" data-es="Inicio" data-en="Home">Home</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=5"></script>
+  <script>
+    function setLYV(lang) {
+      document.documentElement.lang = lang;
+      try { localStorage.setItem('lyvara-lang', lang); } catch (e) {}
+      document.querySelectorAll('[data-es]').forEach(function (el) {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      var es = document.getElementById('lyv-es'), en = document.getElementById('lyv-en');
+      if (es) es.classList.toggle('active', lang === 'es');
+      if (en) en.classList.toggle('active', lang === 'en');
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var saved = null;
+      try { saved = localStorage.getItem('lyvara-lang'); } catch (e) {}
+      var browser = (navigator.language || 'en').slice(0, 2) === 'es' ? 'es' : 'en';
+      setLYV(saved || browser);
+    });
+  </script>
+</body>
+</html>
