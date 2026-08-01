@@ -24,10 +24,10 @@
         <span class="brand-title brand-title-light">The White Riggs</span>
       </a>
       <ul class="nav-links nav-links-wyrms">
-        <li><a href="#dragons" data-wyrm-en="Dragons" data-wyrm-es="Dragones">Dragons</a></li>
-        <li><a href="#how" data-wyrm-en="How to play" data-wyrm-es="Cómo jugar">How to play</a></li>
-        <li><a href="#features" data-wyrm-en="Features" data-wyrm-es="Características">Features</a></li>
-        <li><a href="#faq" data-wyrm-en="FAQ" data-wyrm-es="FAQ">FAQ</a></li>
+        <li><a href="#dragons-en" data-wyrm-anchor="dragons" data-wyrm-en="Dragons" data-wyrm-es="Dragones">Dragons</a></li>
+        <li><a href="#how-en" data-wyrm-anchor="how" data-wyrm-en="How to play" data-wyrm-es="Cómo jugar">How to play</a></li>
+        <li><a href="#features-en" data-wyrm-anchor="features" data-wyrm-en="Features" data-wyrm-es="Características">Features</a></li>
+        <li><a href="#faq-en" data-wyrm-anchor="faq" data-wyrm-en="FAQ" data-wyrm-es="FAQ">FAQ</a></li>
         <li>
           <div class="wyrms-lang">
             <button data-wyrmset="en" class="wlang active" onclick="setWyrms('en')">EN</button>
@@ -50,7 +50,7 @@
         <span class="wyrms-cta-soon">Coming soon<small>on the App Store</small></span>
       </section>
 
-      <section id="dragons" class="wrap wyrms-section">
+      <section id="dragons-en" class="wrap wyrms-section">
         <h2>Meet the dragons</h2>
         <p class="wyrms-lead">Four legendary wyrms, each with their own myth and temper. Pick yours and race.</p>
         <div class="wyrms-grid">
@@ -61,7 +61,7 @@
         </div>
       </section>
 
-      <section id="how" class="wrap wyrms-section">
+      <section id="how-en" class="wrap wyrms-section">
         <h2>How to play</h2>
         <p class="wyrms-lead">Simple to learn, tricky to master. A full tutorial is built into the game.</p>
         <div class="wyrms-steps">
@@ -72,7 +72,7 @@
         </div>
       </section>
 
-      <section id="features" class="wrap wyrms-section">
+      <section id="features-en" class="wrap wyrms-section">
         <h2>Features</h2>
         <ul class="wyrms-feat">
           <li>2–4 players on one device</li>
@@ -96,7 +96,7 @@
         </div>
       </section>
 
-      <section id="faq" class="wrap wyrms-section">
+      <section id="faq-en" class="wrap wyrms-section">
         <h2>FAQ</h2>
         <details><summary>Is it free?</summary><p>Yes. Wyrms is free, with no ads and no in-app purchases.</p></details>
         <details><summary>Do I need an internet connection?</summary><p>No. Wyrms works fully offline on a single device.</p></details>
@@ -123,7 +123,7 @@
         <span class="wyrms-cta-soon">Muy pronto<small>en la App Store</small></span>
       </section>
 
-      <section id="dragons" class="wrap wyrms-section">
+      <section id="dragons-es" class="wrap wyrms-section">
         <h2>Conoce a los dragones</h2>
         <p class="wyrms-lead">Cuatro wyrms legendarios, cada uno con su mito y su carácter. Elige el tuyo y a correr.</p>
         <div class="wyrms-grid">
@@ -134,7 +134,7 @@
         </div>
       </section>
 
-      <section id="how" class="wrap wyrms-section">
+      <section id="how-es" class="wrap wyrms-section">
         <h2>Cómo se juega</h2>
         <p class="wyrms-lead">Fácil de aprender, difícil de dominar. El juego incluye un tutorial completo.</p>
         <div class="wyrms-steps">
@@ -145,7 +145,7 @@
         </div>
       </section>
 
-      <section id="features" class="wrap wyrms-section">
+      <section id="features-es" class="wrap wyrms-section">
         <h2>Características</h2>
         <ul class="wyrms-feat">
           <li>2–4 jugadores en un dispositivo</li>
@@ -169,7 +169,7 @@
         </div>
       </section>
 
-      <section id="faq" class="wrap wyrms-section">
+      <section id="faq-es" class="wrap wyrms-section">
         <h2>Preguntas frecuentes</h2>
         <details><summary>¿Es gratis?</summary><p>Sí. Wyrms es gratis, sin anuncios ni compras dentro de la app.</p></details>
         <details><summary>¿Necesito conexión a internet?</summary><p>No. Wyrms funciona totalmente sin conexión, en un solo dispositivo.</p></details>
@@ -235,6 +235,10 @@
       });
       document.querySelectorAll('[data-wyrm-en]').forEach(function(el){
         el.textContent = el.getAttribute('data-wyrm-'+lang);
+      });
+      // Cada idioma tiene su copia de las secciones: el menú apunta a la visible.
+      document.querySelectorAll('[data-wyrm-anchor]').forEach(function(a){
+        a.setAttribute('href', '#'+a.getAttribute('data-wyrm-anchor')+'-'+lang);
       });
     }
 
