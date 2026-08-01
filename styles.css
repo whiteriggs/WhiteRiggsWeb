@@ -608,6 +608,45 @@ footer {
 }
 .support-note { margin-top: 24px; color: var(--text-muted); font-size: 13px; letter-spacing: 0.02em; }
 
+/* --- Shared FAQ (acordeón sobre fondo oscuro) --- */
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.faq-list details {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.faq-list details:last-child { border-bottom: none; }
+.faq-list summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 40px 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.25s ease;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary:hover { color: #6eb7ff; }
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-muted);
+  transition: transform 0.3s ease;
+}
+.faq-list details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq-list details p {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  line-height: 1.7;
+  padding: 0 40px 22px 0;
+}
+
 /* ============================================================
    3. CURIOSITY — stars background + demo widget
    ============================================================ */

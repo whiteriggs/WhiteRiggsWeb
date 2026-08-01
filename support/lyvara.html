@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=5">
+  <link rel="stylesheet" href="../styles.css?v=6">
   <link rel="stylesheet" href="lyvara.css?v=1">
 </head>
 <body class="body-app body-lyvara">
@@ -57,19 +57,49 @@
       <p class="lyv-lead" data-es="Reúne lo que tienes y lo que debes, lo valora con datos oficiales y te enseña hacia dónde va." data-en="It gathers what you own and what you owe, values it with official data, and shows you where it is heading.">It gathers what you own and what you owe, values it with official data, and shows you where it is heading.</p>
       <div class="lyv-grid">
         <article class="lyv-card">
+          <div class="lyv-card-icon">📊</div>
+          <h3 data-es="Tu patrimonio, de un vistazo" data-en="Your net worth at a glance">Your net worth at a glance</h3>
+          <p data-es="Una sola cifra arriba: lo que tienes menos lo que debes. Debajo, la evolución en el tiempo con un gráfico que puedes recorrer con el dedo, y el reparto por tipo de activo." data-en="One figure at the top: what you own minus what you owe. Below it, how it has moved over time on a chart you can scrub with your finger, plus the split by asset type.">One figure at the top: what you own minus what you owe. Below it, how it has moved over time on a chart you can scrub with your finger, plus the split by asset type.</p>
+        </article>
+        <article class="lyv-card">
           <div class="lyv-card-icon">📈</div>
           <h3 data-es="Inversiones al día" data-en="Live investments">Live investments</h3>
-          <p data-es="Fondos, acciones y cripto con su cotización actual, convertidas a euros al tipo de cambio oficial del BCE." data-en="Funds, stocks and crypto at their current price, converted to euros at the official ECB exchange rate.">Funds, stocks and crypto at their current price, converted to euros at the official ECB exchange rate.</p>
+          <p data-es="Fondos indexados, ETFs, acciones, cripto, cuentas remuneradas y depósitos a plazo. Las cotizaciones se descargan solas y lo que está en dólares se pasa a euros al cambio oficial del BCE." data-en="Index funds, ETFs, stocks, crypto, savings accounts and term deposits. Prices are fetched automatically, and anything in dollars is converted to euros at the official ECB rate.">Index funds, ETFs, stocks, crypto, savings accounts and term deposits. Prices are fetched automatically, and anything in dollars is converted to euros at the official ECB rate.</p>
+        </article>
+        <article class="lyv-card">
+          <div class="lyv-card-icon">🧾</div>
+          <h3 data-es="Cada movimiento, contado" data-en="Every move, accounted for">Every move, accounted for</h3>
+          <p data-es="Aportaciones, reembolsos, dividendos y staking, con sus comisiones. De ahí salen la rentabilidad real, la anualizada y lo que llevas invertido de verdad. Si aportas todos los meses, la app lo registra sola." data-en="Contributions, withdrawals, dividends and staking, fees included. That is where your real return, your annualised return and your true invested amount come from. If you contribute monthly, the app logs it for you.">Contributions, withdrawals, dividends and staking, fees included. That is where your real return, your annualised return and your true invested amount come from. If you contribute monthly, the app logs it for you.</p>
         </article>
         <article class="lyv-card">
           <div class="lyv-card-icon">🏠</div>
           <h3 data-es="Inmuebles desde el Catastro" data-en="Property from the land registry">Property from the land registry</h3>
-          <p data-es="Escribes la dirección y la app trae superficie y año del Catastro, y estima el valor con el precio medio oficial de tu zona." data-en="Type the address and the app pulls surface and year from the Spanish land registry, then estimates the value from the official average price in your area.">Type the address and the app pulls surface and year from the Spanish land registry, then estimates the value from the official average price in your area.</p>
+          <p data-es="Escribes la dirección y la app trae superficie, año y referencia del Catastro, y estima el valor con el precio medio oficial de tu zona. Si el piso es tuyo a medias, indicas tu porcentaje." data-en="Type the address and the app pulls surface, year and cadastral reference, then estimates the value from the official average price in your area. If you only own part of it, you set your share.">Type the address and the app pulls surface, year and cadastral reference, then estimates the value from the official average price in your area. If you only own part of it, you set your share.</p>
+        </article>
+        <article class="lyv-card">
+          <div class="lyv-card-icon">🚗</div>
+          <h3 data-es="Coches que se deprecian solos" data-en="Cars that depreciate on their own">Cars that depreciate on their own</h3>
+          <p data-es="Pones el modelo, el precio de nuevo y la fecha de matriculación. El valor va bajando cada año siguiendo la tabla oficial del BOE, ajustada al precio real de reventa." data-en="Enter the model, the price when new and the registration date. The value drops year after year following the official Spanish depreciation table, adjusted to real resale prices.">Enter the model, the price when new and the registration date. The value drops year after year following the official Spanish depreciation table, adjusted to real resale prices.</p>
+        </article>
+        <article class="lyv-card">
+          <div class="lyv-card-icon">🏦</div>
+          <h3 data-es="Hipotecas y préstamos" data-en="Mortgages and loans">Mortgages and loans</h3>
+          <p data-es="Capital pendiente, cuota, interés y día de cobro. La app amortiza por ti y te dice cuánto debes hoy, sin que tengas que mirar el cuadro del banco." data-en="Outstanding balance, monthly payment, interest and payment day. The app amortises it for you and tells you what you owe today, without digging out the bank's schedule.">Outstanding balance, monthly payment, interest and payment day. The app amortises it for you and tells you what you owe today, without digging out the bank's schedule.</p>
+        </article>
+        <article class="lyv-card">
+          <div class="lyv-card-icon">🧮</div>
+          <h3 data-es="Lo que se llevaría Hacienda" data-en="What the taxman would take">What the taxman would take</h3>
+          <p data-es="Una estimación de lo que pagarías si vendieras hoy, tramo a tramo, y también activo por activo para ver qué conviene tocar y qué no. Orientativa, no es asesoramiento fiscal." data-en="An estimate of what you would pay if you sold today, bracket by bracket, and also asset by asset so you can see what is worth touching. Indicative only, not tax advice.">An estimate of what you would pay if you sold today, bracket by bracket, and also asset by asset so you can see what is worth touching. Indicative only, not tax advice.</p>
         </article>
         <article class="lyv-card">
           <div class="lyv-card-icon">🔭</div>
           <h3 data-es="El futuro, sin humo" data-en="An honest projection">An honest projection</h3>
-          <p data-es="Proyecta tu patrimonio a años vista con la inflación real del BCE, no con cifras inventadas." data-en="Projects your net worth years ahead using real ECB inflation, not made-up numbers.">Projects your net worth years ahead using real ECB inflation, not made-up numbers.</p>
+          <p data-es="Proyecta tu cartera a años vista con la inflación real del BCE, no con cifras inventadas. Y si quieres probar una idea nueva, simula una cartera desde cero sin tocar la tuya." data-en="Projects your portfolio years ahead using real ECB inflation, not made-up numbers. And if you want to try an idea, simulate a portfolio from scratch without touching your own.">Projects your portfolio years ahead using real ECB inflation, not made-up numbers. And if you want to try an idea, simulate a portfolio from scratch without touching your own.</p>
+        </article>
+        <article class="lyv-card">
+          <div class="lyv-card-icon">✨</div>
+          <h3 data-es="Un asesor que no sale de tu iPhone" data-en="An advisor that never leaves your iPhone">An advisor that never leaves your iPhone</h3>
+          <p data-es="Pregúntale en lenguaje normal por tu patrimonio, por fondos para diversificar o por lo que valdrá tu coche en tres años. Responde con tus cifras reales y funciona con Apple Intelligence dentro del dispositivo. Es opcional: se enciende y se apaga en Ajustes." data-en="Ask it in plain words about your net worth, about funds to diversify with, or what your car will be worth in three years. It answers using your real figures and runs on Apple Intelligence inside the device. It is optional: switch it on or off in Settings.">Ask it in plain words about your net worth, about funds to diversify with, or what your car will be worth in three years. It answers using your real figures and runs on Apple Intelligence inside the device. It is optional: switch it on or off in Settings.</p>
         </article>
       </div>
     </section>
@@ -83,6 +113,9 @@
         <li><strong>Eurostat / INE</strong> — <span data-es="Índice de Precios de la Vivienda, para la revalorización de los inmuebles." data-en="House Price Index, used for property appreciation.">House Price Index, used for property appreciation.</span></li>
         <li><strong>Ministerio de Vivienda y Agenda Urbana</strong> — <span data-es="valor tasado medio de vivienda libre, en euros por metro cuadrado y municipio." data-en="average appraised value of free-market housing, in euros per square metre by municipality.">average appraised value of free-market housing, in euros per square metre by municipality.</span></li>
         <li><strong>Dirección General del Catastro</strong> — <span data-es="superficie, año de construcción y uso del inmueble." data-en="surface, construction year and use of the property.">surface, construction year and use of the property.</span></li>
+        <li><strong>Yahoo Finance</strong> — <span data-es="cotización e histórico de fondos, ETFs y acciones." data-en="quotes and price history for funds, ETFs and stocks.">quotes and price history for funds, ETFs and stocks.</span></li>
+        <li><strong>CoinGecko y Binance</strong> — <span data-es="cotización e histórico de criptomonedas." data-en="quotes and price history for crypto.">quotes and price history for crypto.</span></li>
+        <li><strong>Boletín Oficial del Estado</strong> — <span data-es="tabla oficial de depreciación de vehículos usados." data-en="official depreciation table for used vehicles.">official depreciation table for used vehicles.</span></li>
       </ul>
       <p class="lyv-note" data-es="LYVARA no está afiliada a ninguno de estos organismos. Las estimaciones de valor son una referencia de mercado, no una tasación: no conocen el estado, la planta ni la orientación de tu vivienda. Nada de lo que muestra la app es asesoramiento financiero." data-en="LYVARA is not affiliated with any of these institutions. Value estimates are a market reference, not an appraisal: they know nothing about the condition, floor or orientation of your home. Nothing shown in the app is financial advice.">LYVARA is not affiliated with any of these institutions. Value estimates are a market reference, not an appraisal: they know nothing about the condition, floor or orientation of your home. Nothing shown in the app is financial advice.</p>
     </section>
@@ -110,7 +143,23 @@
       </details>
       <details>
         <summary data-es="¿Qué necesito para usarla?" data-en="What do I need to run it?">What do I need to run it?</summary>
-        <p data-es="Un iPhone con iOS 26 o posterior. Funciona sin conexión; internet solo se usa para actualizar cotizaciones y datos oficiales." data-en="An iPhone running iOS 26 or later. It works offline; the internet is only used to refresh quotes and official data.">An iPhone running iOS 26 or later. It works offline; the internet is only used to refresh quotes and official data.</p>
+        <p data-es="Un iPhone con iOS 26 o posterior. Funciona sin conexión; internet solo se usa para actualizar cotizaciones y datos oficiales. El asesor necesita además tener activada Apple Intelligence." data-en="An iPhone running iOS 26 or later. It works offline; the internet is only used to refresh quotes and official data. The advisor additionally needs Apple Intelligence switched on.">An iPhone running iOS 26 or later. It works offline; the internet is only used to refresh quotes and official data. The advisor additionally needs Apple Intelligence switched on.</p>
+      </details>
+      <details>
+        <summary data-es="¿El asesor manda mis cifras a algún sitio?" data-en="Does the advisor send my figures anywhere?">Does the advisor send my figures anywhere?</summary>
+        <p data-es="No. Usa el modelo de Apple Intelligence que ya vive dentro de tu iPhone, así que tus preguntas y tus datos no salen del dispositivo. Si prefieres no tenerlo, se desactiva en Ajustes y desaparece de la barra." data-en="No. It uses the Apple Intelligence model already living inside your iPhone, so your questions and your data never leave the device. If you would rather not have it, turn it off in Settings and it disappears from the tab bar.">No. It uses the Apple Intelligence model already living inside your iPhone, so your questions and your data never leave the device. If you would rather not have it, turn it off in Settings and it disappears from the tab bar.</p>
+      </details>
+      <details>
+        <summary data-es="¿Con qué frecuencia se actualizan los datos oficiales?" data-en="How often is the official data refreshed?">How often is the official data refreshed?</summary>
+        <p data-es="La app los revisa una vez al día. La inflación se publica cada mes, los tipos del BCE cada seis semanas y el índice de vivienda cada trimestre, así que verás la última cifra disponible con su fecha al lado." data-en="The app checks once a day. Inflation is published monthly, ECB rates every six weeks and the house price index quarterly, so you always see the latest available figure with its date next to it.">The app checks once a day. Inflation is published monthly, ECB rates every six weeks and the house price index quarterly, so you always see the latest available figure with its date next to it.</p>
+      </details>
+      <details>
+        <summary data-es="¿Puedo verlo todo en dólares?" data-en="Can I see everything in dollars?">Can I see everything in dollars?</summary>
+        <p data-es="Sí. En Ajustes eliges euro o dólar y todos los importes se convierten al cambio del día. Ahí mismo puedes cambiar el tema de color entre cinco paletas." data-en="Yes. In Settings you pick euro or dollar and every amount is converted at the day's rate. The same screen lets you switch between five colour themes.">Yes. In Settings you pick euro or dollar and every amount is converted at the day's rate. The same screen lets you switch between five colour themes.</p>
+      </details>
+      <details>
+        <summary data-es="¿Y si cambio de iPhone?" data-en="What if I change iPhone?">What if I change iPhone?</summary>
+        <p data-es="Tus datos viajan en la copia de seguridad del dispositivo, como los de cualquier app que guarda en local. No hay cuenta que crear ni contraseña que recordar." data-en="Your data travels in the device backup, like any app that stores locally. There is no account to create and no password to remember.">Your data travels in the device backup, like any app that stores locally. There is no account to create and no password to remember.</p>
       </details>
     </section>
 
@@ -132,7 +181,7 @@
           <p data-es="Ni publicidad, ni perfilado, ni venta de datos a terceros." data-en="No advertising, no profiling, no selling data to third parties.">No advertising, no profiling, no selling data to third parties.</p>
         </article>
       </div>
-      <p class="lyv-note" data-es="Si activas el asesor con inteligencia artificial, la consulta que escribas se envía para poder responderte; puedes desactivarlo en Ajustes y la app deja de consultarle nada. Esta página se actualizará con la política definitiva antes del lanzamiento." data-en="If you enable the AI advisor, the question you type is sent in order to answer it; you can turn it off in Settings and the app stops consulting it entirely. This page will be updated with the final policy before launch.">If you enable the AI advisor, the question you type is sent in order to answer it; you can turn it off in Settings and the app stops consulting it entirely. This page will be updated with the final policy before launch.</p>
+      <p class="lyv-note" data-es="El asesor funciona con el modelo de Apple Intelligence integrado en tu iPhone: ni tus preguntas ni tus cifras salen del dispositivo, y puedes desactivarlo en Ajustes. Esta página se actualizará con la política definitiva antes del lanzamiento." data-en="The advisor runs on the Apple Intelligence model built into your iPhone: neither your questions nor your figures leave the device, and you can turn it off in Settings. This page will be updated with the final policy before launch.">The advisor runs on the Apple Intelligence model built into your iPhone: neither your questions nor your figures leave the device, and you can turn it off in Settings. This page will be updated with the final policy before launch.</p>
     </section>
 
   </main>
