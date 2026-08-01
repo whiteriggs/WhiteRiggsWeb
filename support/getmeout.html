@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=6">
+  <link rel="stylesheet" href="../styles.css?v=7">
 </head>
 <body class="body-app body-getmeout">
 
@@ -35,8 +35,8 @@
         <li><a href="#privacy" data-es="Privacidad" data-en="Privacy">Privacy</a></li>
         <li>
           <div class="lang-toggle-inline">
-            <button id="btn-es" class="lang-btn active" onclick="setGMO('es')">ES</button>
-            <button id="btn-en" class="lang-btn" onclick="setGMO('en')">EN</button>
+            <button type="button" class="lang-btn active" data-lang-btn="es">ES</button>
+            <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
           </div>
         </li>
       </ul>
@@ -171,23 +171,20 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=5"></script>
+  <script src="../script.js?v=6"></script>
   <script>
     /* GetMeOut ES/EN toggle + blob parallax */
-    function setGMO(lang){
-      document.documentElement.lang = lang;
-      try{ localStorage.setItem('getmeout-lang', lang); }catch(e){}
-      document.querySelectorAll('[data-es]').forEach(function(el){
-        el.textContent = el.getAttribute('data-'+lang);
-      });
-      var bE=document.getElementById('btn-es'),bN=document.getElementById('btn-en');
-      if(bE) bE.classList.toggle('active',lang==='es');
-      if(bN) bN.classList.toggle('active',lang==='en');
-    }
+    initLangSwitcher({
+      langs: ['es', 'en'],
+      probe: 'en',
+      fallback: 'en',
+      storageKey: 'getmeout-lang',
+      titles: {
+        es: 'GetMeOut — Soporte, Ayuda y Privacidad',
+        en: 'GetMeOut — Support, Help & Privacy'
+      }
+    });
     document.addEventListener('DOMContentLoaded',function(){
-      var saved=null; try{ saved=localStorage.getItem('getmeout-lang'); }catch(e){}
-      var browser=(navigator.language||'en').slice(0,2)==='es'?'es':'en';
-      setGMO(saved||browser);
       var blobs=document.querySelectorAll('.blob');
       window.addEventListener('mousemove',function(e){
         var x=(e.clientX-window.innerWidth/2)/(window.innerWidth/2);

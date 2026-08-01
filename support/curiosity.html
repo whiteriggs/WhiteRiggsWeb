@@ -7,11 +7,15 @@
   <meta name="description" content="Curiosity for iOS — discover galactic wonders. Support, features, and contact.">
   <meta property="og:title" content="Curiosity — Your daily dose of galactic wonder">
   <meta property="og:description" content="Explore curious facts with 11 planetary themes, smart history, widget, and icon gallery.">
+  <link rel="canonical" href="https://whiteriggs.github.io/WhiteRiggsWeb/support/curiosity.html">
+  <link rel="alternate" hreflang="en" href="https://whiteriggs.github.io/WhiteRiggsWeb/support/curiosity.html?lang=en">
+  <link rel="alternate" hreflang="es" href="https://whiteriggs.github.io/WhiteRiggsWeb/support/curiosity.html?lang=es">
+  <link rel="alternate" hreflang="ca" href="https://whiteriggs.github.io/WhiteRiggsWeb/support/curiosity.html?lang=ca">
   <link rel="icon" type="image/png" href="../assets/curiosity-icon.png?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=6">
+  <link rel="stylesheet" href="../styles.css?v=7">
 </head>
 <body class="body-app body-curiosity">
 
@@ -25,12 +29,21 @@
         <span class="brand-title">The White Riggs</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#support">Support</a></li>
-        <li><a href="../privacy/curiosity-privacy.html">Privacy</a></li>
-        <li><a href="curiosity-es.html" class="lang-switch">ES</a></li>
-        <li><a href="curiosity-ca.html" class="lang-switch">CA</a></li>
+        <li><a href="#features" data-en="Features" data-es="Características" data-ca="Característiques">Features</a></li>
+        <li><a href="#faq" data-en="FAQ" data-es="Preguntas" data-ca="Preguntes">FAQ</a></li>
+        <li><a href="#support" data-en="Support" data-es="Soporte" data-ca="Suport">Support</a></li>
+        <li><a href="../privacy/curiosity-privacy.html"
+               data-en="Privacy" data-es="Privacidad" data-ca="Privacitat"
+               data-href-en="../privacy/curiosity-privacy.html"
+               data-href-es="../privacy/curiosity-privacy.html#es"
+               data-href-ca="../privacy/curiosity-privacy.html#ca">Privacy</a></li>
+        <li>
+          <div class="lang-toggle-inline">
+            <button type="button" class="lang-btn active" data-lang-btn="en">EN</button>
+            <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+            <button type="button" class="lang-btn" data-lang-btn="ca">CA</button>
+          </div>
+        </li>
       </ul>
     </div>
   </header>
@@ -40,103 +53,111 @@
     <section class="app-hero container fade-in">
       <div class="app-hero-grid">
         <div class="app-hero-content">
-          <div class="app-badge app-badge-curiosity">Education &amp; Science</div>
+          <div class="app-badge app-badge-curiosity" data-en="Education &amp; Science" data-es="Educación y Ciencia" data-ca="Educació i Ciència">Education &amp; Science</div>
           <div class="demo-widget" id="demoWidget">
             <div id="fact-text">Loading discovery...</div>
           </div>
-          <h1 class="app-hero-title">Your daily dose of <span class="accent-curiosity">galactic wonder</span>.</h1>
-          <p class="app-hero-subtitle">Explore curious facts about science, history, and nature with an immersive interface inspired by the planets of the solar system.</p>
+          <h1 class="app-hero-title"><span data-en="Your daily dose of " data-es="Tu dosis diaria de " data-ca="La teva dosi diària de ">Your daily dose of </span><span class="accent-curiosity" data-en="galactic wonder" data-es="asombro galáctico" data-ca="meravella galàctica">galactic wonder</span>.</h1>
+          <p class="app-hero-subtitle" data-en="Explore curious facts about science, history, and nature with an immersive interface inspired by the planets of the solar system." data-es="Explora datos curiosos sobre ciencia, historia y naturaleza con una interfaz inspirada en los planetas del sistema solar." data-ca="Explora dades curioses sobre ciència, història i natura amb una interfície inspirada en els planetes del sistema solar.">Explore curious facts about science, history, and nature with an immersive interface inspired by the planets of the solar system.</p>
           <div class="app-hero-actions">
             <a href="https://apps.apple.com/es/app/curiosity/id6756880503" target="_blank" rel="noopener noreferrer" class="app-store-link">
-              <img src="../assets/curiosity/app-store-badge.svg" alt="Download on the App Store">
+              <img src="../assets/curiosity/app-store-badge.svg" alt="Download on the App Store"
+                   data-alt-en="Download on the App Store" data-alt-es="Consíguelo en el App Store" data-alt-ca="Baixa-ho de l'App Store">
             </a>
-            <a href="#support" class="btn btn-secondary">Get Support</a>
+            <a href="#support" class="btn btn-secondary" data-en="Get Support" data-es="Obtener Soporte" data-ca="Obtenir Suport">Get Support</a>
           </div>
         </div>
         <div class="app-hero-media">
-          <img src="../assets/curiosity/hero.png" alt="Curiosity App Preview" class="app-float-img">
+          <img src="../assets/curiosity/hero.png" alt="Curiosity App Preview" class="app-float-img"
+               data-alt-en="Curiosity App Preview" data-alt-es="Vista previa de Curiosity" data-alt-ca="Vista prèvia de Curiosity">
         </div>
       </div>
     </section>
 
     <!-- Features -->
     <section id="features" class="app-section container fade-in">
-      <h2 class="section-title">Everything you need to wonder</h2>
+      <h2 class="section-title" data-en="Everything you need to wonder" data-es="Todo lo que necesitas para maravillarte" data-ca="Tot el que necessites per meravellar-te">Everything you need to wonder</h2>
       <div class="features-grid features-grid-wide">
         <article class="feature-card feature-card-curiosity">
-          <h3>🎲 Endless Discovery</h3>
-          <p>Tap the main button to instantly receive a new fascinating discovery from the universe. Knowledge is infinite.</p>
+          <h3 data-en="🎲 Endless Discovery" data-es="🎲 Descubrimiento Infinito" data-ca="🎲 Descoberta Infinita">🎲 Endless Discovery</h3>
+          <p data-en="Tap the main button to instantly receive a new fascinating discovery from the universe. Knowledge is infinite." data-es="Toca el botón principal para recibir al instante un nuevo descubrimiento fascinante del universo. El saber no tiene límites." data-ca="Toca el botó principal per rebre a l'instant una nova descoberta fascinant de l'univers. El saber no té límits.">Tap the main button to instantly receive a new fascinating discovery from the universe. Knowledge is infinite.</p>
         </article>
         <article class="feature-card feature-card-curiosity">
-          <h3>🏷️ Pick a Category</h3>
-          <p>Long-press shuffle to filter by Science, History, Animals, Space, Technology or Sports — or leave it on All for total surprise.</p>
+          <h3 data-en="🏷️ Pick a Category" data-es="🏷️ Elige una Categoría" data-ca="🏷️ Tria una Categoria">🏷️ Pick a Category</h3>
+          <p data-en="Long-press shuffle to filter by Science, History, Animals, Space, Technology or Sports — or leave it on All for total surprise." data-es="Mantén pulsado el botón de mezclar para filtrar por Ciencia, Historia, Animales, Espacio, Tecnología o Deportes — o déjalo en Todas para máxima sorpresa." data-ca="Mantén premut el botó de barrejar per filtrar per Ciència, Història, Animals, Espai, Tecnologia o Esports — o deixa'l a Totes per a màxima sorpresa.">Long-press shuffle to filter by Science, History, Animals, Space, Technology or Sports — or leave it on All for total surprise.</p>
         </article>
         <article class="feature-card feature-card-curiosity">
-          <h3>🪐 11 Planetary Themes</h3>
-          <p>Dynamic themes from the Sun to Pluto, each with its own animated day/night cycle and minimalist iconography.</p>
+          <h3 data-en="🪐 11 Planetary Themes" data-es="🪐 11 Temas Planetarios" data-ca="🪐 11 Temes Planetaris">🪐 11 Planetary Themes</h3>
+          <p data-en="Dynamic themes from the Sun to Pluto, each with its own animated day/night cycle and minimalist iconography." data-es="Temas dinámicos desde el Sol hasta Plutón, cada uno con su propio ciclo animado de día/noche e iconografía minimalista." data-ca="Temes dinàmics des del Sol fins a Plutó, cadascun amb el seu propi cicle animat de dia/nit i iconografia minimalista.">Dynamic themes from the Sun to Pluto, each with its own animated day/night cycle and minimalist iconography.</p>
         </article>
         <article class="feature-card feature-card-curiosity">
-          <h3>🌐 Smart Translation</h3>
-          <p>Content automatically translated using Apple's technology. A globe icon appears when original text is available to toggle back.</p>
+          <h3 data-en="🌐 Smart Translation" data-es="🌐 Traducción Inteligente" data-ca="🌐 Traducció Intel·ligent">🌐 Smart Translation</h3>
+          <p data-en="Content automatically translated using Apple's technology. A globe icon appears when original text is available to toggle back." data-es="Contenido traducido automáticamente con tecnología de Apple. Aparecerá un globo si hay traducción para volver al texto original." data-ca="Contingut traduït automàticament amb tecnologia d'Apple. Apareixerà un globus si hi ha traducció per tornar al text original.">Content automatically translated using Apple's technology. A globe icon appears when original text is available to toggle back.</p>
         </article>
         <article class="feature-card feature-card-curiosity">
-          <h3>🔄 Smart History</h3>
-          <p>Curiosity tracks what you've seen, ensuring a fresh stream of new wonders every time you open the app.</p>
+          <h3 data-en="🔄 Smart History" data-es="🔄 Historial Inteligente" data-ca="🔄 Historial Intel·ligent">🔄 Smart History</h3>
+          <p data-en="Curiosity tracks what you've seen, ensuring a fresh stream of new wonders every time you open the app." data-es="Curiosity recuerda lo que ya has visto, asegurando un flujo constante de nuevas maravillas cada vez que abres la app." data-ca="Curiosity recorda el que ja has vist, assegurant un flux constant de noves meravelles cada vegada que obres l'app.">Curiosity tracks what you've seen, ensuring a fresh stream of new wonders every time you open the app.</p>
         </article>
         <article class="feature-card feature-card-curiosity">
-          <h3>⭐️ Your Library</h3>
-          <p>Long-press any fact to save it. Access your collected galactic wonders anytime, even offline.</p>
+          <h3 data-en="⭐️ Your Library" data-es="⭐️ Biblioteca Personal" data-ca="⭐️ La Teva Biblioteca">⭐️ Your Library</h3>
+          <p data-en="Long-press any fact to save it. Access your collected galactic wonders anytime, even offline." data-es="Mantén presionado cualquier dato para guardarlo. Accede a tus maravillas galácticas favoritas cuando quieras, incluso offline." data-ca="Mantén premuda qualsevol dada per desar-la. Accedeix a les teves meravelles galàctiques preferides quan vulguis, fins i tot offline.">Long-press any fact to save it. Access your collected galactic wonders anytime, even offline.</p>
         </article>
         <article class="feature-card feature-card-curiosity">
-          <h3>⚡ Fluid Experience</h3>
-          <p>Smart caching and a hybrid buffer for instant loading. Never wait for the universe to reveal its secrets.</p>
+          <h3 data-en="⚡ Fluid Experience" data-es="⚡ Experiencia Fluida" data-ca="⚡ Experiència Fluida">⚡ Fluid Experience</h3>
+          <p data-en="Smart caching and a hybrid buffer for instant loading. Never wait for the universe to reveal its secrets." data-es="Caché inteligente y buffer híbrido para una carga instantánea. No esperes nunca para que el universo revele sus secretos." data-ca="Memòria cau intel·ligent i buffer híbrid per a una càrrega instantània. No esperis mai perquè l'univers reveli els seus secrets.">Smart caching and a hybrid buffer for instant loading. Never wait for the universe to reveal its secrets.</p>
         </article>
         <article class="feature-card feature-card-curiosity">
-          <h3>📋 Tap to Copy</h3>
-          <p>Copy any discovery with a single tap to share the wonder with friends and family instantly.</p>
+          <h3 data-en="📋 Tap to Copy" data-es="📋 Toca para Copiar" data-ca="📋 Toca per Copiar">📋 Tap to Copy</h3>
+          <p data-en="Copy any discovery with a single tap to share the wonder with friends and family instantly." data-es="Copia cualquier descubrimiento con un solo toque para compartir el asombro con amigos y familiares al instante." data-ca="Copia qualsevol descoberta amb un sol toc per compartir la meravella amb amics i familiars a l'instant.">Copy any discovery with a single tap to share the wonder with friends and family instantly.</p>
         </article>
         <article class="feature-card feature-card-curiosity">
-          <h3>📲 Interactive Widget</h3>
-          <p>Bring the universe to your home screen with a widget that lets you shuffle facts and access favorites.</p>
+          <h3 data-en="📲 Interactive Widget" data-es="📲 Widget Interactivo" data-ca="📲 Widget Interactiu">📲 Interactive Widget</h3>
+          <p data-en="Bring the universe to your home screen with a widget that lets you shuffle facts and access favorites." data-es="Lleva el universo a tu pantalla de inicio con un widget que te permite mezclar datos y acceder a tus favoritos." data-ca="Porta l'univers a la teva pantalla d'inici amb un widget que et permet barrejar dades i accedir als teus preferits.">Bring the universe to your home screen with a widget that lets you shuffle facts and access favorites.</p>
         </article>
         <article class="feature-card feature-card-curiosity">
-          <h3>🖼️ Icon Gallery</h3>
-          <p>Personalize your home screen with 11 custom app icon variations to match your favorite planetary theme.</p>
+          <h3 data-en="🖼️ Icon Gallery" data-es="🖼️ Galería de Iconos" data-ca="🖼️ Galeria d'Icones">🖼️ Icon Gallery</h3>
+          <p data-en="Personalize your home screen with 11 custom app icon variations to match your favorite planetary theme." data-es="Personaliza tu pantalla de inicio con 11 variaciones de iconos de la app para que coincidan con tu planeta favorito." data-ca="Personalitza la teva pantalla d'inici amb 11 variacions d'icones de l'app perquè coincideixin amb el teu planeta preferit.">Personalize your home screen with 11 custom app icon variations to match your favorite planetary theme.</p>
         </article>
       </div>
     </section>
 
     <!-- FAQ -->
     <section id="faq" class="app-section container fade-in">
-      <h2 class="section-title">Frequently asked</h2>
+      <h2 class="section-title" data-en="Frequently asked" data-es="Preguntas frecuentes" data-ca="Preguntes freqüents">Frequently asked</h2>
       <div class="faq-list">
         <details>
-          <summary>How much does it cost?</summary>
-          <p>Nothing. Curiosity is free, with no ads, no in-app purchases and no subscription. You don't need to create an account either.</p>
+          <summary data-en="How much does it cost?" data-es="¿Cuánto cuesta?" data-ca="Quant costa?">How much does it cost?</summary>
+          <p data-en="Nothing. Curiosity is free, with no ads, no in-app purchases and no subscription. You don't need to create an account either." data-es="Nada. Curiosity es gratis, sin anuncios, sin compras dentro de la app y sin suscripción. Tampoco hace falta crear ninguna cuenta." data-ca="Res. Curiosity és gratuïta, sense anuncis, sense compres dins l'app i sense subscripció. Tampoc cal crear cap compte.">Nothing. Curiosity is free, with no ads, no in-app purchases and no subscription. You don't need to create an account either.</p>
         </details>
         <details>
-          <summary>What do I need to run it?</summary>
-          <p>An iPhone with iOS 15 or later. The interactive widget and native translation get better on newer versions, but the app works on all of them.</p>
+          <summary data-en="What do I need to run it?" data-es="¿Qué necesito para usarla?" data-ca="Què necessito per fer-la servir?">What do I need to run it?</summary>
+          <p data-en="An iPhone with iOS 15 or later. The interactive widget and native translation get better on newer versions, but the app works on all of them." data-es="Un iPhone con iOS 15 o posterior. El widget interactivo y la traducción nativa mejoran en versiones más recientes, pero la app funciona en todas." data-ca="Un iPhone amb iOS 15 o posterior. El widget interactiu i la traducció nativa milloren en versions més recents, però l'app funciona en totes.">An iPhone with iOS 15 or later. The interactive widget and native translation get better on newer versions, but the app works on all of them.</p>
         </details>
         <details>
-          <summary>Does it work without internet?</summary>
-          <p>Yes. Curiosity keeps a local stash of facts and preloads the next ones in the background, so you can keep discovering on a plane or in the underground. Your saved favourites are always available.</p>
+          <summary data-en="Does it work without internet?" data-es="¿Funciona sin internet?" data-ca="Funciona sense internet?">Does it work without internet?</summary>
+          <p data-en="Yes. Curiosity keeps a local stash of facts and preloads the next ones in the background, so you can keep discovering on a plane or in the underground. Your saved favourites are always available." data-es="Sí. Curiosity guarda datos en local y precarga los siguientes en segundo plano, así que puedes seguir descubriendo en un avión o en el metro. Tus favoritos están siempre disponibles." data-ca="Sí. Curiosity desa dades en local i precarrega les següents en segon pla, així que pots continuar descobrint en un avió o al metro. Els teus preferits sempre són disponibles.">Yes. Curiosity keeps a local stash of facts and preloads the next ones in the background, so you can keep discovering on a plane or in the underground. Your saved favourites are always available.</p>
         </details>
         <details>
-          <summary>What languages does it speak?</summary>
-          <p>The interface is available in English, Spanish and Catalan, and follows your device language. Facts are published in English and translated on the fly — tap the globe icon to read the original at any time.</p>
+          <summary data-en="What languages does it speak?" data-es="¿En qué idiomas está?" data-ca="En quins idiomes està?">What languages does it speak?</summary>
+          <p data-en="The interface is available in English, Spanish and Catalan, and follows your device language. Facts are published in English and translated on the fly — tap the globe icon to read the original at any time." data-es="La interfaz está en español, inglés y catalán, y sigue el idioma de tu dispositivo. Los datos se publican en inglés y se traducen al vuelo: toca el icono del globo para leer el original cuando quieras." data-ca="La interfície és en català, castellà i anglès, i segueix l'idioma del teu dispositiu. Les dades es publiquen en anglès i es tradueixen sobre la marxa: toca la icona del globus per llegir l'original quan vulguis.">The interface is available in English, Spanish and Catalan, and follows your device language. Facts are published in English and translated on the fly — tap the globe icon to read the original at any time.</p>
         </details>
         <details>
-          <summary>Where do the facts come from?</summary>
-          <p>From public science and trivia databases, plus a hand-picked collection bundled with the app. Each fact shows its source, and the app remembers what you have already seen so it doesn't repeat itself.</p>
+          <summary data-en="Where do the facts come from?" data-es="¿De dónde salen los datos curiosos?" data-ca="D'on surten les dades curioses?">Where do the facts come from?</summary>
+          <p data-en="From public science and trivia databases, plus a hand-picked collection bundled with the app. Each fact shows its source, and the app remembers what you have already seen so it doesn't repeat itself." data-es="De bases de datos públicas de ciencia y curiosidades, más una colección escogida a mano que viaja dentro de la app. Cada dato muestra su fuente, y la app recuerda los que ya has visto para no repetirse." data-ca="De bases de dades públiques de ciència i curiositats, més una col·lecció triada a mà que viatja dins l'app. Cada dada mostra la seva font, i l'app recorda les que ja has vist per no repetir-se.">From public science and trivia databases, plus a hand-picked collection bundled with the app. Each fact shows its source, and the app remembers what you have already seen so it doesn't repeat itself.</p>
         </details>
         <details>
-          <summary>Can I change the app icon?</summary>
-          <p>Yes. There are 11 icons, one per planetary theme. You can pick one manually or let it follow whichever theme you are using.</p>
+          <summary data-en="Can I change the app icon?" data-es="¿Puedo cambiar el icono de la app?" data-ca="Puc canviar la icona de l'app?">Can I change the app icon?</summary>
+          <p data-en="Yes. There are 11 icons, one per planetary theme. You can pick one manually or let it follow whichever theme you are using." data-es="Sí. Hay 11 iconos, uno por tema planetario. Puedes elegirlo a mano o dejar que siga al tema que estés usando." data-ca="Sí. Hi ha 11 icones, una per tema planetari. Pots triar-la a mà o deixar que segueixi el tema que estiguis fent servir.">Yes. There are 11 icons, one per planetary theme. You can pick one manually or let it follow whichever theme you are using.</p>
         </details>
         <details>
-          <summary>Does it collect my data?</summary>
-          <p>No. There is no tracking, no analytics and no account. Your favourites and preferences never leave your iPhone. See the <a href="../privacy/curiosity-privacy.html">Privacy Policy</a>.</p>
+          <summary data-en="Does it collect my data?" data-es="¿Recopila mis datos?" data-ca="Recull les meves dades?">Does it collect my data?</summary>
+          <p>
+            <span data-en="No. There is no tracking, no analytics and no account. Your favourites and preferences never leave your iPhone. See the " data-es="No. No hay rastreo, ni analítica, ni cuenta. Tus favoritos y preferencias no salen de tu iPhone. Consulta la " data-ca="No. No hi ha seguiment, ni analítica, ni compte. Els teus preferits i preferències no surten del teu iPhone. Consulta la ">No. There is no tracking, no analytics and no account. Your favourites and preferences never leave your iPhone. See the </span><a href="../privacy/curiosity-privacy.html"
+               data-en="Privacy Policy" data-es="Política de Privacidad" data-ca="Política de Privadesa"
+               data-href-en="../privacy/curiosity-privacy.html"
+               data-href-es="../privacy/curiosity-privacy.html#es"
+               data-href-ca="../privacy/curiosity-privacy.html#ca">Privacy Policy</a>.
+          </p>
         </details>
       </div>
     </section>
@@ -144,13 +165,16 @@
     <!-- Support -->
     <section id="support" class="app-section container fade-in">
       <div class="support-panel">
-        <h2 class="section-title">Need help?</h2>
-        <p class="support-lead">If you have issues with the app, want to report a bug, or simply have a suggestion, we're here to listen.</p>
-        <a href="mailto:thewhiteriggs@gmail.com?subject=Curiosity App Support" class="btn btn-primary btn-large">
+        <h2 class="section-title" data-en="Need help?" data-es="¿Necesitas ayuda?" data-ca="Necessites ajuda?">Need help?</h2>
+        <p class="support-lead" data-en="If you have issues with the app, want to report a bug, or simply have a suggestion, we're here to listen." data-es="Si tienes problemas con la aplicación, quieres reportar un error o simplemente tienes una sugerencia, estamos aquí para escucharte." data-ca="Si tens problemes amb l'aplicació, vols informar d'un error o simplement tens un suggeriment, som aquí per escoltar-te.">If you have issues with the app, want to report a bug, or simply have a suggestion, we're here to listen.</p>
+        <a href="mailto:thewhiteriggs@gmail.com?subject=Curiosity App Support" class="btn btn-primary btn-large"
+           data-href-en="mailto:thewhiteriggs@gmail.com?subject=Curiosity App Support"
+           data-href-es="mailto:thewhiteriggs@gmail.com?subject=Soporte Curiosity App"
+           data-href-ca="mailto:thewhiteriggs@gmail.com?subject=Suport Curiosity App">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>Contact Support</span>
+          <span data-en="Contact Support" data-es="Contactar Soporte" data-ca="Contactar amb Suport">Contact Support</span>
         </a>
-        <p class="support-note">We usually respond in less than 24 hours.</p>
+        <p class="support-note" data-en="We usually respond in less than 24 hours." data-es="Generalmente respondemos en menos de 24 horas." data-ca="Normalment responem en menys de 24 hores.">We usually respond in less than 24 hours.</p>
       </div>
     </section>
   </main>
@@ -158,61 +182,147 @@
   <!-- Shared Footer -->
   <footer>
     <div class="container footer-content">
-      <div>&copy; 2026 The White Riggs. All rights reserved.</div>
+      <div data-en="© 2026 The White Riggs. All rights reserved." data-es="© 2026 The White Riggs. Todos los derechos reservados." data-ca="© 2026 The White Riggs. Tots els drets reservats.">&copy; 2026 The White Riggs. All rights reserved.</div>
       <ul class="footer-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../privacy/curiosity-privacy.html">Privacy Policy</a></li>
-        <li><a href="curiosity-es.html">Español</a></li>
-        <li><a href="curiosity-ca.html">Català</a></li>
+        <li><a href="../index.html" data-en="Home" data-es="Inicio" data-ca="Inici">Home</a></li>
+        <li><a href="../privacy/curiosity-privacy.html"
+               data-en="Privacy Policy" data-es="Política de Privacidad" data-ca="Política de Privacitat"
+               data-href-en="../privacy/curiosity-privacy.html"
+               data-href-es="../privacy/curiosity-privacy.html#es"
+               data-href-ca="../privacy/curiosity-privacy.html#ca">Privacy Policy</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="../script.js?v=5"></script>
+  <script src="../script.js?v=6"></script>
   <script>
-    /* Curiosity-specific facts widget */
-    (function(){
-      var FACTS=[
-        "A day on Venus is longer than a year on Venus.",
-        "Apples float because they are 25% air.",
-        "Honey never spoils. Archaeologists have found edible honey in ancient Egyptian tombs.",
-        "A shrimp's heart is in its head.",
-        "Snails can sleep for up to three years.",
-        "Footprints on the Moon will stay there for millions of years.",
-        "The sun makes up 99.86% of the mass in the solar system.",
-        "Bananas are berries, but strawberries aren't.",
-        "Octopuses have three hearts and blue blood.",
-        "A cloud can weigh more than a million pounds.",
-        "Wombat poop is cube-shaped to prevent it from rolling away.",
-        "The total weight of all ants on Earth is roughly equal to all humans.",
-        "The tongue of a blue whale weighs as much as an elephant.",
-        "Saturn could float on water because it's mostly gas.",
-        "Venus is the hottest planet, even though Mercury is closer to the sun.",
-        "Cows have 'best friends' and get stressed when separated.",
-        "Human teeth are as strong as shark teeth.",
-        "A bolt of lightning is five times hotter than the sun's surface.",
-        "Butterflies taste with their feet.",
-        "Polar bears have black skin and clear fur.",
-        "The Earth's core is as hot as the surface of the sun.",
-        "Sloths can take up to a month to digest a single meal.",
-        "Koalas have unique fingerprints, much like humans.",
-        "Sea otters hold hands while sleeping to stay together.",
-        "The Eiffel Tower can be 15 cm taller during the summer.",
-        "A teaspoon of a neutron star would weigh 6 billion tons."
-      ];
-      var txt=document.getElementById('fact-text');
-      var idx=Math.floor(Math.random()*FACTS.length);
-      if(txt){
-        txt.textContent=FACTS[idx];
-        setInterval(function(){
-          txt.classList.add('fade-out');
-          setTimeout(function(){
-            var nxt;
-            do{ nxt=Math.floor(Math.random()*FACTS.length); }while(nxt===idx);
-            idx=nxt;txt.textContent=FACTS[idx];txt.classList.remove('fade-out');
-          },500);
-        },5000);
+    (function () {
+      var FACTS = {
+        en: [
+          "A day on Venus is longer than a year on Venus.",
+          "Apples float because they are 25% air.",
+          "Honey never spoils. Archaeologists have found edible honey in ancient Egyptian tombs.",
+          "A shrimp's heart is in its head.",
+          "Snails can sleep for up to three years.",
+          "Footprints on the Moon will stay there for millions of years.",
+          "The sun makes up 99.86% of the mass in the solar system.",
+          "Bananas are berries, but strawberries aren't.",
+          "Octopuses have three hearts and blue blood.",
+          "A cloud can weigh more than a million pounds.",
+          "Wombat poop is cube-shaped to prevent it from rolling away.",
+          "The total weight of all ants on Earth is roughly equal to all humans.",
+          "The tongue of a blue whale weighs as much as an elephant.",
+          "Saturn could float on water because it's mostly gas.",
+          "Venus is the hottest planet, even though Mercury is closer to the sun.",
+          "Cows have 'best friends' and get stressed when separated.",
+          "Human teeth are as strong as shark teeth.",
+          "A bolt of lightning is five times hotter than the sun's surface.",
+          "Butterflies taste with their feet.",
+          "Polar bears have black skin and clear fur.",
+          "The Earth's core is as hot as the surface of the sun.",
+          "Sloths can take up to a month to digest a single meal.",
+          "Koalas have unique fingerprints, much like humans.",
+          "Sea otters hold hands while sleeping to stay together.",
+          "The Eiffel Tower can be 15 cm taller during the summer.",
+          "A teaspoon of a neutron star would weigh 6 billion tons."
+        ],
+        es: [
+          "Un día en Venus dura más que un año en Venus.",
+          "Las manzanas flotan porque tienen un 25% de aire.",
+          "La miel nunca se echa a perder. Se ha encontrado miel comestible en tumbas egipcias.",
+          "El corazón de un camarón está en su cabeza.",
+          "Los caracoles pueden dormir hasta tres años.",
+          "Las huellas en la Luna durarán millones de años.",
+          "El Sol representa el 99,86% de la masa del sistema solar.",
+          "Los plátanos son bayas, pero las fresas no.",
+          "Los pulpos tienen tres corazones y sangre azul.",
+          "Una nube puede pesar más de 500 toneladas.",
+          "La caca de los wombats es cúbica para que no ruede.",
+          "El peso total de todas las hormigas es igual al de todos los humanos.",
+          "La lengua de una ballena azul pesa tanto como un elefante.",
+          "Saturno flotaría en el agua porque es principalmente gas.",
+          "Venus es el planeta más caliente, aunque Mercurio esté más cerca del Sol.",
+          "Las vacas tienen 'mejores amigas' y se estresan si se separan.",
+          "Los dientes humanos son tan fuertes como los de un tiburón.",
+          "Un rayo es cinco veces más caliente que la superficie del Sol.",
+          "Las mariposas saborean con los pies.",
+          "Los osos polares tienen la piel negra y el pelaje transparente.",
+          "El núcleo de la Tierra es tan caliente como la superficie del Sol.",
+          "Los perezosos pueden tardar un mes en digerir una sola comida.",
+          "Los koalas tienen huellas dactilares únicas, como los humanos.",
+          "Las nutrias marinas se dan la mano al dormir para no separarse.",
+          "La Torre Eiffel puede medir 15 cm más en verano.",
+          "Una cucharada de una estrella de neutrones pesaría 6.000 millones de toneladas."
+        ],
+        ca: [
+          "Un dia a Venus dura més que un any a Venus.",
+          "Les pomes suren perquè contenen un 25% d'aire.",
+          "La mel no es fa malbé mai. S'ha trobat mel comestible en tombes egípcies.",
+          "El cor d'una gamba és al seu cap.",
+          "Els cargols poden dormir fins a tres anys.",
+          "Les petjades a la Lluna duraran milions d'anys.",
+          "El Sol representa el 99,86% de la massa del sistema solar.",
+          "Els plàtans són baies, però les maduixes no.",
+          "Els pops tenen tres cors i sang blava.",
+          "Un núvol pot pesar més de 500 tones.",
+          "La caca dels uombats és cúbica perquè no rodi.",
+          "El pes total de totes les formigues és igual al de tots els humans.",
+          "La llengua d'una balena blava pesa tant com un elefant.",
+          "Saturn suraria a l'aigua perquè és principalment gas.",
+          "Venus és el planeta més calent, encara que Mercuri estigui més a prop del Sol.",
+          "Les vaques tenen 'millors amigues' i s'estressen si se separen.",
+          "Les dents humanes són tan fortes com les d'un tauró.",
+          "Un llamp és cinc vegades més calent que la superfície del Sol.",
+          "Les papallones tasten amb els peus.",
+          "Els óssos polars tenen la pell negra i el pelatge transparent.",
+          "El nucli de la Terra és tan calent com la superfície del Sol.",
+          "Els peresosos poden trigar un mes a digerir un sol àpat.",
+          "Els coales tenen empremtes dactilars úniques, com els humans.",
+          "Les llúdrigues marines s'agafen de les mans en dormir per no separar-se.",
+          "La Torre Eiffel pot ser 15 cm més alta durant l'estiu.",
+          "Una cullerada d'una estrella de neutrons pesaria 6.000 milions de tones."
+        ]
+      };
+
+      var txt = document.getElementById('fact-text');
+      var lang = 'en';
+      var idx = 0;
+
+      function show(next) {
+        var pool = FACTS[lang] || FACTS.en;
+        idx = next % pool.length;
+        txt.textContent = pool[idx];
       }
+
+      if (txt) {
+        show(Math.floor(Math.random() * FACTS.en.length));
+        setInterval(function () {
+          txt.classList.add('fade-out');
+          setTimeout(function () {
+            var pool = FACTS[lang] || FACTS.en;
+            var nxt;
+            do { nxt = Math.floor(Math.random() * pool.length); } while (nxt === idx);
+            show(nxt);
+            txt.classList.remove('fade-out');
+          }, 500);
+        }, 5000);
+      }
+
+      initLangSwitcher({
+        langs: ['en', 'es', 'ca'],
+        fallback: 'en',
+        storageKey: 'curiosity-lang',
+        titles: {
+          en: 'Curiosity — Support & Features',
+          es: 'Curiosity — Soporte y Características',
+          ca: 'Curiosity — Suport i Característiques'
+        },
+        // Reescribe el dato visible para que no se quede en el idioma anterior.
+        onChange: function (next) {
+          lang = next;
+          if (txt) show(idx);
+        }
+      });
     })();
   </script>
 </body>

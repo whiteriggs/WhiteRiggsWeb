@@ -885,6 +885,21 @@ footer {
   box-shadow: 0 4px 12px rgba(255,184,77,0.4);
 }
 
+/* Variante oscura del conmutador de idioma (Curiosity) */
+.body-curiosity .lang-toggle-inline {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: none;
+  margin-left: 6px;
+}
+.body-curiosity .lang-btn { color: var(--text-secondary); }
+.body-curiosity .lang-btn:hover { color: #fff; }
+.body-curiosity .lang-btn.active {
+  background: rgba(41,151,255,0.9);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(41,151,255,0.35);
+}
+
 /* Hero GetMeOut */
 .gmo-main { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 .gmo-hero {
@@ -1644,6 +1659,20 @@ footer {
   .header-wyrms .nav-links { gap: 16px; }
   .lang-toggle-inline { margin-left: 0; }
   .nav-links { gap: 18px; }
+}
+
+/* Con pantallas estrechas la barra desbordaba y escondia el selector de idioma */
+@media (max-width: 700px) {
+  .nav-container {
+    height: auto;
+    min-height: 64px;
+    padding: 10px 16px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    justify-content: center;
+  }
+  .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px; row-gap: 8px; }
+  .brand-title { font-size: 16px; }
 }
 
 @media (max-width: 480px) {

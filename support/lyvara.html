@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=6">
+  <link rel="stylesheet" href="../styles.css?v=7">
   <link rel="stylesheet" href="lyvara.css?v=1">
 </head>
 <body class="body-app body-lyvara">
@@ -30,8 +30,8 @@
         <li><a href="#privacy" data-es="Privacidad" data-en="Privacy">Privacy</a></li>
         <li>
           <div class="lang-toggle-inline">
-            <button id="lyv-es" class="lang-btn active" onclick="setLYV('es')">ES</button>
-            <button id="lyv-en" class="lang-btn" onclick="setLYV('en')">EN</button>
+            <button type="button" class="lang-btn active" data-lang-btn="es">ES</button>
+            <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
           </div>
         </li>
       </ul>
@@ -130,6 +130,10 @@
       </div>
 
       <details>
+        <summary data-es="¿Cuánto cuesta?" data-en="How much does it cost?">How much does it cost?</summary>
+        <p data-es="Nada. LYVARA es gratis, sin anuncios, sin compras dentro de la app y sin suscripción. Tampoco hace falta crear ninguna cuenta." data-en="Nothing. LYVARA is free, with no ads, no in-app purchases and no subscription. There is no account to create either.">Nothing. LYVARA is free, with no ads, no in-app purchases and no subscription. There is no account to create either.</p>
+      </details>
+      <details>
         <summary data-es="¿Necesito conectar mi banco?" data-en="Do I need to connect my bank?">Do I need to connect my bank?</summary>
         <p data-es="No. LYVARA no se conecta a ninguna entidad ni pide credenciales bancarias. Los datos los introduces tú." data-en="No. LYVARA does not connect to any bank and never asks for banking credentials. You enter your data yourself.">No. LYVARA does not connect to any bank and never asks for banking credentials. You enter your data yourself.</p>
       </details>
@@ -196,23 +200,17 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=5"></script>
+  <script src="../script.js?v=6"></script>
   <script>
-    function setLYV(lang) {
-      document.documentElement.lang = lang;
-      try { localStorage.setItem('lyvara-lang', lang); } catch (e) {}
-      document.querySelectorAll('[data-es]').forEach(function (el) {
-        el.textContent = el.getAttribute('data-' + lang);
-      });
-      var es = document.getElementById('lyv-es'), en = document.getElementById('lyv-en');
-      if (es) es.classList.toggle('active', lang === 'es');
-      if (en) en.classList.toggle('active', lang === 'en');
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-      var saved = null;
-      try { saved = localStorage.getItem('lyvara-lang'); } catch (e) {}
-      var browser = (navigator.language || 'en').slice(0, 2) === 'es' ? 'es' : 'en';
-      setLYV(saved || browser);
+    initLangSwitcher({
+      langs: ['es', 'en'],
+      probe: 'en',
+      fallback: 'en',
+      storageKey: 'lyvara-lang',
+      titles: {
+        es: 'LYVARA — Soporte y Privacidad',
+        en: 'LYVARA — Support & Privacy'
+      }
     });
   </script>
 </body>
