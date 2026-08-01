@@ -1,0 +1,2622 @@
+{
+ "municipalities": {
+  "a coruna|a coruna": {
+   "name": "Coruña (A)",
+   "new": 3015,
+   "old": 2750,
+   "total": 2759
+  },
+  "a coruna|arteixo": {
+   "name": "Arteixo",
+   "old": 1700,
+   "total": 1699
+  },
+  "a coruna|carballo": {
+   "name": "Carballo",
+   "old": 989,
+   "total": 994
+  },
+  "a coruna|coruna": {
+   "name": "Coruña (A)",
+   "new": 3015,
+   "old": 2750,
+   "total": 2759
+  },
+  "a coruna|culleredo": {
+   "name": "Culleredo",
+   "old": 1968,
+   "total": 1968
+  },
+  "a coruna|ferrol": {
+   "name": "Ferrol",
+   "old": 1129,
+   "total": 1133
+  },
+  "a coruna|la coruna": {
+   "name": "Coruña (A)",
+   "new": 3015,
+   "old": 2750,
+   "total": 2759
+  },
+  "a coruna|naron": {
+   "name": "Narón",
+   "old": 1113,
+   "total": 1114
+  },
+  "a coruna|oleiros": {
+   "name": "Oleiros",
+   "new": 2196,
+   "old": 2103,
+   "total": 2108
+  },
+  "a coruna|ribeira": {
+   "name": "Ribeira",
+   "old": 1402,
+   "total": 1398
+  },
+  "a coruna|santiago de compostela": {
+   "name": "Santiago de Compostela",
+   "old": 2361,
+   "total": 2365
+  },
+  "alava|vitoria": {
+   "name": "Vitoria",
+   "new": 3037,
+   "old": 2676,
+   "total": 2700
+  },
+  "albacete|albacete": {
+   "name": "Albacete",
+   "new": 2199,
+   "old": 1748,
+   "total": 1762
+  },
+  "albacete|almansa": {
+   "name": "Almansa",
+   "old": 802,
+   "total": 802
+  },
+  "albacete|hellin": {
+   "name": "Hellín",
+   "old": 684,
+   "total": 685
+  },
+  "albacete|villarrobledo": {
+   "name": "Villarrobledo",
+   "old": 631,
+   "total": 632
+  },
+  "alicante|alacant": {
+   "name": "Alicante/Alacant",
+   "new": 2867,
+   "old": 2251,
+   "total": 2265
+  },
+  "alicante|alcoi": {
+   "name": "Alcoy/Alcoi",
+   "old": 1041,
+   "total": 1041
+  },
+  "alicante|alcoy": {
+   "name": "Alcoy/Alcoi",
+   "old": 1041,
+   "total": 1041
+  },
+  "alicante|alcoy alcoi": {
+   "name": "Alcoy/Alcoi",
+   "old": 1041,
+   "total": 1041
+  },
+  "alicante|alicante": {
+   "name": "Alicante/Alacant",
+   "new": 2867,
+   "old": 2251,
+   "total": 2265
+  },
+  "alicante|alicante alacant": {
+   "name": "Alicante/Alacant",
+   "new": 2867,
+   "old": 2251,
+   "total": 2265
+  },
+  "alicante|almassora": {
+   "name": "Almazora/Almassora",
+   "old": 1223,
+   "total": 1223
+  },
+  "alicante|almazora": {
+   "name": "Almazora/Almassora",
+   "old": 1223,
+   "total": 1223
+  },
+  "alicante|almazora almassora": {
+   "name": "Almazora/Almassora",
+   "old": 1223,
+   "total": 1223
+  },
+  "alicante|benicarlo": {
+   "name": "Benicarló",
+   "old": 1268,
+   "total": 1268
+  },
+  "alicante|benidorm": {
+   "name": "Benidorm",
+   "old": 3079,
+   "total": 3089
+  },
+  "alicante|calp": {
+   "name": "Calpe/Calp",
+   "old": 3004,
+   "total": 3001
+  },
+  "alicante|calpe": {
+   "name": "Calpe/Calp",
+   "old": 3004,
+   "total": 3001
+  },
+  "alicante|calpe calp": {
+   "name": "Calpe/Calp",
+   "old": 3004,
+   "total": 3001
+  },
+  "alicante|crevillent": {
+   "name": "Crevillent",
+   "old": 1019,
+   "total": 1020
+  },
+  "alicante|denia": {
+   "name": "Dénia",
+   "new": 3380,
+   "old": 2826,
+   "total": 2842
+  },
+  "alicante|el campello": {
+   "name": "Campello, el",
+   "old": 2906,
+   "total": 2909
+  },
+  "alicante|elche": {
+   "name": "Elche/Elx",
+   "new": 2009,
+   "old": 1677,
+   "total": 1684
+  },
+  "alicante|elche elx": {
+   "name": "Elche/Elx",
+   "new": 2009,
+   "old": 1677,
+   "total": 1684
+  },
+  "alicante|elda": {
+   "name": "Elda",
+   "new": 1146,
+   "old": 979,
+   "total": 980
+  },
+  "alicante|elx": {
+   "name": "Elche/Elx",
+   "new": 2009,
+   "old": 1677,
+   "total": 1684
+  },
+  "alicante|javea": {
+   "name": "Jávea/Xábia",
+   "new": 4033,
+   "old": 3671,
+   "total": 3685
+  },
+  "alicante|javea xabia": {
+   "name": "Jávea/Xábia",
+   "new": 4033,
+   "old": 3671,
+   "total": 3685
+  },
+  "alicante|la vila joiosa": {
+   "name": "Villajoyosa/Vila Joiosa (La)",
+   "old": 2232,
+   "total": 2237
+  },
+  "alicante|la villajoyosa vila joiosa": {
+   "name": "Villajoyosa/Vila Joiosa (La)",
+   "old": 2232,
+   "total": 2237
+  },
+  "alicante|novelda": {
+   "name": "Novelda",
+   "old": 988,
+   "total": 988
+  },
+  "alicante|orihuela": {
+   "name": "Orihuela",
+   "new": 2815,
+   "old": 2124,
+   "total": 2166
+  },
+  "alicante|petrer": {
+   "name": "Petrer",
+   "old": 1112,
+   "total": 1114
+  },
+  "alicante|san vicente del raspeig": {
+   "name": "San Vicente del Raspeig",
+   "old": 1987,
+   "total": 1987
+  },
+  "alicante|santa pola": {
+   "name": "Santa Pola",
+   "new": 2566,
+   "old": 2486,
+   "total": 2489
+  },
+  "alicante|torrevieja": {
+   "name": "Torrevieja",
+   "new": 2711,
+   "old": 2169,
+   "total": 2182
+  },
+  "alicante|vila joiosa": {
+   "name": "Villajoyosa/Vila Joiosa (La)",
+   "old": 2232,
+   "total": 2237
+  },
+  "alicante|villajoyosa": {
+   "name": "Villajoyosa/Vila Joiosa (La)",
+   "old": 2232,
+   "total": 2237
+  },
+  "alicante|villajoyosa vila joiosa": {
+   "name": "Villajoyosa/Vila Joiosa (La)",
+   "old": 2232,
+   "total": 2237
+  },
+  "alicante|villena": {
+   "name": "Villena",
+   "old": 910,
+   "total": 910
+  },
+  "alicante|xabia": {
+   "name": "Jávea/Xábia",
+   "new": 4033,
+   "old": 3671,
+   "total": 3685
+  },
+  "almeria|almeria": {
+   "name": "Almería",
+   "new": 2087,
+   "old": 1657,
+   "total": 1675
+  },
+  "almeria|ejido": {
+   "name": "Ejido (El)",
+   "new": 1678,
+   "old": 1204,
+   "total": 1216
+  },
+  "almeria|el ejido": {
+   "name": "Ejido (El)",
+   "new": 1678,
+   "old": 1204,
+   "total": 1216
+  },
+  "almeria|nijar": {
+   "name": "Nijar",
+   "old": 1174,
+   "total": 1182
+  },
+  "almeria|roquetas de mar": {
+   "name": "Roquetas de Mar",
+   "new": 1874,
+   "old": 1696,
+   "total": 1698
+  },
+  "araba alava|vitoria": {
+   "name": "Vitoria",
+   "new": 3037,
+   "old": 2676,
+   "total": 2700
+  },
+  "araba|vitoria": {
+   "name": "Vitoria",
+   "new": 3037,
+   "old": 2676,
+   "total": 2700
+  },
+  "asturias|aviles": {
+   "name": "Avilés",
+   "old": 1530,
+   "total": 1531
+  },
+  "asturias|gijon": {
+   "name": "Gijón",
+   "new": 2400,
+   "old": 2340,
+   "total": 2342
+  },
+  "asturias|langreo": {
+   "name": "Langreo",
+   "old": 938,
+   "total": 939
+  },
+  "asturias|mieres": {
+   "name": "Mieres",
+   "old": 1026,
+   "total": 1026
+  },
+  "asturias|oviedo": {
+   "name": "Oviedo",
+   "new": 2326,
+   "old": 2076,
+   "total": 2082
+  },
+  "asturias|siero": {
+   "name": "Siero",
+   "new": 1756,
+   "old": 1440,
+   "total": 1453
+  },
+  "avila|avila": {
+   "name": "Ávila",
+   "old": 1606,
+   "total": 1605
+  },
+  "badajoz|almendralejo": {
+   "name": "Almendralejo",
+   "old": 941,
+   "total": 940
+  },
+  "badajoz|badajoz": {
+   "name": "Badajoz",
+   "new": 1969,
+   "old": 1511,
+   "total": 1527
+  },
+  "badajoz|don benito": {
+   "name": "Don Benito",
+   "old": 975,
+   "total": 980
+  },
+  "badajoz|merida": {
+   "name": "Mérida",
+   "old": 1095,
+   "total": 1096
+  },
+  "badajoz|villanueva de la serena": {
+   "name": "Villanueva de la Serena",
+   "old": 808,
+   "total": 810
+  },
+  "barcelona|badalona": {
+   "name": "Badalona",
+   "new": 3577,
+   "old": 2861,
+   "total": 2899
+  },
+  "barcelona|barbera del valles": {
+   "name": "Barberà del Vallès",
+   "old": 2586,
+   "total": 2585
+  },
+  "barcelona|barcelona": {
+   "name": "Barcelona",
+   "new": 5150,
+   "old": 4675,
+   "total": 4682
+  },
+  "barcelona|castelldefels": {
+   "name": "Castelldefels",
+   "old": 4297,
+   "total": 4302
+  },
+  "barcelona|cerdanyola del valles": {
+   "name": "Cerdanyola del Vallès",
+   "old": 2919,
+   "total": 2922
+  },
+  "barcelona|cornella de llobregat": {
+   "name": "Cornellà de Llobregat",
+   "old": 3055,
+   "total": 3065
+  },
+  "barcelona|el prat de llobregat": {
+   "name": "Prat de Llobregat (El)",
+   "old": 3045,
+   "total": 3052
+  },
+  "barcelona|esplugues de llobregat": {
+   "name": "Esplugues de Llobregat",
+   "new": 4290,
+   "old": 3627,
+   "total": 3653
+  },
+  "barcelona|gava": {
+   "name": "Gavà",
+   "new": 3564,
+   "old": 3388,
+   "total": 3392
+  },
+  "barcelona|granollers": {
+   "name": "Granollers",
+   "new": 2663,
+   "old": 2526,
+   "total": 2533
+  },
+  "barcelona|hospitalet de llobregat": {
+   "name": "Hospitalet de Llobregat (L')",
+   "new": 3272,
+   "old": 3058,
+   "total": 3065
+  },
+  "barcelona|igualada": {
+   "name": "Igualada",
+   "old": 1856,
+   "total": 1854
+  },
+  "barcelona|l hospitalet de llobregat": {
+   "name": "Hospitalet de Llobregat (L')",
+   "new": 3272,
+   "old": 3058,
+   "total": 3065
+  },
+  "barcelona|manresa": {
+   "name": "Manresa",
+   "old": 1552,
+   "total": 1554
+  },
+  "barcelona|martorell": {
+   "name": "Martorell",
+   "old": 2024,
+   "total": 2027
+  },
+  "barcelona|mataro": {
+   "name": "Mataró",
+   "new": 3637,
+   "old": 2505,
+   "total": 2549
+  },
+  "barcelona|mollet del valles": {
+   "name": "Mollet del Vallès",
+   "old": 2452,
+   "total": 2454
+  },
+  "barcelona|montcada i reixac": {
+   "name": "Montcada i Reixac",
+   "old": 2310,
+   "total": 2312
+  },
+  "barcelona|pineda de mar": {
+   "name": "Pineda de Mar",
+   "old": 2261,
+   "total": 2258
+  },
+  "barcelona|prat de llobregat": {
+   "name": "Prat de Llobregat (El)",
+   "old": 3045,
+   "total": 3052
+  },
+  "barcelona|premia de mar": {
+   "name": "Premià de Mar",
+   "old": 2920,
+   "total": 2920
+  },
+  "barcelona|ripollet": {
+   "name": "Ripollet",
+   "old": 2480,
+   "total": 2481
+  },
+  "barcelona|rubi": {
+   "name": "Rubí",
+   "new": 2750,
+   "old": 2451,
+   "total": 2458
+  },
+  "barcelona|sabadell": {
+   "name": "Sabadell",
+   "new": 3021,
+   "old": 2421,
+   "total": 2446
+  },
+  "barcelona|sant adria de besos": {
+   "name": "Sant Adrià de Besòs",
+   "new": 3436,
+   "old": 2865,
+   "total": 2895
+  },
+  "barcelona|sant andreu de la barca": {
+   "name": "Sant Andreu de la Barca",
+   "old": 2641,
+   "total": 2642
+  },
+  "barcelona|sant boi de llobregat": {
+   "name": "Sant Boi de Llobregat",
+   "new": 3072,
+   "old": 2823,
+   "total": 2830
+  },
+  "barcelona|sant cugat del valles": {
+   "name": "Sant Cugat del Vallès",
+   "new": 5690,
+   "old": 5036,
+   "total": 5063
+  },
+  "barcelona|sant feliu de llobregat": {
+   "name": "Sant Feliu de Llobregat",
+   "old": 3366,
+   "total": 3378
+  },
+  "barcelona|sant joan despi": {
+   "name": "Sant Joan Despí",
+   "old": 3394,
+   "total": 3442
+  },
+  "barcelona|sant pere de ribes": {
+   "name": "Sant Pere de Ribes",
+   "new": 3365,
+   "old": 2491,
+   "total": 2532
+  },
+  "barcelona|sant vicenc dels horts": {
+   "name": "Sant Vicenç dels Horts",
+   "old": 2531,
+   "total": 2532
+  },
+  "barcelona|santa coloma gramanet": {
+   "name": "Santa Coloma Gramanet",
+   "new": 2929,
+   "old": 2605,
+   "total": 2608
+  },
+  "barcelona|santa perpetua de mogoda": {
+   "name": "Santa Perpètua de Mogoda",
+   "old": 2475,
+   "total": 2476
+  },
+  "barcelona|sitges": {
+   "name": "Sitges",
+   "old": 4829,
+   "total": 4821
+  },
+  "barcelona|terrassa": {
+   "name": "Terrassa",
+   "new": 2578,
+   "old": 2290,
+   "total": 2301
+  },
+  "barcelona|vic": {
+   "name": "Vic",
+   "old": 2054,
+   "total": 2079
+  },
+  "barcelona|viladecans": {
+   "name": "Viladecans",
+   "new": 3931,
+   "old": 3010,
+   "total": 3065
+  },
+  "barcelona|vilafranca del penedes": {
+   "name": "Vilafranca del Penedès",
+   "old": 2006,
+   "total": 2023
+  },
+  "barcelona|vilanova i la geltru": {
+   "name": "Vilanova i la Geltrú",
+   "new": 3400,
+   "old": 2642,
+   "total": 2698
+  },
+  "bizkaia|barakaldo": {
+   "name": "Barakaldo",
+   "old": 2857,
+   "total": 2856
+  },
+  "bizkaia|basauri": {
+   "name": "Basauri",
+   "old": 2722,
+   "total": 2721
+  },
+  "bizkaia|bilbao": {
+   "name": "Bilbao",
+   "new": 3533,
+   "old": 3400,
+   "total": 3402
+  },
+  "bizkaia|durango": {
+   "name": "Durango",
+   "old": 2612,
+   "total": 2618
+  },
+  "bizkaia|galdakao": {
+   "name": "Galdakao",
+   "old": 2950,
+   "total": 2950
+  },
+  "bizkaia|getxo": {
+   "name": "Getxo",
+   "old": 4044,
+   "total": 4045
+  },
+  "bizkaia|leioa": {
+   "name": "Leioa",
+   "new": 4021,
+   "old": 3506,
+   "total": 3532
+  },
+  "bizkaia|portugalete": {
+   "name": "Portugalete",
+   "old": 2808,
+   "total": 2808
+  },
+  "bizkaia|santurtzi": {
+   "name": "Santurtzi",
+   "old": 2682,
+   "total": 2682
+  },
+  "bizkaia|sestao": {
+   "name": "Sestao",
+   "old": 2296,
+   "total": 2295
+  },
+  "burgos|aranda de duero": {
+   "name": "Aranda de Duero",
+   "old": 1443,
+   "total": 1443
+  },
+  "burgos|burgos": {
+   "name": "Burgos",
+   "new": 2234,
+   "old": 1946,
+   "total": 1959
+  },
+  "burgos|miranda de ebro": {
+   "name": "Miranda de Ebro",
+   "old": 1484,
+   "total": 1483
+  },
+  "caceres|ames": {
+   "name": "Ames",
+   "old": 1875,
+   "total": 1872
+  },
+  "caceres|caceres": {
+   "name": "Cáceres",
+   "new": 1902,
+   "old": 1557,
+   "total": 1570
+  },
+  "caceres|plasencia": {
+   "name": "Plasencia",
+   "old": 1082,
+   "total": 1085
+  },
+  "cadiz|algeciras": {
+   "name": "Algeciras",
+   "old": 1532,
+   "total": 1533
+  },
+  "cadiz|arcos de la frontera": {
+   "name": "Arcos de la frontera",
+   "old": 1261,
+   "total": 1263
+  },
+  "cadiz|cadiz": {
+   "name": "Cádiz",
+   "new": 3236,
+   "old": 3095,
+   "total": 3099
+  },
+  "cadiz|chiclana de la frontera": {
+   "name": "Chiclana de la Frontera",
+   "new": 2336,
+   "old": 2160,
+   "total": 2163
+  },
+  "cadiz|jerez de la frontera": {
+   "name": "Jerez de la Frontera",
+   "new": 2097,
+   "old": 1734,
+   "total": 1743
+  },
+  "cadiz|la linea de la concepcion": {
+   "name": "Línea de la Concepción (La)",
+   "old": 1562,
+   "total": 1563
+  },
+  "cadiz|linea de la concepcion": {
+   "name": "Línea de la Concepción (La)",
+   "old": 1562,
+   "total": 1563
+  },
+  "cadiz|puerto de santa maria": {
+   "name": "Puerto de Santa María",
+   "new": 2257,
+   "old": 2502,
+   "total": 2496
+  },
+  "cadiz|puerto real": {
+   "name": "Puerto Real",
+   "old": 1962,
+   "total": 1964
+  },
+  "cadiz|rota": {
+   "name": "Rota",
+   "old": 2809,
+   "total": 2796
+  },
+  "cadiz|san fernando": {
+   "name": "San Fernando",
+   "new": 1996,
+   "old": 1950,
+   "total": 1951
+  },
+  "cadiz|san roque": {
+   "name": "San Roque",
+   "old": 2523,
+   "total": 2558
+  },
+  "cadiz|sanlucar de barrameda": {
+   "name": "Sanlúcar de Barrameda",
+   "new": 2418,
+   "old": 2073,
+   "total": 2083
+  },
+  "cantabria|camargo": {
+   "name": "Camargo",
+   "old": 2068,
+   "total": 2064
+  },
+  "cantabria|castro urdiales": {
+   "name": "Castro-Urdiales",
+   "old": 2715,
+   "total": 2717
+  },
+  "cantabria|santander": {
+   "name": "Santander",
+   "new": 3130,
+   "old": 2587,
+   "total": 2601
+  },
+  "cantabria|torrelavega": {
+   "name": "Torrelavega",
+   "old": 1593,
+   "total": 1593
+  },
+  "castellon castello|burriana": {
+   "name": "Burriana",
+   "old": 1068,
+   "total": 1072
+  },
+  "castellon castello|castellon de la plana": {
+   "name": "Castellón de la Plana",
+   "new": 1684,
+   "old": 1523,
+   "total": 1527
+  },
+  "castellon castello|la vall d uixo": {
+   "name": "Vall d'Uixó (la)",
+   "old": 975,
+   "total": 976
+  },
+  "castellon castello|onda": {
+   "name": "Onda",
+   "old": 964,
+   "total": 964
+  },
+  "castellon castello|vall d uixo": {
+   "name": "Vall d'Uixó (la)",
+   "old": 975,
+   "total": 976
+  },
+  "castellon castello|vila real": {
+   "name": "Villarreal/Vila-real",
+   "old": 1183,
+   "total": 1183
+  },
+  "castellon castello|villarreal": {
+   "name": "Villarreal/Vila-real",
+   "old": 1183,
+   "total": 1183
+  },
+  "castellon castello|villarreal vila real": {
+   "name": "Villarreal/Vila-real",
+   "old": 1183,
+   "total": 1183
+  },
+  "castellon castello|vinaros": {
+   "name": "Vinaròs",
+   "old": 1633,
+   "total": 1632
+  },
+  "castellon|burriana": {
+   "name": "Burriana",
+   "old": 1068,
+   "total": 1072
+  },
+  "castellon|castellon de la plana": {
+   "name": "Castellón de la Plana",
+   "new": 1684,
+   "old": 1523,
+   "total": 1527
+  },
+  "castellon|la vall d uixo": {
+   "name": "Vall d'Uixó (la)",
+   "old": 975,
+   "total": 976
+  },
+  "castellon|onda": {
+   "name": "Onda",
+   "old": 964,
+   "total": 964
+  },
+  "castellon|vall d uixo": {
+   "name": "Vall d'Uixó (la)",
+   "old": 975,
+   "total": 976
+  },
+  "castellon|vila real": {
+   "name": "Villarreal/Vila-real",
+   "old": 1183,
+   "total": 1183
+  },
+  "castellon|villarreal": {
+   "name": "Villarreal/Vila-real",
+   "old": 1183,
+   "total": 1183
+  },
+  "castellon|villarreal vila real": {
+   "name": "Villarreal/Vila-real",
+   "old": 1183,
+   "total": 1183
+  },
+  "castellon|vinaros": {
+   "name": "Vinaròs",
+   "old": 1633,
+   "total": 1632
+  },
+  "castello|burriana": {
+   "name": "Burriana",
+   "old": 1068,
+   "total": 1072
+  },
+  "castello|castellon de la plana": {
+   "name": "Castellón de la Plana",
+   "new": 1684,
+   "old": 1523,
+   "total": 1527
+  },
+  "castello|la vall d uixo": {
+   "name": "Vall d'Uixó (la)",
+   "old": 975,
+   "total": 976
+  },
+  "castello|onda": {
+   "name": "Onda",
+   "old": 964,
+   "total": 964
+  },
+  "castello|vall d uixo": {
+   "name": "Vall d'Uixó (la)",
+   "old": 975,
+   "total": 976
+  },
+  "castello|vila real": {
+   "name": "Villarreal/Vila-real",
+   "old": 1183,
+   "total": 1183
+  },
+  "castello|villarreal": {
+   "name": "Villarreal/Vila-real",
+   "old": 1183,
+   "total": 1183
+  },
+  "castello|villarreal vila real": {
+   "name": "Villarreal/Vila-real",
+   "old": 1183,
+   "total": 1183
+  },
+  "castello|vinaros": {
+   "name": "Vinaròs",
+   "old": 1633,
+   "total": 1632
+  },
+  "ceuta|ceuta": {
+   "name": "Ceuta",
+   "old": 2208,
+   "total": 2212
+  },
+  "ciudad real|alcazar de san juan": {
+   "name": "Alcázar de San Juan",
+   "old": 980,
+   "total": 980
+  },
+  "ciudad real|ciudad real": {
+   "name": "Ciudad Real",
+   "new": 1700,
+   "old": 1463,
+   "total": 1470
+  },
+  "ciudad real|puertollano": {
+   "name": "Puertollano",
+   "old": 710,
+   "total": 711
+  },
+  "ciudad real|tomelloso": {
+   "name": "Tomelloso",
+   "old": 804,
+   "total": 804
+  },
+  "ciudad real|valdepenas": {
+   "name": "Valdepeñas",
+   "old": 890,
+   "total": 893
+  },
+  "cordoba|almunecar": {
+   "name": "Almuñecar",
+   "old": 2665,
+   "total": 2662
+  },
+  "cordoba|cordoba": {
+   "name": "Córdoba",
+   "new": 2165,
+   "old": 1720,
+   "total": 1746
+  },
+  "cordoba|lucena": {
+   "name": "Lucena",
+   "old": 1094,
+   "total": 1097
+  },
+  "cordoba|puente genil": {
+   "name": "Puente Génil",
+   "old": 986,
+   "total": 987
+  },
+  "coruna|a coruna": {
+   "name": "Coruña (A)",
+   "new": 3015,
+   "old": 2750,
+   "total": 2759
+  },
+  "coruna|arteixo": {
+   "name": "Arteixo",
+   "old": 1700,
+   "total": 1699
+  },
+  "coruna|carballo": {
+   "name": "Carballo",
+   "old": 989,
+   "total": 994
+  },
+  "coruna|coruna": {
+   "name": "Coruña (A)",
+   "new": 3015,
+   "old": 2750,
+   "total": 2759
+  },
+  "coruna|culleredo": {
+   "name": "Culleredo",
+   "old": 1968,
+   "total": 1968
+  },
+  "coruna|ferrol": {
+   "name": "Ferrol",
+   "old": 1129,
+   "total": 1133
+  },
+  "coruna|la coruna": {
+   "name": "Coruña (A)",
+   "new": 3015,
+   "old": 2750,
+   "total": 2759
+  },
+  "coruna|naron": {
+   "name": "Narón",
+   "old": 1113,
+   "total": 1114
+  },
+  "coruna|oleiros": {
+   "name": "Oleiros",
+   "new": 2196,
+   "old": 2103,
+   "total": 2108
+  },
+  "coruna|ribeira": {
+   "name": "Ribeira",
+   "old": 1402,
+   "total": 1398
+  },
+  "coruna|santiago de compostela": {
+   "name": "Santiago de Compostela",
+   "old": 2361,
+   "total": 2365
+  },
+  "cuenca|azuqueca de henares": {
+   "name": "Azuqueca de Henares",
+   "old": 2117,
+   "total": 2120
+  },
+  "cuenca|cuenca": {
+   "name": "Cuenca",
+   "old": 1567,
+   "total": 1567
+  },
+  "gerona|blanes": {
+   "name": "Blanes",
+   "old": 2068,
+   "total": 2068
+  },
+  "gerona|figueres": {
+   "name": "Figueres",
+   "old": 1494,
+   "total": 1494
+  },
+  "gerona|gerona": {
+   "name": "Girona",
+   "new": 2734,
+   "old": 2334,
+   "total": 2347
+  },
+  "gerona|girona": {
+   "name": "Girona",
+   "new": 2734,
+   "old": 2334,
+   "total": 2347
+  },
+  "gerona|lloret de mar": {
+   "name": "Lloret de Mar",
+   "old": 2365,
+   "total": 2364
+  },
+  "gerona|olot": {
+   "name": "Olot",
+   "old": 1588,
+   "total": 1600
+  },
+  "gerona|salt": {
+   "name": "Salt",
+   "old": 1408,
+   "total": 1408
+  },
+  "gipuzkoa|donostia": {
+   "name": "San Sebastián/Donostia",
+   "new": 5659,
+   "old": 5107,
+   "total": 5118
+  },
+  "gipuzkoa|eibar": {
+   "name": "Eibar",
+   "old": 2073,
+   "total": 2084
+  },
+  "gipuzkoa|errenteria": {
+   "name": "Errenteria",
+   "new": 3507,
+   "old": 3157,
+   "total": 3164
+  },
+  "gipuzkoa|irun": {
+   "name": "Irun",
+   "old": 2982,
+   "total": 3005
+  },
+  "gipuzkoa|san sebastian": {
+   "name": "San Sebastián/Donostia",
+   "new": 5659,
+   "old": 5107,
+   "total": 5118
+  },
+  "gipuzkoa|san sebastian donostia": {
+   "name": "San Sebastián/Donostia",
+   "new": 5659,
+   "old": 5107,
+   "total": 5118
+  },
+  "girona|blanes": {
+   "name": "Blanes",
+   "old": 2068,
+   "total": 2068
+  },
+  "girona|figueres": {
+   "name": "Figueres",
+   "old": 1494,
+   "total": 1494
+  },
+  "girona|gerona": {
+   "name": "Girona",
+   "new": 2734,
+   "old": 2334,
+   "total": 2347
+  },
+  "girona|girona": {
+   "name": "Girona",
+   "new": 2734,
+   "old": 2334,
+   "total": 2347
+  },
+  "girona|lloret de mar": {
+   "name": "Lloret de Mar",
+   "old": 2365,
+   "total": 2364
+  },
+  "girona|olot": {
+   "name": "Olot",
+   "old": 1588,
+   "total": 1600
+  },
+  "girona|salt": {
+   "name": "Salt",
+   "old": 1408,
+   "total": 1408
+  },
+  "granada|granada": {
+   "name": "Granada",
+   "new": 2841,
+   "old": 2414,
+   "total": 2427
+  },
+  "granada|motril": {
+   "name": "Motril",
+   "new": 1681,
+   "old": 1539,
+   "total": 1544
+  },
+  "guadalajara|guadalajara": {
+   "name": "Guadalajara",
+   "new": 2054,
+   "old": 2024,
+   "total": 2026
+  },
+  "guadalajara|illescas": {
+   "name": "Illescas",
+   "new": 1659,
+   "old": 1664,
+   "total": 1664
+  },
+  "guipuzcoa|donostia": {
+   "name": "San Sebastián/Donostia",
+   "new": 5659,
+   "old": 5107,
+   "total": 5118
+  },
+  "guipuzcoa|eibar": {
+   "name": "Eibar",
+   "old": 2073,
+   "total": 2084
+  },
+  "guipuzcoa|errenteria": {
+   "name": "Errenteria",
+   "new": 3507,
+   "old": 3157,
+   "total": 3164
+  },
+  "guipuzcoa|irun": {
+   "name": "Irun",
+   "old": 2982,
+   "total": 3005
+  },
+  "guipuzcoa|san sebastian": {
+   "name": "San Sebastián/Donostia",
+   "new": 5659,
+   "old": 5107,
+   "total": 5118
+  },
+  "guipuzcoa|san sebastian donostia": {
+   "name": "San Sebastián/Donostia",
+   "new": 5659,
+   "old": 5107,
+   "total": 5118
+  },
+  "huelva|huelva": {
+   "name": "Huelva",
+   "new": 1737,
+   "old": 1572,
+   "total": 1576
+  },
+  "huelva|lepe": {
+   "name": "Lepe",
+   "old": 1844,
+   "total": 1843
+  },
+  "huesca|huesca": {
+   "name": "Huesca",
+   "old": 1705,
+   "total": 1706
+  },
+  "illes balears|calvia": {
+   "name": "Calvià",
+   "old": 5209,
+   "total": 5290
+  },
+  "illes balears|ciutadella de menorca": {
+   "name": "Ciutadella de Menorca",
+   "old": 3555,
+   "total": 3564
+  },
+  "illes balears|eivissa": {
+   "name": "Eivissa",
+   "new": 6471,
+   "old": 5690,
+   "total": 5726
+  },
+  "illes balears|inca": {
+   "name": "Inca",
+   "old": 2636,
+   "total": 2633
+  },
+  "illes balears|llucmajor": {
+   "name": "Llucmajor",
+   "old": 3605,
+   "total": 3607
+  },
+  "illes balears|mahon": {
+   "name": "Mahón",
+   "old": 2811,
+   "total": 2812
+  },
+  "illes balears|manacor": {
+   "name": "Manacor",
+   "old": 2885,
+   "total": 2882
+  },
+  "illes balears|marratxi": {
+   "name": "Marratxí",
+   "old": 3801,
+   "total": 3803
+  },
+  "illes balears|palma de mallorca": {
+   "name": "Palma de Mallorca",
+   "new": 4717,
+   "old": 3753,
+   "total": 3789
+  },
+  "illes balears|santa eulalia del rio": {
+   "name": "Santa Eulalia del Río",
+   "old": 6606,
+   "total": 6624
+  },
+  "jaen|andujar": {
+   "name": "Andújar",
+   "old": 815,
+   "total": 816
+  },
+  "jaen|jaen": {
+   "name": "Jaén",
+   "new": 1629,
+   "old": 1442,
+   "total": 1444
+  },
+  "jaen|linares": {
+   "name": "Linares",
+   "old": 889,
+   "total": 889
+  },
+  "jaen|ubeda": {
+   "name": "Úbeda",
+   "old": 939,
+   "total": 938
+  },
+  "la coruna|a coruna": {
+   "name": "Coruña (A)",
+   "new": 3015,
+   "old": 2750,
+   "total": 2759
+  },
+  "la coruna|arteixo": {
+   "name": "Arteixo",
+   "old": 1700,
+   "total": 1699
+  },
+  "la coruna|carballo": {
+   "name": "Carballo",
+   "old": 989,
+   "total": 994
+  },
+  "la coruna|coruna": {
+   "name": "Coruña (A)",
+   "new": 3015,
+   "old": 2750,
+   "total": 2759
+  },
+  "la coruna|culleredo": {
+   "name": "Culleredo",
+   "old": 1968,
+   "total": 1968
+  },
+  "la coruna|ferrol": {
+   "name": "Ferrol",
+   "old": 1129,
+   "total": 1133
+  },
+  "la coruna|la coruna": {
+   "name": "Coruña (A)",
+   "new": 3015,
+   "old": 2750,
+   "total": 2759
+  },
+  "la coruna|naron": {
+   "name": "Narón",
+   "old": 1113,
+   "total": 1114
+  },
+  "la coruna|oleiros": {
+   "name": "Oleiros",
+   "new": 2196,
+   "old": 2103,
+   "total": 2108
+  },
+  "la coruna|ribeira": {
+   "name": "Ribeira",
+   "old": 1402,
+   "total": 1398
+  },
+  "la coruna|santiago de compostela": {
+   "name": "Santiago de Compostela",
+   "old": 2361,
+   "total": 2365
+  },
+  "la rioja|logrono": {
+   "name": "Logroño",
+   "new": 2258,
+   "old": 1880,
+   "total": 1892
+  },
+  "las palmas|aguimes": {
+   "name": "Agüimes",
+   "old": 1939,
+   "total": 1937
+  },
+  "las palmas|arrecife": {
+   "name": "Arrecife",
+   "new": 2180,
+   "old": 1942,
+   "total": 1947
+  },
+  "las palmas|arucas": {
+   "name": "Arucas",
+   "old": 1627,
+   "total": 1628
+  },
+  "las palmas|ingenio": {
+   "name": "Ingenio",
+   "old": 1425,
+   "total": 1432
+  },
+  "las palmas|la oliva": {
+   "name": "Oliva, La",
+   "old": 3214,
+   "total": 3214
+  },
+  "las palmas|las palmas de gran canaria": {
+   "name": "Palmas de Gran Canaria (Las)",
+   "new": 3023,
+   "old": 2233,
+   "total": 2251
+  },
+  "las palmas|palmas de gran canaria": {
+   "name": "Palmas de Gran Canaria (Las)",
+   "new": 3023,
+   "old": 2233,
+   "total": 2251
+  },
+  "las palmas|puerto del rosario": {
+   "name": "Puerto del Rosario",
+   "old": 1967,
+   "total": 1968
+  },
+  "las palmas|san bartolome de tirajana": {
+   "name": "San Bartolomé de Tirajana",
+   "old": 3138,
+   "total": 3139
+  },
+  "las palmas|santa lucia de tirajana": {
+   "name": "Santa Lucía de Tirajana",
+   "old": 1773,
+   "total": 1773
+  },
+  "las palmas|telde": {
+   "name": "Telde",
+   "new": 1751,
+   "old": 1797,
+   "total": 1796
+  },
+  "leon|leon": {
+   "name": "León",
+   "new": 1963,
+   "old": 1617,
+   "total": 1626
+  },
+  "leon|ponferrada": {
+   "name": "Ponferrada",
+   "old": 921,
+   "total": 922
+  },
+  "leon|san andres del rabanedo": {
+   "name": "San Andrés  del Rabanedo",
+   "old": 1202,
+   "total": 1202
+  },
+  "lerida|lerida": {
+   "name": "Lleida",
+   "new": 1990,
+   "old": 1411,
+   "total": 1428
+  },
+  "lerida|lleida": {
+   "name": "Lleida",
+   "new": 1990,
+   "old": 1411,
+   "total": 1428
+  },
+  "lleida|lerida": {
+   "name": "Lleida",
+   "new": 1990,
+   "old": 1411,
+   "total": 1428
+  },
+  "lleida|lleida": {
+   "name": "Lleida",
+   "new": 1990,
+   "old": 1411,
+   "total": 1428
+  },
+  "lugo|lugo": {
+   "name": "Lugo",
+   "old": 1356,
+   "total": 1360
+  },
+  "madrid|alcala de henares": {
+   "name": "Alcalá de Henares",
+   "new": 3083,
+   "old": 2822,
+   "total": 2839
+  },
+  "madrid|alcobendas": {
+   "name": "Alcobendas",
+   "new": 5197,
+   "old": 4770,
+   "total": 4790
+  },
+  "madrid|alcorcon": {
+   "name": "Alcorcón",
+   "old": 3444,
+   "total": 3444
+  },
+  "madrid|aranjuez": {
+   "name": "Aranjuez",
+   "new": 2296,
+   "old": 2147,
+   "total": 2151
+  },
+  "madrid|arganda del rey": {
+   "name": "Arganda del Rey",
+   "new": 2841,
+   "old": 2598,
+   "total": 2614
+  },
+  "madrid|boadilla del monte": {
+   "name": "Boadilla del Monte",
+   "new": 4147,
+   "old": 4411,
+   "total": 4373
+  },
+  "madrid|collado villalba": {
+   "name": "Collado Villalba",
+   "old": 2882,
+   "total": 2880
+  },
+  "madrid|colmenar viejo": {
+   "name": "Colmenar Viejo",
+   "new": 3093,
+   "old": 3074,
+   "total": 3076
+  },
+  "madrid|coslada": {
+   "name": "Coslada",
+   "new": 3731,
+   "old": 3316,
+   "total": 3326
+  },
+  "madrid|fuenlabrada": {
+   "name": "Fuenlabrada",
+   "new": 3034,
+   "old": 2912,
+   "total": 2914
+  },
+  "madrid|galapagar": {
+   "name": "Galapagar",
+   "old": 2758,
+   "total": 2768
+  },
+  "madrid|getafe": {
+   "name": "Getafe",
+   "new": 3312,
+   "old": 3195,
+   "total": 3201
+  },
+  "madrid|las rozas de madrid": {
+   "name": "Rozas de Madrid (Las)",
+   "new": 4715,
+   "old": 4420,
+   "total": 4435
+  },
+  "madrid|leganes": {
+   "name": "Leganés",
+   "new": 3586,
+   "old": 3150,
+   "total": 3158
+  },
+  "madrid|madrid": {
+   "name": "Madrid",
+   "new": 6142,
+   "old": 5446,
+   "total": 5466
+  },
+  "madrid|majadahonda": {
+   "name": "Majadahonda",
+   "old": 4845,
+   "total": 4840
+  },
+  "madrid|mostoles": {
+   "name": "Móstoles",
+   "new": 3142,
+   "old": 3023,
+   "total": 3026
+  },
+  "madrid|navalcarnero": {
+   "name": "Navalcarnero",
+   "old": 2488,
+   "total": 2474
+  },
+  "madrid|parla": {
+   "name": "Parla",
+   "old": 2368,
+   "total": 2368
+  },
+  "madrid|pinto": {
+   "name": "Pinto",
+   "old": 2792,
+   "total": 2801
+  },
+  "madrid|pozuelo de alarcon": {
+   "name": "Pozuelo de Alarcón",
+   "new": 5385,
+   "old": 5138,
+   "total": 5151
+  },
+  "madrid|rivas vaciamadrid": {
+   "name": "Rivas-Vaciamadrid",
+   "old": 3392,
+   "total": 3393
+  },
+  "madrid|rozas de madrid": {
+   "name": "Rozas de Madrid (Las)",
+   "new": 4715,
+   "old": 4420,
+   "total": 4435
+  },
+  "madrid|san fernando de henares": {
+   "name": "San Fernando de Henares",
+   "old": 2912,
+   "total": 2912
+  },
+  "madrid|san sebastian de los reyes": {
+   "name": "San Sebastián de los Reyes",
+   "old": 3856,
+   "total": 3865
+  },
+  "madrid|torrejon de ardoz": {
+   "name": "Torrejón de Ardoz",
+   "new": 3248,
+   "old": 2930,
+   "total": 2952
+  },
+  "madrid|tres cantos": {
+   "name": "Tres Cantos",
+   "new": 4493,
+   "old": 4226,
+   "total": 4265
+  },
+  "madrid|valdemoro": {
+   "name": "Valdemoro",
+   "new": 2761,
+   "old": 2700,
+   "total": 2706
+  },
+  "madrid|villaviciosa de odon": {
+   "name": "Villaviciosa de Odón",
+   "new": 3954,
+   "old": 3329,
+   "total": 3382
+  },
+  "malaga|alhaurin de la torre": {
+   "name": "Alhaurín de la Torre",
+   "new": 2920,
+   "old": 2708,
+   "total": 2725
+  },
+  "malaga|antequera": {
+   "name": "Antequera",
+   "old": 1566,
+   "total": 1564
+  },
+  "malaga|benalmadena": {
+   "name": "Benalmádena",
+   "new": 3860,
+   "old": 3758,
+   "total": 3761
+  },
+  "malaga|estepona": {
+   "name": "Estepona",
+   "new": 3856,
+   "old": 3471,
+   "total": 3514
+  },
+  "malaga|fuengirola": {
+   "name": "Fuengirola",
+   "new": 4596,
+   "old": 3614,
+   "total": 3668
+  },
+  "malaga|malaga": {
+   "name": "Málaga",
+   "new": 3993,
+   "old": 3206,
+   "total": 3240
+  },
+  "malaga|marbella": {
+   "name": "Marbella",
+   "new": 5469,
+   "old": 4292,
+   "total": 4333
+  },
+  "malaga|mijas": {
+   "name": "Mijas",
+   "new": 3302,
+   "old": 3231,
+   "total": 3235
+  },
+  "malaga|rincon de la victoria": {
+   "name": "Rincón de la Victoria",
+   "new": 3602,
+   "old": 3331,
+   "total": 3343
+  },
+  "malaga|ronda": {
+   "name": "Ronda",
+   "old": 1681,
+   "total": 1683
+  },
+  "malaga|torremolinos": {
+   "name": "Torremolinos",
+   "old": 3875,
+   "total": 3887
+  },
+  "malaga|velez malaga": {
+   "name": "Vélez Málaga",
+   "new": 3123,
+   "old": 2529,
+   "total": 2558
+  },
+  "melilla|melilla": {
+   "name": "Melilla",
+   "new": 2551,
+   "old": 2100,
+   "total": 2123
+  },
+  "murcia|aguilas": {
+   "name": "Águilas",
+   "new": 1751,
+   "old": 1456,
+   "total": 1461
+  },
+  "murcia|alcantarilla": {
+   "name": "Alcantarilla",
+   "old": 1084,
+   "total": 1085
+  },
+  "murcia|caravaca de la cruz": {
+   "name": "Caravaca de la Cruz",
+   "old": 861,
+   "total": 862
+  },
+  "murcia|cartagena": {
+   "name": "Cartagena",
+   "new": 1609,
+   "old": 1494,
+   "total": 1496
+  },
+  "murcia|cieza": {
+   "name": "Cieza",
+   "old": 949,
+   "total": 950
+  },
+  "murcia|jumilla": {
+   "name": "Jumilla",
+   "old": 844,
+   "total": 845
+  },
+  "murcia|lorca": {
+   "name": "Lorca",
+   "old": 1200,
+   "total": 1202
+  },
+  "murcia|mazarron": {
+   "name": "Mazarrón",
+   "old": 1610,
+   "total": 1611
+  },
+  "murcia|molina de segura": {
+   "name": "Molina de Segura",
+   "new": 1495,
+   "old": 1265,
+   "total": 1269
+  },
+  "murcia|murcia": {
+   "name": "Murcia",
+   "new": 2005,
+   "old": 1564,
+   "total": 1575
+  },
+  "murcia|san javier": {
+   "name": "San Javier",
+   "old": 1904,
+   "total": 1905
+  },
+  "murcia|torre pacheco": {
+   "name": "Torre-Pacheco",
+   "old": 1340,
+   "total": 1351
+  },
+  "murcia|totana": {
+   "name": "Totana",
+   "old": 976,
+   "total": 978
+  },
+  "murcia|yecla": {
+   "name": "Yecla",
+   "old": 839,
+   "total": 839
+  },
+  "navarra|iruna": {
+   "name": "Pamplona/Iruña",
+   "new": 3277,
+   "old": 2668,
+   "total": 2737
+  },
+  "navarra|pamplona": {
+   "name": "Pamplona/Iruña",
+   "new": 3277,
+   "old": 2668,
+   "total": 2737
+  },
+  "navarra|pamplona iruna": {
+   "name": "Pamplona/Iruña",
+   "new": 3277,
+   "old": 2668,
+   "total": 2737
+  },
+  "navarra|tudela": {
+   "name": "Tudela",
+   "old": 1548,
+   "total": 1591
+  },
+  "orense|cangas": {
+   "name": "Cangas",
+   "old": 1746,
+   "total": 1748
+  },
+  "orense|orense": {
+   "name": "Ourense",
+   "new": 1640,
+   "old": 1601,
+   "total": 1602
+  },
+  "orense|ourense": {
+   "name": "Ourense",
+   "new": 1640,
+   "old": 1601,
+   "total": 1602
+  },
+  "ourense|cangas": {
+   "name": "Cangas",
+   "old": 1746,
+   "total": 1748
+  },
+  "ourense|orense": {
+   "name": "Ourense",
+   "new": 1640,
+   "old": 1601,
+   "total": 1602
+  },
+  "ourense|ourense": {
+   "name": "Ourense",
+   "new": 1640,
+   "old": 1601,
+   "total": 1602
+  },
+  "palencia|palencia": {
+   "name": "Palencia",
+   "old": 1345,
+   "total": 1347
+  },
+  "pontevedra|marin": {
+   "name": "Marín",
+   "old": 1416,
+   "total": 1415
+  },
+  "pontevedra|pontevedra": {
+   "name": "Pontevedra",
+   "new": 2635,
+   "old": 2051,
+   "total": 2084
+  },
+  "pontevedra|redondela": {
+   "name": "Redondela",
+   "old": 1381,
+   "total": 1381
+  },
+  "pontevedra|vigo": {
+   "name": "Vigo",
+   "new": 2626,
+   "old": 2297,
+   "total": 2302
+  },
+  "pontevedra|vilagarcia de arousa": {
+   "name": "Vilagarcía de Arousa",
+   "old": 1453,
+   "total": 1455
+  },
+  "salamanca|salamanca": {
+   "name": "Salamanca",
+   "new": 2093,
+   "old": 2166,
+   "total": 2166
+  },
+  "santa cruz de tenerife|adeje": {
+   "name": "Adeje",
+   "old": 3719,
+   "total": 3728
+  },
+  "santa cruz de tenerife|arona": {
+   "name": "Arona",
+   "old": 2897,
+   "total": 2896
+  },
+  "santa cruz de tenerife|candelaria": {
+   "name": "Candelaria",
+   "old": 2831,
+   "total": 2832
+  },
+  "santa cruz de tenerife|granadilla de abona": {
+   "name": "Granadilla de Abona",
+   "new": 2693,
+   "old": 2472,
+   "total": 2475
+  },
+  "santa cruz de tenerife|la orotava": {
+   "name": "Orotava (La)",
+   "old": 1772,
+   "total": 1772
+  },
+  "santa cruz de tenerife|los realejos": {
+   "name": "Realejos (Los)",
+   "old": 1769,
+   "total": 1769
+  },
+  "santa cruz de tenerife|orotava": {
+   "name": "Orotava (La)",
+   "old": 1772,
+   "total": 1772
+  },
+  "santa cruz de tenerife|puerto de la cruz": {
+   "name": "Puerto de la Cruz",
+   "old": 3036,
+   "total": 3036
+  },
+  "santa cruz de tenerife|realejos": {
+   "name": "Realejos (Los)",
+   "old": 1769,
+   "total": 1769
+  },
+  "santa cruz de tenerife|san cristobal laguna": {
+   "name": "San Cristóbal Laguna",
+   "new": 2218,
+   "old": 2015,
+   "total": 2016
+  },
+  "santa cruz de tenerife|santa cruz detenerife": {
+   "name": "Santa Cruz deTenerife",
+   "new": 2706,
+   "old": 2331,
+   "total": 2335
+  },
+  "segovia|segovia": {
+   "name": "Segovia",
+   "new": 2149,
+   "old": 2051,
+   "total": 2053
+  },
+  "sevilla|alcala de guadaira": {
+   "name": "Alcalá de Guadaíra",
+   "new": 1820,
+   "old": 1728,
+   "total": 1731
+  },
+  "sevilla|camas": {
+   "name": "Camas",
+   "new": 2352,
+   "old": 1755,
+   "total": 1800
+  },
+  "sevilla|carmona": {
+   "name": "Carmona",
+   "old": 1251,
+   "total": 1251
+  },
+  "sevilla|coria del rio": {
+   "name": "Coria del Río",
+   "old": 1367,
+   "total": 1368
+  },
+  "sevilla|dos hermanas": {
+   "name": "Dos Hermanas",
+   "new": 2356,
+   "old": 1909,
+   "total": 1960
+  },
+  "sevilla|ecija": {
+   "name": "Écija",
+   "old": 1155,
+   "total": 1157
+  },
+  "sevilla|la rinconada": {
+   "name": "Rinconada (La)",
+   "old": 1742,
+   "total": 1745
+  },
+  "sevilla|lebrija": {
+   "name": "Lebrija",
+   "old": 1150,
+   "total": 1154
+  },
+  "sevilla|los palacios y villafranca": {
+   "name": "Palacios y Villafranca (Los)",
+   "old": 1300,
+   "total": 1300
+  },
+  "sevilla|mairena del aljarafe": {
+   "name": "Mairena del Aljarafe",
+   "old": 2123,
+   "total": 2139
+  },
+  "sevilla|moron de la frontera": {
+   "name": "Morón de la Frontera",
+   "old": 1011,
+   "total": 1010
+  },
+  "sevilla|palacios y villafranca": {
+   "name": "Palacios y Villafranca (Los)",
+   "old": 1300,
+   "total": 1300
+  },
+  "sevilla|rinconada": {
+   "name": "Rinconada (La)",
+   "old": 1742,
+   "total": 1745
+  },
+  "sevilla|sevilla": {
+   "name": "Sevilla",
+   "new": 2846,
+   "old": 2561,
+   "total": 2571
+  },
+  "sevilla|utrera": {
+   "name": "Utrera",
+   "old": 1450,
+   "total": 1450
+  },
+  "soria|soria": {
+   "name": "Soria",
+   "old": 1553,
+   "total": 1555
+  },
+  "tarragona|cambrils": {
+   "name": "Cambrils",
+   "old": 2414,
+   "total": 2423
+  },
+  "tarragona|el vendrell": {
+   "name": "Vendrell (El)",
+   "new": 2054,
+   "old": 1920,
+   "total": 1921
+  },
+  "tarragona|reus": {
+   "name": "Reus",
+   "new": 1927,
+   "old": 1636,
+   "total": 1641
+  },
+  "tarragona|salou": {
+   "name": "Salou",
+   "old": 2549,
+   "total": 2555
+  },
+  "tarragona|tarragona": {
+   "name": "Tarragona",
+   "new": 2158,
+   "old": 1833,
+   "total": 1838
+  },
+  "tarragona|tortosa": {
+   "name": "Tortosa",
+   "old": 1085,
+   "total": 1084
+  },
+  "tarragona|vendrell": {
+   "name": "Vendrell (El)",
+   "new": 2054,
+   "old": 1920,
+   "total": 1921
+  },
+  "teruel|teruel": {
+   "name": "Teruel",
+   "old": 1688,
+   "total": 1692
+  },
+  "toledo|talavera de la reina": {
+   "name": "Talavera de la Reina",
+   "old": 1248,
+   "total": 1248
+  },
+  "toledo|toledo": {
+   "name": "Toledo",
+   "new": 2242,
+   "old": 1956,
+   "total": 1966
+  },
+  "valencia|alaquas": {
+   "name": "Alaquàs",
+   "old": 1604,
+   "total": 1603
+  },
+  "valencia|aldaia": {
+   "name": "Aldaia",
+   "old": 1602,
+   "total": 1602
+  },
+  "valencia|algemesi": {
+   "name": "Algemesí",
+   "old": 983,
+   "total": 984
+  },
+  "valencia|alzira": {
+   "name": "Alzira",
+   "old": 1224,
+   "total": 1224
+  },
+  "valencia|burjassot": {
+   "name": "Burjassot",
+   "old": 1941,
+   "total": 1941
+  },
+  "valencia|catarroja": {
+   "name": "Catarroja",
+   "old": 1676,
+   "total": 1674
+  },
+  "valencia|gandia": {
+   "name": "Gandia",
+   "old": 1644,
+   "total": 1646
+  },
+  "valencia|manises": {
+   "name": "Manises",
+   "old": 1747,
+   "total": 1747
+  },
+  "valencia|mislata": {
+   "name": "Mislata",
+   "old": 2275,
+   "total": 2274
+  },
+  "valencia|oliva": {
+   "name": "Oliva",
+   "old": 1616,
+   "total": 1630
+  },
+  "valencia|ontinyent": {
+   "name": "Ontinyent",
+   "old": 1040,
+   "total": 1041
+  },
+  "valencia|paterna": {
+   "name": "Paterna",
+   "old": 2221,
+   "total": 2220
+  },
+  "valencia|quart de poblet": {
+   "name": "Quart de Poblet",
+   "new": 1868,
+   "old": 1855,
+   "total": 1856
+  },
+  "valencia|sagunt": {
+   "name": "Sagunto/Sagunt",
+   "old": 1624,
+   "total": 1628
+  },
+  "valencia|sagunto": {
+   "name": "Sagunto/Sagunt",
+   "old": 1624,
+   "total": 1628
+  },
+  "valencia|sagunto sagunt": {
+   "name": "Sagunto/Sagunt",
+   "old": 1624,
+   "total": 1628
+  },
+  "valencia|sueca": {
+   "name": "Sueca",
+   "old": 1488,
+   "total": 1487
+  },
+  "valencia|torrent": {
+   "name": "Torrent",
+   "new": 2152,
+   "old": 1872,
+   "total": 1880
+  },
+  "valencia|valencia": {
+   "name": "Valencia",
+   "new": 3354,
+   "old": 2894,
+   "total": 2908
+  },
+  "valencia|xativa": {
+   "name": "Xàtiva",
+   "old": 1232,
+   "total": 1237
+  },
+  "valencia|xirivella": {
+   "name": "Xirivella",
+   "old": 1707,
+   "total": 1706
+  },
+  "valladolid|valladolid": {
+   "name": "Valladolid",
+   "new": 2193,
+   "old": 1833,
+   "total": 1846
+  },
+  "vizcaya|barakaldo": {
+   "name": "Barakaldo",
+   "old": 2857,
+   "total": 2856
+  },
+  "vizcaya|basauri": {
+   "name": "Basauri",
+   "old": 2722,
+   "total": 2721
+  },
+  "vizcaya|bilbao": {
+   "name": "Bilbao",
+   "new": 3533,
+   "old": 3400,
+   "total": 3402
+  },
+  "vizcaya|durango": {
+   "name": "Durango",
+   "old": 2612,
+   "total": 2618
+  },
+  "vizcaya|galdakao": {
+   "name": "Galdakao",
+   "old": 2950,
+   "total": 2950
+  },
+  "vizcaya|getxo": {
+   "name": "Getxo",
+   "old": 4044,
+   "total": 4045
+  },
+  "vizcaya|leioa": {
+   "name": "Leioa",
+   "new": 4021,
+   "old": 3506,
+   "total": 3532
+  },
+  "vizcaya|portugalete": {
+   "name": "Portugalete",
+   "old": 2808,
+   "total": 2808
+  },
+  "vizcaya|santurtzi": {
+   "name": "Santurtzi",
+   "old": 2682,
+   "total": 2682
+  },
+  "vizcaya|sestao": {
+   "name": "Sestao",
+   "old": 2296,
+   "total": 2295
+  },
+  "zamora|zamora": {
+   "name": "Zamora",
+   "old": 1324,
+   "total": 1324
+  },
+  "zaragoza|zaragoza": {
+   "name": "Zaragoza",
+   "new": 2514,
+   "old": 2207,
+   "total": 2216
+  }
+ },
+ "period": "2026-Q1",
+ "provinces": {
+  "a coruna": {
+   "name": "Coruña (A)",
+   "total": 1711
+  },
+  "alacant": {
+   "name": "Alicante/Alacant",
+   "total": 1992
+  },
+  "alava": {
+   "name": "Araba/Alava",
+   "total": 2501
+  },
+  "albacete": {
+   "name": "Albacete",
+   "total": 1190
+  },
+  "alicante": {
+   "name": "Alicante/Alacant",
+   "total": 1992
+  },
+  "alicante alacant": {
+   "name": "Alicante/Alacant",
+   "total": 1992
+  },
+  "almeria": {
+   "name": "Almería",
+   "total": 1454
+  },
+  "andalucia": {
+   "name": "Andalucía",
+   "total": 1925
+  },
+  "araba": {
+   "name": "Araba/Alava",
+   "total": 2501
+  },
+  "araba alava": {
+   "name": "Araba/Alava",
+   "total": 2501
+  },
+  "aragon": {
+   "name": "Aragón",
+   "total": 1728
+  },
+  "asturias": {
+   "name": "Asturias (Principado de )",
+   "total": 1752
+  },
+  "asturias principado de": {
+   "name": "Asturias (Principado de )",
+   "total": 1752
+  },
+  "avila": {
+   "name": "Ávila",
+   "total": 1094
+  },
+  "badajoz": {
+   "name": "Badajoz",
+   "total": 988
+  },
+  "baleares": {
+   "name": "Balears (Illes)",
+   "total": 3886
+  },
+  "balears": {
+   "name": "Balears (Illes)",
+   "total": 3886
+  },
+  "balears illes": {
+   "name": "Balears (Illes)",
+   "total": 3886
+  },
+  "barcelona": {
+   "name": "Barcelona",
+   "total": 3208
+  },
+  "bizkaia": {
+   "name": "Bizkaia",
+   "total": 2965
+  },
+  "burgos": {
+   "name": "Burgos",
+   "total": 1424
+  },
+  "caceres": {
+   "name": "Cáceres",
+   "total": 947
+  },
+  "cadiz": {
+   "name": "Cádiz",
+   "total": 1988
+  },
+  "canarias": {
+   "name": "Canarias",
+   "total": 2234
+  },
+  "cantabria": {
+   "name": "Cantabria",
+   "total": 2082
+  },
+  "castello": {
+   "name": "Castellón/Castelló",
+   "total": 1445
+  },
+  "castellon": {
+   "name": "Castellón/Castelló",
+   "total": 1445
+  },
+  "castellon castello": {
+   "name": "Castellón/Castelló",
+   "total": 1445
+  },
+  "castilla la mancha": {
+   "name": "Castilla-La Mancha",
+   "total": 1172
+  },
+  "castilla y leon": {
+   "name": "Castilla y León",
+   "total": 1291
+  },
+  "cataluna": {
+   "name": "Cataluña",
+   "total": 2749
+  },
+  "ceuta": {
+   "name": "Ceuta",
+   "total": 2212
+  },
+  "ceuta y melilla": {
+   "name": "Ceuta y Melilla",
+   "total": 2162
+  },
+  "ciudad real": {
+   "name": "Ciudad Real",
+   "total": 828
+  },
+  "comunidad de madrid": {
+   "name": "Madrid (Comunidad de)",
+   "total": 4048
+  },
+  "comunidad foral de navarra": {
+   "name": "Navarra (Comunidad Foral de)",
+   "total": 1934
+  },
+  "comunidad valenciana": {
+   "name": "Comunidad Valenciana",
+   "total": 1898
+  },
+  "cordoba": {
+   "name": "Córdoba",
+   "total": 1286
+  },
+  "coruna": {
+   "name": "Coruña (A)",
+   "total": 1711
+  },
+  "cuenca": {
+   "name": "Cuenca",
+   "total": 936
+  },
+  "extremadura": {
+   "name": "Extremadura",
+   "total": 970
+  },
+  "galicia": {
+   "name": "Galicia",
+   "total": 1627
+  },
+  "gerona": {
+   "name": "Girona",
+   "total": 2153
+  },
+  "gipuzkoa": {
+   "name": "Gipuzkoa",
+   "total": 3420
+  },
+  "girona": {
+   "name": "Girona",
+   "total": 2153
+  },
+  "granada": {
+   "name": "Granada",
+   "total": 1635
+  },
+  "guadalajara": {
+   "name": "Guadalajara",
+   "total": 1671
+  },
+  "guipuzcoa": {
+   "name": "Gipuzkoa",
+   "total": 3420
+  },
+  "huelva": {
+   "name": "Huelva",
+   "total": 1480
+  },
+  "huesca": {
+   "name": "Huesca",
+   "total": 1481
+  },
+  "illes balears": {
+   "name": "Balears (Illes)",
+   "total": 3886
+  },
+  "islas baleares": {
+   "name": "Balears (Illes)",
+   "total": 3886
+  },
+  "jaen": {
+   "name": "Jaén",
+   "total": 898
+  },
+  "la coruna": {
+   "name": "Coruña (A)",
+   "total": 1711
+  },
+  "la rioja": {
+   "name": "Rioja (La)",
+   "total": 1440
+  },
+  "las palmas": {
+   "name": "Palmas (Las)",
+   "total": 2203
+  },
+  "leon": {
+   "name": "León",
+   "total": 1047
+  },
+  "lerida": {
+   "name": "Lleida",
+   "total": 1282
+  },
+  "lleida": {
+   "name": "Lleida",
+   "total": 1282
+  },
+  "lugo": {
+   "name": "Lugo",
+   "total": 1146
+  },
+  "madrid": {
+   "name": "Madrid (Comunidad de)",
+   "total": 4048
+  },
+  "madrid comunidad de": {
+   "name": "Madrid (Comunidad de)",
+   "total": 4048
+  },
+  "malaga": {
+   "name": "Málaga",
+   "total": 2988
+  },
+  "melilla": {
+   "name": "Melilla",
+   "total": 2123
+  },
+  "murcia": {
+   "name": "Murcia (Región de)",
+   "total": 1330
+  },
+  "murcia region de": {
+   "name": "Murcia (Región de)",
+   "total": 1330
+  },
+  "navarra": {
+   "name": "Navarra (Comunidad Foral de)",
+   "total": 1934
+  },
+  "navarra comunidad foral de": {
+   "name": "Navarra (Comunidad Foral de)",
+   "total": 1934
+  },
+  "orense": {
+   "name": "Ourense",
+   "total": 1110
+  },
+  "ourense": {
+   "name": "Ourense",
+   "total": 1110
+  },
+  "pais vasco": {
+   "name": "País Vasco",
+   "total": 3036
+  },
+  "palencia": {
+   "name": "Palencia",
+   "total": 1056
+  },
+  "palmas": {
+   "name": "Palmas (Las)",
+   "total": 2203
+  },
+  "pontevedra": {
+   "name": "Pontevedra",
+   "total": 1784
+  },
+  "principado de asturias": {
+   "name": "Asturias (Principado de )",
+   "total": 1752
+  },
+  "region de murcia": {
+   "name": "Murcia (Región de)",
+   "total": 1330
+  },
+  "rioja": {
+   "name": "Rioja (La)",
+   "total": 1440
+  },
+  "salamanca": {
+   "name": "Salamanca",
+   "total": 1474
+  },
+  "santa cruz de tenerife": {
+   "name": "Santa Cruz de Tenerife",
+   "total": 2265
+  },
+  "segovia": {
+   "name": "Segovia",
+   "total": 1479
+  },
+  "sevilla": {
+   "name": "Sevilla",
+   "total": 1840
+  },
+  "soria": {
+   "name": "Soria",
+   "total": 1104
+  },
+  "tarragona": {
+   "name": "Tarragona",
+   "total": 1778
+  },
+  "teruel": {
+   "name": "Teruel",
+   "total": 1004
+  },
+  "toledo": {
+   "name": "Toledo",
+   "total": 1219
+  },
+  "valencia": {
+   "name": "Valencia/València",
+   "total": 1931
+  },
+  "valencia valencia": {
+   "name": "Valencia/València",
+   "total": 1931
+  },
+  "valladolid": {
+   "name": "Valladolid",
+   "total": 1591
+  },
+  "vizcaya": {
+   "name": "Bizkaia",
+   "total": 2965
+  },
+  "zamora": {
+   "name": "Zamora",
+   "total": 934
+  },
+  "zaragoza": {
+   "name": "Zaragoza",
+   "total": 1906
+  }
+ },
+ "source": "Valor tasado medio de vivienda libre, Ministerio de Vivienda y Agenda Urbana"
+}
