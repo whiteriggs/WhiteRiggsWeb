@@ -23,9 +23,9 @@
   <meta name="apple-mobile-web-app-title" content="White Riggs">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
-<body>
+<body class="body-home">
 
   <!-- Header / Navigation -->
   <header>
@@ -35,8 +35,14 @@
         <span class="brand-title">The White Riggs</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#apps">Apps</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#apps" data-es="Apps" data-en="Apps">Apps</a></li>
+        <li><a href="#about" data-es="El estudio" data-en="About">About</a></li>
+        <li>
+          <div class="lang-toggle-inline">
+            <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+            <button type="button" class="lang-btn active" data-lang-btn="en">EN</button>
+          </div>
+        </li>
       </ul>
     </div>
   </header>
@@ -44,14 +50,14 @@
   <main>
     <!-- Hero Section -->
     <section class="hero container fade-in">
-      <div class="hero-badge">Independent iOS Studio</div>
-      <h1 class="hero-title">Simplicity is the ultimate sophistication.</h1>
-      <p class="hero-subtitle">Creating elegant, highly focused mobile applications designed to inspire and delight.</p>
+      <div class="hero-badge" data-es="Estudio iOS independiente" data-en="Independent iOS Studio">Independent iOS Studio</div>
+      <h1 class="hero-title" data-es="La simplicidad es la máxima sofisticación." data-en="Simplicity is the ultimate sophistication.">Simplicity is the ultimate sophistication.</h1>
+      <p class="hero-subtitle" data-es="Aplicaciones móviles elegantes y muy enfocadas, hechas para inspirar y dar gusto usarlas." data-en="Creating elegant, highly focused mobile applications designed to inspire and delight.">Creating elegant, highly focused mobile applications designed to inspire and delight.</p>
     </section>
 
     <!-- Apps Section -->
     <section id="apps" class="apps-section container fade-in">
-      <h2 class="section-title">Crafted for iOS</h2>
+      <h2 class="section-title" data-es="Hecho para iOS" data-en="Crafted for iOS">Crafted for iOS</h2>
       
       <div class="apps-grid">
 
@@ -62,10 +68,10 @@
               <img src="assets/curiosity-icon.png?v=4" alt="Curiosity Icon" class="app-icon">
               <div class="app-title-group">
                 <h3>Curiosity</h3>
-                <div class="app-category">Education & Science</div>
+                <div class="app-category" data-es="Educación y ciencia" data-en="Education &amp; Science">Education &amp; Science</div>
               </div>
             </div>
-            <p class="app-description">
+            <p class="app-description" data-es="Tu dosis diaria de asombro galáctico. Descubre datos curiosos de ciencia, historia y naturaleza en una interfaz inmersiva inspirada en los planetas." data-en="Your daily dose of galactic wonder. Explore curious facts about science, history, and nature with an immersive interface inspired by the planets.">
               Your daily dose of galactic wonder. Explore curious facts about science, history, and nature with an immersive interface inspired by the planets.
             </p>
           </div>
@@ -75,7 +81,7 @@
               <span>App Store</span>
             </a>
             <a href="support/curiosity.html" rel="noopener noreferrer" class="btn btn-secondary">
-              <span>Support</span>
+              <span data-es="Soporte" data-en="Support">Support</span>
             </a>
           </div>
         </article>
@@ -87,10 +93,10 @@
               <img src="assets/getmeout-icon.png?v=4" alt="GetMeOut Icon" class="app-icon">
               <div class="app-title-group">
                 <h3>GetMeOut! Escape</h3>
-                <div class="app-category">Utilities & Productivity</div>
+                <div class="app-category" data-es="Utilidades y productividad" data-en="Utilities &amp; Productivity">Utilities &amp; Productivity</div>
               </div>
             </div>
-            <p class="app-description">
+            <p class="app-description" data-es="Tu escape profesional de bolsillo. Genera una excusa creíble con un toque, programa una llamada falsa realista y sal de cualquier momento incómodo con estilo." data-en="Your professional pocket escape. Generate a believable excuse in one tap, schedule a realistic fake call, and walk away from any awkward moment with style.">
               Your professional pocket escape. Generate a believable excuse in one tap, schedule a realistic fake call, and walk away from any awkward moment with style.
             </p>
           </div>
@@ -100,7 +106,7 @@
               <span>App Store</span>
             </a>
             <a href="support/getmeout.html" rel="noopener noreferrer" class="btn btn-secondary">
-              <span>Support</span>
+              <span data-es="Soporte" data-en="Support">Support</span>
             </a>
           </div>
         </article>
@@ -112,19 +118,19 @@
               <img src="assets/wyrms-icon.png?v=4" alt="Wyrms Icon" class="app-icon">
               <div class="app-title-group">
                 <h3>Wyrms</h3>
-                <div class="app-category">Board Games</div>
+                <div class="app-category" data-es="Juegos de mesa" data-en="Board Games">Board Games</div>
               </div>
             </div>
-            <p class="app-description">
+            <p class="app-description" data-es="Carrera de dragones y juego de memoria. Una aventura por turnos para 2 a 4 jugadores, contra amigos o contra la máquina. Lleva a tus dragones alrededor del volcán hasta la victoria." data-en="Dragon Race &amp; Memory Board Game. A turn-based memory adventure for 2 to 4 players, against friends or the CPU. Race your dragons around the volcano to claim victory.">
               Dragon Race &amp; Memory Board Game. A turn-based memory adventure for 2 to 4 players, against friends or the CPU. Race your dragons around the volcano to claim victory.
             </p>
           </div>
           <div class="app-actions">
             <span class="btn btn-disabled">
-              <span>In Review</span>
+              <span data-es="En revisión" data-en="In Review">In Review</span>
             </span>
             <a href="support/wyrms.html" rel="noopener noreferrer" class="btn btn-secondary">
-              <span>Support</span>
+              <span data-es="Soporte" data-en="Support">Support</span>
             </a>
           </div>
         </article>
@@ -136,19 +142,19 @@
               <img src="assets/lyvara-icon.png?v=1" alt="LYVARA Icon" class="app-icon">
               <div class="app-title-group">
                 <h3>LYVARA</h3>
-                <div class="app-category">Finance</div>
+                <div class="app-category" data-es="Finanzas" data-en="Finance">Finance</div>
               </div>
             </div>
-            <p class="app-description">
+            <p class="app-description" data-es="Todo tu patrimonio en un sitio tranquilo. Inversiones, inmuebles y deudas, valorados con datos oficiales y proyectados a futuro — en privado, dentro de tu iPhone." data-en="Your whole net worth in one calm place. Investments, property and debt, valued with official data and projected into the future — privately, on your device.">
               Your whole net worth in one calm place. Investments, property and debt, valued with official data and projected into the future — privately, on your device.
             </p>
           </div>
           <div class="app-actions">
             <span class="btn btn-disabled">
-              <span>Coming Soon</span>
+              <span data-es="Muy pronto" data-en="Coming Soon">Coming Soon</span>
             </span>
             <a href="support/lyvara.html" rel="noopener noreferrer" class="btn btn-secondary">
-              <span>Support</span>
+              <span data-es="Soporte" data-en="Support">Support</span>
             </a>
           </div>
         </article>
@@ -160,8 +166,8 @@
     <section id="about" class="about-section container fade-in">
       <div class="about-card">
         <img src="assets/riggs-logo.png?v=4" alt="Riggs the Golden Retriever" class="about-avatar">
-        <p class="about-quote">"Named in honor of Riggs, a white Golden Retriever whose loyalty, warmth, and joyful spirit inspire everything built under this brand."</p>
-        <div class="about-author">The White Riggs Studio</div>
+        <p class="about-quote" data-es="«En honor a Riggs, un Golden Retriever blanco cuya lealtad, ternura y alegría inspiran todo lo que se construye bajo esta marca.»" data-en="&quot;Named in honor of Riggs, a white Golden Retriever whose loyalty, warmth, and joyful spirit inspire everything built under this brand.&quot;">"Named in honor of Riggs, a white Golden Retriever whose loyalty, warmth, and joyful spirit inspire everything built under this brand."</p>
+        <div class="about-author" data-es="Estudio The White Riggs" data-en="The White Riggs Studio">The White Riggs Studio</div>
       </div>
     </section>
   </main>
@@ -169,16 +175,28 @@
   <!-- Footer -->
   <footer>
     <div class="container footer-content">
-      <div>&copy; 2026 The White Riggs. All rights reserved.</div>
+      <div data-es="© 2026 The White Riggs. Todos los derechos reservados." data-en="© 2026 The White Riggs. All rights reserved.">&copy; 2026 The White Riggs. All rights reserved.</div>
       <ul class="footer-links">
-        <li><a href="support/curiosity.html">Curiosity Support</a></li>
-        <li><a href="support/getmeout.html">GetMeOut Support</a></li>
-        <li><a href="support/wyrms.html">Wyrms Support</a></li>
-        <li><a href="support/lyvara.html">LYVARA Support</a></li>
+        <li><a href="support/curiosity.html" data-es="Soporte de Curiosity" data-en="Curiosity Support">Curiosity Support</a></li>
+        <li><a href="support/getmeout.html" data-es="Soporte de GetMeOut" data-en="GetMeOut Support">GetMeOut Support</a></li>
+        <li><a href="support/wyrms.html" data-es="Soporte de Wyrms" data-en="Wyrms Support">Wyrms Support</a></li>
+        <li><a href="support/lyvara.html" data-es="Soporte de LYVARA" data-en="LYVARA Support">LYVARA Support</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
+  <script>
+    initLangSwitcher({
+      langs: ['es', 'en'],
+      probe: 'en',
+      fallback: 'en',
+      storageKey: 'whiteriggs-lang',
+      titles: {
+        es: 'The White Riggs — Software hecho con intención',
+        en: 'The White Riggs — Crafting Software with Intention'
+      }
+    });
+  </script>
 </body>
 </html>

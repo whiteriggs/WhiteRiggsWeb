@@ -885,16 +885,20 @@ footer {
   box-shadow: 0 4px 12px rgba(255,184,77,0.4);
 }
 
-/* Variante oscura del conmutador de idioma (Curiosity) */
-.body-curiosity .lang-toggle-inline {
+/* Variante oscura del conmutador de idioma (Curiosity y portada) */
+.body-curiosity .lang-toggle-inline,
+.body-home .lang-toggle-inline {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.12);
   box-shadow: none;
   margin-left: 6px;
 }
-.body-curiosity .lang-btn { color: var(--text-secondary); }
-.body-curiosity .lang-btn:hover { color: #fff; }
-.body-curiosity .lang-btn.active {
+.body-curiosity .lang-btn,
+.body-home .lang-btn { color: var(--text-secondary); }
+.body-curiosity .lang-btn:hover,
+.body-home .lang-btn:hover { color: #fff; }
+.body-curiosity .lang-btn.active,
+.body-home .lang-btn.active {
   background: rgba(41,151,255,0.9);
   color: #fff;
   box-shadow: 0 4px 12px rgba(41,151,255,0.35);
