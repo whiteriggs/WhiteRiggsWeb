@@ -89,4 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
       header.style.borderBottomColor = 'rgba(255, 255, 255, 0.08)';
     }
   });
+
+  // PWA: solo en la home, que es donde vive el manifest.
+  if ('serviceWorker' in navigator && document.querySelector('link[rel="manifest"]')) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
 });
