@@ -1273,6 +1273,24 @@ footer {
   font-size: 0.72rem;
   opacity: 0.88;
 }
+.wyrms-cta {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: linear-gradient(180deg,#ffab5e,#e8611f);
+  color: #1a0d07;
+  border-radius: 14px;
+  padding: 12px 26px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(232,97,31,0.35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.wyrms-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(232,97,31,0.45); }
+.wyrms-cta small { font-weight: 500; font-size: 0.72rem; opacity: 0.9; }
 
 /* Wyrms sections */
 .wyrms-section { padding: 70px 0; border-top: 1px solid #3a2418; }
