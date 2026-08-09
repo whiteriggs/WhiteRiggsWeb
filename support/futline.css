@@ -1,0 +1,326 @@
+/* FutLine support page. Aislado a proposito: no toca el styles.css compartido.
+   Colores tomados de App/Diseno.swift: lienzo, acierto, fallo y tarjeta. */
+
+.body-futline {
+  background: #08090D;
+  color: #EDF1F7;
+}
+
+.fl-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(58% 42% at 20% 6%, rgba(53, 224, 139, 0.14), transparent 70%),
+    radial-gradient(50% 40% at 84% 26%, rgba(76, 141, 255, 0.10), transparent 70%),
+    radial-gradient(70% 50% at 50% 100%, rgba(53, 224, 139, 0.06), transparent 70%),
+    #08090D;
+}
+
+/* El rail de la linea temporal, que es el motivo de la app y del icono. */
+.fl-backdrop::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, rgba(53, 224, 139, 0.18) 18%, rgba(53, 224, 139, 0.18) 82%, transparent);
+}
+
+.fl-main {
+  padding-top: 90px;
+}
+
+/* El selector de idioma compartido esta pensado para cabecera clara. */
+.body-futline .lang-toggle-inline {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+.body-futline .lang-btn {
+  color: rgba(237, 241, 247, 0.75);
+}
+
+.body-futline .lang-btn.active {
+  background: #35E08B;
+  color: #08090D;
+  box-shadow: 0 4px 12px rgba(53, 224, 139, 0.35);
+}
+
+/* Hero */
+.fl-hero {
+  text-align: center;
+  padding: 60px 24px 40px;
+}
+
+.fl-icon {
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(53, 224, 139, 0.25);
+}
+
+.fl-title {
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 24px 0 10px;
+}
+
+/* "Line" toma el color de la baraja elegida, igual que el logotipo dentro de la
+   app. Aqui va rotando por el destello real de varios clubes: azul de Historia,
+   Barcelona, seleccion, Betis, Athletic y Valencia. */
+.fl-title em {
+  font-style: normal;
+  color: #4C8DFF;
+  animation: fl-barajas 18s steps(1, end) infinite;
+}
+
+@keyframes fl-barajas {
+  0%   { color: #4C8DFF; }
+  16%  { color: #E6005F; }
+  33%  { color: #E8B33A; }
+  50%  { color: #00E67C; }
+  66%  { color: #EE2523; }
+  83%  { color: #F18E00; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fl-title em { animation: none; }
+}
+
+.fl-tagline {
+  font-size: 1.15rem;
+  color: #AAB4C6;
+  max-width: 36ch;
+  margin: 0 auto;
+}
+
+.fl-soon {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 30px;
+  padding: 14px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(53, 224, 139, 0.35);
+  background: rgba(53, 224, 139, 0.08);
+  color: #35E08B;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.fl-soon small {
+  font-weight: 500;
+  font-size: 0.78rem;
+  color: #8B95A8;
+  letter-spacing: 0;
+}
+
+/* Secciones */
+.fl-section {
+  padding: 56px 24px;
+  /* La cabecera es fija: sin esto el titulo queda debajo al saltar al ancla. */
+  scroll-margin-top: 96px;
+}
+
+.fl-section h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.fl-lead {
+  color: #98A2B5;
+  margin-bottom: 28px;
+  max-width: 62ch;
+}
+
+.fl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.fl-card {
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #191B21;
+}
+
+.fl-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: #EDF1F7;
+}
+
+.fl-card p {
+  color: #98A2B5;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.fl-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+/* Como se juega: las cartas colgadas de su rail, como en la partida. */
+.fl-rail {
+  position: relative;
+  margin: 0;
+  padding: 4px 0 4px 34px;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.fl-rail::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 9px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(53, 224, 139, 0.55), rgba(53, 224, 139, 0.12));
+}
+
+.fl-rail li {
+  position: relative;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: #191B21;
+  color: #98A2B5;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.fl-rail li::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 22px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #35E08B;
+  box-shadow: 0 0 14px rgba(53, 224, 139, 0.7);
+}
+
+/* El ultimo paso es el fallo, y ahi el color cambia de significado. */
+.fl-rail li.fl-fallo::before {
+  background: #FF4D5E;
+  box-shadow: 0 0 14px rgba(255, 77, 94, 0.7);
+}
+
+.fl-rail strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #EDF1F7;
+  font-weight: 600;
+}
+
+/* Barajas */
+.fl-cifras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.fl-cifra {
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(53, 224, 139, 0.22);
+  background: rgba(53, 224, 139, 0.05);
+  text-align: center;
+}
+
+.fl-cifra b {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #35E08B;
+  line-height: 1.1;
+}
+
+.fl-cifra span {
+  font-size: 0.82rem;
+  color: #8B95A8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Ayuda */
+.fl-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(53, 224, 139, 0.25);
+  background: rgba(53, 224, 139, 0.06);
+}
+
+.fl-contact span {
+  color: #8B95A8;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.fl-contact a {
+  color: #35E08B;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.fl-contact a:hover {
+  text-decoration: underline;
+}
+
+.fl-section details {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.fl-section summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #EDF1F7;
+}
+
+.fl-section details p {
+  margin-top: 10px;
+  color: #98A2B5;
+  line-height: 1.6;
+}
+
+/* Nota legal */
+.fl-note {
+  margin-top: 28px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  color: #8B95A8;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.fl-note a {
+  color: #98A2B5;
+}
+
+@media (max-width: 600px) {
+  .fl-main { padding-top: 76px; }
+  .fl-hero { padding: 40px 20px 30px; }
+  .fl-backdrop::after { display: none; }
+}

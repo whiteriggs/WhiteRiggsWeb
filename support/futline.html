@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FutLine — Support &amp; Privacy</title>
+  <meta name="description" content="FutLine for iOS — a football timeline card game. Order players by debut season, goals or appearances across 138 decks. Support, FAQ and privacy.">
+  <link rel="icon" type="image/png" href="../assets/futline-icon.png?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=7">
+  <link rel="stylesheet" href="futline.css?v=1">
+</head>
+<body class="body-app body-futline">
+
+  <div class="fl-backdrop" aria-hidden="true"></div>
+
+  <!-- Shared Header -->
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="brand-link">
+        <img src="../assets/riggs-logo.png?v=4" alt="Riggs Logo" class="brand-logo-img">
+        <span class="brand-title">The White Riggs</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#juego" data-es="Cómo se juega" data-en="How to play">How to play</a></li>
+        <li><a href="#barajas" data-es="Barajas" data-en="Decks">Decks</a></li>
+        <li><a href="#datos" data-es="Datos" data-en="Data">Data</a></li>
+        <li><a href="#ayuda" data-es="Ayuda" data-en="Help">Help</a></li>
+        <li><a href="#privacidad" data-es="Privacidad" data-en="Privacy">Privacy</a></li>
+        <li>
+          <div class="lang-toggle-inline">
+            <button type="button" class="lang-btn active" data-lang-btn="es">ES</button>
+            <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="fl-main">
+
+    <!-- Hero -->
+    <section class="fl-hero fade-in">
+      <img src="../assets/futline-icon.png?v=1" alt="FutLine App Icon" class="fl-icon">
+      <h1 class="fl-title">Fut<em>Line</em></h1>
+      <p class="fl-tagline" data-es="Coloca cada jugador en su sitio de la historia. Tres fallos y te expulsan." data-en="Put every player where they belong in history. Three mistakes and you are sent off.">Put every player where they belong in history. Three mistakes and you are sent off.</p>
+      <span class="fl-soon">
+        <span data-es="Próximamente" data-en="Coming soon">Coming soon</span>
+        <small data-es="en la App Store" data-en="on the App Store">on the App Store</small>
+      </span>
+    </section>
+
+    <!-- Como se juega -->
+    <section id="juego" class="fl-section wrap fade-in">
+      <h2 data-es="Cómo se juega" data-en="How to play">How to play</h2>
+      <p class="fl-lead" data-es="Una línea temporal, una carta en la mano y una pregunta: ¿va antes o después? Sin cronómetro y sin prisa." data-en="A timeline, a card in your hand and one question: does it go before or after? No timer, no rush.">A timeline, a card in your hand and one question: does it go before or after? No timer, no rush.</p>
+      <ol class="fl-rail">
+        <li>
+          <strong data-es="Eliges tu baraja" data-en="Pick your deck">Pick your deck</strong>
+          <span data-es="Tu equipo, una competición o la historia del fútbol. Y el reto: temporada de debut, goles o partidos jugados." data-en="Your club, a competition, or the history of football. Then the challenge: debut season, goals or appearances.">Your club, a competition, or the history of football. Then the challenge: debut season, goals or appearances.</span>
+        </li>
+        <li>
+          <strong data-es="La partida empieza con tres cartas puestas" data-en="The game starts with three cards already down">The game starts with three cards already down</strong>
+          <span data-es="Con una sola carta solo habría dos huecos y los primeros turnos se acertarían a cara o cruz." data-en="With a single card there would be just two gaps, and the first turns would be a coin toss.">With a single card there would be just two gaps, and the first turns would be a coin toss.</span>
+        </li>
+        <li>
+          <strong data-es="Arrastras la carta a su hueco" data-en="Drag the card into its gap">Drag the card into its gap</strong>
+          <span data-es="Con el dedo, o tocando el hueco directamente. La carta se encoge mientras la llevas para que veas dónde la sueltas." data-en="With your finger, or by tapping the gap. The card shrinks as you carry it so you can see where you are dropping it.">With your finger, or by tapping the gap. The card shrinks as you carry it so you can see where you are dropping it.</span>
+        </li>
+        <li>
+          <strong data-es="Los empates cuentan como acierto" data-en="Ties count as correct">Ties count as correct</strong>
+          <span data-es="Messi, Eto'o y Deco llegaron al Barça el mismo año. Cualquier hueco entre ellos vale." data-en="Messi, Eto'o and Deco all arrived at Barça the same year. Any gap between them is valid.">Messi, Eto'o and Deco all arrived at Barça the same year. Any gap between them is valid.</span>
+        </li>
+        <li class="fl-fallo">
+          <strong data-es="Fallas y la carta se coloca igual" data-en="Miss, and the card is placed anyway">Miss, and the card is placed anyway</strong>
+          <span data-es="En su sitio real, para que veas dónde iba. Pierdes una vida. A la tercera, tarjeta roja." data-en="In its real position, so you can see where it belonged. You lose a life. On the third one, red card.">In its real position, so you can see where it belonged. You lose a life. On the third one, red card.</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Barajas -->
+    <section id="barajas" class="fl-section wrap fade-in">
+      <h2 data-es="Las barajas" data-en="The decks">The decks</h2>
+      <p class="fl-lead" data-es="Tres competiciones, la selección española y los 42 clubes que han pisado Primera desde 2000-01. Cada uno con su escudo y sus colores." data-en="Three competitions, the Spain national team and the 42 clubs that have played in the top flight since 2000-01. Each with its own crest and colours.">Three competitions, the Spain national team and the 42 clubs that have played in the top flight since 2000-01. Each with its own crest and colours.</p>
+      <div class="fl-cifras">
+        <div class="fl-cifra"><b>138</b><span data-es="barajas" data-en="decks">decks</span></div>
+        <div class="fl-cifra"><b>10.351</b><span data-es="cartas" data-en="cards">cards</span></div>
+        <div class="fl-cifra"><b>46</b><span data-es="escudos" data-en="crests">crests</span></div>
+        <div class="fl-cifra"><b>4</b><span data-es="modalidades" data-en="challenges">challenges</span></div>
+      </div>
+      <div class="fl-grid">
+        <article class="fl-card">
+          <div class="fl-card-icon">📅</div>
+          <h3 data-es="Temporada de debut" data-en="Debut season">Debut season</h3>
+          <p data-es="¿En qué temporada llegó al club? De Zarra a Lamine Yamal, ordenando por el año en que se pusieron la camiseta por primera vez." data-en="Which season did they arrive at the club? From Zarra to Lamine Yamal, ordered by the year they first wore the shirt.">Which season did they arrive at the club? From Zarra to Lamine Yamal, ordered by the year they first wore the shirt.</p>
+        </article>
+        <article class="fl-card">
+          <div class="fl-card-icon">⚽</div>
+          <h3 data-es="Goleadores" data-en="Top scorers">Top scorers</h3>
+          <p data-es="Los goles con ese equipo, de más a menos. La baraja se lee como una clasificación." data-en="Goals for that team, most to fewest. The deck reads like a leaderboard.">Goals for that team, most to fewest. The deck reads like a leaderboard.</p>
+        </article>
+        <article class="fl-card">
+          <div class="fl-card-icon">🎽</div>
+          <h3 data-es="Partidos jugados" data-en="Appearances">Appearances</h3>
+          <p data-es="Los que más veces se vistieron de corto. Aquí los porteros y los centrales por fin ganan." data-en="Those who pulled on the shirt most often. Here the goalkeepers and centre-backs finally win.">Those who pulled on the shirt most often. Here the goalkeepers and centre-backs finally win.</p>
+        </article>
+        <article class="fl-card">
+          <div class="fl-card-icon">🏆</div>
+          <h3 data-es="Historia del fútbol" data-en="History of football">History of football</h3>
+          <p data-es="Cien momentos desde 1857, la baraja que no va de ningún equipo: la primera reglamentación, el primer Mundial, el gol de Iniesta." data-en="A hundred moments since 1857, the deck that belongs to no club: the first written rules, the first World Cup, Iniesta's goal.">A hundred moments since 1857, the deck that belongs to no club: the first written rules, the first World Cup, Iniesta's goal.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Datos -->
+    <section id="datos" class="fl-section wrap fade-in">
+      <h2 data-es="De dónde salen los datos" data-en="Where the data comes from">Where the data comes from</h2>
+      <p class="fl-lead" data-es="De fuentes abiertas y verificables, no de listas inventadas. Y cuando una cifra no era fiable, la baraja se ha descartado antes que colar un dato malo." data-en="From open, verifiable sources, not made-up lists. And when a figure was not trustworthy, the deck was dropped rather than shipping a bad number.">From open, verifiable sources, not made-up lists. And when a figure was not trustworthy, the deck was dropped rather than shipping a bad number.</p>
+      <div class="fl-grid">
+        <article class="fl-card">
+          <h3>Wikidata</h3>
+          <p data-es="Fichas de jugador y club: fechas de llegada, goles y partidos por etapa. Licencia CC0." data-en="Player and club records: arrival dates, goals and appearances per spell. CC0 licence.">Player and club records: arrival dates, goals and appearances per spell. CC0 licence.</p>
+        </article>
+        <article class="fl-card">
+          <h3>Wikipedia</h3>
+          <p data-es="Las listas curadas a mano: goleadores históricos de Primera, de la Champions y del Mundial, e internacionales con España. Licencia CC BY-SA 4.0." data-en="The hand-curated lists: all-time top scorers in the Spanish league, the Champions League and the World Cup, plus Spain internationals. CC BY-SA 4.0 licence.">The hand-curated lists: all-time top scorers in the Spanish league, the Champions League and the World Cup, plus Spain internationals. CC BY-SA 4.0 licence.</p>
+        </article>
+        <article class="fl-card">
+          <h3 data-es="Repasado a mano" data-en="Reviewed by hand">Reviewed by hand</h3>
+          <p data-es="Hay cifras que la fuente da mal: goles de otras competiciones colados en el total, porteros con los goles encajados en la casilla de goles, o un jugador con 5.000 partidos. Todo eso está filtrado, y las páginas concretas se citan dentro de la app." data-en="Some figures come through wrong: goals from other competitions folded into the total, goalkeepers with goals conceded in the goals column, or a player with 5,000 appearances. All of that is filtered out, and the specific pages are credited inside the app.">Some figures come through wrong: goals from other competitions folded into the total, goalkeepers with goals conceded in the goals column, or a player with 5,000 appearances. All of that is filtered out, and the specific pages are credited inside the app.</p>
+        </article>
+        <article class="fl-card">
+          <h3 data-es="Se actualiza en junio" data-en="Updated in June">Updated in June</h3>
+          <p data-es="Con la temporada acabada. Si ves una cifra desfasada o un jugador que falta, escríbeme y entra en la siguiente actualización." data-en="Once the season is over. If you spot an outdated figure or a missing player, write to me and it goes into the next update.">Once the season is over. If you spot an outdated figure or a missing player, write to me and it goes into the next update.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Ayuda -->
+    <section id="ayuda" class="fl-section wrap fade-in">
+      <h2 data-es="Ayuda" data-en="Help">Help</h2>
+      <p class="fl-lead" data-es="Preguntas que ya me han hecho. Si la tuya no está, escríbeme: contesto yo." data-en="Questions I have already been asked. If yours is not here, write to me: you get me, not a bot.">Questions I have already been asked. If yours is not here, write to me: you get me, not a bot.</p>
+
+      <details>
+        <summary data-es="¿Necesito conexión a internet?" data-en="Do I need an internet connection?">Do I need an internet connection?</summary>
+        <p data-es="No. Las barajas van dentro de la app y la partida no consulta nada. Se juega igual en el metro o en un avión." data-en="No. The decks ship inside the app and the game queries nothing. It plays the same on the underground or on a plane.">No. The decks ship inside the app and the game queries nothing. It plays the same on the underground or on a plane.</p>
+      </details>
+      <details>
+        <summary data-es="¿Hay anuncios o compras dentro de la app?" data-en="Are there ads or in-app purchases?">Are there ads or in-app purchases?</summary>
+        <p data-es="No hay ninguna de las dos cosas. Ni anuncios, ni suscripción, ni vidas que se compran." data-en="Neither. No ads, no subscription, no lives to buy.">Neither. No ads, no subscription, no lives to buy.</p>
+      </details>
+      <details>
+        <summary data-es="¿Por qué mi jugador favorito no tiene carta?" data-en="Why isn't my favourite player in the deck?">Why isn't my favourite player in the deck?</summary>
+        <p data-es="Cada baraja tiene un tope y se ordena por notoriedad, no por cifras: entra quien más gente conoce. Además, en goles hay que llegar a un mínimo, así que los canteranos recién llegados todavía no aparecen." data-en="Each deck has a cap and is ranked by how widely known a player is, not by their numbers. On top of that, the goals decks have a minimum, so recent academy graduates are not there yet.">Each deck has a cap and is ranked by how widely known a player is, not by their numbers. On top of that, the goals decks have a minimum, so recent academy graduates are not there yet.</p>
+      </details>
+      <details>
+        <summary data-es="Creo que una fecha o una cifra está mal" data-en="I think a date or a figure is wrong">I think a date or a figure is wrong</summary>
+        <p data-es="Puede pasar, y me interesa saberlo. Dime el jugador, la baraja y qué debería poner, y lo compruebo contra la fuente. Un aviso conocido: la fecha es la de llegada al club, que a veces no coincide con el día del debut." data-en="It happens, and I want to know. Tell me the player, the deck and what it should say, and I will check it against the source. One known caveat: the date is when they joined the club, which sometimes differs from their actual debut.">It happens, and I want to know. Tell me the player, the deck and what it should say, and I will check it against the source. One known caveat: the date is when they joined the club, which sometimes differs from their actual debut.</p>
+      </details>
+      <details>
+        <summary data-es="¿Se puede jugar sin saber mucho de fútbol?" data-en="Can I play without knowing much about football?">Can I play without knowing much about football?</summary>
+        <p data-es="Sí. La baraja de historia del fútbol no pide conocer plantillas, y en las de club los empates de año perdonan bastante. Se aprende jugando: cada carta fallada se coloca en su sitio real y se queda ahí." data-en="Yes. The history deck asks nothing about squads, and in the club decks the tied years are forgiving. You learn by playing: every card you miss is placed where it truly belongs and stays there.">Yes. The history deck asks nothing about squads, and in the club decks the tied years are forgiving. You learn by playing: every card you miss is placed where it truly belongs and stays there.</p>
+      </details>
+      <details>
+        <summary data-es="¿Se guardan mis récords si cambio de iPhone?" data-en="Do my records survive a new iPhone?">Do my records survive a new iPhone?</summary>
+        <p data-es="Los récords se guardan en el propio dispositivo, uno por baraja. Si restauras una copia de seguridad de tu iPhone, vienen con ella." data-en="Records are stored on the device itself, one per deck. If you restore an iPhone backup, they come along with it.">Records are stored on the device itself, one per deck. If you restore an iPhone backup, they come along with it.</p>
+      </details>
+      <details>
+        <summary data-es="Uso Reducir movimiento, ¿me pierdo algo?" data-en="I use Reduce Motion — do I miss anything?">I use Reduce Motion — do I miss anything?</summary>
+        <p data-es="No. La app respeta el ajuste y sustituye cada animación por algo equivalente: la sacudida al fallar, por ejemplo, pasa a ser un destello rojo. Nunca se quita el aviso, solo cambia de forma." data-en="No. The app honours the setting and swaps each animation for an equivalent: the shake on a miss, for instance, becomes a red flash. The cue is never removed, only reshaped.">No. The app honours the setting and swaps each animation for an equivalent: the shake on a miss, for instance, becomes a red flash. The cue is never removed, only reshaped.</p>
+      </details>
+
+      <div class="fl-contact">
+        <span data-es="Escríbeme" data-en="Get in touch">Get in touch</span>
+        <a href="mailto:thewhiteriggs@gmail.com?subject=FutLine%20Support">thewhiteriggs@gmail.com</a>
+      </div>
+    </section>
+
+    <!-- Privacidad -->
+    <section id="privacidad" class="fl-section wrap fade-in">
+      <h2 data-es="Privacidad" data-en="Privacy">Privacy</h2>
+      <p class="fl-lead" data-es="Es un juego de cartas. No necesita saber nada de ti, así que no pregunta nada." data-en="It is a card game. It does not need to know anything about you, so it does not ask.">It is a card game. It does not need to know anything about you, so it does not ask.</p>
+      <div class="fl-grid">
+        <article class="fl-card">
+          <h3 data-es="Sin cuenta y sin registro" data-en="No account, no sign-up">No account, no sign-up</h3>
+          <p data-es="No hay usuario, ni correo, ni contraseña. Abres la app y juegas." data-en="No username, no email, no password. Open the app and play.">No username, no email, no password. Open the app and play.</p>
+        </article>
+        <article class="fl-card">
+          <h3 data-es="Nada sale del dispositivo" data-en="Nothing leaves the device">Nothing leaves the device</h3>
+          <p data-es="Los récords y el equipo elegido se guardan solo en tu iPhone. No hay servidor donde mandarlos." data-en="Your records and your chosen club are stored on your iPhone alone. There is no server to send them to.">Your records and your chosen club are stored on your iPhone alone. There is no server to send them to.</p>
+        </article>
+        <article class="fl-card">
+          <h3 data-es="Sin anuncios ni rastreo" data-en="No ads, no tracking">No ads, no tracking</h3>
+          <p data-es="Ni publicidad, ni analítica, ni identificadores, ni venta de datos a terceros." data-en="No advertising, no analytics, no identifiers, no selling data to third parties.">No advertising, no analytics, no identifiers, no selling data to third parties.</p>
+        </article>
+        <article class="fl-card">
+          <h3 data-es="Se borra desinstalando" data-en="Deleting the app deletes it all">Deleting the app deletes it all</h3>
+          <p data-es="Como todo vive en el dispositivo, quitar la app se lleva tus récords con ella. No queda copia en ningún sitio." data-en="Since everything lives on the device, removing the app takes your records with it. No copy is left anywhere.">Since everything lives on the device, removing the app takes your records with it. No copy is left anywhere.</p>
+        </article>
+      </div>
+      <p class="fl-note" data-es="Los datos de los jugadores proceden de Wikidata (CC0) y Wikipedia (CC BY-SA 4.0), con las páginas concretas citadas dentro de la app. Los escudos son marca registrada de sus respectivos clubes y competiciones, y se usan únicamente para identificar la baraja: FutLine no está afiliada ni respaldada por ningún club, por LaLiga, la RFEF, la UEFA ni la FIFA." data-en="Player data comes from Wikidata (CC0) and Wikipedia (CC BY-SA 4.0), with the specific pages credited inside the app. Crests are trademarks of their respective clubs and competitions and are used solely to identify the deck: FutLine is not affiliated with or endorsed by any club, LaLiga, the RFEF, UEFA or FIFA.">Player data comes from Wikidata (CC0) and Wikipedia (CC BY-SA 4.0), with the specific pages credited inside the app. Crests are trademarks of their respective clubs and competitions and are used solely to identify the deck: FutLine is not affiliated with or endorsed by any club, LaLiga, the RFEF, UEFA or FIFA.</p>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>&copy; 2026 The White Riggs. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="../index.html" data-es="Inicio" data-en="Home">Home</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=6"></script>
+  <script>
+    initLangSwitcher({
+      langs: ['es', 'en'],
+      probe: 'en',
+      fallback: 'en',
+      storageKey: 'futline-lang',
+      titles: {
+        es: 'FutLine — Soporte y Privacidad',
+        en: 'FutLine — Support & Privacy'
+      }
+    });
+  </script>
+</body>
+</html>
