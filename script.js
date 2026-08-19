@@ -59,6 +59,40 @@ function initLangSwitcher(options) {
   return apply;
 }
 
+/**
+ * Rellena los contadores de descargas con data/descargas.json.
+ * Devuelve la funcion de repintado para engancharla al cambio de idioma.
+ * Una app sin dato o con cero se queda oculta: mejor nada que un cero.
+ */
+function initDescargas() {
+  const marcas = document.querySelectorAll('[data-descargas]');
+  if (!marcas.length) return () => {};
+
+  let datos = null;
+  const rotulo = {
+    es: n => n.toLocaleString('es-ES') + ' descargas en el último año',
+    en: n => n.toLocaleString('en-US') + ' downloads in the last year'
+  };
+
+  function pintar(lang) {
+    if (!datos) return;
+    const texto = rotulo[lang] || rotulo.en;
+    marcas.forEach(el => {
+      const total = datos.apps[el.getAttribute('data-descargas')];
+      if (!total) return;
+      el.textContent = texto(total);
+      el.hidden = false;
+    });
+  }
+
+  fetch('data/descargas.json')
+    .then(respuesta => respuesta.ok ? respuesta.json() : Promise.reject())
+    .then(json => { datos = json; pintar(document.documentElement.lang); })
+    .catch(() => {});
+
+  return pintar;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Scroll animation observer
   const observerOptions = {

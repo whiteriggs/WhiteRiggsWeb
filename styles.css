@@ -331,6 +331,16 @@ header {
   margin-bottom: 32px;
 }
 
+/* Se rellena desde data/descargas.json; nace oculto y sigue oculto si no hay dato. */
+.app-downloads {
+  margin: -20px 0 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  opacity: 0.75;
+}
+
 /* Action Buttons */
 .app-actions {
   display: grid;

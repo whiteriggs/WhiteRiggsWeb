@@ -1,0 +1,49 @@
+name: Descargas
+
+# Apple cierra el informe del dia anterior de madrugada, asi que se mira a las
+# 6:40 UTC y solo se hace commit si alguna cifra cambio de verdad.
+on:
+  schedule:
+    - cron: "40 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install cryptography
+
+      # La clave privada solo existe durante el job y nunca sale del runner.
+      - name: Leer las descargas del ultimo ano
+        env:
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER: ${{ secrets.ASC_ISSUER }}
+          ASC_VENDOR: ${{ secrets.ASC_VENDOR }}
+        run: |
+          umask 077
+          printf '%s' "$ASC_KEY_P8" > "$RUNNER_TEMP/clave.p8"
+          ASC_KEY="$RUNNER_TEMP/clave.p8" python3 scripts/descargas.py mes12 --json data/descargas.json
+          rm -f "$RUNNER_TEMP/clave.p8"
+
+      - name: Publicar si cambio alguna cifra
+        run: |
+          git diff --quiet -I'"actualizado"' data/descargas.json && {
+            echo "Mismas cifras que ayer."
+            git checkout data/descargas.json
+            exit 0
+          }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/descargas.json
+          git commit -m "Descargas al dia"
+          git push
