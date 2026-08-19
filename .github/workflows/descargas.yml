@@ -1,10 +1,11 @@
 name: Descargas
 
-# Apple cierra el informe del dia anterior de madrugada, asi que se mira a las
-# 6:40 UTC y solo se hace commit si alguna cifra cambio de verdad.
+# Apple publica el informe de un dia a las 5:00 de la manana en California, que
+# son las 12:00 UTC en verano y las 13:00 en invierno. Se mira a las 14:00 para
+# no pedir un informe que todavia no existe.
 on:
   schedule:
-    - cron: "40 6 * * *"
+    - cron: "40 14 * * *"
   workflow_dispatch:
 
 permissions:
