@@ -1,0 +1,258 @@
+/* Pagina de Escalofrio. Aislada a proposito: no toca el styles.css compartido.
+   Colores medidos sobre el propio tablero del juego: la noche, la piedra, la
+   luna y el musgo. */
+
+.body-escalofrio {
+  background: #0D0D14;
+  color: #DBD6C4;
+}
+
+.ef-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(46% 30% at 78% 8%, rgba(86, 107, 124, 0.22), transparent 70%),
+    radial-gradient(60% 46% at 22% 68%, rgba(77, 97, 50, 0.08), transparent 70%),
+    radial-gradient(80% 60% at 50% 108%, rgba(25, 27, 46, 0.9), transparent 70%),
+    #0D0D14;
+}
+
+/* La luna, que es lo unico que alumbra en todo el juego. */
+.ef-backdrop::after {
+  content: "";
+  position: absolute;
+  top: 5vh;
+  right: 8vw;
+  width: min(240px, 34vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, rgba(155, 172, 186, 0.30), rgba(86, 107, 124, 0.16) 62%, transparent 72%);
+}
+
+.ef-main {
+  padding-top: 90px;
+}
+
+/* El selector de idioma compartido esta pensado para cabecera clara. */
+.body-escalofrio .lang-toggle-inline {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+.body-escalofrio .lang-btn {
+  color: rgba(219, 214, 196, 0.75);
+}
+
+.body-escalofrio .lang-btn.active {
+  background: #DBD6C4;
+  color: #191B2E;
+  box-shadow: 0 4px 12px rgba(219, 214, 196, 0.22);
+}
+
+/* Hero */
+.ef-hero {
+  text-align: center;
+  padding: 60px 24px 40px;
+}
+
+.ef-icon {
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(86, 107, 124, 0.35);
+}
+
+.ef-title {
+  font-family: Georgia, "Times New Roman", serif;
+  /* Once letras y muy espaciadas: con un minimo mayor se sale de la pantalla. */
+  font-size: clamp(1.5rem, 9vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 24px 0 10px;
+  /* Letra tallada: el borde alto del surco en sombra, igual que dentro del juego. */
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.9);
+}
+
+.ef-tagline {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(219, 214, 196, 0.7);
+  max-width: 30ch;
+  margin: 0 auto;
+}
+
+.ef-soon {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 30px;
+  border: 1px solid rgba(219, 214, 196, 0.22);
+  border-radius: 4px;
+  background: linear-gradient(180deg, #2C2E3A, #1A1B24);
+  color: #DBD6C4;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.ef-soon small {
+  display: block;
+  margin-top: 5px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: rgba(219, 214, 196, 0.55);
+}
+
+/* Secciones */
+.ef-section {
+  padding: 46px 24px;
+}
+
+.ef-section h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.9);
+}
+
+.ef-lead {
+  color: rgba(219, 214, 196, 0.72);
+  max-width: 62ch;
+  margin-bottom: 26px;
+}
+
+/* Las losas: piedra oscura con el borde alto iluminado, como en el juego. */
+.ef-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.ef-card {
+  padding: 20px 22px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #2C2E3A, #191B24);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.55);
+}
+
+.ef-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #DBD6C4;
+}
+
+.ef-card p {
+  color: rgba(219, 214, 196, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Las tres noches. */
+.ef-noches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.ef-noche {
+  padding: 22px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  text-align: center;
+}
+
+.ef-noche h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.ef-noche p {
+  color: rgba(219, 214, 196, 0.68);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.ef-noche-clara   { background: linear-gradient(180deg, rgba(86, 107, 124, 0.18), transparent); }
+.ef-noche-niebla  { background: linear-gradient(180deg, rgba(160, 168, 178, 0.14), transparent); }
+.ef-noche-tormenta{ background: linear-gradient(180deg, rgba(60, 70, 110, 0.24), transparent); }
+
+/* Ayuda */
+.ef-section details {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px 0;
+}
+
+.ef-section summary {
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  list-style: none;
+  position: relative;
+  padding-right: 28px;
+}
+
+.ef-section summary::-webkit-details-marker { display: none; }
+
+.ef-section summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: -2px;
+  font-size: 1.3rem;
+  color: rgba(219, 214, 196, 0.5);
+}
+
+.ef-section details[open] summary::after { content: "\2212"; }
+
+.ef-section details p {
+  margin-top: 10px;
+  color: rgba(219, 214, 196, 0.72);
+  line-height: 1.65;
+  max-width: 70ch;
+}
+
+.ef-contact {
+  margin-top: 30px;
+  padding: 20px 22px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #2C2E3A, #191B24);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.ef-contact span {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: rgba(219, 214, 196, 0.6);
+}
+
+.ef-contact a {
+  color: #DBD6C4;
+  font-weight: 600;
+}
+
+.ef-note {
+  margin-top: 22px;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(219, 214, 196, 0.5);
+  max-width: 78ch;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalofrío — Support &amp; Privacy</title>
+  <meta name="description" content="Escalofrío for iOS — a board game for 2 to 4 players around one iPhone. Climb the castle stairs without losing sight of which pawn is yours. Support, FAQ and privacy.">
+  <link rel="icon" type="image/png" href="../assets/escalofrio-icon.png?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=7">
+  <link rel="stylesheet" href="escalofrio.css?v=1">
+</head>
+<body class="body-app body-escalofrio">
+
+  <div class="ef-backdrop" aria-hidden="true"></div>
+
+  <!-- Shared Header -->
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="brand-link">
+        <img src="../assets/riggs-logo.png?v=4" alt="Riggs Logo" class="brand-logo-img">
+        <span class="brand-title">The White Riggs</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#juego" data-es="Cómo se juega" data-en="How to play">How to play</a></li>
+        <li><a href="#noches" data-es="Las noches" data-en="The nights">The nights</a></li>
+        <li><a href="#ayuda" data-es="Ayuda" data-en="Help">Help</a></li>
+        <li><a href="#privacidad" data-es="Privacidad" data-en="Privacy">Privacy</a></li>
+        <li>
+          <div class="lang-toggle-inline">
+            <button type="button" class="lang-btn active" data-lang-btn="es">ES</button>
+            <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="ef-main">
+
+    <!-- Hero -->
+    <section class="ef-hero fade-in">
+      <img src="../assets/escalofrio-icon.png?v=1" alt="Escalofrío App Icon" class="ef-icon">
+      <h1 class="ef-title">ESCALOFRÍO</h1>
+      <p class="ef-tagline" data-es="Sube al castillo sin perderte de vista." data-en="Climb the castle without losing sight of yourself.">Climb the castle without losing sight of yourself.</p>
+      <span class="ef-soon">
+        <span data-es="Muy pronto" data-en="Coming soon">Coming soon</span>
+        <small data-es="en la App Store" data-en="on the App Store">on the App Store</small>
+      </span>
+    </section>
+
+    <!-- Como se juega -->
+    <section id="juego" class="ef-section wrap fade-in">
+      <h2 data-es="Cómo se sube a la torre" data-en="How you climb the tower">How you climb the tower</h2>
+      <p class="ef-lead" data-es="De dos a cuatro jugadores alrededor de un solo iPhone. Cada uno tiene su peón en el primer escalón, a la vista de todos. Eso dura poco." data-en="Two to four players around a single iPhone. Everyone starts with their pawn on the first step, in plain sight. That does not last long.">Two to four players around a single iPhone. Everyone starts with their pawn on the first step, in plain sight. That does not last long.</p>
+      <div class="ef-grid">
+        <article class="ef-card">
+          <h3 data-es="El dado" data-en="The die">The die</h3>
+          <p data-es="Si sale un número, subes una figura esos escalones. Si sale un fantasma, le echas la sábana por encima a un peón; y si ya están todos tapados, cambias dos de sitio." data-en="Roll a number and you move one figure that many steps. Roll a ghost and you throw the sheet over a pawn; if every pawn is already covered, you swap two of them instead.">Roll a number and you move one figure that many steps. Roll a ghost and you throw the sheet over a pawn; if every pawn is already covered, you swap two of them instead.</p>
+        </article>
+        <article class="ef-card">
+          <h3 data-es="La sábana" data-en="The sheet">The sheet</h3>
+          <p data-es="Mientras tu peón siga a la vista estás obligado a subir el tuyo. En cuanto te lo tapan, eliges tú qué fantasma mueves. Cualquiera de ellos." data-en="While your pawn is still visible you are forced to move your own. The moment it gets covered, you choose which ghost to move. Any of them.">While your pawn is still visible you are forced to move your own. The moment it gets covered, you choose which ghost to move. Any of them.</p>
+        </article>
+        <article class="ef-card">
+          <h3 data-es="Los que no son de nadie" data-en="The ones nobody owns">The ones nobody owns</h3>
+          <p data-es="Por la escalera andan sueltos fantasmas sin dueño. Súbelos, cámbialos de sitio, despista con ellos: no son de nadie y no pueden ganar." data-en="There are ownerless ghosts loose on the staircase. Move them up, swap them around, use them as decoys: they belong to no one and they cannot win.">There are ownerless ghosts loose on the staircase. Move them up, swap them around, use them as decoys: they belong to no one and they cannot win.</p>
+        </article>
+        <article class="ef-card">
+          <h3 data-es="Arriba" data-en="The top">The top</h3>
+          <p data-es="Gana el primero que llega a la torre, si al destaparlo resulta ser el suyo. Si no era de nadie, la noche entera se la queda el castillo." data-en="The first to reach the tower wins, provided the figure turns out to be theirs when it is uncovered. If it belonged to no one, the castle keeps the whole night.">The first to reach the tower wins, provided the figure turns out to be theirs when it is uncovered. If it belonged to no one, the castle keeps the whole night.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Las noches -->
+    <section id="noches" class="ef-section wrap fade-in">
+      <h2 data-es="Las tres noches" data-en="The three nights">The three nights</h2>
+      <p class="ef-lead" data-es="El castillo va cambiando de tiempo mientras jugáis, a su ritmo y sin avisar. No cambia las reglas: cambia lo que se ve." data-en="The castle's weather shifts while you play, at its own pace and without warning. It does not change the rules: it changes what you can see.">The castle's weather shifts while you play, at its own pace and without warning. It does not change the rules: it changes what you can see.</p>
+      <div class="ef-noches">
+        <article class="ef-noche ef-noche-clara">
+          <h3 data-es="Noche clara" data-en="Clear night">Clear night</h3>
+          <p data-es="La luna llena sobre las almenas y los faroles encendidos. Se ve toda la escalera." data-en="A full moon over the battlements and the lanterns lit. The whole staircase is visible.">A full moon over the battlements and the lanterns lit. The whole staircase is visible.</p>
+        </article>
+        <article class="ef-noche ef-noche-niebla">
+          <h3 data-es="Niebla" data-en="Fog">Fog</h3>
+          <p data-es="La escalera se difumina y algún relámpago cae lejos, siempre a la misma distancia." data-en="The staircase blurs and the odd lightning bolt falls far away, always at the same distance.">The staircase blurs and the odd lightning bolt falls far away, always at the same distance.</p>
+        </article>
+        <article class="ef-noche ef-noche-tormenta">
+          <h3 data-es="Tormenta" data-en="Storm">Storm</h3>
+          <p data-es="Llueve encima del tablero y los truenos hacen temblar el teléfono. Los faroles se encogen del susto." data-en="Rain falls over the board and the thunder shakes the phone. The lanterns flinch at every strike.">Rain falls over the board and the thunder shakes the phone. The lanterns flinch at every strike.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Ayuda -->
+    <section id="ayuda" class="ef-section wrap fade-in">
+      <h2 data-es="Ayuda" data-en="Help">Help</h2>
+      <details>
+        <summary data-es="¿Cuánta gente hace falta?" data-en="How many people do I need?">How many people do I need?</summary>
+        <p data-es="De dos a cuatro, en la misma habitación y con un solo iPhone que va pasando de mano en mano. No hay partidas por internet ni contra la máquina." data-en="Two to four, in the same room, sharing a single iPhone that gets passed around. There is no online play and no computer opponent.">Two to four, in the same room, sharing a single iPhone that gets passed around. There is no online play and no computer opponent.</p>
+      </details>
+      <details>
+        <summary data-es="¿Por qué puedo mover un fantasma que no es mío?" data-en="Why can I move a ghost that isn't mine?">Why can I move a ghost that isn't mine?</summary>
+        <p data-es="Porque de eso va el juego. Cuando todas las figuras están tapadas nadie sabe con seguridad cuál es la suya, así que mueves la que te convenga y confías en tu memoria. El que se despista sube el peón de otro hasta la torre." data-en="Because that is the whole game. Once every figure is covered nobody knows for certain which one is theirs, so you move whichever suits you and trust your memory. Lose track and you will carry someone else's pawn to the tower.">Because that is the whole game. Once every figure is covered nobody knows for certain which one is theirs, so you move whichever suits you and trust your memory. Lose track and you will carry someone else's pawn to the tower.</p>
+      </details>
+      <details>
+        <summary data-es="He perdido de vista mi peón, ¿puedo comprobarlo?" data-en="I lost track of my pawn — can I check?">I lost track of my pawn — can I check?</summary>
+        <p data-es="No, y es a propósito. Nada de la pantalla dice de quién es cada figura mientras está tapada: si se pudiera consultar, no habría juego. Solo se descubre al final." data-en="No, and that is deliberate. Nothing on screen reveals who each covered figure belongs to; if you could look it up there would be no game. It is only revealed at the end.">No, and that is deliberate. Nothing on screen reveals who each covered figure belongs to; if you could look it up there would be no game. It is only revealed at the end.</p>
+      </details>
+      <details>
+        <summary data-es="¿Puede ganar un fantasma sin dueño?" data-en="Can an ownerless ghost win?">Can an ownerless ghost win?</summary>
+        <p data-es="No. Si el que llega arriba no es de nadie, no gana ningún jugador: la noche se la queda el castillo y la partida termina igual. Por eso conviene saber a quién estás subiendo." data-en="No. If the figure that reaches the top belongs to no one, no player wins: the castle keeps the night and the game ends all the same. Which is why it pays to know who you are carrying up.">No. If the figure that reaches the top belongs to no one, no player wins: the castle keeps the night and the game ends all the same. Which is why it pays to know who you are carrying up.</p>
+      </details>
+      <details>
+        <summary data-es="¿Tiene sonido?" data-en="Does it have sound?">Does it have sound?</summary>
+        <p data-es="No. El juego es mudo a propósito, para que se pueda jugar en cualquier sitio sin molestar. Lo que sí hace es vibrar: los truenos y el final de la partida se notan en la mano." data-en="No. The game is deliberately silent so you can play anywhere without disturbing anyone. It does use haptics, though: thunder and the end of a game are felt in your hand.">No. The game is deliberately silent so you can play anywhere without disturbing anyone. It does use haptics, though: thunder and the end of a game are felt in your hand.</p>
+      </details>
+      <details>
+        <summary data-es="¿Necesito conexión a internet?" data-en="Do I need an internet connection?">Do I need an internet connection?</summary>
+        <p data-es="No. El juego entero va dentro de la app y no consulta nada a nadie. Funciona igual en modo avión." data-en="No. The entire game ships inside the app and it queries nothing from anyone. It works the same in aeroplane mode.">No. The entire game ships inside the app and it queries nothing from anyone. It works the same in aeroplane mode.</p>
+      </details>
+      <details>
+        <summary data-es="¿Hay anuncios o compras dentro de la app?" data-en="Are there ads or in-app purchases?">Are there ads or in-app purchases?</summary>
+        <p data-es="Ninguna de las dos cosas. Es gratis del todo: ni anuncios, ni suscripción, ni nada que comprar." data-en="Neither. It is entirely free: no ads, no subscription, nothing to buy.">Neither. It is entirely free: no ads, no subscription, nothing to buy.</p>
+      </details>
+      <details>
+        <summary data-es="¿En qué idiomas está?" data-en="What languages is it in?">What languages is it in?</summary>
+        <p data-es="En español y en inglés. Sigue al idioma del iPhone: no hay ajuste dentro de la app." data-en="Spanish and English. It follows your iPhone's language: there is no setting inside the app.">Spanish and English. It follows your iPhone's language: there is no setting inside the app.</p>
+      </details>
+      <details>
+        <summary data-es="¿Se guarda la partida si salgo?" data-en="Is my game saved if I leave?">Is my game saved if I leave?</summary>
+        <p data-es="No. Una partida dura lo que dura una partida y no se guarda nada al salir, tampoco marcadores ni estadísticas. Cada noche empieza de cero." data-en="No. A game lasts as long as a game lasts and nothing is saved when you leave — no scores, no statistics. Every night starts from scratch.">No. A game lasts as long as a game lasts and nothing is saved when you leave — no scores, no statistics. Every night starts from scratch.</p>
+      </details>
+      <details>
+        <summary data-es="Algo va mal o se me ocurre una mejora" data-en="Something is wrong, or I have an idea">Something is wrong, or I have an idea</summary>
+        <p data-es="Escríbeme y lo miro. Si es un fallo, cuéntame qué modelo de iPhone tienes y qué estaba pasando en la partida; con eso suele bastar para dar con ello." data-en="Write to me and I will look into it. If it is a bug, tell me which iPhone you have and what was happening in the game; that is usually enough to track it down.">Write to me and I will look into it. If it is a bug, tell me which iPhone you have and what was happening in the game; that is usually enough to track it down.</p>
+      </details>
+
+      <div class="ef-contact">
+        <span data-es="Escríbeme" data-en="Get in touch">Get in touch</span>
+        <a href="mailto:thewhiteriggs@gmail.com?subject=Escalofrio%20Support">thewhiteriggs@gmail.com</a>
+      </div>
+    </section>
+
+    <!-- Privacidad -->
+    <section id="privacidad" class="ef-section wrap fade-in">
+      <h2 data-es="Privacidad" data-en="Privacy">Privacy</h2>
+      <p class="ef-lead" data-es="Es un juego de mesa para jugar en una habitación. No recoge ningún dato personal, de ningún tipo, en ningún momento." data-en="It is a board game meant to be played in a room. It collects no personal data of any kind, at any point.">It is a board game meant to be played in a room. It collects no personal data of any kind, at any point.</p>
+      <div class="ef-grid">
+        <article class="ef-card">
+          <h3 data-es="Sin cuenta y sin registro" data-en="No account, no sign-up">No account, no sign-up</h3>
+          <p data-es="No hay usuario, ni correo, ni contraseña. Abres la app y se juega." data-en="No username, no email, no password. Open the app and play.">No username, no email, no password. Open the app and play.</p>
+        </article>
+        <article class="ef-card">
+          <h3 data-es="No guarda nada" data-en="Nothing is stored">Nothing is stored</h3>
+          <p data-es="La app no escribe ni un dato en el teléfono: ni partidas, ni marcadores, ni ajustes. Al cerrarla no queda rastro de lo que jugasteis." data-en="The app writes not a single piece of data to your phone: no games, no scores, no settings. Close it and there is no trace of what you played.">The app writes not a single piece of data to your phone: no games, no scores, no settings. Close it and there is no trace of what you played.</p>
+        </article>
+        <article class="ef-card">
+          <h3 data-es="Sin anuncios ni rastreo" data-en="No ads, no tracking">No ads, no tracking</h3>
+          <p data-es="Ni publicidad, ni analítica, ni identificadores, ni venta de datos a terceros. No hay terceros." data-en="No advertising, no analytics, no identifiers, no selling data to third parties. There are no third parties.">No advertising, no analytics, no identifiers, no selling data to third parties. There are no third parties.</p>
+        </article>
+        <article class="ef-card">
+          <h3 data-es="Sin conexión" data-en="No connection">No connection</h3>
+          <p data-es="El juego no se conecta a internet en ningún momento, así que no hay nada que pueda salir del dispositivo." data-en="The game never connects to the internet, so there is nothing that could leave the device in the first place.">The game never connects to the internet, so there is nothing that could leave the device in the first place.</p>
+        </article>
+      </div>
+      <p class="ef-note" data-es="Escalofrío no pide ningún permiso del sistema: ni cámara, ni micrófono, ni ubicación, ni contactos, ni notificaciones. Si en el futuro esto cambiara, esta página se actualizará antes de publicar la versión correspondiente. Para cualquier duda sobre privacidad, escribe a thewhiteriggs@gmail.com." data-en="Escalofrío requests no system permissions whatsoever: no camera, no microphone, no location, no contacts, no notifications. Should this ever change, this page will be updated before the corresponding version is released. For any privacy question, write to thewhiteriggs@gmail.com.">Escalofrío requests no system permissions whatsoever: no camera, no microphone, no location, no contacts, no notifications. Should this ever change, this page will be updated before the corresponding version is released. For any privacy question, write to thewhiteriggs@gmail.com.</p>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>&copy; 2026 The White Riggs. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="../index.html" data-es="Inicio" data-en="Home">Home</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=6"></script>
+  <script>
+    initLangSwitcher({
+      langs: ['es', 'en'],
+      probe: 'en',
+      fallback: 'en',
+      storageKey: 'escalofrio-lang',
+      titles: {
+        es: 'Escalofrío — Soporte y Privacidad',
+        en: 'Escalofrío — Support & Privacy'
+      }
+    });
+  </script>
+</body>
+</html>
