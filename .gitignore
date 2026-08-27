@@ -1,3 +1,5 @@
 # Las claves de App Store Connect no entran en el repo jamas.
 *.p8
 .DS_Store
+__pycache__/
+*.pyc
