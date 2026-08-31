@@ -4,7 +4,7 @@
   --bg-secondary: #0c0d12;
   --text-primary: #f5f5f7;
   --text-secondary: #a1a1a6;
-  --text-muted: #6e6e73;
+  --text-muted: #78787e;
   --apple-blue: #2997ff;
   --apple-purple: #bf5af2;
   --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -922,7 +922,7 @@ footer {
 .body-home .lang-btn:hover { color: #fff; }
 .body-curiosity .lang-btn.active,
 .body-home .lang-btn.active {
-  background: rgba(41,151,255,0.9);
+  background: #0071e3;
   color: #fff;
   box-shadow: 0 4px 12px rgba(41,151,255,0.35);
 }
