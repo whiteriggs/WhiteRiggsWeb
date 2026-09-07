@@ -157,6 +157,63 @@
   line-height: 1.6;
 }
 
+/* Capturas: la pantalla a pelo, sin marco de aparato dibujado alrededor. */
+.ef-capturas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.ef-captura {
+  margin: 0;
+}
+
+.ef-captura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+}
+
+/* El texto visible de la pagina nace en ingles y la captura tiene que ir a juego.
+   Van calificadas con img porque si no pesa mas la regla de arriba y salen las seis. */
+.ef-captura img.ef-shot-es {
+  display: none;
+}
+
+html[lang="es"] .ef-captura img.ef-shot-es {
+  display: block;
+}
+
+html[lang="es"] .ef-captura img.ef-shot-en {
+  display: none;
+}
+
+.ef-captura figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(219, 214, 196, 0.62);
+}
+
+/* En el movil, una debajo de otra: tres en fila salen del tamano de un sello. */
+@media (max-width: 640px) {
+  .ef-capturas {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ef-captura {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
 /* Las tres noches. */
 .ef-noches {
   display: grid;
