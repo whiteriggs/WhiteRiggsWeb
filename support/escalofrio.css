@@ -96,6 +96,13 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-size: 0.8rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ef-soon:hover {
+  border-color: rgba(219, 214, 196, 0.45);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
 }
 
 .ef-soon small {
