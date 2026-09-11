@@ -1,0 +1,67 @@
+{
+  "id": "vuela",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Por qué vuela un avión, si el aire no es nada?",
+  "entradilla": "Porque el aire no es nada solo cuando está quieto. Un ala no se apoya en él: lo agarra y lo tira hacia abajo. Cada segundo que el avión está en el aire, está lanzando al suelo más toneladas de aire de las que pesa el propio avión.",
+  "modelo": "fluido",
+  "color": "coral",
+  "medidas": {
+    "masa": 73000,
+    "area": 122,
+    "coeficiente": 2.0,
+    "coeficienteLimpia": 1.2,
+    "envergadura": 35.8
+  },
+  "tanteo": {
+    "pregunta": "Un avión de pasillo único cargado, 73 toneladas, ¿a qué velocidad deja de necesitar la pista?",
+    "opciones": ["120 por hora", "250 por hora", "400 por hora"],
+    "valores": [120, 250, 400],
+    "medido": "despegueEnKilometrosPorHora",
+    "remate": "{despegueEnKilometrosPorHora|0} por hora. Por debajo de eso no hay motor que valga: el ala no sostiene, y lo que pasa no es que suba despacio, es que no sube."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el aire hay que agarrarlo",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "CUÁNTO AIRE MUEVE UN ALA",
+          "clave": "Al despegar, el ala agarra {aireEnToneladasPorSegundo|0} toneladas de aire por segundo y las empuja hacia abajo.",
+          "texto": "El avión pesa {masaEnToneladas|0}. O sea que cada segundo está lanzando al suelo {vecesElPesoDelAvion|1} veces su propio peso en aire. No hace falta ninguna succión misteriosa ni ninguna forma mágica del perfil: hace falta tirar masa hacia abajo, y el aire, movido deprisa, da masa de sobra.",
+          "detalle": "Lo increíble es lo poco que hay que empujar cada kilo. Al aire que atraviesa el ala se le imprimen {empujon|1} metros por segundo hacia abajo, unos {empujonEnKilometrosPorHora|0} por hora: un soplo. Pero multiplicado por ochenta y tantas toneladas por segundo, ese soplo sostiene un edificio volando.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["masa", "aireEnKilosPorSegundo"],
+            "rotulos": ["lo que pesa el avión", "aire que agarra cada segundo"]
+          }
+        },
+        {
+          "rotulo": "POR ESO SALEN LOS FLAPS",
+          "clave": "Con el ala limpia haría falta ir a {limpiaEnKilometrosPorHora|0} por hora. Con los flaps fuera, {despegueEnKilometrosPorHora|0}.",
+          "texto": "Sacar los flaps no da potencia: le cambia la forma al ala para que agarre más aire a la misma velocidad. Eso ahorra un {cuantoAhorranLosFlaps|0} por ciento de velocidad de despegue, y la velocidad ahorrada es pista ahorrada. Es la diferencia entre caber en un aeropuerto y no caber.",
+          "detalle": "El ahorro parece poco para lo que cambia el ala, y hay una razón: la velocidad va con la raíz del agarre. Casi el doble de sustentación solo quita un cuarto de velocidad. Por eso los flaps se sacan hasta el último punto útil y luego se recogen enseguida, porque frenan.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["limpiaEnKilometrosPorHora", "despegueEnKilometrosPorHora"],
+            "rotulos": ["ala limpia: {limpiaEnKilometrosPorHora|0} km/h", "con flaps: {despegueEnKilometrosPorHora|0} km/h"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "No se apoya en el aire. Lo tira al suelo.",
+    "nota": "Los coeficientes de sustentación, 1,2 con el ala limpia y 2,0 con flaps, son valores típicos medidos en túnel de viento y entran como dato. El aire desviado se estima suponiendo que el ala trabaja sobre un tubo de su propia envergadura, que es la aproximación de siempre y se queda corta antes que larga.",
+    "parrafos": [
+      "Contado así desaparecen las dos explicaciones raras de siempre: ni el aire de arriba corre para reencontrarse con el de abajo, ni hace falta que el perfil tenga joroba. Un ala plana inclinada vuela, y por eso vuelan los aviones de papel.",
+      "Y explica lo que de verdad da miedo en un avión, que es ir despacio. Como todo va con la velocidad al cuadrado, perder un tercio de velocidad es perder más de la mitad de la sustentación. Los accidentes de aproximación casi nunca son de motor: son de velocidad."
+    ]
+  },
+  "puente": {
+    "hacia": "aleron",
+    "frase": "Dale la vuelta al ala y tendrás lo contrario: en vez de levantar un avión, pegar un coche al asfalto con dos toneladas que no existen cuando está parado."
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "aleron",
+  "rotulo": "COCHES",
+  "titulo": "¿Por qué un Fórmula 1 podría circular por el techo de un túnel?",
+  "entradilla": "Porque a partir de cierta velocidad el aire lo aprieta contra el asfalto con más fuerza de la que pesa. Y la mayor parte de esa fuerza no viene de los alerones que se ven, sino del suelo del coche, que es un conducto que se estrecha.",
+  "modelo": "fluido",
+  "color": "coral",
+  "medidas": {
+    "masa": 798,
+    "area": 2.0,
+    "coeficiente": 2.3,
+    "corre": 83.333,
+    "ancho": 0.30,
+    "estrecho": 0.20,
+    "velocidad": 83.333
+  },
+  "tanteo": {
+    "pregunta": "¿A partir de qué velocidad el aire aprieta el coche contra el suelo más de lo que pesa?",
+    "opciones": ["90 por hora", "190 por hora", "400 por hora"],
+    "valores": [90, 190, 400],
+    "medido": "despegueEnKilometrosPorHora",
+    "remate": "Sobre {despegueEnKilometrosPorHora|0} por hora. Por encima de esa cifra el techo del túnel le vale tanto como el suelo; por debajo, se cae."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un peso que aparece al correr",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "LO QUE PESA Y LO QUE LE APRIETA",
+          "clave": "El coche pesa {masa|0} kilos. A {correEnKilometrosPorHora|0} por hora el aire lo empuja hacia abajo con {cargaEnKilos|0}.",
+          "texto": "Son {vecesElPeso|1} veces su propio peso, y no existían un momento antes: aparecen al correr y desaparecen al frenar. Por eso un Fórmula 1 parado es un coche flojo, con neumáticos fríos y sin agarre, y a trescientos por hora es otra cosa completamente distinta.",
+          "detalle": "También explica la curva rápida. El agarre de un neumático es proporcional a lo que lo aplasta, así que a más velocidad, más apretado y más se puede girar. Es un círculo que se muerde la cola: cuanto más rápido entras, más te agarra. Y al revés, que es lo que lo hace peligroso.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["masa", "cargaEnKilos"],
+            "rotulos": ["pesa {masa|0} kg", "le aprietan {cargaEnKilos|0} kg"]
+          }
+        },
+        {
+          "rotulo": "EL TRUCO ESTÁ DEBAJO, NO ARRIBA",
+          "clave": "El suelo del coche estrecha el paso del aire a dos tercios, así que por el cuello va {vecesMasRapido|1} veces más rápido: {velocidadEnElCuelloEnKilometrosPorHora|0} por hora.",
+          "texto": "Y aquí viene el trato: acelerar un fluido se paga con presión. Donde corre más, aprieta menos. Debajo del coche la presión baja {caidaEnMilibares|0} milibares respecto al aire de fuera, y esa diferencia chupa el coche contra la pista con unos {succionPorMetroCuadrado|0} kilos por cada metro cuadrado de suelo.",
+          "detalle": "Por eso los coches van tan pegados al asfalto y por eso una vibración en la suspensión puede tirarlos a la grava: si el conducto se abre un centímetro, la succión se cae de golpe. No es un problema de alerones, es que el suelo ha dejado de ser un conducto.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "flujo",
+            "claves": [],
+            "rotulos": ["entra a {correEnKilometrosPorHora|0}", "{velocidadEnElCuelloEnKilometrosPorHora|0} km/h", "arriba el suelo del coche, abajo la presión"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Toda la carga que lo pega al suelo se la fabrica él corriendo.",
+    "nota": "El coeficiente de carga aerodinámica, 2,3 sobre dos metros cuadrados de superficie de referencia, es un valor típico de la era del efecto suelo y entra como dato. Las áreas del conducto son esquemáticas; lo que calcula la aplicación es la velocidad y la presión que se derivan de ellas.",
+    "parrafos": [
+      "La cuenta del conducto es la misma que la de una manguera cuando le pones el dedo: lo que entra tiene que salir, y si le quitas sitio tiene que correr más. Lo único que cambia es que aquí el sitio que se le quita vale dos toneladas de agarre.",
+      "Y es la misma física del ala de un avión, girada. Un avión usa el aire para levantar setenta toneladas; un Fórmula 1 lo usa para inventarse dos que no tiene. Las dos cuentas son media densidad por área por velocidad al cuadrado."
+    ]
+  },
+  "puente": {
+    "hacia": "vuela",
+    "frase": "Pon el mismo perfil del derecho, hazlo cien veces más grande y en vez de pegar un coche al suelo levanta un edificio: la cuenta no cambia ni una letra."
+  }
+}

@@ -3,125 +3,1842 @@
     {
       "id": "shazam",
       "dia": 1,
-      "desde": "2027-01-01"
+      "desde": "2026-01-01"
     },
     {
       "id": "microondas",
       "dia": 2,
-      "desde": "2027-01-02"
+      "desde": "2026-01-02"
     },
     {
       "id": "arcoiris",
       "dia": 3,
-      "desde": "2027-01-03",
+      "desde": "2026-01-03",
       "sello": "db9e1eb273078144"
     },
     {
       "id": "tactil",
       "dia": 4,
-      "desde": "2027-01-04"
+      "desde": "2026-01-04"
     },
     {
       "id": "wifi",
       "dia": 5,
-      "desde": "2027-01-05",
+      "desde": "2026-01-05",
       "sello": "a4b741cd13e28da5"
     },
     {
       "id": "gps",
       "dia": 6,
-      "desde": "2027-01-06"
+      "desde": "2026-01-06"
     },
     {
       "id": "ruido",
       "dia": 7,
-      "desde": "2027-01-07"
+      "desde": "2026-01-07"
     },
     {
       "id": "espejismo",
       "dia": 8,
-      "desde": "2027-01-08",
+      "desde": "2026-01-08",
       "sello": "288ee1cfd4aa53d4"
     },
     {
       "id": "magnus",
       "dia": 9,
-      "desde": "2027-01-09",
+      "desde": "2026-01-09",
       "sello": "28062465f7205b7e"
     },
     {
       "id": "armonicos",
       "dia": 10,
-      "desde": "2027-01-10"
+      "desde": "2026-01-10"
     },
     {
       "id": "rayosx",
       "dia": 11,
-      "desde": "2027-01-11",
+      "desde": "2026-01-11",
       "sello": "9202a14dc1ca4e14"
     },
     {
       "id": "nfc",
       "dia": 12,
-      "desde": "2027-01-12"
+      "desde": "2026-01-12"
     },
     {
       "id": "fibra",
       "dia": 13,
-      "desde": "2027-01-13",
+      "desde": "2026-01-13",
       "sello": "0cb3578012059ae9"
     },
     {
       "id": "conciertos",
       "dia": 14,
-      "desde": "2027-01-14",
+      "desde": "2026-01-14",
       "sello": "951681487aa4865f"
     },
     {
       "id": "parabolico",
       "dia": 15,
-      "desde": "2027-01-15",
+      "desde": "2026-01-15",
       "sello": "1532a40ac03de43c"
     },
     {
       "id": "ecografia",
       "dia": 16,
-      "desde": "2027-01-16",
+      "desde": "2026-01-16",
       "sello": "257a4641fad1d5f3"
     },
     {
       "id": "ecualizador",
       "dia": 17,
-      "desde": "2027-01-17"
+      "desde": "2026-01-17"
     },
     {
       "id": "cincoge",
       "dia": 18,
-      "desde": "2027-01-18",
+      "desde": "2026-01-18",
       "sello": "438dd79b732691e7"
     },
     {
       "id": "afinacion",
       "dia": 19,
-      "desde": "2027-01-19"
+      "desde": "2026-01-19"
     },
     {
       "id": "motor",
       "dia": 20,
-      "desde": "2027-01-20",
+      "desde": "2026-01-20",
       "sello": "4e4a1df6e86bcbf1"
     },
     {
       "id": "infrarrojo",
       "dia": 21,
-      "desde": "2027-01-21",
+      "desde": "2026-01-21",
       "sello": "91f0f949d0341567"
     },
     {
       "id": "puertamicroondas",
       "dia": 22,
-      "desde": "2027-01-22",
+      "desde": "2026-01-22",
       "sello": "9ad46b58bf68de6b"
+    },
+    {
+      "id": "cafe",
+      "dia": 23,
+      "desde": "2026-01-23"
+    },
+    {
+      "id": "faceid",
+      "dia": 24,
+      "desde": "2026-01-24"
+    },
+    {
+      "id": "cohete",
+      "dia": 25,
+      "desde": "2026-01-25"
+    },
+    {
+      "id": "nevera",
+      "dia": 26,
+      "desde": "2026-01-26"
+    },
+    {
+      "id": "cieloazul",
+      "dia": 27,
+      "desde": "2026-01-27"
+    },
+    {
+      "id": "airbag",
+      "dia": 28,
+      "desde": "2026-01-28"
+    },
+    {
+      "id": "superconductividad",
+      "dia": 29,
+      "desde": "2026-01-29"
+    },
+    {
+      "id": "topspin",
+      "dia": 30,
+      "desde": "2026-01-30"
+    },
+    {
+      "id": "resonancia",
+      "dia": 31,
+      "desde": "2026-01-31"
+    },
+    {
+      "id": "guitarra",
+      "dia": 32,
+      "desde": "2026-02-01"
+    },
+    {
+      "id": "vuela",
+      "dia": 33,
+      "desde": "2026-02-02",
+      "sello": "326892209fa4f22b"
+    },
+    {
+      "id": "starlink",
+      "dia": 34,
+      "desde": "2026-02-03"
+    },
+    {
+      "id": "empana",
+      "dia": 35,
+      "desde": "2026-02-04"
+    },
+    {
+      "id": "camara",
+      "dia": 36,
+      "desde": "2026-02-05"
+    },
+    {
+      "id": "orbita",
+      "dia": 37,
+      "desde": "2026-02-06"
+    },
+    {
+      "id": "aire",
+      "dia": 38,
+      "desde": "2026-02-07"
+    },
+    {
+      "id": "atardecer",
+      "dia": 39,
+      "desde": "2026-02-08"
+    },
+    {
+      "id": "abs",
+      "dia": 40,
+      "desde": "2026-02-09"
+    },
+    {
+      "id": "huevo",
+      "dia": 41,
+      "desde": "2026-02-10"
+    },
+    {
+      "id": "levitacion",
+      "dia": 42,
+      "desde": "2026-02-11"
+    },
+    {
+      "id": "arco",
+      "dia": 43,
+      "desde": "2026-02-12"
+    },
+    {
+      "id": "tac",
+      "dia": 44,
+      "desde": "2026-02-13"
+    },
+    {
+      "id": "violin",
+      "dia": 45,
+      "desde": "2026-02-14"
+    },
+    {
+      "id": "sustentacion",
+      "dia": 46,
+      "desde": "2026-02-15"
+    },
+    {
+      "id": "radio",
+      "dia": 47,
+      "desde": "2026-02-16"
+    },
+    {
+      "id": "oled",
+      "dia": 48,
+      "desde": "2026-02-17"
+    },
+    {
+      "id": "gravedadcero",
+      "dia": 49,
+      "desde": "2026-02-18"
+    },
+    {
+      "id": "huevoviejo",
+      "dia": 50,
+      "desde": "2026-02-19"
+    },
+    {
+      "id": "calefaccion",
+      "dia": 51,
+      "desde": "2026-02-20"
+    },
+    {
+      "id": "rayoverde",
+      "dia": 52,
+      "desde": "2026-02-21"
+    },
+    {
+      "id": "estabilidad",
+      "dia": 53,
+      "desde": "2026-02-22"
+    },
+    {
+      "id": "tunel",
+      "dia": 54,
+      "desde": "2026-02-23"
+    },
+    {
+      "id": "huevomicroondas",
+      "dia": 55,
+      "desde": "2026-02-24"
+    },
+    {
+      "id": "sensorluz",
+      "dia": 56,
+      "desde": "2026-02-25"
+    },
+    {
+      "id": "eclipse",
+      "dia": 57,
+      "desde": "2026-02-26"
+    },
+    {
+      "id": "golf",
+      "dia": 58,
+      "desde": "2026-02-27"
+    },
+    {
+      "id": "pet",
+      "dia": 59,
+      "desde": "2026-02-28"
+    },
+    {
+      "id": "tambor",
+      "dia": 60,
+      "desde": "2026-03-01"
+    },
+    {
+      "id": "turbina",
+      "dia": 61,
+      "desde": "2026-03-02"
+    },
+    {
+      "id": "television",
+      "dia": 62,
+      "desde": "2026-03-03"
+    },
+    {
+      "id": "solar",
+      "dia": 63,
+      "desde": "2026-03-04"
+    },
+    {
+      "id": "halo",
+      "dia": 64,
+      "desde": "2026-03-05"
+    },
+    {
+      "id": "palomitas",
+      "dia": 65,
+      "desde": "2026-03-06"
+    },
+    {
+      "id": "brujula",
+      "dia": 66,
+      "desde": "2026-03-07"
+    },
+    {
+      "id": "electrico",
+      "dia": 67,
+      "desde": "2026-03-08"
+    },
+    {
+      "id": "agujeronegro",
+      "dia": 68,
+      "desde": "2026-03-09"
+    },
+    {
+      "id": "laser",
+      "dia": 69,
+      "desde": "2026-03-10"
+    },
+    {
+      "id": "lata",
+      "dia": 70,
+      "desde": "2026-03-11"
+    },
+    {
+      "id": "esqui",
+      "dia": 71,
+      "desde": "2026-03-12"
+    },
+    {
+      "id": "radioterapia",
+      "dia": 72,
+      "desde": "2026-03-13"
+    },
+    {
+      "id": "trompeta",
+      "dia": 73,
+      "desde": "2026-03-14"
+    },
+    {
+      "id": "bateriacasa",
+      "dia": 74,
+      "desde": "2026-03-15"
+    },
+    {
+      "id": "lunahorizonte",
+      "dia": 75,
+      "desde": "2026-03-16"
+    },
+    {
+      "id": "acelerometro",
+      "dia": 76,
+      "desde": "2026-03-17"
+    },
+    {
+      "id": "flaps",
+      "dia": 77,
+      "desde": "2026-03-18"
+    },
+    {
+      "id": "jpeg",
+      "dia": 78,
+      "desde": "2026-03-19"
+    },
+    {
+      "id": "horizonte",
+      "dia": 79,
+      "desde": "2026-03-20"
+    },
+    {
+      "id": "regenerativa",
+      "dia": 80,
+      "desde": "2026-03-21"
+    },
+    {
+      "id": "cubito",
+      "dia": 81,
+      "desde": "2026-03-22"
+    },
+    {
+      "id": "cuantica",
+      "dia": 82,
+      "desde": "2026-03-23"
+    },
+    {
+      "id": "inversor",
+      "dia": 83,
+      "desde": "2026-03-24"
+    },
+    {
+      "id": "marazul",
+      "dia": 84,
+      "desde": "2026-03-25"
+    },
+    {
+      "id": "giroscopio",
+      "dia": 85,
+      "desde": "2026-03-26"
+    },
+    {
+      "id": "hockeyhielo",
+      "dia": 86,
+      "desde": "2026-03-27"
+    },
+    {
+      "id": "ecg",
+      "dia": 87,
+      "desde": "2026-03-28"
+    },
+    {
+      "id": "microfono",
+      "dia": 88,
+      "desde": "2026-03-29"
+    },
+    {
+      "id": "mpemba",
+      "dia": 89,
+      "desde": "2026-03-30"
+    },
+    {
+      "id": "lente",
+      "dia": 90,
+      "desde": "2026-03-31"
+    },
+    {
+      "id": "neumaticos",
+      "dia": 91,
+      "desde": "2026-04-01"
+    },
+    {
+      "id": "piloto",
+      "dia": 92,
+      "desde": "2026-04-02"
+    },
+    {
+      "id": "video",
+      "dia": 93,
+      "desde": "2026-04-03"
+    },
+    {
+      "id": "sal",
+      "dia": 94,
+      "desde": "2026-04-04"
+    },
+    {
+      "id": "entrelazamiento",
+      "dia": 95,
+      "desde": "2026-04-05"
+    },
+    {
+      "id": "vibracion",
+      "dia": 96,
+      "desde": "2026-04-06"
+    },
+    {
+      "id": "induccion",
+      "dia": 97,
+      "desde": "2026-04-07"
+    },
+    {
+      "id": "rayo",
+      "dia": 98,
+      "desde": "2026-04-08"
+    },
+    {
+      "id": "corrimiento",
+      "dia": 99,
+      "desde": "2026-04-09"
+    },
+    {
+      "id": "bicicleta",
+      "dia": 100,
+      "desde": "2026-04-10"
+    },
+    {
+      "id": "eeg",
+      "dia": 101,
+      "desde": "2026-04-11"
+    },
+    {
+      "id": "altavoz",
+      "dia": 102,
+      "desde": "2026-04-12"
+    },
+    {
+      "id": "remolino",
+      "dia": 103,
+      "desde": "2026-04-13"
+    },
+    {
+      "id": "aerodinamica",
+      "dia": 104,
+      "desde": "2026-04-14"
+    },
+    {
+      "id": "bateria",
+      "dia": 105,
+      "desde": "2026-04-15"
+    },
+    {
+      "id": "meteo",
+      "dia": 106,
+      "desde": "2026-04-16"
+    },
+    {
+      "id": "vitro",
+      "dia": 107,
+      "desde": "2026-04-17"
+    },
+    {
+      "id": "espectroscopia",
+      "dia": 108,
+      "desde": "2026-04-18"
+    },
+    {
+      "id": "doblerendija",
+      "dia": 109,
+      "desde": "2026-04-19"
+    },
+    {
+      "id": "trueno",
+      "dia": 110,
+      "desde": "2026-04-20"
+    },
+    {
+      "id": "radar",
+      "dia": 111,
+      "desde": "2026-04-21"
+    },
+    {
+      "id": "llama",
+      "dia": 112,
+      "desde": "2026-04-22"
+    },
+    {
+      "id": "natacion",
+      "dia": 113,
+      "desde": "2026-04-23"
+    },
+    {
+      "id": "fmri",
+      "dia": 114,
+      "desde": "2026-04-24"
+    },
+    {
+      "id": "autotune",
+      "dia": 115,
+      "desde": "2026-04-25"
+    },
+    {
+      "id": "cargainalambrica",
+      "dia": 116,
+      "desde": "2026-04-26"
+    },
+    {
+      "id": "aleron",
+      "dia": 117,
+      "desde": "2026-04-27",
+      "sello": "01240a8b55b7c563"
+    },
+    {
+      "id": "fuego",
+      "dia": 118,
+      "desde": "2026-04-28"
+    },
+    {
+      "id": "fusion",
+      "dia": 119,
+      "desde": "2026-04-29"
+    },
+    {
+      "id": "led",
+      "dia": 120,
+      "desde": "2026-04-30"
+    },
+    {
+      "id": "relampago",
+      "dia": 121,
+      "desde": "2026-05-01"
+    },
+    {
+      "id": "dualidad",
+      "dia": 122,
+      "desde": "2026-05-02"
+    },
+    {
+      "id": "turbulencias",
+      "dia": 123,
+      "desde": "2026-05-03"
+    },
+    {
+      "id": "radaravion",
+      "dia": 124,
+      "desde": "2026-05-04"
+    },
+    {
+      "id": "jabon",
+      "dia": 125,
+      "desde": "2026-05-05"
+    },
+    {
+      "id": "flash",
+      "dia": 126,
+      "desde": "2026-05-06"
+    },
+    {
+      "id": "vientosolar",
+      "dia": 127,
+      "desde": "2026-05-07"
+    },
+    {
+      "id": "surf",
+      "dia": 128,
+      "desde": "2026-05-08"
+    },
+    {
+      "id": "termografia",
+      "dia": 129,
+      "desde": "2026-05-09"
+    },
+    {
+      "id": "sintetizador",
+      "dia": 130,
+      "desde": "2026-05-10"
+    },
+    {
+      "id": "turbo",
+      "dia": 131,
+      "desde": "2026-05-11"
+    },
+    {
+      "id": "ventanas",
+      "dia": 132,
+      "desde": "2026-05-12"
+    },
+    {
+      "id": "tornado",
+      "dia": 133,
+      "desde": "2026-05-13"
+    },
+    {
+      "id": "pompas",
+      "dia": 134,
+      "desde": "2026-05-14"
+    },
+    {
+      "id": "incertidumbre",
+      "dia": 135,
+      "desde": "2026-05-15"
+    },
+    {
+      "id": "flashmemoria",
+      "dia": 136,
+      "desde": "2026-05-16"
+    },
+    {
+      "id": "auroras",
+      "dia": 137,
+      "desde": "2026-05-17"
+    },
+    {
+      "id": "supersonico",
+      "dia": 138,
+      "desde": "2026-05-18"
+    },
+    {
+      "id": "bluetooth",
+      "dia": 139,
+      "desde": "2026-05-19"
+    },
+    {
+      "id": "burbujas",
+      "dia": 140,
+      "desde": "2026-05-20"
+    },
+    {
+      "id": "ollapresion",
+      "dia": 141,
+      "desde": "2026-05-21"
+    },
+    {
+      "id": "huracan",
+      "dia": 142,
+      "desde": "2026-05-22"
+    },
+    {
+      "id": "suspension",
+      "dia": 143,
+      "desde": "2026-05-23"
+    },
+    {
+      "id": "golpe",
+      "dia": 144,
+      "desde": "2026-05-24"
+    },
+    {
+      "id": "microscopio",
+      "dia": 145,
+      "desde": "2026-05-25"
+    },
+    {
+      "id": "audioespacial",
+      "dia": 146,
+      "desde": "2026-05-26"
+    },
+    {
+      "id": "procesador",
+      "dia": 147,
+      "desde": "2026-05-27"
+    },
+    {
+      "id": "espin",
+      "dia": 148,
+      "desde": "2026-05-28"
+    },
+    {
+      "id": "vino",
+      "dia": 149,
+      "desde": "2026-05-29"
+    },
+    {
+      "id": "anillos",
+      "dia": 150,
+      "desde": "2026-05-30"
+    },
+    {
+      "id": "aspiradora",
+      "dia": 151,
+      "desde": "2026-05-31"
+    },
+    {
+      "id": "granizo",
+      "dia": 152,
+      "desde": "2026-06-01"
+    },
+    {
+      "id": "lidar",
+      "dia": 153,
+      "desde": "2026-06-02"
+    },
+    {
+      "id": "boom",
+      "dia": 154,
+      "desde": "2026-06-03"
+    },
+    {
+      "id": "cablesubmarino",
+      "dia": 155,
+      "desde": "2026-06-04"
+    },
+    {
+      "id": "frenos",
+      "dia": 156,
+      "desde": "2026-06-05"
+    },
+    {
+      "id": "copa",
+      "dia": 157,
+      "desde": "2026-06-06"
+    },
+    {
+      "id": "pesas",
+      "dia": 158,
+      "desde": "2026-06-07"
+    },
+    {
+      "id": "presionarterial",
+      "dia": 159,
+      "desde": "2026-06-08"
+    },
+    {
+      "id": "reverberacion",
+      "dia": 160,
+      "desde": "2026-06-09"
+    },
+    {
+      "id": "mareas",
+      "dia": 161,
+      "desde": "2026-06-10"
+    },
+    {
+      "id": "pauli",
+      "dia": 162,
+      "desde": "2026-06-11"
+    },
+    {
+      "id": "ketchup",
+      "dia": 163,
+      "desde": "2026-06-12"
+    },
+    {
+      "id": "estabilizacion",
+      "dia": 164,
+      "desde": "2026-06-13"
+    },
+    {
+      "id": "bascula",
+      "dia": 165,
+      "desde": "2026-06-14"
+    },
+    {
+      "id": "nube",
+      "dia": 166,
+      "desde": "2026-06-15"
+    },
+    {
+      "id": "aparcamiento",
+      "dia": 167,
+      "desde": "2026-06-16"
+    },
+    {
+      "id": "luna",
+      "dia": 168,
+      "desde": "2026-06-17"
+    },
+    {
+      "id": "helicoptero",
+      "dia": 169,
+      "desde": "2026-06-18"
+    },
+    {
+      "id": "ping",
+      "dia": 170,
+      "desde": "2026-06-19"
+    },
+    {
+      "id": "miel",
+      "dia": 171,
+      "desde": "2026-06-20"
+    },
+    {
+      "id": "halterofilia",
+      "dia": 172,
+      "desde": "2026-06-21"
+    },
+    {
+      "id": "pulsioximetro",
+      "dia": 173,
+      "desde": "2026-06-22"
+    },
+    {
+      "id": "vozdigital",
+      "dia": 174,
+      "desde": "2026-06-23"
+    },
+    {
+      "id": "higgs",
+      "dia": 175,
+      "desde": "2026-06-24"
+    },
+    {
+      "id": "zoom",
+      "dia": 176,
+      "desde": "2026-06-25"
+    },
+    {
+      "id": "extintor",
+      "dia": 177,
+      "desde": "2026-06-26"
+    },
+    {
+      "id": "niebla",
+      "dia": 178,
+      "desde": "2026-06-27"
+    },
+    {
+      "id": "aceite",
+      "dia": 179,
+      "desde": "2026-06-28"
+    },
+    {
+      "id": "precesion",
+      "dia": 180,
+      "desde": "2026-06-29"
+    },
+    {
+      "id": "parabrisas",
+      "dia": 181,
+      "desde": "2026-06-30"
+    },
+    {
+      "id": "modonoche",
+      "dia": 182,
+      "desde": "2026-07-01"
+    },
+    {
+      "id": "presurizacion",
+      "dia": 183,
+      "desde": "2026-07-02"
+    },
+    {
+      "id": "antena",
+      "dia": 184,
+      "desde": "2026-07-03"
+    },
+    {
+      "id": "pan",
+      "dia": 185,
+      "desde": "2026-07-04"
+    },
+    {
+      "id": "paracaidas",
+      "dia": 186,
+      "desde": "2026-07-05"
+    },
+    {
+      "id": "gafas",
+      "dia": 187,
+      "desde": "2026-07-06"
+    },
+    {
+      "id": "spotify",
+      "dia": 188,
+      "desde": "2026-07-07"
+    },
+    {
+      "id": "antimateria",
+      "dia": 189,
+      "desde": "2026-07-08"
+    },
+    {
+      "id": "termostato",
+      "dia": 190,
+      "desde": "2026-07-09"
+    },
+    {
+      "id": "rocio",
+      "dia": 191,
+      "desde": "2026-07-10"
+    },
+    {
+      "id": "geoestacionario",
+      "dia": 192,
+      "desde": "2026-07-11"
+    },
+    {
+      "id": "cinturon",
+      "dia": 193,
+      "desde": "2026-07-12"
+    },
+    {
+      "id": "tostada",
+      "dia": 194,
+      "desde": "2026-07-13"
+    },
+    {
+      "id": "retratos",
+      "dia": 195,
+      "desde": "2026-07-14"
+    },
+    {
+      "id": "reentrada",
+      "dia": 196,
+      "desde": "2026-07-15"
+    },
+    {
+      "id": "lavadora",
+      "dia": 197,
+      "desde": "2026-07-16"
+    },
+    {
+      "id": "olas",
+      "dia": 198,
+      "desde": "2026-07-17"
+    },
+    {
+      "id": "neutrinos",
+      "dia": 199,
+      "desde": "2026-07-18"
+    },
+    {
+      "id": "pertiga",
+      "dia": 200,
+      "desde": "2026-07-19"
+    },
+    {
+      "id": "laserocular",
+      "dia": 201,
+      "desde": "2026-07-20"
+    },
+    {
+      "id": "reconocimientovoz",
+      "dia": 202,
+      "desde": "2026-07-21"
+    },
+    {
+      "id": "espagueti",
+      "dia": 203,
+      "desde": "2026-07-22"
+    },
+    {
+      "id": "estelas",
+      "dia": 204,
+      "desde": "2026-07-23"
+    },
+    {
+      "id": "microondasenlace",
+      "dia": 205,
+      "desde": "2026-07-24"
+    },
+    {
+      "id": "airdrop",
+      "dia": 206,
+      "desde": "2026-07-25"
+    },
+    {
+      "id": "zonadeformable",
+      "dia": 207,
+      "desde": "2026-07-26"
+    },
+    {
+      "id": "telescopio",
+      "dia": 208,
+      "desde": "2026-07-27"
+    },
+    {
+      "id": "pajita",
+      "dia": 209,
+      "desde": "2026-07-28"
+    },
+    {
+      "id": "lavavajillas",
+      "dia": 210,
+      "desde": "2026-07-29"
+    },
+    {
+      "id": "tsunami",
+      "dia": 211,
+      "desde": "2026-07-30"
+    },
+    {
+      "id": "findmy",
+      "dia": 212,
+      "desde": "2026-07-31"
+    },
+    {
+      "id": "casimir",
+      "dia": 213,
+      "desde": "2026-08-01"
+    },
+    {
+      "id": "patinaje",
+      "dia": 214,
+      "desde": "2026-08-02"
+    },
+    {
+      "id": "desfibrilador",
+      "dia": 215,
+      "desde": "2026-08-03"
+    },
+    {
+      "id": "vinilo",
+      "dia": 216,
+      "desde": "2026-08-04"
+    },
+    {
+      "id": "sifon",
+      "dia": 217,
+      "desde": "2026-08-05"
+    },
+    {
+      "id": "despegue",
+      "dia": 218,
+      "desde": "2026-08-06"
+    },
+    {
+      "id": "codigoqr",
+      "dia": 219,
+      "desde": "2026-08-07"
+    },
+    {
+      "id": "lagrange",
+      "dia": 220,
+      "desde": "2026-08-08"
+    },
+    {
+      "id": "diferencial",
+      "dia": 221,
+      "desde": "2026-08-09"
+    },
+    {
+      "id": "secadora",
+      "dia": 222,
+      "desde": "2026-08-10"
+    },
+    {
+      "id": "terremoto",
+      "dia": 223,
+      "desde": "2026-08-11"
+    },
+    {
+      "id": "banda",
+      "dia": 224,
+      "desde": "2026-08-12"
+    },
+    {
+      "id": "ducha",
+      "dia": 225,
+      "desde": "2026-08-13"
+    },
+    {
+      "id": "cero",
+      "dia": 226,
+      "desde": "2026-08-14"
+    },
+    {
+      "id": "radiotelescopio",
+      "dia": 227,
+      "desde": "2026-08-15"
+    },
+    {
+      "id": "saltoaltura",
+      "dia": 228,
+      "desde": "2026-08-16"
+    },
+    {
+      "id": "marcapasos",
+      "dia": 229,
+      "desde": "2026-08-17"
+    },
+    {
+      "id": "bajo",
+      "dia": 230,
+      "desde": "2026-08-18"
+    },
+    {
+      "id": "cargarapida",
+      "dia": 231,
+      "desde": "2026-08-19"
+    },
+    {
+      "id": "rebota",
+      "dia": 232,
+      "desde": "2026-08-20"
+    },
+    {
+      "id": "winglets",
+      "dia": 233,
+      "desde": "2026-08-21"
+    },
+    {
+      "id": "wifiestadio",
+      "dia": 234,
+      "desde": "2026-08-22"
+    },
+    {
+      "id": "huella",
+      "dia": 235,
+      "desde": "2026-08-23"
+    },
+    {
+      "id": "campanaextractora",
+      "dia": 236,
+      "desde": "2026-08-24"
+    },
+    {
+      "id": "volcan",
+      "dia": 237,
+      "desde": "2026-08-25"
+    },
+    {
+      "id": "cmb",
+      "dia": 238,
+      "desde": "2026-08-26"
+    },
+    {
+      "id": "espejo",
+      "dia": 239,
+      "desde": "2026-08-27"
+    },
+    {
+      "id": "bec",
+      "dia": 240,
+      "desde": "2026-08-28"
+    },
+    {
+      "id": "altimetro",
+      "dia": 241,
+      "desde": "2026-08-29"
+    },
+    {
+      "id": "maraton",
+      "dia": 242,
+      "desde": "2026-08-30"
+    },
+    {
+      "id": "protesis",
+      "dia": 243,
+      "desde": "2026-08-31"
+    },
+    {
+      "id": "sirena",
+      "dia": 244,
+      "desde": "2026-09-01"
+    },
+    {
+      "id": "autonomia",
+      "dia": 245,
+      "desde": "2026-09-02"
+    },
+    {
+      "id": "tostadora",
+      "dia": 246,
+      "desde": "2026-09-03"
+    },
+    {
+      "id": "geiser",
+      "dia": 247,
+      "desde": "2026-09-04"
+    },
+    {
+      "id": "polarizadas",
+      "dia": 248,
+      "desde": "2026-09-05"
+    },
+    {
+      "id": "altitud",
+      "dia": 249,
+      "desde": "2026-09-06"
+    },
+    {
+      "id": "satelitetv",
+      "dia": 250,
+      "desde": "2026-09-07"
+    },
+    {
+      "id": "pulsar",
+      "dia": 251,
+      "desde": "2026-09-08"
+    },
+    {
+      "id": "bateriafrio",
+      "dia": 252,
+      "desde": "2026-09-09"
+    },
+    {
+      "id": "dilatacion",
+      "dia": 253,
+      "desde": "2026-09-10"
+    },
+    {
+      "id": "apertura",
+      "dia": 254,
+      "desde": "2026-09-11"
+    },
+    {
+      "id": "bombillavieja",
+      "dia": 255,
+      "desde": "2026-09-12"
+    },
+    {
+      "id": "copo",
+      "dia": 256,
+      "desde": "2026-09-13"
+    },
+    {
+      "id": "bateriacoche",
+      "dia": 257,
+      "desde": "2026-09-14"
+    },
+    {
+      "id": "altitudpelota",
+      "dia": 258,
+      "desde": "2026-09-15"
+    },
+    {
+      "id": "implante",
+      "dia": 259,
+      "desde": "2026-09-16"
+    },
+    {
+      "id": "acople",
+      "dia": 260,
+      "desde": "2026-09-17"
+    },
+    {
+      "id": "supernova",
+      "dia": 261,
+      "desde": "2026-09-18"
+    },
+    {
+      "id": "cristal",
+      "dia": 262,
+      "desde": "2026-09-19"
+    },
+    {
+      "id": "pantallasol",
+      "dia": 263,
+      "desde": "2026-09-20"
+    },
+    {
+      "id": "cajanegra",
+      "dia": 264,
+      "desde": "2026-09-21"
+    },
+    {
+      "id": "aleatorio",
+      "dia": 265,
+      "desde": "2026-09-22"
+    },
+    {
+      "id": "gemelos",
+      "dia": 266,
+      "desde": "2026-09-23"
+    },
+    {
+      "id": "rcd",
+      "dia": 267,
+      "desde": "2026-09-24"
+    },
+    {
+      "id": "hielo",
+      "dia": 268,
+      "desde": "2026-09-25"
+    },
+    {
+      "id": "basura",
+      "dia": 269,
+      "desde": "2026-09-26"
+    },
+    {
+      "id": "conduccionautonoma",
+      "dia": 270,
+      "desde": "2026-09-27"
+    },
+    {
+      "id": "metalfrio",
+      "dia": 271,
+      "desde": "2026-09-28"
+    },
+    {
+      "id": "refresco",
+      "dia": 272,
+      "desde": "2026-09-29"
+    },
+    {
+      "id": "rebufo",
+      "dia": 273,
+      "desde": "2026-09-30"
+    },
+    {
+      "id": "endoscopia",
+      "dia": 274,
+      "desde": "2026-10-01"
+    },
+    {
+      "id": "voz",
+      "dia": 275,
+      "desde": "2026-10-02"
+    },
+    {
+      "id": "iman",
+      "dia": 276,
+      "desde": "2026-10-03"
+    },
+    {
+      "id": "hieloala",
+      "dia": 277,
+      "desde": "2026-10-04"
+    },
+    {
+      "id": "enchufe",
+      "dia": 278,
+      "desde": "2026-10-05"
+    },
+    {
+      "id": "asistencia",
+      "dia": 279,
+      "desde": "2026-10-06"
+    },
+    {
+      "id": "luzvelocidad",
+      "dia": 280,
+      "desde": "2026-10-07"
+    },
+    {
+      "id": "nieve",
+      "dia": 281,
+      "desde": "2026-10-08"
+    },
+    {
+      "id": "mimo",
+      "dia": 282,
+      "desde": "2026-10-09"
+    },
+    {
+      "id": "gorillaglass",
+      "dia": 283,
+      "desde": "2026-10-10"
+    },
+    {
+      "id": "puntociego",
+      "dia": 284,
+      "desde": "2026-10-11"
+    },
+    {
+      "id": "globo",
+      "dia": 285,
+      "desde": "2026-10-12"
+    },
+    {
+      "id": "remo",
+      "dia": 286,
+      "desde": "2026-10-13"
+    },
+    {
+      "id": "frio",
+      "dia": 287,
+      "desde": "2026-10-14"
+    },
+    {
+      "id": "helio",
+      "dia": 288,
+      "desde": "2026-10-15"
+    },
+    {
+      "id": "marte",
+      "dia": 289,
+      "desde": "2026-10-16"
+    },
+    {
+      "id": "aislamiento",
+      "dia": 290,
+      "desde": "2026-10-17"
+    },
+    {
+      "id": "invernadero",
+      "dia": 291,
+      "desde": "2026-10-18"
+    },
+    {
+      "id": "calor",
+      "dia": 292,
+      "desde": "2026-10-19"
+    },
+    {
+      "id": "hawking",
+      "dia": 293,
+      "desde": "2026-10-20"
+    },
+    {
+      "id": "calambre",
+      "dia": 294,
+      "desde": "2026-10-21"
+    },
+    {
+      "id": "ventanilla",
+      "dia": 295,
+      "desde": "2026-10-22"
+    },
+    {
+      "id": "walkie",
+      "dia": 296,
+      "desde": "2026-10-23"
+    },
+    {
+      "id": "lluvia",
+      "dia": 297,
+      "desde": "2026-10-24"
+    },
+    {
+      "id": "exoplanetas",
+      "dia": 298,
+      "desde": "2026-10-25"
+    },
+    {
+      "id": "celo",
+      "dia": 299,
+      "desde": "2026-10-26"
+    },
+    {
+      "id": "formula1",
+      "dia": 300,
+      "desde": "2026-10-27"
+    },
+    {
+      "id": "dialisis",
+      "dia": 301,
+      "desde": "2026-10-28"
+    },
+    {
+      "id": "octava",
+      "dia": 302,
+      "desde": "2026-10-29"
+    },
+    {
+      "id": "ultrawideband",
+      "dia": 303,
+      "desde": "2026-10-30"
+    },
+    {
+      "id": "humedad",
+      "dia": 304,
+      "desde": "2026-10-31"
+    },
+    {
+      "id": "campoterrestre",
+      "dia": 305,
+      "desde": "2026-11-01"
+    },
+    {
+      "id": "tiempoatomico",
+      "dia": 306,
+      "desde": "2026-11-02"
+    },
+    {
+      "id": "faros",
+      "dia": 307,
+      "desde": "2026-11-03"
+    },
+    {
+      "id": "nudo",
+      "dia": 308,
+      "desde": "2026-11-04"
+    },
+    {
+      "id": "materiaoscura",
+      "dia": 309,
+      "desde": "2026-11-05"
+    },
+    {
+      "id": "reversa",
+      "dia": 310,
+      "desde": "2026-11-06"
+    },
+    {
+      "id": "ondacorta",
+      "dia": 311,
+      "desde": "2026-11-07"
+    },
+    {
+      "id": "camararapida",
+      "dia": 312,
+      "desde": "2026-11-08"
+    },
+    {
+      "id": "persiana",
+      "dia": 313,
+      "desde": "2026-11-09"
+    },
+    {
+      "id": "desierto",
+      "dia": 314,
+      "desde": "2026-11-10"
+    },
+    {
+      "id": "dardo",
+      "dia": 315,
+      "desde": "2026-11-11"
+    },
+    {
+      "id": "vacunafrio",
+      "dia": 316,
+      "desde": "2026-11-12"
+    },
+    {
+      "id": "tapones",
+      "dia": 317,
+      "desde": "2026-11-13"
+    },
+    {
+      "id": "papel",
+      "dia": 318,
+      "desde": "2026-11-14"
+    },
+    {
+      "id": "kilo",
+      "dia": 319,
+      "desde": "2026-11-15"
+    },
+    {
+      "id": "ondasgravitacionales",
+      "dia": 320,
+      "desde": "2026-11-16"
+    },
+    {
+      "id": "hibrido",
+      "dia": 321,
+      "desde": "2026-11-17"
+    },
+    {
+      "id": "hdr",
+      "dia": 322,
+      "desde": "2026-11-18"
+    },
+    {
+      "id": "chicle",
+      "dia": 323,
+      "desde": "2026-11-19"
+    },
+    {
+      "id": "sueloradiante",
+      "dia": 324,
+      "desde": "2026-11-20"
+    },
+    {
+      "id": "arena",
+      "dia": 325,
+      "desde": "2026-11-21"
+    },
+    {
+      "id": "dron",
+      "dia": 326,
+      "desde": "2026-11-22"
+    },
+    {
+      "id": "rfid",
+      "dia": 327,
+      "desde": "2026-11-23"
+    },
+    {
+      "id": "pelotavasca",
+      "dia": 328,
+      "desde": "2026-11-24"
+    },
+    {
+      "id": "dosis",
+      "dia": 329,
+      "desde": "2026-11-25"
+    },
+    {
+      "id": "dolby",
+      "dia": 330,
+      "desde": "2026-11-26"
+    },
+    {
+      "id": "ion",
+      "dia": 331,
+      "desde": "2026-11-27"
+    },
+    {
+      "id": "puerta",
+      "dia": 332,
+      "desde": "2026-11-28"
+    },
+    {
+      "id": "auricularin",
+      "dia": 333,
+      "desde": "2026-11-29"
+    },
+    {
+      "id": "noether",
+      "dia": 334,
+      "desde": "2026-11-30"
+    },
+    {
+      "id": "catalizador",
+      "dia": 335,
+      "desde": "2026-12-01"
+    },
+    {
+      "id": "aguaducha",
+      "dia": 336,
+      "desde": "2026-12-02"
+    },
+    {
+      "id": "cueva",
+      "dia": 337,
+      "desde": "2026-12-03"
+    },
+    {
+      "id": "paraguas",
+      "dia": 338,
+      "desde": "2026-12-04"
+    },
+    {
+      "id": "rtg",
+      "dia": 339,
+      "desde": "2026-12-05"
+    },
+    {
+      "id": "pantallaplegable",
+      "dia": 340,
+      "desde": "2026-12-06"
+    },
+    {
+      "id": "globohelio",
+      "dia": 341,
+      "desde": "2026-12-07"
+    },
+    {
+      "id": "lifi",
+      "dia": 342,
+      "desde": "2026-12-08"
+    },
+    {
+      "id": "escalada",
+      "dia": 343,
+      "desde": "2026-12-09"
+    },
+    {
+      "id": "litotricia",
+      "dia": 344,
+      "desde": "2026-12-10"
+    },
+    {
+      "id": "metronomo",
+      "dia": 345,
+      "desde": "2026-12-11"
+    },
+    {
+      "id": "caos",
+      "dia": 346,
+      "desde": "2026-12-12"
+    },
+    {
+      "id": "neumaticopresion",
+      "dia": 347,
+      "desde": "2026-12-13"
+    },
+    {
+      "id": "lluviacorrer",
+      "dia": 348,
+      "desde": "2026-12-14"
+    },
+    {
+      "id": "congelador",
+      "dia": 349,
+      "desde": "2026-12-15"
+    },
+    {
+      "id": "brisa",
+      "dia": 350,
+      "desde": "2026-12-16"
+    },
+    {
+      "id": "vanallen",
+      "dia": 351,
+      "desde": "2026-12-17"
+    },
+    {
+      "id": "ascensor",
+      "dia": 352,
+      "desde": "2026-12-18"
+    },
+    {
+      "id": "radios",
+      "dia": 353,
+      "desde": "2026-12-19"
+    },
+    {
+      "id": "planeador",
+      "dia": 354,
+      "desde": "2026-12-20"
+    },
+    {
+      "id": "multiplexacion",
+      "dia": 355,
+      "desde": "2026-12-21"
+    },
+    {
+      "id": "tenismesa",
+      "dia": 356,
+      "desde": "2026-12-22"
+    },
+    {
+      "id": "bisturi",
+      "dia": 357,
+      "desde": "2026-12-23"
+    },
+    {
+      "id": "campana",
+      "dia": 358,
+      "desde": "2026-12-24"
+    },
+    {
+      "id": "entropia",
+      "dia": 359,
+      "desde": "2026-12-25"
+    },
+    {
+      "id": "aquaplaning",
+      "dia": 360,
+      "desde": "2026-12-26"
+    },
+    {
+      "id": "contador",
+      "dia": 361,
+      "desde": "2026-12-27"
+    },
+    {
+      "id": "bioluminiscencia",
+      "dia": 362,
+      "desde": "2026-12-28"
+    },
+    {
+      "id": "escape",
+      "dia": 363,
+      "desde": "2026-12-29"
+    },
+    {
+      "id": "bateriaciclos",
+      "dia": 364,
+      "desde": "2026-12-30"
+    },
+    {
+      "id": "cargadornoche",
+      "dia": 365,
+      "desde": "2026-12-31"
     }
   ]
 }
