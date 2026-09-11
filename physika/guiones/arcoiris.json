@@ -5,6 +5,13 @@
   "entradilla": "Porque no está en el cielo. Está a una distancia angular fija de tu propia sombra, y por eso no te puedes acercar a él ni fotografiarlo entero desde otro sitio.",
   "modelo": "arcoiris",
   "color": "malva",
+  "tanteo": {
+    "pregunta": "¿Cuántos grados de cielo ocupa un arcoíris desde el rojo hasta el violeta?",
+    "opciones": ["Menos de dos grados", "Unos diez grados", "Unos cuarenta grados"],
+    "valores": [1.8, 10, 40],
+    "medido": "anchoDelArco",
+    "remate": "{anchoDelArco|1} grados: tres lunas llenas puestas en fila. Todo el color que ves cabe en esa franja."
+  },
   "nucleo": [
     {
       "numero": 1,

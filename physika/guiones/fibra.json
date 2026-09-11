@@ -5,6 +5,13 @@
   "entradilla": "Rebotando. La luz nunca toca el aire: va chocando contra la frontera entre dos vidrios que se diferencian en la tercera cifra decimal, y en esa frontera no tiene salida posible.",
   "modelo": "fibra",
   "color": "azul",
+  "tanteo": {
+    "pregunta": "Tras cien kilómetros de fibra, ¿cuánta luz queda de la que entró?",
+    "opciones": ["Una millonésima", "El uno por ciento", "Más de la mitad"],
+    "valores": [0.0001, 1, 50],
+    "medido": "quedaTrasCien",
+    "remate": "El {quedaTrasCien|0} por ciento. Suena a poco hasta que caes en que el aire de una tarde con niebla se come eso mismo en cien metros."
+  },
   "nucleo": [
     {
       "numero": 1,

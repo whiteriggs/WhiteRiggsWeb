@@ -5,6 +5,13 @@
   "entradilla": "Porque el hueso se los come más deprisa. No los para: los va gastando, y en los cuatro centímetros que hay de por medio se come los suficientes como para dejar una sombra.",
   "modelo": "rayosx",
   "color": "verde",
+  "tanteo": {
+    "pregunta": "Tras cuatro centímetros, ¿cuánta radiación más pasa por el músculo que por el hueso?",
+    "opciones": ["Casi la misma", "El doble", "Casi cuatro veces"],
+    "valores": [1, 2, 3.6],
+    "medido": "contraste",
+    "remate": "{contraste|1} veces. Toda la radiografía es esa diferencia, y nada más que esa diferencia."
+  },
   "nucleo": [
     {
       "numero": 1,

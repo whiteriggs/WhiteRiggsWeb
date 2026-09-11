@@ -5,6 +5,13 @@
   "entradilla": "Porque te llega el mismo bajo dos veces, desde dos altavoces, y a veces llega al revés. Dos sonidos iguales pueden dar silencio, y eso pasa en sitios concretos del recinto.",
   "modelo": "conciertos",
   "color": "azul",
+  "tanteo": {
+    "pregunta": "En un concierto, ¿cada cuánto te cruzas con un sitio donde el bajo casi no se oye?",
+    "opciones": ["Cada tres metros", "Cada veinte metros", "Cada cien metros"],
+    "valores": [3, 20, 100],
+    "medido": "huecoDelBajo",
+    "remate": "Cada {huecoDelBajo|1} metros. Un paso y medio y estás en otro concierto."
+  },
   "nucleo": [
     {
       "numero": 1,

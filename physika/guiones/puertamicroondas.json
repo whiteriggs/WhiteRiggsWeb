@@ -5,6 +5,13 @@
   "entradilla": "La puerta lleva una chapa agujereada. Por esos agujeros pasa la luz, porque si no no verías el plato girar. Y por los mismos agujeros no pasa la microonda, que está a un palmo de tu cara. La chapa no distingue entre una y otra: lo único que hay ahí es una comparación de tamaños.",
   "modelo": "rejilla",
   "color": "ambar",
+  "tanteo": {
+    "pregunta": "Los agujeros de la puerta miden milímetro y medio. ¿Cuántas veces cabe un agujero en la onda que tiene que parar?",
+    "opciones": ["Dos veces", "Diez veces", "Más de ochenta veces"],
+    "valores": [2, 10, 80],
+    "medido": "vecesQueCabeElAgujero",
+    "remate": "Cabe {vecesQueCabeElAgujero|0} veces. Para una onda de ese tamaño la rejilla no está agujereada: es una pared."
+  },
   "nucleo": [
     {
       "numero": 1,

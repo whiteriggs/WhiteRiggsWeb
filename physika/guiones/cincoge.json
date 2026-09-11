@@ -5,6 +5,13 @@
   "entradilla": "Porque la onda se ha hecho pequeña. Y todo lo demás —que no atraviese paredes, que no doble esquinas, que haga falta una antena cada dos calles— sale de ese único cambio.",
   "modelo": "cincoge",
   "color": "azul",
+  "tanteo": {
+    "pregunta": "Para cubrir el mismo terreno que una antena de las de banda baja, ¿cuántas antenas de las rápidas hacen falta?",
+    "opciones": ["Dos o tres", "Unas cuarenta", "Más de mil"],
+    "valores": [2, 40, 1200],
+    "medido": "antenas",
+    "remate": "Unas {antenas|0}. No es que las pongan en cada farola por capricho: es la única forma de que llegue."
+  },
   "nucleo": [
     {
       "numero": 1,

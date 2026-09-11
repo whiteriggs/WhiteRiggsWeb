@@ -5,6 +5,13 @@
   "entradilla": "Empujando un pistón hacia abajo con gas caliente. Lo interesante no es que funcione, sino cuánto se queda por el camino: de cada euro de gasolina, la mayor parte sale por el tubo de escape en forma de calor.",
   "modelo": "motor",
   "color": "coral",
+  "tanteo": {
+    "pregunta": "De cada cien euros de gasolina, ¿cuántos acaban moviendo el coche?",
+    "opciones": ["Veinticinco", "Sesenta", "Noventa"],
+    "valores": [25, 60, 90],
+    "medido": "util",
+    "remate": "{util|0}. Los otros {centimosDeCadaEuro|0} se van en calor y en rozamiento, y la mayor parte no es culpa del motor."
+  },
   "nucleo": [
     {
       "numero": 1,
