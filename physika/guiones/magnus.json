@@ -1,0 +1,70 @@
+{
+  "id": "magnus",
+  "rotulo": "DEPORTE",
+  "titulo": "¿Cómo metió Roberto Carlos aquel gol imposible?",
+  "entradilla": "Golpeando la pelota descentrada para que girase sobre sí misma. Una pelota que gira arrastra aire por un lado y lo frena por el otro, y ese desequilibrio la empuja de lado durante todo el viaje. No fue un efecto óptico: fue una fuerza.",
+  "modelo": "tiro",
+  "color": "verde",
+  "medidas": {
+    "masa": 0.43,
+    "radio": 0.11,
+    "arrastre": 0.20,
+    "sustentacion": 0.10,
+    "velocidad": 38,
+    "angulo": 0,
+    "gravedad": 0,
+    "hasta": 35
+  },
+  "tanteo": {
+    "pregunta": "En los 35 metros que recorrió, ¿cuánto se apartó el balón de la línea recta?",
+    "opciones": ["Medio metro", "Metro y medio", "Casi cuatro metros"],
+    "valores": [0.5, 1.5, 4],
+    "medido": "desvio",
+    "remate": "{desvio|1} metros. Por eso la barrera estaba bien puesta y aun así no sirvió de nada: el balón salió fuera del marco y volvió."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "la pelota que empuja",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LO QUE VIO LA BARRERA",
+          "clave": "Saliendo a {velocidadEnKilometrosPorHora|0} por hora, el balón se separa {desvio|1} metros de donde apuntaba.",
+          "texto": "Visto desde arriba, que es como hay que verlo. La línea de puntos es la trayectoria que habría seguido el mismo balón golpeado igual de fuerte pero sin girar. La otra es la que siguió. Lo que separa las dos puntas es el gol.",
+          "detalle": "El desvío no es un arco uniforme: al principio casi no se nota y al final se abre de golpe. No es que la fuerza aumente, es que la velocidad lateral se va acumulando mientras la de avance se frena. Por eso la barrera salta tarde y por eso el portero se queda quieto: cuando la curva se ve, ya no hay tiempo.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "trayectoria",
+            "claves": [],
+            "rotulos": ["con rosca", "sin rosca", "vista desde arriba, los dos ejes miden igual"]
+          }
+        },
+        {
+          "rotulo": "CUÁNTO EMPUJA EL AIRE DE LADO",
+          "clave": "El empuje lateral es {empuje|1} newtons, y el balón entero pesa {peso|1}.",
+          "texto": "O sea que el aire está empujando la pelota de costado con cerca del peso de la propia pelota. Dicho de otra forma: durante ese segundo largo de vuelo, es como si alguien estuviera tirando del balón hacia un lado con la misma mano con la que lo sostendría.",
+          "detalle": "La frenada es todavía mayor, {frenada|1} newtons, y actúa siempre en contra del avance. Las dos salen de la misma cuenta —media densidad del aire, por el área de la pelota, por la velocidad al cuadrado— y solo se diferencian en el coeficiente y en la dirección. Por eso las dos se desploman cuando el balón se frena.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["frenada", "peso", "empuje"],
+            "rotulos": ["frena", "pesa", "empuja de lado"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "No golpeó la pelota. Golpeó el aire que tenía alrededor.",
+    "nota": "El coeficiente de sustentación, 0,10, es el valor típico medido en túnel de viento para un balón girando a unas diez vueltas por segundo; no se calcula, se mide. Lo que calcula la aplicación es el vuelo completo a partir de él, integrando paso a paso las dos fuerzas.",
+    "parrafos": [
+      "La cuenta es la misma para un saque liftado, un servicio cortado y una bola de golf: media densidad por área por velocidad al cuadrado. Cambian los dos coeficientes, el de frenada y el de empuje, y con eso cambia el deporte entero.",
+      "Y hay una consecuencia que se nota en el campo: como las dos fuerzas van con la velocidad al cuadrado, el efecto solo existe si se pega fuerte. Un centro flojo con la misma rosca no se curva casi nada, porque la pelota no lleva velocidad que convertir en empuje."
+    ]
+  },
+  "puente": {
+    "hacia": "parabolico",
+    "frase": "Las mismas dos fuerzas, con la gravedad puesta y sin ninguna rosca, deciden algo que parece un detalle y no lo es: desde qué ángulo un triple cabe por el aro."
+  }
+}

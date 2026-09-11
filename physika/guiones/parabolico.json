@@ -1,0 +1,72 @@
+{
+  "id": "parabolico",
+  "rotulo": "DEPORTE",
+  "titulo": "¿Desde dónde entra mejor un triple?",
+  "entradilla": "Desde más arriba. No porque quede bonito, sino porque el aro no es un aro para la pelota: es una elipse que se estrecha según el ángulo con el que llegas. Tirar plano cierra la puerta antes de que llegues a ella.",
+  "modelo": "tiro",
+  "color": "verde",
+  "medidas": {
+    "masa": 0.62,
+    "radio": 0.121,
+    "arrastre": 0.47,
+    "distancia": 6.75,
+    "altura": 3.05,
+    "salida": 2.1,
+    "angulo": 52,
+    "anguloComparado": 38,
+    "agujero": 0.45,
+    "pelota": 0.242
+  },
+  "tanteo": {
+    "pregunta": "Tirando el triple plano, a 38 grados, ¿cuánto margen le queda a la pelota al cruzar el aro?",
+    "opciones": ["Los 21 centímetros de siempre", "Unos 9 centímetros", "Ninguno: no cabe"],
+    "valores": [20.8, 9.5, 0],
+    "medido": "huecoComparadoEnCentimetros",
+    "remate": "Ninguno. Con esa entrada el hueco útil mide menos que la pelota, así que un triple plano solo entra rebotando en el aro o en el tablero. Nunca limpio."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el aro se estrecha",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "DOS TIROS QUE CUESTAN LO MISMO",
+          "clave": "Los dos salen a {velocidadEnKilometrosPorHora|1} por hora y los dos llegan al aro. Uno entra picando {entrada|1} grados y el otro {entradaComparada|1}.",
+          "texto": "Ese es el hallazgo incómodo: la fuerza no decide. Existe un ángulo que gasta el mínimo de velocidad, está cerca de los cincuenta grados, y a los lados la cuenta sube tan despacio que catorce grados de diferencia no se notan en el brazo. Lo que cambia no es lo que cuesta el tiro. Es cómo llega.",
+          "detalle": "El ángulo más barato no es 45. Cuando el blanco está más alto que la mano, sale 45 más la mitad del ángulo que hay que levantar la vista para verlo, y aquí eso da unos 49 grados. Si el blanco estuviera a la altura de la mano volverían a ser 45 clavados, como en el libro.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "trayectoria",
+            "claves": [],
+            "rotulos": ["52 grados", "38 grados", "los dos ejes miden igual: los ángulos son los de verdad"]
+          }
+        },
+        {
+          "rotulo": "EL AGUJERO QUE VE LA PELOTA",
+          "clave": "El aro mide {agujero|2} metros y la pelota {pelota|3}: de frente sobran {huecoDeFrenteEnCentimetros|1} centímetros. Entrando a {entrada|1} grados quedan {huecoEnCentimetros|1}.",
+          "texto": "La pelota no cae por el aro, lo cruza en diagonal, y un círculo cruzado en diagonal es una elipse más estrecha. El hueco que queda es el diámetro del aro por el seno del ángulo de entrada, menos la pelota entera. Como el seno se desploma cuando el ángulo baja, el margen se evapora mucho antes que el ángulo.",
+          "detalle": "Por eso el punto de no retorno está en unos 40 grados de salida: por debajo, la barra central del dibujo llega a cero. Y por eso un tiro muy picado perdona los errores de fuerza, mientras que uno plano solo perdona si el tablero ayuda.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["huecoDeFrenteEnCentimetros", "huecoEnCentimetros", "huecoComparadoEnCentimetros"],
+            "rotulos": ["cayendo a plomo", "a {entrada|0} grados", "a {entradaComparada|0} grados"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Tirar más alto no cuesta más fuerza. Compra puntería.",
+    "nota": "El coeficiente de frenada de un balón de baloncesto, 0,47, es el de una esfera lisa medido en túnel de viento y entra como dato. Las velocidades de salida no se eligen: la aplicación busca, para cada ángulo, la única que hace pasar la pelota por el aro.",
+    "parrafos": [
+      "La cuenta del hueco es de trigonometría de primero y no tiene truco: diámetro por seno del ángulo, menos pelota. Lo que sorprende es dónde cae el cero. Con una pelota que ocupa más de la mitad del aro, cualquier entrada por debajo de unos 33 grados es imposible, y a la mano eso le llega mucho antes de lo que parece.",
+      "Es también la razón de que los tiros libres se enseñen altos y de que un tapón se ponga delante y no debajo. Subir la parábola no es estética: es ensanchar el blanco sin tocar el aro."
+    ]
+  },
+  "puente": {
+    "hacia": "magnus",
+    "frase": "Y si además la pelota gira, el aire deja de limitarse a frenarla y empieza a empujarla de lado. Ahí es donde se metió el gol más raro que se recuerda."
+  }
+}

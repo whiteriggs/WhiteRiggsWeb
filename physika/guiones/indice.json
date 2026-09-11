@@ -44,71 +44,83 @@
       "sello": "288ee1cfd4aa53d4"
     },
     {
-      "id": "armonicos",
+      "id": "magnus",
       "dia": 9,
-      "desde": "2027-01-09"
+      "desde": "2027-01-09",
+      "sello": "28062465f7205b7e"
+    },
+    {
+      "id": "armonicos",
+      "dia": 10,
+      "desde": "2027-01-10"
     },
     {
       "id": "rayosx",
-      "dia": 10,
-      "desde": "2027-01-10",
+      "dia": 11,
+      "desde": "2027-01-11",
       "sello": "9202a14dc1ca4e14"
     },
     {
       "id": "nfc",
-      "dia": 11,
-      "desde": "2027-01-11"
+      "dia": 12,
+      "desde": "2027-01-12"
     },
     {
       "id": "fibra",
-      "dia": 12,
-      "desde": "2027-01-12",
+      "dia": 13,
+      "desde": "2027-01-13",
       "sello": "0cb3578012059ae9"
     },
     {
       "id": "conciertos",
-      "dia": 13,
-      "desde": "2027-01-13",
+      "dia": 14,
+      "desde": "2027-01-14",
       "sello": "951681487aa4865f"
     },
     {
+      "id": "parabolico",
+      "dia": 15,
+      "desde": "2027-01-15",
+      "sello": "1532a40ac03de43c"
+    },
+    {
       "id": "ecografia",
-      "dia": 14,
-      "desde": "2027-01-14",
+      "dia": 16,
+      "desde": "2027-01-16",
       "sello": "257a4641fad1d5f3"
     },
     {
       "id": "ecualizador",
-      "dia": 15,
-      "desde": "2027-01-15"
-    },
-    {
-      "id": "cincoge",
-      "dia": 16,
-      "desde": "2027-01-16",
-      "sello": "438dd79b732691e7"
-    },
-    {
-      "id": "afinacion",
       "dia": 17,
       "desde": "2027-01-17"
     },
     {
-      "id": "motor",
+      "id": "cincoge",
       "dia": 18,
       "desde": "2027-01-18",
+      "sello": "438dd79b732691e7"
+    },
+    {
+      "id": "afinacion",
+      "dia": 19,
+      "desde": "2027-01-19"
+    },
+    {
+      "id": "motor",
+      "dia": 20,
+      "desde": "2027-01-20",
       "sello": "4e4a1df6e86bcbf1"
     },
     {
       "id": "infrarrojo",
-      "dia": 19,
-      "desde": "2027-01-19",
+      "dia": 21,
+      "desde": "2027-01-21",
       "sello": "91f0f949d0341567"
     },
     {
       "id": "puertamicroondas",
-      "dia": 20,
-      "desde": "2027-01-20",
+      "dia": 22,
+      "desde": "2027-01-22",
       "sello": "9ad46b58bf68de6b"
     }
   ]
