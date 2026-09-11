@@ -1,0 +1,49 @@
+{
+  "id": "motor",
+  "rotulo": "COCHES",
+  "titulo": "¿Cómo convierte en giro una explosión un motor de gasolina?",
+  "entradilla": "Empujando un pistón hacia abajo con gas caliente. Lo interesante no es que funcione, sino cuánto se queda por el camino: de cada euro de gasolina, la mayor parte sale por el tubo de escape en forma de calor.",
+  "modelo": "motor",
+  "color": "coral",
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el techo y la realidad",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "EL TECHO LO PONE LA COMPRESIÓN",
+          "clave": "Comprimiendo {compresion|0} veces, el máximo teórico es {ideal|0} por ciento.",
+          "texto": "Ese número no depende de la marca ni del presupuesto: sale solo de cuánto se aprieta la mezcla antes de encenderla. Cuanto más comprimes, más energía sacas de la misma gasolina, y por eso toda la historia del motor de explosión es la historia de comprimir más sin que se encienda antes de tiempo.",
+          "detalle": "Ahí está el límite de verdad: pasado cierto punto la mezcla se autoenciende por presión y el motor pica. Esa pelea es exactamente la que resuelve el gasóleo por el otro lado, comprimiendo tanto que el autoencendido deja de ser el problema y pasa a ser el método.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["ideal", "util"],
+            "rotulos": ["máximo teórico", "lo que llega a la rueda"]
+          }
+        },
+        {
+          "rotulo": "A DÓNDE VA EL RESTO",
+          "clave": "De cada cien de gasolina, {util|0} mueven el coche. Los otros {centimosDeCadaEuro|0} son calor y rozamiento.",
+          "texto": "{calorQueSeVa|0} de cada cien se van directamente en forma de calor: la mitad por el tubo de escape y la otra mitad por el radiador. No es una avería ni un motor viejo: es lo que hace un motor de gasolina en buen estado.",
+          "detalle": "Y por eso el motor de combustión tiene calefacción gratis y el coche eléctrico no. En invierno, calentar el habitáculo de un eléctrico se nota en la autonomía porque ahí no sobra calor por ningún sitio.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "reparto",
+            "claves": ["util", "escape", "refrigeracion", "rozamiento"],
+            "rotulos": ["mueve el coche", "tubo de escape", "radiador", "rozamiento"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Un motor de gasolina es, sobre todo, una estufa.",
+    "nota": "Compresión típica de diez a uno y reparto medido en un motor de gasolina a carga parcial; a plena carga el trozo útil sube algo.",
+    "parrafos": [
+      "Entre el techo que permite la física y lo que de verdad llega al suelo hay {loQuePierdesDelTecho|0} puntos, y esos sí son ingeniería: rozamiento, bombear aire, mover la distribución, el alternador.",
+      "Pero los otros no se pueden recuperar con mejores piezas. El gas tiene que salir caliente para que el ciclo se cierre. Un motor que no tirase calor por el escape no sería un motor mejor: no sería un motor."
+    ]
+  }
+}

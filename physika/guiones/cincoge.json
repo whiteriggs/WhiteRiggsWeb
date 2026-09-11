@@ -1,0 +1,105 @@
+{
+  "id": "cincoge",
+  "rotulo": "REDES",
+  "titulo": "¿Por qué el 5G necesita una antena en cada farola?",
+  "entradilla": "Porque la onda se ha hecho pequeña. Y todo lo demás —que no atraviese paredes, que no doble esquinas, que haga falta una antena cada dos calles— sale de ese único cambio.",
+  "modelo": "cincoge",
+  "color": "azul",
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "la onda se encoge",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "DÓNDE CAE ESO",
+          "clave": "La banda rápida del 5G está más cerca del microondas de tu cocina que de la radio del coche.",
+          "texto": "La FM que escuchas conduciendo mide {ondaDeLaFmEnMetros|1} metros de cresta a cresta. La banda rápida del 5G mide {ondaAltaEnMilimetros|1} milímetros. Es la misma cosa —campo eléctrico y magnético empujándose— con el tamaño cambiado.",
+          "detalle": "Las fronteras entre bandas son convenio de nomenclatura, no física. No hay nada que le pase a una onda al cruzar la raya entre «microondas» y «radio»: el nombre cambia, ella no.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "espectro",
+            "claves": ["ondaAlta", "ondaDeLaFm"],
+            "rotulos": ["el 5G rápido", "la FM del coche"],
+            "pies": ["{ondaAltaEnMilimetros|1} mm", "{ondaDeLaFmEnMetros|1} m"]
+          }
+        },
+        {
+          "rotulo": "TRES BANDAS, UN NOMBRE",
+          "clave": "El 5G no es una frecuencia. Son tres, y se portan como tres cosas distintas.",
+          "texto": "Por eso tienes cinco rayitas de 5G en el pueblo y se te cae en mitad de la plaza de una ciudad: no es la misma red. La de abajo llega lejos y va lenta; la de arriba va rapidísima y no sale de la acera de enfrente.",
+          "detalle": "Cuanto más arriba, más ancho de banda hay libre, y el ancho de banda es literalmente cuántos bits por segundo caben. Por eso nadie se conforma con la banda cómoda: arriba está el sitio.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "escala",
+            "claves": ["ondaDeLaFm", "ondaBaja", "ondaMedia", "ondaAlta"],
+            "rotulos": ["FM, 100 MHz", "5G bajo, 700 MHz", "5G medio, 3,5 GHz", "5G rápido, 26 GHz"],
+            "pies": ["{ondaDeLaFmEnMetros|2} m", "{ondaBajaEnCentimetros|1} cm", "{ondaMediaEnCentimetros|1} cm", "{ondaAltaEnMilimetros|1} mm"],
+            "marcas": [
+              { "valor": 0.01, "texto": "1 cm" },
+              { "valor": 0.1, "texto": "10 cm" },
+              { "valor": 1, "texto": "1 m" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "y por eso hacen falta más",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "EL ALCANCE SE ENCOGE IGUAL",
+          "clave": "Subir de 700 MHz a 26 GHz cuesta {decibeliosDeMas|0} decibelios antes de haber recorrido un metro.",
+          "texto": "Con el mismo presupuesto de potencia, el alcance baja en la misma proporción en que sube la frecuencia: {vecesMasCorta|0} veces. Y como el área que cubre una antena va con el cuadrado del alcance, para tapar lo que tapaba una sola hacen falta {antenas|entera}.",
+          "detalle": "No sale de ningún catálogo de operadora: sale de dividir la superficie de un círculo por la de otro más pequeño. Por eso el 5G rápido no es un despliegue, es una obra civil, y por eso acaba en las farolas: es donde hay poste, luz y permiso.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "caida",
+            "exponente": 2,
+            "ejeX": "distancia a la antena",
+            "ejeY": "potencia que llega"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "No es que el 5G sea débil. Es que es pequeño.",
+    "nota": "Campo abierto, misma potencia emitida y mismo umbral de recepción en las dos bandas.",
+    "parrafos": [
+      "Una onda de {ondaDeLaFmEnMetros|1} metros rodea una casa porque la casa le cabe dentro. Una de {ondaAltaEnMilimetros|1} milímetros no rodea ni tu mano: la cosa más pequeña que ya le hace sombra eres tú.",
+      "Todo lo que te molesta del 5G rápido y todo lo que te gusta salen de la misma línea. Va rápido porque arriba hay sitio libre, y no llega porque arriba la onda es un grano de arroz."
+    ]
+  },
+  "ampliacion": {
+    "nota": "Lo que siempre se pregunta cuando alguien dice «milimétricas».",
+    "fases": [
+      {
+        "numero": 3,
+        "nombre": "y no, no te cocina",
+        "color": "azul",
+        "paneles": [
+          {
+            "rotulo": "LA CUENTA DEL FOTÓN",
+            "clave": "Cada fotón del 5G lleva {energiaEnMillonesimas|0} millonésimas de electronvoltio.",
+            "texto": "Romper el enlace más flojo de una molécula del cuerpo pide del orden de tres electronvoltios. Un fotón de la banda milimétrica lleva {vecesPorDebajoDeRomper|entera} veces menos que eso, y los fotones no hacen bote: o uno solo llega con lo que hace falta, o no pasa nada.",
+            "detalle": "Por eso la raya que importa no está entre 4G y 5G: está entre la luz visible y el ultravioleta, que es donde un solo fotón empieza a llevar encima lo suficiente para arrancar un electrón. Todo lo que queda a la derecha de la tira de color calienta como mucho; solo lo de la izquierda rompe.",
+            "color": "azul",
+            "dibujo": {
+              "tipo": "espectro",
+              "claves": ["ondaAlta"],
+              "rotulos": ["el 5G rápido"],
+              "pies": ["{ondaAltaEnMilimetros|1} mm"]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "puente": {
+    "hacia": "microondas",
+    "frase": "En la regla del espectro, la banda rápida del 5G y el cacharro de tu cocina están a un dedo el uno del otro. Lo que los separa no es el sitio: es que uno emite un millón de veces más fuerte y dentro de una caja."
+  }
+}

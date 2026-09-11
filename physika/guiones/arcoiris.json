@@ -1,0 +1,49 @@
+{
+  "id": "arcoiris",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Por qué el arcoíris está siempre enfrente del sol?",
+  "entradilla": "Porque no está en el cielo. Está a una distancia angular fija de tu propia sombra, y por eso no te puedes acercar a él ni fotografiarlo entero desde otro sitio.",
+  "modelo": "arcoiris",
+  "color": "malva",
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una gota, un rebote",
+      "color": "malva",
+      "paneles": [
+        {
+          "rotulo": "LA GOTA NO ES UN PRISMA",
+          "clave": "La luz entra en la gota, rebota una vez al fondo y vuelve a salir por donde entró.",
+          "texto": "Al entrar se dobla hacia la vertical, porque dentro del agua va más despacio. Rebota en la pared de atrás. Y al salir se vuelve a doblar. Dos desvíos y un rebote: eso es todo lo que hay dentro de un arcoíris.",
+          "detalle": "La normal de puntos es contra lo que se miden los dos ángulos. Todo lo demás de la óptica de la vida diaria —la cuchara torcida en el vaso, las gafas, el espejismo, la fibra— es este mismo dibujo con otros dos números.",
+          "color": "malva",
+          "dibujo": {
+            "tipo": "rayo",
+            "claves": ["aire", "indiceRojo", "entrada"],
+            "rotulos": ["aire", "la gota de agua"]
+          }
+        },
+        {
+          "rotulo": "Y SALE SIEMPRE AL MISMO SITIO",
+          "clave": "Da igual por dónde entre el rayo: al salir se amontona en {arcoRojo|1} grados.",
+          "texto": "Ahí está el truco entero. Cada rayo entra por un sitio distinto de la gota y sale con un ángulo distinto, pero cerca de ese valor la salida deja de cambiar, así que se acumula muchísima luz justo ahí y casi nada alrededor. Por eso hay una raya y no una mancha.",
+          "detalle": "Ese ángulo se mide desde el punto opuesto al sol, que es exactamente donde está la sombra de tu cabeza. De ahí sale todo lo demás: el arcoíris se mueve contigo, cada uno ve el suyo, y si el sol está a más de 42 grados de altura no hay arcoíris que valga porque el arco cae por debajo del horizonte.",
+          "color": "malva",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["arcoRojo", "arcoVioleta"],
+            "rotulos": ["rojo", "violeta"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El arcoíris entero mide {anchoDelArco|1} grados de ancho.",
+    "nota": "Gotas esféricas, un solo rebote dentro y el índice del agua por la fórmula de Cauchy.",
+    "parrafos": [
+      "El agua dobla el violeta un poco más que el rojo: {diferenciaDeIndice|4} en la cuarta cifra decimal. Esa miseria es la única diferencia entre un arcoíris y una mancha blanca en el cielo.",
+      "Y como el ángulo es fijo, el arcoíris no está a ninguna distancia. No es un objeto: es una dirección. Por eso no te puedes poner debajo, y por eso el de la foto de otro nunca es el tuyo."
+    ]
+  }
+}

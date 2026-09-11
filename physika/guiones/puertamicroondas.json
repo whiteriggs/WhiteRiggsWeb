@@ -1,0 +1,61 @@
+{
+  "id": "puertamicroondas",
+  "rotulo": "LA FÍSICA QUE CREÍAS INÚTIL",
+  "titulo": "¿Por qué ves dentro del microondas sin cocerte la cara?",
+  "entradilla": "La puerta lleva una chapa agujereada. Por esos agujeros pasa la luz, porque si no no verías el plato girar. Y por los mismos agujeros no pasa la microonda, que está a un palmo de tu cara. La chapa no distingue entre una y otra: lo único que hay ahí es una comparación de tamaños.",
+  "modelo": "rejilla",
+  "color": "ambar",
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el tamaño manda",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "TRES TAMAÑOS",
+          "clave": "Un agujero solo deja pasar una onda si la onda cabe por él.",
+          "texto": "La microonda mide {ondaEnCentimetros|1} centímetros. El agujero, {agujeroEnMilimetros|1} milímetros. La luz con la que ves el plato, {luzEnNanometros|0} nanómetros.",
+          "detalle": "Puestos en la misma regla, la microonda es {razonDeOndas|entera} veces más larga que la luz. El agujero está justo en medio: demasiado pequeño para una, enorme para la otra. No hay ningún material especial en esa chapa, solo un tamaño bien elegido.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "escala",
+            "claves": ["luzEnMetros", "agujeroEnMetros", "ondaEnMetros"],
+            "rotulos": ["la luz que ves", "el agujero", "la microonda"],
+            "pies": ["{luzEnNanometros|0} nm", "{agujeroEnMilimetros|1} mm", "{ondaEnCentimetros|1} cm"],
+            "marcas": [
+              { "valor": 0.000000001, "texto": "1 nm" },
+              { "valor": 0.000001, "texto": "1 µm" },
+              { "valor": 0.001, "texto": "1 mm" },
+              { "valor": 1, "texto": "1 m" }
+            ]
+          }
+        },
+        {
+          "rotulo": "POR DEBAJO DEL CORTE",
+          "clave": "La microonda no se refleja en la chapa: ni siquiera llega a entrar en el agujero.",
+          "texto": "Cada agujero se porta como un tubo cortísimo. Por debajo de su tamaño de corte la onda no viaja por dentro: se apaga según entra.",
+          "detalle": "El corte de un agujero de {agujeroEnMilimetros|1} milímetros está en {corteEnCentimetros|2} centímetros de onda. La microonda mide {ondaEnCentimetros|1}, o sea {vecesQueCabeElAgujero|entera} veces el diámetro del agujero. Muy por debajo del corte, así que no pasa.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "caida",
+            "exponente": 3,
+            "ejeX": "hondura del agujero",
+            "ejeY": "campo"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La puerta no filtra: mide.",
+    "nota": "Chapa perforada ideal, agujeros circulares y onda llegando de frente.",
+    "parrafos": [
+      "De cada {deCadaCuantosPasaUno|entera} vatios que llegan a un agujero pasa uno: {atenuacion|0} decibelios de caída, y eso con un solo agujero.",
+      "Y la luz pasa entera porque para ella el agujero no es un agujero: es una ventana de {vecesQueCabeLaLuz|entera} longitudes de onda de ancho. Ahí no hay nada que cortar."
+    ]
+  },
+  "puente": {
+    "hacia": "microondas",
+    "frase": "Ya sabes por qué la microonda no sale por la puerta. Lo que no hemos contado es qué hace dentro, que es aún más raro: no calienta la comida, calienta solo el agua de la comida."
+  }
+}

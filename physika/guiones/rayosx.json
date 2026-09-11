@@ -1,0 +1,53 @@
+{
+  "id": "rayosx",
+  "rotulo": "MEDICINA",
+  "titulo": "¿Por qué los rayos X ven el hueso y no la carne?",
+  "entradilla": "Porque el hueso se los come más deprisa. No los para: los va gastando, y en los cuatro centímetros que hay de por medio se come los suficientes como para dejar una sombra.",
+  "modelo": "rayosx",
+  "color": "verde",
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "nada para del todo",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "CADA CAPA SE QUEDA LO MISMO",
+          "clave": "Cada centímetro de hueso deja pasar la misma parte de lo que le llega, no la misma cantidad.",
+          "texto": "Por eso el doble de grosor no quita el doble: quita el mismo porcentaje otra vez. Lo que queda baja cada vez más despacio y no llega a cero nunca, por muchos centímetros que pongas.",
+          "detalle": "Esta es la razón de que no exista el blindaje perfecto, solo el suficiente. Y de que lo que se publica en las tablas no sea el coeficiente sino el espesor que deja pasar la mitad: para el hueso, {mitadDelHueso|1} centímetros. Es la misma idea que la vida media de un isótopo, con el espesor en el sitio del tiempo.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "capas",
+            "claves": ["porCentimetro", "cuantasCapas"],
+            "rotulos": ["los rayos que entran", "un centímetro de hueso por capa"]
+          }
+        },
+        {
+          "rotulo": "LA SOMBRA ES UNA DIVISIÓN",
+          "clave": "Tras {espesor|0} centímetros queda el {quedaMusculo|0} por ciento de lo que atravesó carne y el {quedaHueso|0} por ciento de lo que atravesó hueso.",
+          "texto": "Esa diferencia es toda la radiografía: donde hay hueso llegan {contraste|1} veces menos rayos a la placa, y eso se ve blanco. La placa no dibuja huesos; cuenta rayos que han sobrevivido.",
+          "detalle": "El hueso absorbe {vecesMas|1} veces más que el músculo por centímetro, y no es por ser duro: es porque lleva calcio dentro. A estas energías la absorción crece muchísimo con el número atómico del elemento, así que lo que ves en la placa es, literalmente, dónde hay átomos más pesados.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["quedaMusculo", "quedaHueso"],
+            "rotulos": ["a través de carne", "a través de hueso"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Una radiografía no es una foto. Es un recuento de supervivientes.",
+    "nota": "Coeficientes medidos a unos 60 kiloelectronvoltios, haz de frente y sin contar la radiación que se dispersa dentro del cuerpo.",
+    "parrafos": [
+      "Con {capasParaLaMilesima|1} espesores de semirreducción ya solo queda una milésima. Suena a poco y son diez capas: así de rápido cae lo exponencial, y así de imposible es llegar al cero.",
+      "Por eso el delantal de plomo del dentista no te aísla de nada. Te pone unos cuantos espesores de semirreducción por delante, que es lo único que se puede hacer."
+    ]
+  },
+  "puente": {
+    "hacia": "cincoge",
+    "frase": "Los rayos X son luz, igual que el wifi. Lo que los separa no es la naturaleza sino el tamaño: están al otro lado de la raya de color, donde un solo fotón ya lleva encima lo suficiente para arrancar un electrón de su sitio."
+  }
+}
