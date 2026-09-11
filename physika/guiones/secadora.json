@@ -1,0 +1,69 @@
+{
+  "id": "secadora",
+  "rotulo": "CASA",
+  "titulo": "¿De dónde sale el agua del depósito de la secadora?",
+  "entradilla": "De la ropa, evidentemente. Lo raro es cómo llega hasta el depósito: la secadora no tira el aire húmedo a la calle, lo enfría hasta que suelta el agua y luego lo vuelve a calentar con ese mismo frío que acaba de fabricar. Es una nevera y una estufa trabajando en el mismo tubo.",
+  "modelo": "termo",
+  "color": "ambar",
+  "medidas": {
+    "dentro": 25,
+    "fuera": 55,
+    "aprovecha": 0.35,
+    "potencia": 800,
+    "masa": 2.5,
+    "latente": 2260000,
+    "saltoDeTemperatura": 30
+  },
+  "tanteo": {
+    "pregunta": "Sacarle dos kilos y medio de agua a la ropa: ¿cuánto más cuesta evaporarla que calentarla treinta grados?",
+    "opciones": ["Un poco más", "El doble", "Casi veinte veces más"],
+    "valores": [1.2, 2, 18],
+    "medido": "vecesMasQueCalentar",
+    "remate": "{vecesMasQueCalentar|0} veces más. Calentar el agua es casi gratis; arrancarla de líquido a vapor es todo el trabajo del electrodoméstico."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el frío que calienta",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL AIRE DA VUELTAS Y NO SE ESCAPA",
+          "clave": "De los {entrega|0} vatios de calor que secan la ropa, solo {trabajo|0} vienen del enchufe. Los otros {roba|0} salen del aire húmedo al enfriarlo.",
+          "texto": "O sea que un {gratis|0} por ciento del calor que seca tu ropa es calor reciclado: el que llevaba dentro el vapor y que se suelta al condensarse. La máquina lo recoge en el lado frío y lo devuelve en el lado caliente, y el agua que sobra cae al depósito.",
+          "detalle": "Por eso una secadora de bomba de calor no necesita tubo a la ventana y una vieja sí. La vieja calentaba aire, se lo llevaba el vapor y lo tiraba fuera con todo el calor dentro. Tirar aire caliente a la calle es tirar la factura.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "ciclo",
+            "claves": [],
+            "rotulos": ["{roba|0} W del aire húmedo", "{entrega|0} W para secar", "{trabajo|0} W del enchufe", "el lado frío condensa el agua, el caliente vuelve a secar"]
+          }
+        },
+        {
+          "rotulo": "LO CARO NO ES CALENTAR, ES EVAPORAR",
+          "clave": "Calentar los {masa|1} kilos de agua treinta grados cuesta {calentarEnKilojulios|0} kilojulios. Evaporarlos cuesta {cambiarEnKilojulios|0}.",
+          "texto": "Cambiar de estado no sube la temperatura ni un grado y sin embargo se lleva casi todo. El agua a cien grados y el vapor a cien grados están a la misma temperatura, y entre los dos hay un abismo de energía: la que hace falta para soltar las moléculas unas de otras.",
+          "detalle": "Esa misma cuenta explica por qué sudar enfría tanto, por qué una olla tarda una eternidad en secarse del todo y por qué la ropa tendida al sol se seca aunque no haga ni treinta grados. Evaporar es caro se mire por donde se mire, y siempre lo paga alguien.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["cambiarEnKilojulios", "calentarEnKilojulios"],
+            "rotulos": ["evaporar: {cambiarEnKilojulios|0} kJ", "calentar: {calentarEnKilojulios|0} kJ"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Lo que hay en el depósito es el calor de tu ropa, hecho líquido.",
+    "nota": "El calor de evaporación del agua, 2.260 kilojulios por kilo, es una constante medida. La fracción del ideal que alcanza la bomba de calor de una secadora, un treinta y cinco por ciento, es un valor típico de catálogo. El resto está calculado.",
+    "parrafos": [
+      "Es exactamente la misma máquina que la nevera y exactamente el mismo circuito. Lo único que cambia es de qué lado te pones: allí querías el hueco frío, aquí quieres el calor de la rejilla, y el lado frío se aprovecha de propina para condensar el agua.",
+      "Y aclara una duda de manual de instrucciones: la secadora no seca con aire caliente, seca con aire seco. El calor solo sirve para que el aire pueda cargar más vapor antes de volver al tambor."
+    ]
+  },
+  "puente": {
+    "hacia": "nevera",
+    "frase": "Quítale el tambor y quédate solo con el lado frío de este mismo circuito: eso es la nevera de tu cocina, con la rejilla caliente detrás."
+  }
+}

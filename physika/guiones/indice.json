@@ -141,7 +141,8 @@
     {
       "id": "nevera",
       "dia": 26,
-      "desde": "2026-01-26"
+      "desde": "2026-01-26",
+      "sello": "e85545390433f1de"
     },
     {
       "id": "cieloazul",
@@ -1123,7 +1124,8 @@
     {
       "id": "secadora",
       "dia": 222,
-      "desde": "2026-08-10"
+      "desde": "2026-08-10",
+      "sello": "a32b0674fb16b388"
     },
     {
       "id": "terremoto",
