@@ -1,11 +1,32 @@
 {
   "temas": [
-    "arcoiris",
-    "cincoge",
-    "conciertos",
-    "fibra",
-    "motor",
-    "puertamicroondas",
-    "rayosx"
+    {
+      "id": "arcoiris",
+      "sello": "a593f3bd08f81123"
+    },
+    {
+      "id": "cincoge",
+      "sello": "3b562e8f70db20ac"
+    },
+    {
+      "id": "conciertos",
+      "sello": "11d295266c5e0e7c"
+    },
+    {
+      "id": "fibra",
+      "sello": "33c70ba945bdb22b"
+    },
+    {
+      "id": "motor",
+      "sello": "169057aa3c77b72c"
+    },
+    {
+      "id": "puertamicroondas",
+      "sello": "798de1b8782df19e"
+    },
+    {
+      "id": "rayosx",
+      "sello": "2051bc7f5a4cfa3e"
+    }
   ]
 }

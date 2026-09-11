@@ -45,5 +45,9 @@
       "Entre el techo que permite la física y lo que de verdad llega al suelo hay {loQuePierdesDelTecho|0} puntos, y esos sí son ingeniería: rozamiento, bombear aire, mover la distribución, el alternador.",
       "Pero los otros no se pueden recuperar con mejores piezas. El gas tiene que salir caliente para que el ciclo se cierre. Un motor que no tirase calor por el escape no sería un motor mejor: no sería un motor."
     ]
+  },
+  "puente": {
+    "hacia": "microondas",
+    "frase": "Aquí el calor es el desperdicio y por eso el motor suspende. Hay un cacharro en tu cocina al que el calor es justo lo que le pides, y por eso casi todo lo que gasta acaba dentro de la comida."
   }
 }

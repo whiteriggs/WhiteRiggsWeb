@@ -45,5 +45,9 @@
       "El agua dobla el violeta un poco más que el rojo: {diferenciaDeIndice|4} en la cuarta cifra decimal. Esa miseria es la única diferencia entre un arcoíris y una mancha blanca en el cielo.",
       "Y como el ángulo es fijo, el arcoíris no está a ninguna distancia. No es un objeto: es una dirección. Por eso no te puedes poner debajo, y por eso el de la foto de otro nunca es el tuyo."
     ]
+  },
+  "puente": {
+    "hacia": "fibra",
+    "frase": "En la gota la luz entra, se dobla y sale doblada. Hay un sitio donde llega a la frontera y no puede salir de ninguna manera, y en ese callejón sin salida cabe todo internet."
   }
 }
