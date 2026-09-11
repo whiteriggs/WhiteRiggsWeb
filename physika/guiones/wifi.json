@@ -1,0 +1,65 @@
+{
+  "id": "wifi",
+  "rotulo": "REDES",
+  "titulo": "¿Por qué el wifi no llega a la habitación del fondo?",
+  "entradilla": "Porque elegiste la banda rápida. Los 5 GHz llevan más datos y mueren antes, y no es un defecto del router: es que una onda más corta paga más caro cada metro y cada pared.",
+  "modelo": "ondas",
+  "color": "azul",
+  "medidas": {
+    "frecuencia": 5000000000,
+    "comparada": 2400000000
+  },
+  "tanteo": {
+    "pregunta": "Para cubrir la misma casa que un router de 2,4 GHz, ¿cuántos puntos de 5 GHz hacen falta?",
+    "opciones": ["Los mismos", "El doble", "Cuatro o más"],
+    "valores": [1, 2, 4],
+    "medido": "antenas",
+    "remate": "Unos {antenas|0}. Por eso la solución al wifi del fondo casi nunca es un router mejor, sino otro punto más cerca."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "lo corto se paga",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "LAS DOS BANDAS NO SON LO MISMO",
+          "clave": "La onda de 5 GHz mide {ondaEnCentimetros|1} centímetros y la de 2,4 mide {ondaComparadaEnCentimetros|1}. Es más de dos veces más corta.",
+          "texto": "Esa es toda la diferencia entre las dos rayas que te ofrece el router. Más corta quiere decir que caben más ciclos por segundo, o sea más datos; y quiere decir también que cualquier cosa que se cruce por delante le estorba más.",
+          "detalle": "Las dos viven en microondas, la misma banda que usa el horno. Lo que las separa en el mapa del espectro es un dedo, y sin embargo en tu casa una llega al fondo del pasillo y la otra no.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "espectro",
+            "claves": ["ondaEnMetros", "ondaComparada"],
+            "rotulos": ["5 GHz", "2,4 GHz"],
+            "pies": ["{ondaEnCentimetros|1} cm", "{ondaComparadaEnCentimetros|1} cm"]
+          }
+        },
+        {
+          "rotulo": "EL AIRE COBRA PEAJE ANTES DE EMPEZAR",
+          "clave": "Solo por ser más corta, la de 5 GHz llega con {decibeliosDeMas|1} decibelios menos al primer metro.",
+          "texto": "Y eso es antes de tocar ninguna pared. Una antena recoge energía en proporción al cuadrado de la onda que recibe, así que la mitad de onda recoge la cuarta parte. El router emite lo mismo; lo que cambia es lo que la antena de enfrente es capaz de pescar.",
+          "detalle": "A esto se le suma el ladrillo. Un tabique se come del orden de cuatro decibelios en 2,4 GHz y bastante más en 5, porque la absorción del material también crece con la frecuencia. Dos paredes y un microondas encendido explican casi cualquier queja de wifi.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["frecuenciaComparadaEnGigahercios", "frecuenciaEnGigahercios"],
+            "rotulos": ["2,4 GHz: llega lejos", "5 GHz: llega rápido"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "No hay banda buena. Hay banda para lejos y banda para rápido.",
+    "nota": "La comparación del primer metro usa la pérdida en espacio libre, que solo depende de la frecuencia y la distancia. Las cifras de paredes son órdenes de magnitud típicos, no medidas de tu casa.",
+    "parrafos": [
+      "La onda de 5 GHz es {vecesMasCorta|1} veces más corta que la de 2,4. Esa cifra, elevada al cuadrado, es exactamente lo que pierdes de alcance y lo que ganas de capacidad. Es el mismo trato, mirado por los dos lados.",
+      "Por eso los repetidores funcionan y los routers potentes no tanto. El problema no es cuánto grita el router: es cuánto oye tu móvil, y eso lo arregla acercarse, no subir el volumen."
+    ]
+  },
+  "puente": {
+    "hacia": "cincoge",
+    "frase": "Sube otro escalón de frecuencia y el mismo trato se vuelve brutal: el 5G rápido va a 26 GHz, donde el alcance cae tanto que hace falta una antena en cada farola."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "espejismo",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Por qué se ve agua en la carretera en verano?",
+  "entradilla": "Porque eso no es agua: es el cielo. El asfalto calienta el aire pegado a él, el aire caliente se vuelve un pelín menos denso, y la luz que venía de arriba llega tan de refilón que rebota entera antes de tocar el suelo.",
+  "modelo": "frontera",
+  "color": "malva",
+  "medidas": {
+    "dentro": 1.000293,
+    "fuera": 1.00026,
+    "entrada": 89.7
+  },
+  "tanteo": {
+    "pregunta": "¿Cuánto tiene que inclinarse tu mirada para que la carretera se vuelva un espejo?",
+    "opciones": ["Menos de cuarenta y cinco grados", "Unos setenta grados", "Casi noventa: rozando el suelo"],
+    "valores": [45, 70, 89.5],
+    "medido": "critico",
+    "remate": "A partir de {critico|1} grados. Por eso el charco está siempre lejos y desaparece al acercarte: de cerca ya no miras suficientemente de refilón."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un espejo hecho de aire",
+      "color": "malva",
+      "paneles": [
+        {
+          "rotulo": "EL AIRE CALIENTE ES MENOS DENSO",
+          "clave": "Entre el aire fresco de arriba y el ardiendo de abajo hay {diferencia|5} de índice.",
+          "texto": "Nada más. Pero eso basta para que exista una frontera, y toda frontera entre dos índices tiene su ángulo crítico: el ángulo a partir del cual la luz ya no puede pasar al otro lado y se da la vuelta entera.",
+          "detalle": "En realidad no hay una frontera sino un degradado: el aire se va calentando poco a poco hacia el suelo. La luz no da un salto seco, va curvándose. El resultado se ve igual, y la cuenta del ángulo crítico sigue dando la buena.",
+          "color": "malva",
+          "dibujo": {
+            "tipo": "rayo",
+            "claves": ["dentro", "fuera", "seQueda"],
+            "rotulos": ["aire fresco", "aire ardiendo sobre el asfalto"]
+          }
+        },
+        {
+          "rotulo": "LO QUE VES ES EL CIELO DEL REVÉS",
+          "clave": "El charco no refleja: transmite. Lo que llega a tus ojos es luz que venía del cielo y se dio la vuelta a un palmo del suelo.",
+          "texto": "Por eso el charco es azul, por eso tiembla como el agua, y por eso los coches que pasan salen reflejados boca abajo. Un espejismo no es una ilusión de tu cabeza: es una imagen real, que una cámara fotografía igual que tú la ves.",
+          "detalle": "El mismo mecanismo, con el gradiente al revés, produce el espejismo superior: aire frío pegado al suelo y templado arriba, y entonces ves barcos flotando sobre el horizonte o costas que están detrás de la curvatura de la Tierra. Los marinos llevan siglos viéndolo.",
+          "color": "malva",
+          "dibujo": {
+            "tipo": "rayo",
+            "claves": ["dentro", "fuera", "seEscapa"],
+            "rotulos": ["aire fresco", "aire ardiendo sobre el asfalto"]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Toda la carretera mojada de agosto cabe en {diferencia|5}.",
+    "nota": "Índices del aire a nivel del mar: 1,000293 a veinte grados y en torno a 1,00026 a cincuenta, que es lo que se alcanza a un palmo del asfalto en un día de verano.",
+    "parrafos": [
+      "Es la quinta cifra decimal la que hace el truco, y solo funciona porque miras casi rozando el suelo. Cualquier otra cosa a esa diferencia de índice sería invisible.",
+      "Ese es el motivo de que el charco siempre esté a la misma distancia y nunca llegues a él. No está en ningún sitio: está en el ángulo desde el que miras, así que se mueve contigo."
+    ]
+  },
+  "puente": {
+    "hacia": "arcoiris",
+    "frase": "Aquí la luz se dobla en aire y te inventa un charco. En una gota de lluvia se dobla tanto que se abre en colores, y también te enseña algo que no está en ninguna parte."
+  }
+}

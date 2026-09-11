@@ -13,8 +13,20 @@
       "sello": "951681487aa4865f"
     },
     {
+      "id": "ecografia",
+      "sello": "257a4641fad1d5f3"
+    },
+    {
+      "id": "espejismo",
+      "sello": "288ee1cfd4aa53d4"
+    },
+    {
       "id": "fibra",
       "sello": "0cb3578012059ae9"
+    },
+    {
+      "id": "infrarrojo",
+      "sello": "91f0f949d0341567"
     },
     {
       "id": "motor",
@@ -27,6 +39,10 @@
     {
       "id": "rayosx",
       "sello": "9202a14dc1ca4e14"
+    },
+    {
+      "id": "wifi",
+      "sello": "a4b741cd13e28da5"
     }
   ]
 }

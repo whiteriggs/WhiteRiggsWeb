@@ -1,0 +1,72 @@
+{
+  "id": "ecografia",
+  "rotulo": "MEDICINA",
+  "titulo": "¿Cómo se ve un bebé con sonido?",
+  "entradilla": "Con eco, y con sonido tan agudo que ningún animal lo oye. A {aguda|0} hercios la onda mide {ondaDelAgudoEnMilimetros|2} milímetros, y una onda solo distingue cosas de su tamaño o mayores.",
+  "modelo": "sonido",
+  "color": "verde",
+  "medidas": {
+    "velocidad": 1540,
+    "grave": 20000,
+    "aguda": 5000000,
+    "distancia": 0.15
+  },
+  "tanteo": {
+    "pregunta": "¿Cuál es el detalle más pequeño que puede distinguir una ecografía normal?",
+    "opciones": ["Una décima de milímetro", "Un tercio de milímetro", "Un centímetro"],
+    "valores": [0.1, 0.31, 10],
+    "medido": "ondaDelAgudoEnMilimetros",
+    "remate": "{ondaDelAgudoEnMilimetros|2} milímetros. No es una limitación del aparato: es el tamaño de la onda, y con eso no se puede negociar."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "ver es medir tiempos",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA IMAGEN ES UN CRONÓMETRO",
+          "clave": "El sonido va a {velocidad|0} metros por segundo dentro de ti. De quince centímetros de hondo, el eco tarda {retrasoEnMilisegundos|2} milisegundos en volver.",
+          "texto": "Eso es todo el aparato: manda un chasquido, cuenta lo que tarda en volver el eco, y de ese tiempo deduce la profundidad. Repítelo unos miles de veces por segundo, barriendo en abanico, y tienes una imagen.",
+          "detalle": "El eco no nace en los órganos sino en las fronteras entre ellos, donde cambia la densidad. Por eso una ecografía enseña contornos y no rellenos, y por eso el hueso y el aire salen como una pared blanca: ahí el salto es tan bestia que rebota casi todo y detrás no queda nada que mirar.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "barras",
+            "claves": ["retrasoEnMilisegundos", "ondaDelAgudoEnMilimetros"],
+            "rotulos": ["milisegundos que tarda el eco de 15 cm", "milímetros que mide la onda"]
+          }
+        },
+        {
+          "rotulo": "LO FINO Y LO HONDO SE PELEAN",
+          "clave": "Subir la frecuencia afina la imagen y la deja más corta de alcance. Bajarla llega más hondo y borrosa.",
+          "texto": "Por eso hay varias sondas y el médico las cambia. Para mirar una tiroides, que está a un dedo de la piel, se sube la frecuencia y se ve un detalle finísimo. Para mirar un hígado, hay que bajarla y conformarse.",
+          "detalle": "Es el mismo trato que paga el wifi entre sus dos bandas, y por la misma razón: la absorción del tejido crece casi en proporción directa con la frecuencia. Lo agudo se muere antes. Lo que cambia de una cosa a otra es el material, no la regla.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "escala",
+            "claves": ["ondaDelGrave"],
+            "rotulos": ["el límite de tu oído"],
+            "marcas": [
+              {"valor": 0.000308, "texto": "la onda de la ecografía"},
+              {"valor": 0.001, "texto": "un milímetro"},
+              {"valor": 0.077, "texto": "el límite de tu oído"},
+              {"valor": 1, "texto": "un metro"}
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Doscientas cincuenta veces más agudo de lo que puede oír nadie.",
+    "nota": "Velocidad media del sonido en tejido blando, 1.540 metros por segundo. Las sondas habituales trabajan entre 2 y 15 megahercios según lo hondo que haya que mirar.",
+    "parrafos": [
+      "Tu oído se planta en veinte mil hercios y ahí se acaba el mundo audible. La ecografía trabaja a {aguda|0}, que es {vecesMasAgudo|0} veces por encima. No es sonido inaudible: es sonido de otra escala.",
+      "Y por eso se puede mirar a un bebé con esto y no con rayos X. Aquí no hay nada que arrancar de su sitio: es presión, empujando y soltando muy deprisa. La única energía en juego es la de un empujón."
+    ]
+  },
+  "puente": {
+    "hacia": "rayosx",
+    "frase": "Dos formas de mirar dentro de alguien sin abrirlo. Esta cuenta ecos que vuelven; la otra cuenta lo que consigue atravesar y no vuelve nunca."
+  }
+}
