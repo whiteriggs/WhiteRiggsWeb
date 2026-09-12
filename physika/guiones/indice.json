@@ -730,7 +730,8 @@
     {
       "id": "suspension",
       "dia": 143,
-      "desde": "2026-05-23"
+      "desde": "2026-05-23",
+      "sello": "c409a77bbdccdc5e"
     },
     {
       "id": "golpe",

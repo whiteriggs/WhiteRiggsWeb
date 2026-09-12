@@ -1,0 +1,51 @@
+{
+  "id": "suspension",
+  "rotulo": "COCHES",
+  "titulo": "¿Por qué no rebotas tres veces en cada bache?",
+  "entradilla": "El muelle no mata el rebote: guarda energía al comprimirse y la devuelve al estirarse. Quien hace que la carrocería deje de oscilar es el amortiguador, que convierte parte de ese movimiento en calor.",
+  "modelo": "respuesta",
+  "color": "verde",
+  "medidas": {
+    "masa": 300,
+    "rigidez": 18000,
+    "amortiguamiento": 1800,
+    "desde": 0.1,
+    "hasta": 20
+  },
+  "tanteo": {
+    "pregunta": "¿Una suspensión puede hacer que la carrocería se mueva más que el suelo?",
+    "opciones": ["Nunca: siempre reduce el movimiento", "Sí: cerca de su ritmo propio", "Solo si amplifica diez veces"],
+    "valores": [1, 1.6, 10],
+    "medido": "transmisionPropia",
+    "remate": "En la frecuencia propia de este ejemplo, la carrocería recorre {transmisionPropia|1} veces la amplitud del suelo. Amortiguar no significa reducir cualquier movimiento a cualquier frecuencia."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "cada suspensión tiene su ritmo",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "DEL SUELO AL ASIENTO",
+          "clave": "Esta masa y este muelle tienen una frecuencia propia de {frecuenciaPropia|2} Hz. Si el suelo oscila a ese ritmo, la carrocería amplifica su movimiento {transmisionPropia|1} veces.",
+          "texto": "Cero decibelios significa la misma amplitud que el suelo; por encima hay amplificación y por debajo, aislamiento. Ante ondulaciones muy lentas, el coche acompaña al suelo. Cerca de su ritmo propio puede moverse más. En este modelo empieza a aislar por encima de {frecuenciaAislamiento|2} Hz.",
+          "detalle": "La curva calcula movimiento vertical absoluto de la carrocería dividido por movimiento del suelo, una vez desaparece el transitorio. La línea marca la frecuencia propia sin amortiguamiento, no el máximo exacto de la curva. A {frecuenciaRapida|1} Hz transmite un {transmisionRapidaPorCiento|1}% de la amplitud del suelo. No es una medida del confort ni de un coche real: faltan el neumático, la masa de la rueda, los topes y los movimientos de cabeceo y balanceo.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "respuesta",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El muelle devuelve. El amortiguador disipa.",
+    "nota": "Ejemplo ideal de una masa de {masa|0} kg, un muelle de {rigidez|0} N/m y un amortiguador viscoso de {amortiguamiento|0} N·s/m, excitados por una base sinusoidal. Son parámetros ilustrativos, no mediciones de un vehículo. La razón de amortiguamiento calculada es {amortiguamientoRelativo|2}: menor que uno, así que aún hay oscilaciones. No se supone amortiguamiento crítico.",
+    "parrafos": [
+      "Cuando el suelo deja de moverse y la masa oscila libremente, la envolvente de su desplazamiento va cayendo. Con estos parámetros, tras un segundo queda el {restoTrasUnSegundoPorCiento|1}% de su valor inicial. Es la envolvente, no la posición exacta de la carrocería en ese instante: puede estar cruzando su posición de equilibrio.",
+      "Endurecer el amortiguador reduce la amplificación alrededor del ritmo propio, pero también puede transmitir más movimiento a frecuencias altas. No existe un ajuste que sea mejor en todo: por eso una suspensión busca un compromiso entre controlar el rebote y aislar las irregularidades."
+    ]
+  }
+}
