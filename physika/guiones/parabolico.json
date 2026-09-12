@@ -46,12 +46,12 @@
           "rotulo": "EL AGUJERO QUE VE LA PELOTA",
           "clave": "El aro mide {agujero|2} metros y la pelota {pelota|3}: de frente sobran {huecoDeFrenteEnCentimetros|1} centímetros. Entrando a {entrada|1} grados quedan {huecoEnCentimetros|1}.",
           "texto": "La pelota no cae por el aro, lo cruza en diagonal, y un círculo cruzado en diagonal es una elipse más estrecha. El hueco que queda es el diámetro del aro por el seno del ángulo de entrada, menos la pelota entera. Como el seno se desploma cuando el ángulo baja, el margen se evapora mucho antes que el ángulo.",
-          "detalle": "Por eso el punto de no retorno está en unos 40 grados de salida: por debajo, la barra central del dibujo llega a cero. Y por eso un tiro muy picado perdona los errores de fuerza, mientras que uno plano solo perdona si el tablero ayuda.",
+          "detalle": "La pelota mantiene su diámetro en las tres vistas. Lo que se estrecha es el aro visto desde la dirección de llegada: cuando su eje corto es menor que la pelota, esta ya no puede cruzarlo limpiamente. La comparación supone una trayectoria centrada y un aro sin grosor.",
           "color": "verde",
           "dibujo": {
-            "tipo": "barras",
-            "claves": ["huecoDeFrenteEnCentimetros", "huecoEnCentimetros", "huecoComparadoEnCentimetros"],
-            "rotulos": ["cayendo a plomo", "a {entrada|0} grados", "a {entradaComparada|0} grados"]
+            "tipo": "aro",
+            "claves": ["entrada", "entradaComparada"],
+            "rotulos": ["A plomo", "Tiro alto", "Tiro plano"]
           }
         }
       ]

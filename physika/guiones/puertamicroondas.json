@@ -39,15 +39,14 @@
         },
         {
           "rotulo": "POR DEBAJO DEL CORTE",
-          "clave": "La microonda no se refleja en la chapa: ni siquiera llega a entrar en el agujero.",
-          "texto": "Cada agujero se porta como un tubo cortísimo. Por debajo de su tamaño de corte la onda no viaja por dentro: se apaga según entra.",
-          "detalle": "El corte de un agujero de {agujeroEnMilimetros|1} milímetros está en {corteEnCentimetros|2} centímetros de onda. La microonda mide {ondaEnCentimetros|1}, o sea {vecesQueCabeElAgujero|entera} veces el diámetro del agujero. Muy por debajo del corte, así que no pasa.",
+          "clave": "El campo penetra en el agujero, pero decae exponencialmente en profundidad.",
+          "texto": "La chapa refleja la radiación y cada agujero se comporta como una guía corta. Por debajo de la frecuencia de corte no hay propagación por su interior: queda un campo evanescente que disminuye según penetra.",
+          "detalle": "Para un agujero de {agujeroEnMilimetros|1} milímetros, la longitud de onda de corte es {corteEnCentimetros|2} centímetros. La microonda mide {ondaEnCentimetros|1}. La curva representa la amplitud relativa del primer modo de una guía circular ideal, no la potencia que escapa por una puerta real. El grosor de la chapa, el acoplamiento y el conjunto de agujeros también intervienen.",
           "color": "azul",
           "dibujo": {
-            "tipo": "caida",
-            "exponente": 3,
-            "ejeX": "hondura del agujero",
-            "ejeY": "campo"
+            "tipo": "evanescencia",
+            "ejeX": "profundidad / diámetro",
+            "ejeY": "campo relativo (%)"
           }
         }
       ]
