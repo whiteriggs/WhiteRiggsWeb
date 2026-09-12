@@ -528,7 +528,8 @@
     {
       "id": "remolino",
       "dia": 103,
-      "desde": "2026-04-13"
+      "desde": "2026-04-13",
+      "sello": "ec19f3e21b1c87d6"
     },
     {
       "id": "aerodinamica",
@@ -1085,7 +1086,8 @@
     {
       "id": "patinaje",
       "dia": 214,
-      "desde": "2026-08-02"
+      "desde": "2026-08-02",
+      "sello": "45e42b85c32cbe58"
     },
     {
       "id": "desfibrilador",

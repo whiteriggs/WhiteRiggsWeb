@@ -1,0 +1,77 @@
+{
+  "id": "remolino",
+  "rotulo": "DE ANDAR POR CASA",
+  "titulo": "¿Por qué hace remolino el agua al vaciarse?",
+  "entradilla": "Por la misma razón que la patinadora: el agua encoge. Viene de {radioEnCentimetros|0} centímetros de pila y se mete por un desagüe de {radioCerradoEnCentimetros|1}, y eso multiplica por {vecesMasRapido|0} cualquier vueltecita que trajera. Lo que no hace es preguntar en qué hemisferio está.",
+  "modelo": "giro",
+  "color": "ambar",
+  "medidas": {
+    "vueltas": 0.00000748,
+    "radio": 0.30,
+    "radioCerrado": 0.015,
+    "vueltasComparada": 0.0016
+  },
+  "tanteo": {
+    "pregunta": "Si el único giro del agua fuera el que le pone la rotación de la Tierra, ¿cuánto tardaría el remolino del desagüe en dar una vuelta?",
+    "opciones": ["Menos de un segundo", "Unos cinco minutos y medio", "Cinco horas"],
+    "valores": [0.5, 334, 18000],
+    "medido": "periodoCerrado",
+    "remate": "{periodoCerrado|0} segundos por vuelta. El fregadero se vacía en medio minuto, así que ese remolino no llegaría ni a empezar. Si ves uno, no lo ha hecho la Tierra."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "encoger cuatrocientas veces",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL AGUA HACE LA PIRUETA",
+          "clave": "De {radioEnCentimetros|0} centímetros al desagüe de {radioCerradoEnCentimetros|1}: todo lo que gire se multiplica por {vecesMasRapido|0}.",
+          "texto": "Cada gota que baja se va acercando al eje del desagüe, y al acercarse tiene que girar más rápido por la misma ley que aprieta la pirueta. La diferencia es la escala: la patinadora encoge a la mitad, el agua encoge veinte veces, y como esto va al cuadrado, veinte veces de radio son cuatrocientas de velocidad.",
+          "detalle": "Por eso el remolino aparece de golpe y al final. Casi todo el giro ocurre en los últimos centímetros: mientras el agua está lejos parece quieta, y cuando entra en el embudo se dispara. Lo que ves no es el agua empezando a girar, es el agua enseñando un giro que ya tenía.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "giro",
+            "rotulos": [
+              "la pila, {radioEnCentimetros|0} cm",
+              "el desagüe, {radioCerradoEnCentimetros|1} cm",
+              "casi todas las vueltas pasan en los últimos centímetros"
+            ]
+          }
+        },
+        {
+          "rotulo": "LA TIERRA NO LLEGA A TIEMPO",
+          "clave": "El resto de movimiento que dejaste al llenar la pila es unas {cuantasVecesMas|0} veces mayor que el que pone la Tierra.",
+          "texto": "La rotación de la Tierra sí le da vueltas al agua de la pila: una cada {periodoEnHoras|0} horas, más o menos. Multiplicada por cuatrocientas en el desagüe se queda en una vuelta cada {periodoCerradoEnMinutos|1} minutos, y para entonces hace rato que no queda agua.",
+          "detalle": "Lo que sí manda es todo lo demás: cómo cayó el chorro del grifo, la forma de la pila, tu mano al sacar el tapón, el agua que se quedó dando vueltas del lavado anterior. Cualquiera de esas cosas deja un giro cientos de veces mayor que el de la Tierra, y es el que se amplifica.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "escala",
+            "claves": ["vueltasCerrado", "vueltasComparadaCerrado"],
+            "rotulos": ["si solo actuara la Tierra", "con el resto que deja el grifo"],
+            "marcas": [
+              {"valor": 0.001, "texto": "una vuelta cada 17 minutos"},
+              {"valor": 0.01, "texto": "una cada minuto y medio"},
+              {"valor": 0.1, "texto": "una cada diez segundos"},
+              {"valor": 1, "texto": "una por segundo"}
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Un amplificador de cosas pequeñas",
+    "nota": "El giro de partida de la Tierra es su rotación vista desde una latitud media, y los {radioEnCentimetros|0} y {radioCerradoEnCentimetros|1} centímetros son una pila y un desagüe corrientes. El movimiento que deja el grifo es una estimación conservadora. El resto lo calcula la aplicación.",
+    "parrafos": [
+      "El desagüe no decide nada. Es un amplificador: coge el giro que traía el agua, sea el que sea y venga de donde venga, y lo multiplica por {vecesMasRapido|0}. Si el agua venía girando a la izquierda, sale a la izquierda. Si venía a la derecha, sale a la derecha.",
+      "La leyenda del hemisferio es verdad a la escala equivocada. El efecto existe, y es el que le da el sentido a las borrascas y a los huracanes, donde no hay nada más que compita. Se ha hecho el experimento en serio en una pila: simétrica, agua reposando un día entero, el tapón sacado desde abajo. Así sí sale siempre para el mismo lado. En un fregadero de cocina, con el agua recién revuelta, no hay nada que medir.",
+      "Lo bonito es que la ley que hace el remolino es la misma que aprieta la pirueta y la misma que hace girar seiscientas veces por segundo a una estrella muerta. Cambia lo que encoge y cuánto, pero la cuenta no cambia."
+    ]
+  },
+  "puente": {
+    "hacia": "patinaje",
+    "frase": "La versión con brazos, en hielo y a la vista: el mismo cuadrado del radio, pero encogiendo a la mitad en vez de veinte veces."
+  },
+  "nota": "El giro que la rotación terrestre le imprime al agua depende de la latitud y se anula justo en el ecuador. El movimiento sobrante que deja el llenado no se puede fijar en un número: cambia en cada pila y en cada vez, y esa es precisamente la razón de que el remolino salga unas veces para un lado y otras para el otro."
+}
