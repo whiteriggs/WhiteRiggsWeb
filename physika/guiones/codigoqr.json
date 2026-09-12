@@ -1,0 +1,35 @@
+{
+  "id": "codigoqr", "rotulo": "REDES",
+  "titulo": "¿Cuánto daño puede soportar un código QR?",
+  "entradilla": "Arrancar media etiqueta no garantiza que siga siendo legible. Un QR añade redundancia para corregir daños, pero importa qué palabras de código se han perdido, el nivel de corrección y si aún pueden localizarse y leerse sus patrones estructurales. Superficie rota y datos recuperables no son equivalentes.",
+  "modelo": "codigoqr", "color": "verde",
+  "medidas": {"total": 26, "paridad": 10, "errores": 3, "borrados": 2},
+  "tanteo": {
+    "pregunta": "Con diez palabras de paridad en un bloque, ¿cuántas palabras erróneas de posición desconocida pueden corregirse como máximo garantizado?",
+    "opciones": ["Cinco", "Diez", "Trece"], "valores": [5, 10, 13], "medido": "erroresMaximos",
+    "remate": "El límite es {erroresMaximos|0}: cada error desconocido consume dos unidades de redundancia. Una palabra borrada de posición conocida consume una."
+  },
+  "nucleo": [{
+    "numero": 1, "nombre": "redundancia con un presupuesto", "color": "verde",
+    "paneles": [{
+      "rotulo": "UN BORRADO NO CUESTA LO MISMO QUE UN ERROR",
+      "clave": "Nuestro daño consume {presupuesto|0} de {paridad|0} unidades disponibles.",
+      "texto": "En un bloque Reed–Solomon, un error es una palabra recibida con valor incorrecto cuya posición se desconoce. Un borrado marca una posición que el decodificador sabe que falta. La condición de recuperación garantizada es que el doble de errores más los borrados no supere la paridad.",
+      "detalle": "Con {errores|0} errores y {borrados|0} borrados queda un margen de {margen|0}. Los puntos muestran cuántos errores aún caben para cada cantidad entera de borrados conocidos. No se unen: no existen fracciones de palabra en este presupuesto. Tampoco representan área dañada ni prometen que una cámara identifique todos los borrados.",
+      "color": "verde",
+      "dibujo": {"tipo": "serie", "trazado": "puntos", "ejeX": "Palabras borradas conocidas", "ejeY": "Errores aún corregibles", "claves": [], "rotulos": []}
+    }, {
+      "rotulo": "MEDIA ETIQUETA NO ES MEDIA REDUNDANCIA",
+      "clave": "La mitad de este bloque son {mitad|0} palabras; incluso como borrados supera su presupuesto.",
+      "texto": "El ejemplo contiene {datos|0} palabras de datos y {paridad|0} de paridad. Comparar la mitad con la capacidad de borrados ya basta para refutar una recuperación universal. En un QR mayor, los datos se distribuyen en bloques y el daño puede concentrarse en uno de ellos.",
+      "detalle": "Los niveles L, M, Q y H reservan distintas cantidades de corrección. Sus porcentajes orientativos no son una autorización para tapar cualquier región. Romper patrones de búsqueda, temporización o información necesaria para interpretar el símbolo puede impedir llegar siquiera a la etapa de corrección.",
+      "color": "verde",
+      "dibujo": {"tipo": "barras", "claves": ["erroresMaximos", "borradosMaximos", "mitad"], "rotulos": ["Errores: {erroresMaximos|0} palabras", "Borrados: {borradosMaximos|0} palabras", "Mitad: {mitad|0} palabras"]}
+    }]
+  }],
+  "cierre": {
+    "titulo": "La corrección es potente, no ilimitada.",
+    "nota": "total, paridad, errores y borrados cuentan palabras de código de ocho bits en un solo bloque, no módulos ni porcentajes de área. Ejemplo de bloque de 26 palabras con 10 de paridad, como en QR versión 1 nivel M. Cota algebraica Reed–Solomon 2e+s≤r; no implementa detección óptica ni decodificación QR.",
+    "parrafos": ["A veces un lector recupera una etiqueta muy deteriorada y otra aparentemente mejor falla. La localización del daño y la legibilidad de la estructura explican por qué el área visible no basta para predecir el resultado."]
+  }
+}

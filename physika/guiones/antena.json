@@ -1,0 +1,35 @@
+{
+  "id": "antena", "rotulo": "REDES",
+  "titulo": "¿Por qué una antena mide lo que mide?",
+  "entradilla": "La corriente de una antena oscila y distribuye campos a su alrededor. La relación entre su geometría y la longitud de onda afecta a cómo radia y a la impedancia que presenta. Por eso una antena de radio y una pista diminuta dentro de un móvil pueden tener tamaños tan distintos.",
+  "modelo": "antena", "color": "ambar",
+  "medidas": {"frecuencia": 100000000, "acortamiento": 0.95},
+  "tanteo": {
+    "pregunta": "Con un factor de acortamiento de 0,95 respecto a la media longitud de onda en el aire, ¿cuánto mide en total un dipolo para 100 MHz?",
+    "opciones": ["Unos 75 cm", "Unos 142 cm", "Unos 300 cm"], "valores": [75, 142, 300], "medido": "dipoloCM",
+    "remate": "Resultan {dipoloCM|1} cm de punta a punta. La longitud de onda en el aire es {lambdaCM|1} cm; el tamaño resonante no es necesariamente una onda completa."
+  },
+  "nucleo": [{
+    "numero": 1, "nombre": "una escala que sigue a la frecuencia", "color": "ambar",
+    "paneles": [{
+      "rotulo": "MÁS FRECUENCIA, MENOS LONGITUD",
+      "clave": "Al duplicar la frecuencia, el dipolo del modelo mide {dobleFrecuenciaCM|1} cm.",
+      "texto": "La longitud de onda se obtiene dividiendo la velocidad de propagación por la frecuencia. Un dipolo fino de media onda tiene una longitud total próxima a la mitad de esa escala. La curva conserva su geometría relativa y el factor de acortamiento mientras cambia la frecuencia.",
+      "detalle": "Acortamos al {porcentaje|0}% de la media onda ideal para representar efectos de extremos. No es una constante universal: grosor del conductor, alimentación, aislamiento y objetos cercanos cambian la resonancia. El cálculo orienta la escala, no reemplaza una medida de impedancia del conjunto real.",
+      "color": "ambar",
+      "dibujo": {"tipo": "serie", "ejeX": "Frecuencia (MHz)", "ejeY": "Longitud total de dipolo (cm)", "claves": [], "rotulos": []}
+    }, {
+      "rotulo": "UN CUARTO DE ONDA NECESITA SU ENTORNO",
+      "clave": "Dipolo total: {dipoloCM|1} cm. Monopolo ilustrativo: {cuartoCM|1} cm.",
+      "texto": "Un monopolo de cuarto de onda sobre un plano conductor puede aprovechar la imagen electromagnética que produce ese plano. No es simplemente cortar un dipolo y olvidar el resto: el plano de masa o contrapeso forma parte del sistema radiante.",
+      "detalle": "Plegar una antena o cargarla con componentes permite reducir tamaño físico, pero puede estrechar la banda de funcionamiento o aumentar pérdidas. Una antena resonante tampoco tiene automáticamente buena adaptación a cualquier transmisor. La eficiencia, la impedancia y el patrón de radiación son propiedades relacionadas, pero diferentes.",
+      "color": "ambar",
+      "dibujo": {"tipo": "barras", "claves": ["dipoloCM", "cuartoCM"], "rotulos": ["Dipolo: {dipoloCM|1} cm", "Monopolo: {cuartoCM|1} cm"]}
+    }]
+  }],
+  "cierre": {
+    "titulo": "La longitud eléctrica cuenta más que la regla.",
+    "nota": "frecuencia en Hz; acortamiento adimensional elegido. Propagación aproximada en aire a c. Dipolo fino cercano a media onda y monopolo ideal sobre plano conductor; se aplica el mismo factor ilustrativo para comparar escalas, no como diseño definitivo. Salidas de longitud en cm.",
+    "parrafos": ["En un dispositivo pequeño, la carcasa y la mano también alteran el entorno electromagnético. La pieza visible no siempre revela toda la estructura que participa en la antena."]
+  }
+}

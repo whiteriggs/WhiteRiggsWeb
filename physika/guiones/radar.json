@@ -1,0 +1,35 @@
+{
+  "id": "radar", "rotulo": "REDES",
+  "titulo": "¿Cómo sabe el radar de tráfico a qué velocidad vas?",
+  "entradilla": "Un radar Doppler compara la frecuencia que envía con la del eco reflejado por el vehículo. El movimiento cambia esa frecuencia en el viaje hacia el coche y otra vez en el regreso. Lo que mide directamente es el movimiento en la dirección de su haz.",
+  "modelo": "radar", "color": "azul",
+  "medidas": {"frecuencia": 24000000000, "velocidad": 30, "angulo": 20},
+  "tanteo": {
+    "pregunta": "Si el coche va a 108 km/h pero forma 20 grados con el haz, ¿qué componente mide el radar sin corregir el ángulo?",
+    "opciones": ["Unos 101 km/h", "108 km/h exactos", "Unos 115 km/h"], "valores": [101, 108, 115], "medido": "lectura",
+    "remate": "La componente radial equivale a {lectura|1} km/h. En esta geometría ideal queda por debajo de la velocidad real en {errorKMH|1} km/h."
+  },
+  "nucleo": [{
+    "numero": 1, "nombre": "el eco cambia de tono", "color": "azul",
+    "paneles": [{
+      "rotulo": "EL ÁNGULO CAMBIA LA LECTURA",
+      "clave": "A {angulo|0} grados, el radar ve {lectura|1} km/h de los {realKMH|0} km/h reales.",
+      "texto": "La curva mantiene fija la velocidad del vehículo y gira la dirección del haz. Solo la proyección sobre esa dirección acerca o aleja el coche del radar. Si el movimiento es transversal, la componente radial instantánea puede ser casi nula aunque el coche siga avanzando deprisa.",
+      "detalle": "Multiplicamos la velocidad por el coseno del ángulo. No es una licencia para deducir cómo opera un aparato homologado: la geometría de instalación, el seguimiento y las correcciones forman parte del instrumento. El dibujo describe una medición Doppler ideal, no un protocolo de sanción.",
+      "color": "azul",
+      "dibujo": {"tipo": "serie", "ejeX": "Ángulo respecto al haz (grados)", "ejeY": "Velocidad radial (km/h)", "claves": [], "rotulos": []}
+    }, {
+      "rotulo": "DOS TRAYECTOS, UN DESPLAZAMIENTO DOBLE",
+      "clave": "La portadora de {frecuenciaGHz|0} GHz produce un desplazamiento de {desplazamiento|0} Hz.",
+      "texto": "El eco de un objeto que se aproxima tiene frecuencia mayor. Al alejarse, el desplazamiento cambia de signo. Mezclar electrónicamente la señal recibida con una referencia permite extraer una frecuencia de diferencia mucho más manejable que la portadora de microondas.",
+      "detalle": "El desplazamiento no relativista es el doble de la velocidad radial dividido por la longitud de onda, aquí {lambdaMM|2} mm. El tiempo de regreso sirve para medir distancia en radares que lo resuelven; el Doppler mide otra propiedad. No todo cinemómetro utiliza este método: también existen sistemas ópticos y mediciones entre puntos.",
+      "color": "azul",
+      "dibujo": {"tipo": "magnitudes", "claves": ["desplazamiento", "lambdaMM"], "rotulos": ["Doppler: {desplazamiento|0} Hz", "Onda: {lambdaMM|2} mm"]}
+    }]
+  }],
+  "cierre": {
+    "titulo": "La velocidad aparece en la frecuencia del eco.",
+    "nota": "frecuencia en Hz, velocidad en m/s y angulo en grados. Radar monostático, velocidad pequeña frente a c y blanco que se aproxima. Valores de escenario, no características de un modelo comercial. Se calcula el módulo del desplazamiento; la convención de signo depende de la dirección.",
+    "parrafos": ["Para medir bien no basta recibir un eco: hay que asociarlo al blanco correcto y conocer la geometría. La física da la relación entre frecuencia y movimiento; el instrumento debe controlar sus condiciones de medida."]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "wifiestadio", "rotulo": "REDES",
+  "titulo": "¿Por qué no va internet en un estadio lleno?",
+  "entradilla": "Muchas barras de cobertura no garantizan una conversación fluida. Si cientos de móviles comparten el mismo recurso radio, deben repartirse tiempo y capacidad. Además, el enlace del estadio hacia internet puede estar saturado aunque el tramo inalámbrico funcione bien.",
+  "modelo": "wifiestadio", "color": "ambar",
+  "medidas": {"tasaMbps": 400, "eficiencia": 0.6, "usuarios": 240, "bandaMHz": 80, "snrDB": 20},
+  "tanteo": {
+    "pregunta": "Si quedan 240 Mbit/s útiles y los comparten 240 usuarios activos por igual, ¿cuánto recibe cada uno?",
+    "opciones": ["1 Mbit/s", "100 Mbit/s", "240 Mbit/s"], "valores": [1, 100, 240], "medido": "porUsuario",
+    "remate": "Toca {porUsuario|1} Mbit/s por usuario en este reparto ideal. La cifra grande anunciada por un enlace no se entrega íntegra a cada móvil simultáneamente."
+  },
+  "nucleo": [{
+    "numero": 1, "nombre": "cobertura no equivale a capacidad", "color": "ambar",
+    "paneles": [{
+      "rotulo": "EL MEDIO COMPARTIDO SE DIVIDE",
+      "clave": "De {tasaMbps|0} Mbit/s de información en la capa física quedan {agregado|0} Mbit/s útiles agregados.",
+      "texto": "La eficiencia elegida descuenta cabeceras, coordinación y otras pérdidas del protocolo de forma resumida. Repartimos el caudal útil entre usuarios activos. La curva abarca de {usuariosMinimo|0} a {usuariosMaximo|0} usuarios, con muestras más densas al principio e interpolación del reparto inverso. No cuenta teléfonos inactivos.",
+      "detalle": "En realidad no todos obtienen la misma tasa ni usan el mismo tiempo de aire. Equipos lentos, interferencias, contención y retransmisiones pueden reducir aún más el agregado. Mantener fija la eficiencia sirve para aislar el efecto de compartir, no para predecir con precisión una grada concreta.",
+      "color": "ambar",
+      "dibujo": {"tipo": "serie", "ejeX": "Usuarios activos", "ejeY": "Caudal útil por usuario (Mbit/s)", "claves": [], "rotulos": []}
+    }, {
+      "rotulo": "MEGAHERTZ NO SON MEGABITS",
+      "clave": "Un canal ideal de {bandaMHz|0} MHz con {snrDB|0} dB de señal/ruido tiene un techo de {techoShannon|1} Mbit/s.",
+      "texto": "El ancho de banda mide una franja de frecuencias. El caudal mide información entregada por segundo. El límite de Shannon relaciona ambas cosas con la relación señal/ruido para un canal gaussiano ideal; no representa automáticamente una conexión Wi‑Fi real ni un sistema con múltiples canales espaciales.",
+      "detalle": "Comprobamos la tasa de información física antes de descontar protocolo, no solo el caudal útil. Los bits codificados incluyen redundancia y no equivalen a información nueva. Añadir puntos de acceso puede permitir reutilización espacial con una planificación adecuada; solaparlos en el mismo canal puede aumentar la interferencia.",
+      "color": "ambar",
+      "dibujo": {"tipo": "barras", "claves": ["tasaMbps", "techoShannon"], "rotulos": ["PHY info: {tasaMbps|0} Mb/s", "Techo: {techoShannon|0} Mb/s"]}
+    }]
+  }],
+  "cierre": {
+    "titulo": "Una señal fuerte también puede tener que esperar turno.",
+    "nota": "tasaMbps: Mbit/s de información PHY antes de sobrecarga de protocolo, no tasa bruta de bits codificados. eficiencia: fracción útil elegida; usuarios activos en un recurso compartido; bandaMHz en MHz; snrDB en dB. Shannon supone un único canal con ruido blanco gaussiano, sin MIMO, y limita la información antes de aplicar eficiencia. Reparto igualitario, no ensayo de un estadio.",
+    "parrafos": ["Un problema de cobertura requiere mejorar la llegada de señal. Un problema de capacidad requiere repartir mejor recursos y tráfico. Confundirlos lleva a añadir potencia donde faltaba tiempo disponible."]
+  }
+}

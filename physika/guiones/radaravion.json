@@ -1,0 +1,35 @@
+{
+  "id": "radaravion", "rotulo": "REDES",
+  "titulo": "¿Cómo ve un radar un avión a trescientos kilómetros?",
+  "entradilla": "No recibe una imagen del avión. Envía energía en una dirección y busca un eco diminuto entre ruido y reflejos del entorno. El tiempo de regreso localiza el blanco en distancia; la orientación de la antena aporta dirección. Que llegue un eco no garantiza que sea detectable.",
+  "modelo": "radaravion", "color": "azul",
+  "medidas": {"frecuencia": 3000000000, "distancia": 300000, "potencia": 1000000, "ganancia": 10000, "seccion": 10, "perdidas": 2, "alturaRadar": 30, "alturaAvion": 10000},
+  "tanteo": {
+    "pregunta": "En espacio libre, sin obstrucción terrestre y con el mismo blanco y antena, ¿qué fracción de potencia queda al duplicar la distancia?",
+    "opciones": ["La mitad", "La cuarta parte", "La dieciseisava parte"], "valores": [0.5, 0.25, 0.0625], "medido": "fraccionDoble",
+    "remate": "En ese supuesto cae por un factor {factorCaida|0}. La dispersión de ida y vuelta da la inversa de la cuarta potencia; no garantiza visibilidad terrestre al doble de distancia."
+  },
+  "nucleo": [{
+    "numero": 1, "nombre": "un viaje doble y una señal minúscula", "color": "azul",
+    "paneles": [{
+      "rotulo": "EL ECO PAGA LA DISTANCIA DOS VECES",
+      "clave": "A {distanciaKM|0} km el modelo da {recibidaPW|3} pW; la curva no rebasa el horizonte de {horizonteKM|1} km.",
+      "texto": "La ecuación monostática del radar combina potencia emitida, ganancia de la antena, longitud de onda y sección radar del blanco. En espacio libre la densidad incidente cae con el cuadrado de la distancia; el eco reflejado vuelve a dispersarse antes de alcanzar la antena.",
+      "detalle": "La curva termina en el menor valor entre el doble de distancia y el horizonte geométrico. El cálculo de {doblePW|3} pW al doble es solo una extrapolación en espacio libre, no recepción terrestre. La sección radar elegida es ilustrativa: depende de forma, materiales, frecuencia y orientación, no solo del área de las alas.",
+      "color": "azul",
+      "dibujo": {"tipo": "serie", "ejeX": "Distancia al blanco (km)", "ejeY": "Potencia recibida (pW)", "claves": [], "rotulos": []}
+    }, {
+      "rotulo": "ESTAR ALTO TAMBIÉN IMPORTA",
+      "clave": "El eco tarda {ecoMicrosegundos|0} µs; el horizonte ideal suma {horizonteKM|0} km.",
+      "texto": "La señal recorre dos veces la distancia al avión. Para comprobar que el ejemplo no exige atravesar la Tierra, calculamos además los horizontes de una antena a {alturaRadar|0} m y un avión a {alturaAvion|0} m. Un blanco alto puede estar visible mucho más lejos que uno a ras de suelo.",
+      "detalle": "La detección requiere comparar el eco con ruido térmico, interferencias y otros blancos. El ancho de banda del receptor, la integración de pulsos y la probabilidad de falsa alarma también importan. La potencia calculada no decide por sí sola si un radar real detectaría ese avión.",
+      "color": "azul",
+      "dibujo": {"tipo": "magnitudes", "claves": ["ecoMicrosegundos", "horizonteKM"], "rotulos": ["Eco: {ecoMicrosegundos|0} µs", "Horizonte: {horizonteKM|0} km"]}
+    }]
+  }],
+  "cierre": {
+    "titulo": "Ver lejos exige ganar margen, no negar las pérdidas.",
+    "nota": "frecuencia en Hz; distancia y alturas en m; potencia durante el pulso en W; ganancia lineal; seccion en m²; perdidas como factor lineal. Campo lejano, sin ruido ni atmósfera. El escenario exige distancia menor que el horizonte geométrico de una Tierra de radio 6.371 km; la gráfica llega como máximo a esa frontera ideal. La comparación al doble supone espacio libre sin Tierra obstructora. No es un alcance operativo.",
+    "parrafos": ["El regreso contiene varias pistas distintas: retraso para distancia, orientación para dirección y Doppler para velocidad radial. Reconstruir una trayectoria requiere reunir mediciones sucesivas."]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "starlink",
+  "rotulo": "REDES",
+  "titulo": "¿Cómo da internet Starlink desde un satélite que no para quieto?",
+  "entradilla": "La antena no necesita perseguirlo como una cámara. Una matriz de elementos puede orientar electrónicamente su haz y cambiar de satélite cuando otro ofrece mejor enlace. Estar cerca reduce el recorrido de la señal, pero obliga a seguir un cielo que se mueve.",
+  "modelo": "starlink",
+  "color": "azul",
+  "medidas": {"altura": 550000, "frecuencia": 14000000000, "radial": 6000, "extraMS": 20},
+  "tanteo": {
+    "pregunta": "En una ida y vuelta ideal con cuatro tramos de 550 km a la velocidad de la luz en el vacío, ¿cuánto tarda solo la propagación?",
+    "opciones": ["Unos 7 ms", "Unos 70 ms", "Unos 700 ms"],
+    "valores": [7, 70, 700],
+    "medido": "propagacion",
+    "remate": "La propagación suma {propagacion|2} ms. El modelo completo llega a {latencia|2} ms al añadir las esperas elegidas: la altura no determina por sí sola el ping."
+  },
+  "nucleo": [{
+    "numero": 1, "nombre": "cerca, pero en movimiento", "color": "azul",
+    "paneles": [{
+      "rotulo": "EL RECORRIDO NO ES SOLO SUBIR",
+      "clave": "A {alturaKM|0} km, cuatro tramos verticales suman {propagacion|2} ms.",
+      "texto": "Un mensaje sube al satélite y baja a una estación terrestre; la respuesta repite ambos tramos. La curva muestra ese mínimo ideal al variar la altura, sin cambiar ninguna espera. No representa una medición de cobertura ni la distancia real entre tu casa y un servidor.",
+      "detalle": "Con el satélite bajo sobre el horizonte los tramos son oblicuos y más largos. También pueden existir enlaces entre satélites y kilómetros de fibra terrestre. Añadimos {extraMS|0} ms ilustrativos de colas, procesamiento y otros recorridos, obteniendo {latencia|2} ms. Una descarga rápida y un ping pequeño son propiedades distintas.",
+      "color": "azul",
+      "dibujo": {"tipo": "serie", "ejeX": "Altura orbital (km)", "ejeY": "Propagación de ida y vuelta (ms)", "claves": [], "rotulos": []}
+    }, {
+      "rotulo": "LA FRECUENCIA TAMBIÉN SE MUEVE",
+      "clave": "La órbita circular da {orbital|2} km/s; el Doppler ilustrativo es {doppler|0} Hz.",
+      "texto": "No toda la velocidad orbital apunta hacia la antena. El desplazamiento de frecuencia depende de la componente radial del movimiento: al aproximarse aumenta la frecuencia recibida y al alejarse disminuye. El receptor debe seguir esa variación para recuperar los símbolos.",
+      "detalle": "Calculamos el módulo del Doppler de un trayecto con portadora de {frecuenciaGHz|0} GHz y componente radial de {radial|0} m/s. El seguimiento del haz, el ajuste de frecuencia y el traspaso de conexión resuelven problemas diferentes. Esta cuenta no reproduce los algoritmos de una terminal comercial.",
+      "color": "azul",
+      "dibujo": {"tipo": "magnitudes", "claves": ["orbital", "doppler"], "rotulos": ["Órbita: {orbital|2} km/s", "Doppler: {doppler|0} Hz"]}
+    }]
+  }],
+  "cierre": {
+    "titulo": "Órbita baja no significa latencia cero.",
+    "nota": "Escenario ilustrativo, no especificaciones ni rendimiento medido de Starlink. altura en m, frecuencia en Hz, radial en m/s y extraMS en ms. Órbita circular con parámetro gravitatorio terrestre 3,986004418×10¹⁴ m³/s²; Doppler no relativista de un trayecto y propagación a c. Los cuatro tramos verticales son un límite geométrico ideal.",
+    "parrafos": ["Una constelación sustituye la inmovilidad por coordinación: mientras un satélite se marcha, otro puede tomar el relevo. La calidad final depende también de capacidad disponible, visibilidad del cielo, rutas y congestión."]
+  }
+}

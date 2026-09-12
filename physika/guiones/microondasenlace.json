@@ -1,0 +1,35 @@
+{
+  "id": "microondasenlace", "rotulo": "REDES",
+  "titulo": "¿Para qué son los platos de las torres de telefonía?",
+  "entradilla": "Muchos no hablan con satélites: enlazan con otra torre. Sus reflectores concentran las microondas en una dirección estrecha para transportar tráfico entre puntos. Ver la otra antena es importante, pero dejar libre solo la línea central puede no ser suficiente.",
+  "modelo": "microondasenlace", "color": "azul",
+  "medidas": {"frecuencia": 18000000000, "distancia": 20000, "diametro": 0.6, "eficiencia": 0.6, "despeje": 0.6},
+  "tanteo": {
+    "pregunta": "En un enlace de 20 km a 18 GHz, ¿cuánto mide el radio de la primera zona de Fresnel en el punto medio?",
+    "opciones": ["Unos 0,9 m", "Unos 9 m", "Unos 90 m"], "valores": [0.9, 9, 90], "medido": "fresnel",
+    "remate": "El radio es {fresnel|2} m. Despejar el {despejePorcentaje|0}% de ese radio exige {despejeMetros|2} m alrededor del eje en ese punto, según el criterio elegido."
+  },
+  "nucleo": [{
+    "numero": 1, "nombre": "un haz estrecho necesita espacio", "color": "azul",
+    "paneles": [{
+      "rotulo": "EL CAMINO ES MÁS QUE UNA RECTA",
+      "clave": "La primera zona de Fresnel alcanza {fresnel|2} m de radio en el centro.",
+      "texto": "Los caminos ligeramente apartados del eje tienen longitudes diferentes. Sus contribuciones llegan con fases distintas y pueden interferir. La primera zona de Fresnel caracteriza el volumen alrededor del trayecto directo donde un obstáculo puede alterar de forma importante esa suma.",
+      "detalle": "La curva es una función de radio frente a posición, no un dibujo a escala del enlace. Usamos la longitud de onda y las distancias a ambos extremos para calcular ese radio. Un árbol que no tapa la línea de visión aún puede introducir difracción y pérdidas al invadir esa zona.",
+      "color": "azul",
+      "dibujo": {"tipo": "serie", "ejeX": "Posición a lo largo del enlace (km)", "ejeY": "Radio de Fresnel (m)", "claves": [], "rotulos": []}
+    }, {
+      "rotulo": "CONCENTRAR NO ES CREAR POTENCIA",
+      "clave": "El plato idealizado tiene {gananciaDB|1} dBi de ganancia y un haz aproximado de {hazGrados|2} grados.",
+      "texto": "Una apertura grande respecto a la longitud de onda concentra mejor la radiación. La ganancia se compara con una fuente isotrópica y depende del área efectiva del reflector. La pérdida de espacio libre del recorrido es {perdidaDB|1} dB antes de incorporar las ganancias de ambas antenas.",
+      "detalle": "La estimación del ancho de haz depende de cómo se ilumina el reflector. Alinear antenas, considerar curvatura terrestre y refracción, evitar obstrucciones y reservar margen para lluvia requiere un diseño completo. Ni la ganancia ni despejar una fracción de Fresnel garantizan por sí solas disponibilidad continua.",
+      "color": "azul",
+      "dibujo": {"tipo": "magnitudes", "claves": ["gananciaDB", "hazGrados"], "rotulos": ["Ganancia: {gananciaDB|1} dBi", "Haz: {hazGrados|2} grados"]}
+    }]
+  }],
+  "cierre": {
+    "titulo": "El plato apunta a otro plato, no siempre al cielo.",
+    "nota": "frecuencia en Hz; distancia y diametro en m; eficiencia y despeje son fracciones. Parámetros ilustrativos. Ganancia de apertura, Fresnel paraxial y pérdida de Friis en espacio libre; ancho de haz aproximado 70 veces longitud de onda/diámetro, en grados. No incluye atmósfera, relieve ni curvatura terrestre en la curva.",
+    "parrafos": ["La difracción trata cómo los obstáculos modifican la propagación; la absorción trata energía que se pierde en materiales. Ambas pueden importar, pero no son el mismo fenómeno."]
+  }
+}

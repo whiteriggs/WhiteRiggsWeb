@@ -1,0 +1,37 @@
+{
+  "id": "television",
+  "rotulo": "REDES",
+  "titulo": "¿Cómo llegaba la tele antes del cable?",
+  "entradilla": "Una emisora convertía imagen y sonido en señales moduladas sobre ondas electromagnéticas. La antena del tejado recogía una fracción diminuta de esa energía y el televisor reconstruía el programa. La televisión terrestre digital conserva el enlace de radio, aunque cambia la forma de codificarlo.",
+  "modelo": "television",
+  "color": "verde",
+  "medidas": {"frecuenciaUHF": 600000000, "frecuenciaVHF": 60000000, "alturaEmisor": 30, "alturaReceptor": 10, "obstaculo": 1},
+  "tanteo": {
+    "pregunta": "Con una torre de 30 m y una antena receptora de 10 m, ¿cuál es el horizonte geométrico aproximado?",
+    "opciones": ["3 km", "31 km", "310 km"], "valores": [3, 31, 310], "medido": "horizonte",
+    "remate": "Resultan {horizonte|1} km sobre una Tierra lisa. Es geometría, no una promesa de cobertura: terreno, refracción, difracción y sensibilidad cambian la recepción."
+  },
+  "nucleo": [{
+    "numero": 1, "nombre": "frecuencia, obstáculos y horizonte", "color": "verde",
+    "paneles": [{
+      "rotulo": "LAS ONDAS NO RODEAN TODO POR IGUAL",
+      "clave": "A {uhfMHz|0} MHz, la longitud de onda es {lambdaUHF|2} m; a {vhfMHz|0} MHz, {lambdaVHF|2} m.",
+      "texto": "Una onda se difracta en bordes y aberturas. Importa el tamaño del obstáculo comparado con su longitud de onda: en nuestro obstáculo de {obstaculo|0} m, las razones son {relacionUHF|2} y {relacionVHF|2}. No basta decir que una frecuencia atraviesa mejor una pared para explicar toda la cobertura.",
+      "detalle": "La transmisión a través de materiales depende también de conductividad, humedad, espesor y ángulo. Además, las reflexiones pueden llegar por varios caminos y reforzarse o cancelarse. La comparación de longitudes ilustra una escala de difracción, no calcula por sí sola cuánto pierde una casa concreta.",
+      "color": "verde",
+      "dibujo": {"tipo": "barras", "claves": ["lambdaUHF", "lambdaVHF"], "rotulos": ["UHF: {lambdaUHF|2} m", "VHF: {lambdaVHF|2} m"]}
+    }, {
+      "rotulo": "SUBIR LA ANTENA AYUDA, PERO NO LINEALMENTE",
+      "clave": "El horizonte del enlace ideal está a {horizonte|1} km.",
+      "texto": "Sumamos el horizonte visto desde la torre y el visto desde la antena receptora. La curva cambia solo la altura del emisor: el receptor sigue a {alturaReceptor|0} m. La distancia crece aproximadamente con la raíz cuadrada de cada altura, no en proporción directa.",
+      "detalle": "Las torres elevadas evitan obstáculos cercanos y amplían esa geometría. Más allá del horizonte aún puede llegar señal por refracción o difracción; antes de él puede faltar por una montaña. En digital, perder margen puede causar bloques y cortes bruscos, en vez de la nieve gradual de la televisión analógica.",
+      "color": "verde",
+      "dibujo": {"tipo": "serie", "ejeX": "Altura del emisor (m)", "ejeY": "Horizonte geométrico (km)", "claves": [], "rotulos": []}
+    }]
+  }],
+  "cierre": {
+    "titulo": "El tejado era una ventana al transmisor.",
+    "nota": "frecuenciaUHF y frecuenciaVHF en Hz; alturas y obstaculo en m. Escenarios elegidos, no canales de una región concreta. Longitud de onda c/f; horizonte aproximado con radio terrestre de 6.371 km y alturas pequeñas respecto al radio. Sin corrección atmosférica ni modelo de edificios.",
+    "parrafos": ["Transportar la señal y reconstruir la imagen son dos tareas distintas. Una antena mayor o más alta puede mejorar el enlace, pero no reemplaza al sintonizador y al decodificador."]
+  }
+}

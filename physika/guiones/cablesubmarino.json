@@ -1,0 +1,35 @@
+{
+  "id": "cablesubmarino", "rotulo": "REDES",
+  "titulo": "¿Por qué internet cruza océanos por cables submarinos?",
+  "entradilla": "Un cable de fibra mantiene la luz confinada en un camino estable y permite transportar enormes cantidades de información. No porque la luz deje de perder energía: la señal se atenúa continuamente y necesita un presupuesto óptico, amplificación y detección cuidadosa al otro extremo.",
+  "modelo": "cablesubmarino", "color": "verde",
+  "medidas": {"atenuacion": 0.2, "tramo": 80, "longitud": 6000, "indice": 1.468, "entradaMW": 1},
+  "tanteo": {
+    "pregunta": "Con una pérdida de 0,2 dB por kilómetro, ¿qué porcentaje de potencia queda después de 80 km?",
+    "opciones": ["Aproximadamente 84%", "Aproximadamente 16%", "Aproximadamente 2,5%"], "valores": [84, 16, 2.5], "medido": "salidaPorcentaje",
+    "remate": "Queda {salidaPorcentaje|2}%. Los {perdidaTramo|0} dB no significan perder ese mismo porcentaje: los decibelios describen una razón logarítmica."
+  },
+  "nucleo": [{
+    "numero": 1, "nombre": "la luz tampoco viaja gratis", "color": "verde",
+    "paneles": [{
+      "rotulo": "UNA PÉRDIDA CONSTANTE EN DECIBELIOS",
+      "clave": "De {entradaMW|0} mW quedan {salidaMW|3} mW al terminar un tramo.",
+      "texto": "La curva muestra potencia, no amplitud eléctrica. Cada kilómetro multiplica la potencia por el mismo factor, de modo que la caída es exponencial. En decibelios esa misma pérdida se suma: la atenuación por kilómetro multiplicada por la longitud da la pérdida del tramo.",
+      "detalle": "La dispersión de luz por el material y la absorción forman parte de esa atenuación. Empalmes, conectores y curvaturas pueden añadir pérdidas que aquí omitimos. Recuperar el nivel óptico ayuda a seguir, pero un amplificador también añade ruido; no recupera mágicamente información que ya se volvió indistinguible.",
+      "color": "verde",
+      "dibujo": {"tipo": "serie", "ejeX": "Distancia dentro del tramo (km)", "ejeY": "Potencia óptica (mW)", "claves": [], "rotulos": []}
+    }, {
+      "rotulo": "MILES DE KILÓMETROS, MUCHOS TRAMOS",
+      "clave": "La distribución ideal necesita {amplificadores|0} amplificadores interiores; la propagación tarda {viajeMS|1} ms.",
+      "texto": "Dividimos {longitud|0} km en tramos de como máximo {tramo|0} km y contamos sus uniones interiores, sin contar las terminales como amplificadores intermedios. Sin restaurar potencia, la suma de pérdidas alcanzaría {perdidaTotal|0} dB en este modelo.",
+      "detalle": "El tiempo de ida usa la velocidad de grupo aproximada, c dividida por el índice efectivo: {velocidadKM|0} km/s. Amplificar no elimina ese tiempo de viaje. La capacidad se aumenta con canales ópticos, modulación y varias fibras; la latencia sigue dependiendo de la longitud de la ruta y de los equipos.",
+      "color": "verde",
+      "dibujo": {"tipo": "magnitudes", "claves": ["amplificadores", "viajeMS"], "rotulos": ["Interiores: {amplificadores|0}", "Propagación: {viajeMS|1} ms"]}
+    }]
+  }],
+  "cierre": {
+    "titulo": "El océano no borra la distancia ni la atenuación.",
+    "nota": "atenuacion en dB/km; tramo y longitud en km; indice de grupo adimensional; entradaMW en mW. Parámetros representativos elegidos, no ficha de un cable concreto. Ley exponencial de pérdida, amplificación ideal por tramos y recorrido unidireccional. Se omiten dispersión cromática, efectos no lineales y ruido acumulado.",
+    "parrafos": ["Los satélites aportan cobertura donde no llega una infraestructura terrestre. Los cables ofrecen un camino guiado de gran capacidad: son soluciones complementarias, no una competición decidida únicamente por la velocidad de la luz."]
+  }
+}
