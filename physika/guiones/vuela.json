@@ -26,15 +26,14 @@
       "color": "coral",
       "paneles": [
         {
-          "rotulo": "CUÁNTO AIRE MUEVE UN ALA",
+          "rotulo": "EL AIRE APENAS SE DOBLA",
           "clave": "Al despegar, el ala agarra {aireEnToneladasPorSegundo|0} toneladas de aire por segundo y las empuja hacia abajo.",
           "texto": "El avión pesa {masaEnToneladas|0}. O sea que cada segundo está lanzando al suelo {vecesElPesoDelAvion|1} veces su propio peso en aire. No hace falta ninguna succión misteriosa ni ninguna forma mágica del perfil: hace falta tirar masa hacia abajo, y el aire, movido deprisa, da masa de sobra.",
-          "detalle": "Lo increíble es lo poco que hay que empujar cada kilo. Al aire que atraviesa el ala se le imprimen {empujon|1} metros por segundo hacia abajo, unos {empujonEnKilometrosPorHora|0} por hora: un soplo. Pero multiplicado por ochenta y tantas toneladas por segundo, ese soplo sostiene un edificio volando.",
+          "detalle": "Lo increíble es lo poco que hay que torcerlo. El aire sale del ala {desvio|1} grados por debajo de como entró, un gesto que ni se ve: {empujon|1} metros por segundo hacia abajo, unos {empujonEnKilometrosPorHora|0} por hora. Un soplo. Pero multiplicado por ochenta y tantas toneladas por segundo, ese soplo sostiene un edificio volando.",
           "color": "coral",
           "dibujo": {
-            "tipo": "barras",
-            "claves": ["masa", "aireEnKilosPorSegundo"],
-            "rotulos": ["lo que pesa el avión", "aire que agarra cada segundo"]
+            "tipo": "desvia",
+            "rotulos": ["el aire llega recto", "se va {desvio|1}° más abajo", "no lo sostiene el gesto, lo sostiene la cantidad"]
           }
         },
         {

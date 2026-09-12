@@ -42,9 +42,9 @@
           "detalle": "A esto se le suma el ladrillo. Un tabique se come del orden de cuatro decibelios en 2,4 GHz y bastante más en 5, porque la absorción del material también crece con la frecuencia. Dos paredes y un microondas encendido explican casi cualquier queja de wifi.",
           "color": "azul",
           "dibujo": {
-            "tipo": "barras",
-            "claves": ["frecuenciaComparadaEnGigahercios", "frecuenciaEnGigahercios"],
-            "rotulos": ["2,4 GHz: llega lejos", "5 GHz: llega rápido"]
+            "tipo": "cuadrados",
+            "claves": ["ondaComparadaEnCentimetros", "ondaEnCentimetros"],
+            "rotulos": ["2,4 GHz: {ondaComparadaEnCentimetros|1} cm", "5 GHz: {ondaEnCentimetros|1} cm", "recoger es superficie: {vecesMasSuperficie|1} veces más"]
           }
         }
       ]

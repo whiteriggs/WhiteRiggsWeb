@@ -37,9 +37,9 @@
           "detalle": "Ese ángulo se mide desde el punto opuesto al sol, que es exactamente donde está la sombra de tu cabeza. De ahí sale todo lo demás: el arcoíris se mueve contigo, cada uno ve el suyo, y si el sol está a más de 42 grados de altura no hay arcoíris que valga porque el arco cae por debajo del horizonte.",
           "color": "malva",
           "dibujo": {
-            "tipo": "barras",
+            "tipo": "abanico",
             "claves": ["arcoRojo", "arcoVioleta"],
-            "rotulos": ["rojo", "violeta"]
+            "rotulos": ["rojo {arcoRojo|1}°", "violeta {arcoVioleta|1}°", "{anchoDelArco|1}° de rendija: eso es todo el arcoíris"]
           }
         }
       ]
