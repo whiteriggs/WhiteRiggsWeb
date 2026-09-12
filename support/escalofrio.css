@@ -164,17 +164,39 @@
   line-height: 1.6;
 }
 
-/* Capturas: la pantalla a pelo, sin marco de aparato dibujado alrededor. */
+/* Capturas: la pantalla a pelo, sin marco de aparato dibujado alrededor.
+   Tira con arrastre lateral, como la de Wyrms. */
 .ef-capturas {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #5C5647 #20222C;
   max-width: 760px;
   margin: 0 auto;
 }
 
+.ef-capturas::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ef-capturas::-webkit-scrollbar-track {
+  background: #20222C;
+  border-radius: 4px;
+}
+
+.ef-capturas::-webkit-scrollbar-thumb {
+  background: #5C5647;
+  border-radius: 4px;
+}
+
+/* Ancho fijo: si se lo dejo al contenido, un pie de foto largo ensancha la columna. */
 .ef-captura {
   margin: 0;
+  flex: 0 0 240px;
+  scroll-snap-align: center;
 }
 
 .ef-captura img {
@@ -208,16 +230,14 @@ html[lang="es"] .ef-captura img.ef-shot-en {
   color: rgba(219, 214, 196, 0.62);
 }
 
-/* En el movil, una debajo de otra: tres en fila salen del tamano de un sello. */
+/* En el movil se arrastran: a tres en pantalla no se ve nada. */
 @media (max-width: 640px) {
   .ef-capturas {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 16px;
   }
 
   .ef-captura {
-    max-width: 280px;
-    margin: 0 auto;
+    flex-basis: 200px;
   }
 }
 
