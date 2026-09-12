@@ -53,36 +53,13 @@
       ]
     }
   ],
-  "ampliacion": {
-    "nota": "De dónde sale la velocidad que parece salir de ninguna parte.",
-    "fases": [
-      {
-        "numero": 2,
-        "nombre": "el recibo",
-        "color": "verde",
-        "paneles": [
-          {
-            "rotulo": "NADIE GIRA MÁS RÁPIDO GRATIS",
-            "clave": "De {vueltasPorMinuto|0} a {vueltasPorMinutoCerrado|0} vueltas por minuto, y la energía se multiplica por los mismos {vecesMasRapido|1}.",
-            "texto": "Aquí está la parte que casi nunca se cuenta. El momento angular se conserva, sí, pero la energía no: sube. Y sube exactamente por el mismo factor por el que sube la velocidad, que es una coincidencia bonita y no un despiste.",
-            "detalle": "La energía la mete la patinadora. Al recoger los brazos tira hacia dentro contra una fuerza que empuja hacia fuera, y recorrer esa distancia contra esa fuerza es trabajo, igual que subir una escalera. La pirueta rápida se paga con los bíceps, no con un vacío legal de la física.",
-            "color": "verde",
-            "dibujo": {
-              "tipo": "barras",
-              "claves": ["vueltasPorMinutoCerrado", "vueltasPorMinuto"],
-              "rotulos": ["recogida: {vueltasPorMinutoCerrado|0} vueltas/min", "abierta: {vueltasPorMinuto|0} vueltas/min"]
-            }
-          }
-        ]
-      }
-    ]
-  },
   "cierre": {
     "titulo": "La única forma de acelerar sin empujar nada",
     "nota": "Los {radioEnCentimetros|0} y {radioCerradoEnCentimetros|0} centímetros no son la longitud del brazo: son el radio de giro, que es la distancia a la que habría que poner toda la masa junta para que costara lo mismo moverla. El resto lo calcula la aplicación.",
     "parrafos": [
       "En un mundo donde para ir más rápido siempre hay que empujar algo, la pirueta es la excepción que no lo parece. No hay suelo contra el que hacer fuerza, no hay aire que expulsar, no hay nada que quede atrás. Solo unos brazos que se acercan al pecho.",
-      "El truco es que la cantidad que se conserva no es la velocidad sino la velocidad multiplicada por el reparto de la masa. Cambiar el reparto obliga a la velocidad a moverse, y como el reparto va al cuadrado de la distancia, se mueve mucho.",
+      "El truco es que la cantidad que se conserva no es la velocidad sino la velocidad multiplicada por el reparto de la masa. Cambiar el reparto obliga a la velocidad a moverse, y como el reparto va al cuadrado de la distancia, se mueve mucho. De {vueltasPorMinuto|0} vueltas por minuto a {vueltasPorMinutoCerrado|0}.",
+      "Lo que no se conserva es la energía: esa sube por {vecesMasRapido|1}, el mismo número. Y la ponen los brazos, tirando hacia dentro contra algo que empuja hacia fuera. Nadie gira más rápido gratis.",
       "Es el mismo mecanismo que aprieta el ojo de un huracán, que hace que una estrella muerta del tamaño de una ciudad dé seiscientas vueltas por segundo, y que el agua que se va por el desagüe acabe girando cuando al llenar la pila casi no se movía."
     ]
   },
