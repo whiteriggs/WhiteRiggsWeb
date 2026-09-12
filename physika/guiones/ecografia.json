@@ -2,21 +2,22 @@
   "id": "ecografia",
   "rotulo": "MEDICINA",
   "titulo": "¿Cómo se ve un bebé con sonido?",
-  "entradilla": "Con eco, y con sonido tan agudo que ningún animal lo oye. A {aguda|0} hercios la onda mide {ondaDelAgudoEnMilimetros|2} milímetros, y una onda solo distingue cosas de su tamaño o mayores.",
-  "modelo": "sonido",
+  "entradilla": "Con eco, y con sonido tan agudo que ningún animal lo oye. A {frecuenciaEnMegahercios|0} millones de hercios la onda mide {ondaEnMilimetros|2} milímetros, y una onda solo distingue cosas de su tamaño o mayores.",
+  "modelo": "eco",
   "color": "verde",
   "medidas": {
     "velocidad": 1540,
-    "grave": 20000,
-    "aguda": 5000000,
-    "distancia": 0.15
+    "distancia": 0.15,
+    "frecuencia": 5000000,
+    "frecuenciaComparada": 20000,
+    "repeticion": 4000
   },
   "tanteo": {
     "pregunta": "¿Cuál es el detalle más pequeño que puede distinguir una ecografía normal?",
     "opciones": ["Una décima de milímetro", "Un tercio de milímetro", "Un centímetro"],
     "valores": [0.1, 0.31, 10],
-    "medido": "ondaDelAgudoEnMilimetros",
-    "remate": "{ondaDelAgudoEnMilimetros|2} milímetros. No es una limitación del aparato: es el tamaño de la onda, y con eso no se puede negociar."
+    "medido": "ondaEnMilimetros",
+    "remate": "{ondaEnMilimetros|2} milímetros. No es una limitación del aparato: es el tamaño de la onda, y con eso no se puede negociar."
   },
   "nucleo": [
     {
@@ -31,9 +32,8 @@
           "detalle": "El eco no nace en los órganos sino en las fronteras entre ellos, donde cambia la densidad. Por eso una ecografía enseña contornos y no rellenos, y por eso el hueso y el aire salen como una pared blanca: ahí el salto es tan bestia que rebota casi todo y detrás no queda nada que mirar.",
           "color": "verde",
           "dibujo": {
-            "tipo": "barras",
-            "claves": ["retrasoEnMilisegundos", "ondaDelAgudoEnMilimetros"],
-            "rotulos": ["milisegundos que tarda el eco de 15 cm", "milímetros que mide la onda"]
+            "tipo": "eco",
+            "rotulos": ["la sonda", "a 15 cm", "{retrasoEnMilisegundos|2} ms", "el aparato no mide hondo: mide tiempo"]
           }
         },
         {
@@ -44,7 +44,7 @@
           "color": "verde",
           "dibujo": {
             "tipo": "escala",
-            "claves": ["ondaDelGrave"],
+            "claves": ["ondaComparada"],
             "rotulos": ["el límite de tu oído"],
             "marcas": [
               {"valor": 0.000308, "texto": "la onda de la ecografía"},
@@ -61,7 +61,7 @@
     "titulo": "Doscientas cincuenta veces más agudo de lo que puede oír nadie.",
     "nota": "Velocidad media del sonido en tejido blando, 1.540 metros por segundo. Las sondas habituales trabajan entre 2 y 15 megahercios según lo hondo que haya que mirar.",
     "parrafos": [
-      "Tu oído se planta en veinte mil hercios y ahí se acaba el mundo audible. La ecografía trabaja a {aguda|0}, que es {vecesMasAgudo|0} veces por encima. No es sonido inaudible: es sonido de otra escala.",
+      "Tu oído se planta en veinte mil hercios y ahí se acaba el mundo audible. La ecografía trabaja a {frecuencia|0}, que es {vecesMasAgudo|0} veces por encima. No es sonido inaudible: es sonido de otra escala.",
       "Y por eso se puede mirar a un bebé con esto y no con rayos X. Aquí no hay nada que arrancar de su sitio: es presión, empujando y soltando muy deprisa. La única energía en juego es la de un empujón."
     ]
   },

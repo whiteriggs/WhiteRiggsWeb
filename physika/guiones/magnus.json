@@ -47,9 +47,10 @@
           "detalle": "La frenada es todavía mayor, {frenada|1} newtons, y actúa siempre en contra del avance. Las dos salen de la misma cuenta —media densidad del aire, por el área de la pelota, por la velocidad al cuadrado— y solo se diferencian en el coeficiente y en la dirección. Por eso las dos se desploman cuando el balón se frena.",
           "color": "verde",
           "dibujo": {
-            "tipo": "barras",
-            "claves": ["frenada", "peso", "empuje"],
-            "rotulos": ["frena", "pesa", "empuja de lado"]
+            "tipo": "fuerzas",
+            "claves": ["empuje", "frenada", "peso"],
+            "angulos": [90, 180, 270],
+            "rotulos": ["empuja de lado: {empuje|1} N", "frena: {frenada|1} N", "pesa: {peso|1} N", "el balón va hacia la derecha; las tres flechas comparten escala"]
           }
         }
       ]

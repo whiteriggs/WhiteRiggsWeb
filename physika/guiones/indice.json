@@ -47,7 +47,7 @@
       "id": "magnus",
       "dia": 9,
       "desde": "2026-01-09",
-      "sello": "28062465f7205b7e"
+      "sello": "e3192d55f04e0e8b"
     },
     {
       "id": "armonicos",
@@ -87,7 +87,7 @@
       "id": "ecografia",
       "dia": 16,
       "desde": "2026-01-16",
-      "sello": "257a4641fad1d5f3"
+      "sello": "c8a684781a6a6c8f"
     },
     {
       "id": "ecualizador",
@@ -849,7 +849,8 @@
     {
       "id": "aparcamiento",
       "dia": 167,
-      "desde": "2026-06-16"
+      "desde": "2026-06-16",
+      "sello": "ca44a26dd4511214"
     },
     {
       "id": "luna",
