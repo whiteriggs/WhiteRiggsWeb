@@ -1,0 +1,37 @@
+{
+  "id": "cafe",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Enfría antes el café si echas la leche al final?",
+  "entradilla": "Quieres beberlo dentro de unos minutos. Puedes echar la leche ahora y esperar, o dejar que el café se enfríe solo y añadirla justo antes de beber. Aunque termines con las mismas cantidades, el orden cambia la temperatura.",
+  "modelo": "enfriamiento",
+  "color": "ambar",
+  "medidas": {"cafe": 85, "leche": 5, "ambiente": 22, "capacidadCafe": 836, "capacidadLeche": 195, "conductancia": 1.2, "segundos": 300},
+  "tanteo": {
+    "pregunta": "Tras cinco minutos, ¿qué opción deja más fría la mezcla en este ejemplo?",
+    "opciones": ["La leche al principio", "Da igual el orden", "La leche al final"],
+    "valores": [-4, 0, 4],
+    "medido": "diferencia",
+    "remate": "La leche al final: queda {diferencia|1} grados más fría. El café ha perdido calor mientras estaba más caliente y aún no tenía la capacidad térmica extra de la leche."
+  },
+  "nucleo": [{
+    "numero": 1,
+    "nombre": "la historia de la taza importa",
+    "color": "ambar",
+    "paneles": [{
+      "rotulo": "DOS CAMINOS, LA MISMA MEZCLA",
+      "clave": "Tras {minutos|0} minutos, leche primero: {lechePrimero|1} °C. Leche al final: {lecheUltimo|1} °C.",
+      "texto": "La línea continua empieza más abajo porque ya se ha mezclado la leche. La discontinua empieza con el café solo y cae de golpe cuando se añade la leche. Antes de ese último paso, el café solo sigue a {cafeSolo|1} °C: no compares esa temperatura con la del café que ya lleva leche.",
+      "detalle": "Usamos la ley de enfriamiento de Newton: la potencia térmica perdida es proporcional a la diferencia con el ambiente. Al principio, el café solo pierde {ritmoInicialSolo|1} vatios en este ejemplo. Al mezclar, el calor que pierde el café lo gana la leche; la temperatura final se calcula ponderando por las capacidades térmicas, no haciendo una media simple.",
+      "color": "ambar",
+      "dibujo": {"tipo": "enfriamiento", "claves": [], "rotulos": []}
+    }]
+  }],
+  "cierre": {
+    "titulo": "Para este café, la leche espera.",
+    "nota": "Ejemplo ilustrativo: 200 g de café tratado como agua, capacidad térmica {capacidadCafe|0} J/K, y 50 g de leche, {capacidadLeche|0} J/K. Temperaturas iniciales de {cafe|0} °C y {leche|0} °C, ambiente a {ambiente|0} °C. Conductancia constante elegida de {conductancia|1} W/K, igual en ambos casos; no es una medición de una taza real. La leche tardía se mantiene a su temperatura inicial hasta añadirla.",
+    "parrafos": [
+      "Sin esperar, ambos caminos son exactamente la misma mezcla. La diferencia aparece durante la espera: añadir leche cambia tanto la temperatura como la cantidad de calor necesaria para bajar un grado.",
+      "No es una ley universal para cualquier taza. Evaporación, aire en movimiento, geometría del recipiente, capacidad térmica de la taza y leche que se calienta fuera de la nevera pueden cambiar el resultado. Aquí comparamos un modelo térmico sencillo, con temperatura uniforme y mezcla instantánea."
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "faceid",
+  "rotulo": "MÓVIL",
+  "titulo": "¿Cómo te reconoce Face ID a oscuras?",
+  "entradilla": "Porque lleva su propia iluminación, aunque tú no la veas. TrueDepth proyecta miles de puntos infrarrojos y obtiene una imagen infrarroja y un mapa de profundidad. No necesita que enciendas la luz de la habitación para encontrar el relieve de tu cara.",
+  "modelo": "paralaje",
+  "color": "azul",
+  "medidas": {"base": 0.03, "focal": 1000, "lejos": 0.30, "cerca": 0.27},
+  "tanteo": {
+    "pregunta": "En una triangulación calibrada, ¿qué delata que un punto está más cerca?",
+    "opciones": ["Menor disparidad", "La misma disparidad", "Mayor disparidad"],
+    "valores": [-11, 0, 11],
+    "medido": "diferenciaEnPixeles",
+    "remate": "En este ejemplo, acercar el punto aumenta la disparidad en {diferenciaEnPixeles|1} píxeles. Lo que cambia es su posición geométrica, no solo lo brillante que sale."
+  },
+  "nucleo": [{
+    "numero": 1,
+    "nombre": "la posición cuenta la profundidad",
+    "color": "azul",
+    "paneles": [{
+      "rotulo": "UN PUNTO NO CAE SIEMPRE EN EL MISMO SITIO",
+      "clave": "A {lejosEnCentimetros|0} cm, la disparidad es {disparidadLejos|1} píxeles. A {cercaEnCentimetros|0} cm, es {disparidadCerca|1}.",
+      "texto": "En una geometría ideal con imágenes rectificadas, disparidad significa la diferencia de posición horizontal de un mismo punto entre dos vistas calibradas. Un proyector de patrón conocido puede proporcionar una de esas referencias. Al acercarse la superficie, esa diferencia aumenta.",
+      "detalle": "La profundidad es la separación entre centros ópticos multiplicada por la focal en píxeles, dividida por la disparidad. Nuestro sistema ilustrativo tiene {baseEnMilimetros|0} mm de separación y una focal de {focal|0} píxeles. La diferencia entre los dos puntos corresponde a {relieveEnMilimetros|0} mm de relieve. No estamos midiendo el tiempo que tarda la luz ni simulando el algoritmo propietario de Face ID.",
+      "color": "azul",
+      "dibujo": {
+        "tipo": "barras",
+        "claves": ["disparidadLejos", "disparidadCerca"],
+        "rotulos": ["{lejosEnCentimetros|0} cm: {disparidadLejos|1} px", "{cercaEnCentimetros|0} cm: {disparidadCerca|1} px"]
+      }
+    }]
+  }],
+  "cierre": {
+    "titulo": "La oscuridad no borra el relieve.",
+    "nota": "Apple documenta el patrón de puntos invisibles, la imagen infrarroja y el mapa de profundidad en «About Face ID advanced technology», support.apple.com/en-us/102381. La separación, focal y distancias del ejemplo son ilustrativas: no son especificaciones del iPhone. La fórmula es una triangulación ideal calibrada, no una descripción completa de su implementación.",
+    "parrafos": [
+      "Una fotografía puede conservar sombras, colores y perspectiva, pero sigue siendo una superficie plana. Por eso medir profundidad aporta información que una foto no contiene. No significa que cualquier sensor 3D sea infalible: Face ID combina esos datos con reconocimiento y medidas contra suplantación.",
+      "El infrarrojo cercano aquí es iluminación reflejada, no una cámara que reconozca tu cara por su calor. La geometría ayuda a obtener el mapa; decidir si ese mapa y esa imagen son tuyos es otra parte del sistema. Según Apple, la representación facial se protege con Secure Enclave y no se envía a iCloud."
+    ]
+  }
+}

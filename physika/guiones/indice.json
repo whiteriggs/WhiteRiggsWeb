@@ -126,17 +126,20 @@
     {
       "id": "cafe",
       "dia": 23,
-      "desde": "2026-01-23"
+      "desde": "2026-01-23",
+      "sello": "76cf22b999381316"
     },
     {
       "id": "faceid",
       "dia": 24,
-      "desde": "2026-01-24"
+      "desde": "2026-01-24",
+      "sello": "676354a0d6f525b2"
     },
     {
       "id": "cohete",
       "dia": 25,
-      "desde": "2026-01-25"
+      "desde": "2026-01-25",
+      "sello": "932b7b510ec8a1aa"
     },
     {
       "id": "nevera",

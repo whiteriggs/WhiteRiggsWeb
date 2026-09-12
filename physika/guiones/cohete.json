@@ -1,0 +1,51 @@
+{
+  "id": "cohete",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Contra qué empuja un cohete si no hay aire?",
+  "entradilla": "Contra la materia que él mismo expulsa. El motor acelera gases hacia atrás y el vehículo recibe un empuje hacia delante. La atmósfera no es una pared necesaria: el cohete lleva a bordo lo que necesita expulsar.",
+  "modelo": "cohete",
+  "color": "ambar",
+  "medidas": {"inicial": 1000, "final": 500, "escapeEfectivo": 3000, "caudal": 5},
+  "tanteo": {
+    "pregunta": "Sin gravedad ni rozamiento, ¿cuánto cambia su velocidad este cohete al consumir la mitad de su masa inicial?",
+    "opciones": ["Nada: necesita aire", "Unos 2.100 m/s", "Exactamente 3.000 m/s"],
+    "valores": [0, 2100, 3000],
+    "medido": "cambio",
+    "remate": "Cambia {cambio|0} m/s. La velocidad efectiva de escape entra en la cuenta, pero no es una velocidad máxima del cohete. También importa cuánta masa va perdiendo."
+  },
+  "nucleo": [{
+    "numero": 1,
+    "nombre": "el momento se reparte",
+    "color": "ambar",
+    "paneles": [
+      {
+        "rotulo": "DOS FUERZAS, DOS CUERPOS",
+        "clave": "Un caudal de {caudal|0} kg/s y una velocidad de escape efectiva de {escapeEfectivo|0} m/s producen {empujeEnKilonewtons|0} kN de empuje.",
+        "texto": "Las flechas tienen igual magnitud y sentidos opuestos, pero no actúan sobre el mismo cuerpo. Una corresponde a la fuerza de los gases sobre el cohete y la otra a la del cohete sobre los gases. Por eso no se cancelan al calcular la aceleración del vehículo.",
+        "detalle": "El empuje se obtiene multiplicando el caudal másico por la velocidad de escape efectiva. Esta última incorpora el término de presión de la tobera: no es necesariamente la velocidad local de cada partícula de gas. Un cohete químico lleva combustible y oxidante; no depende del oxígeno del aire para quemar.",
+        "color": "ambar",
+        "dibujo": {"tipo": "reaccion", "claves": ["empuje"], "rotulos": []}
+      },
+      {
+        "rotulo": "EL PROPULSOR TAMBIÉN PESA",
+        "clave": "Con {propelente|0} kg de propelente gana {cambio|0} m/s. Con {doblePropelente|0} kg, manteniendo la masa final, gana {cambioDoble|0} m/s: no el doble.",
+        "texto": "El propelente extra permite empujar durante más tiempo, pero al principio también hay que acelerarlo. La ecuación de Tsiolkovski recoge ambas cosas: el cambio de velocidad crece con el logaritmo de la razón entre masa inicial y final.",
+        "detalle": "En el primer caso, el encendido dura {duracion|0} segundos a caudal constante. El mismo empuje produce {aceleracionInicial|0} m/s² al principio y {aceleracionFinal|0} m/s² justo antes de apagarse, porque queda menos masa. La cuenta usa escape efectivo constante y no incluye pérdidas gravitatorias ni aerodinámicas.",
+        "color": "ambar",
+        "dibujo": {
+          "tipo": "barras",
+          "claves": ["cambio", "cambioDoble"],
+          "rotulos": ["{propelente|0} kg: {cambio|0} m/s", "{doblePropelente|0} kg: {cambioDoble|0} m/s"]
+        }
+      }
+    ]
+  }],
+  "cierre": {
+    "titulo": "No necesita una pared. Necesita expulsar masa.",
+    "nota": "Maniobra ideal en el espacio, sin fuerzas externas: masa inicial de {inicial|0} kg y final de {final|0} kg, escape efectivo constante de {escapeEfectivo|0} m/s y caudal de {caudal|0} kg/s. Valores ilustrativos, no un lanzamiento real. Referencias: NASA Glenn, «Ideal Rocket Equation» y «Rocket Thrust», en www1.grc.nasa.gov/beginners-guide-to-aeronautics/.",
+    "parrafos": [
+      "Los gases salen hacia atrás respecto al cohete. Eso no obliga a que se muevan hacia atrás respecto a la Tierra: si el vehículo ya va muy deprisa, pueden seguir avanzando respecto al suelo, pero más despacio que él.",
+      "Al apagar el motor no desaparece la velocidad. En este modelo sin fuerzas externas, el vehículo sigue moviéndose de manera uniforme. En una misión real, la gravedad sigue curvando su trayectoria aunque el motor esté apagado."
+    ]
+  }
+}
