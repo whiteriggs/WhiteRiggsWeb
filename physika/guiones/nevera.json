@@ -1,8 +1,8 @@
 {
   "id": "nevera",
   "rotulo": "CASA",
-  "titulo": "¿Cómo se saca el frío de dentro de una nevera?",
-  "entradilla": "No se saca frío: se saca calor. El frío no es una cosa que se fabrique, es lo que queda cuando te has llevado el calor a otro sitio. Y ese otro sitio es tu cocina, que acaba más caliente de lo que la nevera se enfría por dentro.",
+  "titulo": "¿Por qué la nevera enfría por dentro y calienta por detrás?",
+  "entradilla": "La leche está fría, pero detrás de la nevera sale calor. No es una contradicción ni un fallo del aparato. Para enfriar la comida, la máquina tiene que llevarse su calor a otro sitio. Ese otro sitio es la cocina, y el viaje necesita electricidad.",
   "modelo": "termo",
   "color": "ambar",
   "medidas": {
@@ -13,11 +13,11 @@
     "potencia": 100
   },
   "tanteo": {
-    "pregunta": "Una nevera que consume 100 vatios del enchufe, ¿cuánto calor suelta a la cocina?",
-    "opciones": ["Ninguno, el calor se destruye", "Los mismos 100", "Más de 250"],
+    "pregunta": "Mientras enfría la comida, ¿qué calor devuelve la nevera a la cocina?",
+    "opciones": ["Ningún calor: desaparece", "Solo lo que consume del enchufe", "Más de lo que consume del enchufe"],
     "valores": [0, 100, 255],
     "medido": "entrega",
-    "remate": "{entrega|0} vatios. Por eso dejar la puerta abierta no enfría la cocina: la calienta. La nevera es una bomba, y todo lo que bombea acaba detrás."
+    "remate": "Devuelve lo que retira de dentro más la energía del enchufe. En este ejemplo son {entrega|0} W: dejar la puerta abierta no enfría la cocina."
   },
   "nucleo": [
     {
@@ -26,42 +26,43 @@
       "color": "ambar",
       "paneles": [
         {
-          "rotulo": "LAS TRES CORRIENTES",
-          "clave": "Saca {roba|0} vatios de dentro, se come {trabajo|0} del enchufe y suelta {entrega|0} por la rejilla de atrás.",
-          "texto": "Las tres cifras del dibujo están a escala y la de la derecha es exactamente la suma de las otras dos. No hay ninguna otra opción: la energía no se destruye, así que todo lo que entra en la máquina tiene que salir por algún lado, y sale por detrás en forma de calor.",
-          "detalle": "El circuito da vueltas sin gastarse. El gas se comprime y se calienta más que la cocina, así que suelta calor; luego se expande de golpe y se enfría más que el interior, así que lo absorbe. Es un bucle que solo necesita que el gas esté siempre un poco más caliente que donde suelta y un poco más frío que donde roba.",
+          "rotulo": "UN VIAJERO EN UN CIRCUITO CERRADO",
+          "clave": "El refrigerante recoge calor dentro y lo entrega fuera.",
+          "texto": "Por los tubos circula un refrigerante que puede pasar de líquido a vapor y volver. En la zona fría se evapora: para hacerlo absorbe calor del interior. El compresor eleva la presión del vapor y lo calienta. En los tubos exteriores, el refrigerante cede calor a la cocina y se condensa.",
+          "detalle": "Después atraviesa un paso estrecho que reduce su presión y regresa a la zona fría. Es el ciclo de refrigeración. El fluido no sale a la habitación: lo que atraviesa las paredes de los tubos es energía en forma de calor.",
           "color": "ambar",
           "dibujo": {
-            "tipo": "ciclo",
+            "tipo": "casaCotidiana",
+            "trazado": "neveraCircuito",
             "claves": [],
-            "rotulos": ["{roba|0} W de dentro", "{entrega|0} W a la cocina", "{trabajo|0} W del enchufe", "las flechas están a escala: lo que sale es lo que entra"]
+            "rotulos": []
           }
         },
         {
-          "rotulo": "EL CONGELADOR ES OTRA HISTORIA",
-          "clave": "Con esos mismos 100 vatios, a cuatro grados se sacan {roba|0} de calor. A dieciocho bajo cero, solo {robaComparado|0}.",
-          "texto": "{vecesMasCaro|1} veces menos, con el mismo motor y el mismo enchufe. Cuanto más lejos quieres llevarte el calor, más caro sale cada julio, y el precio no sube poco a poco: sube con la distancia entre las dos temperaturas.",
-          "detalle": "Esa distancia es lo único que manda. Por eso una nevera gasta más en agosto que en enero aunque la abras lo mismo, y por eso un congelador lleno rinde mejor que uno vacío: la comida ya congelada le hace de reserva de frío y le ahorra arranques.",
+          "rotulo": "POR DETRÁS SALE LA SUMA",
+          "clave": "El calor retirado y la electricidad acaban en la cocina.",
+          "texto": "El compresor no mueve el refrigerante gratis: necesita trabajo del motor. Esa energía también termina como calor. Por eso la nevera devuelve al exterior más calor del que ha sacado de la comida. Es la conservación de la energía, aplicada a un aparato que zumba junto a la encimera.",
+          "detalle": "El dibujo distingue el recorrido cerrado del refrigerante de las flechas de calor que cruzan hacia dentro o fuera del circuito. No son chorros de gas escapando por detrás de la nevera.",
           "color": "ambar",
           "dibujo": {
-            "tipo": "barras",
-            "claves": ["roba", "robaComparado"],
-            "rotulos": ["nevera a {dentro|0}°: {roba|0} W", "congelador a {dentroComparado|0}°: {robaComparado|0} W"]
+            "tipo": "casaCotidiana",
+            "trazado": "neveraCalor",
+            "claves": ["roba", "trabajo", "entrega"],
+            "rotulos": ["Del interior: {roba|0} W", "Del enchufe: {trabajo|0} W", "A la cocina: {entrega|0} W"]
           }
         }
       ]
     }
   ],
   "cierre": {
-    "titulo": "El frío no se fabrica. Se muda.",
-    "nota": "La fracción del ideal que alcanza una nevera doméstica, en torno al dieciocho por ciento, es un valor típico de catálogo y entra como dato. El techo teórico sí está calculado, y solo depende de las dos temperaturas.",
+    "titulo": "Enfriar aquí significa calentar allí.",
+    "nota": "Ciclo simplificado. Las cifras usan una fracción ilustrativa del límite ideal, no el consumo de una nevera concreta ni temperaturas del refrigerante.",
     "parrafos": [
-      "El límite de arriba no es un problema de fabricación: es el mismo que le impide a un motor aprovechar todo el combustible, escrito al revés. Ninguna máquina, por buena que sea, mueve calor gratis contra la pendiente.",
-      "Y da la vuelta a una intuición doméstica. Una nevera no es un cacharro que enfría, es un cacharro que calienta muy bien y que casualmente deja un hueco frío detrás. Ese hueco es todo el electrodoméstico."
+      "La nevera no hace desaparecer el calor. Lo transporta, y añade al destino la energía que necesita para hacerlo."
     ]
   },
   "puente": {
     "hacia": "secadora",
-    "frase": "Dale la vuelta y aprovecha el lado caliente en vez del frío: eso es exactamente lo que hace una secadora moderna, y por eso saca litros de agua con la electricidad de una bombilla grande."
+    "frase": "Una secadora con bomba de calor aprovecha también un circuito refrigerante, pero busca utilizar su lado caliente."
   }
 }
