@@ -1,11 +1,67 @@
 {
-  "id": "atardecer", "rotulo": "NATURALEZA", "titulo": "¿Por qué el Sol se vuelve rojo al ponerse?",
-  "entradilla": "Al bajar el Sol, su luz atraviesa más atmósfera antes de alcanzarte. El azul se desvía del haz directo con mayor facilidad. Lo que queda se enriquece en colores cálidos, sin que el Sol haya cambiado de temperatura durante la puesta.",
-  "modelo": "atardecer", "color": "coral", "medidas": {"azul": 4.5e-7, "rojo": 6.5e-7, "espesorRojo": 0.1, "camino": 10},
-  "tanteo": {"pregunta": "El espesor óptico vertical para el rojo es 0,1 y el trayecto atraviesa diez veces esa columna. ¿Qué porcentaje del rojo inicial sigue en el haz directo?", "opciones": ["Un 4 %", "Un 37 %", "Un 90 %"], "valores": [4, 37, 90], "medido": "rojoFinal", "remate": "Queda {rojoFinal|1} % del rojo, frente a {azulFinal|1} % del azul. Comparamos cada color con su propia intensidad de entrada."},
-  "nucleo": [{"numero": 1, "nombre": "el camino filtra", "color": "coral", "paneles": [
-    {"rotulo": "NO ES UNA RESTA LINEAL", "clave": "Con el camino multiplicado por {camino|0}, queda {azulFinal|1} % del azul directo.", "texto": "Cada tramo de aire retira una fracción de la luz que todavía queda en el haz. Por eso la transmisión es exponencial: no se pierde la misma cantidad absoluta en cada tramo. La curva aplica Beer-Lambert al azul al aumentar la columna de aire atravesada.", "detalle": "Asignamos al rojo un espesor óptico de referencia y al azul uno mayor según Rayleigh. En la columna inicial sobreviven {rojoInicial|1} % y {azulInicial|1} %, respectivamente. Al prolongarla, la diferencia entre colores se vuelve mucho más marcada.", "color": "coral", "dibujo": {"tipo": "serie", "ejeX": "Columna relativa de aire", "ejeY": "Azul directo restante (%)", "claves": [], "rotulos": []}},
-    {"rotulo": "LA MEZCLA CAMBIA", "clave": "Rojo restante: {rojoFinal|1} %. Azul restante: {azulFinal|1} %.", "texto": "Las barras no dicen cuánto rojo o azul emitía el Sol, sino qué fracción de cada componente atraviesa el trayecto. La luz que abandona el haz puede iluminar otras direcciones. No toda desaparición del haz es absorción ni toda luz del atardecer llega directamente del disco solar.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["rojoFinal", "azulFinal"], "rotulos": ["Rojo: {rojoFinal|1} %", "Azul: {azulFinal|1} %"]}}
-  ]}],
-  "cierre": {"titulo": "El trayecto cambia la luz que recibes.", "nota": "Longitudes de onda en metros; espesorRojo y camino son adimensionales, elegidos para ilustrar Beer-Lambert y Rayleigh. No se deduce una elevación solar de camino ni se extrapola una atmósfera plana al horizonte.", "parrafos": ["Aerosoles, nubes, ozono y dispersión múltiple modifican una puesta real. Una atmósfera cargada puede ocultar el Sol antes de producir colores vistosos. El cálculo explica un mecanismo, no pronostica el aspecto del cielo esta tarde."]}
+  "id": "atardecer",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Por qué una botella de plástico tiene paredes curvas?",
+  "revisionEditorial": 2,
+  "entradilla": "Una botella vacía parece un objeto frágil: aprietas un costado y se hunde. Sin embargo, una botella diseñada para bebidas con gas mantiene su forma con líquido y gas dentro. No basta con decir que el plástico es resistente. La pared fina reparte los empujes de una manera que depende mucho de su forma.",
+  "modelo": "naturaleza-atardecer",
+  "color": "verde",
+  "medidas": {
+    "presion": 20000,
+    "radio": 0.03,
+    "espesor": 0.0003
+  },
+  "tanteo": {
+    "pregunta": "A igual presión y radio, ¿qué hace una pared más gruesa?",
+    "opciones": [
+      "Aumenta el esfuerzo del material",
+      "Reparte el esfuerzo entre más material",
+      "Elimina la presión del gas"
+    ],
+    "valores": [
+      8000000,
+      2000000,
+      0
+    ],
+    "medido": "tensionPared",
+    "remate": "Lo reparte. El ejemplo da {megapascales|1} MPa; duplicar el espesor reduce a la mitad ese esfuerzo."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una pared que trabaja estirada",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "EL GAS EMPUJA TODA LA PARED",
+          "clave": "La presión interior intenta abrir el cilindro.",
+          "texto": "Imagina cortar longitudinalmente un tramo de botella y separar sus dos mitades. La presión quiere apartarlas; el plástico que las une tira en sentido contrario. La curva permite que la pared trabaje estirada alrededor del perímetro. Esa tensión circunferencial aparece en el modelo de recipientes de pared delgada, también llamado esfuerzo de aro.",
+          "detalle": "Presión y esfuerzo del plástico no son lo mismo. La primera actúa sobre la superficie interior; el segundo mide cómo se reparte la fuerza en la pequeña sección de material que la sostiene.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "atardecer-1"
+          }
+        },
+        {
+          "rotulo": "MÁS ANCHA NO ES GRATIS",
+          "clave": "El radio aumenta el esfuerzo; el espesor lo reduce.",
+          "texto": "Si haces una botella más ancha sin engordar la pared, hay más superficie interior empujando por cada tramo de plástico que debe sujetarla. Por eso el tamaño importa tanto como el material. Añadir espesor reparte la fuerza, aunque también aumenta el consumo de plástico. El diseño busca un compromiso, no una resistencia mágica.",
+          "detalle": "La base, el cuello y los relieves necesitan análisis aparte. Un nervio también puede dificultar que una pared vacía se abolle: resistir presión interior y resistir un apretón son problemas distintos.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "atardecer-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La forma hace trabajar al material.",
+    "parrafos": [
+      "La botella no demuestra que cualquier envase soporte presión. Su geometría y su fabricación importan; una botella corriente no debe convertirse en un recipiente para experimentar con gases comprimidos."
+    ],
+    "nota": "Cilindro ideal de pared delgada, sobrepresión ilustrativa y material uniforme. No se calcula rotura ni seguridad de envases comerciales."
+  }
 }

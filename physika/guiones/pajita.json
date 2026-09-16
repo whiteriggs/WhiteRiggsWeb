@@ -1,12 +1,71 @@
 {
-  "id": "pajita", "rotulo": "COTIDIANO", "titulo": "¿Qué empuja el líquido por una pajita?",
-  "entradilla": "Al reducir la presión en la parte superior de una pajita, el aire exterior sigue presionando sobre la superficie de la bebida. Esa diferencia impulsa el líquido hacia arriba. No aparece una fuerza misteriosa de succión que tire del agua desde la boca.",
-  "modelo": "pajita", "color": "azul",
-  "medidas": {"densidad": 1000, "altura": 0.2, "alturaComparada": 0.4},
-  "tanteo": {"pregunta": "En un vaso abierto, una pajita sostiene agua en reposo 20 cm por encima de la superficie del vaso, con densidad de 1.000 kg/m³ y sin capilaridad. ¿Qué diferencia de presión crees que sostiene esa columna?", "opciones": ["Unos 0,2 kPa", "Unos 2 kPa", "Unos 20 kPa"], "valores": [0.2, 2, 20], "medido": "presionKpa", "remate": "Se necesitan {presionKpa|2} kPa para sostenerla en reposo; hacerla fluir requiere además vencer pérdidas."},
-  "nucleo": [{"numero": 1, "nombre": "el aire de fuera también cuenta", "color": "azul", "paneles": [
-    {"rotulo": "SOSTENER EL PESO DE UNA COLUMNA", "clave": "La columna elegida requiere una diferencia de {presion|0} Pa.", "texto": "En equilibrio, la fuerza producida por la diferencia de presión compensa el peso de la columna. Ambas son proporcionales al área del tubo, que se cancela. El resultado depende de densidad, gravedad y altura, no del diámetro en esta descripción hidrostática.", "detalle": "La curva muestra cómo crece la diferencia requerida con la altura sobre la superficie del vaso. No representa la presión absoluta en cada punto ni un caudal. La referencia exterior sigue actuando sobre el líquido del recipiente abierto.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Altura sobre la bebida (cm)", "ejeY": "Diferencia de presión (kPa)", "claves": [], "rotulos": []}},
-    {"rotulo": "MÁS ALTO CUESTA MÁS PRESIÓN", "clave": "La altura alternativa necesita {presionComparada|0} Pa.", "texto": "Las barras comparan la presión necesaria para sostener dos columnas del mismo líquido. Una bebida más densa necesitaría una diferencia mayor a igual altura. Esto describe sostenerla, no cuánto esfuerzo subjetivo supone beber ni qué velocidad conseguirá dentro de una pajita concreta.", "detalle": "Cuando el líquido circula, aparecen pérdidas viscosas que dependen de diámetro, longitud y velocidad. Una abertura lateral permite entrar aire y dificulta mantener la diferencia de presión. La capilaridad puede añadir otro término, especialmente en tubos muy estrechos, pero se omite aquí.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["presion", "presionComparada"], "rotulos": ["Columna corta: {presion|0} Pa", "Columna alta: {presionComparada|0} Pa"]}}
-  ]}],
-  "cierre": {"titulo": "El movimiento nace de una diferencia de presión.", "nota": "Densidad ilustrativa en kg/m³ y alturas en m. Equilibrio hidrostático de líquido uniforme en vaso abierto; sin flujo, capilaridad ni límites fisiológicos. No se propone succionar sustancias distintas de bebidas aptas.", "parrafos": ["Reducir la presión superior tiene límites: la presión absoluta no puede bajar arbitrariamente y el líquido puede formar vapor. La fórmula de equilibrio no permite construir una columna de altura ilimitada por el simple hecho de seguir aspirando."]}
+  "id": "pajita",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Qué empuja la bebida por una pajita reutilizable?",
+  "revisionEditorial": 2,
+  "entradilla": "Bebes por una pajita y parece natural decir que tu boca tira del líquido hacia arriba. Pero la boca no tiene un gancho dentro del vaso. Lo que haces es cambiar la presión en la parte superior del tubo, y el aire que rodea la bebida aporta el otro lado del empuje.",
+  "modelo": "pajita",
+  "color": "ambar",
+  "medidas": {
+    "densidad": 1000,
+    "altura": 0.2,
+    "alturaComparada": 0.4
+  },
+  "tanteo": {
+    "pregunta": "¿Qué hace subir el líquido cuando reduces la presión dentro de la pajita?",
+    "opciones": [
+      "El metal del tubo lo atrae",
+      "La mayor presión sobre el líquido del vaso",
+      "La gravedad empieza a empujarlo hacia arriba"
+    ],
+    "valores": [
+      0.2,
+      2,
+      20
+    ],
+    "medido": "presionKpa",
+    "remate": "La diferencia de presión. Para sostener la columna elegida hacen falta {presionKpa|2} kPa, además de las pérdidas cuando circula."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "dos presiones sobre una columna",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL AIRE TAMBIÉN EMPUJA",
+          "clave": "Fuera del tubo queda más presión que dentro.",
+          "texto": "La superficie del vaso abierto recibe la presión atmosférica. Al aspirar, reduces la presión sobre la columna dentro de la pajita. La diferencia puede sostener el peso del líquido y hacerlo ascender. No hace falta que la pajita sea metálica: el mismo mecanismo funciona con otros materiales que mantengan el conducto.",
+          "detalle": "Se llama equilibrio hidrostático cuando la columna está quieta. Cuanto más alta o más densa sea, mayor diferencia de presión necesita. El tubo no multiplica fuerza gratuitamente ni permite elevar bebida hasta cualquier altura.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "pajita-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "UN AGUJERO CAMBIA EL CAMINO",
+          "clave": "Si entra aire por una fuga, cuesta mantener la presión baja.",
+          "texto": "Una pajita agrietada por encima del líquido deja entrar aire desde el exterior. Parte de tu esfuerzo mueve ese aire en lugar de sostener y hacer circular la bebida. Por eso puedes oír un silbido y obtener menos líquido, aunque el extremo inferior siga sumergido.",
+          "detalle": "En una pajita íntegra, el líquido también roza las paredes al circular. Un conducto largo o estrecho ofrece más resistencia. La cuenta del ejemplo solo sostiene una columna inmóvil; el flujo real exige presión adicional para vencer esas pérdidas.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "pajita-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Aspiras aire para cambiar quién empuja más.",
+    "parrafos": [
+      "La bebida sube porque hay una diferencia de presión entre sus extremos. Una fuga no rompe una fuerza de succión misteriosa: permite que ambas presiones se acerquen."
+    ],
+    "nota": "Líquido uniforme y columnas ilustrativas, sin capilaridad. No calculamos esfuerzo respiratorio ni caudal de una pajita comercial; alturas y materiales reales pueden cambiar las pérdidas."
+  }
 }

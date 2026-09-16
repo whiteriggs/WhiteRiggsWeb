@@ -1,12 +1,75 @@
 {
-  "id": "topspin", "rotulo": "DEPORTE", "titulo": "¿Por qué el liftado hace bajar antes una pelota?",
-  "entradilla": "La pelota no espera a un punto secreto para caer de golpe. Su giro modifica el flujo de aire y añade una fuerza transversal durante el vuelo. Con liftado, esa fuerza tiene una componente hacia abajo: la trayectoria se curva más que la de una pelota lanzada igual pero sin giro.",
-  "modelo": "topspin", "color": "verde",
-  "medidas": {"masa": 0.057, "radio": 0.0335, "velocidad": 25, "angulo": 10, "altura": 1, "arrastre": 0.55, "sustentacion": -0.25},
-  "tanteo": {"pregunta": "Con la misma salida y el arrastre del ejemplo, ¿qué alcance da el liftado respecto a no girar?", "opciones": ["Mayor", "Menor", "Exactamente igual"], "valores": [1, -1, 0], "medido": "diferencia", "remate": "El alcance cambia {diferencia|1} m. Aquí el giro acorta el vuelo, sin añadir un empujón repentino al final."},
-  "nucleo": [{"numero": 1, "nombre": "el aire también curva", "color": "verde", "paneles": [
-    {"rotulo": "MISMA SALIDA, OTRO VUELO", "clave": "Sin giro: {alcanceSinGiro|1} m. Con liftado: {alcanceLiftado|1} m.", "texto": "Integramos el movimiento bajo gravedad, arrastre opuesto a la velocidad y fuerza de Magnus perpendicular a ella. Las barras comparan distancias hasta el suelo, no dibujan una cancha ni una trayectoria deformada por la escala de pantalla.", "detalle": "El golpe permite combinar velocidad y curvatura, pero aquí no cambiamos simultáneamente el ángulo ni la rapidez inicial. Por eso podemos aislar el efecto del giro dentro del modelo. La pelota real también cambia su orientación, su velocidad de rotación y sus coeficientes durante el recorrido.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["alcanceSinGiro", "alcanceLiftado"], "rotulos": ["Sin giro: {alcanceSinGiro|1} m", "Liftado: {alcanceLiftado|1} m"]}},
-    {"rotulo": "NO ES UNA FUERZA MISTERIOSA", "clave": "Al salir, Magnus tiene magnitud {fuerzaMagnus|2} N y el peso es {peso|2} N.", "texto": "El aire acaba desviado y la pelota recibe una fuerza. El signo negativo del coeficiente elegido representa liftado; no significa que la magnitud de la fuerza sea negativa. Comparar magnitudes no implica que ambas fuerzas tengan exactamente la misma dirección.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["fuerzaMagnus", "peso"], "rotulos": ["Magnus: {fuerzaMagnus|2} N", "Peso: {peso|2} N"]}}
-  ]}],
-  "cierre": {"titulo": "La curva empieza mucho antes del bote.", "nota": "Escenario ilustrativo, no medición de un tenista: masa en kg, radio y altura en m, velocidad en m/s y ángulo en grados. Cd = {arrastre|2} y Cl = {sustentacion|2}, adimensionales y constantes elegidas, no universales. Densidad del aire del integrador: 1,225 kg/m³. Ley de Newton y modelo aerodinámico cuadrático; se omite el bote.", "parrafos": ["Más revoluciones no se convierten automáticamente en un coeficiente conocido. Harían falta datos experimentales de esa pelota, su superficie y el régimen de flujo para predecir un golpe concreto."]}
+  "id": "topspin",
+  "rotulo": "DEPORTE",
+  "titulo": "Pelota de tenis: ¿por qué el liftado la hace bajar antes?",
+  "revisionEditorial": 2,
+  "modelo": "topspin",
+  "color": "verde",
+  "medidas": {
+    "masa": 0.057,
+    "radio": 0.0335,
+    "velocidad": 25,
+    "angulo": 10,
+    "altura": 1,
+    "arrastre": 0.55,
+    "sustentacion": -0.25
+  },
+  "entradilla": "Una pelota sale de la raqueta, pasa por encima de la red y cae dentro de la pista cuando parecía que iba demasiado larga. El liftado cambia su giro, no solo la dirección del golpe. Mientras avanza, la superficie en movimiento modifica el aire alrededor, y aparece una contribución que curva el vuelo hacia abajo.",
+  "tanteo": {
+    "pregunta": "Con la misma salida, ¿qué alcance tiene la pelota liftada frente a la que no gira en este ejemplo?",
+    "opciones": [
+      "Mayor",
+      "Menor",
+      "Exactamente igual"
+    ],
+    "valores": [
+      1,
+      -1,
+      0
+    ],
+    "medido": "diferencia",
+    "remate": "Menor. El alcance cambia {diferencia|1} m porque la fuerza del giro contribuye a hacerla bajar antes."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un giro hacia abajo",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA SUPERFICIE TAMBIÉN SE MUEVE",
+          "clave": "El aire encuentra una pelota que avanza y gira.",
+          "texto": "En el liftado, la parte superior de la pelota gira hacia delante respecto a su centro. El aire cercano recibe ese movimiento y el flujo deja de ser simétrico. La interacción puede generar una fuerza hacia abajo, además del peso. Es el efecto Magnus aplicado a esta orientación de giro.",
+          "detalle": "La flecha mental importante no es un empujón de la raqueta que siga viajando escondido. La raqueta ya no toca la pelota. La fuerza aerodinámica procede del intercambio de movimiento con el aire durante el vuelo y depende de las condiciones del giro y del flujo.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "topspin-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA RED NO ES EL FINAL DEL CAMINO",
+          "clave": "El descenso se adelanta.",
+          "texto": "Comparamos dos pelotas que salen igual, con el mismo arrastre, pero solo una tiene la contribución del liftado. La que gira hacia delante se curva más hacia el suelo y aterriza antes. El segundo panel mantiene la red y el terreno quietos para que se vea la diferencia de trayectorias.",
+          "detalle": "En el modelo, el coeficiente que representa el efecto del giro se mantiene constante. Una pelota real va cambiando su rapidez y su interacción con el aire. El esquema explica la tendencia, no garantiza dónde botará una pelota concreta ni cómo debe golpearse.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "topspin-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El giro cambia cuánto camino queda antes del bote.",
+    "nota": "Vuelo con arrastre y coeficiente Magnus constante. Sin predicciones de técnica o rendimiento individual.",
+    "parrafos": [
+      "El liftado no elimina la gravedad: añade otra influencia descendente en esta comparación. Por eso dos pelotas con salidas parecidas pueden caer en lugares distintos. El bote es el final visible de una conversación con el aire que empezó al separarse de la raqueta."
+    ]
+  }
 }

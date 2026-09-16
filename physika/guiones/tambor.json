@@ -1,12 +1,71 @@
 {
-  "id": "tambor", "rotulo": "MÚSICA", "titulo": "¿Por qué muchos tambores no tienen una nota tan clara como una cuerda?",
-  "entradilla": "Un tambor puede tener una altura perceptible, y algunos se afinan deliberadamente. Lo peculiar es que los modos de una membrana circular ideal no forman la misma escalera de múltiplos enteros que una cuerda ideal. El oído recibe otra organización de frecuencias.",
-  "modelo": "tambor", "color": "coral",
-  "medidas": {"radio": 0.15, "tension": 1000, "densidad": 0.3},
-  "tanteo": {"pregunta": "En una membrana circular ideal, ¿qué relación tiene el siguiente modo con el fundamental?", "opciones": ["Aproximadamente 1,59", "Exactamente el doble", "Exactamente el triple"], "valores": [1.59, 2, 3], "medido": "razon", "remate": "La relación calculada es {razon|3}; no coincide con el segundo armónico de una cuerda ideal."},
-  "nucleo": [{"numero": 1, "nombre": "vibrar en una superficie", "color": "coral", "paneles": [
-    {"rotulo": "NO ES UNA CUERDA REDONDA", "clave": "Modos a {fundamental|1} y {siguiente|1} Hz.", "texto": "Una cuerda distribuye su desplazamiento a lo largo de una línea. La membrana puede dibujar nodos en círculos y en diámetros. Al exigir que el borde quede inmóvil, aparecen las raíces de las funciones de Bessel: esa geometría determina las relaciones entre modos.", "detalle": "La frecuencia de cada modo es su raíz de Bessel multiplicada por la velocidad de onda y dividida entre la circunferencia. La velocidad depende de la raíz de la tensión superficial dividida entre la masa por área. No debe usarse aquí la masa por longitud de una cuerda.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["fundamental", "siguiente", "armonico"], "rotulos": ["Fundamental: {fundamental|0} Hz", "Siguiente: {siguiente|0} Hz", "Doble: {armonico|0} Hz"]}},
-    {"rotulo": "DÓNDE GOLPEAS IMPORTA", "clave": "La onda del parche viaja a {velocidad|1} m/s.", "texto": "Golpear cerca del centro o del borde excita cada modo con distinta intensidad. El aire encerrado, el casco, el otro parche y la carga del aire exterior desplazan y amortiguan las resonancias. Por eso esta lista ideal no pretende ser el espectro medido de una caja de batería ni de un timbal.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["radio", "velocidad"], "rotulos": ["Radio: {radio|2} m", "Onda: {velocidad|1} m/s"]}}
-  ]}],
-  "cierre": {"titulo": "Sin serie armónica exacta no significa sin altura.", "nota": "Membrana circular uniforme, flexible, sin rigidez de flexión y con borde fijo. Radio en m, tensión por longitud en N/m y masa superficial en kg/m²; datos ilustrativos. Raíces matemáticas de Bessel J₀ y J₁ para los dos primeros modos. El modelo omite acoplamiento acústico y amortiguamiento.", "parrafos": ["La percepción de una nota depende también de qué modos dominan y de cuánto duran. Afinar un instrumento de percusión no requiere que todos sus modos sean múltiplos exactos de una sola frecuencia."]}
+  "id": "tambor",
+  "rotulo": "MÚSICA",
+  "titulo": "¿Por qué un tambor hace un golpe y no una nota tan clara como la guitarra?",
+  "entradilla": "Golpeas un tambor y reconoces inmediatamente su sonido, pero quizá te cueste cantarlo como una nota. No es que al parche le falte afinación por descuido. Su superficie puede moverse de muchas maneras a la vez, y esas vibraciones no encajan entre sí igual que las de una cuerda.",
+  "modelo": "tambor",
+  "color": "ambar",
+  "medidas": {
+    "radio": 0.15,
+    "tension": 1000,
+    "densidad": 0.3
+  },
+  "tanteo": {
+    "pregunta": "En un parche circular ideal, ¿el siguiente movimiento vibra como el siguiente armónico de una cuerda?",
+    "opciones": [
+      "No: queda entre la nota de partida y su octava",
+      "Sí: coincide con su octava",
+      "No cambia respecto a la nota de partida"
+    ],
+    "valores": [
+      1.59,
+      2,
+      1
+    ],
+    "medido": "razon",
+    "remate": "Queda entre ambas. El siguiente modo vibra {razon|3} veces más deprisa que el primero, no como el segundo armónico de una cuerda ideal."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un parche con muchas formas",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL BORDE NO SE MUEVE",
+          "clave": "El aro sujeta el parche mientras el interior se deforma.",
+          "texto": "La baqueta hunde una pequeña región del parche y esa deformación se extiende. Al alcanzar el borde sujeto, vuelve hacia dentro. Algunas formas de movimiento consiguen mantenerse: el centro puede subir mientras el borde permanece quieto, por ejemplo. Cada forma tiene su propio ritmo. Son los modos de vibración de la membrana.",
+          "detalle": "Apretar los tornillos aumenta la tensión y suele subir esos ritmos. Golpear cerca del centro o junto al aro, en cambio, cambia cuánto despiertas cada forma de movimiento. El lugar del golpe importa.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "tambor-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "NO TODO SUBE JUNTO",
+          "clave": "Una zona puede subir mientras otra baja.",
+          "texto": "El parche también puede dividirse en regiones que se mueven en sentidos contrarios, separadas por líneas casi inmóviles. Esas líneas son nodos. Los ritmos de estas formas no siguen la escalera regular de múltiplos que ayuda a reconocer la nota de una cuerda. El oído recibe una mezcla menos fácil de resumir cantando.",
+            "detalle": "Eso no significa que ningún tambor tenga altura definida. Los timbales, por ejemplo, aprovechan la interacción con el aire y la caja para organizar mejor sus resonancias. El tambor completo no es solamente un parche aislado. Incluso el lugar donde apoyas una mano cambia qué vibraciones sobreviven.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "tambor-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Un golpe despierta muchas formas.",
+    "parrafos": [
+      "El aro, la tensión y el punto donde cae la baqueta cambian quién participa en ese golpe tan reconocible."
+    ],
+    "nota": "Membrana circular ideal, uniforme y con borde fijo. Medidas ilustrativas; se omiten aire, caja y amortiguamiento. Deformaciones ampliadas."
+  },
+  "revisionEditorial": 2
 }

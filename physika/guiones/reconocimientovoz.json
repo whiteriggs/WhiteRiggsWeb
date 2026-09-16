@@ -1,12 +1,74 @@
 {
-  "id": "reconocimientovoz", "rotulo": "MÚSICA", "titulo": "¿Qué puede medir un asistente de voz antes de reconocer palabras?",
-  "entradilla": "La señal de un micrófono no trae palabras escritas. Un sistema de reconocimiento debe relacionar cambios acústicos con unidades del lenguaje y contexto. Dividir la señal en tramas y extraer características es una posible preparación; no equivale a entender una frase ni reproduce por sí sola el funcionamiento de Siri.",
-  "modelo": "reconocimientovoz", "color": "azul",
-  "medidas": {"muestreo": 16000, "ventana": 0.025, "paso": 0.01, "duracion": 1, "frecuencia": 1000, "amplitud": 0.5},
-  "tanteo": {"pregunta": "Con ventanas de 25 ms y avances de 10 ms, ¿cuántas tramas completas caben en un segundo sin relleno?", "opciones": ["98", "40", "100"], "valores": [98, 40, 100], "medido": "tramas", "remate": "Caben {tramas|0}: la última ventana también debe terminar dentro del segundo. Las tramas se solapan."},
-  "nucleo": [{"numero": 1, "nombre": "medir no es comprender", "color": "azul", "paneles": [
-    {"rotulo": "VENTANAS QUE SE SOLAPAN", "clave": "{muestras|0} muestras por ventana y {salto|0} por avance.", "texto": "Multiplicamos el muestreo por los tiempos para contar muestras. El número de tramas completas es la parte entera de la duración restante después de la primera ventana, dividida por el paso, más la primera trama. No añadimos ceros ni centramos ventanas fuera del intervalo disponible.", "detalle": "Una transformada discreta de esta ventana tendría una separación de {separacion|1} Hz entre sus frecuencias de análisis. Esa separación no garantiza distinguir dos tonos próximos: también importan la ventana aplicada y la duración observada. Rellenar con ceros interpola el espectro, pero no crea información temporal nueva.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["muestras", "salto"], "rotulos": ["Ventana: {muestras|0} muestras", "Avance: {salto|0} muestras"]}},
-    {"rotulo": "UNA CARACTERÍSTICA CALCULADA", "clave": "El seno de prueba tiene valor eficaz {eficaz|4}.", "texto": "Generamos un tono sintético de {frecuencia|0} Hz y amplitud relativa {amplitud|2}. Sumamos el cuadrado de cada muestra, dividimos entre la cantidad de muestras y extraemos la raíz. Ese valor describe amplitud eficaz de la trama, no identifica una vocal, un hablante ni una intención.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["eficaz", "separacion"], "rotulos": ["Eficaz relativo: {eficaz|4}", "Separación DFT: {separacion|0} Hz"]}}
-  ]}],
-  "cierre": {"titulo": "Una característica no es un reconocedor completo.", "nota": "Extracción ilustrativa, no implementación de Siri ni atribución de su arquitectura. Muestreo y frecuencia en Hz, ventana, paso y duración en s; amplitud normalizada. Seno de prueba, ventana rectangular, sin relleno. Se calcula RMS y geometría temporal; no se ejecutan DFT, redes neuronales ni reconocimiento de palabras.", "parrafos": ["Los sistemas de reconocimiento necesitan modelos entrenados y decisiones adicionales. Ruido, acentos, contexto y ambigüedad lingüística no desaparecen por tener un espectrograma bien calculado."]}
+  "id": "reconocimientovoz",
+  "rotulo": "MÚSICA",
+  "titulo": "¿Qué escucha Alexa antes de entender que quieres poner música?",
+  "entradilla": "Dices una frase a Alexa y esperas una canción. Para ti las palabras llegan ya empaquetadas con significado; al micrófono le llega una vibración mezclada con la habitación. Antes de reconocer una petición, un sistema de voz tiene que transformar esa señal cambiante en información que pueda comparar y procesar.",
+  "modelo": "reconocimientovoz",
+  "color": "ambar",
+  "medidas": {
+    "muestreo": 16000,
+    "ventana": 0.025,
+    "paso": 0.01,
+    "duracion": 1,
+    "frecuencia": 1000,
+    "amplitud": 0.5
+  },
+  "tanteo": {
+    "pregunta": "Al analizar la voz con fragmentos solapados, ¿dónde empieza el fragmento siguiente?",
+    "opciones": [
+      "Antes de que termine el anterior",
+      "Justo cuando termina el anterior",
+      "Después, dejando un hueco"
+    ],
+    "valores": [
+      160,
+      400,
+      800
+    ],
+    "medido": "salto",
+    "remate": "Antes de que termine. Aquí avanzamos {salto|0} muestras para ventanas de {muestras|0}; comparten una parte de la señal."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "antes de las palabras",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "UNA FRASE EN FRAGMENTOS",
+          "clave": "La señal cambia demasiado para resumirla de una vez.",
+          "texto": "Una vocal, una consonante y una pausa no tienen la misma forma sonora. Una técnica habitual consiste en observar fragmentos breves, lo bastante cortos para describir aproximadamente lo que está ocurriendo dentro. Seleccionar cada fragmento se llama aplicar una ventana. No es una palabra recortada: puede contener solo una parte minúscula de ella.",
+          "detalle": "Nuestro ejemplo calcula cuántas muestras caben en una ventana y cómo avanzan las siguientes. No intenta adivinar palabras a partir de una onda sencilla ni describe los parámetros internos de Alexa. Solo abre una etapa posible del análisis.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "reconocimientovoz-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "CAMBIAR SIN DAR SALTOS",
+          "clave": "Los fragmentos vecinos pueden compartir parte de la voz.",
+          "texto": "La ventana siguiente empieza antes de acabar la anterior. Ese solapamiento ayuda a seguir cambios sin depender tanto de un borde arbitrario. Dentro de cada fragmento se pueden medir energía y contenido de frecuencias. La transformada de Fourier permite obtener ese reparto; al ordenarlo en el tiempo aparece una representación llamada espectrograma.",
+          "detalle": "Esas pistas todavía no son comprensión. Los modelos de reconocimiento deben relacionar patrones con habla y contexto, y otros componentes interpretan la petición. Una misma vibración aislada no contiene por sí sola la intención de poner tu canción favorita.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "reconocimientovoz-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Entender llega después de medir.",
+    "parrafos": [
+      "La próxima orden de voz empieza como presión en el aire. Convertirla en una petición requiere bastante más que reconocer una frecuencia."
+    ],
+    "nota": "Ventanas y tono de prueba ilustrativos. No se atribuye esta arquitectura ni estas cifras al funcionamiento interno de Amazon."
+  },
+  "revisionEditorial": 2
 }

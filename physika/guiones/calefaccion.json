@@ -1,12 +1,74 @@
 {
-  "id": "calefaccion", "rotulo": "CASA", "titulo": "¿Qué hace un radiador debajo de una ventana?",
-  "entradilla": "Una ventana fría enfría el aire cercano, que tiende a descender. El radiador puede contrarrestar esa corriente y mejorar el confort junto al vidrio. No convierte la ventana en aislante ni hace que esa posición sea siempre la más eficiente: depende del edificio y del emisor.",
-  "modelo": "calefaccion", "color": "ambar",
-  "medidas": {"transmitancia": 2.5, "area": 6, "salto": 20, "electrica": 1000, "cop": 3, "conveccion": 0.6},
-  "tanteo": {"pregunta": "Una ventana de 6 m², U = 2,5 W/(m²·K) y 20 K de diferencia, ¿cuánto calor pierde por segundo?", "opciones": ["30 W", "300 W", "3.000 W"], "valores": [30, 300, 3000], "medido": "perdida", "remate": "Pierde {perdida|0} W en régimen estacionario. El radiador puede compensar la pérdida, pero no elimina su causa."},
-  "nucleo": [{"numero": 1, "nombre": "confort y energía no son lo mismo", "color": "ambar", "paneles": [
-    {"rotulo": "EL AIRE CIRCULA; LA RADIACIÓN TAMBIÉN", "clave": "El emisor ilustrativo entrega {convectiva|0} W por convección y {radiante|0} W por radiación.", "texto": "Pese a su nombre, muchos radiadores transmiten una parte importante del calor mediante aire que asciende al calentarse. También intercambian radiación infrarroja con las superficies. Bajo una ventana, esa circulación puede reducir la sensación de corriente fría; cerca de un vidrio muy frío, la pérdida radiante del cuerpo también influye.", "detalle": "La división del dibujo es un supuesto del ejemplo, no una proporción universal. Geometría, temperatura y circulación de aire cambian el reparto. La pérdida calculada de la ventana usa U por área por diferencia térmica: no incluye infiltraciones, otras paredes ni puentes térmicos.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["convectiva", "radiante"], "rotulos": ["Convección: {convectiva|0} W", "Radiación: {radiante|0} W"]}},
-    {"rotulo": "DE DÓNDE VIENE ESE CALOR", "clave": "Una bomba de calor con COP {cop|1} entrega {calor|0} W usando {electrica|0} W eléctricos.", "texto": "Los otros {ambiente|0} W llegan del ambiente exterior. No se crea energía: se transporta. COP es calor entregado dividido por electricidad utilizada; no es la eficiencia de convertir electricidad en una cantidad mayor de electricidad. Un radiador puede recibir calor de una bomba, una caldera u otra fuente.", "detalle": "Aquí imaginamos una bomba alimentando un emisor de agua. El COP depende de las temperaturas de trabajo y de los auxiliares incluidos; un valor puntual no equivale al rendimiento estacional. No debe interpretarse como especificación de cualquier instalación ni como promesa de ahorro de esa posición del radiador.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["electrica", "ambiente", "calor"], "rotulos": ["Electricidad: {electrica|0} W", "Exterior: {ambiente|0} W", "Entregado: {calor|0} W"]}}
-  ]}],
-  "cierre": {"titulo": "Compensar una corriente no sustituye al aislamiento.", "nota": "Escenario ilustrativo estacionario: U en W/(m²·K), área en m², salto en K, potencia eléctrica en W; COP y fracción convectiva adimensionales. Reparto térmico y COP elegidos, no medidos. Balance de energía y ley de transmisión térmica.", "parrafos": ["Un edificio bien aislado puede necesitar otra distribución de emisores. Separar pérdidas, confort y origen del calor evita confundir una costumbre de instalación con una ley universal."]}
+  "id": "calefaccion",
+  "rotulo": "CASA",
+  "titulo": "¿Qué hace un radiador debajo de la ventana?",
+  "entradilla": "Parece un lugar raro para poner un radiador: justo debajo de una zona por donde la casa pierde calor. Pero esa colocación tiene una lógica de confort. Cerca de un vidrio frío el aire puede enfriarse y bajar, y el radiador ayuda a contrarrestar esa corriente que notas en las piernas.",
+  "modelo": "calefaccion",
+  "color": "ambar",
+  "medidas": {
+    "transmitancia": 2.5,
+    "area": 6,
+    "salto": 20,
+    "electrica": 1000,
+    "cop": 3,
+    "conveccion": 0.6
+  },
+  "tanteo": {
+    "pregunta": "Aunque el radiador caliente la habitación, ¿qué ocurre con el calor que atraviesa una ventana más fría por fuera?",
+    "opciones": [
+      "Deja de salir por completo",
+      "Sigue saliendo mientras exista diferencia de temperatura",
+      "Entra desde el exterior frío por sí solo"
+    ],
+    "valores": [
+      0,
+      300,
+      -300
+    ],
+    "medido": "perdida",
+    "remate": "Sigue saliendo. La ventana del ejemplo pierde {perdida|0} W; colocar el radiador debajo no elimina esa transmisión."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "aire que sube y baja",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL RADIADOR CALIENTA AIRE",
+          "clave": "El aire cercano se dilata y puede ascender.",
+          "texto": "El aire que toca una superficie caliente recibe energía, se expande y queda menos denso que el aire de alrededor. El entorno más denso lo empuja hacia arriba. Ese ascenso por diferencias de densidad forma parte de la convección natural. Las aletas del radiador ofrecen superficie para facilitar el intercambio con el aire que pasa.",
+          "detalle": "El radiador también intercambia calor por radiación con objetos y personas. Su nombre no significa que todo el trabajo lo haga de esa manera. La proporción depende del diseño y de las temperaturas, no de una regla única.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "calefaccion-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA HABITACIÓN CIERRA EL RECORRIDO",
+          "clave": "El aire caliente se mezcla; el enfriado puede descender.",
+          "texto": "El aire que asciende no se acumula indefinidamente en el techo. Se mezcla y pierde calor en superficies más frías; parte desciende y vuelve hacia el radiador. Colocarlo bajo una ventana puede reducir una corriente fría descendente y mejorar la sensación cerca de ella. No convierte el vidrio en un aislante mejor.",
+          "detalle": "Las ventanas modernas bien aisladas reducen la importancia de esa corriente. Tapar el radiador con muebles o cortinas puede estorbar la circulación. Nuestro balance usa una fuente de calor ilustrativa alimentada por bomba de calor; no supone que cada radiador produzca energía.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "calefaccion-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La colocación cambia cómo sientes el calor.",
+    "parrafos": [
+      "Aislar reduce lo que se escapa. Colocar bien el radiador ayuda a repartir lo que aportas. Son trabajos complementarios, no intercambiables."
+    ],
+    "nota": "Ventana, potencia, COP y reparto térmico ilustrativos. Balance estacionario; el circuito dibujado es cualitativo, no una simulación de la habitación."
+  },
+  "revisionEditorial": 2
 }

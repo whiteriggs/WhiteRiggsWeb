@@ -1,11 +1,68 @@
 {
-  "id": "relampago", "rotulo": "NATURALEZA", "titulo": "¿Por qué a veces hay relámpago y no se oye nada?",
-  "entradilla": "Ver el destello no asegura que el trueno llegue con suficiente nivel a tus oídos. La luz puede iluminar nubes lejanas, mientras el sonido pierde intensidad, cambia de dirección o queda tapado por el ruido cercano. No existe un tipo de rayo que deba ser silencioso.",
-  "modelo": "relampago", "color": "malva", "medidas": {"distancia": 20, "referencia": 1, "nivelReferencia": 90, "absorcion": 0.5},
-  "tanteo": {"pregunta": "Esta banda sonora mide 90 dB a 1 km y el aire atenúa 0,5 dB por cada kilómetro adicional. ¿Qué nivel queda a 20 km al contar también la dispersión esférica?", "opciones": ["Unos 54 dB", "Los mismos 90 dB", "Unos 5 dB"], "valores": [54, 90, 5], "medido": "nivel", "remate": "Quedan {nivel|1} dB. Eso no decide por sí solo si se oye: falta conocer el ruido de fondo y el espectro."},
-  "nucleo": [{"numero": 1, "nombre": "la señal se debilita", "color": "malva", "paneles": [
-    {"rotulo": "REPARTIR Y ABSORBER", "clave": "La expansión geométrica resta {perdidaGeometrica|1} dB; el aire, {perdidaAire|1} dB adicionales.", "texto": "Para una fuente puntual en campo libre, la energía se reparte sobre superficies crecientes. El nivel de presión sonora baja con el logaritmo de la distancia. Añadimos una pérdida atmosférica por unidad de trayecto, constante solo para la banda y las condiciones que imaginamos aquí.", "detalle": "La curva usa una referencia a {referencia|0} km y llega a {distancia|0} km. Los decibelios son logarítmicos: no debemos dibujarlos como barras proporcionales a la energía. La pendiente reúne dispersión geométrica y absorción, que son mecanismos diferentes.", "color": "malva", "dibujo": {"tipo": "serie", "ejeX": "Distancia (km)", "ejeY": "Nivel de presión sonora (dB)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL SONIDO TAMBIÉN SE CURVA", "clave": "Nivel final ilustrativo: {nivel|1} dB.", "texto": "La temperatura y el viento varían con la altura y cambian la velocidad efectiva del sonido. Eso puede curvar los rayos acústicos y producir zonas de sombra o favorecer llegadas lejanas. Nuestro cálculo de atenuación no incluye esa geometría: sería incorrecto deducir una frontera universal de audición.", "color": "malva", "dibujo": {"tipo": "magnitudes", "claves": ["nivel"], "rotulos": ["Nivel final: {nivel|1} dB"]}}
-  ]}],
-  "cierre": {"titulo": "No oírlo no significa que no haya trueno.", "nota": "Distancias en km, nivel de presión sonora en dB respecto a 20 µPa, absorción ilustrativa en dB/km. Fuente puntual ideal; un canal real es extenso, variable y de espectro amplio. No es una predicción de audibilidad.", "parrafos": ["Las nubes pueden hacer visible el resplandor de una descarga oculta tras el horizonte o lejos de ti. Ventanas, relieve y ruido ambiental añaden diferencias entre lo que ves y lo que escuchas."]}
+  "id": "relampago",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Cómo consigue sonar un silbato de emergencia?",
+  "revisionEditorial": 2,
+  "entradilla": "Soplas por una ranura estrecha y un silbato pequeño produce un sonido que destaca sobre una conversación. No amplifica una nota que ya estuvieras cantando. Organiza el aire que empujas para que oscile de forma repetida. En un silbato de cavidad, el borde y el hueco interior trabajan juntos para sostener esa vibración.",
+  "modelo": "naturaleza-relampago",
+  "color": "azul",
+  "medidas": {
+    "velocidad": 343,
+    "area": 0.00002,
+    "volumen": 0.000002,
+    "cuello": 0.005
+  },
+  "tanteo": {
+    "pregunta": "En una cavidad semejante, ¿qué suele hacer un volumen interior mayor?",
+    "opciones": [
+      "Favorecer un tono más grave",
+      "Producir siempre más agudos",
+      "Impedir que el aire vibre"
+    ],
+    "valores": [
+      2441.335,
+      10000,
+      0
+    ],
+    "medido": "frecuencia",
+    "remate": "Favorece un tono más grave. El ejemplo pasa de {frecuencia|0} Hz a {dobleVolumen|0} Hz al duplicar el volumen ideal."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un chorro que alimenta una cavidad",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "EL BORDE DESVÍA EL CHORRO",
+          "clave": "La ranura dirige el aire hacia un labio.",
+          "texto": "La boquilla convierte tu soplido en un chorro estrecho dirigido hacia un borde. Las variaciones de presión cerca de la cavidad ayudan a desviar ese chorro alternativamente hacia dentro y hacia fuera. Así tu esfuerzo mantiene una oscilación. No es el simple roce del aire lo que decide la nota: importa la realimentación entre chorro y cavidad.",
+          "detalle": "Hay muchos silbatos diferentes, algunos con varias cámaras o una bolita. Aquí seguimos uno de cavidad sin bolita. Sus paredes y aberturas seleccionan qué oscilación resulta más fácil de mantener.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "relampago-1"
+          }
+        },
+        {
+          "rotulo": "UN TAPÓN DE AIRE VA Y VIENE",
+          "clave": "El cuello aporta inercia; la cavidad, compresibilidad.",
+          "texto": "Imagina el aire de la abertura como un pequeño tapón que entra y sale. Al entrar comprime el aire de dentro; este lo empuja de vuelta. Ese intercambio se parece al de una masa y un muelle. Es la resonancia de Helmholtz, una aproximación útil cuando la cavidad es pequeña respecto a la longitud de onda.",
+          "detalle": "Un volumen mayor resulta menos rígido frente a la misma entrada de aire y baja la frecuencia. La longitud efectiva del cuello incluye cómo se mueve el aire junto a sus extremos.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "relampago-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El hueco también es una pieza del instrumento.",
+    "parrafos": [
+      "Soplar aporta energía; la geometría ayuda a convertirla en una nota sostenida. El cálculo no indica cuánto se oirá ni garantiza alcance en una emergencia."
+    ],
+    "nota": "Resonador de Helmholtz ideal con dimensiones ilustrativas y cuello efectivo. No predice exactamente la nota ni el nivel sonoro de un silbato comercial."
+  }
 }

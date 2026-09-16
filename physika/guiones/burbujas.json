@@ -1,12 +1,73 @@
 {
-  "id": "burbujas", "rotulo": "COTIDIANO", "titulo": "¿Las burbujas de una bebida aceleran todo el camino?",
-  "entradilla": "Una burbuja recién liberada puede acelerar hacia arriba, pero el arrastre crece con su velocidad. A menudo se acerca a una velocidad terminal. Si además absorbe gas disuelto y aumenta de tamaño, esa velocidad cambia: subir más deprisa no exige acelerar indefinidamente.",
-  "modelo": "burbujas", "color": "ambar",
-  "medidas": {"radio": 0.00003, "radioGrande": 0.000045, "densidad": 1000, "densidadGas": 1.2, "viscosidad": 0.0015},
-  "tanteo": {"pregunta": "Una burbuja de 30 micras de radio y densidad de 1,2 kg/m³ asciende en un líquido quieto de 1.000 kg/m³ y viscosidad de 1,5 mPa·s. Según el modelo de Stokes con la superficie de la burbuja inmovilizada, ¿qué velocidad terminal crees que alcanza?", "opciones": ["0,13 mm/s", "1,3 mm/s", "13 mm/s"], "valores": [0.13, 1.3, 13], "medido": "velocidadMm", "remate": "El balance ideal da {velocidadMm|2} mm/s, dentro del régimen de burbujas muy pequeñas elegido."},
-  "nucleo": [{"numero": 1, "nombre": "el arrastre alcanza al empuje", "color": "ambar", "paneles": [
-    {"rotulo": "UNA VELOCIDAD PARA CADA TAMAÑO", "clave": "Las velocidades terminales son {velocidadMm|2} y {velocidadGrandeMm|2} mm/s.", "texto": "El empuje neto depende del volumen de líquido desplazado y de la diferencia de densidades. En un flujo viscoso lento, el arrastre de una esfera con superficie inmovilizada crece con radio y velocidad. Al igualarlos, la velocidad terminal resulta proporcional al cuadrado del radio.", "detalle": "La curva compara estados terminales de distintos tamaños, no la trayectoria temporal de una burbuja. La superficie de una burbuja limpia puede moverse y ofrecer otro arrastre. Aquí suponemos que sustancias adsorbidas la inmovilizan aproximadamente, como en el límite de Stokes para una esfera rígida.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Radio de burbuja (µm)", "ejeY": "Velocidad terminal (mm/s)", "claves": [], "rotulos": []}},
-    {"rotulo": "CRECER CAMBIA EL EQUILIBRIO", "clave": "Incluso la burbuja mayor tiene Reynolds {reynolds|2} en este escenario.", "texto": "El número de Reynolds compara los efectos inerciales con los viscosos. Elegimos radios pequeños para mantenerlo bajo y justificar el balance utilizado. No aplicamos esta fórmula sin cambios a las burbujas grandes, deformables y oscilantes que también se ven en una copa.", "detalle": "El dióxido de carbono puede difundirse desde el líquido hacia la burbuja, haciendo crecer su volumen mientras sube. También cambia la presión exterior con la profundidad. Ambos efectos requieren otro modelo para saber cómo evoluciona el radio durante el recorrido.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["velocidadMm", "velocidadGrandeMm"], "rotulos": ["Pequeña: {velocidadMm|2} mm/s", "Mayor: {velocidadGrandeMm|2} mm/s"]}}
-  ]}],
-  "cierre": {"titulo": "Más grande puede significar un límite más rápido.", "nota": "Radios en m, densidades en kg/m³ y viscosidad en Pa·s; parámetros ilustrativos. Stokes con interfaz inmovilizada, fluido quieto y Reynolds menor que uno. No es una simulación de una cerveza concreta.", "parrafos": ["Una hilera de burbujas no demuestra una aceleración constante: mezcla burbujas de distinta edad, tamaño y posición. Para inferir aceleración habría que seguir la misma burbuja a lo largo del tiempo."]}
+  "id": "burbujas",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué suben las burbujas de una Coca-Cola recién servida?",
+  "revisionEditorial": 2,
+  "entradilla": "Sirves Coca-Cola y aparecen pequeñas hileras de burbujas en el vaso. Algunas parecen nacer una y otra vez en el mismo punto. El gas no está entrando desde abajo: estaba disuelto en la bebida y encuentra lugares donde formar una burbuja después de abrir el envase.",
+  "modelo": "burbujas",
+  "color": "ambar",
+  "medidas": {
+    "radio": 0.00003,
+    "radioGrande": 0.000045,
+    "densidad": 1000,
+    "densidadGas": 1.2,
+    "viscosidad": 0.0015
+  },
+  "tanteo": {
+    "pregunta": "Mientras una burbuja diminuta asciende, ¿qué se opone a su movimiento?",
+    "opciones": [
+      "Nada, acelera sin límite",
+      "El rozamiento con el líquido",
+      "Una cuerda invisible desde el fondo"
+    ],
+    "valores": [
+      0.13,
+      1.3,
+      13
+    ],
+    "medido": "velocidadMm",
+    "remate": "El líquido ofrece resistencia. Nuestro modelo de burbuja diminuta alcanza {velocidadMm|2} mm/s, no una aceleración ilimitada."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "del gas disuelto a la burbuja",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "UN LUGAR DONDE EMPEZAR",
+          "clave": "Las irregularidades del vaso facilitan que aparezca una burbuja.",
+          "texto": "Dentro del envase cerrado, la presión ayuda a mantener dióxido de carbono disuelto. Al abrir y servir, cambian las condiciones. Pequeñas cavidades o fibras pueden conservar bolsas de gas a las que se incorporan más moléculas. Por eso varias burbujas seguidas pueden salir de un mismo punto de la pared.",
+          "detalle": "Formar una burbuja nueva tiene un coste de superficie. Empezar desde una pequeña bolsa facilita ese paso: se llama nucleación. No todos los vasos producen el mismo dibujo, aunque contengan exactamente la misma bebida.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "burbujas-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "SUBIR TIENE RESISTENCIA",
+          "clave": "El empuje hacia arriba compite con el rozamiento.",
+          "texto": "La burbuja ocupa un espacio cuyo líquido pesaría mucho más que el gas. El empuje de Arquímedes la hace subir. A medida que se mueve, debe apartar líquido y encuentra resistencia. Una burbuja muy pequeña puede alcanzar pronto una velocidad a la que ambas contribuciones quedan equilibradas.",
+          "detalle": "La ley de Stokes aproxima ese régimen lento. Aquí una burbuja algo mayor asciende más deprisa, pero el cálculo no sirve para cualquier burbuja visible: tamaño, deformación, crecimiento y movimiento de la superficie cambian el resultado.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "burbujas-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El vaso ofrece salidas al gas que ya estaba dentro.",
+    "parrafos": [
+      "La presión explica por qué aparece; la flotación, por qué sube; el líquido, por qué no acelera eternamente. Son partes distintas de la misma escena."
+    ],
+    "nota": "Parámetros ilustrativos, no mediciones de Coca-Cola. Stokes supone burbujas diminutas, líquido quieto y superficie inmovilizada; no predice la espuma real."
+  }
 }

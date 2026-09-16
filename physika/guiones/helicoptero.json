@@ -1,12 +1,71 @@
 {
-  "id": "helicoptero", "rotulo": "AVIACIÓN", "titulo": "¿Para qué sirve la hélice de la cola de un helicóptero?",
-  "entradilla": "En un helicóptero convencional, el motor ejerce un par sobre el rotor principal y aparece un par de reacción sobre el fuselaje. El rotor de cola produce una fuerza lateral con brazo suficiente para compensarlo y participar en el control de guiñada.",
-  "modelo": "helicoptero", "color": "verde",
-  "medidas": {"potencia": 300000, "angular": 35, "brazo": 5},
-  "tanteo": {"pregunta": "Una fuerza lateral inicial de unos 1.714 N equilibra el par del rotor. Si duplicamos su brazo perpendicular manteniendo el mismo par, ¿qué fuerza hace falta?", "opciones": ["El doble", "La mitad: unos 857 N", "La misma: unos 1.714 N"], "valores": [3428, 857, 1714], "medido": "fuerzaDobleBrazo", "remate": "Con el doble de brazo bastan {fuerzaDobleBrazo|0} N en este equilibrio ideal. El producto fuerza por brazo debe conservarse."},
-  "nucleo": [{"numero": 1, "nombre": "equilibrar un par", "color": "verde", "paneles": [
-    {"rotulo": "EL BRAZO IMPORTA", "clave": "El rotor principal requiere {par|0} N·m; una fuerza de {fuerzaCola|0} N a {brazo|0} m lo equilibra.", "texto": "Dividimos la potencia mecánica por la velocidad angular para obtener el par. Después dividimos ese par por el brazo perpendicular de la fuerza de cola. La curva mantiene el par y cambia solo el brazo: una relación inversa, no una estimación de tamaños de rotor reales.", "detalle": "La velocidad angular del ejemplo equivale a {revoluciones|0} revoluciones por minuto. El rotor puede girar a régimen constante y seguir requiriendo par porque el aire ejerce resistencia. No hace falta que esté acelerando para que exista reacción sobre el fuselaje.", "color": "verde", "dibujo": {"tipo": "serie", "ejeX": "Brazo perpendicular (m)", "ejeY": "Fuerza lateral (N)", "claves": [], "rotulos": []}},
-    {"rotulo": "NO ES UNA EXPLICACIÓN GIROSCÓPICA", "clave": "Con doble brazo, la fuerza baja a {fuerzaDobleBrazo|0} N.", "texto": "La compensación del par de accionamiento es distinta de la precesión giroscópica. El momento angular del rotor importa en otras respuestas, pero no sustituye a este balance de fuerzas y pares. La fuerza lateral de cola también debe equilibrarse en el balance traslacional.", "detalle": "No todos los helicópteros necesitan ese rotor: rotores contrarrotatorios, configuraciones en tándem u otros sistemas pueden resolver el par de otra manera. El fuselaje y las superficies aerodinámicas también contribuyen según el régimen. Aquí aislamos una configuración convencional ideal.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["fuerzaCola", "fuerzaDobleBrazo"], "rotulos": ["Brazo dado {fuerzaCola|0} N", "Doble {fuerzaDobleBrazo|0} N"]}}
-  ]}],
-  "cierre": {"titulo": "Una fuerza distante puede equilibrar un gran par.", "nota": "Potencia mecánica del rotor principal en W, velocidad angular en rad/s y brazo perpendicular en m, ilustrativos. Régimen estacionario; sin pérdidas de transmisión, dinámica de palas ni contribución del fuselaje. No calcula potencia del rotor de cola.", "parrafos": ["Potencia y par no son sinónimos. Para una misma potencia, cambiar la velocidad angular cambia el par; para un mismo par, cambiar el brazo cambia la fuerza necesaria."]}
+  "id": "helicoptero",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Para qué sirve la pequeña hélice de la cola del helicóptero?",
+  "entradilla": "La hélice grande del helicóptero parece hacer todo el trabajo. La pequeña, situada al final de una cola larga, podría pasar por un accesorio. Pero en muchos helicópteros convencionales permite que la cabina no gire continuamente en sentido contrario al rotor principal. Su posición alejada importa tanto como la fuerza que produce.",
+  "modelo": "helicoptero",
+  "color": "verde",
+  "medidas": {
+    "potencia": 300000,
+    "angular": 35,
+    "brazo": 5
+  },
+  "tanteo": {
+    "pregunta": "Para compensar el mismo giro, si la hélice de cola estuviera al doble de distancia, ¿qué fuerza lateral necesitaría?",
+    "opciones": [
+      "El doble",
+      "La mitad",
+      "La misma"
+    ],
+    "valores": [
+      3428,
+      857,
+      1714
+    ],
+    "medido": "fuerzaDobleBrazo",
+    "remate": "La mitad: {fuerzaDobleBrazo|0} newtons en el equilibrio ideal. Un brazo mayor permite compensar el mismo par con menos fuerza."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "equilibrar un par",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "HACER GIRAR TIENE REACCIÓN",
+          "clave": "El motor empuja el rotor y recibe un giro contrario.",
+          "texto": "El motor aplica un esfuerzo de giro al rotor principal. El rotor y la transmisión ejercen una reacción sobre el resto del helicóptero. Sin una compensación adecuada, el fuselaje tendería a girar al contrario. Ese esfuerzo de giro se llama par; la conservación del momento angular ayuda a entender por qué aparece la reacción.",
+          "detalle": "El esquema separa rotor y cabina para que se vean los sentidos opuestos. No significa que ambos deban girar a la misma velocidad: tienen inercias diferentes y también intercambian fuerzas con el aire.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "helicoptero-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA COLA HACE PALANCA",
+          "clave": "Una fuerza lateral lejos del centro puede equilibrar el par.",
+          "texto": "El rotor de cola empuja aire lateralmente y recibe una fuerza contraria. Como está lejos del eje de giro del fuselaje, esa fuerza tiene un brazo grande. Es la idea de una palanca: para el mismo efecto de giro, alejar el punto de aplicación permite usar menos fuerza.",
+          "detalle": "El cálculo compara una cola de referencia con otra de doble brazo. Mantiene el mismo par y da {fuerzaDobleBrazo|0} newtons para la segunda. No predice la potencia necesaria, porque también habría que describir cómo trabajan sus palas.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "helicoptero-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La pieza pequeña controla una reacción grande.",
+    "parrafos": [
+      "No todos los helicópteros resuelven el problema con una hélice de cola: algunos usan rotores que giran en sentidos opuestos. Lo que comparten es la necesidad de gestionar las reacciones que aparecen al mover tanto aire."
+    ],
+    "nota": "Potencia, velocidad angular y brazo ilustrativos. Equilibrio estacionario sin pérdidas de transmisión ni dinámica de palas. No calcula potencia de cola ni representa un diseño comercial. Giro ampliado para explicar el mecanismo."
+  },
+  "revisionEditorial": 2
 }

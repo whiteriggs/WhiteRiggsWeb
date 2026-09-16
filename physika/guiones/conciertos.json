@@ -1,65 +1,70 @@
 {
   "id": "conciertos",
   "rotulo": "MÚSICA",
-  "titulo": "¿Por qué hay sitios de un concierto donde no se oye el bajo?",
-  "entradilla": "Porque te llega el mismo bajo dos veces, desde dos altavoces, y a veces llega al revés. Dos sonidos iguales pueden dar silencio, y eso pasa en sitios concretos del recinto.",
+  "titulo": "¿Por qué dos subwoofers pueden dejarte sin bajo en un concierto?",
+  "entradilla": "Das unos pasos en un concierto y el bombo pierde cuerpo. Los subwoofers siguen funcionando y nadie parece haber bajado el volumen. Puede que hayas cambiado la relación entre los caminos que recorre el sonido hasta ti: dos altavoces no siempre empujan el aire de tu posición en el mismo sentido.",
   "modelo": "conciertos",
   "color": "azul",
   "tanteo": {
-    "pregunta": "En un concierto, ¿cada cuánto te cruzas con un sitio donde el bajo casi no se oye?",
-    "opciones": ["Cada tres metros", "Cada veinte metros", "Cada cien metros"],
-    "valores": [3, 20, 100],
-    "medido": "huecoDelBajo",
-    "remate": "Cada {huecoDelBajo|1} metros. Un paso y medio y estás en otro concierto."
+    "pregunta": "En el mismo aire, ¿cómo es la longitud de onda de un agudo comparada con la del bajo de los subwoofers?",
+    "opciones": [
+      "Mucho más corta",
+      "Igual de larga",
+      "Mucho más larga"
+    ],
+    "valores": [
+      0.015,
+      1,
+      66.66666666666667
+    ],
+    "medido": "vecesMasJuntos",
+    "remate": "Mucho más corta. La onda aguda mide {ondaDelAgudoEnCentimetros|1} cm y la del bajo {ondaDelBajo|1} m. Eso cambia la escala del patrón, pero no fija una distancia universal entre huecos de un concierto."
   },
   "nucleo": [
     {
       "numero": 1,
-      "nombre": "dos veces lo mismo",
+      "nombre": "dos caminos hasta ti",
       "color": "azul",
       "paneles": [
         {
-          "rotulo": "SUMAR PUEDE DAR CERO",
-          "clave": "Donde una cresta se junta con un valle no queda nada.",
-          "texto": "Los dos altavoces tocan exactamente lo mismo. Pero según dónde estés, uno te llega un poco más tarde que el otro, y ese retraso decide si las dos ondas se ayudan o se anulan. La forma lenta que ves abajo no la toca nadie: aparece sola al sumar.",
-          "detalle": "El eje de abajo no es el tiempo: es el sitio donde te pones. Y las crestas van dibujadas mucho más separadas de lo que van de verdad, porque si no no se podría pintar: a 60 hercios habría que dibujar cientos de ellas para ver un solo hueco.",
+          "rotulo": "LA MISMA NOTA, DISTINTO RECORRIDO",
+          "clave": "El retraso depende de dónde estén altavoces y oyente.",
+          "texto": "Cada subwoofer alterna pequeñas compresiones y depresiones del aire. Si reproducen la misma nota, esas variaciones se repiten con un ritmo común. Sin embargo, el sonido que recorre más distancia llega más tarde. Al caminar cambias la diferencia de caminos y, con ella, qué parte de cada vibración coincide en tu posición.",
+          "detalle": "La relación entre los momentos de ambas vibraciones se llama fase. No basta conocer la frecuencia para dibujar el mapa completo: también hacen falta posiciones, orientación, niveles, ajustes del equipo y, en interiores, las reflexiones de la sala.",
           "color": "azul",
           "dibujo": {
-            "tipo": "onda",
-            "claves": ["ciclosCerca", "ciclosLejos"],
-            "rotulos": ["un altavoz", "el otro", "lo que oyes"]
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "conciertos-1",
+            "claves": [],
+            "rotulos": []
           }
         },
         {
-          "rotulo": "POR QUÉ SOLO LE PASA AL BAJO",
-          "clave": "Un bajo de 60 hercios mide {ondaDelBajo|1} metros, así que los huecos están cada {huecoDelBajo|1} metros.",
-          "texto": "Eso es andar tres pasos y pasar de oír el bajo a no oírlo. Un agudo de 4.000 hercios mide {ondaDelAgudoEnCentimetros|1} centímetros, y sus huecos están cada {huecoDelAgudoEnCentimetros|1}: tan juntos que con mover la cabeza ya sales de uno, y como además tu cabeza es más grande que ese hueco, nunca te pilla entero.",
-          "detalle": "Por eso el problema del bajo en una sala no se arregla con más potencia: los huecos siguen donde estaban. Se arregla moviendo los altavoces, no subiendo el volumen. Y por eso el mismo concierto suena distinto según la fila.",
+          "rotulo": "SUMAR NO SIEMPRE REFUERZA",
+          "clave": "Una compresión puede encontrarse con una depresión.",
+          "texto": "Si ambas llegadas tienen igual amplitud y están en oposición, sus cambios de presión se compensan. Es interferencia destructiva. La energía no desaparece de todo el recinto: la distribución espacial cambia y en otros lugares puede haber refuerzo. Con niveles distintos la cancelación es parcial, como suele ocurrir fuera del ejemplo ideal.",
+          "detalle": "También les pasa a frecuencias agudas, aunque sus patrones espaciales son más pequeños. Subir ambos altavoces no corrige por sí solo una oposición perfecta. Colocación, retardos y tratamiento acústico pueden importar más que añadir potencia sin revisar el montaje.",
           "color": "azul",
           "dibujo": {
-            "tipo": "escala",
-            "claves": ["huecoDelAgudoEnCentimetros", "ondaDelBajo", "huecoDelBajo"],
-            "rotulos": ["hueco de un agudo", "onda del bajo", "hueco del bajo"],
-            "pies": ["{huecoDelAgudoEnCentimetros|1} cm", "{ondaDelBajo|1} m", "{huecoDelBajo|1} m"],
-            "marcas": [
-              { "valor": 0.1, "texto": "10 cm" },
-              { "valor": 1, "texto": "1 m" }
-            ]
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "conciertos-2",
+            "claves": [],
+            "rotulos": []
           }
         }
       ]
     }
   ],
   "cierre": {
-    "titulo": "No es el equipo. Es dónde estás.",
-    "nota": "Sonido a 343 metros por segundo, dos fuentes tocando lo mismo y sin contar los rebotes de las paredes.",
+    "titulo": "El lugar donde escuchas también mezcla.",
     "parrafos": [
-      "Un agudo cabe {vecesMasJuntos|entera} veces dentro de un bajo, y por eso el bajo es el único que tiene huecos lo bastante grandes como para que te quepa el cuerpo dentro de uno.",
-      "Si alguna vez has dado dos pasos en un concierto y de golpe ha vuelto el bombo, no te lo has imaginado: has salido del hueco."
-    ]
+      "Si vuelve el bombo al moverte, puede haber cambiado la suma de llegadas. No significa que alguien haya tocado la mesa de sonido."
+    ],
+    "nota": "Dos fuentes coherentes idealizadas. Los dibujos no predicen un recinto; las longitudes calculadas no fijan una separación universal entre mínimos."
   },
   "puente": {
     "hacia": "ruido",
-    "frase": "Esto que en un concierto es una molestia, en unos auriculares es el producto: si sabes fabricar la onda que llega justo al revés, el silencio deja de ser un accidente del sitio donde te pones."
-  }
+    "frase": "Los auriculares con cancelación también aprovechan la oposición entre variaciones de presión, pero intentan controlarla justo junto al oído."
+  },
+  "revisionEditorial": 2
 }

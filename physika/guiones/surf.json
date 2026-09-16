@@ -1,12 +1,71 @@
 {
-  "id": "surf", "rotulo": "DEPORTE", "titulo": "¿Por qué una ola cambia al acercarse a la orilla?",
-  "entradilla": "La ola empieza a notar el fondo antes de romper. Cuando la profundidad es pequeña frente a la longitud de onda, la velocidad de propagación depende sobre todo de esa profundidad. Al entrar en menos agua se frena, acorta su longitud y puede hacerse más empinada.",
-  "modelo": "surf", "color": "azul",
-  "medidas": {"profundidad": 3, "profundidadSomera": 0.75, "periodo": 14},
-  "tanteo": {"pregunta": "En el límite de aguas someras, si la profundidad queda en la cuarta parte, ¿qué porcentaje de velocidad de propagación queda?", "opciones": ["25 %", "50 %", "75 %"], "valores": [25, 50, 75], "medido": "porcentaje", "remate": "Queda el {porcentaje|0} %: la velocidad depende de la raíz cuadrada de la profundidad, no de la profundidad directamente."},
-  "nucleo": [{"numero": 1, "nombre": "el fondo cambia la onda", "color": "azul", "paneles": [
-    {"rotulo": "MENOS PROFUNDIDAD, MENOS RAPIDEZ", "clave": "A {profundidad|2} m: {rapidezProfunda|2} m/s. A {profundidadSomera|2} m: {rapidezSomera|2} m/s.", "texto": "La aproximación de onda larga da la raíz de gravedad por profundidad. La gráfica recorre las profundidades de este ejemplo. Representa rapidez de propagación, no la velocidad con que una misma porción de agua viaja hacia la playa.", "detalle": "Para contrastar el supuesto, calculamos también la longitud de onda como rapidez por periodo. En el extremo menos somero, la profundidad es {relacion|3} veces la longitud. La aproximación funciona cuando esa proporción es pequeña; no describe oleaje arbitrario en aguas profundas.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Profundidad (m)", "ejeY": "Propagación (m/s)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL PERIODO SE CONSERVA APROXIMADAMENTE", "clave": "La longitud pasa de {longitudProfunda|1} m a {longitudSomera|1} m.", "texto": "Sobre un fondo estacionario, una secuencia regular conserva aproximadamente el ritmo con que llegan las crestas. Si se propagan más despacio, quedan más cerca unas de otras. La evolución de la altura necesita además un balance de energía y conocer la refracción y las pérdidas.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["longitudProfunda", "longitudSomera"], "rotulos": ["Antes: {longitudProfunda|1} m", "Después: {longitudSomera|1} m"]}}
-  ]}],
-  "cierre": {"titulo": "Frenarse ayuda a empinarse, pero no fija dónde rompe.", "nota": "Profundidades en m y periodo en s, escenarios ilustrativos. Teoría lineal de ondas de gravedad en aguas someras, sin corriente, disipación ni variación de periodo. La gráfica no simula una ola rompiendo.", "parrafos": ["La rotura depende de altura, pendiente del fondo, forma de la cresta y corrientes. No existe un punto deducible solo de estas profundidades. El cálculo explica el cambio de propagación previo, no predice una zona segura para practicar surf."]}
+  "id": "surf",
+  "rotulo": "DEPORTE",
+  "titulo": "Tabla de surf: ¿por qué cambia la ola al llegar a la orilla?",
+  "revisionEditorial": 2,
+  "modelo": "surf",
+  "color": "verde",
+  "medidas": {
+    "profundidad": 3,
+    "profundidadSomera": 0.75,
+    "periodo": 14
+  },
+  "entradilla": "Desde una tabla de surf se nota que una ola no conserva la misma forma al acercarse a la playa. El fondo, que parecía lejano, empieza a importar. Antes de hablar del deslizamiento de la tabla, conviene seguir el movimiento de la cresta: puede avanzar a distinta rapidez aunque no haya aparecido un viento nuevo.",
+  "tanteo": {
+    "pregunta": "En el límite de aguas someras, cuando disminuye la profundidad, la cresta avanza…",
+    "opciones": [
+      "Más deprisa",
+      "Más despacio",
+      "Siempre a la misma rapidez"
+    ],
+    "valores": [
+      25,
+      50,
+      75
+    ],
+    "medido": "porcentaje",
+    "remate": "Más despacio. En las profundidades comparadas queda el {porcentaje|0} % de la rapidez de propagación inicial."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "cuando el fondo cuenta",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA OLA NO ES UN BLOQUE DE AGUA",
+          "clave": "La forma avanza y el agua se mueve localmente.",
+          "texto": "Una cresta puede viajar mientras muchas partículas de agua realizan movimientos locales, aproximadamente oscilatorios en una ola pequeña. No es una montaña sólida que traslada toda su agua desde mar adentro hasta la arena. Hablamos de una onda: una perturbación que se propaga transportando energía y movimiento.",
+          "detalle": "El primer panel mantiene un punto de referencia cerca de la tabla para distinguir el paso de la cresta del movimiento local. Cerca de la rotura aparecen corrientes y movimientos más complejos. Nuestro dibujo no convierte la oscilación ideal en una descripción de toda una playa.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "surf-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "MENOS PROFUNDIDAD, MENOS RAPIDEZ",
+          "clave": "Las crestas se acercan en el límite somero.",
+          "texto": "Cuando la profundidad es pequeña comparada con la longitud de onda, la rapidez depende de la raíz cuadrada de esa profundidad. Es el régimen de aguas someras. Si el periodo se mantiene, una cresta que recorre menos distancia entre llegadas deja también una longitud de onda menor.",
+          "detalle": "El segundo panel muestra el fondo subiendo y las crestas más próximas. No calcula cuándo rompe la ola ni la velocidad de la tabla sobre ella. La rotura requiere considerar forma, amplitud y otros procesos que no están en esta relación ideal.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "surf-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La orilla cambia la ola antes de que llegue a la arena.",
+    "nota": "Ondas pequeñas en aguas someras; no modela rotura, corrientes ni movimiento de la tabla.",
+    "parrafos": [
+      "La tabla hace evidente un cambio que empieza bajo la superficie: el fondo limita el movimiento y altera la propagación. Seguir las crestas, en vez de imaginar un bloque de agua viajero, permite entender por qué su separación y rapidez cambian al acercarse a tierra."
+    ]
+  }
 }

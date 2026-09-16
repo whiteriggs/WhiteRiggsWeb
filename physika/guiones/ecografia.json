@@ -1,8 +1,8 @@
 {
   "id": "ecografia",
   "rotulo": "MEDICINA",
-  "titulo": "¿Cómo se ve un bebé con sonido?",
-  "entradilla": "Con eco, y con sonido tan agudo que ningún animal lo oye. A {frecuenciaEnMegahercios|0} millones de hercios la onda mide {ondaEnMilimetros|2} milímetros, y una onda solo distingue cosas de su tamaño o mayores.",
+  "titulo": "Ecógrafo: ¿cómo dibuja una imagen con sonido?",
+  "revisionEditorial": 2,
   "modelo": "eco",
   "color": "verde",
   "medidas": {
@@ -12,61 +12,62 @@
     "frecuenciaComparada": 20000,
     "repeticion": 4000
   },
+  "entradilla": "Una sonda se desliza sobre la piel y una imagen aparece al instante. El gel no es un detalle decorativo: ayuda a evitar una capa de aire que devolvería gran parte del sonido antes de entrar. El ecógrafo envía pulsos que no podemos oír y espera las respuestas de las fronteras interiores.",
   "tanteo": {
-    "pregunta": "¿Cuál es el detalle más pequeño que puede distinguir una ecografía normal?",
-    "opciones": ["Una décima de milímetro", "Un tercio de milímetro", "Un centímetro"],
-    "valores": [0.1, 0.31, 10],
+    "pregunta": "Al usar un sonido de frecuencia más alta en el mismo medio, ¿cómo cambia su longitud de onda?",
+    "opciones": [
+      "Se hace más larga",
+      "Se hace más corta",
+      "No cambia"
+    ],
+    "valores": [
+      0.1,
+      0.31,
+      10
+    ],
     "medido": "ondaEnMilimetros",
-    "remate": "{ondaEnMilimetros|2} milímetros. No es una limitación del aparato: es el tamaño de la onda, y con eso no se puede negociar."
+    "remate": "Más corta. En el ejemplo mide {ondaEnMilimetros|2} mm. Eso ayuda a distinguir detalles, pero no fija por sí solo la resolución del aparato."
   },
   "nucleo": [
     {
       "numero": 1,
-      "nombre": "ver es medir tiempos",
+      "nombre": "escuchar las fronteras",
       "color": "verde",
       "paneles": [
         {
-          "rotulo": "LA IMAGEN ES UN CRONÓMETRO",
-          "clave": "El sonido va a {velocidad|0} metros por segundo dentro de ti. De quince centímetros de hondo, el eco tarda {retrasoEnMilisegundos|2} milisegundos en volver.",
-          "texto": "Eso es todo el aparato: manda un chasquido, cuenta lo que tarda en volver el eco, y de ese tiempo deduce la profundidad. Repítelo unos miles de veces por segundo, barriendo en abanico, y tienes una imagen.",
-          "detalle": "El eco no nace en los órganos sino en las fronteras entre ellos, donde cambia la densidad. Por eso una ecografía enseña contornos y no rellenos, y por eso el hueso y el aire salen como una pared blanca: ahí el salto es tan bestia que rebota casi todo y detrás no queda nada que mirar.",
+          "rotulo": "LA SONDA ENVÍA Y ESCUCHA",
+          "clave": "Una frontera devuelve parte del pulso.",
+          "texto": "Dentro de la sonda, elementos que cambian de forma con una señal eléctrica empujan el medio. También funcionan al revés: una presión recibida produce una señal. Es el efecto piezoeléctrico. El pulso atraviesa tejidos y una parte regresa cuando encuentra cambios en sus propiedades acústicas.",
+          "detalle": "No todas las fronteras reflejan igual. Importan las propiedades de ambos lados y la orientación de la superficie. El esquema muestra un eco sencillo que sale y regresa al mismo lugar, no una onda atravesando el cuerpo sin encontrar ninguna pérdida.",
           "color": "verde",
           "dibujo": {
-            "tipo": "eco",
-            "rotulos": ["la sonda", "a 15 cm", "{retrasoEnMilisegundos|2} ms", "el aparato no mide hondo: mide tiempo"]
+            "tipo": "saludDeporteRenovado",
+            "trazado": "ecografia-1",
+            "claves": [],
+            "rotulos": []
           }
         },
         {
-          "rotulo": "LO FINO Y LO HONDO SE PELEAN",
-          "clave": "Subir la frecuencia afina la imagen y la deja más corta de alcance. Bajarla llega más hondo y borrosa.",
-          "texto": "Por eso hay varias sondas y el médico las cambia. Para mirar una tiroides, que está a un dedo de la piel, se sube la frecuencia y se ve un detalle finísimo. Para mirar un hígado, hay que bajarla y conformarse.",
-          "detalle": "Es el mismo trato que paga el wifi entre sus dos bandas, y por la misma razón: la absorción del tejido crece casi en proporción directa con la frecuencia. Lo agudo se muere antes. Lo que cambia de una cosa a otra es el material, no la regla.",
+          "rotulo": "EL RETRASO SE CONVIERTE EN PROFUNDIDAD",
+          "clave": "El sonido hace el viaje de ida y vuelta.",
+          "texto": "Un eco que tarda más suele venir de una frontera más lejana. Para situarla, el equipo combina ese tiempo con una velocidad del sonido estimada. Hay que contar ambos trayectos: usar todo el retraso como si fuera solo la ida colocaría la frontera demasiado lejos.",
+          "detalle": "La frecuencia influye en la longitud de onda, pero también cuentan la duración del pulso, el enfoque y el procesamiento. Por eso una onda corta no garantiza cualquier detalle. El segundo panel compara retornos de dos profundidades y conserva quieta la sonda.",
           "color": "verde",
           "dibujo": {
-            "tipo": "escala",
-            "claves": ["ondaComparada"],
-            "rotulos": ["el límite de tu oído"],
-            "marcas": [
-              {"valor": 0.000308, "texto": "la onda de la ecografía"},
-              {"valor": 0.001, "texto": "un milímetro"},
-              {"valor": 0.077, "texto": "el límite de tu oído"},
-              {"valor": 1, "texto": "un metro"}
-            ]
+            "tipo": "saludDeporteRenovado",
+            "trazado": "ecografia-2",
+            "claves": [],
+            "rotulos": []
           }
         }
       ]
     }
   ],
   "cierre": {
-    "titulo": "Doscientas cincuenta veces más agudo de lo que puede oír nadie.",
-    "nota": "Velocidad media del sonido en tejido blando, 1.540 metros por segundo. Las sondas habituales trabajan entre 2 y 15 megahercios según lo hondo que haya que mirar.",
+    "titulo": "Un eco con dirección puede convertirse en imagen.",
+    "nota": "Medio uniforme a 1540 m/s. La longitud de onda no equivale a la resolución clínica.",
     "parrafos": [
-      "Tu oído se planta en veinte mil hercios y ahí se acaba el mundo audible. La ecografía trabaja a {frecuencia|0}, que es {vecesMasAgudo|0} veces por encima. No es sonido inaudible: es sonido de otra escala.",
-      "Y por eso se puede mirar a un bebé con esto y no con rayos X. Aquí no hay nada que arrancar de su sitio: es presión, empujando y soltando muy deprisa. La única energía en juego es la de un empujón."
+      "La sonda repite esta conversación en muchas direcciones. Cada respuesta aporta posición e intensidad, y juntas forman la imagen. El aparato no reconoce un órgano por su sonido: organiza ecos para que veamos las fronteras que los produjeron."
     ]
-  },
-  "puente": {
-    "hacia": "rayosx",
-    "frase": "Dos formas de mirar dentro de alguien sin abrirlo. Esta cuenta ecos que vuelven; la otra cuenta lo que consigue atravesar y no vuelve nunca."
   }
 }

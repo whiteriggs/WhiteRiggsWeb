@@ -1,12 +1,73 @@
 {
-  "id": "saltoaltura", "rotulo": "DEPORTE", "titulo": "¿Puede el centro de masas pasar por debajo del listón?",
-  "entradilla": "Sí, ciertas configuraciones arqueadas pueden situar el centro de masas por debajo del listón mientras las partes del cuerpo lo franquean sucesivamente. Eso no significa que todo el cuerpo pase por debajo. El centro de masas es una media de posiciones y puede quedar fuera del volumen corporal.",
-  "modelo": "saltoaltura", "color": "verde",
-  "medidas": {"masaTronco": 40, "alturaTronco": 2.2, "masaResto": 30, "alturaResto": 1.8, "liston": 2.1},
-  "tanteo": {"pregunta": "En el esquema, 40 kg están centrados a 2,20 m y otros 30 kg a 1,80 m. ¿Dónde queda el centro de masas total?", "opciones": ["A 1,80 m", "A unos 2,03 m", "A 2,20 m"], "valores": [1.8, 2.03, 2.2], "medido": "centro", "remate": "Queda a {centro|3} m, {margenEnCentimetros|1} cm por debajo del listón del ejemplo, aunque parte del cuerpo está por encima."},
-  "nucleo": [{"numero": 1, "nombre": "una media no es una pieza del cuerpo", "color": "verde", "paneles": [
-    {"rotulo": "PONDERAR POR LA MASA", "clave": "La altura media ponderada es {centro|3} m.", "texto": "Multiplicamos cada masa por la altura de su propio centro y dividimos la suma entre la masa total. Las barras comparten una referencia vertical común. Son alturas de centros, no una silueta ni un diagrama capaz de demostrar por sí solo que se evita el listón.", "detalle": "Las partes con más masa influyen más en la media. Por eso no basta con promediar las dos alturas sin pesos. En un cuerpo continuo se suman muchas porciones, pero el principio es el mismo que en este esquema de dos grupos.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["alturaTronco", "alturaResto", "centro"], "rotulos": ["Grupo alto: {alturaTronco|2} m", "Grupo bajo: {alturaResto|2} m", "Centro: {centro|2} m"]}},
-    {"rotulo": "ARQUEARSE NO ELEVA LA TRAYECTORIA", "clave": "El listón está a {liston|2} m y supera la media en {margenEnCentimetros|1} cm.", "texto": "Una vez en vuelo, y despreciando el aire, los movimientos internos no cambian la trayectoria balística del centro de masas. Sí redistribuyen el cuerpo a su alrededor. Piernas, tronco y cabeza pueden cruzar el plano del listón en momentos distintos.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["margenEnCentimetros"], "rotulos": ["Listón sobre CM: {margenEnCentimetros|1} cm"]}}
-  ]}],
-  "cierre": {"titulo": "Pasa el cuerpo; su media puede quedar más baja.", "nota": "Masas de los dos grupos en kg y alturas de sus centros y del listón en m, desde un mismo origen. Distribución ilustrativa, no medición antropométrica ni reconstrucción de un salto. Definición del centro de masas.", "parrafos": ["La media por debajo no garantiza un salto válido: hacen falta posiciones horizontales, forma corporal y evolución temporal para comprobar que ninguna parte derriba el listón. Tampoco sucede así en toda ejecución de la técnica arqueada."]}
+  "id": "saltoaltura",
+  "rotulo": "DEPORTE",
+  "titulo": "Listón de salto de altura: ¿puede pasar el cuerpo con su centro por debajo?",
+  "revisionEditorial": 2,
+  "modelo": "saltoaltura",
+  "color": "verde",
+  "medidas": {
+    "masaTronco": 40,
+    "alturaTronco": 2.2,
+    "masaResto": 30,
+    "alturaResto": 1.8,
+    "liston": 2.1
+  },
+  "entradilla": "En un salto de altura, la espalda puede arquearse sobre el listón mientras otras partes del cuerpo quedan más abajo. A simple vista parece que todo tuviera que subir por encima a la vez. Pero el centro de masas no es una pieza rígida escondida en el torso: depende de cómo se distribuye todo el cuerpo.",
+  "tanteo": {
+    "pregunta": "Si parte del cuerpo pasa por encima y otra parte queda por debajo, el centro de masas puede estar…",
+    "opciones": [
+      "Obligatoriamente en el punto más alto",
+      "Por debajo del listón",
+      "Siempre dentro del torso"
+    ],
+    "valores": [
+      1.8,
+      2.03,
+      2.2
+    ],
+    "medido": "centro",
+    "remate": "Puede quedar debajo. En el reparto ideal está a {centro|3} m, {margenEnCentimetros|1} cm bajo el listón."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un centro que depende de todos",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "EL CUERPO SE REPARTE ALREDEDOR",
+          "clave": "No hace falta que todas las partes tengan la misma altura.",
+          "texto": "Al arquearse, distintas zonas ocupan alturas diferentes. Una parte puede salvar el listón mientras otra todavía está por un lado y otra ya ha pasado. El primer panel muestra esa geometría con una silueta continua y una referencia horizontal fija. No es un bloque que tenga que elevarse entero por encima.",
+          "detalle": "El dibujo representa una postura idealizada, no una técnica de salto. En un movimiento real las partes cambian de posición durante todo el cruce. Aquí detenemos una instantánea para preguntar dónde queda el centro del reparto, sin simular la carrera ni el despegue.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "saltoaltura-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL CENTRO ES UNA MEDIA CON PESOS",
+          "clave": "Las zonas con más masa cuentan más.",
+          "texto": "Para encontrar el centro de masas, cada posición contribuye según cuánta masa contiene. No basta con promediar dos alturas sin saber sus masas. Es una media ponderada. Incluso puede caer fuera del material del objeto, como ocurre con el centro de un aro: el punto central no necesita estar ocupado.",
+          "detalle": "El segundo panel separa dos grupos: uno baja y el otro permanece fijo. Su centro común baja también, siempre más cerca del grupo más pesado. La posición final corresponde a las masas y alturas del modelo, no a la anatomía ni a la marca deportiva de una persona.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "saltoaltura-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Salvar el listón no obliga a subir todo el centro por encima.",
+    "nota": "Centro de masas de dos grupos idealizados; sin dinámica ni predicción de rendimiento.",
+    "parrafos": [
+      "El listón comprueba si lo toca alguna parte del cuerpo, no dónde está una media matemática. Separar ambas cosas resuelve la aparente paradoja. La forma y la postura pueden permitir que el cuerpo rodee una referencia mientras su centro permanece a otra altura."
+    ]
+  }
 }

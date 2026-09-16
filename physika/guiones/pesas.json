@@ -1,12 +1,72 @@
 {
-  "id": "pesas", "rotulo": "DEPORTE", "titulo": "¿Por qué cuesta más sostener una pesa lejos del cuerpo?",
-  "entradilla": "La pesa no aumenta de masa al alejarla. Lo que cambia es su capacidad de hacer girar el brazo alrededor de una articulación. Una misma fuerza aplicada con mayor brazo de palanca exige un momento compensador mayor, aunque la carga permanezca completamente quieta.",
-  "modelo": "pesas", "color": "ambar",
-  "medidas": {"masa": 5, "brazoCerca": 0.1, "brazoLejos": 0.4, "brazoMusculo": 0.04},
-  "tanteo": {"pregunta": "Con el mismo peso, pasar de 10 a 40 cm de brazo perpendicular multiplica el momento por…", "opciones": ["Uno", "Dos", "Cuatro"], "valores": [1, 2, 4], "medido": "factor", "remate": "El momento se multiplica por {factor|0}, aunque el peso sigue siendo {peso|1} N."},
-  "nucleo": [{"numero": 1, "nombre": "el peso hace palanca", "color": "ambar", "paneles": [
-    {"rotulo": "NO ES SOLO CUÁNTO PESA", "clave": "Cerca: {parCerca|2} N·m. Lejos: {parLejos|2} N·m.", "texto": "El momento de una fuerza es su magnitud multiplicada por la distancia perpendicular desde el eje hasta su línea de acción. Las barras comparan momentos, no fuerzas. Alejar la pesa horizontalmente aumenta esa distancia; moverla directamente sobre la línea del eje no tiene el mismo efecto.", "detalle": "En nuestro ejemplo el brazo de palanca ya es la distancia perpendicular. Si solo conociéramos la longitud del brazo anatómico, habría que incluir la orientación: la longitud por sí sola no determina el momento. Tampoco estamos incluyendo todavía el peso del propio brazo.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["parCerca", "parLejos"], "rotulos": ["Cerca: {parCerca|2} N·m", "Lejos: {parLejos|2} N·m"]}},
-    {"rotulo": "EL MÚSCULO TAMBIÉN TIENE SU PALANCA", "clave": "Un único actuador con ese brazo perpendicular necesitaría {fuerzaMuscular|0} N para compensar el caso lejano.", "texto": "Equilibramos momentos: fuerza del actuador por su brazo igual al momento de la pesa. Un brazo interno pequeño requiere una fuerza grande. La reacción en la articulación también forma parte del equilibrio de fuerzas, aunque no añade momento si pasa por el eje ideal.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["fuerzaMuscular"], "rotulos": ["Actuador ideal: {fuerzaMuscular|0} N"]}}
-  ]}],
-  "cierre": {"titulo": "Lo difícil está en el momento, no en un peso nuevo.", "nota": "Masa en kg y brazos de palanca perpendiculares en m. Modelo estático ilustrativo con un solo actuador. El brazo muscular escogido no es una medida anatómica individual; se omiten peso del miembro, cocontracción y tejidos.", "parrafos": ["Sostener una carga inmóvil no realiza trabajo mecánico sobre ella, pero los músculos consumen energía. Esta cuenta de equilibrio no prescribe ejercicios, cargas ni posiciones y no calcula la tolerancia de una articulación."]}
+  "id": "pesas",
+  "rotulo": "DEPORTE",
+  "titulo": "Mancuerna: ¿por qué pesa igual pero cuesta más lejos del codo?",
+  "revisionEditorial": 2,
+  "modelo": "pesas",
+  "color": "verde",
+  "medidas": {
+    "masa": 5,
+    "brazoCerca": 0.1,
+    "brazoLejos": 0.4,
+    "brazoMusculo": 0.04
+  },
+  "entradilla": "Una mancuerna no cambia de masa cuando la alejas de una articulación. Sin embargo, sostenerla puede exigir un esfuerzo muy distinto. Para entender la diferencia, imagina una puerta: empujar cerca de la bisagra no produce el mismo giro que empujar en el tirador. Con el peso también importa dónde actúa respecto al apoyo.",
+  "tanteo": {
+    "pregunta": "Al alejar la misma mancuerna horizontalmente del codo, su tendencia a hacer girar el antebrazo…",
+    "opciones": [
+      "Disminuye",
+      "No cambia",
+      "Aumenta"
+    ],
+    "valores": [
+      1,
+      2,
+      4
+    ],
+    "medido": "factor",
+    "remate": "Aumenta. En las distancias del ejemplo, el momento se multiplica por {factor|0}, aunque el peso sigue siendo {peso|1} N."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el peso tiene brazo",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA DISTANCIA HASTA EL APOYO IMPORTA",
+          "clave": "El mismo peso puede producir distinto giro.",
+          "texto": "La gravedad tira hacia abajo de la mancuerna. Si su línea de acción pasa lejos del codo, produce una tendencia mayor a girar el antebrazo. Esa tendencia se llama momento de fuerza. Se calcula usando la fuerza y la distancia perpendicular desde el apoyo hasta su línea de acción.",
+          "detalle": "El primer panel compara posiciones cerca y lejos con la misma mancuerna, sin agrandar el peso para explicar el esfuerzo. La distancia importante no es cualquier longitud dibujada sobre el brazo, sino la separación perpendicular respecto a la dirección de la fuerza.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "pesas-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL MÚSCULO TAMBIÉN TIENE SU PALANCA",
+          "clave": "Un brazo pequeño puede exigir una fuerza grande.",
+          "texto": "Para sostener la postura, otros esfuerzos tienen que compensar el momento de la mancuerna. Un músculo actúa mediante su propio brazo de palanca, que puede ser mucho más corto. En una representación sencilla, eso exige una fuerza muscular mayor que el peso externo. Es equilibrio de momentos, no un aumento de la masa.",
+          "detalle": "El segundo panel acerca una inserción ideal al apoyo y alarga la flecha de fuerza necesaria. No afirma que una inserción real se deslice por el hueso. El cuerpo tiene varias estructuras; esta palanca no calcula un ejercicio ni recomienda posturas. Peso externo y fuerza interna no son sinónimos.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "pesas-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La balanza mide masa; la articulación también nota la geometría.",
+    "nota": "Palanca estática ideal con brazos perpendiculares. Sin biomecánica completa ni recomendaciones de ejercicio.",
+    "parrafos": [
+      "Alejar una carga cambia el problema aunque la mancuerna sea exactamente la misma. El codo funciona como referencia para comparar sus momentos. La próxima vez que veas una herramienta con mango largo, reconocerás la misma idea trabajando fuera del gimnasio: la distancia puede multiplicar una tendencia a girar."
+    ]
+  }
 }

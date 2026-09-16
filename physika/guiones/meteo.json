@@ -1,12 +1,72 @@
 {
-  "id": "meteo", "rotulo": "AVIACIÓN", "titulo": "¿Cómo ve una tormenta de noche el radar del avión?",
-  "entradilla": "Envía microondas y escucha la pequeña parte que vuelve desde gotas y partículas de hielo. No necesita luz visible. El eco informa sobre precipitación, pero no es una fotografía directa del viento ni un detector universal de turbulencia en aire claro.",
-  "modelo": "meteo", "color": "azul",
-  "medidas": {"numero": 100, "diametro": 1, "diametroGrande": 2, "distancia": 60000},
-  "tanteo": {"pregunta": "En el régimen de Rayleigh, con el mismo número de gotas, duplicar el diámetro multiplica la reflectividad por…", "opciones": ["Ocho", "Sesenta y cuatro", "Dos"], "valores": [8, 64, 2], "medido": "razon", "remate": "Por {razon|0}. El diámetro elevado a la sexta potencia da mucho peso a las gotas grandes."},
-  "nucleo": [{"numero": 1, "nombre": "escuchar la precipitación", "color": "azul", "paneles": [
-    {"rotulo": "UN ECO MUY SENSIBLE AL TAMAÑO", "clave": "La reflectividad pasa de {reflectividad|0} a {reflectividadGrande|0} mm⁶/m³.", "texto": "La reflectividad Z suma el diámetro a la sexta potencia de las gotas por unidad de volumen. La curva supone gotas del mismo tamaño y concentración constante. Si aumentamos el diámetro también aumenta el agua total: no estamos comparando dos nubes con igual contenido de agua.", "detalle": "La relación sencilla requiere partículas pequeñas respecto a la longitud de onda. El hielo, el granizo, las formas no esféricas y la mezcla de tamaños complican el eco. La reflectividad tampoco equivale a potencia recibida sin tener en cuenta distancia, antena, pérdidas y calibración.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Diámetro de gota (mm)", "ejeY": "Reflectividad Z (mm⁶/m³)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL TIEMPO LOCALIZA", "clave": "El eco de {distancia|0} m vuelve en {microsegundos|0} microsegundos en la aproximación del vacío.", "texto": "La distancia sale del tiempo de ida y vuelta multiplicado por la velocidad de propagación y dividido entre dos. La intensidad aporta otra información: el ejemplo de gotas grandes equivale a {decibelios|1} dBZ, una escala logarítmica de reflectividad.", "detalle": "Un eco fuerte no permite deducir por sí solo toda la dinámica del aire. Algunos sistemas Doppler estiman movimiento y dispersión de velocidades cuando hay blancos adecuados. La ausencia de precipitación detectable no garantiza aire tranquilo; además, una zona intensa puede atenuar y ocultar lo que hay detrás.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["microsegundos", "decibelios"], "rotulos": ["Ida y vuelta {microsegundos|0} µs", "Reflectividad {decibelios|1} dBZ"]}}
-  ]}],
-  "cierre": {"titulo": "Ver gotas no es ver todo el aire.", "nota": "Concentración en gotas/m³, diámetros en mm, alcance en m. Ejemplo monodisperso de reflectividad de Rayleigh, no conversión a lluvia ni imagen de un radar concreto. dBZ usa como referencia 1 mm⁶/m³. Velocidad de la luz en vacío para el retardo.", "parrafos": ["El radar combina localización temporal y dispersión electromagnética. Interpretar una tormenta exige información adicional; aquí se explica la medición, no cómo utilizarla para operar un vuelo."]}
+  "id": "meteo",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Cómo encuentra lluvia el radar del avión en plena noche?",
+  "entradilla": "Por la ventanilla solo se ve oscuridad, pero en la cabina aparece una zona de precipitación por delante. El radar no necesita iluminar las nubes con luz visible. Envía una señal de radio y escucha una pequeña parte que vuelve. Lo importante es quién devuelve esa señal y cuánto tarda en regresar.",
+  "modelo": "meteo",
+  "color": "azul",
+  "medidas": {
+    "numero": 100,
+    "diametro": 1,
+    "diametroGrande": 2,
+    "distancia": 60000
+  },
+  "tanteo": {
+    "pregunta": "Con el mismo número de gotas, si cada gota se hace el doble de grande, ¿el eco se mantiene parecido?",
+    "opciones": [
+      "Sí, prácticamente igual",
+      "No, aumenta muchísimo",
+      "No, se debilita"
+    ],
+    "valores": [
+      1,
+      64,
+      0.5
+    ],
+    "medido": "razon",
+    "remate": "Aumenta por un factor {razon|0} en el régimen del modelo. No significa que llueva esa misma proporción más."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "escuchar la precipitación",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "EL PULSO VA Y VUELVE",
+          "clave": "La distancia se obtiene del retraso del eco.",
+          "texto": "Una antena situada detrás del morro envía pulsos hacia una región del cielo. Las gotas dispersan la señal en muchas direcciones y una fracción regresa. Al medir el tiempo de ida y vuelta se estima la distancia. Es un eco electromagnético: comparte la idea de un sonar, pero viaja muchísimo más rápido.",
+          "detalle": "En nuestro escenario, el regreso tarda {microsegundos|0} microsegundos. Dividir el recorrido total entre dos evita colocar la lluvia al doble de distancia. Girar o explorar con el haz añade información sobre la dirección.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "meteo-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LAS GOTAS GRANDES PESAN MUCHO",
+          "clave": "Una gota mayor puede devolver una señal mucho más intensa.",
+          "texto": "La intensidad del eco no depende solamente del número de gotas. Cuando son pequeñas frente a la longitud de onda, aumentar su diámetro cambia enormemente cuánto dispersan. Esta descripción se llama dispersión de Rayleigh. Por eso una señal fuerte no se puede convertir directamente en una cantidad de agua sin otras suposiciones.",
+          "detalle": "El ejemplo mantiene el número de gotas y cambia su tamaño. No representa granizo grande ni todas las frecuencias de radar. Tampoco convierte el aire seco turbulento en una pared visible: hace falta algo que disperse suficiente señal.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "meteo-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El radar escucha gotas, no ve el futuro.",
+    "parrafos": [
+      "La pantalla reúne retrasos, direcciones e intensidades. Es una herramienta para interpretar precipitación, con límites y zonas que pueden quedar ocultas detrás de ecos fuertes. Su imagen no equivale a una fotografía transparente de todo el cielo."
+    ],
+    "nota": "Gotas iguales y parámetros ilustrativos en régimen de Rayleigh. Sin atenuación, granizo ni conversión a lluvia. El pulso y las gotas se amplían para explicar el mecanismo; no se dibuja la escala temporal real."
+  },
+  "revisionEditorial": 2
 }

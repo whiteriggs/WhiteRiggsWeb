@@ -1,12 +1,73 @@
 {
-  "id": "aceite", "rotulo": "COTIDIANO", "titulo": "¿Por qué puede salpicar el aceite cuando entra agua?",
-  "entradilla": "Cuando agua atrapada entra en contacto con aceite suficientemente caliente, puede convertirse rápidamente en vapor. El gas ocupa mucho más volumen que el líquido y desplaza aceite alrededor. La salpicadura no exige que el aceite esté hirviendo: puede empezar por el agua.",
-  "modelo": "aceite", "color": "coral",
-  "medidas": {"masa": 0.000001, "temperatura": 373.15, "presion": 101325, "densidad": 1000, "latente": 2257000},
-  "tanteo": {"pregunta": "En una comparación teórica, agua líquida de densidad 1.000 kg/m³ pasa por completo a vapor ideal a 100 °C y 1 atm. ¿Cuántas veces crees que aumenta su volumen?", "opciones": ["Unas 17 veces", "Unas 1.700 veces", "Unas 170.000 veces"], "valores": [17, 1700, 170000], "medido": "expansion", "remate": "El cociente de volúmenes es {expansion|0}. Esa expansión ayuda a entender el desplazamiento brusco del aceite."},
-  "nucleo": [{"numero": 1, "nombre": "el vapor reclama espacio", "color": "coral", "paneles": [
-    {"rotulo": "LA MASA SIGUE SIENDO LA MISMA", "clave": "El agua ocupa {aguaMl|3} mL; como vapor ideal, {vaporMl|2} mL.", "texto": "El volumen líquido se calcula dividiendo masa entre densidad. Para el vapor usamos la ecuación del gas ideal a presión y temperatura declaradas. La enorme diferencia viene de la separación entre moléculas en el estado gaseoso, no de que aparezca agua adicional.", "detalle": "Las barras comparten mililitros y un origen común; la del líquido apenas se ve porque la diferencia es real. Son dos estados finales, no una animación del crecimiento. En la situación real el vapor empuja líquido, cambia de presión y puede condensarse en zonas más frías.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["aguaMl", "vaporMl"], "rotulos": ["Agua: {aguaMl|3} mL", "Vapor: {vaporMl|2} mL"]}},
-    {"rotulo": "LA EXPANSIÓN NECESITA CALOR", "clave": "Solo vaporizar esta masa requiere aproximadamente {energia|2} J.", "texto": "El calor pasa del aceite y del alimento hacia el agua. Una vaporización rápida puede acelerar el líquido vecino y producir gotas proyectadas. El tamaño de los fragmentos y su alcance dependen de la geometría, la velocidad de transferencia térmica y de dónde estaba retenida el agua.", "detalle": "La energía indicada es calor latente, no energía cinética de las salpicaduras. Tampoco incluye elevar antes la temperatura del agua. No toda gota se vaporiza de golpe: puede hervir de manera gradual o quedar separada temporalmente por una película de vapor.", "color": "coral", "dibujo": {"tipo": "magnitudes", "claves": ["energia", "expansion"], "rotulos": ["Cambio de fase: {energia|2} J", "Expansión: {expansion|0} veces"]}}
-  ]}],
-  "cierre": {"titulo": "Una explicación del riesgo, no una demostración para probar.", "nota": "Escenario ilustrativo: masa en kg, temperatura en K, presión en Pa, densidad en kg/m³ y calor latente aproximado en J/kg. Conversión completa ideal; no calcula tiempos, proyectiles ni condiciones seguras.", "parrafos": ["No se debe añadir agua a aceite caliente ni a un fuego de aceite. El ejemplo cuantifica por qué una masa diminuta puede movilizar mucho líquido, sin proponer una experiencia doméstica para observarlo."]}
+  "id": "aceite",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Cómo frena las salpicaduras una tapa de malla para sartén?",
+  "revisionEditorial": 2,
+  "entradilla": "La tapa antisalpicaduras parece un colador plano. Sus agujeros dejan salir vapor, pero interceptan muchas gotas de aceite. No enfría instantáneamente la sartén ni cancela lo que ocurre dentro. Separa dos formas de salir: gas que atraviesa huecos y gotas que chocan con los hilos.",
+  "modelo": "aceite",
+  "color": "ambar",
+  "medidas": {
+    "masa": 0.000001,
+    "temperatura": 373.15,
+    "presion": 101325,
+    "densidad": 1000,
+    "latente": 2257000
+  },
+  "tanteo": {
+    "pregunta": "¿Qué puede lanzar aceite cuando un alimento húmedo entra en la sartén?",
+    "opciones": [
+      "Que el agua se vuelva metal",
+      "La expansión rápida del agua al vaporizarse",
+      "Que el aceite pierda toda su masa"
+    ],
+    "valores": [
+      17,
+      1700,
+      170000
+    ],
+    "medido": "expansion",
+    "remate": "La vaporización expande el agua: el cociente ideal del ejemplo es {expansion|0}. Esa expansión puede desplazar gotas de aceite."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "de una gota a mucho vapor",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "LO QUE EMPUJA DESDE DENTRO",
+          "clave": "El agua líquida y su vapor ocupan volúmenes muy distintos.",
+          "texto": "Un alimento puede llevar agua en su superficie o liberarla mientras se cocina. Cuando esa agua recibe suficiente calor, parte pasa a vapor. La expansión puede apartar aceite alrededor y lanzar pequeñas gotas. No es que agua y aceite produzcan una explosión química al encontrarse.",
+          "detalle": "La ley de los gases ideales permite estimar cuánto espacio ocuparía una cantidad de vapor a cierta presión y temperatura. El calor latente recuerda que el cambio requiere energía: no basta con mezclar dos líquidos fríos para obtener el mismo fenómeno.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "aceite-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "GAS QUE PASA, GOTAS QUE CHOCAN",
+          "clave": "La malla pone obstáculos al recorrido de las salpicaduras.",
+          "texto": "Las gotas tienen tamaño y trayectoria. Muchas chocan contra los hilos, se deforman, se adhieren o pierden velocidad. El vapor puede circular entre los huecos y salir sin necesitar que se levante una tapa cerrada. La malla no es un filtro perfecto: algunas gotas pequeñas pueden atravesarla.",
+          "detalle": "Su eficacia depende del tamaño de los huecos, la distancia y el flujo. El dibujo muestra intercepción mecánica, no una garantía contra quemaduras. No debe confundirse con una tapa adecuada para apagar un incendio: agua y aceite ardiendo nunca son una solución segura.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "aceite-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La malla actúa después de que nazca la salpicadura.",
+    "parrafos": [
+      "El origen está en el calor y la humedad; la protección intercepta el viaje de las gotas. Son dos mecanismos distintos trabajando en lugares diferentes."
+    ],
+    "nota": "Expansión ideal ilustrativa, no un ensayo doméstico ni especificaciones de una tapa. No calculamos temperaturas seguras, trayectorias reales o protección completa."
+  }
 }

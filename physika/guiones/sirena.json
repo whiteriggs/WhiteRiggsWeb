@@ -1,12 +1,72 @@
 {
-  "id": "sirena", "rotulo": "MÚSICA", "titulo": "¿Por qué cambia de tono una ambulancia al pasar?",
-  "entradilla": "Aunque la sirena mantenga su frecuencia emitida, el movimiento modifica la frecuencia que recibe el oyente. Delante de una fuente que avanza, las crestas quedan más próximas; detrás, más separadas. Si también se mueve el oyente, cambia además el ritmo con que encuentra esas crestas.",
-  "modelo": "sirena", "color": "coral",
-  "medidas": {"frecuencia": 700, "sonido": 343, "fuente": 20, "observador": 0},
-  "tanteo": {"pregunta": "Una fuente de 700 Hz se acerca a 20 m/s a un oyente inmóvil. ¿Qué frecuencia recibe este en aire a 343 m/s?", "opciones": ["Unos 743 Hz", "700 Hz", "Unos 661 Hz"], "valores": [743, 700, 661], "medido": "acerca", "remate": "Recibe {acerca|2} Hz al acercarse y {aleja|2} Hz al alejarse, en los casos colineales calculados."},
-  "nucleo": [{"numero": 1, "nombre": "crestas comprimidas, crestas separadas", "color": "coral", "paneles": [
-    {"rotulo": "LA FUENTE CAMBIA EL ESPACIADO", "clave": "{acerca|1} Hz al acercarse; {aleja|1} Hz al alejarse.", "texto": "Entre dos crestas emitidas, la fuente ha avanzado. La longitud de onda delantera es la velocidad del sonido menos la velocidad de la fuente, dividida por la frecuencia emitida. Detrás aparece la suma. La fuente de este ejemplo se mueve a {kilometrosHora|0} km/h respecto al aire.", "detalle": "Para un oyente inmóvil, dividimos la velocidad del sonido entre esas longitudes. El movimiento de la fuente aparece en el denominador de la fórmula Doppler. No basta con sumar su velocidad a la del sonido como si ambas crestas viajaran más deprisa en el aire.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["acerca", "frecuencia", "aleja"], "rotulos": ["Acerca: {acerca|0} Hz", "Emitida: {frecuencia|0} Hz", "Aleja: {aleja|0} Hz"]}},
-    {"rotulo": "EL OYENTE CAMBIA EL ENCUENTRO", "clave": "Delante: {delante|3} m; detrás: {detras|3} m.", "texto": "Un oyente que avanza hacia la fuente encuentra más crestas por segundo, sin modificar su separación en el aire. Su velocidad aparece en el numerador. En el caso general colineal de aproximación usamos frecuencia emitida por sonido más velocidad del observador, dividido entre sonido menos velocidad de la fuente.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["delante", "detras"], "rotulos": ["Delante: {delante|3} m", "Detrás: {detras|3} m"]}}
-  ]}],
-  "cierre": {"titulo": "Fuente y observador no entran igual en la cuenta.", "nota": "Doppler acústico clásico en aire inmóvil: frecuencia en Hz y velocidades en m/s respecto al medio. Fuente y observador son magnitudes positivas de aproximación; para alejamiento se invierten ambas direcciones. Movimiento colineal y subsónico; no incluye viento ni modulación propia de una sirena.", "parrafos": ["Al pasar a una distancia lateral finita, la dirección de propagación cambia y la transición de frecuencia es continua. Los dos valores calculados son casos de aproximación y alejamiento alineados, no un salto instantáneo obligatorio al cruzar junto a ti."]}
+  "id": "sirena",
+  "rotulo": "MÚSICA",
+  "titulo": "¿Por qué la sirena de una ambulancia cambia de voz al pasar?",
+  "entradilla": "Oyes acercarse una ambulancia y, cuando pasa, su sirena parece bajar de tono. No hace falta que el conductor cambie ningún botón justo delante de ti. Incluso una sirena que mantuviera una nota fija produciría ese contraste: el vehículo se mueve mientras el sonido ya emitido continúa viajando por el aire.",
+  "modelo": "sirena",
+  "color": "ambar",
+  "medidas": {
+    "frecuencia": 700,
+    "sonido": 343,
+    "fuente": 20,
+    "observador": 0
+  },
+  "tanteo": {
+    "pregunta": "Si la sirena mantiene su nota mientras la ambulancia se acerca directamente a ti, ¿cómo la escuchas respecto a cuando está parada?",
+    "opciones": [
+      "Más aguda",
+      "Igual de aguda",
+      "Más grave"
+    ],
+    "valores": [
+      743,
+      700,
+      661
+    ],
+    "medido": "acerca",
+    "remate": "Más aguda. En el ejemplo recibes {acerca|2} Hz al acercarse y {aleja|2} Hz al alejarse directamente, aunque la fuente mantiene su frecuencia."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "ondas desde sitios distintos",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "LA SIRENA YA NO ESTÁ AHÍ",
+          "clave": "Cada nueva vibración sale desde una posición más adelantada.",
+          "texto": "Imagina marcas que se expanden desde la sirena cada vez que completa una vibración. Mientras una marca avanza, la ambulancia cambia de sitio y emite la siguiente desde más adelante. Delante del vehículo, las marcas quedan más juntas; detrás, más separadas. No es que el aire transporte todo el sonido pegado a la carrocería.",
+          "detalle": "Los círculos representan frentes emitidos en momentos distintos. Su centro queda donde estaba la fuente al emitirlos. El dibujo exagera las separaciones para mostrar el mecanismo; no reproduce una sirena real ni la escala de una calle.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "sirena-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "TU OÍDO CUENTA LLEGADAS",
+          "clave": "Más frentes por segundo se oyen como una nota más alta.",
+          "texto": "Al encontrarte delante recibes vibraciones más seguidas. Cuando el vehículo se aleja, llegan más espaciadas. Ese cambio de frecuencia debido al movimiento relativo es el efecto Doppler. La sirena no tiene que cambiar su ritmo de emisión: cambia el ritmo con el que tú recibes las perturbaciones que ha enviado.",
+          "detalle": "En una pasada lateral la variación depende de la dirección del movimiento respecto a ti y suele ser continua. Las sirenas también alternan notas por diseño; eso se suma al efecto del desplazamiento y puede complicar lo que escuchas.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "sirena-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Cambia la llegada, no necesariamente la sirena.",
+    "parrafos": [
+      "La próxima vez que pase una ambulancia, ese cambio de voz también te estará contando hacia dónde se mueve."
+    ],
+    "nota": "Fuente y observador colineales, aire inmóvil y velocidades ilustrativas inferiores a la del sonido. Se omiten paredes y viento."
+  },
+  "revisionEditorial": 2
 }

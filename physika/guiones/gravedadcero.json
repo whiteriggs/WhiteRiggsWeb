@@ -1,11 +1,72 @@
 {
-  "id": "gravedadcero", "rotulo": "ESPACIO", "titulo": "¿Por qué flotan los astronautas si ahí arriba hay gravedad?",
-  "entradilla": "Flotan porque ellos, la nave y los objetos sueltos caen juntos. La expresión gravedad cero confunde dos cosas distintas: la atracción de la Tierra y la fuerza con que un suelo te sostiene. En órbita desaparece casi la segunda, no la primera.",
-  "modelo": "gravedadcero", "color": "azul", "medidas": {"mu": 398600441800000, "radio": 6371000, "altura": 400000, "masa": 70},
-  "tanteo": {"pregunta": "A 400 km, ¿qué porcentaje de la gravedad superficial queda?", "opciones": ["Prácticamente 0%", "Aproximadamente 89%", "Aproximadamente 200%"], "valores": [0, 89, 200], "medido": "porcentaje", "remate": "Queda {porcentaje|1}%. La ingravidez aparente no necesita una Tierra que haya dejado de atraer."},
-  "nucleo": [{"numero": 1, "nombre": "sin apoyo", "color": "azul", "paneles": [
-    {"rotulo": "NO ESTÁ TAN LEJOS", "clave": "La gravedad orbital vale {gravedad|2} m/s², frente a {superficial|2} m/s² en la superficie.", "texto": "La distancia relevante se mide desde el centro terrestre. Añadir unos cientos de kilómetros al radio del planeta cambia esa distancia mucho menos de lo que parece en una fotografía de la Tierra. Por eso el campo disminuye, pero no desaparece.", "detalle": "La curva calcula GM dividido por la distancia al cuadrado. La atmósfera termina gradualmente y la gravedad no tiene una frontera asociada al borde del cielo. Estar fuera del aire denso no significa estar fuera del campo gravitatorio.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Altura (km)", "ejeY": "Gravedad (m/s²)", "claves": [], "rotulos": []}},
-    {"rotulo": "QUÉ MIDE UNA BÁSCULA", "clave": "Atracción sobre la persona: {atraccion|0} N. Apoyo ideal durante la caída: {apoyo|0} N.", "texto": "Una báscula responde a la compresión que soporta. Si suelo y persona aceleran juntos bajo la gravedad, no hace falta comprimir el muelle para que la persona acompañe al suelo. La fuerza gravitatoria sigue acelerando su cuerpo aunque la lectura sea nula.", "detalle": "Las barras comparan magnitudes de fuerzas, no son un diagrama de fuerzas simultáneas en equilibrio. La atracción terrestre proporciona la aceleración orbital: no hay otra fuerza real hacia fuera que la cancele en un sistema inercial.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["atraccion", "apoyo"], "rotulos": ["Atracción: {atraccion|0} N", "Apoyo: {apoyo|0} N"]}}
-  ]}],
-  "cierre": {"titulo": "Flotar es compartir la caída.", "nota": "Escenario ilustrativo: masa 70 kg, altura 400 km, Tierra esférica de radio medio 6.371 km y GM = 3,986004418×10¹⁴ m³/s². Gravitación newtoniana y segunda ley de Newton; báscula ideal en caída libre sin contacto forzado.", "parrafos": ["La microgravedad real incluye diferencias de atracción entre partes de la nave, vibraciones, maniobras y resistencia atmosférica. Por eso el cero es una idealización útil, no una medición exacta del interior de una estación.", "Al acelerar con un motor o empujar contra una pared vuelve a aparecer una fuerza de contacto. La sensación de peso depende de ese apoyo, no de que puedas ver la Tierra por la ventanilla."]}
+  "id": "gravedadcero",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Para qué lleva arneses la cinta de correr de la Estación Espacial?",
+  "revisionEditorial": 2,
+  "entradilla": "Una cinta de gimnasio parece fácil de usar: te subes y corres. En la Estación Espacial, el astronauta se engancha antes a un arnés. Sin él, el primer impulso de una pierna lo separaría de la banda. No falta una gravedad especial para deportistas: falta el suelo apretando contra sus pies.",
+  "modelo": "gravedadcero",
+  "color": "indigo",
+  "medidas": {
+    "mu": 398600441800000,
+    "radio": 6371000,
+    "altura": 400000,
+    "masa": 70
+  },
+  "tanteo": {
+    "pregunta": "Antes de enganchar el arnés, ¿cuánto apoyo recibe un astronauta que flota sin tocar nada?",
+    "opciones": [
+      "El mismo que en casa",
+      "Ninguno",
+      "Más que en casa"
+    ],
+    "valores": [
+      686,
+      0,
+      1400
+    ],
+    "medido": "apoyo",
+    "remate": "No recibe apoyo aunque la Tierra siga atrayéndolo. El arnés añade una fuerza de contacto que no existía al flotar."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "fabricar el apoyo",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "CUERPO Y CABINA CAEN JUNTOS",
+          "clave": "La gravedad no desaparece dentro de la estación.",
+          "texto": "En casa, el suelo impide que sigas cayendo: te empuja hacia arriba y notas peso en las plantas de los pies. En órbita, tanto tu cuerpo como la cabina siguen casi la misma caída libre. Ninguno necesita sostener al otro. Esta diferencia entre atracción y apoyo se llama peso aparente.",
+          "detalle": "A la altura ilustrada queda el {porcentaje|1}% de la gravedad superficial. Sobre una masa de {masa|0} kg actúa una atracción de {atraccion|0} N. No es una estación situada más allá del alcance terrestre.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "gravedadcero-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL ARNÉS TIRA HACIA LA BANDA",
+          "clave": "Las correas crean contacto sin crear gravedad.",
+          "texto": "Las correas sujetan al corredor hacia la cinta. Ahora puede empujar con el pie y recibir una reacción de la banda sin salir flotando. Los músculos trabajan contra esa carga añadida. Es una aplicación de las leyes de Newton: para cambiar el movimiento hace falta una fuerza, también dentro de una nave.",
+          "detalle": "La fuerza del arnés depende de su ajuste y cambia al correr. No la deducimos de la gravedad orbital ni afirmamos que reproduzca exactamente el peso terrestre. El cálculo corresponde únicamente al estado libre, antes de sujetarse.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "gravedadcero-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El arnés hace el trabajo que hacía el suelo.",
+    "parrafos": [
+      "Flotar no significa dejar de ser atraído. Significa no tener que apoyarse para acompañar la caída de la cabina. Para correr, las correas vuelven a crear ese contacto que en casa dabas por hecho."
+    ],
+    "nota": "Caída libre ideal a 400 km. La tensión del arnés y los impactos de cada pisada no se calculan."
+  }
 }

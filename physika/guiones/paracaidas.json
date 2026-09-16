@@ -1,12 +1,73 @@
 {
-  "id": "paracaidas", "rotulo": "DEPORTE", "titulo": "¿Por qué la caída no acelera indefinidamente?",
-  "entradilla": "Al aumentar la rapidez crece la resistencia del aire. En un modelo de postura y densidad constantes, el arrastre se aproxima al peso y la aceleración se aproxima a cero. Esa velocidad límite no es la misma para todas las personas ni todas las posiciones.",
-  "modelo": "paracaidas", "color": "azul",
-  "medidas": {"masa": 80, "densidad": 1.225, "areaArrastre": 0.7, "areaComparada": 0.35, "tiempo": 20},
-  "tanteo": {"pregunta": "Con 80 kg y un área efectiva de arrastre de 0,7 m², ¿qué velocidad límite da el modelo?", "opciones": ["Unos 20 m/s", "Unos 43 m/s", "Unos 85 m/s"], "valores": [20, 43, 85], "medido": "limite", "remate": "El límite es {limite|1} m/s, unos {limiteEnKilometrosHora|0} km/h. Es un resultado del escenario, no una velocidad segura."},
-  "nucleo": [{"numero": 1, "nombre": "el aire alcanza al peso", "color": "azul", "paneles": [
-    {"rotulo": "ACELERA CADA VEZ MENOS", "clave": "Partiendo del reposo, tras {tiempo|0} s alcanza {velocidad|1} m/s en el modelo.", "texto": "Resolvemos la ecuación con peso constante y arrastre proporcional a la velocidad al cuadrado. La curva crece deprisa al inicio y se aproxima gradualmente a su límite. No pega un salto al valor terminal ni lo alcanza exactamente en un tiempo finito.", "detalle": "En el límite, el arrastre tiene magnitud {arrastreLimite|0} N, igual al peso. Ambas fuerzas actúan sobre el mismo cuerpo en sentidos opuestos. Mientras la velocidad sea menor, el peso supera al arrastre y queda aceleración hacia abajo.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (s)", "ejeY": "Rapidez de caída (m/s)", "claves": [], "rotulos": []}},
-    {"rotulo": "CAMBIAR EL ÁREA CAMBIA EL LÍMITE", "clave": "Con la otra área efectiva, el límite sería {limiteComparado|1} m/s.", "texto": "El área efectiva incluye el coeficiente de arrastre y la superficie de referencia. Reducirla a la mitad aumenta la velocidad límite por una raíz cuadrada, no la duplica. La comparación mantiene todo lo demás igual y no simula la apertura del paracaídas.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["limite", "limiteComparado"], "rotulos": ["Caso base: {limite|1} m/s", "Otra área: {limiteComparado|1} m/s"]}}
-  ]}],
-  "cierre": {"titulo": "Velocidad constante sigue siendo caída.", "nota": "Masa en kg, densidad en kg/m³, tiempo en s y áreas efectivas Cd·A en m². Son valores ilustrativos constantes, no coeficientes universales ni mediciones de un equipo. Solución de Newton con arrastre cuadrático, aire quieto y gravedad uniforme.", "parrafos": ["En una caída real cambian densidad, postura y condiciones de flujo. La apertura es un transitorio distinto. El modelo no calcula alturas de apertura, márgenes operativos ni riesgos, y no sustituye formación especializada."]}
+  "id": "paracaidas",
+  "rotulo": "DEPORTE",
+  "titulo": "Paracaídas: ¿por qué una campana abierta reduce la caída?",
+  "revisionEditorial": 2,
+  "modelo": "paracaidas",
+  "color": "verde",
+  "medidas": {
+    "masa": 80,
+    "densidad": 1.225,
+    "areaArrastre": 0.7,
+    "areaComparada": 0.35,
+    "tiempo": 20
+  },
+  "entradilla": "Un paracaídas abierto presenta una gran superficie al aire y transmite sus fuerzas mediante las cuerdas. No anula el peso de quien cuelga debajo ni vuelve la gravedad más débil. Cambia la resistencia que el conjunto encuentra al bajar. La forma inflada de la campana convierte el paso del aire en una fuerza importante.",
+  "tanteo": {
+    "pregunta": "Con el mismo peso, una campana de mayor área efectiva de arrastre alcanza una rapidez límite…",
+    "opciones": [
+      "Mayor",
+      "Menor",
+      "Exactamente igual"
+    ],
+    "valores": [
+      20,
+      43,
+      85
+    ],
+    "medido": "limite",
+    "remate": "Menor. Los {limite|1} m/s calculados corresponden a un cuerpo ideal de poca área efectiva, no a la campana dibujada ni a una velocidad segura."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "hacer trabajar al aire",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA CAMPANA TRANSMITE LA RESISTENCIA",
+          "clave": "Las cuerdas conectan superficie y carga.",
+          "texto": "La campana desvía aire y mantiene una distribución de presión que se opone al descenso. Las cuerdas transmiten esa acción a la carga suspendida. Es arrastre aerodinámico. El primer panel separa campana, líneas y carga para mostrar que la fuerza sobre la tela tiene que llegar mecánicamente hasta quien cuelga.",
+          "detalle": "El área efectiva del modelo combina superficie y coeficiente aerodinámico; no es simplemente la tela medida con una regla. El esquema representa una campana ya abierta. No calcula su despliegue, maniobras, golpes de apertura ni el comportamiento de un producto concreto.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "paracaidas-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL FRENO CRECE CON LA RAPIDEZ",
+          "clave": "El peso puede equilibrarse con el arrastre.",
+          "texto": "Si el conjunto baja más deprisa, encuentra una resistencia mayor. En nuestro modelo esa resistencia crece con el cuadrado de la rapidez. Llega un punto en que iguala al peso y deja de aumentar la velocidad. Es velocidad límite: seguir cayendo sin seguir acelerando, no quedarse suspendido en el mismo lugar.",
+          "detalle": "El segundo panel compara cualitativamente dos campanas a igual tiempo: la mayor baja menos. Las cifras corresponden a un cuerpo ideal de poca área efectiva, no a esas campanas. El cálculo parte del reposo con área constante; no reproduce la apertura ni una transición desde caída rápida.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "paracaidas-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La gravedad sigue; cambia cuánto se opone el aire.",
+    "nota": "Modelo de cuerpo ideal con áreas efectivas pequeñas y constantes, no de una campana real desplegada. Dibujos cualitativos; sin seguridad ni prestaciones de equipos.",
+    "parrafos": [
+      "La campana no borra una fuerza: añade otra interacción de tamaño suficiente para modificar el movimiento. Cuando ambas se equilibran, aún hay desplazamiento. Esa diferencia entre velocidad y aceleración explica cómo un objeto puede seguir bajando aunque la fuerza neta sea cero."
+    ]
+  }
 }

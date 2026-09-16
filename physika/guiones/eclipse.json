@@ -1,11 +1,69 @@
 {
-  "id": "eclipse", "rotulo": "ESPACIO", "titulo": "¿Por qué no hay un eclipse cada mes?",
-  "entradilla": "La Luna nueva no garantiza que la Luna pase por delante del Sol. Su órbita está inclinada respecto al plano de la órbita terrestre: la mayoría de los meses cruza por encima o por debajo de la línea necesaria para producir un eclipse.",
-  "modelo": "eclipse", "color": "ambar", "medidas": {"distanciaLuna": 384400000, "distanciaSol": 149597870700, "radioLuna": 1737400, "radioSol": 695700000, "inclinacion": 5.145, "fase": 90},
-  "tanteo": {"pregunta": "En el punto más apartado del plano terrestre, ¿cuál es la latitud lunar aproximada?", "opciones": ["Medio grado", "Cinco grados", "Cincuenta grados"], "valores": [0.5, 5, 50], "medido": "latitud", "remate": "{latitud|2} grados, mucho más que el tamaño angular necesario para superponer ambos discos."},
-  "nucleo": [{"numero": 1, "nombre": "acertar en el cruce", "color": "ambar", "paneles": [
-    {"rotulo": "UNA ÓRBITA INCLINADA", "clave": "La latitud máxima del modelo es {latitud|2}°.", "texto": "Los nodos son los cruces entre el plano orbital lunar y la eclíptica. Para un eclipse solar, la Luna nueva debe ocurrir cerca de uno de esos cruces. Para un eclipse lunar, la Luna llena debe pasar cerca de la sombra terrestre y, de nuevo, cerca de un nodo.", "detalle": "La curva muestra latitud frente a posición angular medida desde un nodo, no frente al día del mes. Se calcula con una órbita circular inclinada: el seno de la latitud es el seno de la inclinación multiplicado por el seno de esa posición.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Posición desde nodo (°)", "ejeY": "Latitud eclíptica (°)", "claves": [], "rotulos": []}},
-    {"rotulo": "LOS DISCOS SON PEQUEÑOS", "clave": "Radios aparentes: Sol {radioSolar|3}° y Luna {radioLunar|3}°.", "texto": "Para que los discos se solapen vistos desde el centro terrestre, su separación angular debe ser menor que la suma de esos radios: {sumaRadios|3}°. Estar en la misma fase no basta cuando la separación respecto al plano puede ser mucho mayor.", "detalle": "Esta comparación geocéntrica ilustra la escala, no determina qué ciudad verá el eclipse. La posición del observador cambia el ángulo lunar por paralaje; además varían las distancias y el tamaño de las sombras. Predecir la franja visible exige geometría y efemérides completas.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["latitud", "sumaRadios"], "rotulos": ["Latitud: {latitud|2}°", "Suma radios: {sumaRadios|2}°"]}}
-  ]}],
-  "cierre": {"titulo": "La fase pone la fecha; el nodo permite el encuentro.", "nota": "Geometría esférica en una órbita circular ilustrativa. Distancias medias en metros; radios físicos en metros; inclinación lunar aproximada 5,145° y posición elegida 90° desde el nodo. No es un predictor de eclipses ni una representación de sus duraciones.", "parrafos": ["La dirección de los nodos también evoluciona. Por eso las temporadas favorables para eclipses se desplazan en el calendario: no basta con memorizar un mes fijo.", "Nunca se observa el Sol directamente sin protección solar certificada adecuada. Una alineación parcial no vuelve segura su luz."]}
+  "id": "eclipse",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Qué tienen las gafas de eclipse que no tienen tus gafas de sol?",
+  "revisionEditorial": 2,
+  "entradilla": "Te pones unas gafas de eclipse y el paisaje casi desaparece. Esa oscuridad no es un defecto: están hechas para una fuente muchísimo más intensa que una escena soleada. Unas gafas de sol cómodas para caminar dejan pasar demasiada radiación para mirar directamente al Sol, aunque sus cristales parezcan muy oscuros.",
+  "modelo": "eclipse",
+  "color": "indigo",
+  "medidas": {
+    "densidad": 5
+  },
+  "tanteo": {
+    "pregunta": "¿Qué debe hacer un filtro solar de observación con la luz que recibe?",
+    "opciones": [
+      "Dejar pasar casi toda",
+      "Dejar pasar una fracción diminuta",
+      "Limitarse a cambiarle el color"
+    ],
+    "valores": [
+      100,
+      0.001,
+      50
+    ],
+    "medido": "transmitida",
+    "remate": "Una fracción diminuta: el ejemplo transmite el {transmitida|3}%. Ese cálculo aislado no certifica que un filtro sea seguro."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "atenuar antes del ojo",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "CASI TODA LA LUZ SE QUEDA FUERA",
+          "clave": "El filtro reduce la energía antes de que entre al ojo.",
+          "texto": "Una lámina apropiada refleja y absorbe buena parte de la radiación incidente. Solo una porción pequeña atraviesa el material. Esa relación entre lo que entra y lo que sale es la transmitancia. La densidad óptica expresa su tamaño con una escala logarítmica: subir una unidad divide la transmisión por diez.",
+          "detalle": "Con densidad {densidad|0}, el modelo deja pasar el {transmitida|3}% de la luz considerada. Los rayos del esquema muestran trayectorias, no un recuento proporcional: dibujar toda la luz bloqueada taparía la página.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "eclipse-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "OSCURO NO SIGNIFICA SEGURO",
+          "clave": "También importa qué longitudes de onda atraviesan.",
+          "texto": "El ojo percibe luz visible, pero no puede valorar por el color toda la radiación ultravioleta e infrarroja. Dos filtros que parecen igual de oscuros pueden transmitir cantidades distintas fuera del visible. Por eso una cifra de oscuridad o un cristal ahumado no sustituyen una certificación específica para observación solar directa.",
+          "detalle": "Usa visores conformes con ISO 12312-2, de procedencia fiable, intactos y siguiendo sus instrucciones. No mires a través de prismáticos o telescopios con estas gafas: esos instrumentos requieren filtros solares adecuados delante de su entrada óptica.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "eclipse-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La protección se comprueba, no se adivina por el tinte.",
+    "parrafos": [
+      "Las gafas de eclipse no hacen al Sol menos potente. Interponen una barrera diseñada y verificada para esa observación. El número explica la atenuación; la seguridad depende del producto completo y de utilizarlo correctamente."
+    ],
+    "nota": "Densidad óptica ilustrativa y escalar. No modela la respuesta espectral ni certifica seguridad; no usar el cálculo para fabricar filtros."
+  }
 }

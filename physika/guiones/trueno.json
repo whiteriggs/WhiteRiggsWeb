@@ -1,11 +1,66 @@
 {
-  "id": "trueno", "rotulo": "NATURALEZA", "titulo": "¿Por qué el trueno llega después y además retumba?",
-  "entradilla": "La descarga emite luz y calienta el aire con rapidez. La expansión lanza una perturbación de presión que se convierte en sonido. La luz recorre la distancia mucho más deprisa; el retraso permite estimar qué parte de la tormenta has oído.",
-  "modelo": "trueno", "color": "ambar", "medidas": {"temperatura": 20, "retraso": 6},
-  "tanteo": {"pregunta": "El trueno llega 6 s después del destello, con el aire a 20 °C. ¿A qué distancia está la descarga?", "opciones": ["Unos 200 metros", "Unos 2 kilómetros", "Unos 20 kilómetros"], "valores": [0.2, 2, 20], "medido": "distancia", "remate": "Corresponde a {distancia|2} km. El resultado usa la velocidad del sonido, no una velocidad de la descarga por el suelo."},
-  "nucleo": [{"numero": 1, "nombre": "dos señales, dos tiempos", "color": "ambar", "paneles": [
-    {"rotulo": "EL AIRE MARCA EL RELOJ", "clave": "A {temperatura|0} °C, el sonido ideal viaja a {velocidad|1} m/s.", "texto": "En un gas ideal, la rapidez del sonido depende de la temperatura absoluta, de la composición y de cómo responde el gas al comprimirse. Usamos aire seco uniforme. El retraso observado es el tiempo acústico menos el tiempo luminoso; conservamos ambos en la cuenta.", "detalle": "Para este recorrido, la luz tarda {milisegundosLuz|3} milisegundos. Es despreciable frente al retraso de {retraso|0} segundos a la precisión cotidiana, pero mantenerlo aclara qué se está midiendo. La curva relaciona retraso y distancia dentro del mismo aire ideal.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Retraso (s)", "ejeY": "Distancia estimada (km)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL RAYO NO ES UN PUNTO", "clave": "La primera llegada no resume todo el canal.", "texto": "Cada tramo del canal puede emitir sonido a distinta distancia de ti. Sus llegadas se superponen; reflexiones en terreno y edificios, refracción atmosférica y varias descargas alargan o cambian el retumbo. No todo el sonido tardío es un eco de una única explosión puntual.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["distancia", "velocidad"], "rotulos": ["Distancia: {distancia|2} km", "Sonido: {velocidad|1} m/s"]}}
-  ]}],
-  "cierre": {"titulo": "El retumbo conserva la geometría de la descarga.", "nota": "Temperatura en °C y retraso en segundos. Aire seco ideal con razón de calores 1,4 y constante específica 287,05 J/(kg·K); velocidad luminosa del vacío. Se omiten humedad, viento y estratificación.", "parrafos": ["El cálculo da una distancia aproximada a una fuente acústica, no una posición exacta de impacto. Una tormenta es extensa y puede producir nuevas descargas en otros lugares: contar segundos no es una garantía de seguridad."]}
+  "id": "trueno",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Cómo mide una pared un medidor ultrasónico?",
+  "revisionEditorial": 2,
+  "entradilla": "Apuntas un medidor ultrasónico hacia una pared y aparece una distancia. No ha estirado una cinta invisible. El aparato envía un sonido que no oyes, espera su regreso y mide el tiempo transcurrido. La pared participa en la medición: tiene que devolver suficiente sonido para que el aparato reconozca el eco.",
+  "modelo": "naturaleza-trueno",
+  "color": "azul",
+  "medidas": {
+    "velocidad": 343,
+    "tiempo": 0.02
+  },
+  "tanteo": {
+    "pregunta": "Si la pared se aleja, ¿qué pasa con el eco que recibe el medidor?",
+    "opciones": [
+      "Llega antes",
+      "Llega más tarde",
+      "Siempre tarda lo mismo"
+    ],
+    "valores": [
+      0,
+      3.43,
+      100
+    ],
+    "medido": "distancia",
+    "remate": "Llega más tarde. Los {milisegundos|0} milisegundos del ejemplo corresponden a una pared a {distancia|2} metros."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "mandar un pulso y escucharlo",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "UNA PIEZA VIBRA HACIA LA PARED",
+          "clave": "El transductor convierte electricidad en una vibración.",
+          "texto": "El medidor excita durante un instante una pieza que hace vibrar el aire. Sale un paquete de ondas ultrasónicas: sonido con una frecuencia superior a la que podemos oír normalmente. Una parte rebota en la pared y vuelve. El mismo transductor, o uno vecino, convierte ese movimiento del aire en una señal eléctrica detectable.",
+          "detalle": "La reflexión funciona mejor con superficies suficientemente grandes y bien orientadas. Una cortina puede absorber mucho sonido; una pared inclinada puede mandar el eco hacia otro lugar en vez de devolverlo al aparato.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "trueno-1"
+          }
+        },
+        {
+          "rotulo": "EL RELOJ CUENTA DOS TRAMOS",
+          "clave": "El sonido visita la pared y vuelve al punto de partida.",
+          "texto": "El reloj empieza al emitir y se detiene al reconocer el regreso. Multiplicar el tiempo por la velocidad del sonido da el recorrido completo, no la distancia a la pared. Hay que repartirlo entre la ida y la vuelta. Ese procedimiento se llama medida por tiempo de vuelo, y evita confundir el eco con un viaje solo de ida.",
+          "detalle": "Aquí el sonido recorre {recorrido|2} metros en total. La velocidad depende de la temperatura del aire; por eso una compensación térmica puede mejorar la estimación sin cambiar la pared.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "trueno-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El metro sale de un pequeño retraso.",
+    "parrafos": [
+      "No todos los medidores portátiles usan sonido: los láser emplean luz y otra electrónica. Este aparato necesita un eco identificable, no solamente que el objeto esté delante."
+    ],
+    "nota": "Velocidad y tiempo ilustrativos, pared inmóvil y camino recto. Sin retardo electrónico ni precisión comercial; no confundir con medidores láser."
+  }
 }

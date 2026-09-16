@@ -1,11 +1,69 @@
 {
-  "id": "huracan", "rotulo": "NATURALEZA", "titulo": "¿Por qué un huracán puede tener un ojo en calma?",
-  "entradilla": "El viento más intenso suele rodear el ojo, no ocupar su centro. La circulación combina un fuerte gradiente de presión con giro y movimiento vertical. En el ojo, el aire descendente puede calentarse y secarse; calma relativa no significa ausencia de peligro.",
-  "modelo": "huracan", "color": "malva", "medidas": {"radio": 30000, "velocidad": 40, "densidad": 1.15, "coriolis": 0.00005},
-  "tanteo": {"pregunta": "El núcleo gira como un cuerpo rígido: radio de 30 km, viento de 40 m/s en el borde, densidad del aire de 1,15 kg/m³ y parámetro de Coriolis de 0,00005 s⁻¹. ¿Qué déficit de presión entre centro y borde lo sostiene?", "opciones": ["Unos 10 Pa", "Unos 955 Pa", "Unos 95.000 Pa"], "valores": [10, 955, 95000], "medido": "deficit", "remate": "El déficit integrado es {deficit|1} Pa. Es el de este núcleo ideal, no el déficit total de un huracán real."},
-  "nucleo": [{"numero": 1, "nombre": "el centro no es una singularidad", "color": "malva", "paneles": [
-    {"rotulo": "UN NÚCLEO QUE GIRA", "clave": "La rapidez crece desde el eje hasta {velocidad|0} m/s a {radioKm|0} km.", "texto": "Elegimos un núcleo con rotación de cuerpo sólido: velocidad tangencial proporcional al radio. Es una idealización sencilla de un centro sin velocidad infinita. La curva muestra que puede existir presión central baja aunque la rapidez se reduzca hacia el eje.", "detalle": "No hemos deducido el perfil a partir de una tormenta. Lo imponemos para estudiar qué distribución de presión lo sostendría. Fuera del radio elegido haría falta otro perfil: prolongar indefinidamente esta recta no describiría un ciclón.", "color": "malva", "dibujo": {"tipo": "serie", "ejeX": "Radio (km)", "ejeY": "Velocidad tangencial (m/s)", "claves": [], "rotulos": []}},
-    {"rotulo": "LA PRESIÓN SOSTIENE LA CURVA", "clave": "En el borde, el gradiente requerido es {gradiente|4} Pa/m.", "texto": "El equilibrio de viento gradiente combina aceleración centrípeta y Coriolis. Con densidad constante, integrar ese gradiente desde el centro da {deficit|1} Pa. Las dos contribuciones de las barras tienen las mismas unidades; no representan energías ni fuerzas sobre cuerpos diferentes.", "detalle": "El descenso de aire dentro del ojo y la convección intensa de la pared requieren termodinámica y circulación tridimensional. Este balance horizontal no predice si aparecerá un ojo ni cuánto durará.", "color": "malva", "dibujo": {"tipo": "barras", "claves": ["centripeta", "rotacion"], "rotulos": ["Giro: {centripeta|4} Pa/m", "Coriolis: {rotacion|4} Pa/m"]}}
-  ]}],
-  "cierre": {"titulo": "Una presión baja no obliga a viento máximo en el centro.", "nota": "Radio en m, rapidez en m/s, densidad en kg/m³ y parámetro de Coriolis positivo en s⁻¹, elegidos para un ciclón ideal. Balance estacionario, axisimétrico, sin fricción. No es un pronóstico meteorológico.", "parrafos": ["Un ojo puede contener nubes, rachas y mar muy agitado. La pared puede regresar con viento desde otra dirección al pasar el centro. El cálculo no ofrece una señal para abandonar un refugio."]}
+  "id": "huracan",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Por qué el viento puede dar la vuelta a un paraguas?",
+  "revisionEditorial": 2,
+  "entradilla": "Abres el paraguas y una ráfaga lo convierte en una palanca incómoda. El mango tira de tu mano, las varillas se doblan y, a veces, la tela termina del revés. El problema no es solo que el paraguas sea ligero: has desplegado una superficie grande que obliga al aire a cambiar su camino.",
+  "modelo": "naturaleza-huracan",
+  "color": "azul",
+  "medidas": {
+    "densidad": 1.2,
+    "velocidad": 10,
+    "area": 0.5,
+    "arrastre": 1.2,
+    "brazo": 0.4
+  },
+  "tanteo": {
+    "pregunta": "Si el viento duplica su velocidad, con la misma orientación, ¿cómo cambia aproximadamente el empuje?",
+    "opciones": [
+      "Se reduce",
+      "Aumenta mucho más que al doble",
+      "No cambia"
+    ],
+    "valores": [
+      1,
+      36,
+      0
+    ],
+    "medido": "fuerza",
+    "remate": "Aumenta aproximadamente cuatro veces: de {fuerza|0} N a {dobleViento|0} N en este modelo."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una tela que desvía aire",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "LA TELA RECIBE UNA CARGA",
+          "clave": "El aire cambia de rumbo alrededor del paraguas.",
+          "texto": "El aire que encuentra la tela no puede seguir recto como si nada. Se desvía y aparece un reparto de presiones sobre ambas caras. El resultado puede empujar y deformar el paraguas. La presión dinámica proporciona una escala de ese efecto: depende de la densidad del aire y del cuadrado de su velocidad.",
+          "detalle": "Un coeficiente de arrastre resume aquí la influencia de la forma. No es una constante de todos los paraguas. Inclinarlo, permitir que pase aire o cambiar la curvatura modifica el reparto real de fuerzas.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "huracan-1"
+          }
+        },
+        {
+          "rotulo": "EL MANGO AÑADE UNA PALANCA",
+          "clave": "Una fuerza alejada de la mano también produce un giro.",
+          "texto": "La fuerza sobre la tela no suele pasar exactamente por tu agarre. Su distancia a la mano crea un momento de fuerza: la tendencia a girar que notas en la muñeca. Las varillas y sus articulaciones deben transmitir esa carga. Si cambian de forma lo suficiente, pueden pasar a una configuración invertida.",
+          "detalle": "Con un brazo perpendicular ilustrativo de {brazo|1} metros, calculamos {momento|1} newton metros. No es el umbral de inversión: para conocerlo harían falta la rigidez de cada varilla y la geometría de las uniones.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "huracan-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La ráfaga empuja tela y gira el mango.",
+    "parrafos": [
+      "La facilidad con que se abre un paraguas no dice cuánto viento soporta. Una superficie ligera puede recoger una fuerza considerable cuando intercepta aire que llega deprisa."
+    ],
+    "nota": "Área, coeficiente, velocidad y brazo ilustrativos; carga estacionaria simplificada. No predice rotura, inversión ni resistencia comercial al viento."
+  }
 }

@@ -1,11 +1,70 @@
 {
-  "id": "vientosolar", "rotulo": "ESPACIO", "titulo": "¿Qué más llega del Sol aparte de la luz?",
-  "entradilla": "También llega materia: un plasma de electrones e iones que sale de la corona y transporta campo magnético. Ese viento solar no es una brisa de aire caliente ni viaja a la velocidad de la luz. Sus tiempos de llegada pertenecen a otra escala.",
-  "modelo": "vientosolar", "color": "ambar", "medidas": {"distancia": 149597870700, "velocidad": 400000},
-  "tanteo": {"pregunta": "A rapidez constante de 400 km/s, ¿cuánto tarda el plasma en recorrer una distancia Sol-Tierra?", "opciones": ["Unas 0,14 horas", "Unas 104 horas", "Unas 10.000 horas"], "valores": [0.14, 104, 10000], "medido": "horas", "remate": "{horas|1} horas, aproximadamente {dias|2} días. La luz recorre la misma distancia en {minutosLuz|2} minutos."},
-  "nucleo": [{"numero": 1, "nombre": "dos mensajeros", "color": "ambar", "paneles": [
-    {"rotulo": "EL VIAJE DE LA MATERIA", "clave": "A {velocidadKm|0} km/s, el viaje ideal dura {dias|2} días.", "texto": "Tiempo es distancia dividida por rapidez. La recta muestra esa cuenta para una corriente radial que ya ha alcanzado su rapidez elegida. No calcula cómo se acelera el plasma en la corona ni la trayectoria helicoidal de una partícula alrededor de un campo magnético.", "detalle": "El plasma responde colectivamente a campos eléctricos y magnéticos. El Sol rota y el campo transportado desarrolla una estructura espiral; reducirlo todo a proyectiles rectos ignora esa geometría y las interacciones entre corrientes rápidas y lentas.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Distancia / distancia Sol-Tierra", "ejeY": "Tiempo de viaje (h)", "claves": [], "rotulos": []}},
-    {"rotulo": "UNA ALERTA NO ES UNA FECHA EXACTA", "clave": "Luz: {minutosLuz|2} minutos. Plasma del ejemplo: {horas|1} horas.", "texto": "Una emisión electromagnética llega primero porque viaja a c. Eso no convierte automáticamente una llamarada observada en una tormenta geomagnética futura: hay que saber si hay material dirigido hacia la Tierra, cómo evoluciona y qué orientación lleva su campo.", "detalle": "Una eyección de masa coronal tampoco es sinónimo del viento solar habitual. Puede comprimir el plasma precedente, acelerar partículas y cambiar de velocidad. El retraso calculado aquí sirve para distinguir mensajeros, no para predecir la llegada de un episodio concreto.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["minutosLuz", "horas"], "rotulos": ["Luz: {minutosLuz|2} min", "Plasma: {horas|1} h"]}}
-  ]}],
-  "cierre": {"titulo": "El Sol también sopla partículas.", "nota": "Distancia elegida: una unidad astronómica exacta, 149.597.870.700 m. Velocidad radial constante ilustrativa 400.000 m/s; no efeméride ni pronóstico espacial. Cinemática uniforme y física de plasma. Referencias consultadas: NASA Science, Auroras, https://science.nasa.gov/sun/auroras/ y Radio Waves, https://science.nasa.gov/ems/05_radiowaves/.", "parrafos": ["La magnetosfera desvía gran parte de ese flujo, pero puede intercambiar energía con él. Las auroras son una manifestación de ese acoplamiento, no simplemente luz solar reflejada.", "Las partículas energéticas solares pueden tener velocidades muy distintas a la del plasma de fondo. Este tiempo no se debe aplicar a toda radiación o partícula emitida por el Sol."]}
+  "id": "vientosolar",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Cómo puede la sonda DSCOVR avisar de una perturbación antes de que llegue?",
+  "revisionEditorial": 2,
+  "entradilla": "Una alerta de meteorología espacial puede avisar de que se aproxima una perturbación del viento solar. No está viendo el futuro. Una sonda como DSCOVR mide el material antes de que alcance la Tierra y envía sus datos por radio. La ventaja nace de estar situada corriente arriba, no de calcularlo todo desde aquí.",
+  "modelo": "vientosolar",
+  "color": "indigo",
+  "medidas": {
+    "distancia": 1500000000,
+    "velocidad": 400000
+  },
+  "tanteo": {
+    "pregunta": "¿Qué suele llegar antes desde una sonda situada corriente arriba?",
+    "opciones": [
+      "La perturbación del plasma",
+      "El aviso por radio",
+      "Ambos siempre a la vez"
+    ],
+    "valores": [
+      62.5,
+      0.0834,
+      30
+    ],
+    "medido": "minutosLuz",
+    "remate": "El aviso viaja con la luz; el plasma tarda aquí {horas|2} horas. La radio necesita solo {minutosLuz|2} minutos para la distancia ilustrada."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "medir antes del encuentro",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "LA SONDA ESTÁ EN EL CAMINO",
+          "clave": "Primero pasa por el sensor; después puede alcanzar la Tierra.",
+          "texto": "El Sol emite un flujo de partículas cargadas. Una sonda próxima a la región de L1 puede medir su velocidad, densidad y campo magnético antes de que el flujo llegue a nuestro entorno. Esa ubicación crea un margen de aviso. El tiempo de viaje se estima dividiendo la distancia restante entre la velocidad medida.",
+          "detalle": "El tramo ilustrado corresponde aproximadamente a la separación entre la Tierra y esa región, no a toda la distancia hasta el Sol. A {velocidadKm|0} km/s, el recorrido ideal tarda {horas|2} horas, suponiendo un flujo dirigido hacia nosotros.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "vientosolar-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA RADIO ADELANTA A LAS PARTÍCULAS",
+          "clave": "La información no tiene que viajar con el plasma.",
+          "texto": "La electrónica empaqueta las medidas y la antena las transmite mediante ondas electromagnéticas. Esas ondas recorren el vacío a la velocidad de la luz, muy superior a la del viento solar. Es la diferencia entre transportar material y transmitir información: ambas cosas salen del mismo entorno, pero no comparten el tiempo de llegada.",
+          "detalle": "El cálculo de radio solo incluye propagación. Procesar medidas, transmitirlas y emitir una alerta añade demoras. Además, una perturbación puede cambiar de forma o dirección; el margen estimado no garantiza que todas las consecuencias sean predecibles.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "vientosolar-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El sensor se adelanta por su ubicación.",
+    "parrafos": [
+      "La sonda convierte un encuentro temprano en un mensaje rápido. Ese pequeño puesto de observación remoto permite ganar tiempo frente a un flujo que continúa avanzando. La alerta sigue necesitando interpretar lo que realmente ha medido."
+    ],
+    "nota": "Trayecto recto de 1,5 millones de km y velocidad constante ilustrativa. Se omiten geometría instantánea, aceleraciones, procesamiento y telecomunicaciones reales."
+  }
 }

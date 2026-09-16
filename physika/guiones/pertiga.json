@@ -1,12 +1,72 @@
 {
-  "id": "pertiga", "rotulo": "DEPORTE", "titulo": "¿Qué transforma la pértiga cuando se dobla?",
-  "entradilla": "La carrera aporta energía cinética. Al plantar y doblar la pértiga, parte pasa temporalmente a deformación elástica y después puede contribuir a elevar al atleta. La pértiga no fabrica esa energía: modifica cómo se transmite y en qué momento vuelve al movimiento.",
-  "modelo": "pertiga", "color": "verde",
-  "medidas": {"masa": 75, "velocidad": 9, "fraccion": 0.8, "alturaInicial": 1},
-  "tanteo": {"pregunta": "Si toda la energía de una carrera a 9 m/s se convirtiera en altura del centro de masas, ¿cuánto subiría?", "opciones": ["Unos 2,1 m", "Unos 4,1 m", "Unos 8,3 m"], "valores": [2.1, 4.1, 8.3], "medido": "subidaIdeal", "remate": "Subiría {subidaIdeal|2} m respecto a su centro de masas inicial. No es una predicción de la altura del listón."},
-  "nucleo": [{"numero": 1, "nombre": "la carrera se convierte en altura", "color": "verde", "paneles": [
-    {"rotulo": "CONTAR LOS JULIOS", "clave": "La carrera contiene {energia|0} J. La fracción elegida deja {energiaUtil|0} J para elevar el centro de masas.", "texto": "El presupuesto cinético inicial es la mitad de masa por rapidez al cuadrado. En el escenario comparado reservamos una fracción para la subida y dejamos el resto fuera de ella: disipación, movimiento residual y otras formas de energía que el modelo no resuelve.", "detalle": "Esa fracción no es una eficiencia medida de la pértiga. Resume un reparto hipotético de toda la maniobra. Una descripción real debe incluir también el trabajo muscular durante el apoyo y el vuelo, el movimiento de la pértiga y la coordinación del atleta.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["energia", "energiaUtil"], "rotulos": ["Carrera: {energia|0} J", "Para subir: {energiaUtil|0} J"]}},
-    {"rotulo": "ALTURA GANADA, NO MARCA DEPORTIVA", "clave": "Con esa fracción, sube {subida|2} m y el centro de masas llega a {alturaCentro|2} m.", "texto": "Dividimos la energía disponible por masa y gravedad. La masa se cancela al partir de la misma rapidez: esto no significa que la masa no importe en la técnica o el material. La altura final añade la del centro de masas antes de la conversión.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["subidaIdeal", "subida"], "rotulos": ["Ideal: {subidaIdeal|2} m", "Comparada: {subida|2} m"]}}
-  ]}],
-  "cierre": {"titulo": "Doblar cambia la transferencia, no crea una reserva infinita.", "nota": "Masa en kg, velocidad de carrera en m/s, altura inicial del centro de masas en m y fracción adimensional ilustrativa. Conservación de energía con gravedad uniforme. No modela la geometría ni la resistencia de una pértiga real.", "parrafos": ["La altura del listón depende también de la configuración corporal al franquearlo. El límite calculado corresponde exclusivamente a convertir la energía cinética inicial sin añadir trabajo: no es un techo universal para récords ni una instrucción de salto."]}
+  "id": "pertiga",
+  "rotulo": "DEPORTE",
+  "titulo": "Pértiga: ¿cómo convierte una carrera en altura?",
+  "revisionEditorial": 2,
+  "modelo": "pertiga",
+  "color": "verde",
+  "medidas": {
+    "masa": 75,
+    "velocidad": 9,
+    "fraccion": 0.8,
+    "alturaInicial": 1
+  },
+  "entradilla": "La pértiga llega casi recta, se apoya y se dobla profundamente antes de recuperar su forma. Parece que lanzara a la persona como un resorte con energía propia. Pero esa energía venía de antes: la carrera y el trabajo muscular preparan el movimiento. La pértiga ofrece un camino para reorganizarlo y elevar el cuerpo.",
+  "tanteo": {
+    "pregunta": "La energía que una pértiga devuelve al enderezarse procede principalmente de…",
+    "opciones": [
+      "La nada, al tocar el suelo",
+      "El trabajo y movimiento que recibió",
+      "Una reducción de la gravedad"
+    ],
+    "valores": [
+      2.1,
+      4.1,
+      8.3
+    ],
+    "medido": "subidaIdeal",
+    "remate": "Del trabajo y movimiento recibidos. Convertir toda la energía de la carrera ideal elevaría el centro de masas {subidaIdeal|2} m; no es la altura del listón."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "guardar una carrera",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "EL APOYO PERMITE LA FLEXIÓN",
+          "clave": "La pértiga recibe energía al doblarse.",
+          "texto": "Al apoyarse su extremo, la pértiga puede deformarse mientras el conjunto continúa moviéndose. Parte de la energía cinética de la carrera se transforma en energía potencial elástica. El primer panel fija el extremo inferior en el cajetín y deja que el resto se arquee: la flexión tiene apoyos y una geometría concreta.",
+          "detalle": "No toda la energía pasa por un almacén perfecto. También cambian la posición del cuerpo y su movimiento, y existen pérdidas. Nuestro balance supone una fracción útil para separar la idea principal sin simular cada articulación, cada contacto ni toda la dinámica del salto.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "pertiga-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "RECUPERAR LA FORMA AYUDA A SUBIR",
+          "clave": "La energía termina en otra altura y otro movimiento.",
+          "texto": "Cuando la pértiga se endereza, puede devolver energía al conjunto. Elevar el centro de masas contra la gravedad requiere trabajo: es energía potencial gravitatoria. La comparación más sencilla pregunta cuánto podría subir si la energía de la carrera se dedicara a esa elevación, manteniendo claros sus límites ideales.",
+          "detalle": "El segundo panel sigue el centro del cuerpo durante la recuperación de la pértiga. No identifica ese punto con el listón: las extremidades y la postura pueden quedar a otras alturas. El esfuerzo muscular durante el salto también importa y no está calculado aquí.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "pertiga-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La pértiga no fabrica altura: transforma energía.",
+    "nota": "Balance energético ideal de la carrera y fracción útil supuesta; sin predicción de listón o técnica.",
+    "parrafos": [
+      "La curva de la pértiga hace visible una transferencia que dura poco. Primero recibe, después devuelve, mientras el cuerpo cambia su trayectoria. Mirar ese intercambio permite entender el salto sin atribuir al material un impulso gratuito ni confundir la altura del cuerpo con la de una competición."
+    ]
+  }
 }

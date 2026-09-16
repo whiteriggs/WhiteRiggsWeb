@@ -1,35 +1,36 @@
 {
+  "revisionEditorial": 2,
   "id": "radaravion", "rotulo": "REDES",
-  "titulo": "¿Cómo ve un radar un avión a trescientos kilómetros?",
-  "entradilla": "No recibe una imagen del avión. Envía energía en una dirección y busca un eco diminuto entre ruido y reflejos del entorno. El tiempo de regreso localiza el blanco en distancia; la orientación de la antena aporta dirección. Que llegue un eco no garantiza que sea detectable.",
+  "titulo": "¿Cómo localiza un avión el radar del aeropuerto?",
+  "entradilla": "El avión desaparece entre las nubes, pero sigue apareciendo en una pantalla del aeropuerto. El radar no recibe una imagen del avión. Envía energía en una dirección y busca un eco diminuto entre ruido y reflejos del entorno. El tiempo de regreso localiza el blanco en distancia; la orientación de la antena aporta dirección. Que llegue un eco no garantiza que sea detectable.",
   "modelo": "radaravion", "color": "azul",
   "medidas": {"frecuencia": 3000000000, "distancia": 300000, "potencia": 1000000, "ganancia": 10000, "seccion": 10, "perdidas": 2, "alturaRadar": 30, "alturaAvion": 10000},
   "tanteo": {
-    "pregunta": "En espacio libre, sin obstrucción terrestre y con el mismo blanco y antena, ¿qué fracción de potencia queda al duplicar la distancia?",
-    "opciones": ["La mitad", "La cuarta parte", "La dieciseisava parte"], "valores": [0.5, 0.25, 0.0625], "medido": "fraccionDoble",
+    "pregunta": "¿Por qué se debilita tanto el eco de un avión lejano?",
+    "opciones": ["Porque la luz deja de moverse", "Porque el avión absorbe siempre todo", "Porque la energía se reparte al ir y al volver"], "valores": [0.5, 0.25, 0.0625], "medido": "fraccionDoble",
     "remate": "En ese supuesto cae por un factor {factorCaida|0}. La dispersión de ida y vuelta da la inversa de la cuarta potencia; no garantiza visibilidad terrestre al doble de distancia."
   },
   "nucleo": [{
     "numero": 1, "nombre": "un viaje doble y una señal minúscula", "color": "azul",
     "paneles": [{
-      "rotulo": "EL ECO PAGA LA DISTANCIA DOS VECES",
-      "clave": "A {distanciaKM|0} km el modelo da {recibidaPW|3} pW; la curva no rebasa el horizonte de {horizonteKM|1} km.",
-      "texto": "La ecuación monostática del radar combina potencia emitida, ganancia de la antena, longitud de onda y sección radar del blanco. En espacio libre la densidad incidente cae con el cuadrado de la distancia; el eco reflejado vuelve a dispersarse antes de alcanzar la antena.",
-      "detalle": "La curva termina en el menor valor entre el doble de distancia y el horizonte geométrico. El cálculo de {doblePW|3} pW al doble es solo una extrapolación en espacio libre, no recepción terrestre. La sección radar elegida es ilustrativa: depende de forma, materiales, frecuencia y orientación, no solo del área de las alas.",
+      "rotulo": "CRONOMETRAR EL REGRESO",
+      "clave": "El eco del ejemplo tarda {ecoMicrosegundos|0} microsegundos.",
+      "texto": "La antena manda un pulso y escucha. Parte de la energía rebota en el avión y regresa. Como conocemos la velocidad de propagación, el retraso permite calcular el camino recorrido. Hay que dividirlo entre dos: el pulso ha ido hasta el avión y ha vuelto al receptor.",
+      "detalle": "Es una medida por tiempo de vuelo. La orientación del haz añade la dirección, y varias observaciones permiten seguir la trayectoria. El radar primario recibe una reflexión; no necesita que ese eco sea una respuesta voluntaria de un transmisor del avión.",
       "color": "azul",
-      "dibujo": {"tipo": "serie", "ejeX": "Distancia al blanco (km)", "ejeY": "Potencia recibida (pW)", "claves": [], "rotulos": []}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "radaravion-1", "claves": [], "rotulos": [], "pies": []}
     }, {
-      "rotulo": "ESTAR ALTO TAMBIÉN IMPORTA",
-      "clave": "El eco tarda {ecoMicrosegundos|0} µs; el horizonte ideal suma {horizonteKM|0} km.",
-      "texto": "La señal recorre dos veces la distancia al avión. Para comprobar que el ejemplo no exige atravesar la Tierra, calculamos además los horizontes de una antena a {alturaRadar|0} m y un avión a {alturaAvion|0} m. Un blanco alto puede estar visible mucho más lejos que uno a ras de suelo.",
-      "detalle": "La detección requiere comparar el eco con ruido térmico, interferencias y otros blancos. El ancho de banda del receptor, la integración de pulsos y la probabilidad de falsa alarma también importan. La potencia calculada no decide por sí sola si un radar real detectaría ese avión.",
+      "rotulo": "DOS REPARTOS DE ENERGÍA",
+      "clave": "Al doble de distancia, el eco ideal cae por un factor {factorCaida|0}.",
+      "texto": "La energía enviada se reparte por una superficie creciente antes de tocar el avión. La pequeña parte reflejada vuelve a repartirse durante el regreso. Son dos pérdidas geométricas: juntas dan la ley inversa de la cuarta potencia de la distancia, no una caída simplemente proporcional.",
+      "detalle": "También importa cómo refleja el avión, no solo el tamaño de sus alas. El receptor debe distinguir el eco del ruido. Una montaña o la curvatura terrestre pueden cortar el camino antes de que esa cuenta de potencia sea relevante.",
       "color": "azul",
-      "dibujo": {"tipo": "magnitudes", "claves": ["ecoMicrosegundos", "horizonteKM"], "rotulos": ["Eco: {ecoMicrosegundos|0} µs", "Horizonte: {horizonteKM|0} km"]}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "radaravion-2", "claves": [], "rotulos": [], "pies": []}
     }]
   }],
   "cierre": {
     "titulo": "Ver lejos exige ganar margen, no negar las pérdidas.",
-    "nota": "frecuencia en Hz; distancia y alturas en m; potencia durante el pulso en W; ganancia lineal; seccion en m²; perdidas como factor lineal. Campo lejano, sin ruido ni atmósfera. El escenario exige distancia menor que el horizonte geométrico de una Tierra de radio 6.371 km; la gráfica llega como máximo a esa frontera ideal. La comparación al doble supone espacio libre sin Tierra obstructora. No es un alcance operativo.",
+    "nota": "Distancias en metros, frecuencia en hercios y potencia en vatios. Ganancias lineales y sección en metros cuadrados. Comparación al doble en espacio libre sin Tierra obstructora; no es alcance operativo.",
     "parrafos": ["El regreso contiene varias pistas distintas: retraso para distancia, orientación para dirección y Doppler para velocidad radial. Reconstruir una trayectoria requiere reunir mediciones sucesivas."]
   }
 }

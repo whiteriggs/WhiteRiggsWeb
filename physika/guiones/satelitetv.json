@@ -1,12 +1,13 @@
 {
+  "revisionEditorial": 2,
   "id": "satelitetv", "rotulo": "REDES",
   "titulo": "¿Por qué se va la tele por satélite cuando llueve?",
   "entradilla": "Las gotas pueden absorber y dispersar parte de las microondas del enlace. El receptor tolera pérdidas mientras quede margen suficiente; cuando la relación señal/ruido cae demasiado, la corrección ya no puede reconstruir todos los datos. Por eso una tormenta puede producir bloques y después un corte brusco.",
   "modelo": "satelitetv", "color": "azul",
   "medidas": {"coeficiente": 0.04, "exponente": 1.1, "lluvia": 50, "camino": 3, "margen": 6},
   "tanteo": {
-    "pregunta": "Si la atenuación por km es 0,04 × R^1,1 dB/km, con R en mm/h, ¿cuánta atenuación añaden 3 km de lluvia a 50 mm/h?",
-    "opciones": ["Unos 0,9 dB", "Unos 8,9 dB", "Unos 89 dB"], "valores": [0.9, 8.9, 89], "medido": "atenuacion",
+    "pregunta": "Si una tormenta corta la imagen, ¿significa que ha apagado el satélite?",
+    "opciones": ["Sí: las gotas alcanzan su órbita", "No: puede haber debilitado demasiado el enlace", "Sí: el satélite se queda sin gravedad"], "valores": [0.9, 8.9, 89], "medido": "atenuacion",
     "remate": "Añade {atenuacion|2} dB, más que los {margen|0} dB disponibles. El margen restante resulta {margenRestante|2} dB en este escenario."
   },
   "nucleo": [{
@@ -14,22 +15,22 @@
     "paneles": [{
       "rotulo": "NO TODA LA ÓRBITA ESTÁ LLOVIENDO",
       "clave": "El tramo de {camino|0} km añade {atenuacion|2} dB; la pérdida específica es {especifica|2} dB/km.",
-      "texto": "Usamos una ley de potencia: la atenuación específica crece con la intensidad de precipitación elevada a un exponente. Multiplicamos por la longitud efectiva del tramo con lluvia, no por toda la distancia al satélite. La curva mantiene constantes el camino y los coeficientes mientras aumenta la intensidad.",
-      "detalle": "Los coeficientes reales dependen de frecuencia, polarización y distribución de gotas. La lluvia tampoco es uniforme a lo largo del trayecto, por lo que un modelo de disponibilidad necesita estadísticas y una longitud efectiva adecuada. Aquí se ve el mecanismo sin fingir un pronóstico meteorológico.",
+      "texto": "La parabólica recoge microondas que han atravesado la atmósfera. Si el camino cruza lluvia intensa, las gotas absorben parte de la energía y dispersan otra hacia distintas direcciones. Son absorción y dispersión: llega menos señal útil aunque la antena continúe apuntando correctamente al satélite.",
+      "detalle": "El agua no ocupa toda la distancia hasta la órbita. Importa el tramo lluvioso atravesado, la frecuencia y las características de las gotas. Por eso una tormenta cercana puede afectar al enlace sin que esté lloviendo en ningún lugar próximo al satélite.",
       "color": "azul",
-      "dibujo": {"tipo": "serie", "ejeX": "Intensidad de lluvia (mm/h)", "ejeY": "Atenuación adicional (dB)", "claves": [], "rotulos": []}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "satelitetv-1", "claves": [], "rotulos": [], "pies": []}
     }, {
       "rotulo": "LA POTENCIA BAJA SUAVEMENTE; LA IMAGEN PUEDE CORTARSE",
       "clave": "Queda el {potenciaRelativa|1}% de la potencia previa a esa lluvia.",
-      "texto": "Convertimos decibelios a razón de potencia con una exponencial. La señal no desaparece físicamente al cruzar un umbral, pero el receptor puede dejar de corregir errores suficientes para mantener una imagen válida. Ese comportamiento digital explica que no veamos una pérdida visual proporcional a cada gota.",
-      "detalle": "Con el margen supuesto, la igualdad entre reserva y atenuación ocurre a {lluviaUmbral|1} mm/h. No es un límite universal de la televisión por satélite. Tamaño de antena, apuntamiento, modulación, codificación, ruido y agua sobre el reflector pueden cambiar el resultado.",
+      "texto": "El receptor tolera una cierta pérdida porque compara la señal con el ruido y corrige errores. Ese margen es una reserva. Mientras alcanza, puedes seguir viendo una imagen aparentemente normal. Cuando deja de bastar, aparecen bloques, congelaciones o un corte, aunque todavía llegue energía a la antena.",
+      "detalle": "La potencia baja gradualmente, pero recuperar datos es una tarea con límites. Esa diferencia explica el cambio brusco de la pantalla. Una antena bien orientada y un enlace con margen resisten mejor; no existe una intensidad de lluvia universal que apague todas las televisiones.",
       "color": "azul",
-      "dibujo": {"tipo": "magnitudes", "claves": ["potenciaRelativa", "lluviaUmbral"], "rotulos": ["Potencia: {potenciaRelativa|1}%", "Umbral: {lluviaUmbral|1} mm/h"]}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "satelitetv-2", "claves": [], "rotulos": [], "pies": []}
     }]
   }],
   "cierre": {
     "titulo": "La tormenta no apaga el satélite: debilita el enlace.",
-    "nota": "lluvia en mm/h; camino efectivo en km; margen en dB. exponente adimensional; coeficiente en (dB/km)/(mm/h)^exponente. Valores ilustrativos, no coeficientes tabulados para una frecuencia concreta. Modelo empírico de atenuación por lluvia uniforme y margen de enlace fijo; no estima disponibilidad anual.",
+    "nota": "Lluvia en milímetros por hora, camino efectivo en kilómetros y margen en decibelios. Ley empírica con coeficiente y exponente ilustrativos; no predice disponibilidad anual ni una tormenta concreta.",
     "parrafos": ["La absorción transforma parte de la energía y la dispersión la desvía. Ambas contribuyen a que llegue menos señal al receptor, aunque no haya un obstáculo opaco bloqueando la línea de visión."]
   }
 }

@@ -1,12 +1,72 @@
 {
-  "id": "natacion", "rotulo": "DEPORTE", "titulo": "¿Por qué se limitaron los bañadores de los récords?",
-  "entradilla": "Un nadador no solo vence el rozamiento de la piel. También desplaza agua, genera oleaje y cambia de postura con cada brazada. Los trajes pueden modificar superficie, compresión y flotabilidad. La restricción de bañadores no textiles y de su cobertura limitó esa ayuda material: no se prohibió la física del arrastre.",
-  "modelo": "natacion", "color": "azul",
-  "medidas": {"densidad": 998, "velocidad": 2, "areaArrastre": 0.07, "areaComparada": 0.065},
-  "tanteo": {"pregunta": "Si el área efectiva de arrastre pasa de 0,070 a 0,065 m², ¿cuánto aumenta la velocidad a igual potencia útil en este modelo?", "opciones": ["Nada", "Aproximadamente 2,5 %", "Aproximadamente 7,7 %"], "valores": [0, 2.5, 7.7], "medido": "mejora", "remate": "La mejora calculada es {mejora|2} %. No es una predicción del beneficio de un bañador comercial ni una explicación completa de un récord."},
-  "nucleo": [{"numero": 1, "nombre": "cada poco cuesta más", "color": "azul", "paneles": [
-    {"rotulo": "A LA MISMA RAPIDEZ", "clave": "La potencia útil contra el arrastre pasa de {potencia|1} W a {potenciaComparada|1} W.", "texto": "Modelamos el arrastre como media densidad por área efectiva y velocidad al cuadrado. Multiplicar esa fuerza por la rapidez da potencia. Las barras mantienen la rapidez para mostrar el ahorro mecánico: no comparan el consumo metabólico de dos deportistas.", "detalle": "El área efectiva reúne coeficiente y área de referencia. No es necesariamente el área mojada del traje. Aquí la reducimos como hipótesis de comparación, sin atribuir esa reducción a un tejido, una marca o un mecanismo aislado.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["potencia", "potenciaComparada"], "rotulos": ["Inicial: {potencia|1} W", "Comparada: {potenciaComparada|1} W"]}},
-    {"rotulo": "AHORA FIJAMOS LA POTENCIA", "clave": "Con igual potencia útil, la rapidez pasa a {velocidadComparada|3} m/s.", "texto": "La potencia de arrastre crece con el cubo de la rapidez si mantenemos constante el área efectiva. Por eso una mejora del arrastre se convierte en una mejora menor de velocidad. Cambiar brazada, oleaje o postura rompe esa equivalencia sencilla.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["velocidad", "velocidadComparada"], "rotulos": ["Inicial: {velocidad|3} m/s", "Comparada: {velocidadComparada|3} m/s"]}}
-  ]}],
-  "cierre": {"titulo": "Una ventaja material no explica toda una marca.", "nota": "Densidad del agua en kg/m³, rapidez en m/s y áreas efectivas Cd·A en m². Ambas áreas son escenarios ilustrativos, no medidas de bañadores. Potencia mecánica útil, sin modelar eficiencia muscular, flotabilidad o resistencia de olas.", "parrafos": ["La homologación combina decisiones deportivas y límites técnicos. Una marca también depende de la piscina, la salida, los virajes y el nadador. Este cálculo explica la sensibilidad al arrastre, no permite asignar segundos históricos exclusivamente al traje."]}
+  "id": "natacion",
+  "rotulo": "DEPORTE",
+  "titulo": "Bañador de natación: ¿por qué importa cómo pasa el agua alrededor?",
+  "revisionEditorial": 2,
+  "modelo": "natacion",
+  "color": "verde",
+  "medidas": {
+    "densidad": 998,
+    "velocidad": 2,
+    "areaArrastre": 0.07,
+    "areaComparada": 0.065
+  },
+  "entradilla": "Un bañador de natación no tiene motor, pero forma parte de la superficie que el agua encuentra al pasar. Arrugas, forma y postura pueden cambiar esa interacción. Para entender por qué una diferencia pequeña importa, imaginemos dos conjuntos cuerpo y bañador con distinta resistencia. No estamos comparando marcas ni atribuyendo un récord a una prenda concreta.",
+  "tanteo": {
+    "pregunta": "Si baja algo el arrastre y mantenemos la misma potencia útil, ¿qué permite el modelo?",
+    "opciones": [
+      "La misma rapidez obligatoriamente",
+      "Una rapidez algo mayor",
+      "Una rapidez ilimitada"
+    ],
+    "valores": [
+      0,
+      2.5,
+      7.7
+    ],
+    "medido": "mejora",
+    "remate": "Una rapidez algo mayor: {mejora|2} % con los valores supuestos. No es una mejora medida de un bañador comercial."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "abrirse paso en el agua",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA SUPERFICIE CAMBIA EL PASO DEL AGUA",
+          "clave": "El conjunto importa más que una tela aislada.",
+          "texto": "Al avanzar, hay que apartar agua y arrastrar parte de la que queda cerca. La forma del cuerpo y su superficie influyen en las fuerzas resistentes. Es arrastre hidrodinámico. Un bañador puede modificar algunas condiciones de contacto, pero no elimina la resistencia ni trabaja separado de la postura y el movimiento.",
+          "detalle": "El primer panel compara contornos idealizados con una estela más ancha y otra algo menor. El área efectiva del modelo reúne forma y coeficiente de arrastre; no es simplemente cuánta tela tiene la prenda ni una medida directa de su calidad.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "natacion-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "IR MÁS RÁPIDO CUESTA CADA VEZ MÁS",
+          "clave": "La misma fuerza recorre más distancia por segundo.",
+          "texto": "En esta aproximación, la resistencia crece con el cuadrado de la rapidez. Para mantenerla hay que ejercer esa fuerza mientras se avanza, así que la potencia útil crece con el cubo de la rapidez. Es la relación entre trabajo y tiempo: no basta con contar la fuerza sin contar el movimiento.",
+          "detalle": "Por eso reducir un poco el arrastre no produce la misma reducción proporcional en el tiempo de un recorrido. El segundo panel muestra dos posiciones finales a igual tiempo y potencia. La pequeña ventaja dibujada es ilustrativa; el porcentaje del ejemplo procede del cálculo.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "natacion-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Menos resistencia ayuda, pero no convierte una prenda en motor.",
+    "nota": "Arrastre cuadrático con áreas efectivas supuestas e igual potencia útil. Sin prestaciones comerciales ni fisiología.",
+    "parrafos": [
+      "La prenda participa en una interacción entre agua, forma y movimiento. El modelo sirve para separar una tendencia física de una promesa publicitaria. Una diferencia pequeña puede importar en competición, pero demostrarla exige medir condiciones reales, no elegir un coeficiente que resulte favorable."
+    ]
+  }
 }

@@ -1,60 +1,19 @@
 {
-  "id": "fibra",
-  "rotulo": "REDES",
-  "titulo": "¿Cómo viaja la luz por un hilo de vidrio doblado?",
-  "entradilla": "Rebotando. La luz nunca toca el aire: va chocando contra la frontera entre dos vidrios que se diferencian en la tercera cifra decimal, y en esa frontera no tiene salida posible.",
-  "modelo": "fibra",
-  "color": "azul",
-  "tanteo": {
-    "pregunta": "Tras cien kilómetros de fibra, ¿cuánta luz queda de la que entró?",
-    "opciones": ["Una millonésima", "El uno por ciento", "Más de la mitad"],
-    "valores": [0.0001, 1, 50],
-    "medido": "quedaTrasCien",
-    "remate": "El {quedaTrasCien|0} por ciento. Suena a poco hasta que caes en que el aire de una tarde con niebla se come eso mismo en cien metros."
-  },
-  "nucleo": [
-    {
-      "numero": 1,
-      "nombre": "una frontera sin salida",
-      "color": "azul",
-      "paneles": [
-        {
-          "rotulo": "PASADO EL ÁNGULO, NO HAY SALIDA",
-          "clave": "Por encima de {critico|1} grados la luz no puede salir. No es que salga poca: es que no existe ángulo de salida.",
-          "texto": "La luz que va por la fibra viaja casi paralela al hilo, así que llega a la pared muy de refilón. Y de refilón, yendo de un vidrio a otro un pelín menos denso, la refracción pide un ángulo de salida imposible. Lo único que le queda es rebotar entera hacia dentro.",
-          "detalle": "Entera de verdad, no casi. Un espejo bueno devuelve el noventa y muchos por ciento, y en un hilo de cien kilómetros eso sería perder hasta el último fotón. La reflexión interna total no tiene pérdida por rebote, y por eso la fibra es fibra y no un tubo de espejos.",
-          "color": "azul",
-          "dibujo": {
-            "tipo": "rayo",
-            "claves": ["nucleo", "cubierta", "seQueda"],
-            "rotulos": ["el núcleo del hilo", "la cubierta"]
-          }
-        },
-        {
-          "rotulo": "Y SI ENTRA TORCIDA, SE PIERDE",
-          "clave": "Seis grados más recta y ya se escapa por la pared en el primer rebote.",
-          "texto": "Por eso una fibra no se traga cualquier luz: solo acepta la que entra dentro de un cono de {cono|1} grados. Lo de fuera de ese cono entra igual, llega a la pared demasiado de frente, y se va al plástico en el primer metro.",
-          "detalle": "Ahí está la diferencia entre los dos tipos de fibra. Si el hilo es muy fino, solo cabe un camino y todo llega a la vez; si es gordo, caben muchos, unos más largos que otros, y un pulso que sale limpio llega ensanchado. Eso limita más la velocidad que la propia pérdida.",
-          "color": "azul",
-          "dibujo": {
-            "tipo": "rayo",
-            "claves": ["nucleo", "cubierta", "seEscapa"],
-            "rotulos": ["el núcleo del hilo", "la cubierta"]
-          }
-        }
-      ]
-    }
-  ],
-  "cierre": {
-    "titulo": "Todo esto lo sostiene una diferencia de {diferencia|4}.",
-    "nota": "Fibra monomodo típica, pérdida de dos décimas de decibelio por kilómetro y luz infrarroja de 1.550 nanómetros.",
-    "parrafos": [
-      "Entre el vidrio de dentro y el de fuera hay {diferencia|4} de índice. Esa miseria es lo único que impide que la luz se escape, y es lo que sostiene un cable de {kilometros|0} kilómetros por el fondo del mar.",
-      "Tras esos {kilometros|0} kilómetros llega el {quedaTrasCien|1} por ciento de la luz que entró. Suena a poco hasta que caes en que el aire de una tarde con niebla se come eso mismo en cien metros."
-    ]
-  },
-  "puente": {
-    "hacia": "cincoge",
-    "frase": "La fibra llega hasta la farola. De la farola a tu móvil ya no hay vidrio que valga, y ahí empieza el otro problema: mandar lo mismo por el aire, que no tiene paredes donde rebotar."
-  }
+  "revisionEditorial": 2,
+  "id": "fibra", "rotulo": "REDES", "titulo": "¿Cómo lleva internet el cable de fibra de tu router?",
+  "entradilla": "El cable fino que llega al router no transporta la película como una corriente eléctrica. Lleva cambios de luz. Dentro hay un núcleo de vidrio rodeado por otro material transparente. Esa diferencia, casi invisible, permite guiar la señal por un camino que puede doblarse suavemente. Al mover el mueble, conviene recordar que ese hilo necesita conservar su forma, no solo seguir conectado por ambos extremos.",
+  "modelo": "fibra", "color": "azul",
+  "tanteo": {"pregunta": "¿Puede la luz seguir guiada por la fibra y aun así ir perdiendo potencia?", "opciones": ["No: guiarla elimina cualquier pérdida", "Sí: el propio material también atenúa", "Solo si el cable está partido"], "valores": [0.0001, 1, 50], "medido": "quedaTrasCien", "remate": "Sí. En el ejemplo queda el {quedaTrasCien|1}% tras {kilometros|0} kilómetros. Guiar la luz no elimina absorción y dispersión."},
+  "nucleo": [{"numero": 1, "nombre": "luz dentro del vidrio", "color": "azul", "paneles": [
+    {"rotulo": "LA FRONTERA GUÍA", "clave": "El ángulo crítico del ejemplo es {critico|1} grados.",
+     "texto": "Al pasar entre materiales, la luz cambia de dirección. La ley de Snell relaciona ese desvío con los índices de refracción. Si viene del núcleo y alcanza la frontera suficientemente de lado, no aparece un rayo propagándose hacia fuera: se produce reflexión interna total.",
+     "detalle": "El ángulo se mide desde la perpendicular a la superficie, no desde el cable. El dibujo de rebotes ayuda a entender la guía; en una fibra monomodo real hace falta describir un campo ondulatorio, no una bolita viajera.", "color": "azul",
+     "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "fibra-1", "claves": [], "rotulos": [], "pies": []}},
+    {"rotulo": "NO HAGAS UN PLIEGUE", "clave": "Una curva demasiado cerrada puede dejar escapar energía.",
+     "texto": "Al recoger el cable detrás del mueble, una vuelta amplia y un pliegue apretado no son lo mismo. La curva cambia cómo llega el campo a la frontera. Si deja de quedar bien confinado, parte de la señal se pierde aunque el vidrio no se haya roto.",
+     "detalle": "Además, el material absorbe y dispersa una pequeña fracción durante el recorrido. La reflexión ideal de una frontera no convierte todo el cable en un medio sin pérdidas. Por eso las conexiones y las curvas también cuentan.", "color": "azul",
+     "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "fibra-2", "claves": [], "rotulos": [], "pies": []}}
+  ]}],
+  "cierre": {"titulo": "Guiar no significa conservar toda la potencia.", "nota": "Ejemplo de fibra monomodo con atenuación de dos décimas de decibelio por kilómetro. Esquemas geométricos, sin escala de curvatura real.", "parrafos": ["Una curva suave protege el camino de la luz. No necesitas ver su interior para entender por qué conviene respetar el radio mínimo del cable."]},
+  "puente": {"hacia": "cincoge", "frase": "La fibra guía la señal; las antenas tienen que enviarla por el aire."}
 }

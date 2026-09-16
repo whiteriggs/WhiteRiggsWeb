@@ -1,11 +1,72 @@
 {
-  "id": "fusion", "rotulo": "ESPACIO", "titulo": "¿De dónde saca su energía el Sol?",
-  "entradilla": "En su núcleo, una cadena de reacciones convierte hidrógeno en helio. El estado final tiene menos masa en reposo que el inicial; la diferencia aparece como energía. No es combustión química y tampoco es que la materia desaparezca sin llevar una contabilidad.",
-  "modelo": "fusion", "color": "ambar", "medidas": {"hidrogenoU": 1.00782503223, "helioU": 4.00260325413, "neutrinosMev": 0.53, "masaCombustible": 0.001},
-  "tanteo": {"pregunta": "¿Qué fracción de la masa inicial se convierte en energía en el balance neto hidrógeno-helio?", "opciones": ["0,007%", "0,71%", "100%"], "valores": [0.007, 0.71, 100], "medido": "rendimiento", "remate": "{rendimiento|3}%. Una fracción pequeña de masa corresponde a mucha energía porque se multiplica por c al cuadrado."},
-  "nucleo": [{"numero": 1, "nombre": "cerrar el balance", "color": "ambar", "paneles": [
-    {"rotulo": "NO TODA LA ENERGÍA CALIENTA", "clave": "Energía neta total: {totalMev|3} MeV. Tras restar neutrinos: {termicaMev|3} MeV.", "texto": "Comparamos la masa de cuatro átomos neutros de hidrógeno con la de un átomo neutro de helio-4. Esta convención incluye en el balance neto la aniquilación de los positrones con electrones del plasma. No debemos sumar después esa energía de nuevo ni mezclar estas masas con masas de núcleos desnudos.", "detalle": "Los neutrinos se llevan parte de la energía y atraviesan el Sol con muy pocas interacciones. El dato elegido representa una pérdida media ilustrativa de la rama pp I. Otras ramas de la cadena cambian ese reparto, aunque el balance global de masas sea el mismo a esta precisión.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["totalMev", "termicaMev", "neutrinosMev"], "rotulos": ["Total: {totalMev|2} MeV", "Depósito: {termicaMev|2} MeV", "Neutrinos: {neutrinosMev|2} MeV"]}},
-    {"rotulo": "UN GRAMO COMO CONTABILIDAD", "clave": "El combustible del ejemplo entregaría {energiaGj|1} GJ al plasma si completara ese balance.", "texto": "Dividimos la masa del combustible entre la masa de cada grupo inicial y multiplicamos por la energía depositada por reacción neta. No presupone que podamos fusionar ese combustible de golpe: es una cuenta de energía total disponible, no de potencia ni de facilidad tecnológica.", "detalle": "El núcleo solar mantiene densidades y temperaturas que permiten reacciones por efecto túnel. La primera etapa débil de la cadena es lenta, y esa lentitud contribuye a la larga vida del Sol. La luz superficial no es un fotón que haya viajado intacto desde una reacción concreta.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["rendimiento", "energiaGj"], "rotulos": ["Masa convertida: {rendimiento|3}%", "Depósito: {energiaGj|1} GJ"]}}
-  ]}],
-  "cierre": {"titulo": "Masa y energía comparten la misma cuenta.", "nota": "Masas atómicas de hidrógeno-1 y helio-4 en u: 1,00782503223 y 4,00260325413; combustible ilustrativo 0,001 kg. Pérdida media elegida de neutrinos 0,53 MeV por helio para pp I. Balance neto con aniquilación incluida mediante masas atómicas, despreciando correcciones electrónicas pequeñas. Ley E = Δmc²; contexto consultado: NASA Science, Star Types, https://science.nasa.gov/universe/stars/types/.", "parrafos": ["La materia solar está ionizada: usar masas atómicas es una convención contable para cerrar electrones y positrones, no afirmar que haya átomos neutros estables en su núcleo.", "La energía que queda se transporta por radiación y convección antes de salir. Calcular su cantidad no determina cuánto tarda en llegar a la fotosfera."]}
+  "id": "fusion",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Por qué giran los paneles solares de la Estación Espacial?",
+  "revisionEditorial": 2,
+  "entradilla": "En las imágenes de la estación destacan unas alas enormes cubiertas de celdas. No están abiertas solo para que el Sol las encuentre: sus articulaciones permiten orientarlas mientras cambia la posición de la nave. La misma superficie recoge cantidades distintas de luz según cómo se presente al haz que llega.",
+  "modelo": "fusion",
+  "color": "indigo",
+  "medidas": {
+    "irradiancia": 1361,
+    "area": 10,
+    "eficiencia": 0.3,
+    "angulo": 60
+  },
+  "tanteo": {
+    "pregunta": "Si inclinas un panel respecto al Sol, sin cambiar sus celdas, ¿qué ocurre con la potencia que puede recoger?",
+    "opciones": [
+      "Aumenta necesariamente",
+      "Disminuye",
+      "No cambia por la orientación"
+    ],
+    "valores": [
+      6000,
+      2041.5,
+      4083
+    ],
+    "medido": "inclinada",
+    "remate": "Disminuye: el panel ilustrado pasa de {frontal|0} W frontal a {inclinada|0} W inclinado."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "presentar superficie al Sol",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "DE FRENTE INTERCEPTA MÁS RAYOS",
+          "clave": "La sombra del panel mide la superficie que ofrece al haz.",
+          "texto": "Sostén una hoja frente a una lámpara y después gírala de canto. La hoja sigue teniendo la misma superficie, pero intercepta una parte menor del haz. El área proyectada depende del coseno del ángulo entre los rayos y la perpendicular al panel. Esa geometría explica por qué merece la pena orientarlo.",
+          "detalle": "Con la inclinación del ejemplo se recoge el {porcentaje|0}% de la potencia frontal. No es una pérdida dentro de la celda: parte de la luz simplemente pasa de largo sin encontrar el panel.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "fusion-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA CELDA SEPARA CARGAS",
+          "clave": "La luz absorbida puede alimentar un circuito exterior.",
+          "texto": "En el semiconductor, un fotón absorbido puede liberar cargas móviles. La estructura de la celda ayuda a separarlas y los contactos las llevan al circuito. Es el efecto fotovoltaico. No toda la energía recibida se convierte en electricidad: la eficiencia resume qué parte útil obtiene la celda en las condiciones elegidas.",
+          "detalle": "La cuenta combina irradiancia, área proyectada y eficiencia: aquí resulta {inclinada|0} W. La estación real debe gestionar sombras, temperatura, degradación y baterías durante la noche orbital. Esos efectos no se esconden dentro de nuestra cifra ideal.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "fusion-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Antes de convertir luz, hay que interceptarla.",
+    "parrafos": [
+      "El mecanismo de giro y las celdas resuelven problemas distintos. Uno presenta más superficie al Sol; las otras convierten parte de esa energía en electricidad. Girar las alas puede mejorar la alimentación sin cambiar ni una celda."
+    ],
+    "nota": "Panel ilustrativo de 10 m², eficiencia constante del 30% e irradiancia de 1361 W/m². No son especificaciones eléctricas de la estación."
+  }
 }

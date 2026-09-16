@@ -1,12 +1,73 @@
 {
-  "id": "lata", "rotulo": "COTIDIANO", "titulo": "¿De dónde sale el agua que aparece fuera de una lata fría?",
-  "entradilla": "Una lata cerrada puede llenarse de gotas por fuera sin tener ninguna fuga. El agua procede del vapor del aire. Cuando la pared enfría la capa de aire cercana por debajo de su punto de rocío, parte de ese vapor se condensa.",
-  "modelo": "lata", "color": "azul",
-  "medidas": {"masaAgua": 0.002, "latente": 2450000, "masaMetal": 0.015, "calorEspecifico": 900, "salto": 15},
-  "tanteo": {"pregunta": "Sobre una lata se condensan 2 g de agua; el calor latente es de 2,45 MJ por kilogramo. ¿Cuánto calor crees que libera esa condensación?", "opciones": ["Unos 49 J", "Unos 4.900 J", "Unos 49.000 J"], "valores": [49, 4900, 49000], "medido": "calorCondensado", "remate": "Las gotas liberan {calorCondensado|0} J: condensar también transporta calor hacia la lata."},
-  "nucleo": [{"numero": 1, "nombre": "las gotas llegan con energía", "color": "azul", "paneles": [
-    {"rotulo": "EL CAMBIO DE FASE CALIENTA", "clave": "Condensar {masaGramos|1} g de agua libera {calorCondensado|0} J.", "texto": "Al pasar de vapor a líquido, las moléculas forman un estado más ligado y ceden energía al entorno. Esa energía puede entrar en la pared y en la bebida. Por eso un ambiente húmedo no solo moja la lata: la condensación añade una vía de transferencia térmica.", "detalle": "Multiplicamos la masa condensada por el calor latente correspondiente. La cuenta no dice cuánta agua acabará apareciendo; para eso harían falta humedad, temperatura, ventilación, área y tiempo. Separa una consecuencia energética de las gotas de la velocidad a la que se forman.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["masaGramos", "calorCondensado"], "rotulos": ["Agua: {masaGramos|1} g", "Calor: {calorCondensado|0} J"]}},
-    {"rotulo": "EL METAL NO ES TODA LA RESERVA", "clave": "Calentar solo la pared el salto elegido requiere {calorMetal|1} J.", "texto": "Comparamos dos energías, ambas en julios: la liberada por las gotas y la que absorbería la masa de aluminio del escenario al aumentar su temperatura. La diferencia ayuda a reconocer cuánto pesa térmicamente un cambio de fase, incluso para poca agua.", "detalle": "No se sigue que toda esa energía caliente únicamente el metal. La bebida, el aire, la mesa y la evaporación intercambian calor simultáneamente. El contenido suele aportar mucha más capacidad térmica que la pared; omitirlo impide calcular la temperatura final de una lata real.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["calorCondensado", "calorMetal"], "rotulos": ["Gotas: {calorCondensado|0} J", "Metal: {calorMetal|0} J"]}}
-  ]}],
-  "cierre": {"titulo": "La lata no transpira: recoge agua del aire.", "nota": "Escenario ilustrativo: masas en kg, salto térmico en K, calor específico en J/(kg·K) y latente en J/kg. Valores aproximados de aluminio y agua cerca de temperatura ambiente, sin balance completo de la bebida.", "parrafos": ["Las gotas pequeñas crecen, se unen y pueden deslizarse cuando su peso vence la retención superficial. La forma de ese recorrido depende del recubrimiento exterior, no demuestra que el líquido haya atravesado el envase."]}
+  "id": "lata",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿De dónde salen las gotas de una lata de Coca-Cola fría?",
+  "revisionEditorial": 2,
+  "entradilla": "Sacas una Coca-Cola fría y la dejas sobre la mesa. La lata sigue cerrada, pero pronto moja tus dedos y deja un cerco. No está sudando refresco a través del aluminio. El agua llega desde el otro lado: ya estaba en el aire de la habitación, aunque no pudieras verla.",
+  "modelo": "lata",
+  "color": "ambar",
+  "medidas": {
+    "masaAgua": 0.002,
+    "latente": 2450000,
+    "masaMetal": 0.015,
+    "calorEspecifico": 900,
+    "salto": 15
+  },
+  "tanteo": {
+    "pregunta": "Cuando aparecen gotas fuera de la lata, ¿qué pasa con el calor?",
+    "opciones": [
+      "Las gotas enfrían la lata al formarse",
+      "La condensación entrega calor a la lata",
+      "La condensación no intercambia energía"
+    ],
+    "valores": [
+      49,
+      4900,
+      49000
+    ],
+    "medido": "calorCondensado",
+    "remate": "Condensar entrega calor: la cantidad de agua del ejemplo libera {calorCondensado|0} J. La lata no se mantiene fría por mojarse."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el agua viene del aire",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "POR FUERA DEL METAL",
+          "clave": "La bebida enfría la pared, y la pared enfría el aire cercano.",
+          "texto": "El aluminio conduce bien el calor y su pared es fina. Por eso la superficie exterior sigue bastante de cerca la temperatura de la bebida. Si el aire que la toca se enfría lo suficiente, parte de su vapor pasa a líquido. Ese cambio se llama condensación: fabrica las gotas sin atravesar el envase.",
+          "detalle": "No depende del azúcar ni del gas del refresco. Una lata fría de otra bebida puede hacer lo mismo. Importan la humedad del ambiente y la temperatura de la superficie; en aire seco puede aparecer mucha menos agua.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "lata-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LAS GOTAS TAMBIÉN CALIENTAN",
+          "clave": "Pasar de vapor a líquido libera energía.",
+          "texto": "Para evaporar agua hace falta energía, y al volver a condensarse esa energía se entrega al entorno. Aquí parte llega a la pared y a la bebida. Es el calor latente: las gotas no son una pequeña reserva de frío que aparezca gratis sobre el aluminio.",
+          "detalle": "Nuestro ejemplo compara {calorCondensado|0} J de condensación con {calorMetal|0} J para calentar la pared elegida. Son dos aportes distintos; el balance completo también incluye la bebida, el aire, la mesa y la radiación del entorno.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "lata-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La lata no pierde agua: la recoge.",
+    "parrafos": [
+      "El cerco sobre la mesa es una muestra de la humedad del cuarto. La bebida fría ofrece la superficie necesaria para hacer visible una parte."
+    ],
+    "nota": "Masas y temperaturas ilustrativas, no especificaciones de Coca-Cola. Calculamos energía intercambiada, no el tiempo que tarda una lata real en calentarse."
+  }
 }

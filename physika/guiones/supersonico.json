@@ -1,12 +1,70 @@
 {
-  "id": "supersonico", "rotulo": "AVIACIÓN", "titulo": "¿Qué le pasa al aire al pasar la velocidad del sonido?",
-  "entradilla": "Las pequeñas perturbaciones de presión ya no pueden propagarse corriente arriba contra un flujo supersónico. Cuando ese flujo debe comprimirse, pueden aparecer ondas de choque: regiones muy delgadas donde presión, densidad y temperatura cambian bruscamente.",
-  "modelo": "supersonico", "color": "coral",
-  "medidas": {"mach": 2, "gamma": 1.4},
-  "tanteo": {"pregunta": "En un choque normal ideal a Mach 2, con una razón de capacidades caloríficas γ = 1,4, ¿por cuánto se multiplica la presión estática?", "opciones": ["Por dos", "Por 4,5", "Por veinte"], "valores": [2, 4.5, 20], "medido": "presionRelativa", "remate": "Se multiplica por {presionRelativa|1}. El choque comprime y calienta el gas, pero no crea energía."},
-  "nucleo": [{"numero": 1, "nombre": "un salto sujeto a conservación", "color": "coral", "paneles": [
-    {"rotulo": "CONSERVAR MASA, MOMENTO Y ENERGÍA", "clave": "A Mach {mach|1}, la razón de presiones es {presionRelativa|2}.", "texto": "La curva usa las ecuaciones de choque normal para un gas perfecto. En cada punto se compara la presión inmediatamente después con la de antes del frente. Es un choque perpendicular al flujo, una geometría ideal concreta, no toda la superficie de un avión supersónico.", "detalle": "Las leyes de conservación conectan ambos lados sin resolver la estructura microscópica del frente. El choque transforma parte del movimiento ordenado en energía interna y aumenta la entropía. La presión estática sube, mientras la presión total disminuye por irreversibilidad.", "color": "coral", "dibujo": {"tipo": "serie", "ejeX": "Mach antes del choque", "ejeY": "Presión después / antes", "claves": [], "rotulos": []}},
-    {"rotulo": "MÁS DENSO Y MÁS CALIENTE", "clave": "La densidad se multiplica por {densidadRelativa|2} y la temperatura absoluta por {temperaturaRelativa|2}.", "texto": "El Mach posterior queda en {machFinal|2}, subsónico en este choque normal. Las razones no son intercambiables: la ecuación del gas relaciona presión con densidad y temperatura absoluta. Por eso la compresión no puede calcularse como un simple aumento de densidad a temperatura fija.", "detalle": "Alrededor de alas y puntas aparecen choques oblicuos, expansiones y regiones de diferente Mach. Incluso con velocidad de vuelo subsónica pueden existir zonas locales supersónicas. Una nube visible no es la onda de choque misma ni una prueba universal de haber cruzado Mach uno.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["presionRelativa", "densidadRelativa", "temperaturaRelativa"], "rotulos": ["Presión ×{presionRelativa|2}", "Densidad ×{densidadRelativa|2}", "Temperatura ×{temperaturaRelativa|2}"]}}
-  ]}],
-  "cierre": {"titulo": "El salto también obedece las cuentas.", "nota": "Mach y gamma adimensionales; gamma ilustrativa de aire caloríficamente perfecto. Choque normal estacionario, adiabático, sin reacción química. Relaciones de Rankine-Hugoniot. El modelo limita Mach a 5 y no incluye variación de calores específicos.", "parrafos": ["La velocidad del sonido depende del estado del gas. Ser supersónico expresa una relación local entre velocidades, no una cifra universal en kilómetros por hora válida a cualquier altura y temperatura."]}
+  "id": "supersonico",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Qué comprime el aire delante de un avión supersónico?",
+  "entradilla": "En las imágenes de túneles de viento, algunos aviones aparecen rodeados de líneas muy finas. No son paredes sólidas ni una funda pegada al fuselaje. Marcan regiones donde el aire cambia bruscamente. Cuando el avión avanza más rápido que ciertas perturbaciones sonoras, la corriente ya no puede ajustarse del mismo modo que a baja velocidad.",
+  "modelo": "supersonico",
+  "color": "coral",
+  "medidas": {
+    "mach": 2,
+    "gamma": 1.4
+  },
+  "tanteo": {
+    "pregunta": "Al atravesar de frente una onda de choque, ¿qué le ocurre a la presión del aire?",
+    "opciones": [
+      "Se mantiene",
+      "Aumenta",
+      "Disminuye"
+    ],
+    "valores": [
+      1,
+      4.5,
+      0.5
+    ],
+    "medido": "presionRelativa",
+    "remate": "Aumenta por un factor {presionRelativa|1} en el choque normal ideal del ejemplo. Una onda oblicua requiere otra comparación."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un salto sujeto a conservación",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "EL AIRE SE COMPRIME EN POCO ESPACIO",
+          "clave": "La separación entre partículas disminuye al cruzar el frente.",
+          "texto": "Antes del frente, el aire llega rápido respecto a la onda. Después está más comprimido y avanza más despacio. Ese cambio concentrado en una región estrecha recibe el nombre de onda de choque. No significa que las moléculas se hayan detenido: siguen moviéndose, pero el estado de la corriente ha cambiado.",
+          "detalle": "Dibujamos un choque perpendicular a la corriente para aislar el mecanismo. Alrededor de un avión también aparecen ondas oblicuas y formas más complicadas. Su posición depende de la geometría y de las condiciones de vuelo.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "supersonico-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "MENOS MOVIMIENTO ORDENADO, MÁS CALOR",
+          "clave": "El aire comprimido sale más caliente.",
+          "texto": "Una parte de la energía del movimiento de conjunto pasa a energía interna. Por eso aumentan presión y temperatura mientras baja la velocidad de la corriente. Las relaciones de Rankine y Hugoniot expresan ese balance conservando masa, movimiento y energía. La onda no crea combustible ni energía de la nada.",
+          "detalle": "En nuestro caso, la presión se multiplica por {presionRelativa|1} y la temperatura por {temperaturaRelativa|2}. Los puntos agitados representan movimiento térmico; no son chispas ni partículas que se queman al tocar una barrera.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "supersonico-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La línea fina es un cambio intenso.",
+    "parrafos": [
+      "Volar rápido no solo significa apartar aire más deprisa. También cambia la manera en que el gas puede comprimirse y transmitir perturbaciones. Una fotografía puede mostrar una línea; dentro de ella hay un balance completo de energía y movimiento."
+    ],
+    "nota": "Gas ideal y gamma ilustrativa. Choque normal estacionario adiabático, sin química ni variación de calores específicos. Mach limitado por el modelo. Separaciones y agitación dibujadas de forma conceptual, no molecularmente exacta."
+  },
+  "revisionEditorial": 2
 }

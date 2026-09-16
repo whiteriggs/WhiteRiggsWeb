@@ -1,11 +1,72 @@
 {
-  "id": "lente", "rotulo": "ESPACIO", "titulo": "¿Cómo se curva la luz sin lentes ni espejos?",
-  "entradilla": "Una masa cambia la geometría del espacio-tiempo. La luz sigue caminos localmente rectos en esa geometría, pero comparados desde lejos esos caminos se desvían. Así una estrella o una galaxia puede actuar como lente sin tener vidrio ni superficie pulida.",
-  "modelo": "lente", "color": "azul", "medidas": {"masa": 1.98847e30, "impacto": 695700000},
-  "tanteo": {"pregunta": "¿Cuánto se desvía aproximadamente un rayo que roza el Sol en el límite de campo débil?", "opciones": ["0,02 segundos de arco", "1,75 segundos de arco", "180 grados"], "valores": [0.02, 1.75, 648000], "medido": "desviacion", "remate": "{desviacion|2} segundos de arco: muy pequeño para el ojo, medible con posiciones estelares."},
-  "nucleo": [{"numero": 1, "nombre": "geometría que enfoca", "color": "azul", "paneles": [
-    {"rotulo": "PASAR CERCA IMPORTA", "clave": "La desviación del ejemplo es {desviacion|3} segundos de arco.", "texto": "En campo débil, para una masa compacta esférica y un rayo que pasa lejos del horizonte, el ángulo total vale cuatro veces GM dividido por el parámetro de impacto y por c al cuadrado. El parámetro de impacto es la distancia lateral que tendría el rayo entrante si prolongásemos su dirección lejana.", "detalle": "La curva modifica esa distancia manteniendo fija la masa. Al alejar el paso, disminuye la desviación. El cálculo usa fuente y observador lejanos y no representa la estructura de una galaxia extendida ni un rayo que da vueltas cerca de un agujero negro.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Impacto / impacto inicial", "ejeY": "Desviación (segundos arco)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL FACTOR QUE FALTABA", "clave": "Cuenta corpuscular newtoniana: {clasica|3}″. Relatividad general: {desviacion|3}″.", "texto": "Tratar la luz como partículas rápidas bajo gravedad newtoniana da, en este límite, la mitad del ángulo relativista. Es una pista de que no basta con añadir una fuerza a una trayectoria dibujada en un espacio inmutable: la geometría espacial también interviene.", "detalle": "Con una alineación adecuada llegan rayos por varios caminos y aparecen imágenes múltiples, arcos o anillos. El aumento no crea luz ni aumenta la luminosidad intrínseca de la fuente: cambia su imagen y el ángulo sólido que ocupa en el cielo.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["clasica", "desviacion"], "rotulos": ["Newton: {clasica|2}″", "Relatividad: {desviacion|2}″"]}}
-  ]}],
-  "cierre": {"titulo": "Una lente puede estar hecha de geometría.", "nota": "Masa solar aproximada 1,98847×10³⁰ kg y parámetro de impacto 695.700 km, próximo al radio solar. Deflexión débil de Schwarzschild; G en SI y c exacta. Referencia contextual consultada: NASA Science, Black Hole Basics, apartado Finding Black Holes, https://science.nasa.gov/universe/black-holes/.", "parrafos": ["El fenómeno sirve para estudiar tanto la fuente de fondo como la distribución de masa que desvía sus rayos, incluida materia poco luminosa.", "El tamaño y la forma de los arcos exigen conocer las distancias entre observador, lente y fuente. Este ejemplo calcula una desviación individual, no una imagen completa."]}
+  "id": "lente",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Por qué cambiar el ocular de un telescopio cambia lo cerca que ves la Luna?",
+  "revisionEditorial": 2,
+  "entradilla": "Apuntas un telescopio refractor a la Luna y ves el disco entero. Cambias la pequeña pieza por la que miras y ahora un cráter ocupa buena parte de la vista. El tubo principal no se ha movido ni ha cambiado de tamaño. Has cambiado la manera de mirar la imagen que ya se formaba dentro.",
+  "modelo": "lente",
+  "color": "indigo",
+  "medidas": {
+    "objetivo": 600,
+    "ocular": 20,
+    "ocularCorto": 10,
+    "angulo": 0.5
+  },
+  "tanteo": {
+    "pregunta": "Con el mismo tubo, un ocular de focal más corta, ¿qué hace con la imagen aparente?",
+    "opciones": [
+      "La hace más pequeña",
+      "La amplía más",
+      "No cambia la ampliación"
+    ],
+    "valores": [
+      15,
+      60,
+      30
+    ],
+    "medido": "cortoAumentos",
+    "remate": "La amplía más: pasamos de {aumentos|0} a {cortoAumentos|0} aumentos, sin cambiar la imagen formada por el objetivo."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una imagen y una lupa",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "EL OBJETIVO FORMA LA IMAGEN",
+          "clave": "Rayos procedentes de una dirección se reúnen.",
+          "texto": "La lente frontal desvía la luz al atravesar superficies curvas. Los rayos que llegan de un mismo punto lejano convergen cerca del plano focal. Allí aparece una imagen real, invertida, que podrías recoger sobre una pantalla. Este cambio de dirección al pasar entre materiales es la refracción, descrita por la ley de Snell.",
+          "detalle": "La distancia focal del objetivo determina el tamaño de esa imagen. Para el ángulo ilustrado, mide {imagenMm|1} mm. No aumenta porque acerques más el ojo: primero la produce el objetivo, después decides cómo examinarla.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "lente-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL OCULAR EXAMINA ESA IMAGEN",
+          "clave": "Una focal más corta produce más aumento angular.",
+          "texto": "El ocular trabaja como una lupa sobre la imagen intermedia. La ampliación angular se obtiene dividiendo la focal del objetivo entre la del ocular. El conjunto del ejemplo ofrece {aumentos|0} aumentos; con el ocular corto, {cortoAumentos|0}. Lo que cambia es el ángulo bajo el que el ojo recibe los detalles.",
+          "detalle": "Ampliar no crea detalles que el objetivo no resolvió. También se hacen más visibles el temblor y las turbulencias del aire. Por eso el ocular que más aumenta no siempre proporciona la mejor vista de un planeta.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "lente-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El tubo dibuja; el ocular te deja acercarte al dibujo.",
+    "parrafos": [
+      "Son dos trabajos distintos dentro del mismo instrumento. Cambiar el ocular modifica la ampliación, no la cantidad de información capturada. Una imagen algo más pequeña puede ser mucho más fácil de observar con claridad."
+    ],
+    "nota": "Lentes delgadas y objeto lejano; focales ilustrativas. El esquema separa recorridos y no simula aberraciones. Nunca observar el Sol sin filtro de apertura adecuado."
+  }
 }

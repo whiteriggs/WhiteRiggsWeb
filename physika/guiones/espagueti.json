@@ -1,12 +1,74 @@
 {
-  "id": "espagueti", "rotulo": "COTIDIANO", "titulo": "¿Por qué un espagueti puede romperse en más de dos trozos?",
-  "entradilla": "Un espagueti seco doblado puede sufrir varias fracturas muy seguidas. La primera rotura libera energía elástica y genera ondas de flexión capaces de aumentar la curvatura en otros puntos. Pero no es imposible obtener dos trozos: la carga, la torsión y las condiciones de rotura importan.",
-  "modelo": "espagueti", "color": "ambar",
-  "medidas": {"modulo": 3000000000, "radio": 0.001, "densidad": 1500, "longitudOnda": 0.2, "ondaCorta": 0.1, "deformacionRotura": 0.01},
-  "tanteo": {"pregunta": "Modelamos el espagueti como una varilla circular esbelta de 1 mm de radio, densidad de 1.500 kg/m³ y módulo elástico de 3 GPa. ¿De qué orden crees que es la frecuencia de una pequeña onda de flexión de 20 cm de longitud de onda?", "opciones": ["Unos 11 Hz", "Unos 111 Hz", "Unos 1.110 Hz"], "valores": [11, 111, 1110], "medido": "frecuencia", "remate": "La frecuencia calculada es {frecuencia|1} Hz; para la longitud corta sube a {frecuenciaCorta|1} Hz."},
-  "nucleo": [{"numero": 1, "nombre": "la primera fractura envía movimiento", "color": "ambar", "paneles": [
-    {"rotulo": "LAS ONDAS DE FLEXIÓN SON DISPERSIVAS", "clave": "Las dos longitudes elegidas dan {frecuencia|1} y {frecuenciaCorta|1} Hz.", "texto": "Una varilla doblada almacena energía porque unas fibras se estiran y otras se comprimen. Al romperse, cambia bruscamente la condición en el extremo recién creado. La perturbación viaja por cada fragmento; sus componentes no avanzan todas con la misma velocidad de fase.", "detalle": "En la teoría de Euler-Bernoulli, la frecuencia angular es proporcional al cuadrado del número de onda y a la raíz de rigidez flexional dividida por masa lineal. La curva calcula esa dispersión ideal: las longitudes más cortas corresponden a frecuencias mayores.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Longitud de onda (cm)", "ejeY": "Frecuencia (Hz)", "claves": [], "rotulos": []}},
-    {"rotulo": "UN PICO LOCAL PUEDE ROMPER OTRA VEZ", "clave": "La deformación límite elegida corresponde a una curvatura de {curvatura|1} m⁻¹.", "texto": "La deformación máxima de las fibras exteriores es aproximadamente radio por curvatura. Una onda transitoria puede sumarse a la flexión que ya tenía el fragmento y superar localmente su resistencia. Eso permite una cascada de fracturas sin que las manos vuelvan a ejercer otra fuerza.", "detalle": "El cálculo no predice cuántos trozos saldrán: harían falta defectos, amortiguamiento y evolución después de cada fractura. Cambiar la forma de cargar y añadir torsión bajo condiciones controladas puede alterar la liberación de energía y permitir una rotura en dos fragmentos.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["curvatura", "rigidezFlexion"], "rotulos": ["Curvatura: {curvatura|1} m⁻¹", "Rigidez: {rigidezFlexion|4} N·m²"]}}
-  ]}],
-  "cierre": {"titulo": "Romper una vez cambia las fuerzas del resto.", "nota": "Varilla circular ilustrativa: módulo en Pa, radio y ondas en m, densidad en kg/m³ y deformación límite adimensional. Teoría lineal de viga esbelta; resistencia elegida, sin simulación de fractura ni protocolo experimental.", "parrafos": ["La elasticidad explica cómo viaja la energía; la resistencia decide dónde termina rompiendo el material. Confundir ambas cosas convertiría una posibilidad dinámica bien fundada en una afirmación falsa de que siempre deben aparecer más fragmentos."]}
+  "id": "espagueti",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué un espagueti seco puede romperse en varios trozos?",
+  "revisionEditorial": 2,
+  "entradilla": "Sacas un espagueti del paquete y lo doblas para que quepa en un recipiente. En lugar de obtener dos mitades limpias, a veces aparecen tres o más trozos. No había necesariamente una grieta escondida en cada punto. La primera rotura puede desencadenar movimiento que provoque otras después.",
+  "modelo": "espagueti",
+  "color": "ambar",
+  "medidas": {
+    "modulo": 3000000000,
+    "radio": 0.001,
+    "densidad": 1500,
+    "longitudOnda": 0.2,
+    "ondaCorta": 0.1,
+    "deformacionRotura": 0.01
+  },
+  "tanteo": {
+    "pregunta": "Después de la primera rotura, ¿qué puede provocar otras en el espagueti?",
+    "opciones": [
+      "Que todo el movimiento desaparezca",
+      "Ondas de flexión que recorren los fragmentos",
+      "Que la pasta se vuelva líquida"
+    ],
+    "valores": [
+      11,
+      111,
+      1110
+    ],
+    "medido": "frecuencia",
+    "remate": "Las ondas de flexión pueden aumentar la curvatura local. La frecuencia ilustrativa es {frecuencia|1} Hz, no un recuento de roturas."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una rotura que pone en marcha otras",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "ANTES DEL CRAC",
+          "clave": "Una cara se estira mientras la opuesta se comprime.",
+          "texto": "Al doblar una varilla, el material del lado exterior recorre un camino más largo y se estira. El interior se comprime. La pasta seca puede soportar solo cierta deformación antes de romperse. Cuanto más cerrada es la curva, mayor es esa diferencia entre las dos caras.",
+          "detalle": "Esto es flexión elástica hasta alcanzar un límite de rotura. El espagueti almacena energía al doblarse, como un muelle, aunque tenga poca capacidad para deformarse sin quebrar. El radio y las propiedades de la pasta influyen en cuánto aguanta.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "espagueti-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL EXTREMO QUEDA LIBRE",
+          "clave": "Al romperse, el tramo curvado intenta enderezarse rápidamente.",
+          "texto": "La primera grieta libera un extremo que antes estaba sujeto al resto. El fragmento empieza a enderezarse y transmite cambios de curvatura a lo largo de su cuerpo. Esas ondas pueden concentrar deformación en otro lugar y superar allí el límite. Una rotura no obliga al resto a relajarse suavemente.",
+          "detalle": "Las ondas de flexión son dispersivas: las de distinta longitud no siguen todas el mismo ritmo. Nuestro modelo de varilla delgada calcula esa relación en pequeñas deformaciones. No predice exactamente cuántos fragmentos saldrán ni dónde caerá cada grieta.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "espagueti-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El primer crac puede ser el comienzo, no el final.",
+    "parrafos": [
+      "La energía que guardaste al doblar sigue presente tras romperse. Parte viaja como deformación por los trozos y puede encontrar otro punto débil."
+    ],
+    "nota": "Varilla circular ideal y propiedades ilustrativas, no datos de una marca. La regresión conserva rigidez y dispersión, pero no simula fractura dinámica completa."
+  }
 }

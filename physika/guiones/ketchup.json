@@ -1,12 +1,73 @@
 {
-  "id": "ketchup", "rotulo": "COTIDIANO", "titulo": "¿Por qué el kétchup parece resistirse y luego fluye?",
-  "entradilla": "El kétchup no se comporta como agua espesa con una viscosidad constante. Su estructura interna puede sostener esfuerzos pequeños y reorganizarse al fluir. Cuando aumenta la cizalla, suele disminuir su viscosidad aparente; también importa cuánto tiempo lleva siendo deformado.",
-  "modelo": "ketchup", "color": "coral",
-  "medidas": {"umbral": 20, "consistencia": 5, "exponente": 0.5, "ritmo": 10, "ritmoRapido": 100},
-  "tanteo": {"pregunta": "Para este kétchup idealizado usamos un modelo de Herschel-Bulkley con umbral de 20 Pa, consistencia de 5 Pa·s^0,5 y exponente 0,5. A un ritmo de deformación de 10 s⁻¹, ¿de qué orden crees que será su viscosidad aparente?", "opciones": ["0,36 Pa·s", "3,6 Pa·s", "36 Pa·s"], "valores": [0.36, 3.6, 36], "medido": "viscosidad", "remate": "Da {viscosidad|2} Pa·s; al deformarlo más deprisa baja a {viscosidadRapida|2} Pa·s."},
-  "nucleo": [{"numero": 1, "nombre": "una estructura que cambia al fluir", "color": "coral", "paneles": [
-    {"rotulo": "SUPERAR EL UMBRAL NO FIJA EL CAUDAL", "clave": "Para el ritmo inicial se requiere un esfuerzo de {esfuerzo|1} Pa.", "texto": "El modelo de Herschel-Bulkley suma un esfuerzo umbral y otro que crece como una potencia del ritmo de cizalla. Debajo del umbral ideal no hay flujo sostenido. Por encima, las capas pueden deslizarse unas respecto a otras, pero el esfuerzo sigue creciendo con el ritmo.", "detalle": "La viscosidad aparente se define como esfuerzo dividido por ritmo de cizalla. Puede disminuir aunque el esfuerzo aumente, porque el denominador crece más deprisa. Esa distinción evita interpretar un fluido pseudoplástico como si necesitara cada vez menos fuerza absoluta para cualquier movimiento.", "color": "coral", "dibujo": {"tipo": "serie", "ejeX": "Ritmo de cizalla (1/s)", "ejeY": "Viscosidad aparente (Pa·s)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL MISMO PRODUCTO, DOS RESPUESTAS", "clave": "La viscosidad aparente cambia de {viscosidad|2} a {viscosidadRapida|2} Pa·s.", "texto": "Las barras comparan estados estacionarios de la misma formulación ilustrativa. Las partículas y polímeros de la salsa interactúan y forman una estructura que ofrece resistencia. Al deformarla, esa estructura puede orientarse y deshacerse parcialmente, facilitando el flujo relativo de sus componentes.", "detalle": "El retraso y el chorro repentino de un envase también dependen del cuello, la presión y la entrada de aire. Además, la tixotropía describe cambios con el tiempo y la recuperación en reposo. Nuestra ecuación estacionaria no reproduce esa memoria ni simula una botella vaciándose.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["viscosidad", "viscosidadRapida"], "rotulos": ["Ritmo menor: {viscosidad|2} Pa·s", "Ritmo mayor: {viscosidadRapida|2} Pa·s"]}}
-  ]}],
-  "cierre": {"titulo": "La viscosidad puede ser una respuesta, no una constante.", "nota": "Parámetros reológicos ilustrativos, no medidos: umbral en Pa, consistencia en Pa·s elevada al exponente, ritmos en s⁻¹ y exponente adimensional menor que uno. Modelo estacionario de Herschel-Bulkley.", "parrafos": ["La temperatura y la formulación cambian los parámetros. Comparar marcas mediante una única cifra de viscosidad carece de sentido si no se especifica cómo y a qué ritmo se realizó la medición."]}
+  "id": "ketchup",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué el kétchup Heinz se resiste y después sale de golpe?",
+  "revisionEditorial": 2,
+  "entradilla": "Inclinas el bote de kétchup y parece que no pasa nada. Aprietas un poco más y, de repente, sale una cantidad mayor de la prevista. No se ha derretido en ese instante. La salsa cambia su resistencia al movimiento cuando sus partes se deslizan unas respecto a otras.",
+  "modelo": "ketchup",
+  "color": "ambar",
+  "medidas": {
+    "umbral": 20,
+    "consistencia": 5,
+    "exponente": 0.5,
+    "ritmo": 10,
+    "ritmoRapido": 100
+  },
+  "tanteo": {
+    "pregunta": "Cuando el kétchup se deforma más deprisa, ¿qué puede pasar con su viscosidad aparente?",
+    "opciones": [
+      "Aumenta siempre como una piedra",
+      "Disminuye y fluye con más facilidad",
+      "Se vuelve exactamente igual al agua"
+    ],
+    "valores": [
+      0.36,
+      3.6,
+      36
+    ],
+    "medido": "viscosidad",
+    "remate": "Disminuye: nuestro ejemplo pasa de {viscosidad|2} a {viscosidadRapida|2} Pa·s. Sigue siendo una salsa, no agua."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una estructura que cede",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "ANTES DE QUE ARRANQUE",
+          "clave": "La pulpa y los ingredientes forman una mezcla estructurada.",
+          "texto": "El kétchup no es un líquido simple con la misma resistencia bajo cualquier esfuerzo. Sus partículas y componentes forman una estructura que puede sostener esfuerzos pequeños sin fluir de manera apreciable. Al apretar el envase, la diferencia de presión empuja la salsa hacia la boquilla y puede superar esa resistencia inicial.",
+          "detalle": "A esa resistencia de arranque la representamos con un umbral de fluencia. La estructura real es compleja y también puede depender de cuánto tiempo lleve en reposo. El modelo resume el comportamiento, no reproduce la receta de Heinz.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "ketchup-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "UNA VEZ EN MARCHA",
+          "clave": "Las capas se deslizan con una resistencia aparente menor.",
+          "texto": "Cuando unas zonas de salsa se mueven más deprisa que otras, la mezcla se deforma por cizalla. Su viscosidad aparente puede bajar al aumentar ese ritmo de deformación. Por eso un empuje que parecía apenas suficiente puede acabar produciendo un chorro generoso cuando el flujo ya ha arrancado.",
+          "detalle": "Ese adelgazamiento por cizalla es un comportamiento no newtoniano. Usamos la relación de Herschel-Bulkley para juntar umbral y cambio de resistencia. No confundimos viscosidad menor con esfuerzo menor: para deformar más deprisa todavía puede hacer falta empujar más.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "ketchup-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El bote empuja una salsa que cambia de resistencia.",
+    "parrafos": [
+      "La sorpresa sale de combinar envase, boquilla y una mezcla estructurada. No todos los líquidos responden como el agua cuando aumentas el empuje."
+    ],
+    "nota": "Coeficientes ilustrativos, no ensayos ni especificaciones de Heinz. El modelo no incluye recuperación temporal de la estructura ni predice el caudal del envase."
+  }
 }

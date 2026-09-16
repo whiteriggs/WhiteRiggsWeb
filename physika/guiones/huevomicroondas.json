@@ -1,12 +1,72 @@
 {
-  "id": "huevomicroondas", "rotulo": "COTIDIANO", "titulo": "¿Por qué un huevo puede reventar tras calentarse en microondas?",
-  "entradilla": "El calentamiento puede ser desigual y generar vapor en regiones retenidas por el alimento. La liberación súbita de ese vapor puede romperlo y proyectar material caliente, incluso después del calentamiento. La cáscara no es la única estructura capaz de dificultar la salida.",
-  "modelo": "huevomicroondas", "color": "coral",
-  "medidas": {"masaVapor": 0.000001, "temperatura": 400, "volumenBurbuja": 0.000001, "latente": 2257000},
-  "tanteo": {"pregunta": "En un caso exclusivamente teórico, 1 mg de vapor de agua ideal ocupa 1 cm³ a 400 K, sin condensarse. ¿Qué presión parcial tendría, sin que esto indique un umbral seguro para un huevo?", "opciones": ["Unos 18 kPa", "Unos 185 kPa", "Unos 1.850 kPa"], "valores": [18, 185, 1850], "medido": "presionKpa", "remate": "El gas ideal da {presionKpa|0} kPa. No es una presión de rotura medida en un huevo."},
-  "nucleo": [{"numero": 1, "nombre": "vapor que necesita espacio", "color": "coral", "paneles": [
-    {"rotulo": "POCA MASA, MUCHAS COLISIONES", "clave": "La burbuja ilustrativa tendría {presionKpa|1} kPa de presión parcial de vapor.", "texto": "La presión de un gas procede de los intercambios de momento de sus moléculas con la frontera que lo contiene. Para una cantidad de vapor y una temperatura fijadas, reducir el volumen aumenta esa presión. La curva muestra esa dependencia inversa, sin representar una receta de calentamiento.", "detalle": "Usamos la ecuación del gas ideal: presión por volumen equivale al número de moles multiplicado por la constante del gas y la temperatura absoluta. Es una fotografía hipotética de vapor ya formado; no calcula dónde aparece, cuánto se forma ni cuándo cede el alimento.", "color": "coral", "dibujo": {"tipo": "serie", "ejeX": "Volumen del vapor (mL)", "ejeY": "Presión parcial (kPa)", "claves": [], "rotulos": []}},
-    {"rotulo": "ROMPER UNA BARRERA CAMBIA EL PROCESO", "clave": "Vaporizar esa masa requiere aproximadamente {energia|2} J de calor latente.", "texto": "El agua puede almacenar energía térmica antes de una ebullición rápida. Al abrirse una vía de escape o iniciarse burbujas en una región sobrecalentada, parte de esa energía alimenta expansión y movimiento. La textura y la distribución de temperatura importan tanto como la cantidad total de agua.", "detalle": "El cálculo energético no incluye calentar previamente el alimento ni deformarlo. Tampoco supone que todo el huevo esté a una temperatura uniforme. Para predecir una rotura harían falta mediciones locales, resistencia de las estructuras y una descripción del transporte de vapor.", "color": "coral", "dibujo": {"tipo": "magnitudes", "claves": ["energia"], "rotulos": ["Vaporización: {energia|2} J"]}}
-  ]}],
-  "cierre": {"titulo": "No es un experimento doméstico.", "nota": "Parámetros exclusivamente ilustrativos: masa en kg, volumen en m³ y temperatura en K. Calor latente aproximado en J/kg; gas ideal sin condensación ni resistencia mecánica. No predice un umbral seguro.", "parrafos": ["No se deben calentar huevos con cáscara ni recipientes sellados en microondas. Este ejemplo explica un riesgo, no ofrece instrucciones para provocarlo o eliminarlo; las indicaciones de seguridad del fabricante siguen siendo necesarias."]}
+  "id": "huevomicroondas",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Para qué tiene un agujero la tapa del cocedor de huevos eléctrico?",
+  "revisionEditorial": 2,
+  "entradilla": "El cocedor eléctrico reúne una base caliente, un poco de agua y una tapa sobre los huevos. Mientras trabaja sale vapor por un pequeño orificio. Podría parecer una fuga que convendría cerrar. En realidad, dejar esa salida libre forma parte del funcionamiento del aparato: no pretende ser una olla a presión.",
+  "modelo": "huevomicroondas",
+  "color": "ambar",
+  "medidas": {
+    "masaVapor": 0.000001,
+    "temperatura": 400,
+    "volumenBurbuja": 0.000001,
+    "latente": 2257000
+  },
+  "tanteo": {
+    "pregunta": "¿Qué consigue la salida de vapor del cocedor?",
+    "opciones": [
+      "Mantener todo el vapor encerrado",
+      "Permitir que el vapor encuentre salida",
+      "Hacer que el agua no hierva"
+    ],
+    "valores": [
+      18,
+      185,
+      1850
+    ],
+    "medido": "presionKpa",
+    "remate": "Deja escapar vapor. La presión calculada corresponde a una pequeña cámara hipotética cerrada, no al cocedor ventilado."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "calentar con agua que cambia de estado",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "DE LA BASE AL HUEVO",
+          "clave": "El vapor transporta calor hasta superficies más frías.",
+          "texto": "La resistencia de la base calienta el agua. Parte pasa a vapor y circula bajo la tapa. Cuando encuentra la superficie más fría del huevo, puede condensarse y entregarle energía. Para calentar el interior, esa energía todavía tiene que atravesar la cáscara y avanzar por el alimento.",
+          "detalle": "El nombre de la energía asociada al cambio entre líquido y vapor es calor latente. En nuestro pequeño ejemplo, condensar la cantidad elegida libera {energia|1} J. No hace falta que el vapor esté encerrado a alta presión para transportar calor.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "huevomicroondas-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "UNA SALIDA NECESARIA",
+          "clave": "Crear vapor no debe convertir la tapa en un tapón.",
+          "texto": "El vapor ocupa mucho más espacio que el agua de la que procede. Si lo encierras en una cavidad pequeña, sus moléculas chocan contra las paredes y ejercen presión. La ley de los gases ideales relaciona cantidad, temperatura y espacio; sirve para entender la tendencia, no para certificar seguridad.",
+          "detalle": "El orificio permite renovar y expulsar vapor. No debe taparse ni modificarse. Cada aparato tiene sus instrucciones, cantidades de agua y desconexión propias; este dibujo explica el recorrido térmico, no sustituye ese uso indicado.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "huevomicroondas-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La tapa guía el vapor, no lo encarcela.",
+    "parrafos": [
+      "La energía llega desde la base, viaja con el agua y entra en el huevo. La salida mantiene abierto ese recorrido."
+    ],
+    "nota": "Parámetros ilustrativos de vapor ideal en una cavidad hipotética. No son presión de trabajo, umbral seguro ni especificaciones del cocedor."
+  }
 }

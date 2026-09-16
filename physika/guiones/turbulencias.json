@@ -1,12 +1,76 @@
 {
-  "id": "turbulencias", "rotulo": "AVIACIÓN", "titulo": "¿Qué es exactamente una turbulencia?",
-  "entradilla": "Es movimiento irregular del aire con fluctuaciones y remolinos de muchas escalas. No son agujeros donde desaparece el aire. Un avión atraviesa regiones con velocidades distintas y cambia la fuerza aerodinámica que experimenta.",
-  "modelo": "turbulencias", "color": "indigo",
-  "medidas": {"densidad": 1, "velocidad": 100, "area": 30, "pendiente": 5, "rafaga": 3, "masa": 3000, "cuerda": 2, "viscosidad": 0.000018},
-  "tanteo": {"pregunta": "Un avión de 3.000 kg vuela nivelado a 100 m/s, con 30 m² de ala, aire de 1 kg/m³ y pendiente de sustentación de 5 rad^-1. En el modelo cuasiestático, ¿una ráfaga ascendente de 3 m/s eleva la sustentación hasta cuántas veces el peso?", "opciones": ["Una vez", "1,76 veces", "Cuatro veces"], "valores": [1, 1.76, 4], "medido": "carga", "remate": "El factor calculado es {carga|2}. Es una respuesta cuasiestática ilustrativa, no la carga de cualquier encuentro real."},
-  "nucleo": [{"numero": 1, "nombre": "un cambio de corriente cambia la fuerza", "color": "indigo", "paneles": [
-    {"rotulo": "LA RÁFAGA CAMBIA EL ÁNGULO", "clave": "El incremento ideal de sustentación es {incremento|0} N.", "texto": "Una componente vertical pequeña frente a la velocidad de avance cambia el ángulo de ataque aproximadamente en su cociente. En nuestro ejemplo equivale a {angulo|2} grados. Multiplicamos ese cambio por una pendiente de sustentación lineal y por la presión dinámica y el área.", "detalle": "La curva muestra factor de carga frente a velocidad vertical de ráfaga, no una señal meteorológica en el tiempo. El punto sin ráfaga parte de sustentación igual al peso. Un signo negativo representa corriente descendente y reduce la fuerza bajo estas hipótesis.", "color": "indigo", "dibujo": {"tipo": "serie", "ejeX": "Ráfaga vertical (m/s)", "ejeY": "Sustentación / peso", "claves": [], "rotulos": []}},
-    {"rotulo": "MUCHAS ESCALAS, NO UNA SACUDIDA TIPO", "clave": "El número de Reynolds del ejemplo es {reynolds|0}.", "texto": "Reynolds compara efectos inerciales y viscosos usando densidad, velocidad y una longitud. Su valor grande no predice por sí solo cuánto se moverá un avión: importan la estructura espacial de las ráfagas, su duración y la respuesta de la aeronave.", "detalle": "Convección, cizalladura, ondas de montaña y estelas pueden generar movimiento irregular. El avión no responde como una placa rígida instantánea: masa, flexibilidad y dinámica filtran la excitación. Cerca de separación o con ráfagas grandes, nuestra pendiente lineal deja de ser adecuada.", "color": "indigo", "dibujo": {"tipo": "magnitudes", "claves": ["angulo", "incremento", "reynolds"], "rotulos": ["Ángulo extra {angulo|2}°", "Fuerza extra {incremento|0} N", "Reynolds {reynolds|0}"]}}
-  ]}],
-  "cierre": {"titulo": "La irregularidad está en el movimiento.", "nota": "Densidad kg/m³; velocidades m/s; área m²; masa kg; cuerda m; viscosidad dinámica Pa·s; pendiente de sustentación por radián. Parámetros ilustrativos. Ráfaga pequeña, respuesta lineal cuasiestática sin alivio dinámico; no predicción de cargas certificadas.", "parrafos": ["La turbulencia en aire claro puede existir sin gotas que den un eco meteorológico útil. Una curva física sencilla ayuda a entender la sensibilidad a una ráfaga, pero no simula una atmósfera turbulenta completa."]}
+  "id": "turbulencias",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Por qué da un salto el avión al cruzar una ráfaga?",
+  "entradilla": "El vaso vibra sobre la bandeja y durante un instante notas el asiento empujando de otra manera. No hace falta que el avión encuentre un agujero vacío. Puede haber entrado en una región donde el aire se mueve con otra velocidad o dirección. El ala recibe entonces una corriente distinta de la que encontraba justo antes.",
+  "modelo": "turbulencias",
+  "color": "indigo",
+  "medidas": {
+    "densidad": 1,
+    "velocidad": 100,
+    "area": 30,
+    "pendiente": 5,
+    "rafaga": 3,
+    "masa": 3000,
+    "cuerda": 2,
+    "viscosidad": 0.000018
+  },
+  "tanteo": {
+    "pregunta": "Si llega una pequeña ráfaga ascendente, ¿cómo cambia inicialmente la fuerza hacia arriba del ala en este modelo?",
+    "opciones": [
+      "Permanece igual",
+      "Aumenta",
+      "Disminuye"
+    ],
+    "valores": [
+      1,
+      1.76,
+      0.5
+    ],
+    "medido": "carga",
+    "remate": "Aumenta hasta {carga|2} veces el peso en el ejemplo cuasiestático. No es la carga de cualquier turbulencia real."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un cambio de corriente cambia la fuerza",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "EL AIRE TAMBIÉN SE MUEVE",
+          "clave": "La ráfaga cambia la dirección de la corriente relativa.",
+          "texto": "Aunque el avión mantuviera por un momento su orientación, una corriente de aire ascendente cambiaría el ángulo con el que el aire llega al ala. Es el ángulo de ataque. En la zona de funcionamiento que suponemos, ese pequeño aumento produce más sustentación. Una ráfaga descendente puede provocar el cambio contrario.",
+          "detalle": "La turbulencia contiene variaciones irregulares, no una única ola perfectamente ordenada. Aquí aislamos una ráfaga pequeña para entender una causa del cambio de fuerza sin intentar reconstruir un encuentro completo.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "turbulencias-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL ASIENTO TE CAMBIA EL MOVIMIENTO",
+          "clave": "La fuerza sobre el ala se transmite a la estructura.",
+          "texto": "Si cambia la fuerza total, cambia la aceleración del avión. Tu cuerpo siente cómo el asiento modifica su movimiento. Esa relación entre fuerza y aceleración es la segunda ley de Newton. La sensación no indica por sí sola cuánto se ha desplazado el avión: un movimiento breve puede resultar muy perceptible.",
+          "detalle": "Nuestro cálculo da una carga de {carga|2} veces el peso. Es una comparación ideal que omite la flexión del ala, la respuesta de los mandos y el tiempo que necesita la estructura para reaccionar.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "turbulencias-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "No es un hueco: es una corriente que cambia.",
+    "parrafos": [
+      "La bandeja y tu cuerpo hacen visible algo que no se ve por la ventana. La regularidad del vuelo depende del encuentro entre el ala y el aire; cuando ese encuentro cambia rápidamente, también cambia la fuerza que sientes."
+    ],
+    "nota": "Ráfaga pequeña y parámetros ilustrativos. Modelo lineal cuasiestático sin alivio dinámico, pérdida ni cálculo de cargas certificadas. Movimiento ampliado y esquemático; no permite valorar la seguridad de un encuentro."
+  },
+  "revisionEditorial": 2
 }

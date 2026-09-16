@@ -1,12 +1,71 @@
 {
-  "id": "copa", "rotulo": "COTIDIANO", "titulo": "¿Por qué puede cantar el borde de una copa?",
-  "entradilla": "El vidrio es elástico y puede vibrar. El contacto que alterna adherencia y deslizamiento aporta energía repetidamente, mientras la forma de la copa selecciona modos de vibración. El sonido aparece cuando esas deformaciones mueven aire: no hace falta que la copa gire como un bloque.",
-  "modelo": "copa", "color": "malva",
-  "medidas": {"masa": 0.003, "masaAnadida": 0.002, "rigidez": 30000},
-  "tanteo": {"pregunta": "Representamos una vibración de la copa con una masa efectiva de 3 g y una rigidez de 30.000 N/m, sin amortiguamiento ni masa añadida. ¿Qué frecuencia propia crees que tiene?", "opciones": ["Unos 50 Hz", "Unos 500 Hz", "Unos 5.000 Hz"], "valores": [50, 500, 5000], "medido": "frecuencia", "remate": "El modelo da {frecuencia|0} Hz. Es una frecuencia del modo, no de una copa comercial concreta."},
-  "nucleo": [{"numero": 1, "nombre": "una deformación que se repite", "color": "malva", "paneles": [
-    {"rotulo": "RIGIDEZ CONTRA INERCIA", "clave": "El modo oscila a {frecuencia|1} Hz, con un periodo de {periodoMs|2} ms.", "texto": "Al deformarse, el vidrio almacena energía elástica y ejerce una fuerza restauradora. Su inercia hace que sobrepase la posición de equilibrio. Representamos un modo con una masa efectiva y una rigidez efectiva: la frecuencia es proporcional a la raíz de rigidez dividida por masa.", "detalle": "La masa efectiva no es toda la masa de la copa; representa cuánto material participa y con qué desplazamiento en ese modo. El borde puede alternar formas ovaladas con regiones que se mueven en sentidos distintos. El modelo escalar no dibuja ese patrón espacial.", "color": "malva", "dibujo": {"tipo": "magnitudes", "claves": ["frecuencia", "periodoMs"], "rotulos": ["Frecuencia: {frecuencia|1} Hz", "Periodo: {periodoMs|2} ms"]}},
-    {"rotulo": "EL LÍQUIDO TAMBIÉN DEBE MOVERSE", "clave": "Con la masa efectiva adicional, la frecuencia baja a {frecuenciaCargada|1} Hz.", "texto": "Parte del líquido acompaña el movimiento de la pared y aumenta la inercia del modo. Si mantenemos la rigidez, añadir masa reduce la frecuencia. La curva recorre ese supuesto y ayuda a entender por qué llenar una copa puede bajar su nota sin cambiar de vidrio.", "detalle": "En una copa real, el nivel de líquido modifica el acoplamiento y el amortiguamiento, no solo una masa fija. El contacto aporta energía mediante rozamiento con adherencia y deslizamiento; la resonancia favorece ciertos ritmos. No calculamos la intensidad sonora ni una condición de rotura.", "color": "malva", "dibujo": {"tipo": "serie", "ejeX": "Masa efectiva añadida (g)", "ejeY": "Frecuencia propia (Hz)", "claves": [], "rotulos": []}}
-  ]}],
-  "cierre": {"titulo": "La copa elige cómo puede vibrar.", "nota": "Masas efectivas ilustrativas en kg y rigidez modal en N/m. Oscilador lineal sin amortiguamiento para frecuencia propia; no modelo geométrico de una copa, volumen de agua ni instrucciones de excitación.", "parrafos": ["Cada objeto tiene varios modos y pérdidas. Escuchar una nota dominante significa que alguno recibe y conserva energía con más facilidad, no que el vidrio solo pueda moverse de una forma."]}
+  "id": "copa",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Cómo puede una copa de cristal funcionar como instrumento musical?",
+  "revisionEditorial": 2,
+  "entradilla": "Una copa de cristal puede producir una nota larga cuando su borde recibe un rozamiento adecuado. No hay un altavoz en la base ni una cuerda escondida. La pared de vidrio se deforma muy poco, vuelve hacia su posición y repite ese movimiento mientras transmite vibraciones al aire.",
+  "modelo": "copa",
+  "color": "ambar",
+  "medidas": {
+    "masa": 0.003,
+    "masaAnadida": 0.002,
+    "rigidez": 30000
+  },
+  "tanteo": {
+    "pregunta": "Al añadir agua a la misma copa, ¿qué suele pasar con su nota principal?",
+    "opciones": [
+      "Se vuelve más aguda",
+      "Se vuelve más grave",
+      "Deja de depender del movimiento"
+    ],
+    "valores": [
+      50,
+      500,
+      5000
+    ],
+    "medido": "frecuencia",
+    "remate": "Suele bajar: el ejemplo pasa de {frecuencia|0} a {frecuenciaCargada|0} Hz porque parte del líquido acompaña la vibración."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el borde no permanece circular",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "UN ÓVALO QUE CAMBIA DE DIRECCIÓN",
+          "clave": "El vidrio se deforma y su elasticidad intenta recuperarlo.",
+          "texto": "Un modo de vibración de la copa alterna dos deformaciones del borde: se ensancha en una dirección mientras se estrecha en la otra, y después al revés. La rigidez del vidrio actúa como un muelle. La masa de la pared impide que la recuperación se detenga exactamente en el centro.",
+          "detalle": "Esa combinación tiene una frecuencia propia. La llamamos resonancia cuando una excitación mantiene con especial eficacia ese modo. El movimiento está exagerado en el dibujo: la copa no necesita cambiar de forma a simple vista para producir sonido.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "copa-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL AGUA ACOMPAÑA AL VIDRIO",
+          "clave": "Más masa en movimiento hace más lenta la oscilación.",
+          "texto": "Cuando hay agua dentro, la pared debe mover también parte del líquido cercano. Esa masa añadida cambia el ritmo, aunque el material de la copa sea el mismo. Por eso se pueden afinar conjuntos de copas variando cuánto contienen, sin recortar cada pieza de vidrio.",
+          "detalle": "El rozamiento del dedo alterna pequeñas adherencias y deslizamientos que aportan energía. El modelo solo representa una masa y una rigidez efectivas: no describe todos los modos, el sonido emitido ni cuánto rozamiento hace falta para sostenerlo.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "copa-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La nota pertenece a la pared y a lo que arrastra.",
+    "parrafos": [
+      "El agua no se convierte en la cuerda de un instrumento: modifica una vibración del recipiente. Cambiar la carga es otra manera de cambiar el tono."
+    ],
+    "nota": "Masa y rigidez ilustrativas, no especificaciones de una copa comercial. Deformaciones ampliadas; no es una invitación a forzar ni golpear vidrio frágil."
+  }
 }

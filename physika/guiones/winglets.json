@@ -1,12 +1,75 @@
 {
-  "id": "winglets", "rotulo": "AVIACIÓN", "titulo": "¿Para qué está doblada hacia arriba la punta del ala?",
-  "entradilla": "Un winglet puede mejorar cómo reparte el ala la sustentación y reducir parte de la resistencia inducida. No elimina los vórtices ni convierte el extremo en una barrera perfecta. Su utilidad depende del ala, de la misión y de lo que cueste añadirlo.",
-  "modelo": "winglets", "color": "verde",
-  "medidas": {"densidad": 0.4, "velocidad": 230, "area": 120, "sustentacion": 0.5, "alargamiento": 9, "eficiencia": 0.75, "mejorada": 0.85},
-  "tanteo": {"pregunta": "Si la eficiencia equivalente pasa de 0,75 a 0,85, ¿cuánto baja la resistencia inducida manteniendo lo demás igual?", "opciones": ["Un 1 %", "Un 12 %", "Un 50 %"], "valores": [1, 12, 50], "medido": "ahorroInducido", "remate": "Baja un {ahorroInducido|1} %. Es la parte inducida del arrastre, no ese mismo porcentaje de consumo total."},
-  "nucleo": [{"numero": 1, "nombre": "sustentar deja una estela", "color": "verde", "paneles": [
-    {"rotulo": "EL ALA FINITA DESVÍA AIRE", "clave": "La resistencia inducida del ejemplo pasa de {inducida|0} a {inducidaMejorada|0} N.", "texto": "Una envergadura finita produce una estela con movimiento descendente y vorticidad. La distribución de sustentación influye en la energía que queda en ese movimiento. En una aproximación clásica, el coeficiente de resistencia inducida es el de sustentación al cuadrado dividido entre pi, alargamiento y eficiencia.", "detalle": "La curva cambia únicamente la eficiencia equivalente y conserva velocidad, densidad, superficie y sustentación. El coeficiente inducido inicial es {coeficienteInducido|4}. No calculamos la eficiencia a partir de la forma de la punta: la usamos como parámetro aerodinámico ilustrativo.", "color": "verde", "dibujo": {"tipo": "serie", "ejeX": "Eficiencia equivalente", "ejeY": "Resistencia inducida (N)", "claves": [], "rotulos": []}},
-    {"rotulo": "MEJORAR UNA PARTE NO ELIMINA EL TOTAL", "clave": "La reducción de resistencia inducida es del {ahorroInducido|1} %.", "texto": "Un dispositivo de punta también añade superficie mojada, masa y cargas estructurales. Según las restricciones, alargar el ala o utilizar otra forma de extremo puede ser preferible. La solución resulta de comparar beneficios y costes a lo largo de la misión.", "detalle": "El arrastre total incluye otras contribuciones, como fricción, forma e interferencia, y a velocidades altas también efectos de compresibilidad. Si solo disminuye una parte, el porcentaje de ahorro global es menor. El modelo no autoriza trasladar directamente esta cifra a litros de combustible.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["inducida", "inducidaMejorada"], "rotulos": ["Inicial {inducida|0} N", "Mejorada {inducidaMejorada|0} N"]}}
-  ]}],
-  "cierre": {"titulo": "La punta ayuda a repartir, no a borrar la estela.", "nota": "Densidad kg/m³, velocidad m/s, superficie m²; coeficiente de sustentación, alargamiento y eficiencias adimensionales. Polar inducida clásica con eficiencia equivalente elegida, no predicha para un winglet específico. Mismo estado de sustentación y misma superficie de referencia.", "parrafos": ["Los vórtices no aparecen solo porque el aire escape por una rendija en la punta. Son parte del campo de flujo de un ala finita que sustenta; modificar ese campo puede reducir su coste energético."]}
+  "id": "winglets",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Para qué lleva el avión las puntas de las alas dobladas?",
+  "entradilla": "En algunos aviones, la punta del ala termina en una pequeña aleta levantada. No está ahí para evitar que se caigan cosas del borde. Esa pieza cambia cómo circula el aire cerca del extremo, una zona donde aparece un remolino importante. Reducir parte de ese coste aerodinámico puede ahorrar energía durante el vuelo.",
+  "modelo": "winglets",
+  "color": "verde",
+  "medidas": {
+    "densidad": 0.4,
+    "velocidad": 230,
+    "area": 120,
+    "sustentacion": 0.5,
+    "alargamiento": 9,
+    "eficiencia": 0.75,
+    "mejorada": 0.85
+  },
+  "tanteo": {
+    "pregunta": "Si la punta mejora la eficiencia aerodinámica manteniendo la misma sustentación, ¿qué ocurre con la resistencia inducida?",
+    "opciones": [
+      "Aumenta",
+      "Disminuye",
+      "No cambia"
+    ],
+    "valores": [
+      -12,
+      12,
+      0
+    ],
+    "medido": "ahorroInducido",
+    "remate": "Disminuye un {ahorroInducido|1} % en el ejemplo. No equivale al mismo porcentaje de ahorro total de combustible."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "sustentar deja una estela",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "EL AIRE RODEA EL EXTREMO",
+          "clave": "La diferencia de presión alimenta la circulación de punta.",
+          "texto": "Para sostener el avión, las presiones sobre las dos caras del ala son distintas. Cerca del extremo, el aire puede rodear el borde y la estela se enrolla en un vórtice. No es un remolino aislado que nace porque el ala esté mal construida: forma parte del flujo de un ala finita que produce sustentación.",
+          "detalle": "La corriente que queda detrás incluye aire desviado hacia abajo. La fuerza aerodinámica resultante tiene una componente que se opone al avance. Ese coste asociado a sustentar se llama resistencia inducida.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "winglets-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA ALETA REDISTRIBUYE LA CORRIENTE",
+          "clave": "Cambiar la punta puede reducir parte de ese coste.",
+          "texto": "Un winglet bien diseñado modifica la circulación y el reparto de fuerzas cerca del extremo. No tapa un agujero ni borra todos los remolinos. Busca producir la sustentación necesaria con una estela menos costosa para ciertas condiciones de vuelo. También añade superficie, peso y esfuerzos estructurales, así que necesita un compromiso cuidadoso.",
+          "detalle": "El modelo cambia una eficiencia equivalente y obtiene un ahorro inducido del {ahorroInducido|1} %. No calcula la forma de la aleta ni demuestra que cualquier punta doblada mejore cualquier avión. Otros componentes de resistencia siguen presentes.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "winglets-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La punta cambia el aire que el avión deja atrás.",
+    "parrafos": [
+      "Esa pequeña pieza no trabaja sola: pertenece a un ala completa. Su interés está en mejorar el conjunto, no en hacer desaparecer una raya de humo. El beneficio depende de la misión y del diseño al que se incorpora."
+    ],
+    "nota": "Eficiencias y condiciones ilustrativas. Polar inducida clásica a igual sustentación; no predice un winglet concreto ni consumo total. Estela esquemática, con vórtices ampliados. El menor remolino dibujado simboliza una redistribución, no su desaparición."
+  },
+  "revisionEditorial": 2
 }

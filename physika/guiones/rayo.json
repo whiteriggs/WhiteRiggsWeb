@@ -1,11 +1,67 @@
 {
-  "id": "rayo", "rotulo": "NATURALEZA", "titulo": "¿Qué es exactamente un rayo?",
-  "entradilla": "Una tormenta separa cargas y crea campos eléctricos intensos. Cuando se desarrollan canales conductores en el aire, una descarga puede transferir carga entre regiones de la nube o entre nube y suelo. La forma ramificada cuenta la búsqueda de esos caminos.",
-  "modelo": "rayo", "color": "ambar", "medidas": {"corriente": 30000, "duracion": 0.0001, "tension": 100000000},
-  "tanteo": {"pregunta": "El pulso rectangular mantiene 30.000 A durante 100 microsegundos. ¿Cuánta carga transporta?", "opciones": ["0,03 culombios", "3 culombios", "300 culombios"], "valores": [0.03, 3, 300], "medido": "carga", "remate": "Transporta {carga|1} C: corriente multiplicada por duración. Un pico enorme puede durar muy poco."},
-  "nucleo": [{"numero": 1, "nombre": "abrir un camino conductor", "color": "ambar", "paneles": [
-    {"rotulo": "LA CORRIENTE NO ES LA CARGA", "clave": "{corriente|0} A durante {microsegundos|0} microsegundos transfieren {carga|1} C.", "texto": "La corriente mide carga por unidad de tiempo. Para saber cuánta se ha movido hay que integrar toda la forma del pulso. Aquí elegimos una corriente constante durante un intervalo breve: el área bajo ese pulso es un rectángulo y la carga acumulada crece linealmente.", "detalle": "Una descarga real tiene líderes, frentes rápidos, corrientes variables y a veces varias descargas de retorno por un canal semejante. Nuestro rectángulo no representa esas etapas ni permite deducir el campo que inició la ruptura del aire.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (microsegundos)", "ejeY": "Carga transferida (C)", "claves": [], "rotulos": []}},
-    {"rotulo": "UNA POTENCIA ENORME, MUY BREVE", "clave": "Con la tensión elegida: {gigaVatios|0} GW y {megajulios|0} MJ.", "texto": "Multiplicar tensión por corriente da potencia eléctrica; multiplicar por duración da energía en este escenario constante. Es una estimación ilustrativa, no la energía aprovechable de cualquier rayo. La tensión y la corriente reales evolucionan juntas mientras el canal y las cargas se reorganizan.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["carga", "megajulios"], "rotulos": ["Carga: {carga|1} C", "Energía: {megajulios|0} MJ"]}}
-  ]}],
-  "cierre": {"titulo": "No es una chispa a escala inocua.", "nota": "Corriente en amperios, duración en segundos y tensión en voltios, todos parámetros ilustrativos constantes. Q = ∫I dt y E = ∫VI dt. No se estiman probabilidad de impacto, distancias seguras ni energía recuperable.", "parrafos": ["La ionización hace conductor al canal y la corriente lo calienta rápidamente. La luz es la parte visible del fenómeno; la expansión del aire origina el trueno. No hace falta que el canal toque el suelo para que haya relámpago y sonido."]}
+  "id": "rayo",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Cómo hace una chispa un encendedor sin pila?",
+  "revisionEditorial": 2,
+  "entradilla": "Aprietas el botón de un encendedor piezoeléctrico, notas resistencia y oyes un clic seco. Entre dos piezas metálicas aparece una chispa. No hay una pila gastándose en secreto: tu dedo proporciona la energía, pero el mecanismo la entrega de golpe a una pieza que convierte presión en separación de cargas eléctricas.",
+  "modelo": "naturaleza-rayo",
+  "color": "ambar",
+  "medidas": {
+    "capacitancia": 1e-11,
+    "tension": 12000,
+    "hueco": 0.003
+  },
+  "tanteo": {
+    "pregunta": "¿De dónde procede la energía de la chispa en este encendedor?",
+    "opciones": [
+      "Del aire sin aportar trabajo",
+      "Del trabajo de tu dedo",
+      "De una batería imprescindible"
+    ],
+    "valores": [
+      0,
+      0.00072,
+      1
+    ],
+    "medido": "energia",
+    "remate": "Del dedo. El almacenamiento eléctrico ideal del ejemplo contiene {milijulios|2} milijulios, no energía creada de la nada."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un golpe que separa cargas",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL BOTÓN PREPARA UN GOLPE",
+          "clave": "Un muelle mueve un pequeño percutor.",
+          "texto": "Mientras aprietas, comprimes un muelle. Un mecanismo libera el percutor y este golpea una cerámica especial. Al deformarse, la cerámica desplaza cargas dentro de su estructura y aparecen cargas opuestas en sus caras. Es el efecto piezoeléctrico. Los contactos metálicos recogen esa diferencia eléctrica y la llevan hasta la zona de la chispa.",
+          "detalle": "El golpe rápido hace repetible el encendido aunque tu dedo avance despacio. La cerámica no necesita calentarse ni girar: la deformación mecánica es la que produce la respuesta eléctrica.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "rayo-1"
+          }
+        },
+        {
+          "rotulo": "EL AIRE DEJA PASAR LA DESCARGA",
+          "clave": "La tensión se concentra en un hueco pequeño.",
+          "texto": "Normalmente el aire separa eléctricamente los dos electrodos. Una diferencia de tensión suficientemente grande puede iniciar una descarga, que atraviesa ese hueco durante un instante. Es ruptura dieléctrica. La forma de las puntas, la humedad y la distancia influyen; no existe una tensión única que describa todos los encendedores y todas las condiciones.",
+          "detalle": "Representamos el almacenamiento eléctrico como una pequeña capacitancia. Su energía crece con el cuadrado de la tensión. Tener mucha tensión no significa almacenar mucha energía si la carga disponible es muy pequeña.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "rayo-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El clic conecta tu dedo con una chispa.",
+    "parrafos": [
+      "El mecanismo comprime, golpea y descarga. La chispa puede iniciar la combustión del gas, pero la energía de la llama posterior procede del combustible, no de la cerámica ni del muelle que has comprimido."
+    ],
+    "nota": "Capacitancia equivalente, tensión y hueco ilustrativos; no predicción de descarga, rendimiento ni seguridad. No desmontar ni modificar encendedores."
+  }
 }

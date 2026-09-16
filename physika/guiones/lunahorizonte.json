@@ -1,11 +1,66 @@
 {
-  "id": "lunahorizonte", "rotulo": "NATURALEZA", "titulo": "¿Por qué la Luna parece enorme cuando sale?",
-  "entradilla": "La Luna cerca del horizonte puede parecer mucho mayor, pero esa impresión no corresponde a un aumento comparable de su diámetro angular. La ilusión es perceptiva. La refracción atmosférica suele aplastar el disco verticalmente, no ampliarlo como una lupa.",
-  "modelo": "lunahorizonte", "color": "ambar", "medidas": {"diametro": 3474.8, "distancia": 384400, "radioTierra": 6371},
-  "tanteo": {"pregunta": "Manteniendo fija la distancia al centro terrestre, ¿cómo es el diámetro angular en el horizonte frente al cenit?", "opciones": ["Ligeramente menor", "El doble", "Cinco veces mayor"], "valores": [0.98, 2, 5], "medido": "cociente", "remate": "La razón horizonte/cenit es {cociente|3}. La geometría incluso cambia el tamaño en el sentido contrario a la gran impresión visual."},
-  "nucleo": [{"numero": 1, "nombre": "medir no es percibir", "color": "ambar", "paneles": [
-    {"rotulo": "EL OBSERVADOR NO ESTÁ EN EL CENTRO", "clave": "Horizonte geométrico: {horizonte|3}°. Cenit: {cenit|3}°.", "texto": "Comparamos dos observadores ideales en una Tierra esférica, con la Luna a la misma distancia geocéntrica. El que la tiene sobre la cabeza está algo más cerca. Para el horizonte, el triángulo entre observador, centro terrestre y centro lunar tiene un ángulo recto en el observador.", "detalle": "A partir de esas distancias calculamos el diámetro angular de una esfera mediante su radio y el arco seno. En el horizonte resulta {reduccion|2} % menor. No hemos supuesto que la órbita sea perfectamente circular ni que estas dos observaciones ocurran simultáneamente desde tu casa.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["horizonte", "cenit"], "rotulos": ["Horizonte: {horizonte|3}°", "Cenit: {cenit|3}°"]}},
-    {"rotulo": "LA ESCENA CAMBIA LA IMPRESIÓN", "clave": "Desde el centro terrestre mediría {centro|3}°.", "texto": "Edificios, árboles, relieve y la interpretación de la distancia del cielo influyen en la percepción. Existen varias explicaciones de la ilusión y no una fórmula universal que prediga cuánto mayor la verá cada persona. Una fotografía con la misma focal permite separar esa impresión del tamaño registrado.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["reduccion"], "rotulos": ["Reducción geométrica: {reduccion|2} %"]}}
-  ]}],
-  "cierre": {"titulo": "La Luna no crece para salir.", "nota": "Diámetro lunar, distancia geocéntrica y radio terrestre en kilómetros; valores representativos. Geometría esférica sin refracción ni relieve. No se calcula la magnitud psicológica de la ilusión.", "parrafos": ["La distancia orbital sí cambia el diámetro angular entre fechas. Eso es un efecto distinto del aspecto enorme junto al horizonte. Comparar fotografías exige conservar focal, encuadre y escala, sin confundir cambios de cámara con cambios del cielo."]}
+  "id": "lunahorizonte",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Cómo mide una calle una rueda medidora?",
+  "revisionEditorial": 2,
+  "entradilla": "Has visto a alguien caminar empujando una rueda con un mango y un contador. Parece un juguete, pero sirve para medir recorridos largos sin desplegar una cinta por el suelo. El aparato aprovecha una relación sencilla: cuando una rueda avanza sin resbalar, cada vuelta deja atrás una longitud conocida.",
+  "modelo": "naturaleza-lunahorizonte",
+  "color": "verde",
+  "medidas": {
+    "radio": 0.1,
+    "vueltas": 10
+  },
+  "tanteo": {
+    "pregunta": "Si la rueda da más vueltas sin resbalar, ¿qué interpreta el contador?",
+    "opciones": [
+      "Que ha recorrido más distancia",
+      "Que pesa más",
+      "Que el suelo está más caliente"
+    ],
+    "valores": [
+      6.283185307,
+      0,
+      100
+    ],
+    "medido": "distancia",
+    "remate": "Más distancia. Las vueltas ilustrativas corresponden a {distancia|2} metros, usando el perímetro de la rueda."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "desenrollar una circunferencia",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "UNA VUELTA DEJA UNA HUELLA",
+          "clave": "El borde recorre sobre el suelo su propia longitud.",
+          "texto": "Imagina una marca pintada en el borde. Cuando toca el suelo, comienza una vuelta; cuando vuelve a tocarlo, la rueda ha avanzado un perímetro. La relación entre giro y desplazamiento se llama rodadura sin deslizamiento. El perímetro de una circunferencia depende de su radio, y permite convertir vueltas en metros sin conocer la velocidad.",
+          "detalle": "En nuestro ejemplo, una vuelta representa {perimetro|2} metros. Puedes caminar más deprisa o más despacio: mientras no haya resbalamiento y el radio efectivo se mantenga, la conversión sigue siendo la misma.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "lunahorizonte-1"
+          }
+        },
+        {
+          "rotulo": "EL CONTADOR SIGUE EL EJE",
+          "clave": "Un mecanismo o sensor transforma giros en lectura.",
+          "texto": "La rueda mueve un pequeño engranaje contador o pasa por un sensor que detecta posiciones de giro. El aparato acumula esas señales y muestra la distancia equivalente. No está mirando el paisaje ni consultando satélites: necesita que su rueda siga en contacto con el recorrido que quieres medir. Las vueltas parciales también cuentan.",
+          "detalle": "Si levantas la rueda mientras avanzas, ese tramo desaparece de la lectura. Si gira patinando, puede sumar distancia que no has recorrido. Una cubierta deformada también altera ligeramente cuánto representa cada vuelta.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "lunahorizonte-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Medir puede ser contar contactos.",
+    "parrafos": [
+      "La sencillez del aparato es su ventaja y su límite. Mide el camino que pisa, incluidas sus curvas y desniveles, no necesariamente la distancia recta entre dos lugares sobre un plano horizontal."
+    ],
+    "nota": "Radio y vueltas ilustrativos, rueda rígida con rodadura ideal. No se modelan deslizamiento, calibración ni precisión comercial."
+  }
 }

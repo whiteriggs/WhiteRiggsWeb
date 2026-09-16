@@ -1,12 +1,74 @@
 {
-  "id": "electrico", "rotulo": "COCHES", "titulo": "¿Cómo empuja un motor eléctrico sin explosiones?",
-  "entradilla": "Las corrientes y los campos magnéticos intercambian fuerzas dentro del motor y generan un par sobre el rotor. Los engranajes llevan ese giro a las ruedas. Para acelerar el coche, la fuerza externa decisiva viene después: la ejerce el suelo sobre los neumáticos.",
-  "modelo": "electrico", "color": "verde",
-  "medidas": {"constante": 1.25, "corriente": 200, "relacion": 9, "rendimiento": 0.92, "radio": 0.32, "revoluciones": 3000},
-  "tanteo": {"pregunta": "El motor entrega 250 N·m, con reducción 9:1, rendimiento de transmisión del 92 % y ruedas de 0,32 m de radio. ¿Qué fuerza longitudinal ideal resulta?", "opciones": ["Unos 650 N", "Unos 6.500 N", "Unos 65.000 N"], "valores": [650, 6500, 65000], "medido": "fuerza", "remate": "Resultan {fuerza|0} N antes de comprobar el límite de adherencia y las demás resistencias."},
-  "nucleo": [{"numero": 1, "nombre": "de corriente a fuerza", "color": "verde", "paneles": [
-    {"rotulo": "EL PAR ES EL PASO INTERMEDIO", "clave": "En el modelo lineal, {corriente|0} A producen {par|0} N·m.", "texto": "Usamos una constante de par que convierte una corriente de control equivalente en par motor. La reducción multiplica el par y reduce la velocidad de giro. Tras descontar las pérdidas mecánicas, dividir el par de la rueda por su radio da la fuerza tangencial disponible en un contacto que no patina.", "detalle": "La curva muestra fuerza frente a corriente en este régimen de flujo magnético constante. No es una curva completa del motor: a velocidades altas aparecen límites de tensión, calentamiento y debilitamiento de campo, y el par no puede seguir aumentando indefinidamente.", "color": "verde", "dibujo": {"tipo": "serie", "ejeX": "Corriente equivalente (A)", "ejeY": "Fuerza disponible (N)", "claves": [], "rotulos": []}},
-    {"rotulo": "MULTIPLICAR PAR NO CREA ENERGÍA", "clave": "A {revoluciones|0} rpm, el eje entrega {potencia|1} kW y llegan {ruedas|1} kW a las ruedas.", "texto": "La potencia mecánica es par por velocidad angular. El engranaje intercambia rapidez por fuerza, mientras su rendimiento descuenta pérdidas. Esta potencia no es la potencia eléctrica absorbida: para calcularla también harían falta las pérdidas del inversor y del propio motor.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["potencia", "ruedas"], "rotulos": ["Eje: {potencia|1} kW", "Ruedas: {ruedas|1} kW"]}}
-  ]}],
-  "cierre": {"titulo": "El campo gira; el suelo empuja.", "nota": "Motor ilustrativo, no especificaciones de Tesla: constante de par 1,25 N·m/A, corriente equivalente 200 A, reducción 9, rendimiento mecánico 0,92, radio 0,32 m y régimen 3.000 rpm. Modelo lineal de par y balance mecánico cuasiestático.", "parrafos": ["Hay motores de inducción, de imanes y de reluctancia, con controles distintos. El ejemplo no reproduce su electrónica. Tampoco calcula aceleración: faltan masa, resistencia al avance, inercias rotatorias y el límite de adherencia."]}
+  "id": "electrico",
+  "revisionEditorial": 2,
+  "rotulo": "COCHES",
+  "titulo": "¿Qué gira dentro del motor de un coche eléctrico?",
+  "entradilla": "Un coche eléctrico puede ponerse en marcha sin el traqueteo de un motor de gasolina. Eso no significa que dentro no pase nada: alrededor de una pieza que gira, varias bobinas cambian continuamente su empuje magnético. La batería aporta energía; la electrónica decide cómo entregarla para que ese giro resulte útil.",
+  "modelo": "electrico",
+  "color": "coral",
+  "medidas": {
+    "constante": 1.25,
+    "corriente": 200,
+    "relacion": 9,
+    "rendimiento": 0.92,
+    "radio": 0.32,
+    "revoluciones": 3000
+  },
+  "tanteo": {
+    "pregunta": "¿Qué hace la reductora entre el motor eléctrico del coche y las ruedas?",
+    "opciones": [
+      "Hace girar más rápido las ruedas que el motor",
+      "Cambia rapidez de giro por más par en las ruedas",
+      "Multiplica la energía que sale de la batería"
+    ],
+    "valores": [
+      650,
+      6500,
+      65000
+    ],
+    "medido": "fuerza",
+    "remate": "Cambia rapidez por par, sin crear energía. El ejemplo entrega una fuerza ideal de {fuerza|0} N antes de considerar el límite de agarre."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un campo que cambia de sitio",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "LAS BOBINAS SE RELEVAN",
+          "clave": "El campo magnético gira aunque la carcasa esté quieta.",
+          "texto": "En un motor de imanes permanentes, los imanes del rotor responden al campo de las bobinas que lo rodean. La electrónica alimenta esas bobinas por fases, de modo que la orientación del campo va avanzando. El rotor recibe un esfuerzo de giro: no necesita pequeñas explosiones ni un pistón que suba y baje.",
+          "detalle": "Es electromagnetismo convertido en movimiento. La fuerza magnética produce par, que es la capacidad de hacer girar un eje. Otros motores eléctricos construyen el campo del rotor de otra forma, pero también necesitan coordinar corrientes y campos.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "electrico-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL EJE GIRA MUCHO; LA RUEDA EMPUJA",
+          "clave": "Los engranajes adaptan el giro del motor.",
+          "texto": "Un engranaje pequeño puede mover otro mayor: el segundo gira más despacio y entrega más par. La reductora aprovecha ese intercambio para conectar un motor rápido con unas ruedas más lentas. La rueda transforma después ese giro en empuje contra la carretera. La carretera devuelve una fuerza que mueve el coche.",
+          "detalle": "Con las corrientes y piezas del ejemplo, el motor produce {par|0} N·m. La transmisión tiene pérdidas: llegan {ruedas|1} kW a las ruedas, no toda la potencia del eje.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "electrico-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Silencioso no quiere decir inmóvil por dentro.",
+    "parrafos": [
+      "Bobinas, rotor y engranajes reparten tareas distintas. El campo crea el giro, la transmisión lo adapta y el neumático necesita agarre para convertirlo en avance. Por eso aumentar el par del eje no garantiza que las ruedas puedan aprovecharlo sobre cualquier suelo."
+    ],
+    "nota": "Motor de imanes dibujado esquemáticamente; parámetros ilustrativos, no especificaciones de un coche. Par lineal con corriente y rendimiento constante, sin saturación, temperatura ni límites de adherencia."
+  }
 }

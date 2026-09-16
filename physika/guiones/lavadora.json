@@ -1,12 +1,71 @@
 {
-  "id": "lavadora", "rotulo": "CASA", "titulo": "¿Por qué la lavadora baila al centrifugar?",
-  "entradilla": "Cuando la ropa no se reparte de forma uniforme, el centro de masa de la carga queda desplazado respecto al eje. Al girar, hace falta una fuerza periódica para mantener ese movimiento. La suspensión y la carcasa reciben la reacción; cómo se mueven depende además de sus apoyos y resonancias.",
-  "modelo": "lavadora", "color": "indigo",
-  "medidas": {"desequilibrio": 0.1, "radio": 0.25, "revoluciones": 1000},
-  "tanteo": {"pregunta": "Para el mismo desequilibrio, al duplicar la velocidad de centrifugado, ¿por cuánto se multiplica la fuerza excitadora?", "opciones": ["Permanece igual", "Por cuatro", "Por dos"], "valores": [1, 4, 2], "medido": "razonFuerza", "remate": "Se multiplica por {razonFuerza|0}: la fuerza depende del cuadrado de la velocidad angular, mientras el desequilibrio permanezca igual."},
-  "nucleo": [{"numero": 1, "nombre": "un pequeño exceso de masa girando", "color": "indigo", "paneles": [
-    {"rotulo": "FUERZA QUE CAMBIA DE DIRECCIÓN", "clave": "El desequilibrio equivale a una fuerza de amplitud {fuerza|1} N a {revoluciones|0} rpm.", "texto": "Multiplicamos la masa desequilibrada por el radio y por la velocidad angular al cuadrado. No usamos toda la ropa como masa descentrada: el parámetro representa su desequilibrio equivalente. La dirección de la fuerza gira con el tambor; cada componente sobre un eje fijo oscila periódicamente.", "detalle": "En el ejemplo, la frecuencia es de {frecuencia|2} Hz. La cuenta da la excitación mecánica, no la fuerza exacta que llega al suelo ni cuánto se desplaza la carcasa. Esas respuestas necesitan un modelo de masas, muelles, amortiguadores y contacto con el pavimento.", "color": "indigo", "dibujo": {"tipo": "barras", "claves": ["media", "fuerza"], "rotulos": ["{mitad|0} rpm: {media|1} N", "{revoluciones|0} rpm: {fuerza|1} N"]}},
-    {"rotulo": "LA SUSPENSIÓN CAMBIA LA RESPUESTA", "clave": "La curva crece con el cuadrado de las rpm, sin dibujar resonancias ficticias.", "texto": "Al acelerar, una lavadora puede cruzar frecuencias próximas a modos propios de su conjunto suspendido. Entonces una excitación moderada puede producir movimientos grandes. Más allá, la suspensión puede aislar parte de la vibración. Por eso el temblor observado no tiene por qué crecer de la misma manera que nuestra curva de fuerza.", "detalle": "La gráfica mantiene fija la distribución de la carga; la ropa real puede recolocarse. Algunos programas detectan el desequilibrio y redistribuyen o limitan el giro. Ni ese control ni el movimiento del agua están simulados aquí. El resultado explica una tendencia física, no diagnostica una máquina concreta.", "color": "indigo", "dibujo": {"tipo": "serie", "ejeX": "Velocidad de giro (rpm)", "ejeY": "Fuerza excitadora (N)", "claves": [], "rotulos": []}}
-  ]}],
-  "cierre": {"titulo": "Una fuerza grande no determina por sí sola cuánto se mueve la carcasa.", "nota": "Masa de desequilibrio en kg, radio en m y velocidad en rpm. Fuerza = masa × radio × velocidad angular², con giro uniforme. Escenario ilustrativo de desequilibrio equivalente; sin simulación de resonancia, suspensión, desplazamiento de ropa o contacto con el suelo.", "parrafos": ["La centrifugación separa agua gracias al movimiento y a las fuerzas que lo sostienen. La vibración aparece cuando ese movimiento no queda mecánicamente equilibrado, y la estructura decide cómo se transmite."]}
+  "id": "lavadora",
+  "rotulo": "CASA",
+  "titulo": "¿Por qué la lavadora baila al centrifugar una toalla pesada?",
+  "entradilla": "La lavadora empieza a centrifugar y de pronto parece querer salir de su sitio. Una toalla mojada puede haberse quedado amontonada en un lado del tambor. El problema no es solo cuánto pesa la ropa, sino dónde está: una carga mal repartida hace que el centro de masa del conjunto no coincida con el eje.",
+  "modelo": "lavadora",
+  "color": "ambar",
+  "medidas": {
+    "desequilibrio": 0.1,
+    "radio": 0.25,
+    "revoluciones": 1000
+  },
+  "tanteo": {
+    "pregunta": "Con el mismo bulto de ropa desplazado del eje, ¿qué pasa con la fuerza que sacude la cuba al aumentar la velocidad?",
+    "opciones": [
+      "Se queda igual",
+      "Aumenta mucho",
+      "Disminuye"
+    ],
+    "valores": [
+      1,
+      4,
+      0.25
+    ],
+    "medido": "razonFuerza",
+    "remate": "Aumenta mucho. Al comparar las velocidades del ejemplo, la fuerza se multiplica por {razonFuerza|0}; depende del cuadrado de la velocidad angular."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el peso está fuera del centro",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL BULTO QUIERE SEGUIR RECTO",
+          "clave": "Mantenerlo girando exige una fuerza hacia el eje.",
+          "texto": "Para que una masa describa un círculo hay que cambiar continuamente la dirección de su velocidad. La fuerza hacia el centro que permite hacerlo se llama centrípeta. Si la ropa está bien repartida, muchas fuerzas se compensan. Un bulto en un lado rompe ese equilibrio y transmite a la cuba una fuerza cuya dirección va girando.",
+          "detalle": "Cuanto más lejos del eje queda la masa descompensada, mayor es el efecto para la misma velocidad. Por eso una prenda grande y empapada puede dar más problemas que una carga repartida de peso parecido.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "lavadora-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LOS AMORTIGUADORES NO HACEN MILAGROS",
+          "clave": "La suspensión limita cuánto movimiento llega a la carcasa.",
+          "texto": "La cuba cuelga de muelles y se apoya en amortiguadores que disipan movimiento. El conjunto tiene ritmos propios de oscilación. Si la excitación se acerca a ellos puede aumentar la respuesta: es resonancia. Durante el arranque la lavadora atraviesa distintas velocidades, y la electrónica puede intentar redistribuir la ropa antes de permitir un centrifugado rápido.",
+          "detalle": "Nuestro cálculo obtiene la fuerza excitadora, no cuánto caminará la máquina por el suelo. Eso depende también de suspensión, apoyos y montaje. Ante golpes fuertes conviene seguir las instrucciones del fabricante, no sujetarla con el cuerpo mientras centrifuga.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "lavadora-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Repartir importa tanto como pesar.",
+    "parrafos": [
+      "El tambor no protesta porque haya una toalla: protesta porque esa masa obliga al conjunto a corregir su movimiento en cada vuelta."
+    ],
+    "nota": "Masa excéntrica ideal y velocidad constante en cada comparación. Medidas ilustrativas; no se calcula amplitud de vibración ni resonancia de una lavadora concreta."
+  },
+  "revisionEditorial": 2
 }

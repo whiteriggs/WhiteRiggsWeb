@@ -1,11 +1,72 @@
 {
-  "id": "pulsar", "rotulo": "ESPACIO", "titulo": "¿Por qué un púlsar puede funcionar como un reloj?",
-  "entradilla": "Un púlsar es una estrella de neutrones cuya rotación hace barrer nuestra dirección a haces de radiación o regiones emisoras. Recibimos pulsos periódicos, no una estrella entera que se enciende y apaga. Algunos son relojes extraordinarios; no todos tienen precisión comparable a un reloj atómico.",
-  "modelo": "pulsar", "color": "indigo", "medidas": {"periodo": 0.1, "derivada": 1e-15, "dias": 365},
-  "tanteo": {"pregunta": "Un púlsar tiene un periodo inicial de 0,1 s que aumenta 10^-15 s por segundo. ¿Qué retraso acumula en 365 días respecto a mantener el periodo inicial?", "opciones": ["Unos 0,005 segundos", "Unos 5 segundos", "Unos 500 segundos"], "valores": [0.005, 5, 500], "medido": "retraso", "remate": "{retraso|5} segundos. Una deriva minúscula, repetida durante muchas vueltas, deja una señal medible."},
-  "nucleo": [{"numero": 1, "nombre": "contar vueltas con luz", "color": "indigo", "paneles": [
-    {"rotulo": "UN GIRO MUY REGULAR", "clave": "El ejemplo gira a {vueltasSegundo|0} vueltas por segundo.", "texto": "Si la dirección magnética o emisora no coincide con el eje de giro, la rotación puede hacer que el haz cruce nuestra línea de visión una vez por ciclo, o con más componentes según la geometría. La periodicidad permite contar vueltas y construir una predicción de llegadas.", "detalle": "La estrella pierde energía rotacional mediante su campo y su entorno, de modo que el periodo puede crecer. Aquí usamos una derivada constante pequeña: el retraso respecto a un reloj de periodo fijo crece aproximadamente con el cuadrado del tiempo.", "color": "indigo", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (días)", "ejeY": "Retraso acumulado (s)", "claves": [], "rotulos": []}},
-    {"rotulo": "PREDECIBLE NO ES INALTERABLE", "clave": "El periodo aumenta {aumentoNs|3} ns; el retraso llega a {retraso|5} s.", "texto": "El cambio instantáneo del periodo es muy pequeño, pero altera la fase de muchas vueltas sucesivas. Integrar esa diferencia produce un retraso mayor que el cambio de un único periodo. Medirlo permite modelar la evolución del reloj estelar.", "detalle": "La comparación con relojes atómicos solo es apropiada para objetos, escalas temporales y análisis concretos, especialmente ciertos púlsares de milisegundos. Otros muestran ruido de cronometraje o glitches, cambios repentinos de giro. Además hay que corregir órbitas, propagación por plasma y movimiento del observatorio.", "color": "indigo", "dibujo": {"tipo": "magnitudes", "claves": ["aumentoNs", "retraso"], "rotulos": ["Periodo: +{aumentoNs|3} ns", "Retraso: {retraso|5} s"]}}
-  ]}],
-  "cierre": {"titulo": "Un reloj útil también necesita un modelo.", "nota": "Púlsar ficticio ilustrativo: periodo 0,1 s, derivada 10⁻¹⁵ s/s, intervalo 365 días. Aproximación de primer orden válida cuando el cambio relativo de periodo es pequeño; sin glitches ni dispersión. Referencia contextual consultada: NASA Science, Star Types, apartado Neutron Stars, https://science.nasa.gov/universe/stars/types/.", "parrafos": ["La curva no simula la forma de un pulso ni demuestra una precisión instrumental. Calcula cuánto se equivocaría una predicción que ignorase la deriva elegida.", "No vemos todos los púlsares de la misma forma: la geometría del haz y la banda observada determinan si sus pulsos cruzan nuestra dirección y pueden detectarse."]}
+  "id": "pulsar",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Por qué un reloj GPS vuelve a ajustar la hora si su cuarzo no se ha parado?",
+  "revisionEditorial": 2,
+  "entradilla": "Un reloj GPS puede seguir dando la hora durante mucho tiempo sin recibir satélites. Su oscilador local mantiene la cuenta. Entonces, ¿para qué vuelve a sincronizarse? Porque seguir latiendo no significa latir exactamente al ritmo correcto. Una diferencia diminuta, repetida miles de veces, termina separando su hora de la referencia que recibió.",
+  "modelo": "pulsar",
+  "color": "indigo",
+  "medidas": {
+    "frecuencia": 32768,
+    "ppm": 20,
+    "segundos": 86400,
+    "intervalo": 3600
+  },
+  "tanteo": {
+    "pregunta": "Si un cuarzo adelanta ligeramente, ¿qué consigue sincronizarlo periódicamente?",
+    "opciones": [
+      "Eliminar toda variación futura",
+      "Limitar el desfase acumulado",
+      "Hacer que deje de oscilar"
+    ],
+    "valores": [
+      0,
+      0.072,
+      1.728
+    ],
+    "medido": "corregido",
+    "remate": "Limita lo que se acumula entre ajustes: en el ejemplo, {corregido|3} s frente a {desfase|3} s tras un día sin corregir."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "contar y volver a comparar",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "EL CRISTAL MARCA UN RITMO",
+          "clave": "La electrónica cuenta sus oscilaciones.",
+          "texto": "Un cristal de cuarzo cambia de forma al aplicarle tensión y genera una señal al deformarse. Ese acoplamiento es el efecto piezoeléctrico. Dentro de un circuito oscilador, ayuda a sostener una frecuencia estable. Divisores electrónicos convierten los ciclos rápidos en intervalos que el reloj puede usar para contar segundos.",
+          "detalle": "La frecuencia nominal ilustrativa es {frecuencia|0} Hz. Una desviación pequeña debida a tolerancias o temperatura cambia la cuenta real. No hace falta que falte un pulso: basta con que todos duren un poco menos o más de lo esperado.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "pulsar-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA REFERENCIA RECOLOCA LA CUENTA",
+          "clave": "Recibir la hora corrige el desfase, no detiene el cuarzo.",
+          "texto": "Al obtener una referencia temporal válida del sistema GPS, el reloj puede corregir su hora local. Entre sincronizaciones vuelve a depender de su oscilador. Es acumulación de error de frecuencia: una desviación relativa constante produce un error temporal proporcional al tiempo transcurrido. Nuestro ejemplo adelanta {desfase|3} segundos en un día.",
+          "detalle": "Si se corrige cada hora, el máximo ideal entre ajustes baja a {corregido|3} segundos. Aquí no calculamos posición, propagación por la atmósfera ni errores de adquisición GPS. Tampoco suponemos que todos los relojes se conecten con esa frecuencia: es una comparación ilustrativa.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "pulsar-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Un buen ritmo todavía necesita una referencia.",
+    "parrafos": [
+      "El cuarzo permite que el reloj siga funcionando entre contactos con los satélites. La sincronización evita que su pequeña diferencia de ritmo se acumule indefinidamente. Contar bien y comprobar la hora son dos tareas complementarias."
+    ],
+    "nota": "Deriva constante ilustrativa de 20 ppm; corrección temporal instantánea e ideal. No representa un modelo comercial ni duplica el cálculo nativo de posicionamiento GPS."
+  }
 }

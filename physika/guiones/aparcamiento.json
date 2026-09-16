@@ -1,8 +1,9 @@
 {
   "id": "aparcamiento",
+  "revisionEditorial": 2,
   "rotulo": "COCHES",
-  "titulo": "¿Cómo mide la distancia a la pared el sensor de aparcamiento?",
-  "entradilla": "Con un chasquido que no oyes y un cronómetro. A {velocidad|0} metros por segundo, el eco de algo que está a {distanciaEnCentimetros|0} centímetros vuelve en {retrasoEnMilisegundos|1} milisegundos, y de ese hueco sale toda la cuenta.",
+  "titulo": "¿Cómo mide el coche la pared con los sensores de aparcamiento?",
+  "entradilla": "Los pequeños círculos del parachoques pueden descubrir una pared sin hacerle una foto. Algunos son sensores ultrasónicos: lanzan un pulso de sonido demasiado agudo para nuestro oído y escuchan lo que regresa. El pitido que oyes en el habitáculo es un aviso fabricado después, no el eco que está midiendo el coche.",
   "modelo": "eco",
   "color": "coral",
   "medidas": {
@@ -13,11 +14,11 @@
     "repeticion": 25
   },
   "tanteo": {
-    "pregunta": "Cuando el parachoques está a un metro y veinte de la pared, ¿cuánto tarda el eco en volver?",
-    "opciones": ["Siete milésimas de segundo", "Un tercio de segundo", "Tres segundos"],
+    "pregunta": "¿Qué mide primero el sensor ultrasónico del coche para estimar la distancia a la pared?",
+    "opciones": ["El tiempo que tarda en volver el eco", "El brillo de la pared", "El tiempo que llevas pisando el freno"],
     "valores": [0.007, 0.333, 3],
     "medido": "retraso",
-    "remate": "{retrasoEnMilisegundos|1} milisegundos. El coche tiene tiempo de sobra: mide, calcula, decide el tono del pitido y todavía se queda esperando casi cuarenta milisegundos hasta el siguiente chasquido."
+    "remate": "El tiempo de ida y vuelta. En el ejemplo el eco regresa en {retrasoEnMilisegundos|1} milisegundos; contar solo la ida daría una distancia equivocada."
   },
   "nucleo": [
     {
@@ -26,73 +27,37 @@
       "color": "coral",
       "paneles": [
         {
-          "rotulo": "NO MIDE DISTANCIA: MIDE TIEMPO",
-          "clave": "El sensor manda un chasquido de {frecuencia|0} hercios y cuenta lo que tarda en volver.",
-          "texto": "La distancia no se mide nunca. Lo único que existe dentro del aparato es un reloj que arranca al soltar el pulso y para cuando llega el eco. La pared aparece porque alguien dividió ese tiempo entre dos y lo multiplicó por la velocidad del sonido.",
-          "detalle": "El dos es lo que más veces se olvida y es lo que más se nota: el sonido hace el camino dos veces, ida y vuelta. Quien divide el retraso entre la velocidad sin acordarse del dos se cree al doble de distancia de la pared de la que está, que en un aparcamiento es justo el error que no te puedes permitir.",
+          "rotulo": "EL PULSO VA Y VUELVE",
+          "clave": "La pared devuelve una parte del sonido hacia el sensor.",
+          "texto": "Una pequeña pieza vibra para emitir el pulso. El sonido viaja por el aire, encuentra la pared y una parte se refleja. El receptor detecta ese retorno y la electrónica mide el intervalo desde la emisión. Es tiempo de vuelo, una manera de convertir duración en distancia cuando conocemos la velocidad de propagación.",
+          "detalle": "El recorrido tiene dos tramos: del coche a la pared y de la pared al coche. Multiplicamos el tiempo por la velocidad del sonido y dividimos entre dos. Para la pared ilustrativa resultan {distanciaEnCentimetros|0} cm y {retrasoEnMilisegundos|1} ms de retraso.",
           "color": "coral",
           "dibujo": {
-            "tipo": "eco",
-            "rotulos": ["el sensor", "la pared", "{retrasoEnMilisegundos|1} ms", "el hueco va a escala del ciclo entero"]
+            "tipo": "transporteRenovado", "trazado": "aparcamiento-1", "claves": [], "rotulos": []
           }
         },
         {
-          "rotulo": "POR QUÉ NO LO OYES",
-          "clave": "Trabaja a {frecuencia|0} hercios, que es {vecesMasAgudo|1} veces por encima de donde se acaba tu oído.",
-          "texto": "No es que suene flojo: es que suena demasiado agudo. Tu oído se planta en veinte mil hercios y ahí se acaba el mundo audible para ti. El perro que pasa por la acera sí lo oye, y por eso a veces gira la cabeza hacia un coche que está aparcando.",
-          "detalle": "La frecuencia no se elige por discreción sino por tamaño. A {frecuencia|0} hercios la onda mide {ondaEnMilimetros|1} milímetros, y una onda no distingue nada más pequeño que ella. Con sonido audible de mil hercios la onda mediría treinta y cuatro centímetros: el bordillo entero cabría dentro de una sola onda y el sensor no lo vería.",
+          "rotulo": "NO TODO EL SONIDO REGRESA",
+          "clave": "La orientación de la superficie cambia el eco recibido.",
+          "texto": "Una pared perpendicular devuelve parte del pulso hacia el parachoques. Una superficie inclinada puede reflejarlo en otra dirección, y un material absorbente puede devolver una señal débil. Eso es reflexión de ondas, con geometría y pérdidas. Tener un cálculo de tiempo muy preciso no arregla por sí solo un eco que apenas llega.",
+          "detalle": "La onda del ejemplo mide {ondaEnMilimetros|1} mm. Su longitud influye en cómo interactúa con los objetos, pero no impone una frontera absoluta de objetos visibles. También importan tamaño del emisor, duración del pulso y capacidad del receptor.",
           "color": "coral",
           "dibujo": {
-            "tipo": "escala",
-            "claves": ["onda", "ondaComparada", "distancia"],
-            "rotulos": ["el chasquido del sensor", "lo más agudo que oyes", "hasta la pared"],
-            "marcas": [
-              {"valor": 0.001, "texto": "un milímetro"},
-              {"valor": 0.01, "texto": "un centímetro"},
-              {"valor": 0.1, "texto": "un palmo"},
-              {"valor": 1, "texto": "un metro"}
-            ]
+            "tipo": "transporteRenovado", "trazado": "aparcamiento-2", "claves": [], "rotulos": []
           }
         }
       ]
     }
   ],
-  "ampliacion": {
-    "nota": "Lo que pasa cuando el aparato se pone a mirar demasiado deprisa.",
-    "fases": [
-      {
-        "numero": 2,
-        "nombre": "el límite de mirar deprisa",
-        "color": "coral",
-        "paneles": [
-          {
-            "rotulo": "HASTA DÓNDE PUEDE MIRAR",
-            "clave": "Con {cuantosPorSegundo|0} chasquidos por segundo, lo más lejos que puede mirar sin confundirse son {alcanceSinLio|1} metros.",
-            "texto": "Si el siguiente chasquido sale antes de que vuelva el eco del anterior, el aparato no tiene forma de saber de cuál de los dos es el eco que acaba de llegar. Lo lejano se le cuela disfrazado de cercano. Por eso repetir más deprisa, que parece que solo puede mejorar las cosas, acorta el alcance.",
-            "detalle": "Es el mismo trato en el radar meteorológico y en la ecografía: cuantas más veces por segundo miras, más fluido va lo que ves y menos lejos llegas. Nadie ha encontrado la manera de saltárselo, porque no es un problema de electrónica sino de que la información tarda en llegar.",
-            "color": "coral",
-            "dibujo": {
-              "tipo": "barras",
-              "claves": ["alcanceSinLio", "distancia"],
-              "rotulos": ["hasta donde puede mirar: {alcanceSinLio|1} m", "la pared: {distancia|1} m"]
-            }
-          }
-        ]
-      }
-    ]
-  },
   "cierre": {
-    "titulo": "El parachoques lleva un murciélago dentro",
-    "nota": "Las medidas de partida son las de un sensor de aparcamiento corriente: cuarenta y ocho kilohercios y unos veinticinco chasquidos por segundo. El resto lo calcula la aplicación.",
+    "titulo": "El aviso empieza con un viaje de ida y vuelta.",
+    "nota": "Frecuencia, repetición y distancia ilustrativas, no especificaciones de un sensor. Velocidad del sonido fijada a aire templado; sin geometría completa del haz, absorción ni procesamiento. No garantiza detección de obstáculos.",
     "parrafos": [
-      "El coche no ve la pared. Suelta un chasquido demasiado agudo para ti, arranca un reloj, y cuando el eco vuelve lee el reloj y divide entre dos. Todo lo demás —el pitido que se acelera, la barra de colores de la pantalla— es decoración encima de esa división.",
-      "Es exactamente el oficio del murciélago, y exactamente el de la ecografía con la que viste a tu sobrino antes de que naciera. Lo único que cambia entre los tres es el medio por el que viaja el sonido, y con él la velocidad: {velocidad|0} metros por segundo en el aire del garaje, cuatro veces y media más dentro de un cuerpo.",
-      "Y el radar de tráfico es la misma cuenta otra vez, cambiando el sonido por luz. Ahí la velocidad es un millón de veces mayor, así que el reloj tiene que contar nanosegundos en vez de milisegundos. Esa es toda la diferencia de precio."
+      "El pitido traduce una estimación, no una visión infalible. La temperatura del aire cambia la velocidad del sonido y los obstáculos cambian la calidad del eco: medir bien exige atender a ambas cosas."
     ]
   },
   "puente": {
     "hacia": "ecografia",
-    "frase": "El mismo chasquido y el mismo cronómetro, metidos en un cuerpo en vez de en un garaje. Lo único que cambia es que ahí dentro el sonido corre cuatro veces y media más."
-  },
-  "nota": "La velocidad del sonido en el aire depende de la temperatura: los 343 metros por segundo son a veinte grados. Un sensor que no lo corrija se equivoca alrededor de un uno por ciento cada seis grados, que a metro y medio son un par de centímetros."
+    "frase": "La ecografía también mide ecos, con otra velocidad de propagación y un procesamiento que permite formar imágenes."
+  }
 }

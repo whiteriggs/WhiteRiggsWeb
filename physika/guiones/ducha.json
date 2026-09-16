@@ -1,12 +1,75 @@
 {
-  "id": "ducha", "rotulo": "COTIDIANO", "titulo": "¿Por qué la cortina de la ducha puede moverse hacia dentro?",
-  "entradilla": "No hay una explicación universal basada solo en Bernoulli. El chorro arrastra aire, puede generar recirculación y modifica presiones; el agua caliente también favorece corrientes térmicas. La geometría, las aberturas y el peso de la cortina deciden qué efectos dominan en cada ducha.",
-  "modelo": "ducha", "color": "azul",
-  "medidas": {"diferenciaPresion": 0.3, "area": 1, "densidad": 1.2, "velocidad": 1, "altura": 0.8, "salto": 10, "temperatura": 293},
-  "tanteo": {"pregunta": "Sobre 1 m² de cortina actúa uniformemente una diferencia de presión de 0,3 Pa. ¿Qué fuerza total crees que produce?", "opciones": ["0,03 N", "0,30 N", "30 N"], "valores": [0.03, 0.3, 30], "medido": "fuerza", "remate": "La fuerza sería {fuerza|2} N si esa diferencia actuara uniformemente sobre el área elegida."},
-  "nucleo": [{"numero": 1, "nombre": "poca presión sobre mucha tela", "color": "azul", "paneles": [
-    {"rotulo": "UNA SUPERFICIE GRANDE AMPLIFICA EL EFECTO", "clave": "La presión diferencial impuesta da una fuerza de {fuerza|2} N.", "texto": "La fuerza normal neta se obtiene integrando la diferencia de presión entre ambas caras. Si la suponemos uniforme, basta multiplicar por el área. Una cortina ligera ofrece mucha superficie y poca resistencia a deformarse, aunque sus anillas y pliegues también aportan fuerzas restauradoras.", "detalle": "La diferencia de presión es una entrada ilustrativa, no un resultado deducido del caudal de agua. Elegimos el signo hacia dentro; cambiarlo invertiría la fuerza. El cálculo no determina por sí mismo qué signo tendrá una ducha real ni cuánto se desplazará la cortina.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["diferenciaPresion", "fuerza"], "rotulos": ["Diferencia: {diferenciaPresion|2} Pa", "Fuerza: {fuerza|2} N"]}},
-    {"rotulo": "DOS ESCALAS, NO DOS FUERZAS QUE SUMAR", "clave": "La escala dinámica es {escalaDinamica|2} Pa y la térmica, {escalaTermica|2} Pa.", "texto": "La primera combina densidad del aire y velocidad al cuadrado. La segunda estima una escala de presión por flotabilidad a partir de altura y contraste térmico relativo. Compararlas muestra que, con estos parámetros, ambas merecen atención; ninguna equivale automáticamente a la presión real sobre la tela.", "detalle": "Bernoulli requiere hipótesis sobre una corriente y sus pérdidas; no permite asignar menor presión a cualquier región solo porque algo se mueve. El arrastre del chorro, los remolinos y la ventilación cambian el campo de presiones. Estas escalas no se suman para inventar una dirección universal.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["escalaDinamica", "escalaTermica"], "rotulos": ["Dinámica: {escalaDinamica|2} Pa", "Térmica: {escalaTermica|2} Pa"]}}
-  ]}],
-  "cierre": {"titulo": "La cortina responde a un campo de presiones concreto.", "nota": "Escenario ilustrativo: área en m², presión en Pa, densidad en kg/m³, velocidad en m/s, altura en m y temperaturas en K. Estimaciones dimensionales, no solución del flujo ni prueba de un mecanismo único.", "parrafos": ["Observar movimiento incluso sin agua caliente descartaría una explicación exclusivamente térmica para ese caso. Distinguir mecanismos exige comparar condiciones, no poner el mismo nombre a todas las cortinas que se acercan."]}
+  "id": "ducha",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué la cortina de ducha se acerca a las piernas?",
+  "revisionEditorial": 2,
+  "entradilla": "Abres la ducha y la cortina, que parecía tranquila, empieza a acercarse. No hace falta una corriente de aire fuerte para mover una lámina tan ligera. El agua y el aire se ponen en movimiento, y una pequeña diferencia de presión repartida por toda la tela puede tener un efecto visible.",
+  "modelo": "ducha",
+  "color": "ambar",
+  "medidas": {
+    "diferenciaPresion": 0.3,
+    "area": 1,
+    "densidad": 1.2,
+    "velocidad": 1,
+    "altura": 0.8,
+    "salto": 10,
+    "temperatura": 293
+  },
+  "tanteo": {
+    "pregunta": "¿Puede una diferencia de presión muy pequeña mover una cortina grande y ligera?",
+    "opciones": [
+      "No, la presión necesita ser enorme",
+      "Sí, actúa sobre toda su superficie",
+      "Solo si la cortina es metálica"
+    ],
+    "valores": [
+      0.03,
+      0.3,
+      30
+    ],
+    "medido": "fuerza",
+    "remate": "Sí. La diferencia uniforme elegida produce {fuerza|2} N sobre la cortina del ejemplo."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el agua también mueve aire",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "UNA CIRCULACIÓN ALREDEDOR DEL CHORRO",
+          "clave": "Las gotas arrastran aire y cambian su movimiento dentro de la ducha.",
+          "texto": "El chorro no atraviesa un vacío. Las gotas intercambian movimiento con el aire y pueden organizar corrientes alrededor de la zona de caída. Con agua caliente se suma otra circulación: el aire calentado tiende a subir y entra aire más frío para reemplazarlo. La forma del recinto condiciona ambos movimientos.",
+          "detalle": "Por eso no conviene reducir todas las duchas a una frase como aire rápido significa menos presión. El flujo tiene giros, entradas y salidas. Las escalas dinámica y térmica ayudan a comparar efectos posibles, pero no calculan por sí solas la presión sobre una cortina concreta.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "ducha-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "MUCHA SUPERFICIE, POCO PESO",
+          "clave": "Los pequeños empujes de cada zona se suman.",
+          "texto": "La presión actúa sobre toda la cortina, no solo en un punto. Si un lado empuja algo más que el otro, la diferencia se suma sobre una superficie grande. Una lámina flexible y ligera puede doblarse visiblemente. Un borde lastrado ofrece mayor resistencia a ese desplazamiento, aunque no elimine las corrientes.",
+          "detalle": "La relación fuerza igual a presión por área expresa esa suma para una diferencia uniforme. El ejemplo impone esa diferencia para calcular su efecto. No afirma haberla deducido del chorro ni que todas las cortinas deban moverse hacia el mismo lado.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "ducha-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Un empuje pequeño puede tener mucho espacio donde actuar.",
+    "parrafos": [
+      "La cortina hace visible el movimiento del aire que acompaña al agua. El resultado depende del conjunto, no de una propiedad misteriosa del plástico mojado."
+    ],
+    "nota": "Presión y dimensiones ilustrativas, no medidas de una ducha real. No simulamos turbulencia ni predecimos el desplazamiento exacto de una cortina."
+  }
 }

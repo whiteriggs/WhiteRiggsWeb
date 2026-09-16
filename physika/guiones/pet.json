@@ -1,12 +1,70 @@
 {
-  "id": "pet", "rotulo": "MEDICINA", "titulo": "¿Cómo localiza un PET la aniquilación de un positrón?",
-  "entradilla": "El PET no fotografía directamente un tumor. Detecta radiación emitida tras administrar un trazador que participa en procesos biológicos. Su distribución puede informar sobre metabolismo u otras funciones, pero una acumulación no identifica por sí sola cáncer y también puede aparecer en tejidos normales.",
-  "modelo": "pet", "color": "coral",
-  "medidas": {"diferencia": 200, "incertidumbre": 400},
-  "tanteo": {"pregunta": "Una diferencia de llegada de 200 picosegundos, ¿qué desplazamiento indica a lo largo de la línea entre detectores?", "opciones": ["Unos 0,3 cm", "Unos 3 cm", "Unos 30 cm"], "valores": [0.3, 3, 30], "medido": "desplazamiento", "remate": "El desplazamiento es {desplazamiento|2} cm respecto al punto medio ideal de esa línea."},
-  "nucleo": [{"numero": 1, "nombre": "dos llegadas relacionadas", "color": "coral", "paneles": [
-    {"rotulo": "LA MITAD DEL RECORRIDO DIFERENCIAL", "clave": "La diferencia temporal elegida corresponde a {desplazamiento|2} cm.", "texto": "Después de frenar, un positrón puede aniquilarse con un electrón y producir dos fotones casi opuestos. Si el suceso está desplazado hacia un detector, un fotón recorre menos distancia y el otro más. La diferencia de recorridos es el doble del desplazamiento.", "detalle": "Por eso multiplicamos la diferencia temporal por la velocidad de la luz y dividimos entre dos. La recta representa esa geometría, no una trayectoria de positrones ni una imagen de un órgano. Se supone propagación aproximadamente rectilínea entre detectores opuestos.", "color": "coral", "dibujo": {"tipo": "serie", "ejeX": "Diferencia temporal (ps)", "ejeY": "Desplazamiento (cm)", "claves": [], "rotulos": []}},
-    {"rotulo": "UNA FRANJA, NO UN PUNTO EXACTO", "clave": "Una incertidumbre temporal de 400 ps equivale aquí a {resolucion|2} cm.", "texto": "El tiempo de vuelo restringe dónde pudo ocurrir la aniquilación, pero cada coincidencia conserva incertidumbre. Acumulando muchos sucesos y corrigiendo dispersión, atenuación y coincidencias accidentales se reconstruye la distribución del trazador.", "detalle": "La energía de reposo del electrón corresponde a {energia|1} keV por fotón en la aniquilación ideal en reposo. El recorrido previo del positrón y la ligera falta de oposición entre fotones también limitan la localización; el número temporal no es la resolución final del PET.", "color": "coral", "dibujo": {"tipo": "magnitudes", "claves": ["energia", "resolucion"], "rotulos": ["Fotón: {energia|1} keV", "Franja: {resolucion|2} cm"]}}
-  ]}],
-  "cierre": {"titulo": "La física localiza; la biología da contexto.", "nota": "Escenario temporal ilustrativo: diferencia e incertidumbre en ps, ambas con igual convención de anchura al convertirlas a cm. Energía por equivalencia masa-energía. Radiación ionizante; sin cantidades de trazador ni recomendaciones diagnósticas.", "parrafos": ["El trazador elegido determina qué proceso se observa. La misma técnica física puede estudiar fenómenos distintos sin convertirse en una cámara universal que separe automáticamente lo sano de lo enfermo."]}
+  "id": "pet",
+  "rotulo": "MEDICINA",
+  "titulo": "Escáner PET: ¿cómo localiza una señal que sale de dentro?",
+  "revisionEditorial": 2,
+  "modelo": "pet",
+  "color": "verde",
+  "medidas": {
+    "diferencia": 200,
+    "incertidumbre": 400
+  },
+  "entradilla": "El escáner PET parece otro aro alrededor de una camilla, pero sus detectores esperan señales que vienen del interior. PET significa tomografía por emisión de positrones. Un trazador permite registrar pares de fotones, y el aparato busca qué parejas pertenecen al mismo suceso. La clave está en escuchar dos llegadas relacionadas.",
+  "tanteo": {
+    "pregunta": "Si un fotón llega antes a un detector y su compañero después al opuesto, ¿dónde situamos el suceso ideal?",
+    "opciones": [
+      "Más cerca del que lo recibe después",
+      "Más cerca del que lo recibe antes",
+      "Siempre en el centro"
+    ],
+    "valores": [
+      0.3,
+      3,
+      30
+    ],
+    "medido": "desplazamiento",
+    "remate": "Más cerca del primero. La diferencia temporal del ejemplo corresponde a {desplazamiento|2} cm desde el punto medio."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "dos llegadas relacionadas",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "DOS FOTONES CASI OPUESTOS",
+          "clave": "Una pareja señala un camino posible.",
+          "texto": "Cuando un positrón se encuentra con un electrón, pueden desaparecer ambos y producir dos fotones que salen casi en sentidos opuestos. Es la aniquilación: la energía asociada a su masa reaparece como radiación. Los bloques detectores del aro convierten las llegadas en señales que el equipo puede comparar.",
+          "detalle": "Detectar una pareja compatible establece una línea de respuesta, no un punto exacto. El suceso podría haber ocurrido en distintos lugares de esa línea. Además, el positrón puede recorrer algo de camino antes del encuentro: la imagen no marca cada emisión original con precisión infinita.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "pet-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL RELOJ ACORTA LA BÚSQUEDA",
+          "clave": "La diferencia de llegada desplaza la zona probable.",
+          "texto": "Si el encuentro ocurre cerca de un lado, ese fotón recorre menos distancia. Su compañero necesita más tiempo para alcanzar el detector opuesto. Comparando ambas llegadas se estrecha la región probable sobre la línea. Este método se llama tiempo de vuelo y necesita relojes extraordinariamente finos.",
+          "detalle": "La incertidumbre temporal impide convertir la diferencia en una chincheta perfecta. En el ejemplo da una longitud característica de {resolucion|2} cm sobre la línea. Muchas parejas, recogidas desde distintas orientaciones, contribuyen después a reconstruir la distribución del trazador.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "pet-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Dos relojes ayudan a encontrar el origen.",
+    "nota": "Fotones opuestos a velocidad de la luz; incertidumbre temporal ilustrativa. No representa resolución clínica ni diagnósticos.",
+    "parrafos": [
+      "El aro no ve pensamientos ni reconoce enfermedades por sí solo. Registra coincidencias y tiempos. La imagen nace al reunir esas pistas físicas, con sus límites, en lugar de tratar cada destello como una localización exacta."
+    ]
+  }
 }

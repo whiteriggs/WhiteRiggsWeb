@@ -1,12 +1,71 @@
 {
-  "id": "fuego", "rotulo": "COTIDIANO", "titulo": "¿Por qué algunas llamas son azules y otras amarillas?",
-  "entradilla": "No hay un único mecanismo que dé color al fuego. Una vela puede iluminar sobre todo por partículas de hollín incandescentes. En una llama azul bien mezclada destacan emisiones de especies químicas excitadas. Comparar esos colores como si fueran el mismo termómetro lleva a errores.",
-  "modelo": "fuego", "color": "ambar",
-  "medidas": {"temperatura": 1700, "ondaAzul": 0.00000045, "ondaRoja": 0.00000065},
-  "tanteo": {"pregunta": "Un emisor térmico ideal está a 1.700 K. ¿En qué longitud de onda crees que alcanza el máximo de su espectro?", "opciones": ["0,45 µm, azul", "1,70 µm, infrarrojo", "10 µm, infrarrojo lejano"], "valores": [0.45, 1.7, 10], "medido": "picoMicras", "remate": "El máximo está en {picoMicras|2} µm. Lo visible es solo una parte de la radiación térmica."},
-  "nucleo": [{"numero": 1, "nombre": "dos maneras de fabricar luz", "color": "ambar", "paneles": [
-    {"rotulo": "EL HOLLÍN ES UN EMISOR CALIENTE", "clave": "El modelo térmico emite {razonColor|1} veces más por unidad de longitud de onda en rojo que en azul.", "texto": "Las partículas calientes pueden emitir un espectro continuo, aproximado aquí por un cuerpo negro. La ley de Planck permite comparar dos bandas de igual anchura espectral. La curva enseña la porción visible, normalizada al rojo: no es la respuesta de nuestros ojos ni una fotografía de la llama.", "detalle": "La ley de Wien sitúa el máximo fuera del visible para esta temperatura. Que el máximo sea infrarrojo no impide ver la cola del espectro como luz cálida. El hollín real tiene emisividad dependiente de tamaño y longitud de onda, omitida en el modelo.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Longitud de onda (nm)", "ejeY": "Radiancia relativa, rojo = 100", "claves": [], "rotulos": []}},
-    {"rotulo": "EL AZUL NO ES SOLO MÁS CALOR", "clave": "En el espectro térmico ilustrativo, el azul vale {azul|1} frente a {rojo|0} en rojo.", "texto": "Una llama gaseosa puede emitir bandas de moléculas y radicales excitados durante la reacción. Esa quimioluminiscencia no sigue la curva continua del hollín. Mezclar combustible y oxígeno de otra manera cambia la formación de partículas y cuáles de esas emisiones resultan visibles.", "detalle": "La comparación de barras pertenece únicamente al emisor térmico ideal; no calcula el brillo de una cocina de gas. Para ese brillo harían falta composición, condiciones de combustión y espectros de las especies presentes. El color por sí solo no certifica seguridad ni combustión completa.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["azul", "rojo"], "rotulos": ["Azul: {azul|1} relativo", "Rojo: {rojo|0} relativo"]}}
-  ]}],
-  "cierre": {"titulo": "Primero identifica quién emite la luz.", "nota": "Temperatura ilustrativa en K y longitudes de onda en m. Leyes de Planck y Wien para radiancia espectral por longitud de onda. Normalización sin unidades; no se modelan bandas químicas ni se dan instrucciones de combustión.", "parrafos": ["Una misma llama contiene zonas con diferente mezcla y temperatura. Su color aparente combina esas zonas, el espesor óptico y la sensibilidad visual: no se reduce a ordenar llamas de azul a naranja."]}
+  "id": "fuego",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué un encendedor BIC da una llama amarilla?",
+  "revisionEditorial": 2,
+  "entradilla": "Al accionar un encendedor de llama suave aparece una pequeña zona azul cerca de la salida y una parte amarilla más arriba. No son dos combustibles distintos. El gas se va mezclando con el aire mientras arde, y las distintas regiones no producen luz exactamente de la misma manera.",
+  "modelo": "fuego",
+  "color": "ambar",
+  "medidas": {
+    "temperatura": 1700,
+    "ondaAzul": 4.5e-7,
+    "ondaRoja": 6.5e-7
+  },
+  "tanteo": {
+    "pregunta": "¿Qué hace brillar buena parte de la zona amarilla?",
+    "opciones": [
+      "Un pigmento amarillo disuelto en el gas",
+      "Partículas calientes de hollín",
+      "Que toda su luz sea azul"
+    ],
+    "valores": [
+      0.45,
+      1.7,
+      10
+    ],
+    "medido": "picoMicras",
+    "remate": "Partículas calientes. Su radiación térmica tiene aquí el máximo en {picoMicras|2} micras, fuera de lo visible; vemos una parte de ese espectro."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "dos formas de producir luz",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "GAS QUE ENCUENTRA AIRE",
+          "clave": "El combustible no sale perfectamente mezclado con oxígeno.",
+          "texto": "En un encendedor de llama suave, el combustible sale por una abertura y encuentra el aire alrededor. Cerca de ciertas zonas hay suficiente combustible y poco oxígeno, y pueden formarse partículas diminutas de carbono. Mientras atraviesan regiones calientes, esas partículas emiten luz y después pueden seguir reaccionando.",
+          "detalle": "Ese hollín incandescente aporta mucho del amarillo visible. No significa que toda la llama sea una nube de humo que abandona el encendedor: parte de las partículas se consume antes de salir de la zona de combustión.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "fuego-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL COLOR NO ES UN TERMÓMETRO SIMPLE",
+          "clave": "Las partículas calientes y las moléculas excitadas emiten de manera distinta.",
+          "texto": "Una partícula caliente reparte energía entre muchas longitudes de onda, como un filamento incandescente. La ley de Planck describe ese reparto ideal y la ley de Wien sitúa su máximo. La zona azul también incluye luz producida por especies moleculares excitadas en las reacciones químicas.",
+          "detalle": "Por eso no basta con decir que azul significa siempre más caliente que amarillo. Un soplete mezcla combustible y aire de otro modo y reduce la formación de hollín; cambiar esa mezcla cambia tanto la combustión como el origen de la luz.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "fuego-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La llama enseña cómo se mezcla el combustible.",
+    "parrafos": [
+      "El amarillo no está pintado en el gas: aparece durante la combustión. Mirar el color obliga a preguntar qué está emitiendo esa luz."
+    ],
+    "nota": "Temperatura y emisor térmico ilustrativos, no mediciones de BIC. No calculamos reacciones químicas ni recomendamos modificar un encendedor o su entrada de aire."
+  }
 }

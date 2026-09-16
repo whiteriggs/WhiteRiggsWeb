@@ -1,12 +1,70 @@
 {
-  "id": "ecg", "rotulo": "MEDICINA", "titulo": "¿Cómo se dibuja la electricidad del corazón desde la piel?",
-  "entradilla": "Un electrocardiograma registra diferencias de potencial entre electrodos. No fotografía el corazón ni mide directamente su fuerza de bombeo. La actividad eléctrica colectiva llega a la superficie a través de un cuerpo conductor, y cada derivación observa una combinación distinta de esa actividad.",
-  "modelo": "ecg", "color": "coral",
-  "medidas": {"amplitud": 1, "angulo": 60},
-  "tanteo": {"pregunta": "Si un vector ideal de amplitud 1 mV forma 60 grados con la derivación, ¿qué proyección registra?", "opciones": ["0 mV", "0,5 mV", "1 mV"], "valores": [0, 0.5, 1], "medido": "proyeccion", "remate": "La proyección vale {proyeccion|2} mV. Cambiar el ángulo cambia la lectura sin cambiar la amplitud del vector."},
-  "nucleo": [{"numero": 1, "nombre": "cada dirección ve una componente", "color": "coral", "paneles": [
-    {"rotulo": "UN MODELO VECTORIAL", "clave": "Alineado: {alineada|2} mV. Con el ángulo elegido: {proyeccion|2} mV.", "texto": "Idealizamos la fuente como un dipolo equivalente y la derivación como un eje sensible. Su producto escalar introduce un coseno: al girar el vector, la señal disminuye, cruza por cero y puede invertir el signo. La curva muestra ángulo, no tiempo ni una secuencia de latidos.", "detalle": "Una lectura pequeña podría corresponder a una proyección casi perpendicular, no a ausencia de toda actividad. El ejemplo mantiene fija la amplitud y supone un medio conductor simplificado; no representa la distribución completa de corrientes dentro del tórax.", "color": "coral", "dibujo": {"tipo": "serie", "ejeX": "Ángulo (grados)", "ejeY": "Proyección (mV)", "claves": [], "rotulos": []}},
-    {"rotulo": "ELECTRICIDAD NO ES CONTRACCIÓN", "clave": "La misma fuente produce aquí {proyeccion|2} mV en el eje elegido.", "texto": "Las ondas del ECG se relacionan con despolarización y repolarización de grupos celulares. Esos procesos preceden o acompañan acciones mecánicas, pero medir voltaje no mide directamente circulación ni presión. Tampoco una sola derivación permite reconstruir sin ambigüedad todas las fuentes.", "detalle": "Piel, contacto de electrodos, movimiento y actividad muscular añaden señales. El filtrado ayuda a controlar interferencias, aunque también puede modificar la forma registrada. No construimos aquí un trazado normal ni anormal, ni reglas para interpretar uno.", "color": "coral", "dibujo": {"tipo": "magnitudes", "claves": ["proyeccion"], "rotulos": ["Proyección: {proyeccion|2} mV"]}}
-  ]}],
-  "cierre": {"titulo": "Una derivación es una perspectiva eléctrica.", "nota": "Modelo de dipolo equivalente y proyección cosenoidal: amplitud ilustrativa en mV, angulo en grados. No son valores de referencia clínica. No incluye anatomía, impedancias de contacto ni diagnóstico.", "parrafos": ["Comparar derivaciones aporta perspectivas complementarias. La interpretación médica combina forma, secuencia, condiciones de registro e información del paciente; un coseno aislado solo enseña por qué la orientación importa."]}
+  "id": "ecg",
+  "rotulo": "MEDICINA",
+  "titulo": "Electrocardiógrafo: ¿por qué necesita varios electrodos?",
+  "revisionEditorial": 2,
+  "modelo": "ecg",
+  "color": "verde",
+  "medidas": {
+    "amplitud": 1,
+    "angulo": 60
+  },
+  "entradilla": "Varios cables salen de pequeños parches pegados a la piel y acaban en una máquina que dibuja líneas. El electrocardiógrafo no escucha el golpe del corazón ni mide directamente cuánto bombea. Compara pequeñas diferencias eléctricas entre lugares. Cada combinación de electrodos aporta una vista distinta de una misma actividad que va cambiando.",
+  "tanteo": {
+    "pregunta": "Si observamos la misma actividad eléctrica desde una dirección más oblicua, ¿puede cambiar lo registrado sin que cambie su amplitud original?",
+    "opciones": [
+      "No, todas las direcciones son iguales",
+      "Sí, cambia la parte que se proyecta",
+      "Solo si el aparato suministra corriente"
+    ],
+    "valores": [
+      0,
+      0.5,
+      1
+    ],
+    "medido": "proyeccion",
+    "remate": "Sí. La proyección del ejemplo vale {proyeccion|2} mV frente a {alineada|2} mV si estuviera alineada."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "varios puntos de vista",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LOS PARCHES COMPARAN",
+          "clave": "Una lectura necesita una referencia.",
+          "texto": "La actividad coordinada de muchas células produce cambios eléctricos que llegan hasta la superficie. Un electrodo aislado no cuenta toda la historia: el circuito compara potenciales. A cada modo de mirar esa diferencia lo llamamos derivación. Los parches son contactos de medida, no pequeñas cámaras que fotografían partes del corazón.",
+          "detalle": "El dibujo une dos contactos sobre una silueta y muestra su conexión al aparato. Es una simplificación de una derivación, no un mapa para colocar electrodos. El contacto con la piel y los movimientos también afectan a la señal recogida.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "ecg-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA MISMA SEÑAL, OTRA VISTA",
+          "clave": "Mirar de lado cambia la proyección.",
+          "texto": "Una sombra cambia cuando giras el objeto delante de una pared. Algo parecido ayuda a entender la lectura: una dirección capta una parte de la actividad eléctrica y otra capta una parte distinta. Matemáticamente es una proyección. Nuestro modelo representa esa actividad mediante una única orientación ideal.",
+          "detalle": "Al alinearse con ella, la lectura es mayor; al ponerse perpendicular, la proyección ideal desaparece. Eso no significa que haya desaparecido la actividad. Un registro real combina muchas fuentes y cambia con el tiempo, por lo que esta geometría no sirve para interpretar trazados clínicos.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "ecg-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Varios cables no son varias actividades independientes.",
+    "nota": "Dipolo y proyección ideales. Sin interpretación del ritmo, diagnósticos ni instrucciones de colocación.",
+    "parrafos": [
+      "Las distintas líneas se complementan porque observan desde referencias diferentes. El aparato transforma diferencias diminutas en un dibujo legible. La forma de ese dibujo contiene información, pero no es una fotografía directa ni una medida aislada de la fuerza del corazón."
+    ]
+  }
 }

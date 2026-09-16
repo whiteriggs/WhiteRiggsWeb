@@ -1,12 +1,72 @@
 {
-  "id": "esqui", "rotulo": "DEPORTE", "titulo": "¿Por qué pueden deslizar un esquí o un patín sobre hielo?",
-  "entradilla": "No basta con decir que la presión derrite el hielo. La superficie, la temperatura, el rozamiento, el agua interfacial y la deformación de la nieve pueden intervenir de formas distintas. Un esquí sobre nieve y una cuchilla sobre hielo no son el mismo contacto.",
-  "modelo": "esqui", "color": "azul",
-  "medidas": {"fuerza": 20, "velocidad": 10, "tiempo": 5, "latente": 334000},
-  "tanteo": {"pregunta": "Si 1.000 J se dedicaran exclusivamente a fundir hielo ya a su temperatura de fusión, ¿cuánta masa fundirían?", "opciones": ["0,3 g", "Unos 3 g", "Unos 30 g"], "valores": [0.3, 3, 30], "medido": "hieloEnGramos", "remate": "El techo energético es {hieloEnGramos|1} g. No significa que toda esa agua aparezca realmente bajo el esquí."},
-  "nucleo": [{"numero": 1, "nombre": "el contacto transforma energía", "color": "azul", "paneles": [
-    {"rotulo": "EL ROZAMIENTO HACE TRABAJO", "clave": "La fuerza supuesta disipa {potencia|0} W durante {tiempo|0} s: {energia|0} J.", "texto": "Fuerza por velocidad da potencia mecánica. Si ambos valores se mantienen, la energía disipada crece linealmente con el tiempo. La gráfica muestra ese balance acumulado: no representa el espesor de una película de agua ni mide la temperatura del contacto.", "detalle": "La fuerza de este ejemplo se proporciona como dato hipotético que podría medirse en un ensayo. No se obtiene de un coeficiente universal de hielo. Parte del trabajo puede deformar y fragmentar nieve, mientras el calor se reparte entre ambas superficies y el entorno.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (s)", "ejeY": "Energía disipada (J)", "claves": [], "rotulos": []}},
-    {"rotulo": "FUNDIR TAMBIÉN CUESTA", "clave": "Dividir la energía por el calor latente da {hieloEnGramos|1} g como máximo ideal.", "texto": "Antes de fundir hielo frío habría que calentarlo hasta la temperatura de fusión correspondiente. Además, el calor no se concentra necesariamente donde facilita el deslizamiento. Por eso este máximo no permite calcular cuánto resbala un patín ni escoger una cera.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["hieloEnGramos"], "rotulos": ["Techo de fusión: {hieloEnGramos|1} g"]}}
-  ]}],
-  "cierre": {"titulo": "No hay una única explicación para todos los hielos.", "nota": "Fuerza tangencial en N, rapidez relativa en m/s, duración en s. Calor latente ilustrativo del hielo cercano a 0 °C: {latente|0} J/kg. Balance de trabajo y calor latente, sin modelo de contacto, presión local ni coeficiente de fricción.", "parrafos": ["La movilidad molecular superficial puede existir antes de la fusión del bloque. La fricción puede aportar calor y la presión modifica el equilibrio de fases, pero su importancia relativa depende de las condiciones. Ninguno de esos mecanismos, por sí solo, describe todos los casos."]}
+  "id": "esqui",
+  "rotulo": "DEPORTE",
+  "titulo": "Esquí: ¿qué ocurre en la fina zona de contacto con la nieve?",
+  "revisionEditorial": 2,
+  "modelo": "esqui",
+  "color": "verde",
+  "medidas": {
+    "fuerza": 20,
+    "velocidad": 10,
+    "tiempo": 5,
+    "latente": 334000
+  },
+  "entradilla": "Un esquí se desliza sobre nieve que, vista de cerca, no es una pista de cristal perfecta. Hay granos, contactos pequeños y condiciones que cambian con la temperatura y la velocidad. En esa zona estrecha se intercambian fuerzas y calor. El deslizamiento no se explica diciendo simplemente que la presión derrite todo lo que hay debajo.",
+  "tanteo": {
+    "pregunta": "Si el rozamiento transforma energía en calor, ¿podemos afirmar que toda esa energía funde nieve?",
+    "opciones": [
+      "Sí, siempre",
+      "No, parte puede calentarlo todo sin fundir",
+      "No, el rozamiento nunca produce calor"
+    ],
+    "valores": [
+      0.3,
+      3,
+      30
+    ],
+    "medido": "hieloEnGramos",
+    "remate": "No. Si toda la energía se destinara a fundir hielo ya en fusión, el techo sería {hieloEnGramos|1} g; es un límite ideal."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un contacto que cambia",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "EL APOYO OCURRE EN ZONAS PEQUEÑAS",
+          "clave": "La base encuentra una superficie irregular.",
+          "texto": "La base del esquí se apoya sobre granos y relieves. Al avanzar, esos contactos se deforman, se rompen o deslizan unos sobre otros. Parte de la energía del movimiento termina como energía interna. Es rozamiento, un proceso que puede calentar la zona de contacto aunque no aparezca un charco visible.",
+          "detalle": "El dibujo amplía exageradamente granos y base para mostrar dónde se transmite la fuerza. La nieve real cambia con su historia y con el ambiente. Por eso una sola explicación basada en presión o agua no describe todas las situaciones de deslizamiento.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "esqui-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "FUNDIR TAMBIÉN CUESTA ENERGÍA",
+          "clave": "El calor disponible pone un límite.",
+          "texto": "Cuando el hielo está en condiciones de fundirse, transformar una cantidad de sólido en agua requiere energía sin aumentar necesariamente la temperatura durante el cambio. Es calor latente. Podemos comparar el trabajo del rozamiento con ese coste para calcular cuánto podría fundirse como máximo en un escenario ideal.",
+          "detalle": "En la realidad, parte del calor va al esquí y a la nieve que todavía está fría; también puede haber agua o una capa superficial desordenada previa. El segundo panel representa una película posible, ampliada, no una capa de espesor calculado ni siempre presente.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "esqui-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Deslizar depende de lo que pasa justo en el contacto.",
+    "nota": "Trabajo de rozamiento y techo de fusión ideal. Película cualitativa, sin espesor ni condiciones universales.",
+    "parrafos": [
+      "El esquí combina una base preparada con una superficie que cambia mientras la recorre. El balance energético ayuda a poner límites, pero no sustituye conocer la nieve. A veces una capa microscópica importa mucho más que la apariencia de la pista vista desde arriba."
+    ]
+  }
 }

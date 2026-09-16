@@ -1,12 +1,72 @@
 {
-  "id": "golpe", "rotulo": "DEPORTE", "titulo": "¿Qué cambia al alargar la duración de un impacto?",
-  "entradilla": "Un material deformable puede cambiar cuánto dura un contacto y cómo se reparte la fuerza. Pero reducir la fuerza media de un modelo no demuestra que un golpe sea seguro ni permite decidir a quién protege un guante. La lesión no se resume en un único número mecánico.",
-  "modelo": "golpe", "color": "coral",
-  "medidas": {"masaEfectiva": 3, "velocidad": 6, "duracionBreve": 0.02, "duracionLarga": 0.04},
-  "tanteo": {"pregunta": "Si el mismo cambio de cantidad de movimiento dura el doble, ¿qué porcentaje de fuerza media queda?", "opciones": ["25 %", "50 %", "100 %"], "valores": [25, 50, 100], "medido": "porcentaje", "remate": "Queda el {porcentaje|0} % de la fuerza media. La fuerza máxima y el daño no se deducen de esa proporción."},
-  "nucleo": [{"numero": 1, "nombre": "el impulso tiene duración", "color": "coral", "paneles": [
-    {"rotulo": "MISMO IMPULSO, DOS CONTACTOS", "clave": "Para un impulso de {impulso|1} N·s, las fuerzas medias son {fuerzaBreve|0} N y {fuerzaLarga|0} N.", "texto": "Consideramos una masa efectiva que llega con cierta velocidad y acaba detenida, sin rebote. El impulso neto es su cambio de cantidad de movimiento. Dividirlo por el tiempo de detención da la fuerza neta media; no exige suponer que la fuerza real sea constante.", "detalle": "La masa efectiva no equivale automáticamente a la masa de una mano ni a la de una persona completa. Depende del acoplamiento y del movimiento. Los valores escogidos son un ejemplo mecánico, no datos medidos de un boxeador o de un guante concreto.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["fuerzaBreve", "fuerzaLarga"], "rotulos": ["Breve: {fuerzaBreve|0} N", "Largo: {fuerzaLarga|0} N"]}},
-    {"rotulo": "LA ENERGÍA SIGUE AHÍ", "clave": "La energía cinética inicial es {energia|1} J en ambos casos.", "texto": "Alargar el contacto no borra esa energía. Puede cambiar su reparto entre deformación, movimiento, vibración y calor. Si hay rebote, el impulso cambia; si una parte rota, tampoco basta con mirar la aceleración lineal de una masa puntual.", "color": "coral", "dibujo": {"tipo": "magnitudes", "claves": ["energia"], "rotulos": ["Energía inicial: {energia|1} J"]}}
-  ]}],
-  "cierre": {"titulo": "Fuerza media no significa riesgo medido.", "nota": "Masa efectiva en kg, rapidez inicial en m/s y duraciones en s. Escenario ilustrativo de detención sin rebote ni otras fuerzas importantes durante el contacto. Teorema del impulso; no es un modelo biomecánico de lesión.", "parrafos": ["La forma temporal del pulso, el área de contacto, las aceleraciones angulares y la repetición de impactos importan. Este ejemplo no garantiza protección, no compara riesgos clínicos y no ofrece instrucciones para golpear ni para recibir impactos."]}
+  "id": "golpe",
+  "rotulo": "DEPORTE",
+  "titulo": "Guante de boxeo: ¿qué cambia al deformarse durante un impacto?",
+  "revisionEditorial": 2,
+  "modelo": "golpe",
+  "color": "verde",
+  "medidas": {
+    "masaEfectiva": 3,
+    "velocidad": 6,
+    "duracionBreve": 0.02,
+    "duracionLarga": 0.04
+  },
+  "entradilla": "Un guante acolchado cambia de forma al tocar un saco. El contacto no sucede de golpe en un instante sin duración: las superficies se comprimen, frenan y recuperan parte de su forma. Esa pequeña historia temporal importa para la fuerza media. No hace falta convertirla en una promesa de protección ni en una receta para golpear.",
+  "tanteo": {
+    "pregunta": "Si el mismo cambio de movimiento se reparte durante más tiempo, la fuerza media resulta…",
+    "opciones": [
+      "Mayor",
+      "Menor",
+      "Exactamente igual"
+    ],
+    "valores": [
+      25,
+      50,
+      100
+    ],
+    "medido": "porcentaje",
+    "remate": "Menor. Al durar el doble, queda el {porcentaje|0} % de la fuerza media en el ejemplo. La fuerza máxima y el daño no se deducen de esa proporción."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "dar tiempo al contacto",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "EL ACOLCHADO SE COMPRIME",
+          "clave": "Las superficies no son bloques indeformables.",
+          "texto": "Cuando el guante alcanza el saco, ambos se deforman y el movimiento se va frenando a lo largo de un recorrido. La fuerza de contacto cambia durante ese proceso. El primer panel abre el acolchado para mostrar una compresión progresiva, en lugar de dibujar un choque instantáneo entre dos objetos rígidos.",
+          "detalle": "La duración depende del conjunto: material, forma, velocidad y movimiento del objetivo. No basta con añadir espuma para conocerla. El modelo compara dos duraciones supuestas manteniendo igual el cambio de movimiento; no simula todos los detalles de una mano, un guante y un saco.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "golpe-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL MISMO CAMBIO, MÁS TIEMPO",
+          "clave": "La fuerza media depende de cuánto dura el frenado.",
+          "texto": "La cantidad de movimiento combina masa y velocidad. Para cambiarla, una fuerza tiene que actuar durante un tiempo. Esa acción acumulada se llama impulso. Si el cambio total es el mismo pero se reparte en un intervalo mayor, la fuerza media necesaria disminuye. No significa que la energía inicial haya desaparecido.",
+          "detalle": "El segundo panel compara contactos breves y prolongados mediante su deformación y recorrido. La media resume toda la interacción, pero puede ocultar picos muy diferentes. Por eso este cálculo no determina lesiones, eficacia protectora ni qué ocurre en un impacto concreto.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "golpe-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Frenar no solo tiene una cantidad: también tiene una duración.",
+    "nota": "Masa efectiva y duraciones ilustrativas, con igual impulso. Sin fuerza máxima ni evaluación de daños o protección.",
+    "parrafos": [
+      "El acolchado hace visible que un contacto tiene recorrido y tiempo. Comparar fuerzas sin mencionar ese tiempo deja fuera una parte esencial de la historia. El guante y el saco permiten verla, pero el modelo se queda en el balance mecánico, no en consecuencias para una persona."
+    ]
+  }
 }

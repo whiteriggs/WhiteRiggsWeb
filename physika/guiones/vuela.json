@@ -1,23 +1,31 @@
 {
   "id": "vuela",
   "rotulo": "AVIACIÓN",
-  "titulo": "¿Por qué vuela un avión, si el aire no es nada?",
-  "entradilla": "Porque el aire no es nada solo cuando está quieto. Un ala no se apoya en él: lo agarra y lo tira hacia abajo. Cada segundo que el avión está en el aire, está lanzando al suelo más toneladas de aire de las que pesa el propio avión.",
+  "titulo": "¿Cómo consigue el ala de un avión sostener todo ese peso?",
+  "entradilla": "Desde la ventanilla, el ala parece demasiado fina para sostener un avión lleno de personas y maletas. No hay nada sólido debajo. Sin embargo, el aire tiene masa: cuesta ponerlo en movimiento. El ala aprovecha precisamente eso mientras avanza, cambiando el movimiento del aire que encuentra a su paso.",
   "modelo": "fluido",
   "color": "coral",
   "medidas": {
     "masa": 73000,
     "area": 122,
-    "coeficiente": 2.0,
+    "coeficiente": 2,
     "coeficienteLimpia": 1.2,
     "envergadura": 35.8
   },
   "tanteo": {
-    "pregunta": "Un avión de pasillo único cargado, 73 toneladas, ¿a qué velocidad deja de necesitar la pista?",
-    "opciones": ["120 por hora", "250 por hora", "400 por hora"],
-    "valores": [120, 250, 400],
-    "medido": "despegueEnKilometrosPorHora",
-    "remate": "{despegueEnKilometrosPorHora|0} por hora. Por debajo de eso no hay motor que valga: el ala no sostiene, y lo que pasa no es que suba despacio, es que no sube."
+    "pregunta": "Al extender los flaps y mantener el mismo peso, ¿cómo cambia la velocidad ideal necesaria para sostener el avión?",
+    "opciones": [
+      "Aumenta",
+      "Disminuye",
+      "No cambia"
+    ],
+    "valores": [
+      -23,
+      23,
+      0
+    ],
+    "medido": "cuantoAhorranLosFlaps",
+    "remate": "Disminuye un {cuantoAhorranLosFlaps|0} % en este ejemplo. No es una velocidad operativa ni una instrucción de vuelo."
   },
   "nucleo": [
     {
@@ -26,41 +34,44 @@
       "color": "coral",
       "paneles": [
         {
-          "rotulo": "EL AIRE APENAS SE DOBLA",
-          "clave": "Al despegar, el ala agarra {aireEnToneladasPorSegundo|0} toneladas de aire por segundo y las empuja hacia abajo.",
-          "texto": "El avión pesa {masaEnToneladas|0}. O sea que cada segundo está lanzando al suelo {vecesElPesoDelAvion|1} veces su propio peso en aire. No hace falta ninguna succión misteriosa ni ninguna forma mágica del perfil: hace falta tirar masa hacia abajo, y el aire, movido deprisa, da masa de sobra.",
-          "detalle": "Lo increíble es lo poco que hay que torcerlo. El aire sale del ala {desvio|1} grados por debajo de como entró, un gesto que ni se ve: {empujon|1} metros por segundo hacia abajo, unos {empujonEnKilometrosPorHora|0} por hora. Un soplo. Pero multiplicado por ochenta y tantas toneladas por segundo, ese soplo sostiene un edificio volando.",
+          "rotulo": "EL AIRE SALE HACIA ABAJO",
+          "clave": "El ala cambia la corriente y recibe una fuerza hacia arriba.",
+          "texto": "El aire rodea el perfil y deja detrás una corriente desviada hacia abajo. Para producir ese cambio hace falta una fuerza. El aire ejerce sobre el ala una fuerza opuesta: esta es la tercera ley de Newton, también llamada acción y reacción. Las dos fuerzas actúan sobre cuerpos distintos, por eso no se anulan sobre el avión.",
+          "detalle": "Las diferencias de presión sobre la superficie transmiten esa fuerza. No hay dos paquetes de aire obligados a reencontrarse detrás del ala, ni una carrera cuyo ganador sostenga el avión.",
           "color": "coral",
           "dibujo": {
-            "tipo": "desvia",
-            "rotulos": ["el aire llega recto", "se va {desvio|1}° más abajo", "no lo sostiene el gesto, lo sostiene la cantidad"]
+            "tipo": "transporteRenovado",
+            "trazado": "vuela-1",
+            "claves": [],
+            "rotulos": []
           }
         },
         {
-          "rotulo": "POR ESO SALEN LOS FLAPS",
-          "clave": "Con el ala limpia haría falta ir a {limpiaEnKilometrosPorHora|0} por hora. Con los flaps fuera, {despegueEnKilometrosPorHora|0}.",
-          "texto": "Sacar los flaps no da potencia: le cambia la forma al ala para que agarre más aire a la misma velocidad. Eso ahorra un {cuantoAhorranLosFlaps|0} por ciento de velocidad de despegue, y la velocidad ahorrada es pista ahorrada. Es la diferencia entre caber en un aeropuerto y no caber.",
-          "detalle": "El ahorro parece poco para lo que cambia el ala, y hay una razón: la velocidad va con la raíz del agarre. Casi el doble de sustentación solo quita un cuarto de velocidad. Por eso los flaps se sacan hasta el último punto útil y luego se recogen enseguida, porque frenan.",
+          "rotulo": "EL BORDE CAMBIA DE FORMA",
+          "clave": "Los flaps permiten obtener más sustentación a la misma velocidad.",
+          "texto": "Durante la aproximación aparecen piezas que bajan por el borde posterior. Cambian la curvatura y, según el diseño, también la superficie del ala. Así puede sostenerse el mismo peso con menos velocidad respecto al aire. A cambio, aumenta la resistencia: no es energía gratis ni un motor adicional escondido en el ala.",
+          "detalle": "Con nuestros coeficientes, la velocidad ideal pasa de {limpiaEnKilometrosPorHora|0} a {despegueEnKilometrosPorHora|0} kilómetros por hora. El equilibrio entre sustentación y peso sirve para comparar configuraciones, no para decidir cuándo despegar.",
           "color": "coral",
           "dibujo": {
-            "tipo": "barras",
-            "claves": ["limpiaEnKilometrosPorHora", "despegueEnKilometrosPorHora"],
-            "rotulos": ["ala limpia: {limpiaEnKilometrosPorHora|0} km/h", "con flaps: {despegueEnKilometrosPorHora|0} km/h"]
+            "tipo": "transporteRenovado",
+            "trazado": "vuela-2",
+            "claves": [],
+            "rotulos": []
           }
         }
       ]
     }
   ],
   "cierre": {
-    "titulo": "No se apoya en el aire. Lo tira al suelo.",
-    "nota": "Los coeficientes de sustentación, 1,2 con el ala limpia y 2,0 con flaps, son valores típicos medidos en túnel de viento y entran como dato. El aire desviado se estima suponiendo que el ala trabaja sobre un tubo de su propia envergadura, que es la aproximación de siempre y se queda corta antes que larga.",
+    "titulo": "Lo invisible también tiene masa.",
     "parrafos": [
-      "Contado así desaparecen las dos explicaciones raras de siempre: ni el aire de arriba corre para reencontrarse con el de abajo, ni hace falta que el perfil tenga joroba. Un ala plana inclinada vuela, y por eso vuelan los aviones de papel.",
-      "Y explica lo que de verdad da miedo en un avión, que es ir despacio. Como todo va con la velocidad al cuadrado, perder un tercio de velocidad es perder más de la mitad de la sustentación. Los accidentes de aproximación casi nunca son de motor: son de velocidad."
-    ]
+      "La próxima vez que mires el ala, piensa en la corriente que deja detrás. El aire no es un apoyo inmóvil: el avión modifica su movimiento continuamente. La forma del ala permite hacerlo de manera útil."
+    ],
+    "nota": "Medidas y coeficientes ilustrativos. Equilibrio estacionario y densidad constante; no calcula pérdida ni velocidades operativas. El caudal desviado usa un tubo ideal ligado a la envergadura. Esquemas no a escala."
   },
   "puente": {
     "hacia": "aleron",
     "frase": "Dale la vuelta al ala y tendrás lo contrario: en vez de levantar un avión, pegar un coche al asfalto con dos toneladas que no existen cuando está parado."
-  }
+  },
+  "revisionEditorial": 2
 }

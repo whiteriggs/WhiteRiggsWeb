@@ -1,12 +1,73 @@
 {
-  "id": "aerodinamica", "rotulo": "COCHES", "titulo": "¿Cuánto aumenta el arrastre al pasar de 90 a 120 km/h?",
-  "entradilla": "No hay una regla universal que diga que el coche gasta el doble. El aire exige más fuerza al aumentar la velocidad, pero fuerza, potencia y energía por kilómetro son magnitudes distintas. Confundirlas hace que una cuenta correcta termine en una conclusión falsa.",
-  "modelo": "aerodinamica", "color": "azul",
-  "medidas": {"densidad": 1.2, "coeficiente": 0.3, "area": 2.2, "lenta": 90, "rapida": 120},
-  "tanteo": {"pregunta": "Al pasar de 90 a 120 km/h, ¿por cuánto se multiplica la potencia dedicada solo al aire?", "opciones": ["Por 1,33", "Por 1,78", "Por 2,37"], "valores": [1.33, 1.78, 2.37], "medido": "razonPotencia", "remate": "Por {razonPotencia|2}. La fuerza se multiplica por {razonFuerza|2}, pero además recorres más distancia cada segundo."},
-  "nucleo": [{"numero": 1, "nombre": "tres preguntas, dos exponentes", "color": "azul", "paneles": [
-    {"rotulo": "POTENCIA AL CUBO", "clave": "El aire requiere {potenciaLenta|2} kW a {lenta|0} km/h y {potenciaRapida|2} kW a {rapida|0} km/h.", "texto": "La fuerza de arrastre es la mitad de la densidad del aire por el coeficiente aerodinámico, el área frontal y la velocidad relativa al aire al cuadrado. Para mantener velocidad sobre suelo horizontal, la potencia correspondiente es fuerza por velocidad de avance. Sin viento, resulta una dependencia cúbica.", "detalle": "La curva representa únicamente potencia mecánica contra el aire con geometría y densidad constantes. No es consumo eléctrico ni combustible por distancia. Viento, portaequipajes y cambios de postura o geometría pueden modificar los términos del modelo.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Velocidad sin viento (km/h)", "ejeY": "Potencia de arrastre (kW)", "claves": [], "rotulos": []}},
-    {"rotulo": "ENERGÍA POR DISTANCIA AL CUADRADO", "clave": "En un recorrido de referencia: {energiaLenta|2} frente a {energiaRapida|2} kWh/100 km.", "texto": "El trabajo contra el aire es fuerza por distancia. Para comparar el mismo recorrido, no se vuelve a multiplicar por velocidad: la energía por distancia crece como la fuerza, por {razonEnergia|2} en este ejemplo. Rodadura, pendientes, auxiliares y rendimiento del motor aún faltan para obtener consumo total.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["energiaLenta", "energiaRapida"], "rotulos": ["{lenta|0}: {energiaLenta|2} kWh/100km", "{rapida|0}: {energiaRapida|2} kWh/100km"]}}
-  ]}],
-  "cierre": {"titulo": "El cubo describe potencia, no consumo por kilómetro.", "nota": "Densidad ilustrativa 1,2 kg/m³, coeficiente 0,3 y área 2,2 m²; velocidades 90 y 120 km/h. Ley cuadrática de arrastre con aire quieto y coeficiente constante. La referencia de 100 km es solo una unidad de comparación energética.", "parrafos": ["La carrocería debe apartar aire tanto con gasolina como con batería. El combustible no elimina el arrastre; cambia cómo se suministra la energía y cuánto se pierde al convertirla."]}
+  "id": "aerodinamica",
+  "revisionEditorial": 2,
+  "rotulo": "COCHES",
+  "titulo": "¿Por qué al coche le cuesta tanto empujar el aire en autopista?",
+  "entradilla": "En ciudad, el aire parece apartarse sin protestar. En autopista, aparecen el ruido alrededor de los retrovisores y un consumo que crece deprisa. No es que el coche encuentre una pared invisible a cierta velocidad: está poniendo en movimiento cada vez más aire y lo está haciendo de forma más intensa.",
+  "modelo": "aerodinamica",
+  "color": "coral",
+  "medidas": {
+    "densidad": 1.2,
+    "coeficiente": 0.3,
+    "area": 2.2,
+    "lenta": 90,
+    "rapida": 120
+  },
+  "tanteo": {
+    "pregunta": "Cuando el coche aumenta su velocidad, ¿cómo crece la potencia dedicada solo a vencer el aire?",
+    "opciones": [
+      "En la misma proporción que la velocidad",
+      "Solo como la fuerza de resistencia",
+      "Más deprisa que la fuerza de resistencia"
+    ],
+    "valores": [
+      1.33,
+      1.78,
+      2.37
+    ],
+    "medido": "razonPotencia",
+    "remate": "Más deprisa: la fuerza aumenta y además se recorre más distancia cada segundo. En el ejemplo, la potencia se multiplica por {razonPotencia|2}."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "abrirse camino en el aire",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "EL AIRE NO VUELVE IGUAL",
+          "clave": "La carrocería deja una estela detrás.",
+          "texto": "El aire se frena frente al coche, se acelera alrededor y deja remolinos y una zona de presión diferente detrás. Mantener ese movimiento cuesta energía. Es resistencia aerodinámica. Una carrocería que consigue reunir el flujo con menos pérdidas puede necesitar menos empuje, aunque su aspecto no permita adivinar toda su eficacia a simple vista.",
+          "detalle": "La forma, la superficie frontal y la densidad del aire entran en la cuenta. Los detalles del flujo se resumen en un coeficiente obtenido fuera de este modelo, no en una cifra que podamos deducir de la silueta dibujada.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "aerodinamica-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "MÁS EMPUJE DURANTE MÁS RECORRIDO",
+          "clave": "Fuerza y potencia no son la misma cosa.",
+          "texto": "Al ir más rápido, la fuerza que frena el coche aumenta aproximadamente con el cuadrado de la velocidad. Pero el motor también debe vencerla a lo largo de más metros cada segundo. Por eso la potencia necesaria crece todavía más deprisa, con el cubo. La conservación de la energía permite distinguir ambas cosas sin confundir sus nombres.",
+          "detalle": "Nuestra comparación multiplica la fuerza por {razonFuerza|2} y la potencia por {razonPotencia|2}. Para recorrer la misma distancia, la energía aerodinámica crece como la fuerza, no como la potencia.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "aerodinamica-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El aire cobra por apartarlo y por hacerlo deprisa.",
+    "parrafos": [
+      "El ruido es una pista, pero no un medidor de consumo. La potencia calculada corresponde solo al aire; al coche aún le quedan rodadura, transmisión y otros gastos."
+    ],
+    "nota": "Carrocería y velocidades ilustrativas, no especificaciones de un modelo comercial. Coeficiente constante, aire quieto y régimen incompresible; no incluye viento, rodadura ni rendimiento del motor."
+  }
 }

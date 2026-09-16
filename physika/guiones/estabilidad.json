@@ -1,12 +1,72 @@
 {
-  "id": "estabilidad", "rotulo": "COCHES", "titulo": "¿Qué hace el ESP cuando parpadea el triangulito?",
-  "entradilla": "El control de estabilidad compara el movimiento del coche con el que espera a partir del volante y de otras señales. Si detecta una desviación importante, puede reducir el par motor y frenar ruedas concretas. Una fuerza descentrada también hace girar.",
-  "modelo": "estabilidad", "color": "ambar",
-  "medidas": {"fuerza": 1500, "brazo": 0.75, "inercia": 2500, "tiempo": 0.2},
-  "tanteo": {"pregunta": "Una fuerza de 1.500 N con brazo perpendicular de 0,75 m produce un momento de…", "opciones": ["375 N·m", "1.125 N·m", "3.000 N·m"], "valores": [375, 1125, 3000], "medido": "momento", "remate": "Son {momento|0} N·m: fuerza multiplicada por distancia perpendicular al eje."},
-  "nucleo": [{"numero": 1, "nombre": "frenar para corregir el giro", "color": "ambar", "paneles": [
-    {"rotulo": "UN EMPUJÓN FUERA DEL CENTRO", "clave": "El momento elegido aporta {aceleracion|2} rad/s² de aceleración angular.", "texto": "La fuerza longitudinal del suelo sobre una rueda puede tener un brazo respecto al centro de masas. En una vista superior, ese brazo produce un momento de guiñada. Dividir el momento por el momento de inercia da la contribución a la aceleración angular del coche como cuerpo rígido.", "detalle": "La curva integra esa contribución constante durante el intervalo elegido. Representa el cambio de velocidad angular debido solo a esta acción, no la trayectoria del vehículo ni su giro total. Otras fuerzas de los neumáticos también producen momentos durante la maniobra.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (s)", "ejeY": "Cambio de giro (rad/s)", "claves": [], "rotulos": []}},
-    {"rotulo": "MEDIR, COMPARAR, ACTUAR", "clave": "Tras {tiempo|1} s, la contribución es {cambio|2} rad/s: {grados|1} grados/s.", "texto": "El sistema combina sensores de velocidad de rueda, giro del volante y movimiento del vehículo. Qué rueda conviene frenar depende del sentido de la desviación y de las fuerzas disponibles. No existe una rueda correctora fija para todos los derrapes; nuestro cálculo toma únicamente la magnitud de un momento posible.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["momento", "cambio"], "rotulos": ["Momento: {momento|0} N·m", "Cambio: {cambio|2} rad/s"]}}
-  ]}],
-  "cierre": {"titulo": "Puede reorganizar fuerzas, no fabricar agarre.", "nota": "Ejemplo rígido: fuerza 1.500 N, brazo perpendicular 0,75 m, momento de inercia 2.500 kg·m² e intervalo 0,2 s. Magnitudes elegidas, no calibración de un ESP. Ley rotacional de Newton con momento constante y eje vertical.", "parrafos": ["La corrección está limitada por el contacto con el suelo. Hielo, velocidad, carga y geometría condicionan lo que se puede conseguir. El indicador describe una intervención del sistema; estas cifras no predicen el resultado de una maniobra real."]}
+  "id": "estabilidad",
+  "revisionEditorial": 2,
+  "rotulo": "COCHES",
+  "titulo": "¿Cómo endereza el coche el control de estabilidad?",
+  "entradilla": "El volante apunta hacia una curva, pero el coche empieza a girar de otra manera. Antes de que notes todos los detalles, puede parpadear el testigo del control de estabilidad. No hay una mano invisible moviendo el volante: el sistema puede intervenir en frenos concretos y reducir la entrega del motor.",
+  "modelo": "estabilidad",
+  "color": "coral",
+  "medidas": {
+    "fuerza": 1500,
+    "brazo": 0.75,
+    "inercia": 2500,
+    "tiempo": 0.2
+  },
+  "tanteo": {
+    "pregunta": "¿Cómo puede un freno ayudar a corregir el giro del coche?",
+    "opciones": [
+      "Frenando siempre todas las ruedas igual",
+      "Frenando una rueda elegida para crear un giro corrector",
+      "Eliminando el rozamiento de los neumáticos"
+    ],
+    "valores": [
+      375,
+      1125,
+      3000
+    ],
+    "medido": "momento",
+    "remate": "Una rueda elegida puede crear un giro corrector. En el ejemplo, la fuerza separada del centro produce {momento|0} N·m de momento."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "comparar y corregir",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "EL VOLANTE PIDE; LOS SENSORES CUENTAN",
+          "clave": "La trayectoria deseada y la real no siempre coinciden.",
+          "texto": "El sistema conoce el ángulo del volante y estima qué giro sería razonable con la velocidad actual. Otros sensores miden cómo rota el coche y cómo se mueve lateralmente. Comparar ambas cosas permite detectar que la carrocería gira más o menos de lo esperado. No lee la carretera como una persona: interpreta señales y un modelo del vehículo.",
+          "detalle": "Esta comparación repetida se llama control por realimentación. La referencia orienta la corrección, pero no garantiza que el coche pueda obedecerla: el suelo sigue poniendo límites al agarre.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "estabilidad-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "FRENAR FUERA DEL CENTRO HACE GIRAR",
+          "clave": "Una rueda puede aportar una corrección de orientación.",
+          "texto": "Empujar una puerta junto al pomo no produce lo mismo que hacerlo junto a la bisagra. Con un coche ocurre algo parecido: una fuerza de frenado aplicada lejos de su centro puede hacerlo rotar. Esa capacidad de giro es el momento de una fuerza. El controlador elige dónde actuar según la desviación detectada.",
+          "detalle": "La cuenta ilustra un momento de {momento|0} N·m y un cambio de velocidad de giro de {grados|1} grados por segundo. No representa un ángulo final ni una maniobra completa.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "estabilidad-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Corregir el giro no significa fabricar agarre.",
+    "parrafos": [
+      "El testigo señala que está trabajando un sistema que compara y corrige. Su ayuda depende de los neumáticos, del firme y del movimiento que ya lleva el coche. El dibujo separa intención y respuesta para mostrar precisamente qué diferencia intenta reducir el controlador."
+    ],
+    "nota": "Fuerza, brazo, inercia y duración ilustrativos; no especificaciones de un ESP comercial. Modelo de momento constante sobre un eje vertical, sin dinámica completa de neumáticos. No da consejos de maniobra."
+  }
 }

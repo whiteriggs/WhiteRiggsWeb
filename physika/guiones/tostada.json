@@ -1,12 +1,71 @@
 {
-  "id": "tostada", "rotulo": "COTIDIANO", "titulo": "¿La tostada cae siempre por el lado de la mantequilla?",
-  "entradilla": "No. La orientación al llegar al suelo depende del giro adquirido al abandonar el borde, la altura, la forma y el aire. La mantequilla no ejerce una atracción especial hacia el suelo. Una caída desde una mesa puede dejar poco tiempo para completar una vuelta.",
-  "modelo": "tostada", "color": "ambar",
-  "medidas": {"altura": 0.75, "alturaComparada": 2, "giro": 5},
-  "tanteo": {"pregunta": "Una tostada idealizada cae desde 0,75 m, sin velocidad vertical inicial, mientras gira uniformemente a 5 rad/s y sin resistencia del aire. ¿Cuántos grados crees que gira durante la caída?", "opciones": ["Unos 11°", "Unos 112°", "Unos 360°"], "valores": [11, 112, 360], "medido": "angulo", "remate": "Gira {angulo|0}°. El resultado depende de la velocidad angular que hemos supuesto, no de una ley de la mantequilla."},
-  "nucleo": [{"numero": 1, "nombre": "dos relojes durante la caída", "color": "ambar", "paneles": [
-    {"rotulo": "EL SUELO PONE EL PLAZO", "clave": "La caída ideal dura {tiempo|3} s y deja un giro de {angulo|1}°.", "texto": "El centro de masa parte sin velocidad vertical y acelera por gravedad. El tiempo hasta el suelo depende de la raíz cuadrada de la altura. Mientras tanto suponemos una velocidad angular constante: el ángulo recorrido es esa velocidad multiplicada por el tiempo disponible.", "detalle": "La curva muestra ángulo frente a tiempo, no la trayectoria de la tostada. Su pendiente viene impuesta por el giro inicial. El contacto previo con el borde puede generar ese giro mediante un par; no lo calculamos ni asumimos que sea igual en todas las caídas.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Tiempo en caída (s)", "ejeY": "Giro acumulado (°)", "claves": [], "rotulos": []}},
-    {"rotulo": "OTRA ALTURA, OTRA ORIENTACIÓN", "clave": "Con la altura alternativa y el mismo giro inicial se acumulan {anguloComparado|1}°.", "texto": "El tiempo adicional puede permitir una orientación distinta al llegar abajo. También cambiaría el resultado si el cuerpo saliera con menos giro o con una inclinación inicial diferente. Contar cuánto rota no equivale a calcular una probabilidad de caer sobre una cara concreta.", "detalle": "El modelo usa un punto para la caída del centro y un cuerpo ideal sin par aéreo para la rotación. Una tostada tiene tamaño: una esquina puede tocar antes, rebotar y modificar la orientación final. Esos contactos y la resistencia del aire no están incluidos.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["angulo", "anguloComparado"], "rotulos": ["Caída corta: {angulo|0}°", "Caída larga: {anguloComparado|0}°"]}}
-  ]}],
-  "cierre": {"titulo": "Una tendencia posible no es un destino obligatorio.", "nota": "Alturas ilustrativas en m y velocidad angular impuesta en rad/s. Caída libre desde reposo vertical, giro uniforme, sin aire ni colisiones. Los ángulos son acumulados respecto a una orientación inicial elegida.", "parrafos": ["La explicación útil combina el giro que se genera en el borde con el tiempo de vuelo. Una anécdota repetida puede sugerir una tendencia, pero no convierte esas condiciones particulares en un siempre."]}
+  "id": "tostada",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Cómo da la vuelta una espátula a una tortita?",
+  "revisionEditorial": 2,
+  "entradilla": "Metes la espátula bajo una tortita, la levantas y le das un pequeño giro. Una vez separada del utensilio, ya no puedes corregirla con la mano. La cara que termina abajo depende de cómo salió y de cuánto tiempo tuvo para girar antes de encontrar otra vez la sartén.",
+  "modelo": "tostada",
+  "color": "ambar",
+  "medidas": {
+    "altura": 0.75,
+    "alturaComparada": 2,
+    "giro": 5
+  },
+  "tanteo": {
+    "pregunta": "Si una tortita conserva el mismo giro pero pasa más tiempo en el aire, ¿qué ocurre?",
+    "opciones": [
+      "Gira necesariamente menos",
+      "Tiene tiempo para girar más",
+      "La gravedad escoge la cara dorada"
+    ],
+    "valores": [
+      11,
+      112,
+      360
+    ],
+    "medido": "angulo",
+    "remate": "Puede girar más. El ángulo depende del tiempo de vuelo y del giro inicial, no del color de cada cara."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el utensilio decide la salida",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "APOYAR FUERA DEL CENTRO",
+          "clave": "Una fuerza descentrada puede producir giro además de desplazamiento.",
+          "texto": "La espátula sostiene la tortita por una zona de su superficie. Al inclinarla o moverla, las fuerzas no siempre pasan por el centro de masa. Ese brazo de palanca puede generar un giro. No hace falta que el utensilio acompañe toda la vuelta: basta con comunicar una velocidad angular al soltarla.",
+          "detalle": "La herramienta física es el momento de una fuerza. Cuánto gira realmente durante el contacto depende de cómo empujes, dónde apoyes y de que la tortita se mantenga aproximadamente entera. El dibujo muestra el origen del giro, no una técnica culinaria infalible.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "tostada-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "DESPUÉS DE SOLTAR",
+          "clave": "Caer y girar son movimientos que ocurren a la vez.",
+          "texto": "Una vez libre, la gravedad acelera el centro de masa hacia abajo. En un campo uniforme no elige qué cara debe mirar al suelo ni añade por sí sola giro alrededor del centro. Si despreciamos el aire, la tortita sigue rotando al ritmo que traía mientras cae.",
+          "detalle": "Nuestro cálculo representa una caída desde el reposo vertical con giro ya establecido. Una caída más larga permite completar más ángulo. Las alturas elegidas comparan la física de objetos que caen; no son alturas recomendadas para voltear alimentos sobre aceite caliente.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "tostada-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La vuelta se prepara antes de dejar de tocar.",
+    "parrafos": [
+      "El contacto fija la salida; el vuelo continúa esa historia. Cambiar el impulso o el tiempo disponible puede cambiar la cara de llegada."
+    ],
+    "nota": "Objeto rígido ideal sin aire, alturas y giro ilustrativos. No modelamos flexión, adherencia o una maniobra real; se conserva el cálculo de caída y rotación."
+  }
 }

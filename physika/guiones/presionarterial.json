@@ -1,12 +1,70 @@
 {
-  "id": "presionarterial", "rotulo": "MEDICINA", "titulo": "¿Qué estima el aparato de la tensión?",
-  "entradilla": "El manguito mide su propia presión y registra cómo responde la arteria mientras cambia la compresión externa. Los dispositivos oscilométricos estiman parámetros arteriales a partir de esas oscilaciones mediante algoritmos. No leen directamente cada presión interna como si llevaran un sensor dentro del vaso.",
-  "modelo": "presionarterial", "color": "coral",
-  "medidas": {"densidad": 1060, "altura": 0.2},
-  "tanteo": {"pregunta": "¿Qué diferencia hidrostática corresponde a 20 cm de columna del fluido ideal del ejemplo?", "opciones": ["Unos 1,6 mmHg", "Unos 15,6 mmHg", "Unos 156 mmHg"], "valores": [1.6, 15.6, 156], "medido": "diferencia", "remate": "La diferencia es {diferencia|1} mmHg. No representa una presión arterial objetivo ni un ajuste de una lectura real."},
-  "nucleo": [{"numero": 1, "nombre": "presión, pulso y altura", "color": "coral", "paneles": [
-    {"rotulo": "UNA COLUMNA TAMBIÉN PESA", "clave": "Para la separación elegida: {diferencia|1} mmHg de diferencia.", "texto": "En equilibrio, el punto más bajo soporta el peso del fluido que tiene encima. La diferencia de presión es densidad por gravedad por diferencia de altura. La recta dibuja solo esa contribución hidrostática y expresa el resultado en milímetros de mercurio, una unidad de presión.", "detalle": "En este cálculo el fluido no circula. En el cuerpo hay pulsos, vasos elásticos, movimiento y control fisiológico. La altura ilustra por qué la geometría de medida importa, pero no permite corregir de forma universal una medición doméstica.", "color": "coral", "dibujo": {"tipo": "serie", "ejeX": "Descenso vertical (cm)", "ejeY": "Diferencia (mmHg)", "claves": [], "rotulos": []}},
-    {"rotulo": "NO ES SOLO TURBULENCIA", "clave": "La contribución calculada es {diferencia|1} mmHg, no una estimación clínica.", "texto": "El método auscultatorio utiliza sonidos asociados a la interacción entre flujo pulsátil y arteria parcialmente comprimida. El automático suele analizar la envolvente de oscilaciones del manguito. Reducir ambos a que el flujo se vuelve turbulento oculta mecanismos y diferencias importantes.", "detalle": "Las estimaciones dependen de validación, tamaño del manguito, propiedades de la arteria, movimiento y procesamiento. Ni la fórmula hidrostática ni una amplitud de oscilación aislada determinan por sí solas presión sistólica y diastólica.", "color": "coral", "dibujo": {"tipo": "magnitudes", "claves": ["diferencia"], "rotulos": ["Hidrostática: {diferencia|1} mmHg"]}}
-  ]}],
-  "cierre": {"titulo": "El aparato interpreta una respuesta mecánica.", "nota": "densidad = 1060 kg/m³ como aproximación de fluido; altura = 0,20 m; gravedad estándar. Conversión de Pa a mmHg. Escenario educativo sin límites diagnósticos, pautas de medición ni recomendaciones de tratamiento.", "parrafos": ["La presión no es una sustancia que el manguito extraiga. Es una magnitud mecánica inferida mediante una interacción controlada; la calidad de esa inferencia requiere más que una relación entre altura y peso."]}
+  "id": "presionarterial",
+  "rotulo": "MEDICINA",
+  "titulo": "Tensiómetro: ¿qué nota el manguito cuando se infla?",
+  "revisionEditorial": 2,
+  "modelo": "presionarterial",
+  "color": "verde",
+  "medidas": {
+    "densidad": 1060,
+    "altura": 0.2
+  },
+  "entradilla": "El manguito abraza el brazo, se infla y después va soltando aire. Dentro no hay una aguja que entre en una arteria. Un tensiómetro automático mide la presión de su propio manguito y las pequeñas oscilaciones que recibe. A partir de esa conversación mecánica, un algoritmo realiza una estimación de la presión arterial.",
+  "tanteo": {
+    "pregunta": "En una columna de líquido quieto, ¿qué ocurre con la presión al bajar a un punto más profundo?",
+    "opciones": [
+      "Disminuye",
+      "Aumenta",
+      "Permanece siempre igual"
+    ],
+    "valores": [
+      1.6,
+      15.6,
+      156
+    ],
+    "medido": "diferencia",
+    "remate": "Aumenta por el peso del líquido superior. La columna ideal del ejemplo produce {diferencia|1} mmHg de diferencia; no es una corrección para una lectura real."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una conversación de presiones",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "EL AIRE TRANSMITE EL APRETÓN",
+          "clave": "El sensor está conectado al manguito.",
+          "texto": "Una bomba mete aire en una cámara flexible. Esa presión se transmite a los tejidos bajo el manguito y modifica cómo puede expandirse la arteria. Cuando llegan pulsaciones, pequeñas variaciones mecánicas alcanzan la cámara de aire. El sensor las detecta superpuestas a la presión que está cambiando lentamente.",
+          "detalle": "Este método se llama oscilométrico. No observa sangre atravesando el tubo del aparato: el tubo lleva aire. El dibujo separa arteria, brazo y cámara inflable para mostrar esa transmisión, sin convertir la secuencia ilustrada en instrucciones para realizar una medida.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "presionarterial-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA ALTURA TAMBIÉN ES FÍSICA",
+          "clave": "Un líquido tiene peso.",
+          "texto": "En un líquido quieto, un punto situado más abajo soporta el peso de una columna mayor. Por eso dos alturas pueden tener presiones distintas aunque pertenezcan al mismo recipiente. Es presión hidrostática. El modelo calcula esa diferencia con una columna ideal de densidad uniforme, no el funcionamiento completo del manguito.",
+          "detalle": "El segundo panel muestra dos tomas a distinta altura y la columna que las separa. Sirve para comprender por qué la geometría de una medida importa. No permite ajustar números de un tensiómetro ni decidir qué lectura corresponde a una persona.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "presionarterial-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El aparato mide aire para estimar otra presión.",
+    "nota": "Columna hidrostática ideal. Sin objetivos, umbrales, diagnósticos ni correcciones de lecturas personales.",
+    "parrafos": [
+      "El apretón tiene un propósito físico: comunicar pequeñas oscilaciones al sensor. Después interviene el algoritmo del aparato. Separar lo que se mide directamente de lo que se estima ayuda a entender el cacharro sin confundir el número de la pantalla con una observación directa."
+    ]
+  }
 }

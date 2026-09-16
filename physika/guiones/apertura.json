@@ -1,12 +1,73 @@
 {
-  "id": "apertura", "rotulo": "COTIDIANO", "titulo": "¿Por qué entrecerrar los ojos puede mejorar la nitidez?",
-  "entradilla": "Entrecerrar los párpados reduce parte del haz que entra en el ojo. Eso puede disminuir el desenfoque y algunas aberraciones, aunque deja pasar menos luz. No corrige la causa óptica y tampoco mejora sin límite: al estrechar demasiado aparece la difracción.",
-  "modelo": "apertura", "color": "azul",
-  "medidas": {"diametro": 0.004, "estrecho": 0.001, "focal": 0.017, "desajuste": 0.0003, "longitud": 0.00000055},
-  "tanteo": {"pregunta": "Una abertura circular de 1 mm de diámetro enfoca con una focal de 17 mm, pero la pantalla queda 0,3 mm desplazada respecto al foco. En la aproximación geométrica cerca del foco y sin contar difracción, ¿qué diámetro de desenfoque crees que aparece?", "opciones": ["Unos 2 µm", "Unos 18 µm", "Unos 70 µm"], "valores": [2, 18, 70], "medido": "desenfoqueEstrecho", "remate": "El desenfoque geométrico baja a {desenfoqueEstrecho|1} µm, pero la difracción aumenta."},
-  "nucleo": [{"numero": 1, "nombre": "cerrar el paso cambia dos desenfoques", "color": "azul", "paneles": [
-    {"rotulo": "UN CONO MÁS ESTRECHO MANCHA MENOS", "clave": "El desenfoque geométrico pasa de {desenfoque|1} a {desenfoqueEstrecho|1} µm.", "texto": "Si el plano donde se forma la imagen no coincide con el plano receptor, el haz llega como una mancha en vez de un punto. Cerca del foco, la semejanza de triángulos hace que su diámetro sea aproximadamente proporcional a abertura por desajuste dividido entre focal.", "detalle": "Reducir la abertura estrecha ese cono y disminuye la mancha para el mismo error de enfoque. Es un modelo de lente equivalente, no un ojo clínico. Los párpados dejan una rendija, no un círculo perfecto, y su efecto puede ser distinto según la dirección.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["desenfoque", "desenfoqueEstrecho"], "rotulos": ["Abertura grande: {desenfoque|1} µm", "Estrecha: {desenfoqueEstrecho|1} µm"]}},
-    {"rotulo": "LA LUZ TAMBIÉN ES UNA ONDA", "clave": "El diámetro difractivo crece de {difraccion|1} a {difraccionEstrecha|1} µm.", "texto": "Una abertura circular produce un patrón de difracción incluso con enfoque perfecto. El diámetro hasta el primer mínimo aumenta cuando se reduce la abertura. Por eso bloquear rayos periféricos ayuda al desenfoque geométrico pero agranda el límite ondulatorio de resolución.", "detalle": "La curva combina ambas escalas en cuadratura como indicador aproximado, no como tamaño exacto de una imagen retinal. Su mínimo ilustrativo está cerca de {optimoMm|2} mm. No es un diámetro recomendado para una persona: omite aberraciones, luz disponible, retina y percepción.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Diámetro de abertura (mm)", "ejeY": "Indicador de anchura (µm)", "claves": [], "rotulos": []}}
-  ]}],
-  "cierre": {"titulo": "Menos rayos pueden ayudar, hasta que las ondas importan.", "nota": "Dimensiones ilustrativas en m: abertura, focal, desajuste y longitud de onda. Aproximación paraxial cerca del foco y difracción de abertura circular ideal; combinación cuadrática heurística, no evaluación médica.", "parrafos": ["La mejora momentánea al entrecerrar los ojos no identifica por sí sola un defecto de visión ni sustituye una revisión. Además, perder luminosidad puede empeorar la percepción aunque se reduzca una de las manchas ópticas del modelo."]}
+  "id": "apertura",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué unas gafas de agujeritos pueden dar más nitidez?",
+  "revisionEditorial": 2,
+  "entradilla": "Las gafas estenopeicas tienen una placa opaca llena de pequeños agujeros en lugar de lentes graduadas. Al mirar por uno, algunos detalles desenfocados pueden verse más definidos, aunque todo se oscurezca. No han corregido la forma del ojo: han limitado qué caminos de luz pueden entrar.",
+  "modelo": "apertura",
+  "color": "ambar",
+  "medidas": {
+    "diametro": 0.004,
+    "estrecho": 0.001,
+    "focal": 0.017,
+    "desajuste": 0.0003,
+    "longitud": 5.5e-7
+  },
+  "tanteo": {
+    "pregunta": "¿Por qué no mejora la imagen indefinidamente haciendo cada agujero más pequeño?",
+    "opciones": [
+      "Porque desaparece la gravedad",
+      "Porque acaba importando la difracción",
+      "Porque el ojo deja de recibir colores"
+    ],
+    "valores": [
+      2,
+      18,
+      70
+    ],
+    "medido": "desenfoqueEstrecho",
+    "remate": "La difracción pone un límite. El desenfoque geométrico baja a {desenfoqueEstrecho|1} micras, pero el ensanchamiento por difracción crece."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "menos caminos, menos mezcla",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "RECORTAR EL HAZ",
+          "clave": "Un punto desenfocado ocupa menos espacio si entra un haz estrecho.",
+          "texto": "Cuando un punto no enfoca justo sobre la retina, sus rayos llegan repartidos por una pequeña mancha. El agujerito bloquea muchos recorridos laterales y deja pasar un haz más estrecho. Aunque el foco siga en el lugar equivocado, la mancha geométrica puede ser menor y el detalle parecer más nítido.",
+          "detalle": "Ese es el efecto estenopeico. A cambio entra menos luz y se reduce el campo útil. No hay una lente que añada la graduación necesaria: la abertura disimula parte del desenfoque seleccionando rayos, sin resolver su causa.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "apertura-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA LUZ TAMBIÉN ES ONDA",
+          "clave": "Una abertura demasiado pequeña ensancha la imagen por difracción.",
+          "texto": "La luz no puede describirse siempre como líneas infinitamente finas. Al atravesar una abertura pequeña se reparte en direcciones próximas, formando un patrón extendido. Cuanto menor sea el agujero, más importante puede hacerse ese ensanchamiento. Reducir el desenfoque geométrico termina compitiendo con la naturaleza ondulatoria de la luz.",
+          "detalle": "A ese fenómeno lo llamamos difracción. Nuestro ejemplo compara ambas anchuras sin prometer una abertura perfecta para cualquier ojo. Cambian con la luz, el desajuste del foco y la geometría. Más agujeros tampoco eliminan automáticamente las limitaciones de cada uno.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "apertura-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Filtrar caminos no es curar el desenfoque.",
+    "parrafos": [
+      "El truco óptico ayuda a entender por qué entrecerrar los ojos puede aclarar un detalle. No sustituye una revisión visual ni unas lentes adecuadamente prescritas."
+    ],
+    "nota": "Óptica ideal y dimensiones ilustrativas, no eficacia médica de gafas comerciales. El dibujo amplía manchas y recorridos; no incluye aberraciones completas del ojo."
+  }
 }

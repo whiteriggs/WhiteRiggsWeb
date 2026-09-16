@@ -1,12 +1,71 @@
 {
-  "id": "audioespacial", "rotulo": "MÚSICA", "titulo": "¿Qué pistas hacen que el audio espacial parezca venir de fuera?",
-  "entradilla": "Cada oído recibe una versión distinta del sonido. Hay diferencias de tiempo, nivel y espectro, modificadas por la cabeza y las orejas. Reproducir algunas de esas pistas con auriculares puede sugerir una dirección, pero un simple retardo no basta para decidir si algo está delante o detrás.",
-  "modelo": "audioespacial", "color": "azul",
-  "medidas": {"camino": 0.18, "sonido": 343, "frecuencia": 1000},
-  "tanteo": {"pregunta": "Si un recorrido acústico es 18 cm mayor que el otro, ¿qué retraso introduce en aire a 343 m/s?", "opciones": ["Unos 525 microsegundos", "18 milisegundos", "Un microsegundo"], "valores": [525, 18000, 1], "medido": "retardo", "remate": "El retraso es {retardo|1} microsegundos: distancia adicional dividida entre velocidad del sonido."},
-  "nucleo": [{"numero": 1, "nombre": "el mismo sonido, otra llegada", "color": "azul", "paneles": [
-    {"rotulo": "UN RETRASO MUY PEQUEÑO", "clave": "{caminoCentimetros|0} cm adicionales producen {retardo|1} µs.", "texto": "La cuenta solo usa una diferencia de caminos conocida. No supone que esa diferencia sea siempre la separación entre los oídos ni intenta convertirla en un ángulo. El sonido rodea una cabeza con geometría y propiedades que una resta de distancias rectas no describe completamente.", "detalle": "Para el tono de {frecuencia|0} Hz, el período es {periodo|0} microsegundos. Ese retardo equivale a un desplazamiento de fase de {fase|1} grados. Una fase se repite al completar cada vuelta, así que un tono aislado puede admitir interpretaciones ambiguas del retraso.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["retardo", "periodo"], "rotulos": ["Retardo: {retardo|0} µs", "Período: {periodo|0} µs"]}},
-    {"rotulo": "DELANTE Y DETRÁS SE PARECEN", "clave": "El tiempo es una pista, no una posición completa.", "texto": "Direcciones distintas pueden producir diferencias temporales parecidas. Los filtros dependientes de la dirección, llamados HRTF, incorporan también cambios espectrales causados por cabeza, torso y pabellones. El movimiento de la cabeza puede ayudar a deshacer ambigüedades, porque las pistas cambian al girar respecto a una fuente estable.", "color": "malva", "dibujo": {"tipo": "magnitudes", "claves": ["fase"], "rotulos": ["Desfase: {fase|1} grados"]}}
-  ]}],
-  "cierre": {"titulo": "Fuera de la cabeza requiere más que retrasar un canal.", "nota": "Ejemplo geométrico de propagación: camino adicional en m, sonido en m/s y frecuencia en Hz. No calcula una HRTF, una dirección ni un algoritmo comercial. Sin reflexión de sala ni difracción explícita; la diferencia de caminos es un dato ilustrativo.", "parrafos": ["La experiencia depende de la señal, los auriculares y la correspondencia entre el filtro y la anatomía del oyente. Un cálculo de tiempo correcto no garantiza por sí solo una ilusión espacial convincente."]}
+  "id": "audioespacial",
+  "rotulo": "MÚSICA",
+  "titulo": "¿Cómo consiguen los auriculares de audio espacial que mires hacia un lado?",
+  "entradilla": "Llevas auriculares y una puerta parece cerrarse a tu derecha. Los pequeños altavoces siguen pegados a tus oídos, pero tu cabeza intenta buscar el sonido fuera. Para provocar esa sensación, la grabación o el procesador puede imitar algunas diferencias que aparecerían si hubiera de verdad una puerta en esa dirección.",
+  "modelo": "audioespacial",
+  "color": "ambar",
+  "medidas": {
+    "camino": 0.18,
+    "sonido": 343,
+    "frecuencia": 1000
+  },
+  "tanteo": {
+    "pregunta": "Si un sonido viene de un lado y debe recorrer más camino hasta el oído lejano, ¿cómo llega a ese oído?",
+    "opciones": [
+      "Un poco después",
+      "Exactamente a la vez",
+      "Antes que al oído cercano"
+    ],
+    "valores": [
+      525,
+      0,
+      -525
+    ],
+    "medido": "retardo",
+    "remate": "Un poco después. El camino adicional del ejemplo introduce {retardo|1} microsegundos; no es un ajuste fijo de todos los auriculares."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "dos oídos comparan",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "NO LLEGA TODO A LA VEZ",
+          "clave": "El oído cercano recibe antes parte del sonido.",
+          "texto": "El sonido necesita tiempo para atravesar el aire. Si la fuente está a un lado, el recorrido hasta un oído suele ser más corto que hasta el otro. Tu sistema auditivo compara esas llegadas. La diferencia se llama retardo interaural: una pista diminuta que ayuda a orientar la escucha, especialmente con sonidos graves.",
+          "detalle": "La cabeza también obstaculiza el paso, sobre todo de frecuencias altas. Por eso pueden cambiar tanto el momento de llegada como el nivel recibido. El oído no utiliza una única regla para todas las situaciones.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "audioespacial-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "IMITAR LAS PISTAS",
+          "clave": "Cada auricular puede recibir una versión ligeramente distinta.",
+          "texto": "El procesador puede retrasar y filtrar cada canal para imitar una dirección. También importan los cambios que producirían la cabeza y las orejas sobre las distintas frecuencias. Ese conjunto se describe mediante funciones de transferencia relacionadas con la cabeza. No basta con poner un canal más fuerte para recrear cualquier posición alrededor de ti.",
+            "detalle": "La ilusión depende de la persona, la mezcla y el dispositivo. Algunos sistemas actualizan las pistas cuando giras la cabeza. Nuestro dibujo aísla el retraso: no demuestra por sí solo una fuente encima, detrás o fuera del cráneo. Las demás pistas también cuentan.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "audioespacial-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Dos señales pueden sugerir un lugar.",
+    "parrafos": [
+      "Los auriculares no trasladan sus altavoces: cambian las pistas con las que tu cerebro intenta situar aquello que escucha."
+    ],
+    "nota": "Camino y velocidad ilustrativos en aire. El retraso se calcula; el esquema no reproduce una cabeza concreta ni especificaciones comerciales."
+  },
+  "revisionEditorial": 2
 }

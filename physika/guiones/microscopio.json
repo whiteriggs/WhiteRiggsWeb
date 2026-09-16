@@ -1,12 +1,71 @@
 {
-  "id": "microscopio", "rotulo": "MEDICINA", "titulo": "¿Cómo se distinguen detalles más pequeños que la luz visible?",
-  "entradilla": "Aumentar una imagen no garantiza ver detalles nuevos. Dos estructuras próximas pueden formar manchas superpuestas por difracción. La resolución depende de longitud de onda, apertura y método de formación de imagen; hay técnicas ópticas que superan límites convencionales y microscopios que utilizan electrones.",
-  "modelo": "microscopio", "color": "azul",
-  "medidas": {"longitud": 550, "apertura": 0.9, "voltaje": 100000},
-  "tanteo": {"pregunta": "Con luz de 550 nm y apertura numérica 0,9, ¿qué distancia da el criterio de Abbe del ejemplo?", "opciones": ["Unos 3 nm", "Unos 306 nm", "Unos 3.060 nm"], "valores": [3, 306, 3060], "medido": "resolucion", "remate": "La distancia es {resolucion|1} nm. Es un criterio óptico ideal, no una garantía para cualquier muestra."},
-  "nucleo": [{"numero": 1, "nombre": "aumento y resolución no son lo mismo", "color": "azul", "paneles": [
-    {"rotulo": "CAPTURAR MÁS DIRECCIONES", "clave": "Criterio de Abbe: {resolucion|1} nm; con media apertura: {aperturaMenor|1} nm.", "texto": "La apertura numérica combina el índice del medio y el ángulo de luz aceptado por el objetivo. Recoger direcciones más oblicuas conserva frecuencias espaciales más finas. Para este criterio, la distancia resoluble es la longitud de onda dividida por el doble de la apertura numérica.", "detalle": "Un número menor significa detalles distinguibles más pequeños. Aberraciones, iluminación, contraste y ruido pueden empeorar el resultado. El criterio de Abbe describe una configuración ideal; otros criterios definen de otra manera cuándo dos detalles cuentan como resueltos.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["resolucion", "aperturaMenor"], "rotulos": ["Apertura: {resolucion|1} nm", "Media: {aperturaMenor|1} nm"]}},
-    {"rotulo": "OTRA SONDA, OTRA LONGITUD", "clave": "El electrón acelerado del ejemplo tiene longitud de onda {electron|5} nm.", "texto": "A los electrones también se les asocia una longitud de onda de de Broglie. Acelerarlos aumenta su momento y reduce esa longitud. La cuenta incluye la corrección relativista del momento, necesaria para no extrapolar sin cuidado la expresión de velocidades pequeñas.", "detalle": "Una longitud muy corta abre posibilidades, pero no equivale automáticamente a esa resolución: lentes electrónicas, estabilidad y preparación de la muestra limitan la imagen. Tampoco es una cámara para observar sin más tejidos vivos dentro de una persona.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["electron"], "rotulos": ["Electrón: {electron|5} nm"]}}
-  ]}],
-  "cierre": {"titulo": "Más grande no significa más informado.", "nota": "longitud en nm, apertura numérica adimensional, voltaje acelerador en V: ejemplos de formación de imagen, no instrucciones de uso. Criterio de Abbe y relación de de Broglie con energía cinética relativista.", "parrafos": ["Las técnicas de superresolución óptica añaden información mediante iluminación, localización o respuestas moleculares especiales. No invalidan la difracción: cambian las condiciones y la información disponible respecto al microscopio convencional."]}
+  "id": "microscopio",
+  "rotulo": "MEDICINA",
+  "titulo": "Microscopio: ¿por qué ampliar más no siempre deja ver más?",
+  "revisionEditorial": 2,
+  "modelo": "microscopio",
+  "color": "verde",
+  "medidas": {
+    "longitud": 550,
+    "apertura": 0.9,
+    "voltaje": 100000
+  },
+  "entradilla": "Acercas el ojo al microscopio, cambias de objetivo y todo parece más grande. Sin embargo, llega un momento en que dos detalles siguen pegados aunque aumentes el tamaño de la imagen. No falta pantalla ni un ocular más potente. El problema empezó antes, cuando la luz de esos detalles entró en el objetivo.",
+  "tanteo": {
+    "pregunta": "Si dos detalles ya llegan mezclados por la óptica, ¿qué consigue ampliar después esa misma imagen?",
+    "opciones": [
+      "Separarlos siempre",
+      "Hacer más grande la misma mezcla",
+      "Recuperar información ilimitada"
+    ],
+    "valores": [
+      3,
+      306,
+      3060
+    ],
+    "medido": "resolucion",
+    "remate": "Hace más grande la mezcla. El criterio ideal del ejemplo da {resolucion|1} nm de separación característica."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "aumentar no es separar",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "UN PUNTO LLEGA COMO UNA MANCHA",
+          "clave": "Las ondas no forman puntos infinitamente pequeños.",
+          "texto": "Al pasar por una abertura, la luz se reparte en lugar de continuar como un dibujo perfectamente recortado. Un punto de la muestra produce una mancha con estructura. Es difracción. Cuando dos puntos están muy cerca, sus manchas se solapan y cuesta reconocer que había dos objetos separados.",
+          "detalle": "El primer panel muestra dos puntos bajo el objetivo y las manchas que producen. No son defectos dibujados para simular una lente sucia. Incluso una óptica ideal tiene límites que dependen de la longitud de onda y de la luz que puede recoger.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "microscopio-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "RECOGER DESDE MÁS DIRECCIONES",
+          "clave": "El cono de luz también cuenta.",
+          "texto": "Un objetivo que acepta luz desde ángulos más amplios puede distinguir detalles más próximos, bajo condiciones comparables. Esa capacidad se expresa mediante la apertura numérica, que también incluye el medio entre muestra y objetivo. El criterio de Abbe relaciona esa apertura con la longitud de onda para estimar una separación característica.",
+          "detalle": "El segundo panel ensancha el cono admitido por el objetivo. No basta con cambiar el número de aumentos del ocular. Otras técnicas usan electrones o información adicional, pero aquí seguimos la óptica convencional: ampliar una imagen no crea automáticamente detalles que nunca se registraron.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "microscopio-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Una imagen grande puede seguir siendo poco detallada.",
+    "nota": "Criterio de Abbe para luz de 550 nm. El cálculo electrónico se conserva como comparación física, no como resolución garantizada.",
+    "parrafos": [
+      "El objetivo hace el trabajo decisivo antes de que el ojo vea la imagen. Recoger mejor la luz puede aportar información; estirar después el resultado solo cambia su tamaño. Esa diferencia explica por qué dos microscopios con iguales aumentos pueden mostrar detalles distintos."
+    ]
+  }
 }

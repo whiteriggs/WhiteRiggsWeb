@@ -1,35 +1,36 @@
 {
+  "revisionEditorial": 2,
   "id": "antena", "rotulo": "REDES",
-  "titulo": "¿Por qué una antena mide lo que mide?",
+  "titulo": "¿Por qué hay que desplegar la antena de una radio FM?",
   "entradilla": "La corriente de una antena oscila y distribuye campos a su alrededor. La relación entre su geometría y la longitud de onda afecta a cómo radia y a la impedancia que presenta. Por eso una antena de radio y una pista diminuta dentro de un móvil pueden tener tamaños tan distintos.",
   "modelo": "antena", "color": "ambar",
   "medidas": {"frecuencia": 100000000, "acortamiento": 0.95},
   "tanteo": {
-    "pregunta": "Con un factor de acortamiento de 0,95 respecto a la media longitud de onda en el aire, ¿cuánto mide en total un dipolo para 100 MHz?",
-    "opciones": ["Unos 75 cm", "Unos 142 cm", "Unos 300 cm"], "valores": [75, 142, 300], "medido": "dipoloCM",
+    "pregunta": "Al subir la frecuencia, ¿qué ocurre con el tamaño de una antena resonante de la misma forma?",
+    "opciones": ["Necesita ser siempre más larga", "Su longitud característica disminuye", "La longitud deja de importar"], "valores": [75, 142, 300], "medido": "dipoloCM",
     "remate": "Resultan {dipoloCM|1} cm de punta a punta. La longitud de onda en el aire es {lambdaCM|1} cm; el tamaño resonante no es necesariamente una onda completa."
   },
   "nucleo": [{
     "numero": 1, "nombre": "una escala que sigue a la frecuencia", "color": "ambar",
     "paneles": [{
-      "rotulo": "MÁS FRECUENCIA, MENOS LONGITUD",
-      "clave": "Al duplicar la frecuencia, el dipolo del modelo mide {dobleFrecuenciaCM|1} cm.",
-      "texto": "La longitud de onda se obtiene dividiendo la velocidad de propagación por la frecuencia. Un dipolo fino de media onda tiene una longitud total próxima a la mitad de esa escala. La curva conserva su geometría relativa y el factor de acortamiento mientras cambia la frecuencia.",
-      "detalle": "Acortamos al {porcentaje|0}% de la media onda ideal para representar efectos de extremos. No es una constante universal: grosor del conductor, alimentación, aislamiento y objetos cercanos cambian la resonancia. El cálculo orienta la escala, no reemplaza una medida de impedancia del conjunto real.",
+      "rotulo": "EL METAL TIENE SU RITMO",
+      "clave": "El dipolo del ejemplo mide {dipoloCM|1} centímetros en total.",
+      "texto": "La onda de radio mueve cargas en el conductor. La corriente no se distribuye igual por toda su longitud: puede formar un patrón con máximos y nodos. Cuando la geometría encaja con la frecuencia aparece una resonancia eléctrica. No es que el metal tenga que agitarse visiblemente como una cuerda.",
+      "detalle": "El esquema muestra un dipolo alimentado por el centro, con corriente pequeña en los extremos. La varilla de muchas radios trabaja junto al resto del aparato. La pieza que ves no siempre es toda la antena que participa en la recepción.",
       "color": "ambar",
-      "dibujo": {"tipo": "serie", "ejeX": "Frecuencia (MHz)", "ejeY": "Longitud total de dipolo (cm)", "claves": [], "rotulos": []}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "antena-1", "claves": [], "rotulos": [], "pies": []}
     }, {
-      "rotulo": "UN CUARTO DE ONDA NECESITA SU ENTORNO",
-      "clave": "Dipolo total: {dipoloCM|1} cm. Monopolo ilustrativo: {cuartoCM|1} cm.",
-      "texto": "Un monopolo de cuarto de onda sobre un plano conductor puede aprovechar la imagen electromagnética que produce ese plano. No es simplemente cortar un dipolo y olvidar el resto: el plano de masa o contrapeso forma parte del sistema radiante.",
-      "detalle": "Plegar una antena o cargarla con componentes permite reducir tamaño físico, pero puede estrechar la banda de funcionamiento o aumentar pérdidas. Una antena resonante tampoco tiene automáticamente buena adaptación a cualquier transmisor. La eficiencia, la impedancia y el patrón de radiación son propiedades relacionadas, pero diferentes.",
+      "rotulo": "CAMBIAR LA LONGITUD CAMBIA LA RESPUESTA",
+      "clave": "Al duplicar la frecuencia, la longitud del modelo baja a {dobleFrecuenciaCM|1} centímetros.",
+      "texto": "Una frecuencia mayor tiene una longitud de onda menor. Por eso un diseño parecido puede encogerse si trabaja más arriba en el espectro. Desplegar una varilla telescópica cambia su respuesta eléctrica y puede mejorar la recepción, aunque la mejor posición también depende de la dirección de llegada.",
+      "detalle": "Acercar la mano o una pared modifica el entorno de los campos. Doblar el conductor puede reducir tamaño físico, pero introduce compromisos de pérdidas y ancho de banda. Más larga no significa automáticamente mejor para cualquier emisora ni cualquier aparato.",
       "color": "ambar",
-      "dibujo": {"tipo": "barras", "claves": ["dipoloCM", "cuartoCM"], "rotulos": ["Dipolo: {dipoloCM|1} cm", "Monopolo: {cuartoCM|1} cm"]}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "antena-2", "claves": [], "rotulos": [], "pies": []}
     }]
   }],
   "cierre": {
     "titulo": "La longitud eléctrica cuenta más que la regla.",
-    "nota": "frecuencia en Hz; acortamiento adimensional elegido. Propagación aproximada en aire a c. Dipolo fino cercano a media onda y monopolo ideal sobre plano conductor; se aplica el mismo factor ilustrativo para comparar escalas, no como diseño definitivo. Salidas de longitud en cm.",
+    "nota": "Frecuencia en hercios, longitudes en centímetros y acortamiento ilustrativo. Dipolo fino ideal; no especificaciones de la varilla de una radio ni instrucciones de fabricación.",
     "parrafos": ["En un dispositivo pequeño, la carcasa y la mano también alteran el entorno electromagnético. La pieza visible no siempre revela toda la estructura que participa en la antena."]
   }
 }

@@ -1,11 +1,65 @@
 {
-  "id": "halo", "rotulo": "NATURALEZA", "titulo": "¿Por qué algunos días el Sol tiene un anillo alrededor?",
-  "entradilla": "Algunos cristales de hielo de las nubes altas funcionan como pequeños prismas. La luz que cruza determinadas caras se desvía un ángulo mínimo. Muchos cristales con orientaciones diferentes convierten esa concentración angular en un halo alrededor del Sol.",
-  "modelo": "halo", "color": "azul", "medidas": {"indice": 1.31, "prisma": 60},
-  "tanteo": {"pregunta": "¿A qué distancia angular del Sol comienza aproximadamente el halo del ejemplo?", "opciones": ["A unos 2°", "A unos 22°", "A unos 60°"], "valores": [2, 22, 60], "medido": "angulo", "remate": "La desviación mínima calculada es {angulo|1}°. El ángulo entre caras no es el ángulo final del halo."},
-  "nucleo": [{"numero": 1, "nombre": "la geometría del hielo", "color": "azul", "paneles": [
-    {"rotulo": "ENTRAR Y VOLVER A SALIR", "clave": "El prisma del ejemplo produce una desviación mínima de {angulo|2}°.", "texto": "La luz cambia de dirección al entrar en hielo y al volver al aire. La ley de Snell permite combinar ambas refracciones. En la trayectoria de desviación mínima, el recorrido es simétrico: los ángulos internos suman el ángulo del prisma y son iguales entre sí.", "detalle": "Con un prisma de {prisma|0}° e índice {indice|2}, la incidencia simétrica es {incidencia|2}°. La desviación resulta de duplicar esa incidencia y restar el ángulo del prisma. El mínimo concentra muchas trayectorias en una zona angular estrecha.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["angulo", "incidencia"], "rotulos": ["Halo: {angulo|2}°", "Incidencia: {incidencia|2}°"]}},
-    {"rotulo": "EL MATERIAL TAMBIÉN IMPORTA", "clave": "Sin contraste de índice, el prisma no desviaría la luz.", "texto": "La curva cambia hipotéticamente el índice y conserva el ángulo entre caras. Muestra por qué el tamaño angular no procede de la distancia a la nube. El índice real depende del color: el borde interior suele verse rojizo, mientras otros colores se superponen hacia fuera.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Índice de refracción", "ejeY": "Desviación mínima (grados)", "claves": [], "rotulos": []}}
-  ]}],
-  "cierre": {"titulo": "Un anillo de direcciones, no un aro material.", "nota": "Modelo de prisma ideal con caras a 60° e índice aproximado del hielo visible, adimensional. No se modelan tamaños, orientaciones preferentes ni brillo. La curva de índices es una comparación matemática, no diferentes estados medidos de una nube.", "parrafos": ["No todo anillo alrededor del Sol o la Luna es este halo: también existen coronas de difracción y otros halos. La distribución de cristales puede formar arcos o puntos brillantes en vez de un círculo completo."]}
+  "id": "halo",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Cómo devuelve la luz el catadióptrico de una bicicleta?",
+  "revisionEditorial": 2,
+  "entradilla": "El pequeño reflector de la bicicleta parece encenderse cuando lo alumbran unos faros, aunque no lleva batería. Desde otro lugar puede verse mucho menos brillante. No está repartiendo por igual la luz que recibe: su interior está hecho para devolver una parte hacia la dirección de donde acaba de llegar.",
+  "modelo": "naturaleza-halo",
+  "color": "ambar",
+  "medidas": {
+    "entrada": 30
+  },
+  "tanteo": {
+    "pregunta": "¿Hacia dónde intenta devolver la luz un catadióptrico?",
+    "opciones": [
+      "Siempre hacia arriba",
+      "Hacia quien lo ilumina",
+      "Igual en todas direcciones"
+    ],
+    "valores": [
+      90,
+      210,
+      0
+    ],
+    "medido": "salida",
+    "remate": "Hacia la fuente. En el corte ideal, una dirección de {entrada|0} grados sale en la opuesta: {salida|0} grados."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "esquinas que devuelven rayos",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "UN ESPEJO NO BASTA",
+          "clave": "Una cara devuelve el rayo con otra inclinación.",
+          "texto": "Una superficie plana refleja la luz de manera que el ángulo de salida iguala al de entrada, medidos desde la perpendicular. Es la ley de la reflexión. Pero un espejo cualquiera no devuelve automáticamente el rayo al faro: basta girarlo un poco para mandar el reflejo a un sitio completamente distinto.",
+          "detalle": "Por eso el reflector de la bicicleta no es simplemente una chapa brillante. Su superficie posterior reúne muchas pequeñas esquinas, ocultas detrás del plástico transparente por el que entra y sale la luz.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "halo-1"
+          }
+        },
+        {
+          "rotulo": "LA ESQUINA INVIERTE EL CAMINO",
+          "clave": "Varios rebotes cambian las componentes de la dirección.",
+          "texto": "En un corte con dos paredes perpendiculares, un rebote invierte una componente del movimiento y el siguiente invierte la otra. El rayo termina viajando paralelo al entrante, pero hacia atrás. Eso es retrorreflexión. Los pequeños rincones tridimensionales añaden una tercera cara para hacer lo mismo fuera del plano del dibujo.",
+          "detalle": "La luz no regresa por exactamente la misma línea y el reflector real tiene un margen angular limitado. Como los ojos del conductor están cerca de los faros, reciben parte de esa luz devuelta.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "halo-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "No crea luz: la devuelve bien orientada.",
+    "parrafos": [
+      "La suciedad y una mala orientación reducen su eficacia. Un reflector complementa las luces de la bicicleta; no sustituye una lámpara activa cuando necesitas ser visible sin iluminación ajena en una calle oscura."
+    ],
+    "nota": "Dos espejos perpendiculares ideales en el cálculo; esquinas de tres caras en el objeto. Ángulo ilustrativo, sin predicción de brillo ni homologación."
+  }
 }

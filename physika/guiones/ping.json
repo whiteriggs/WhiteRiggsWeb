@@ -1,12 +1,13 @@
 {
+  "revisionEditorial": 2,
   "id": "ping", "rotulo": "REDES",
-  "titulo": "¿Por qué hay lag jugando online si la luz va tan rápida?",
+  "titulo": "¿Por qué Fortnite tiene lag aunque la descarga vaya rápida?",
   "entradilla": "Tu acción no se teletransporta al servidor. Hay que poner bits en enlaces, propagarlos por una ruta, esperar turno en equipos y procesar la respuesta. Un ping mide una ida y vuelta; la demora que percibes en el juego incluye además otros pasos de la aplicación y la pantalla.",
   "modelo": "ping", "color": "azul",
   "medidas": {"distancia": 2000, "indice": 1.468, "enlaces": 6, "bytes": 1000, "tasaMbps": 100, "colaMS": 12, "procesoMS": 4},
   "tanteo": {
-    "pregunta": "Por fibra de índice 1,468, con 2.000 km por sentido y 16,96 ms adicionales en total por serialización, procesamiento y colas, ¿cuánto tarda la ida y vuelta?",
-    "opciones": ["Unos 2 ms", "Unos 20 ms", "Unos 37 ms"], "valores": [2, 20, 37], "medido": "total",
+    "pregunta": "¿Duplicar la capacidad de un enlace reduce siempre el ping a la mitad?",
+    "opciones": ["Sí: todos los tiempos se dividen igual", "Sí: la luz viaja entonces el doble de rápido", "No: el recorrido y otras esperas siguen contando"], "valores": [2, 20, 37], "medido": "total",
     "remate": "Son {total|2} ms. La propagación aporta {propagacion|2} ms; la serialización y las esperas completan el tiempo."
   },
   "nucleo": [{
@@ -14,22 +15,22 @@
     "paneles": [{
       "rotulo": "TRES TIEMPOS QUE SE SUMAN",
       "clave": "Propagación: {propagacion|2} ms. Serialización: {serializacion|2} ms. Esperas: {esperas|0} ms.",
-      "texto": "La propagación depende de la longitud de fibra y su índice de grupo. La serialización es el tiempo necesario para colocar todos los bits del paquete en un enlace. Las colas aparecen cuando otros paquetes ocupan ese enlace o un equipo no puede atenderlos inmediatamente.",
-      "detalle": "Suponemos una petición y una respuesta del mismo tamaño, con almacenamiento completo antes de reenviar en cada enlace. Sumamos {enlaces|0} enlaces por sentido. Es un modelo de paquete individual: no representa la entrega en paralelo de un flujo largo ni pretende reproducir un ping ICMP concreto.",
+      "texto": "Pulsas saltar y el juego prepara un mensaje pequeño. Ese paquete puede encontrar otros delante en un router. Aunque el cable sea rápido, debe esperar turno. Es una cola: cuando llegan mensajes más deprisa de lo que pueden salir, la espera crece y la respuesta se retrasa.",
+      "detalle": "Después queda el viaje físico. La señal tarda en propagarse y también en colocar todos los bits sobre cada enlace. La teoría de colas describe la espera; la velocidad de propagación impone un límite diferente que no depende de cuánta prisa tengas.",
       "color": "azul",
-      "dibujo": {"tipo": "barras", "claves": ["propagacion", "serializacion", "esperas"], "rotulos": ["Viaje: {propagacion|1} ms", "Bits: {serializacion|2} ms", "Esperas: {esperas|0} ms"]}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "ping-1", "claves": [], "rotulos": [], "pies": []}
     }, {
       "rotulo": "MÁS MEGABITS NO ACORTAN EL PLANETA",
       "clave": "Duplicar la tasa baja el total a {dobleTasa|2} ms, no a la mitad.",
-      "texto": "En nuestra comparación solo cambia la serialización. La luz sigue recorriendo la misma fibra y mantenemos las colas y el procesamiento constantes. La curva varía la longitud de ruta, conservando todos los demás términos: su intercepto es positivo porque incluso a distancia nula queda trabajo que hacer.",
-      "detalle": "Una conexión con más capacidad puede reducir colas reales si estaban saturadas, algo que esta comparación deja fuera a propósito. También influyen rutas indirectas y servidores lejanos. El caudal útil de una descarga y el retraso de un paquete pequeño no son intercambiables.",
+      "texto": "Un enlace de mayor capacidad coloca antes el paquete sobre el cable. No hace que la luz atraviese ese cable al doble de velocidad. Si mantenemos el recorrido, las colas y el procesamiento, solo reducimos una parte del tiempo total. Por eso descargar deprisa no garantiza responder enseguida.",
+      "detalle": "En una red saturada, añadir capacidad también puede aliviar las colas reales. Elegir un servidor cercano reduce otro término: la distancia. La pantalla, el mando y el propio juego añaden retrasos que un ping de red no mide por separado.",
       "color": "azul",
-      "dibujo": {"tipo": "serie", "ejeX": "Longitud de ruta de ida (km)", "ejeY": "Ida y vuelta total (ms)", "claves": [], "rotulos": []}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "ping-2", "claves": [], "rotulos": [], "pies": []}
     }]
   }],
   "cierre": {
     "titulo": "El lag no tiene una sola causa.",
-    "nota": "distancia de ida en km; indice de grupo adimensional; enlaces por sentido; bytes por paquete; tasaMbps en Mbit/s. colaMS y procesoMS son totales de ida y vuelta elegidos, no por salto. Modelo store-and-forward simétrico, sin pérdidas, retransmisiones ni tiempos de renderizado.",
+    "nota": "Distancia de ida en kilómetros, paquetes en bytes, tasa en megabits por segundo. Colas y proceso son totales de ida y vuelta; escenario simétrico ilustrativo, no medición de Fortnite.",
     "parrafos": ["Mover el servidor más cerca reduce el recorrido mínimo. Evitar saturación reduce esperas. Son mejoras diferentes y ninguna hace que todos los términos desaparezcan."]
   }
 }

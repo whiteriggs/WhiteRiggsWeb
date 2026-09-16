@@ -1,12 +1,13 @@
 {
+  "revisionEditorial": 2,
   "id": "bluetooth", "rotulo": "REDES",
-  "titulo": "¿Cómo se entienden dos aparatos que se acaban de conocer?",
-  "entradilla": "Primero se descubren y acuerdan cómo comunicarse. Después coordinan tiempos, canales y formato de los mensajes. Saltar de frecuencia ayuda a que una interferencia localizada no arruine siempre el enlace, pero no sustituye al emparejamiento, la autenticación ni el cifrado.",
+  "titulo": "¿Cómo mantiene la conexión un teclado Bluetooth?",
+  "entradilla": "Escribes sin cable y cada letra aparece en la pantalla. Teclado y ordenador primero se descubren y acuerdan cómo comunicarse. Después coordinan tiempos, canales y formato de los mensajes. Saltar de frecuencia ayuda a que una interferencia localizada no arruine siempre el enlace, pero no sustituye al emparejamiento, la autenticación ni el cifrado.",
   "modelo": "bluetooth", "color": "azul",
   "medidas": {"canales": 37, "ocupados": 8, "intentos": 3, "intervaloMS": 15},
   "tanteo": {
-    "pregunta": "Con 8 de 37 canales ocupados y todos igualmente probables en cada intento independiente, ¿qué probabilidad hay de que los tres intentos caigan en canales ocupados?",
-    "opciones": ["Aproximadamente 1%", "Aproximadamente 22%", "Aproximadamente 65%"], "valores": [1, 22, 65], "medido": "fallosSeguidosPorcentaje",
+    "pregunta": "Si hay ruido en un canal, ¿qué puede ayudar al teclado a entregar una pulsación?",
+    "opciones": ["Reintentar en otro canal acordado con el receptor", "Cambiar solo de canal sin avisar al receptor", "Enviar siempre al mismo canal bloqueado"], "valores": [1, 22, 65], "medido": "fallosSeguidosPorcentaje",
     "remate": "Sale {fallosSeguidosPorcentaje|2}%. Multiplicamos probabilidades porque hemos supuesto intentos independientes; una interferencia de banda ancha rompería esa ventaja."
   },
   "nucleo": [{
@@ -14,22 +15,22 @@
     "paneles": [{
       "rotulo": "NO ES SALTAR CADA UNO POR SU CUENTA",
       "clave": "Con {ocupados|0} de {canales|0} canales ocupados, un intento falla con probabilidad {colisionPorcentaje|1}%.",
-      "texto": "Tomamos como escenario el conjunto de canales de datos de Bluetooth LE, pero simplificamos el salto a una elección uniforme e independiente. Transmisor y receptor necesitan conocer el mismo calendario de comunicación; de lo contrario, cambiar de frecuencia solo haría que dejaran de escucharse.",
-      "detalle": "La curva muestra la probabilidad de fallar todos los intentos al variar cuántos canales están interferidos; interpola recuentos enteros. Consideramos que un canal ocupado siempre pierde el paquete y uno libre siempre lo entrega. Es una idealización fuerte: la potencia, la duración y el solapamiento de interferencias importan en la realidad.",
+      "texto": "Pulsas una tecla y el teclado prepara un mensaje pequeño. Teclado y ordenador conocen cuándo deben hablar y en qué canal. Pueden cambiar juntos de frecuencia siguiendo una secuencia. Es salto de frecuencia: así una interferencia localizada no estropea necesariamente todas las oportunidades de transmitir.",
+      "detalle": "No saltan cada uno por su cuenta. Si el receptor escucha en otro sitio, no oye el mensaje aunque llegue mucha potencia. La coordinación organiza la conversación; el campo electromagnético sigue siendo el que transporta físicamente la señal entre ambos aparatos.",
       "color": "azul",
-      "dibujo": {"tipo": "serie", "ejeX": "Canales ocupados", "ejeY": "Todos los intentos fallidos (%)", "claves": [], "rotulos": []}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "bluetooth-1", "claves": [], "rotulos": [], "pies": []}
     }, {
       "rotulo": "REINTENTAR COMPRA FIABILIDAD CON TIEMPO",
       "clave": "Al menos un acierto: {exitoPorcentaje|2}%. Espera extra hasta el último intento: {esperaExtra|0} ms.",
-      "texto": "El éxito acumulado es el complemento de que fallen todos. Las barras comparan la probabilidad de fallo de un intento con la de toda la secuencia, en la misma unidad. Si cada reintento espera el intervalo elegido, el último llega más tarde aunque finalmente tenga éxito.",
-      "detalle": "El salto adaptativo puede excluir canales malos; no equivale a nuestro sorteo fijo. La publicidad para descubrir dispositivos y los canales de una conexión tienen funciones distintas. Bluetooth clásico tampoco usa exactamente el mismo conjunto de canales que LE, y ningún salto proporciona por sí solo privacidad.",
+      "texto": "Si un paquete llega dañado, el enlace puede volver a intentarlo. La confirmación permite saber que ya fue recibido. Repetir aumenta las oportunidades de éxito, pero también añade espera. Por eso un entorno difícil puede hacer que una pulsación aparezca tarde sin que el teclado esté averiado.",
+      "detalle": "El sistema adaptativo puede evitar canales problemáticos. Nuestra cuenta usa probabilidades independientes, una simplificación matemática: una interferencia que ocupa muchas frecuencias rompe esa ventaja. Saltar tampoco cifra el contenido; la privacidad necesita mecanismos distintos de la selección del canal.",
       "color": "azul",
-      "dibujo": {"tipo": "barras", "claves": ["colisionPorcentaje", "fallosSeguidosPorcentaje"], "rotulos": ["Uno: {colisionPorcentaje|1}%", "Todos: {fallosSeguidosPorcentaje|2}%"]}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "bluetooth-2", "claves": [], "rotulos": [], "pies": []}
     }]
   }],
   "cierre": {
     "titulo": "Cambiar juntos evita insistir siempre en el mismo ruido.",
-    "nota": "canales, ocupados e intentos son recuentos; intervaloMS en ms. Modelo de Bernoulli independiente con reposición, no implementación del algoritmo de selección Bluetooth. Se supone interferencia fija por canal y pérdidas binarias. Intervalo y ocupación son ilustrativos; no estiman el rendimiento de unos auriculares.",
+    "nota": "Ejemplo de Bluetooth LE. Canales e intentos son recuentos; intervalo en milisegundos. Modelo de Bernoulli independiente, no algoritmo real ni rendimiento de un teclado concreto.",
     "parrafos": ["La coordinación permite encontrarse; la corrección y los reintentos permiten sostener la conversación. Si el entorno cambia más deprisa que la adaptación, la experiencia puede empeorar aunque haya muchos canales disponibles."]
   }
 }

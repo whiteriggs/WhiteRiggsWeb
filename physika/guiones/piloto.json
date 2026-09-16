@@ -1,12 +1,71 @@
 {
-  "id": "piloto", "rotulo": "AVIACIÓN", "titulo": "¿Qué hace de verdad un piloto automático?",
-  "entradilla": "Compara una referencia con lo que miden los sensores y genera correcciones. No basta con recordar una postura: una perturbación cambia el estado del avión y el sistema vuelve a medir. Ese circuito cerrado es la realimentación.",
-  "modelo": "piloto", "color": "indigo",
-  "medidas": {"errorInicial": 100, "constante": 8, "tiempo": 24},
-  "tanteo": {"pregunta": "Si un error inicial de 100 m decae con una constante de 8 s, ¿cuánto queda después de 24 s en este modelo?", "opciones": ["Nada exactamente", "Unos 5 m", "Unos 50 m"], "valores": [0, 5, 50], "medido": "errorFinal", "remate": "Quedan {errorFinal|1} m. La corrección se hace menor al acercarse a la referencia; no desaparece todo en un único paso."},
-  "nucleo": [{"numero": 1, "nombre": "medir, comparar y corregir", "color": "indigo", "paneles": [
-    {"rotulo": "UN LAZO IDEAL ESTABLE", "clave": "El error baja de {errorInicial|0} a {errorFinal|1} m en {tiempo|0} s.", "texto": "Representamos la respuesta cerrada con una ecuación de primer orden: el ritmo de reducción es proporcional al error que queda. Su solución es una exponencial. La curva está calculada con esa ley, sin oscilaciones añadidas para hacerla parecer más real.", "detalle": "La constante de tiempo indica la rapidez de este sistema ideal. Tras una constante quedan {errorConstante|1} m; reducir el error a la mitad tarda {mitad|1} s. No estamos calculando directamente una deflexión de elevador: resumimos en una respuesta equivalente al controlador y al avión.", "color": "indigo", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (s)", "ejeY": "Error de altura (m)", "claves": [], "rotulos": []}},
-    {"rotulo": "UNA REFERENCIA NO ES UNA INTENCIÓN", "clave": "Se corrigen {corregido|1} m y permanecen {errorFinal|1} m del error inicial.", "texto": "El sistema actúa sobre variables y modos definidos: actitud, trayectoria u otras referencias según su arquitectura. Seguir bien una referencia no implica que esa referencia sea adecuada. Sensores, límites de actuación y gestión de modos forman parte del problema.", "detalle": "Un lazo real incluye inercias, retardos, filtros y acoplamientos entre ejes. Una corrección demasiado agresiva puede generar sobreoscilación o inestabilidad. Los automatismos de navegación y potencia tampoco son una sola función indivisible. Este ejemplo no reproduce leyes propietarias ni capacidades concretas de un A320.", "color": "indigo", "dibujo": {"tipo": "barras", "claves": ["corregido", "errorFinal"], "rotulos": ["Corregido {corregido|1} m", "Pendiente {errorFinal|1} m"]}}
-  ]}],
-  "cierre": {"titulo": "La corrección necesita volver a mirar.", "nota": "Error inicial en metros, constante y duración en segundos. Respuesta cerrada lineal de primer orden, ilustrativa, sin perturbaciones posteriores, retardos ni saturación. No describe procedimientos ni especificaciones de un fabricante.", "parrafos": ["La realimentación permite rechazar ciertas perturbaciones, pero no convierte una medida errónea en verdadera. Por eso el diseño de automatismos combina dinámica, validación de sensores y límites explícitos."]}
+  "id": "piloto",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Qué corrige el piloto automático de un avión?",
+  "entradilla": "El avión lleva un rato a la misma altura y parece que alguien ha dejado el volante quieto. Pero conservar una trayectoria no consiste en congelar los mandos. El aire cambia y aparecen pequeñas desviaciones. Un piloto automático compara lo que se le ha pedido con lo que miden sus sensores y sigue haciendo correcciones.",
+  "modelo": "piloto",
+  "color": "indigo",
+  "medidas": {
+    "errorInicial": 100,
+    "constante": 8,
+    "tiempo": 24
+  },
+  "tanteo": {
+    "pregunta": "Después de varias correcciones suaves, ¿qué queda del desvío inicial en nuestro ejemplo?",
+    "opciones": [
+      "Desaparece exactamente de golpe",
+      "Queda un desvío pequeño",
+      "Queda todo el desvío inicial"
+    ],
+    "valores": [
+      0,
+      5,
+      100
+    ],
+    "medido": "errorFinal",
+    "remate": "Quedan {errorFinal|1} metros: un resto pequeño, no una desaparición instantánea. El modelo no incluye nuevas perturbaciones."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "medir, comparar y corregir",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "COMPARAR ANTES DE ACTUAR",
+          "clave": "La referencia y la medida no siempre coinciden.",
+          "texto": "Supón que se ha seleccionado una altura. Los sensores aportan una estimación de la altura actual y el sistema obtiene la diferencia. Esa diferencia no es una orden de mover siempre lo mismo: indica cuánto se está apartando el avión del objetivo. Comparar, actuar y volver a medir forma un lazo de realimentación.",
+          "detalle": "Es el mismo principio general que usa un termostato, aunque un avión combina muchas variables, límites y modos. El piloto automático no decide por su cuenta cuál debería ser el destino de este ejemplo.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "piloto-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL MANDO CAMBIA LA TRAYECTORIA",
+          "clave": "El actuador mueve una superficie y llega una nueva medida.",
+          "texto": "La orden puede mover una superficie de control. Eso modifica fuerzas aerodinámicas, cambia el movimiento del avión y produce otra lectura de los sensores. Al acercarse al objetivo, la corrección se suaviza. Así se evita tratar un error pequeño como si todavía quedara toda la desviación inicial por recuperar.",
+          "detalle": "Nuestro error se reduce de forma exponencial y termina en {errorFinal|1} metros. Esa respuesta de primer orden es una simplificación: un sistema real también debe lidiar con retardos, límites de movimiento y perturbaciones.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "piloto-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Mantener el rumbo también exige cambiar cosas.",
+    "parrafos": [
+      "Lo que parece quietud desde el asiento puede esconder un ciclo continuo de pequeñas decisiones. El detalle importante no es que una máquina mueva un mando: es que comprueba el efecto de lo que acaba de hacer."
+    ],
+    "nota": "Error y tiempos ilustrativos. Lazo cerrado lineal de primer orden, sin perturbaciones posteriores, saturación ni retardos. No representa un modo ni especificaciones de un fabricante. Esquema conceptual, no manual de vuelo."
+  },
+  "revisionEditorial": 2
 }

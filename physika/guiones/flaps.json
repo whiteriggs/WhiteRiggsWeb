@@ -1,12 +1,73 @@
 {
-  "id": "flaps", "rotulo": "AVIACIÓN", "titulo": "¿Por qué se abre el ala en trozos al aterrizar?",
-  "entradilla": "El ala cambia de forma. Los flaps aumentan la curvatura y algunos también la superficie; las ranuras pueden ayudar a mantener adherido el flujo. Así se puede obtener más sustentación a una misma velocidad, aunque normalmente también aumenta la resistencia.",
-  "modelo": "flaps", "color": "verde",
-  "medidas": {"masa": 60000, "densidad": 1.225, "area": 120, "limpio": 1.4, "extendido": 2.4},
-  "tanteo": {"pregunta": "En este ejemplo, pasar el coeficiente máximo de 1,4 a 2,4 reduce la velocidad ideal límite aproximadamente…", "opciones": ["Un 5 %", "Un 24 %", "Un 60 %"], "valores": [5, 24, 60], "medido": "reduccion", "remate": "La reducción calculada es {reduccion|1} %. La velocidad depende de la raíz inversa del coeficiente, no de su inversa directa."},
-  "nucleo": [{"numero": 1, "nombre": "más coeficiente, menos velocidad", "color": "verde", "paneles": [
-    {"rotulo": "UN MISMO PESO", "clave": "El equilibrio al coeficiente máximo pasa de {velocidadLimpia|1} a {velocidadFlaps|1} m/s.", "texto": "Igualamos el peso a la sustentación máxima de un modelo estacionario. Al aumentar el coeficiente máximo, hace falta menos presión dinámica para sostener esa masa. La curva muestra esa relación de raíz cuadrada, no una secuencia de posiciones de una palanca.", "detalle": "Mantenemos la superficie de referencia igual en las dos configuraciones. La contribución de los dispositivos queda recogida en sus coeficientes. Son valores ilustrativos: no describen un avión concreto ni velocidades recomendadas de aproximación.", "color": "verde", "dibujo": {"tipo": "serie", "ejeX": "Coeficiente máximo (sin unidad)", "ejeY": "Velocidad ideal límite (m/s)", "claves": [], "rotulos": []}},
-    {"rotulo": "LA FORMA TAMBIÉN CUESTA RESISTENCIA", "clave": "La velocidad con dispositivos es {razon|2} veces la de configuración limpia.", "texto": "Un flap modifica el campo de presiones y la desviación del aire. Un slat delantero y una ranura bien diseñada pueden retrasar la separación en ciertas condiciones. No todas las superficies que se mueven tienen la misma función: un spoiler puede reducir sustentación.", "detalle": "Más resistencia no es un defecto accidental en todas las fases, pero tampoco es gratis. La cuenta aísla la capacidad de sustentar; omite potencia, estabilidad, efectos del suelo y márgenes de operación. Cerca de la separación, el coeficiente deja de crecer como en una aproximación lineal sencilla.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["velocidadLimpia", "velocidadFlaps"], "rotulos": ["Limpia {velocidadLimpia|1} m/s", "Flaps {velocidadFlaps|1} m/s"]}}
-  ]}],
-  "cierre": {"titulo": "La geometría amplía lo que puede hacer el ala.", "nota": "Masa en kg, área de referencia en m², densidad en kg/m³ y coeficientes máximos adimensionales elegidos. Modelo de sustentación igual al peso, sin aceleración vertical. No es un cálculo operativo de velocidades.", "parrafos": ["Los dispositivos hipersustentadores permiten adaptar un ala a necesidades distintas. Su efecto se mide y ensaya: no puede deducirse solo de cuánto parecen abrirse desde una ventanilla."]}
+  "id": "flaps",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Por qué se despliega el ala del avión antes de aterrizar?",
+  "entradilla": "Miras por la ventanilla durante la aproximación y el ala empieza a abrirse por detrás. Salen piezas, aparecen huecos y cambia su forma. No se está desmontando: adapta su manera de mover aire para seguir sosteniendo el avión mientras vuela más despacio. Ese despliegue tiene un precio, y por eso no permanece igual durante todo el viaje.",
+  "modelo": "flaps",
+  "color": "verde",
+  "medidas": {
+    "masa": 60000,
+    "densidad": 1.225,
+    "area": 120,
+    "limpio": 1.4,
+    "extendido": 2.4
+  },
+  "tanteo": {
+    "pregunta": "Al sacar los flaps, ¿la velocidad ideal para sostener el mismo peso sube, baja o queda igual?",
+    "opciones": [
+      "Sube",
+      "Baja",
+      "Queda igual"
+    ],
+    "valores": [
+      -24,
+      24,
+      0
+    ],
+    "medido": "reduccion",
+    "remate": "Baja un {reduccion|1} % con los coeficientes del ejemplo. Esa comparación no proporciona velocidades operativas."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "más coeficiente, menos velocidad",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "UNA PIEZA SALE POR DETRÁS",
+          "clave": "El borde posterior se desplaza y se inclina.",
+          "texto": "Los flaps cambian la curvatura del ala. Algunos también se desplazan hacia atrás y aumentan su superficie. En diseños con ranuras, el aire que cruza el hueco ayuda a que la corriente siga la cara superior. No todos los flaps hacen exactamente lo mismo, aunque desde el asiento parezcan piezas muy parecidas.",
+          "detalle": "Al modificar la corriente cambia el reparto de presión. El resultado se resume mediante el coeficiente de sustentación: una forma de expresar cuánto empuja esa configuración para una superficie y una velocidad dadas.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "flaps-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "MÁS EMPUJE DEL AIRE, MENOS PRISA",
+          "clave": "El ala extendida desvía más la corriente en nuestro esquema.",
+          "texto": "Para sostener el mismo peso, el ala con flaps puede necesitar menos velocidad. Pero el aire también tira más hacia atrás. Esa resistencia adicional resulta útil al acercarse a la pista, mientras que durante el crucero obligaría a gastar más energía. El mecanismo cambia una ventaja por otra; no crea sustentación sin coste.",
+          "detalle": "El cálculo compara {velocidadLimpia|1} y {velocidadFlaps|1} metros por segundo en equilibrio ideal. La relación lleva una raíz cuadrada: mejorar el coeficiente no reduce la velocidad en la misma proporción.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "flaps-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El ala cambia para una fase distinta del viaje.",
+    "parrafos": [
+      "Las piezas móviles no son adornos ni pequeños motores. Permiten elegir otro compromiso entre sustentación, velocidad y resistencia. Lo que resulta útil cerca de la pista no es lo que conviene mantener durante horas en crucero."
+    ],
+    "nota": "Masa y coeficientes máximos ilustrativos. Área de referencia fija y sustentación igual al peso. Sin cálculo de pérdida real, distancias ni procedimientos. Flap ranurado esquemático, no un diseño comercial concreto."
+  },
+  "revisionEditorial": 2
 }

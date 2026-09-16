@@ -1,41 +1,11 @@
 {
-  "id": "faceid",
-  "rotulo": "MÓVIL",
-  "titulo": "¿Cómo te reconoce Face ID a oscuras?",
-  "entradilla": "Porque lleva su propia iluminación, aunque tú no la veas. TrueDepth proyecta miles de puntos infrarrojos y obtiene una imagen infrarroja y un mapa de profundidad. No necesita que enciendas la luz de la habitación para encontrar el relieve de tu cara.",
-  "modelo": "paralaje",
-  "color": "azul",
-  "medidas": {"base": 0.03, "focal": 1000, "lejos": 0.30, "cerca": 0.27},
-  "tanteo": {
-    "pregunta": "En una triangulación calibrada, ¿qué delata que un punto está más cerca?",
-    "opciones": ["Menor disparidad", "La misma disparidad", "Mayor disparidad"],
-    "valores": [-11, 0, 11],
-    "medido": "diferenciaEnPixeles",
-    "remate": "En este ejemplo, acercar el punto aumenta la disparidad en {diferenciaEnPixeles|1} píxeles. Lo que cambia es su posición geométrica, no solo lo brillante que sale."
-  },
-  "nucleo": [{
-    "numero": 1,
-    "nombre": "la posición cuenta la profundidad",
-    "color": "azul",
-    "paneles": [{
-      "rotulo": "UN PUNTO NO CAE SIEMPRE EN EL MISMO SITIO",
-      "clave": "A {lejosEnCentimetros|0} cm, la disparidad es {disparidadLejos|1} píxeles. A {cercaEnCentimetros|0} cm, es {disparidadCerca|1}.",
-      "texto": "En una geometría ideal con imágenes rectificadas, disparidad significa la diferencia de posición horizontal de un mismo punto entre dos vistas calibradas. Un proyector de patrón conocido puede proporcionar una de esas referencias. Al acercarse la superficie, esa diferencia aumenta.",
-      "detalle": "La profundidad es la separación entre centros ópticos multiplicada por la focal en píxeles, dividida por la disparidad. Nuestro sistema ilustrativo tiene {baseEnMilimetros|0} mm de separación y una focal de {focal|0} píxeles. La diferencia entre los dos puntos corresponde a {relieveEnMilimetros|0} mm de relieve. No estamos midiendo el tiempo que tarda la luz ni simulando el algoritmo propietario de Face ID.",
-      "color": "azul",
-      "dibujo": {
-        "tipo": "barras",
-        "claves": ["disparidadLejos", "disparidadCerca"],
-        "rotulos": ["{lejosEnCentimetros|0} cm: {disparidadLejos|1} px", "{cercaEnCentimetros|0} cm: {disparidadCerca|1} px"]
-      }
-    }]
-  }],
-  "cierre": {
-    "titulo": "La oscuridad no borra el relieve.",
-    "nota": "Apple documenta el patrón de puntos invisibles, la imagen infrarroja y el mapa de profundidad en «About Face ID advanced technology», support.apple.com/en-us/102381. La separación, focal y distancias del ejemplo son ilustrativas: no son especificaciones del iPhone. La fórmula es una triangulación ideal calibrada, no una descripción completa de su implementación.",
-    "parrafos": [
-      "Una fotografía puede conservar sombras, colores y perspectiva, pero sigue siendo una superficie plana. Por eso medir profundidad aporta información que una foto no contiene. No significa que cualquier sensor 3D sea infalible: Face ID combina esos datos con reconocimiento y medidas contra suplantación.",
-      "El infrarrojo cercano aquí es iluminación reflejada, no una cámara que reconozca tu cara por su calor. La geometría ayuda a obtener el mapa; decidir si ese mapa y esa imagen son tuyos es otra parte del sistema. Según Apple, la representación facial se protege con Secure Enclave y no se envía a iCloud."
-    ]
-  }
+  "id": "faceid", "rotulo": "MÓVIL", "titulo": "¿Cómo te reconoce Face ID a oscuras?", "revisionEditorial": 2,
+  "entradilla": "Estás en la cama, apagas la lámpara y el iPhone sigue reconociéndote. No necesita recordar dónde estaba tu nariz hace un segundo. Lleva su propia iluminación: proyecta puntos infrarrojos sobre la cara y observa cómo aparecen repartidos. Tú no los ves, pero su cámara infrarroja sí.",
+  "modelo": "paralaje", "color": "azul", "medidas": {"base": 0.03, "focal": 1000, "lejos": 0.30, "cerca": 0.27},
+  "tanteo": {"pregunta": "Al acercar un punto a dos referencias ópticas separadas, ¿cómo cambia la diferencia entre sus posiciones?", "opciones": ["Se hace menor", "No cambia", "Se hace mayor"], "valores": [-11, 0, 11], "medido": "diferenciaEnPixeles", "remate": "Aumenta. En nuestra geometría ilustrativa la diferencia crece {diferenciaEnPixeles|1} píxeles; no es una medida del hardware de Apple."},
+  "nucleo": [{"numero": 1, "nombre": "iluminar y medir relieve", "color": "azul", "paneles": [
+    {"rotulo": "SU PROPIA LUZ", "clave": "La oscuridad de la habitación no apaga el patrón.", "texto": "Los puntos se reflejan en frente, mejillas y nariz. Una superficie plana y una cara con relieve no devuelven la misma distribución. Es luz infrarroja reflejada, no una imagen del calor corporal: unas mejillas frías no se vuelven invisibles por ese motivo.", "detalle": "El proyector proporciona una referencia conocida. La cámara recoge el patrón desde otro lugar; esa separación permite obtener pistas de profundidad además de una imagen. Iluminar y reconocer son trabajos distintos.", "color": "azul", "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "faceid-1", "claves": [], "rotulos": [], "pies": []}},
+    {"rotulo": "EL SITIO DEL PUNTO IMPORTA", "clave": "Más cerca significa mayor diferencia entre vistas.", "texto": "Prueba mentalmente a mirar un dedo alternando los ojos. Parece saltar más si lo acercas. Esa diferencia de posición se llama paralaje; con referencias calibradas permite triangular la profundidad. Un patrón proyectado puede actuar como una de esas referencias, sin necesitar dos ojos humanos.", "detalle": "Nuestra geometría pasa de {disparidadLejos|1} a {disparidadCerca|1} píxeles de disparidad. Eso ilustra el principio, no reproduce el algoritmo de Face ID ni sus medidas internas.", "color": "azul", "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "faceid-2", "claves": [], "rotulos": [], "pies": []}}
+  ]}],
+  "cierre": {"titulo": "Una foto conserva sombras, no tu relieve.", "parrafos": ["La profundidad aporta información que una foto plana no contiene. Face ID combina esa información con reconocimiento y defensas contra suplantaciones; tener un mapa tridimensional no convierte cualquier sistema en infalible. Si algo tapa el proyector o la cámara, falta parte de esa conversación óptica. La oscuridad ambiental y una lente cubierta son problemas distintos: la iluminación propia resuelve el primero, pero no atraviesa cualquier obstáculo."], "nota": "Separación, focal y distancias ilustrativas, no especificaciones de Apple. Triangulación ideal calibrada; no se mide tiempo de vuelo ni temperatura facial."}
 }

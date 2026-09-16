@@ -1,11 +1,71 @@
 {
-  "id": "corrimiento", "rotulo": "ESPACIO", "titulo": "¿Cómo sabemos que el universo se expande?",
-  "entradilla": "Identificamos patrones de líneas espectrales y comprobamos que, en muchas galaxias lejanas, aparecen desplazados hacia longitudes de onda mayores. Al combinar ese desplazamiento con medidas de distancia y otras observaciones, emerge un universo cuya escala cambia con el tiempo.",
-  "modelo": "corrimiento", "color": "coral", "medidas": {"emitida": 500, "rojo": 2},
-  "tanteo": {"pregunta": "Una línea emitida a 500 nm tiene corrimiento cosmológico z = 2. ¿Dónde se observa?", "opciones": ["250 nm", "1.500 nm", "3.000 nm"], "valores": [250, 1500, 3000], "medido": "observada", "remate": "A {observada|0} nm. La longitud se multiplica por uno más z, no por z."},
-  "nucleo": [{"numero": 1, "nombre": "la escala cambia", "color": "coral", "paneles": [
-    {"rotulo": "RECONOCER EL PATRÓN", "clave": "{emitida|0} nm emitidos se convierten en {observada|0} nm observados.", "texto": "El corrimiento z se define como la diferencia entre longitud observada y emitida, dividida por la emitida. No necesitamos adivinar el color original de toda la galaxia: buscamos varias líneas cuyos espaciados relativos permitan identificar el mismo patrón atómico.", "detalle": "La curva aplica la definición a la línea del ejemplo. Su longitud observada crece linealmente con z, pero eso no dice que distancia o tiempo de viaje crezcan linealmente. Para esas cuentas hacen falta un modelo cosmológico y sus parámetros.", "color": "coral", "dibujo": {"tipo": "serie", "ejeX": "Corrimiento z", "ejeY": "Longitud observada (nm)", "claves": [], "rotulos": []}},
-    {"rotulo": "NO ES SIEMPRE VELOCIDAD", "clave": "Factor de expansión durante el viaje: {factor|1}. Escala de emisión: {escalaEmision|3} de la actual.", "texto": "Para emisores y observadores que acompañan la expansión homogénea, uno más z es la razón entre los factores de escala al recibir y al emitir. La radiación se estira junto con esa expansión: una longitud visible puede acabar en el infrarrojo.", "detalle": "Usar velocidad igual a c por z solo es una aproximación local de pequeño corrimiento, cuando procede interpretar el desplazamiento como velocidad. Los movimientos peculiares y la gravedad también desplazan líneas. Un z grande no se convierte así en una velocidad relativista de una galaxia cruzando nuestro laboratorio.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["emitida", "observada"], "rotulos": ["Emitida: {emitida|0} nm", "Recibida: {observada|0} nm"]}}
-  ]}],
-  "cierre": {"titulo": "El espectro conserva una regla de medir.", "nota": "Escenario ilustrativo: línea de referencia de 500 nm y corrimiento cosmológico z = 2, sin velocidad peculiar ni corrimiento gravitatorio. Relación FLRW entre longitud de onda y factor de escala. Contexto consultado: NASA Science, Cosmic History, https://science.nasa.gov/universe/overview/.", "parrafos": ["La evidencia de expansión no descansa en una sola galaxia roja: incluye la relación entre distancias y corrimientos, el fondo de microondas y la evolución de las poblaciones cósmicas.", "La expansión no exige que átomos, personas o sistemas gravitatoriamente ligados se dilaten en la misma proporción. La aproximación homogénea describe escalas cosmológicas."]}
+  "id": "corrimiento",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Por qué gira tan despacio una montura de telescopio motorizada?",
+  "revisionEditorial": 2,
+  "entradilla": "Preparas una foto del cielo y dejas la cámara recogiendo luz. En un trípode fijo, las estrellas terminan convertidas en pequeñas rayas. Una montura astronómica parece quieta a simple vista, pero su motor está girando. No persigue cada estrella por separado: compensa el movimiento del suelo sobre el que tú estás de pie.",
+  "modelo": "corrimiento",
+  "color": "indigo",
+  "medidas": {
+    "sideral": 86164.09,
+    "exposicion": 60,
+    "seguimiento": 1
+  },
+  "tanteo": {
+    "pregunta": "¿Qué consigue una montura ecuatorial bien alineada durante una exposición larga?",
+    "opciones": [
+      "Alargar las estelas",
+      "Mantener las estrellas casi en el mismo punto",
+      "Mover todas las estrellas más deprisa"
+    ],
+    "valores": [
+      900,
+      0,
+      1800
+    ],
+    "medido": "residual",
+    "remate": "Compensa el movimiento aparente. El seguimiento ideal deja {residual|0} segundos de arco de desplazamiento residual."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "deshacer el giro de la Tierra",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "LA CÁMARA FIJA TAMBIÉN SE MUEVE",
+          "clave": "La Tierra gira mientras el sensor sigue expuesto.",
+          "texto": "Cada estrella ilumina un punto del sensor, pero la orientación de una cámara apoyada en el suelo va cambiando con la rotación terrestre. Durante una exposición larga, ese punto recorre varios píxeles. Es movimiento angular: una deriva pequeña por segundo acaba dejando una traza visible cuando sumas luz durante suficiente tiempo.",
+          "detalle": "En el ecuador celeste, el ejemplo acumula {traza|0} segundos de arco durante la exposición. Cerca del polo celeste, el desplazamiento sobre el cielo es menor. El dibujo muestra una zona pequeña, no todo el firmamento proyectado plano.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "corrimiento-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "UN EJE PARA COMPENSAR EL GIRO",
+          "clave": "El motor gira alrededor de un eje paralelo al terrestre.",
+          "texto": "Una montura ecuatorial alineada apunta su eje al polo celeste. El motor compensa la rotación con un giro uniforme en sentido contrario al del suelo. Esa velocidad se llama sideral: usa la vuelta respecto a las estrellas, ligeramente más corta que el día solar que marca tu reloj.",
+          "detalle": "La corrección ideal es {giroHora|2} grados por hora. Un error de alineación, holgura o velocidad deja una traza residual. El modelo supone alineación perfecta y no intenta corregir automáticamente defectos mecánicos que no hemos medido.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "corrimiento-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Gira para que la foto parezca quieta.",
+    "parrafos": [
+      "La montura no necesita saber dónde está cada estrella para compensar la rotación terrestre. Alinea un eje y gira con el ritmo adecuado. Así el sensor puede acumular luz sin repartirla por una raya."
+    ],
+    "nota": "Velocidad sideral ideal y traza en el ecuador celeste. Se omiten refracción, errores periódicos, vibraciones y deriva polar."
+  }
 }

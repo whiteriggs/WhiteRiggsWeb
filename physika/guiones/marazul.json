@@ -1,11 +1,67 @@
 {
-  "id": "marazul", "rotulo": "NATURALEZA", "titulo": "¿Por qué el mar es azul si el agua es transparente?",
-  "entradilla": "Transparente no significa que deje pasar todos los colores por igual. En un vaso, el recorrido es corto y apenas notas la selección. A través de mucha agua, la absorción del rojo se hace evidente. El cielo reflejado también contribuye, pero no lo explica todo.",
-  "modelo": "marazul", "color": "azul", "medidas": {"absorcionAzul": 0.02, "absorcionRojo": 0.35, "profundidad": 10},
-  "tanteo": {"pregunta": "La luz recorre 10 m de agua con un coeficiente de absorción del azul de 0,02 m⁻¹. ¿Qué porcentaje del azul sobrevive a la absorción?", "opciones": ["Un 3 %", "Un 50 %", "Un 82 %"], "valores": [3, 50, 82], "medido": "azulFinal", "remate": "Queda {azulFinal|1} % del azul, mientras el rojo se reduce a {rojoFinal|1} %. Son fracciones de cada color incidente."},
-  "nucleo": [{"numero": 1, "nombre": "el agua selecciona", "color": "azul", "paneles": [
-    {"rotulo": "UN COLOR DESAPARECE ANTES", "clave": "Tras {profundidad|0} m de recorrido: rojo {rojoFinal|1} %, azul {azulFinal|1} %.", "texto": "La absorción transforma energía luminosa en excitaciones del material y finalmente en calor. Usamos Beer-Lambert: la fracción transmitida es una exponencial cuyo exponente combina el coeficiente de absorción y la longitud del trayecto. No es una pérdida fija por cada metro.", "detalle": "Las barras parten de igual intensidad inicial para cada componente. El coeficiente elegido para el rojo es mayor que el del azul. Eso describe la selección espectral, pero no basta para reconstruir el color exacto que percibirías mirando una superficie marina.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["rojoFinal", "azulFinal"], "rotulos": ["Rojo: {rojoFinal|1} %", "Azul: {azulFinal|1} %"]}},
-    {"rotulo": "PROFUNDIDAD NO ES SIEMPRE RECORRIDO", "clave": "La longitud característica del rojo es {penetracionRojo|1} m; la del azul, {penetracionAzul|0} m.", "texto": "La curva muestra el rojo restante al alargar un trayecto recto. La luz que baja, se dispersa y vuelve hacia ti puede recorrer más que la profundidad vertical. Para verla desde arriba debe existir algún mecanismo que redirija luz hacia el ojo: absorción por sí sola no la devuelve.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Recorrido en agua (m)", "ejeY": "Rojo transmitido (%)", "claves": [], "rotulos": []}}
-  ]}],
-  "cierre": {"titulo": "Mucha agua revela una selección pequeña.", "nota": "Coeficientes efectivos ilustrativos en m⁻¹, recorrido en metros. Beer-Lambert para absorción homogénea; no son medidas de una playa ni un modelo completo de radiancia marina. Las longitudes características son los inversos de los coeficientes.", "parrafos": ["Plancton, sedimentos, materia disuelta, fondo y reflejo del cielo pueden dominar el aspecto. Por eso hay mares verdes, aguas pardas y zonas turquesas sin contradecir la absorción selectiva del agua."]}
+  "id": "marazul",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Por qué una linterna de buceo devuelve los colores de cerca?",
+  "revisionEditorial": 2,
+  "entradilla": "Bajo el agua, una superficie roja puede parecer apagada hasta que acercas una linterna. De pronto vuelve el color. La lámpara no está cambiando el objeto ni corrigiendo tus ojos. Está llevando luz por un camino más corto, y en el agua la longitud del camino importa tanto como la potencia de la bombilla.",
+  "modelo": "naturaleza-marazul",
+  "color": "azul",
+  "medidas": {
+    "absorcionAzul": 0.02,
+    "absorcionRojo": 0.35,
+    "distancia": 5
+  },
+  "tanteo": {
+    "pregunta": "Para recuperar rojo en un objeto cercano, ¿qué suele ayudar más?",
+    "opciones": [
+      "Alejar mucho la linterna",
+      "Apuntarla hacia otro sitio",
+      "Acercar la iluminación al objeto"
+    ],
+    "valores": [
+      100,
+      50,
+      3.019738342
+    ],
+    "medido": "rojo",
+    "remate": "Acercarla reduce el recorrido. Tras la ida y vuelta ilustrativa sobrevive un {rojo|1} % del rojo por absorción, antes de otras pérdidas."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "luz que tiene que ir y volver",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "LA LINTERNA LLEVA LUZ NUEVA",
+          "clave": "La lámpara, la ventana y el reflector forman un haz.",
+          "texto": "Dentro de la carcasa estanca, una fuente luminosa emite varios colores. La óptica concentra parte de esa luz hacia delante y una ventana deja salir el haz. El agua absorbe algunos colores con más facilidad que otros. En nuestro ejemplo atenúa más el rojo que el azul: por eso un trayecto largo cambia el reparto.",
+          "detalle": "La ley de Beer y Lambert describe esa absorción acumulada. Cada tramo igual conserva la misma fracción de la luz que le llega, no la misma cantidad de la luz que salió al principio.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "marazul-1"
+          }
+        },
+        {
+          "rotulo": "EL REGRESO TAMBIÉN CUENTA",
+          "clave": "Ver un objeto exige iluminarlo y recibir su reflejo.",
+          "texto": "La luz viaja desde la linterna hasta el objeto y después desde el objeto hasta tus ojos. Si lámpara y observador están juntos, ambos tramos tienen una longitud parecida. Acercarse acorta los dos. La linterna no elimina la absorción del agua: evita pedirle al rojo que sobreviva a un camino innecesariamente largo.",
+          "detalle": "El cálculo usa {camino|0} metros de recorrido total. No predice el brillo observado: faltan el reparto del haz, la reflectancia del objeto y la luz desviada por partículas suspendidas.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "marazul-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "A veces importa más acercarse que iluminar más.",
+    "parrafos": [
+      "Una lámpara potente no garantiza colores vivos a cualquier distancia. Colocarla cerca del motivo cambia el camino que recorre la luz y puede ayudar también a reducir el velo de partículas."
+    ],
+    "nota": "Coeficientes de absorción y distancias ilustrativos, agua uniforme. Solo transmisión por absorción; no especificaciones de linterna ni modelo completo de fotografía submarina."
+  }
 }

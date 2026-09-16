@@ -1,71 +1,19 @@
 {
-  "id": "infrarrojo",
-  "rotulo": "REDES",
-  "titulo": "¿Por qué el mando de la tele obliga a apuntar?",
-  "entradilla": "Porque no manda ondas de radio: manda luz. Luz de {ondaEnNanometros|0} nanómetros, justo al otro lado de lo que ve tu ojo, y la luz hace lo que hace la luz: va recta y la para cualquier cosa.",
-  "modelo": "ondas",
-  "color": "azul",
-  "medidas": {
-    "frecuencia": 319000000000000
-  },
-  "tanteo": {
-    "pregunta": "El ojo humano llega hasta los 750 nanómetros. ¿A qué distancia de ahí trabaja el mando?",
-    "opciones": ["Justo al lado, a unos 940", "Diez veces más allá", "Mil veces más allá"],
-    "valores": [940, 7500, 750000],
-    "medido": "ondaEnNanometros",
-    "remate": "A {ondaEnNanometros|0} nanómetros. Se te escapa por muy poco: la cámara del móvil sí lo ve, y si apuntas un mando a la cámara verás parpadear una luz morada."
-  },
-  "nucleo": [
-    {
-      "numero": 1,
-      "nombre": "es luz, y se comporta como tal",
-      "color": "azul",
-      "paneles": [
-        {
-          "rotulo": "SE TE ESCAPA POR UN PELO",
-          "clave": "Tu ojo se queda en 750 nanómetros. El mando emite en {ondaEnNanometros|0}.",
-          "texto": "No hay nada especial en esa frontera: es donde se acaba el pigmento de tu retina, no donde se acaba el mundo. Un poco más allá empieza el infrarrojo, que es luz idéntica salvo en que a ti no te consta.",
-          "detalle": "Se eligió esa zona por comodidad, no por física. Los diodos baratos emiten bien ahí, los sensores de silicio la detectan bien, y el sol y las bombillas ensucian menos que en el visible. Lo que sí es física es lo que viene después: sea visible o no, sigue siendo luz.",
-          "color": "azul",
-          "dibujo": {
-            "tipo": "espectro",
-            "claves": ["ondaEnMetros"],
-            "rotulos": ["el mando"],
-            "pies": ["{ondaEnNanometros|0} nm"]
-          }
-        },
-        {
-          "rotulo": "Y LA LUZ NO DA LA VUELTA A LAS COSAS",
-          "clave": "Una onda rodea lo que sea más pequeño que ella. Esta mide una milésima de milímetro.",
-          "texto": "Contra eso, tu mano es una montaña. El wifi mide doce centímetros y por eso cruza un tabique y dobla una esquina; el infrarrojo del mando mide cien mil veces menos y lo para una hoja de papel. No es que sea débil: es que es diminuto.",
-          "detalle": "Por eso el mando funciona igual apuntando al techo. No es que la señal rodee: es que rebota. Las paredes claras devuelven infrarrojo bastante bien, y al aparato le llega de rebote lo suficiente para entenderlo.",
-          "color": "azul",
-          "dibujo": {
-            "tipo": "escala",
-            "claves": ["onda"],
-            "rotulos": ["la onda del mando"],
-            "marcas": [
-              {"valor": 0.00000094, "texto": "el mando"},
-              {"valor": 0.000001, "texto": "una milésima de mm"},
-              {"valor": 0.001, "texto": "un milímetro"},
-              {"valor": 0.12, "texto": "el wifi"},
-              {"valor": 1, "texto": "un metro"}
-            ]
-          }
-        }
-      ]
-    }
-  ],
-  "cierre": {
-    "titulo": "Un fotón del mando lleva {energia|2} electronvoltios: no rompe nada y basta para contar.",
-    "nota": "Los mandos domésticos usan diodos de entre 850 y 950 nanómetros, modulados normalmente a 38 kilohercios para que el sensor distinga la orden del sol y de las bombillas.",
-    "parrafos": [
-      "Toda la orden cabe en encender y apagar ese diodo unas cuantas veces. No hace falta más: con un canal que solo sabe decir sí o no, pero muy deprisa, se mandan todos los botones del mando.",
-      "Y por eso el bluetooth se lo está comiendo. No porque sea mejor luz, sino porque es otra cosa: una onda de doce centímetros que sí dobla la esquina y te deja cambiar de canal desde la cocina."
-    ]
-  },
-  "puente": {
-    "hacia": "fibra",
-    "frase": "Esta misma luz que no sabe doblar una esquina es la que lleva internet por debajo del mar. La diferencia es que allí no le dejan salir: va encerrada en un hilo de vidrio, rebotando."
-  }
+  "revisionEditorial": 2,
+  "id": "infrarrojo", "rotulo": "REDES", "titulo": "¿Por qué tienes que apuntar el mando de la tele?",
+  "entradilla": "Pulsas subir volumen y no ocurre nada hasta que apartas la manta. Muchos mandos envían órdenes con un LED infrarrojo. Es luz que tus ojos no detectan, pero el televisor sí. La manta puede bloquear esa conversación aunque tú sigas viendo perfectamente la pantalla. El camino de vuelta hacia tus ojos está despejado, mientras el recorrido desde el mando hasta su receptor queda tapado. No son la misma línea.",
+  "modelo": "ondas", "color": "azul", "medidas": {"frecuencia": 319000000000000},
+  "tanteo": {"pregunta": "Si una cámara compatible muestra el LED del mando y tus ojos no, ¿qué está ocurriendo?", "opciones": ["El sensor detecta luz fuera de nuestra visión", "La cámara convierte sonido en una imagen", "El mando solo emite cuando lo fotografías"], "valores": [940, 7500, 750000], "medido": "ondaEnNanometros", "remate": "El mando del ejemplo emite a {ondaEnNanometros|0} nanómetros. Algunas cámaras lo detectan; otras lo filtran, así que esa prueba no funciona siempre."},
+  "nucleo": [{"numero": 1, "nombre": "órdenes hechas de luz", "color": "azul", "paneles": [
+    {"rotulo": "EL BOTÓN SE VUELVE PULSOS", "clave": "El LED no envía una imagen del botón.",
+     "texto": "Al pulsar, el circuito enciende y apaga el LED siguiendo un patrón. Dentro del televisor, un fotodetector convierte la luz en una señal eléctrica. La duración y separación de los grupos permiten distinguir órdenes. Esa forma de poner información sobre una señal se llama modulación.",
+     "detalle": "El receptor busca un ritmo concreto para separar el mando de la iluminación ambiente. No confunde la frecuencia de esos pulsos con la frecuencia enorme de la propia luz. Son dos escalas distintas superpuestas.", "color": "azul",
+     "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "infrarrojo-1", "claves": [], "rotulos": [], "pies": []}},
+    {"rotulo": "APUNTAR CAMBIA EL CAMINO", "clave": "El haz debe alcanzar la ventana del receptor.",
+     "texto": "Cuando giras la mano, apartas el haz de esa ventana. La luz se propaga aproximadamente en línea recta en el aire y no rodea obstáculos domésticos con facilidad. La difracción existe, pero su longitud de onda es diminuta comparada con una manta o una mano.",
+     "detalle": "A veces puedes apuntar al techo porque una superficie refleja suficiente infrarrojo hacia el televisor. No está garantizado: depende del material, el ángulo y la distancia. Las pilas gastadas pueden hacer que ese camino indirecto deje de bastar.", "color": "azul",
+     "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "infrarrojo-2", "claves": [], "rotulos": [], "pies": []}}
+  ]}],
+  "cierre": {"titulo": "Invisible no significa capaz de atravesarlo todo.", "nota": "Frecuencia óptica en hercios. Ejemplo de mando infrarrojo; algunos mandos modernos utilizan radio o combinan ambos sistemas.", "parrafos": ["La próxima vez que falle, comprueba el camino hasta el receptor. El problema puede ser una manta, no un botón que haya olvidado su orden."]},
+  "puente": {"hacia": "fibra", "frase": "La fibra resuelve de otra forma el recorrido: guía la luz dentro de un material."}
 }

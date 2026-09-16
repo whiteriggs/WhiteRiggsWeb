@@ -1,12 +1,73 @@
 {
-  "id": "llama", "rotulo": "COTIDIANO", "titulo": "¿Por qué una llama de vela suele alargarse hacia arriba?",
-  "entradilla": "El combustible de una vela se vaporiza cerca de la mecha y reacciona con el oxígeno que llega del aire. Los gases calientes son menos densos que su entorno y ascienden por flotabilidad. Ese flujo organiza la forma alargada de la llama en gravedad normal.",
-  "modelo": "llama", "color": "ambar",
-  "medidas": {"densidadAire": 1.2, "temperaturaAire": 293, "temperaturaGas": 1000, "volumen": 0.000001, "altura": 0.03},
-  "tanteo": {"pregunta": "Un gas ideal tiene una densidad de 1,2 kg/m³ a 293 K. A igual presión y composición, ¿qué densidad crees que tendrá a 1.000 K?", "opciones": ["0,12 kg/m³", "0,35 kg/m³", "1,20 kg/m³"], "valores": [0.12, 0.35, 1.2], "medido": "densidadCaliente", "remate": "Su densidad es {densidadCaliente|2} kg/m³: el volumen caliente pesa menos que el aire que desplaza."},
-  "nucleo": [{"numero": 1, "nombre": "la gravedad ordena el flujo", "color": "ambar", "paneles": [
-    {"rotulo": "UN MISMO VOLUMEN, MENOS PESO", "clave": "El paquete caliente recibe {empujeMicro|2} µN de empuje y pesa {pesoMicro|2} µN.", "texto": "Para un gas ideal de igual composición y presión, la densidad es inversamente proporcional a la temperatura absoluta. El gradiente de presión del aire que lo rodea produce un empuje mayor que su propio peso. El diagrama representa ambas fuerzas sobre el mismo pequeño paquete de gas.", "detalle": "Ese desequilibrio inicia el ascenso, pero no supone aceleración ilimitada. La mezcla con aire frío, el arrastre y la expansión modifican el movimiento. Los gases reales de combustión tampoco conservan exactamente la composición del aire usada en esta comparación.", "color": "ambar", "dibujo": {"tipo": "fuerzas", "claves": ["empuje", "peso"], "rotulos": ["Empuje {empujeMicro|1} µN", "Peso {pesoMicro|1} µN"], "angulos": [90, 270]}},
-    {"rotulo": "SUBIR RENUEVA EL OXÍGENO", "clave": "La escala de velocidad por flotabilidad del ejemplo es {rapidez|2} m/s.", "texto": "Al salir gases calientes por arriba, entra aire por los lados y por abajo. La reacción se concentra donde el vapor combustible y el oxígeno logran encontrarse. La forma visible cuenta esa combinación de transporte, reacción y emisión luminosa, no el contorno de un objeto sólido.", "detalle": "La velocidad es una estimación dimensional obtenida a partir de altura, gravedad y contraste relativo de densidad. No es una medida de una vela ni una simulación de su llama. En microgravedad el transporte por difusión gana importancia y pueden aparecer formas mucho más redondeadas.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["densidadCaliente", "rapidez"], "rotulos": ["Gas: {densidadCaliente|2} kg/m³", "Escala: {rapidez|2} m/s"]}}
-  ]}],
-  "cierre": {"titulo": "La punta señala cómo circula el gas.", "nota": "Temperaturas en K, densidad en kg/m³, volumen en m³ y altura en m, todos ilustrativos. Comparación de gas ideal y escala de flotabilidad; sin cinética química, viento ni pérdidas calculadas.", "parrafos": ["Una corriente de aire puede inclinar y deformar la llama porque modifica el aporte de reactivos y la salida de gases. La forma no la fija únicamente la temperatura: depende de cómo llegan y se mezclan las sustancias."]}
+  "id": "llama",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué la llama de una vela de té apunta hacia arriba?",
+  "revisionEditorial": 2,
+  "entradilla": "La pequeña vela de té ocupa una cápsula de aluminio, pero su llama dibuja una punta muy por encima de la mecha. Nadie está soplando desde abajo. La combustión calienta el gas cercano y ese gas empieza a moverse, arrastrando consigo la forma luminosa que estás mirando.",
+  "modelo": "llama",
+  "color": "ambar",
+  "medidas": {
+    "densidadAire": 1.2,
+    "temperaturaAire": 293,
+    "temperaturaGas": 1000,
+    "volumen": 0.000001,
+    "altura": 0.03
+  },
+  "tanteo": {
+    "pregunta": "¿Por qué tiende a subir el gas calentado por la vela?",
+    "opciones": [
+      "Porque se vuelve más denso",
+      "Porque resulta menos denso que el aire cercano",
+      "Porque la mecha lo empuja como un pistón"
+    ],
+    "valores": [
+      0.12,
+      0.35,
+      1.2
+    ],
+    "medido": "densidadCaliente",
+    "remate": "Es menos denso: el ejemplo da {densidadCaliente|2} kg/m³. El aire que lo rodea puede empujarlo hacia arriba."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "la llama viaja con el gas",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "CERA QUE LLEGA A LA MECHA",
+          "clave": "La vela alimenta una zona de combustión, no una punta sólida.",
+          "texto": "La cera se funde cerca de la mecha y asciende por sus pequeños huecos. El calor la vaporiza y ese combustible reacciona con el oxígeno del aire. La llama es la región donde suceden esas reacciones y se emite luz; no es un objeto rígido pegado al hilo.",
+          "detalle": "La subida de la cera por la mecha se llama capilaridad. Es distinta de la subida del gas caliente. La primera alimenta la llama; la segunda ayuda a estirarla y a renovar el aire que llega hasta ella.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "llama-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL AIRE ABRE CAMINO",
+          "clave": "El gas caliente pesa menos que el aire que desplaza.",
+          "texto": "Al calentarse, un gas a presión parecida ocupa más espacio para la misma masa. Su densidad disminuye. El aire más frío que lo rodea ejerce un empuje que supera su peso y lo hace subir. Entra aire nuevo por los lados y se establece una circulación llamada convección natural.",
+          "detalle": "Esa corriente estira la llama verticalmente. Una corriente lateral la inclina; con gravedad muy pequeña su forma puede ser mucho más redondeada. No ha cambiado la dirección favorita del fuego: han cambiado las condiciones que organizan el movimiento del gas.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "llama-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La punta es la huella de una corriente.",
+    "parrafos": [
+      "La mecha suministra combustible y el aire aporta oxígeno. El calor pone en marcha el flujo que da forma a la llama."
+    ],
+    "nota": "Temperaturas, densidad y composición del gas ideal ilustrativas. No simulamos la química ni indicamos condiciones de uso seguro de una vela."
+  }
 }

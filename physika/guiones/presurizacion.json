@@ -1,12 +1,73 @@
 {
-  "id": "presurizacion", "rotulo": "AVIACIÓN", "titulo": "¿Por qué se te taponan los oídos al despegar?",
-  "entradilla": "La presión de la cabina cambia y la del oído medio no siempre se iguala de inmediato. Esa diferencia puede deformar el tímpano. La cabina está presurizada, pero eso no significa que conserve exactamente la presión que había al nivel del mar.",
-  "modelo": "presurizacion", "color": "azul",
-  "medidas": {"inicial": 101325, "cabina": 75000, "exterior": 24000, "area": 0.01, "volumen": 1},
-  "tanteo": {"pregunta": "Entre una cabina a 75 kPa y el exterior a 24 kPa, ¿qué fuerza neta hay sobre una superficie de 0,01 m²?", "opciones": ["51 N", "510 N", "7.500 N"], "valores": [51, 510, 7500], "medido": "fuerza", "remate": "Son {fuerza|0} N. La fuerza neta depende de la diferencia de presión, no solo de la presión interior."},
-  "nucleo": [{"numero": 1, "nombre": "dos presiones que no cambian a la vez", "color": "azul", "paneles": [
-    {"rotulo": "EL GAS NECESITA MÁS ESPACIO", "clave": "Un gas que ocupaba {volumen|1} cm³ ocuparía {volumenFinal|2} cm³ al bajar a la presión de cabina.", "texto": "La ley de Boyle conserva el producto de presión absoluta y volumen si no cambian temperatura ni cantidad de gas. La curva calcula ese volumen de equilibrio a distintas presiones. El aumento ideal es del {expansion|1} %, pero no representa cuánto se dilata un oído real.", "detalle": "El oído medio es una cavidad con paredes y membranas, no un globo libre. La comunicación con la garganta permite intercambiar aire; si la igualación va más despacio que el cambio exterior, aparece una diferencia transitoria sobre el tímpano. La cuenta ilustra la tendencia del gas, no un diagnóstico.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Presión absoluta (kPa)", "ejeY": "Volumen isotermo ideal (cm³)", "claves": [], "rotulos": []}},
-    {"rotulo": "LA CABINA TAMBIÉN TIENE DOS LADOS", "clave": "La diferencia entre cabina y exterior es {diferencia|0} kPa.", "texto": "Sobre una pequeña superficie plana, multiplicar esa diferencia por el área da la fuerza neta de presión. El resultado corresponde a la envolvente de la cabina, no al tímpano: este no tiene el exterior atmosférico del avión directamente al otro lado.", "detalle": "El sistema renueva aire y regula su salida para gestionar la presión. La presión de cabina suele variar de forma controlada durante el vuelo. El ejemplo no reproduce un programa de presurización ni permite evaluar síntomas o resistencia estructural: una estructura distribuye esfuerzos según su geometría.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["diferencia", "fuerza"], "rotulos": ["Diferencia {diferencia|0} kPa", "Fuerza local {fuerza|0} N"]}}
-  ]}],
-  "cierre": {"titulo": "Presurizar no significa mantener presión idéntica.", "nota": "Presiones absolutas inicial, de cabina y exterior en Pa; área en m²; volumen inicial en cm³. Escenario ilustrativo. Boyle supone temperatura constante y gas ideal; la fuerza usa una superficie plana pequeña. No incluye fisiología ni indicaciones médicas.", "parrafos": ["El oído y el fuselaje muestran dos consecuencias distintas de la misma magnitud. Confundir sus áreas o sus presiones de referencia daría una cifra llamativa, pero físicamente incorrecta."]}
+  "id": "presurizacion",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Por qué se hincha una bolsa de patatas dentro del avión?",
+  "entradilla": "Compras una bolsa de patatas en el aeropuerto y, durante el vuelo, parece que alguien le ha metido más aire. Sigue cerrada. Lo que ha cambiado está fuera: aunque la cabina mantiene una presión confortable, no suele conservar exactamente la del aeropuerto. La bolsa responde a la diferencia entre su interior y lo que la rodea.",
+  "modelo": "presurizacion",
+  "color": "azul",
+  "medidas": {
+    "inicial": 101325,
+    "cabina": 75000,
+    "exterior": 24000,
+    "area": 0.01,
+    "volumen": 1
+  },
+  "tanteo": {
+    "pregunta": "Si baja la presión exterior de una bolsa flexible cerrada y la temperatura apenas cambia, ¿qué hace el aire de dentro?",
+    "opciones": [
+      "Ocupa menos volumen",
+      "Ocupa más volumen",
+      "Mantiene siempre el mismo volumen"
+    ],
+    "valores": [
+      -35,
+      35,
+      0
+    ],
+    "medido": "expansion",
+    "remate": "Ocupa más: la expansión ideal es {expansion|1} %. Una bolsa real también ofrece resistencia y tiene un tamaño máximo."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "dos presiones que no cambian a la vez",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "LA BOLSA CEDE HACIA FUERA",
+          "clave": "Menos presión alrededor permite expandirse al gas.",
+          "texto": "Las moléculas del aire golpean continuamente las paredes de la bolsa. Al disminuir la presión exterior, la envoltura puede expandirse hasta encontrar otro equilibrio. Si la temperatura se mantiene, el gas ocupa más espacio y su presión baja. Esa relación inversa entre presión y volumen se conoce como ley de Boyle.",
+          "detalle": "El ejemplo calcula una expansión del {expansion|1} %. No modela la rigidez del envase ni la cantidad de patatas. Sirve para separar dos ideas: no ha entrado aire nuevo, pero el aire encerrado puede ocupar más.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "presurizacion-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA CABINA NO ES EL EXTERIOR",
+          "clave": "La válvula regula cuánto aire sale de un recinto alimentado.",
+          "texto": "El avión introduce aire acondicionado en la cabina y controla su salida. La diferencia entre entrada y escape permite regular la presión sin convertir el fuselaje en una botella totalmente aislada. Una válvula de salida participa en ese control. Mantener más presión dentro también carga las paredes hacia fuera.",
+          "detalle": "Sobre la pequeña superficie del modelo, la diferencia produce {fuerza|0} newtons. Esa fuerza depende de las dos presiones, no únicamente de la interior. El dibujo muestra la regulación, no un circuito completo de climatización.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "presurizacion-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La bolsa nota lo que tú apenas percibes.",
+    "parrafos": [
+      "El envase hinchado hace visible un cambio del aire de la cabina. Su tamaño no es un altímetro fiable: también dependen de la temperatura, del cierre y de cuánto puede estirarse la envoltura."
+    ],
+    "nota": "Presiones, volumen y área ilustrativos. Gas ideal isotermo y pared flexible ideal; sin rigidez del envase ni control real de cabina. Fuerza calculada sobre una superficie plana pequeña, no sobre el fuselaje completo."
+  },
+  "revisionEditorial": 2
 }

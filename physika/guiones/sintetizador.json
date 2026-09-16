@@ -1,12 +1,72 @@
 {
-  "id": "sintetizador", "rotulo": "MÚSICA", "titulo": "¿Cómo se fabrica un sonido que no existe?",
-  "entradilla": "Se puede construir una señal sumando oscilaciones simples. No hace falta grabar primero un instrumento: basta con definir cómo cambia la amplitud en el tiempo y convertir esa señal en movimiento de un altavoz. El resultado sí existe físicamente cuando llega al aire.",
-  "modelo": "sintetizador", "color": "malva",
-  "medidas": {"frecuencia": 220, "primera": 1, "segunda": 0.5, "tercera": 0.25},
-  "tanteo": {"pregunta": "¿Cuál es la amplitud eficaz de una suma de tres senos armónicos ortogonales con amplitudes de pico 1, 0,5 y 0,25, en unidades relativas?", "opciones": ["Aproximadamente 0,81", "1,75", "0,25"], "valores": [0.81, 1.75, 0.25], "medido": "eficaz", "remate": "La amplitud eficaz es {eficaz|3}. Se suman los cuadrados medios de estos armónicos, no directamente sus amplitudes."},
-  "nucleo": [{"numero": 1, "nombre": "sumar para dar forma", "color": "malva", "paneles": [
-    {"rotulo": "UNA ONDA COMPUESTA", "clave": "El patrón se repite cada {periodo|3} ms.", "texto": "Sumamos senos de {frecuencia|0}, {doble|0} y {triple|0} Hz con amplitudes relativas {primera|2}, {segunda|2} y {tercera|2}. Todas las fases iniciales son nulas. El gráfico calcula la suma en cada instante; la forma ondulada nace de esas tres funciones, no de un dibujo decorativo.", "detalle": "Como las frecuencias son múltiplos enteros, el patrón completo se repite con el período de la fundamental. Variar las amplitudes cambia el timbre sin necesidad de cambiar ese período. Variar las fases cambia la forma instantánea, aunque mantengamos las mismas amplitudes espectrales.", "color": "malva", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (ms)", "ejeY": "Amplitud relativa", "claves": [], "rotulos": []}},
-    {"rotulo": "PROMEDIO, NO PICO", "clave": "Valor eficaz: {eficaz|3}; cota del pico: {cota|2}.", "texto": "Durante un período completo, los productos cruzados de estos armónicos tienen promedio nulo. Por eso el cuadrado del valor eficaz es la mitad de la suma de sus amplitudes al cuadrado. La suma directa de amplitudes solo da una cota superior del pico; no afirma que todas las crestas coincidan.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["primera", "segunda", "tercera"], "rotulos": ["Fundamental: {primera|2}", "Segundo: {segunda|2}", "Tercero: {tercera|2}"]}}
-  ]}],
-  "cierre": {"titulo": "La forma sale de la suma.", "nota": "Síntesis aditiva ilustrativa: frecuencia en Hz y amplitudes adimensionales, sin calibración de presión ni volumen. Senos continuos y fases iniciales nulas. El gráfico muestra un período calculado; no reproduce audio ni representa muestras de un convertidor concreto.", "parrafos": ["Un sonido musical también necesita evolución: ataque, mantenimiento y desaparición. Esta señal periódica sostenida aísla el espectro; no pretende sintetizar por completo un instrumento ni modelar su acústica."]}
+  "id": "sintetizador",
+  "rotulo": "MÚSICA",
+  "titulo": "¿Cómo cambia un sintetizador de flauta a sonido espacial sin cambiar de tecla?",
+  "entradilla": "Mantienes una tecla del sintetizador y giras un mando. La nota sigue siendo reconocible, pero suena más brillante, áspera o hueca. No hay una flauta diminuta escondida dentro. El aparato construye una señal eléctrica, y cambiar su forma permite cambiar el carácter del sonido sin cambiar necesariamente la nota.",
+  "modelo": "sintetizador",
+  "color": "ambar",
+  "medidas": {
+    "frecuencia": 220,
+    "primera": 1,
+    "segunda": 0.5,
+    "tercera": 0.25
+  },
+  "tanteo": {
+    "pregunta": "Si mantienes la vibración de partida y añades armónicos que encajan con ella, ¿qué puede pasar con el periodo del conjunto?",
+    "opciones": [
+      "Se mantiene aunque cambie el timbre",
+      "Se acorta necesariamente",
+      "Se alarga necesariamente"
+    ],
+    "valores": [
+      4.545454545454546,
+      2.272727272727273,
+      9.090909090909092
+    ],
+    "medido": "periodo",
+    "remate": "Puede mantenerse. Nuestra mezcla vuelve a repetirse cada {periodo|2} ms, aunque su forma ya no sea la de una vibración sencilla."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "fabricar una forma",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "PEQUEÑOS GENERADORES",
+          "clave": "Cada oscilador aporta una vibración a la mezcla.",
+          "texto": "Un oscilador produce una señal que repite su movimiento. Puede ser un circuito o un cálculo dentro de un ordenador. Imagina varias vibraciones suaves: una marca el ritmo de partida y otras completan más vueltas durante ese mismo tiempo. Cuando sus ritmos son múltiplos del primero las llamamos armónicos.",
+          "detalle": "No todos los sintetizadores construyen el sonido así. También pueden filtrar una señal rica, reproducir muestras o combinar otros métodos. Aquí abrimos uno imaginario que suma osciladores para entender una posibilidad concreta: la síntesis aditiva.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "sintetizador-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA SUMA CAMBIA EL COLOR",
+          "clave": "La forma se modifica sin perder su repetición común.",
+          "texto": "El mezclador suma en cada instante lo que aporta cada oscilador. Al subir uno de ellos aparecen hombros, picos o entrantes en la señal resultante. La repetición común puede seguir igual, pero el oído distingue otra distribución de vibraciones. Esa diferencia de carácter es el timbre, no una nota nueva por obligación.",
+            "detalle": "La descomposición de Fourier hace el viaje inverso: describe una forma periódica mediante vibraciones sencillas. Es una herramienta matemática, no una pieza secreta que deba estar presente en todos los teclados. La salida dibujada usa las amplitudes del ejemplo. Después, el altavoz transforma esa señal eléctrica en movimiento del aire.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "sintetizador-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Una tecla elige la nota; los mandos, su voz.",
+    "parrafos": [
+      "El próximo sonido imposible de una canción puede empezar con varias vibraciones muy sencillas que alguien decidió mezclar."
+    ],
+    "nota": "Síntesis aditiva ideal, amplitudes relativas ilustrativas y sin especificaciones de marca. El movimiento representa la señal, no una membrana medida."
+  },
+  "revisionEditorial": 2
 }

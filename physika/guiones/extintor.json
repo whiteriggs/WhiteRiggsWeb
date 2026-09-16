@@ -1,12 +1,72 @@
 {
-  "id": "extintor", "rotulo": "CASA", "titulo": "¿Por qué puede salir nieve de un extintor de CO₂?",
-  "entradilla": "El CO₂ almacenado a presión puede contener una fase líquida. Al descargar hacia la presión atmosférica, parte se vaporiza y parte puede solidificarse. La nieve blanca es dióxido de carbono sólido; una nube visible también puede incluir gotitas de agua del aire que se ha enfriado.",
-  "modelo": "extintor", "color": "azul",
-  "medidas": {"masa": 1, "entalpia": 250, "sublimacion": 571, "temperaturaFinal": 293},
-  "tanteo": {"pregunta": "En el balance ilustrativo, entran 250 kJ/kg y sublimar requiere 571 kJ/kg. ¿Cuánta nieve queda por kilogramo de mezcla?", "opciones": ["Unos 56 g", "Unos 562 g", "1.000 g"], "valores": [56, 562, 1000], "medido": "nieve", "remate": "El balance da {nieve|0} g sólidos y {gas|0} g gaseosos. Es una fracción calculada para una entalpía elegida, no la descarga medida de un extintor."},
-  "nucleo": [{"numero": 1, "nombre": "repartir energía entre fases", "color": "azul", "paneles": [
-    {"rotulo": "NO ES SOLO UN GAS QUE SE EXPANDE", "clave": "La mezcla final ideal contiene {nieve|0} g de sólido y {gas|0} g de gas.", "texto": "A presión atmosférica, el CO₂ sólido sublima cerca de −78,5 °C. Tomamos su entalpía como referencia y representamos el gas con la energía adicional de sublimación. Un balance de entalpía determina qué fracción puede quedar gaseosa y qué fracción debe permanecer sólida con la energía de entrada elegida.", "detalle": "Tratamos la descarga como estrangulamiento adiabático sin trabajo útil, con cambios de energía cinética despreciables tras disiparse el chorro. Eso no es una expansión reversible de gas ideal. La descarga real tiene flujo rápido, intercambio térmico y posibles estados fuera del equilibrio que cambian el reparto observado.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["nieve", "gas"], "rotulos": ["Sólido: {nieve|0} g", "Gas: {gas|0} g"]}},
-    {"rotulo": "DESPUÉS LA NIEVE TAMBIÉN SE VUELVE GAS", "clave": "La fracción gaseosa fría ocupa unos {litrosFrios|0} L; toda la masa a temperatura final, {litrosFinales|0} L.", "texto": "El segundo volumen supone que todo el sólido ha recibido calor del entorno y se ha sublimado. Usamos la ley del gas ideal a presión atmosférica. La masa no aumenta: cambia la fase y, al calentarse, el volumen que ocuparía el gas. No son volúmenes internos de la botella.", "detalle": "Estos números no calculan dispersión ni una concentración respirable en una habitación. El dióxido de carbono puede desplazar oxígeno y causar efectos propios a concentraciones elevadas; la nieve y los elementos fríos pueden causar lesiones por frío. No es un experimento doméstico ni una guía de descarga.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["litrosFrios", "litrosFinales"], "rotulos": ["Gas inicial: {litrosFrios|0} L", "Todo templado: {litrosFinales|0} L"]}}
-  ]}],
-  "cierre": {"titulo": "La nieve es parte del balance, no agua congelada de la botella.", "nota": "Masa en kg; entalpía de entrada y sublimación en kJ/kg respecto al sólido a 194,65 K y 101.325 Pa; temperatura final en K. Entalpía de entrada ilustrativa, no inferida de una botella real. Equilibrio sólido-vapor, gas ideal con masa molar 0,04401 kg/mol y conservación de entalpía; se omiten trabajo, calor del chorro y energía cinética final.", "parrafos": ["El gas de CO₂ es invisible. Lo visible informa de partículas o gotas en suspensión, pero no permite estimar por sí solo cuánto CO₂ hay alrededor."]}
+  "id": "extintor",
+  "rotulo": "CASA",
+  "titulo": "¿Por qué un extintor de CO₂ puede expulsar nieve?",
+  "entradilla": "En una demostración ves salir una nube blanca de un extintor de CO₂. Parece humo, pero parte de lo que sale puede ser el propio dióxido de carbono convertido en pequeñas partículas sólidas. Dentro estaba almacenado a presión; al atravesar la válvula encuentra unas condiciones muy diferentes de las que había en la botella.",
+  "modelo": "extintor",
+  "color": "ambar",
+  "medidas": {
+    "masa": 1,
+    "entalpia": 250,
+    "sublimacion": 571,
+    "temperaturaFinal": 293
+  },
+  "tanteo": {
+    "pregunta": "Cuando la descarga produce nieve de dióxido de carbono, ¿en qué estado puede salir la mezcla del ejemplo?",
+    "opciones": [
+      "Toda como gas",
+      "Parte como sólido y parte como gas",
+      "Toda como sólido"
+    ],
+    "valores": [
+      0,
+      562,
+      1000
+    ],
+    "medido": "nieve",
+    "remate": "Parte sólida y parte gaseosa. El balance ilustrativo da {nieve|0} g de nieve y {gas|0} g de gas; no es una descarga medida."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "cambiar de presión cambia las posibilidades",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "DE LA BOTELLA A LA BOQUILLA",
+          "clave": "La descarga encuentra una presión mucho menor.",
+          "texto": "En condiciones habituales, el extintor almacena dióxido de carbono licuado junto con vapor. Al pasar por la válvula, la caída de presión permite una expansión rápida y cambia el equilibrio entre estados. Parte del líquido se vaporiza tomando energía de la mezcla, que se enfría. No es aire que haya pasado por un pequeño congelador escondido.",
+          "detalle": "El proceso puede aproximarse con un balance de entalpía en la válvula, pero no es la expansión reversible de un gas ideal dentro de un pistón. La presencia de líquido y cambios de fase resulta esencial para entender la descarga.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "extintor-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "NIEVE QUE NO DEJA CHARCO",
+          "clave": "El sólido puede convertirse directamente en gas.",
+          "texto": "A presión atmosférica el CO₂ sólido no se derrite formando un charco de dióxido de carbono líquido. Pasa directamente a gas al recibir energía: ese cambio se llama sublimación. La nieve expulsada puede desaparecer así. Además, el frío puede condensar humedad ambiental, de modo que la nube visible no tiene por qué ser exclusivamente partículas de CO₂.",
+          "detalle": "La boquilla y la descarga pueden causar lesiones por frío. El gas también puede desplazar oxígeno en lugares cerrados. No es una experiencia para probar por curiosidad: un extintor debe utilizarse siguiendo su formación e instrucciones de seguridad.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "extintor-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La nube cuenta un cambio de estado.",
+    "parrafos": [
+      "La botella guarda una sustancia bajo presión. Al salir, parte puede recorrer estados que no solemos asociar a un gas cotidiano."
+    ],
+    "nota": "Entalpía y masa ilustrativas. Balance bifásico simplificado, no predicción de un extintor comercial ni instrucciones para descargarlo."
+  },
+  "revisionEditorial": 2
 }

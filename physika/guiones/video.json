@@ -1,12 +1,13 @@
 {
+  "revisionEditorial": 2,
   "id": "video", "rotulo": "REDES",
-  "titulo": "¿Cómo cabe una temporada de vídeo en un móvil?",
-  "entradilla": "Dos fotogramas consecutivos suelen parecerse muchísimo. Un compresor puede predecir el siguiente a partir de imágenes ya reconstruidas, indicar qué bloques se han movido y guardar la diferencia que aún falta. No necesita describir toda la escena desde cero cada vez.",
+  "titulo": "¿Cómo cabe un episodio de Netflix descargado en el móvil?",
+  "entradilla": "Descargas un episodio de Netflix antes de subir al tren. Cabe una historia entera porque dos fotogramas consecutivos suelen parecerse muchísimo. Un compresor puede predecir el siguiente a partir de imágenes ya reconstruidas, indicar qué bloques se han movido y guardar la diferencia que aún falta. No necesita describir toda la escena desde cero cada vez.",
   "modelo": "video", "color": "coral",
   "medidas": {"ancho": 1920, "alto": 1080, "bitsPixel": 24, "fps": 30, "fotogramasGrupo": 60, "intraBits": 2000000, "residualBits": 100000, "duracion": 2400},
   "tanteo": {
-    "pregunta": "A 30 fotogramas/s, cada grupo de 60 contiene uno de 2 Mbit y 59 de 0,1 Mbit cada uno. Sin audio ni otros datos, ¿cuántos GB decimales ocupa un episodio de 40 minutos?",
-    "opciones": ["Unos 0,04 GB", "Unos 1,2 GB", "Unos 120 GB"], "valores": [0.04, 1.2, 120], "medido": "tamanoGB",
+    "pregunta": "Si el fondo no cambia y una persona se mueve, ¿qué puede ahorrar datos?",
+    "opciones": ["Olvidar todos los cambios de la persona", "Describir el movimiento y corregir lo que falte", "Repetir siempre cada píxel desde cero"], "valores": [0.04, 1.2, 120], "medido": "tamanoGB",
     "remate": "Ocupa {tamanoGB|2} GB decimales en nuestro modelo. Son {modeloMbps|2} Mbit/s medios, no una especificación de un servicio de vídeo."
   },
   "nucleo": [{
@@ -14,22 +15,22 @@
     "paneles": [{
       "rotulo": "CADA PÍXEL, CADA VEZ, SALE CARO",
       "clave": "Sin compresión: {crudoMbps|1} Mbit/s. Con predicción supuesta: {modeloMbps|2} Mbit/s.",
-      "texto": "Multiplicamos anchura, altura, bits por píxel y fotogramas por segundo para obtener el caudal crudo. En el modelo comprimido, un grupo contiene una imagen independiente y el resto son imágenes predichas. El presupuesto de cada predicha incluye diferencias, movimiento y señalización de forma agregada.",
-      "detalle": "Una predicción no es una copia perfecta: el residuo corrige lo que no se ha acertado. Los codificadores transforman y cuantizan ese residuo y explotan redundancias estadísticas. Al decodificar, se utilizan imágenes reconstruidas como referencia para no depender de originales que el receptor nunca tuvo.",
+      "texto": "Una persona cruza una habitación y el sofá permanece quieto. El compresor busca regiones parecidas en imágenes que el receptor ya puede reconstruir. Para un bloque que se desplaza, guarda un vector de movimiento. Así no necesita volver a describir cada píxel del sofá en cada imagen.",
+      "detalle": "Es predicción temporal: aprovechar que lo que acaba de verse ayuda a anticipar lo siguiente. No equivale a eliminar fotogramas. El móvil sigue reconstruyendo una secuencia completa para que el movimiento resulte continuo cuando reproduces el episodio.",
       "color": "coral",
-      "dibujo": {"tipo": "magnitudes", "claves": ["crudoMbps", "soloIntraMbps", "modeloMbps"], "rotulos": ["Crudo: {crudoMbps|1} Mb/s", "Intra: {soloIntraMbps|1} Mb/s", "Predicho: {modeloMbps|2} Mb/s"]}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "video-1", "claves": [], "rotulos": [], "pies": []}
     }, {
-      "rotulo": "LAS IMÁGENES DE REFERENCIA TAMBIÉN PESAN",
+      "rotulo": "TRANSMITIR LO IMPREVISTO",
       "clave": "Un grupo dura {grupoSegundos|1} s y cuesta {grupoMbits|1} Mbit.",
-      "texto": "La curva varía la longitud del grupo manteniendo fijos los costes por imagen. Repartir una imagen independiente entre más fotogramas reduce el caudal medio, pero el beneficio se acerca a un límite: las diferencias siguen ocupando espacio. Los grupos reales tienen longitudes enteras; la línea interpola el modelo.",
-      "detalle": "Separar mucho las referencias puede empeorar la búsqueda temporal, la recuperación tras pérdidas y algunas configuraciones de latencia. Una escena con confeti, agua o ruido necesita residuos más caros. Por eso esta curva no garantiza que alargar un grupo siempre ahorre lo mismo en una película real.",
+      "texto": "Si alguien abre una puerta, aparece información que la predicción no tenía. La diferencia se llama residuo. El codificador lo transforma en patrones y redondea sus cantidades para ahorrar espacio. Es la misma idea matemática de transformada y cuantización que aparece en la compresión de fotografías.",
+      "detalle": "Agua, confeti o ruido cambian de forma difícil de predecir y pueden necesitar más datos. Si el presupuesto no alcanza, aparecen manchas o pérdida de detalle. Las imágenes independientes ayudan a comenzar la reproducción sin reconstruir toda la historia anterior.",
       "color": "coral",
-      "dibujo": {"tipo": "serie", "ejeX": "Fotogramas por grupo", "ejeY": "Caudal medio (Mbit/s)", "claves": [], "rotulos": []}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "video-2", "claves": [], "rotulos": [], "pies": []}
     }]
   }],
   "cierre": {
     "titulo": "La compresión temporal aprovecha lo predecible.",
-    "nota": "ancho y alto en píxeles; bitsPixel en bits/píxel; fps en imágenes/s; fotogramasGrupo es entero; intraBits y residualBits son presupuestos ilustrativos por imagen, no resultados de un códec. duracion en s y GB decimal. Se excluyen audio, contenedor y protección de transporte. No se reproduce Netflix ni un codificador propietario.",
+    "nota": "Dimensiones en píxeles, duración en segundos y presupuestos por imagen en bits. Modelo ilustrativo sin audio ni contenedor; no mide Netflix ni ejecuta su codificador.",
     "parrafos": ["El tamaño descargado depende del caudal medio y la duración. El ancho de banda de la conexión determina cuánto puede llegar por segundo; el almacenamiento disponible determina cuánto puedes conservar."]
   }
 }

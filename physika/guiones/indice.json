@@ -14,7 +14,7 @@
       "id": "arcoiris",
       "dia": 3,
       "desde": "2026-01-03",
-      "sello": "ca80aa3b167e2156"
+      "sello": "157711e4d119b872"
     },
     {
       "id": "tactil",
@@ -25,7 +25,7 @@
       "id": "wifi",
       "dia": 5,
       "desde": "2026-01-05",
-      "sello": "aed2e7e9de3911c2"
+      "sello": "ebce3c7111e219d9"
     },
     {
       "id": "gps",
@@ -41,13 +41,13 @@
       "id": "espejismo",
       "dia": 8,
       "desde": "2026-01-08",
-      "sello": "288ee1cfd4aa53d4"
+      "sello": "ed3f8a94e86567bb"
     },
     {
       "id": "magnus",
       "dia": 9,
       "desde": "2026-01-09",
-      "sello": "e3192d55f04e0e8b"
+      "sello": "8729a6ae88fe4af0"
     },
     {
       "id": "armonicos",
@@ -58,7 +58,7 @@
       "id": "rayosx",
       "dia": 11,
       "desde": "2026-01-11",
-      "sello": "9202a14dc1ca4e14"
+      "sello": "fb1f19f749c33dd2"
     },
     {
       "id": "nfc",
@@ -69,25 +69,25 @@
       "id": "fibra",
       "dia": 13,
       "desde": "2026-01-13",
-      "sello": "0cb3578012059ae9"
+      "sello": "63a71c91e8a959b1"
     },
     {
       "id": "conciertos",
       "dia": 14,
       "desde": "2026-01-14",
-      "sello": "951681487aa4865f"
+      "sello": "83470c54b57dd5ca"
     },
     {
       "id": "parabolico",
       "dia": 15,
       "desde": "2026-01-15",
-      "sello": "626003dfb48adc44"
+      "sello": "943cb099f3b3af78"
     },
     {
       "id": "ecografia",
       "dia": 16,
       "desde": "2026-01-16",
-      "sello": "c8a684781a6a6c8f"
+      "sello": "4f141bdc68325e68"
     },
     {
       "id": "ecualizador",
@@ -98,7 +98,7 @@
       "id": "cincoge",
       "dia": 18,
       "desde": "2026-01-18",
-      "sello": "438dd79b732691e7"
+      "sello": "7bf53d7cdcb58458"
     },
     {
       "id": "afinacion",
@@ -109,37 +109,37 @@
       "id": "motor",
       "dia": 20,
       "desde": "2026-01-20",
-      "sello": "4e4a1df6e86bcbf1"
+      "sello": "43c10dff5d023df4"
     },
     {
       "id": "infrarrojo",
       "dia": 21,
       "desde": "2026-01-21",
-      "sello": "91f0f949d0341567"
+      "sello": "055808d3b9277ed8"
     },
     {
       "id": "puertamicroondas",
       "dia": 22,
       "desde": "2026-01-22",
-      "sello": "0ed681700d35f803"
+      "sello": "532f073121295ce9"
     },
     {
       "id": "cafe",
       "dia": 23,
       "desde": "2026-01-23",
-      "sello": "76cf22b999381316"
+      "sello": "575eac0cdce176d9"
     },
     {
       "id": "faceid",
       "dia": 24,
       "desde": "2026-01-24",
-      "sello": "676354a0d6f525b2"
+      "sello": "41df7cf45820ef3e"
     },
     {
       "id": "cohete",
       "dia": 25,
       "desde": "2026-01-25",
-      "sello": "932b7b510ec8a1aa"
+      "sello": "54d3745560ce32a5"
     },
     {
       "id": "nevera",
@@ -151,31 +151,31 @@
       "id": "cieloazul",
       "dia": 27,
       "desde": "2026-01-27",
-      "sello": "d85e335cc7536eff"
+      "sello": "4353095fd85ebce9"
     },
     {
       "id": "airbag",
       "dia": 28,
       "desde": "2026-01-28",
-      "sello": "0b4e7f51c490c760"
+      "sello": "da08df21681a88a0"
     },
     {
       "id": "superconductividad",
       "dia": 29,
       "desde": "2026-01-29",
-      "sello": "800f2552fdb045a2"
+      "sello": "5353e945d399f3dd"
     },
     {
       "id": "topspin",
       "dia": 30,
       "desde": "2026-01-30",
-      "sello": "7783a064319051a9"
+      "sello": "fac562552fde55d4"
     },
     {
       "id": "resonancia",
       "dia": 31,
       "desde": "2026-01-31",
-      "sello": "97b0fc14678a7fff"
+      "sello": "5c2296c5bfaa58a6"
     },
     {
       "id": "guitarra",
@@ -187,91 +187,91 @@
       "id": "vuela",
       "dia": 33,
       "desde": "2026-02-02",
-      "sello": "c901d318a2b464a7"
+      "sello": "c78a1f0515f97e42"
     },
     {
       "id": "starlink",
       "dia": 34,
       "desde": "2026-02-03",
-      "sello": "ed0f5bf65a8e295e"
+      "sello": "ca773d170e80059c"
     },
     {
       "id": "empana",
       "dia": 35,
       "desde": "2026-02-04",
-      "sello": "632a894fc3cf0893"
+      "sello": "3edae205e99fea73"
     },
     {
       "id": "camara",
       "dia": 36,
       "desde": "2026-02-05",
-      "sello": "79bf285f2dae69d1"
+      "sello": "7eb2f4a55ed809f5"
     },
     {
       "id": "orbita",
       "dia": 37,
       "desde": "2026-02-06",
-      "sello": "eb643ab65a1b0377"
+      "sello": "5e7ccedd7a75c502"
     },
     {
       "id": "aire",
       "dia": 38,
       "desde": "2026-02-07",
-      "sello": "192c519fada13ead"
+      "sello": "0111353c5f40de35"
     },
     {
       "id": "atardecer",
       "dia": 39,
       "desde": "2026-02-08",
-      "sello": "f278fe0a17c8a3a9"
+      "sello": "00ec61d57be155cd"
     },
     {
       "id": "abs",
       "dia": 40,
       "desde": "2026-02-09",
-      "sello": "cc643ba237e413a0"
+      "sello": "ca908c49b73d1075"
     },
     {
       "id": "huevo",
       "dia": 41,
       "desde": "2026-02-10",
-      "sello": "0f900d4f7fb764d5"
+      "sello": "39217d400bff0ff4"
     },
     {
       "id": "levitacion",
       "dia": 42,
       "desde": "2026-02-11",
-      "sello": "10271cd1ca3918a7"
+      "sello": "f76a8029de108a86"
     },
     {
       "id": "arco",
       "dia": 43,
       "desde": "2026-02-12",
-      "sello": "d7785469728d50be"
+      "sello": "58a06d977f4c7372"
     },
     {
       "id": "tac",
       "dia": 44,
       "desde": "2026-02-13",
-      "sello": "3f2783340904c3da"
+      "sello": "fdaa0e91f323dec1"
     },
     {
       "id": "violin",
       "dia": 45,
       "desde": "2026-02-14",
-      "sello": "6531148776fc187b"
+      "sello": "459459fcf6c28178"
     },
     {
       "id": "sustentacion",
       "dia": 46,
       "desde": "2026-02-15",
-      "sello": "47a484c06fb8395b"
+      "sello": "d5a5a0d71981da7d"
     },
     {
       "id": "radio",
       "dia": 47,
       "desde": "2026-02-16",
-      "sello": "b7893d24361fa3c5"
+      "sello": "b965996a5cda920a"
     },
     {
       "id": "oled",
@@ -283,103 +283,103 @@
       "id": "gravedadcero",
       "dia": 49,
       "desde": "2026-02-18",
-      "sello": "7cae37e6916cdde6"
+      "sello": "b8e544d2d652bf02"
     },
     {
       "id": "huevoviejo",
       "dia": 50,
       "desde": "2026-02-19",
-      "sello": "ea38f60fae688d10"
+      "sello": "af42341cee35330f"
     },
     {
       "id": "calefaccion",
       "dia": 51,
       "desde": "2026-02-20",
-      "sello": "deb1176efd771e11"
+      "sello": "c3bed3ba5d08c580"
     },
     {
       "id": "rayoverde",
       "dia": 52,
       "desde": "2026-02-21",
-      "sello": "d05e462840cf3851"
+      "sello": "d6c81ce09737d36d"
     },
     {
       "id": "estabilidad",
       "dia": 53,
       "desde": "2026-02-22",
-      "sello": "ebf8175d3b0c5ceb"
+      "sello": "9c0749367d6137f4"
     },
     {
       "id": "tunel",
       "dia": 54,
       "desde": "2026-02-23",
-      "sello": "b41d65b6e5eef47f"
+      "sello": "68a3244ee1623d56"
     },
     {
       "id": "huevomicroondas",
       "dia": 55,
       "desde": "2026-02-24",
-      "sello": "27c5509b5429fd69"
+      "sello": "73e6534b8fa3a030"
     },
     {
       "id": "sensorluz",
       "dia": 56,
       "desde": "2026-02-25",
-      "sello": "474bf1dc5e12b868"
+      "sello": "0cd113b6012103ce"
     },
     {
       "id": "eclipse",
       "dia": 57,
       "desde": "2026-02-26",
-      "sello": "fa1341b64c071ad8"
+      "sello": "ede814af2d9b9b2f"
     },
     {
       "id": "golf",
       "dia": 58,
       "desde": "2026-02-27",
-      "sello": "426f93371ba9bb82"
+      "sello": "56d2e8d58e2eb6d1"
     },
     {
       "id": "pet",
       "dia": 59,
       "desde": "2026-02-28",
-      "sello": "48ad31ea9e56b3a0"
+      "sello": "80ce1ceef08ccd30"
     },
     {
       "id": "tambor",
       "dia": 60,
       "desde": "2026-03-01",
-      "sello": "a1fbd99b1b728ee1"
+      "sello": "27ccfc2c097a210a"
     },
     {
       "id": "turbina",
       "dia": 61,
       "desde": "2026-03-02",
-      "sello": "585cc87ed2a0caf8"
+      "sello": "56101bf60449bf08"
     },
     {
       "id": "television",
       "dia": 62,
       "desde": "2026-03-03",
-      "sello": "706a891c93b9f60e"
+      "sello": "dee744d03a2e66fe"
     },
     {
       "id": "solar",
       "dia": 63,
       "desde": "2026-03-04",
-      "sello": "686419c907a39ed2"
+      "sello": "0147845f36e2dac7"
     },
     {
       "id": "halo",
       "dia": 64,
       "desde": "2026-03-05",
-      "sello": "14e669cd8aaae468"
+      "sello": "f7f2e7b9e9790687"
     },
     {
       "id": "palomitas",
       "dia": 65,
       "desde": "2026-03-06",
-      "sello": "fb51d50a3c2ee62a"
+      "sello": "a2fc9a2170ea6d1e"
     },
     {
       "id": "brujula",
@@ -391,127 +391,127 @@
       "id": "electrico",
       "dia": 67,
       "desde": "2026-03-08",
-      "sello": "ffd40b69b3184949"
+      "sello": "fac2f3569fe36d56"
     },
     {
       "id": "agujeronegro",
       "dia": 68,
       "desde": "2026-03-09",
-      "sello": "2280d0582db8f2f9"
+      "sello": "ae57c059570694de"
     },
     {
       "id": "laser",
       "dia": 69,
       "desde": "2026-03-10",
-      "sello": "055df41b4be2300d"
+      "sello": "4659d4270ab9eb58"
     },
     {
       "id": "lata",
       "dia": 70,
       "desde": "2026-03-11",
-      "sello": "529b922bf024ed4c"
+      "sello": "e7efc8e1fd2212de"
     },
     {
       "id": "esqui",
       "dia": 71,
       "desde": "2026-03-12",
-      "sello": "4514b6233c015678"
+      "sello": "431c7a18799a82c6"
     },
     {
       "id": "radioterapia",
       "dia": 72,
       "desde": "2026-03-13",
-      "sello": "87e7609012c63631"
+      "sello": "32c6f5c9451af3c3"
     },
     {
       "id": "trompeta",
       "dia": 73,
       "desde": "2026-03-14",
-      "sello": "a2a598a6b2fe53fc"
+      "sello": "98c5889acf81c3d6"
     },
     {
       "id": "bateriacasa",
       "dia": 74,
       "desde": "2026-03-15",
-      "sello": "0dda52e7cb607f4a"
+      "sello": "a758cc564a656546"
     },
     {
       "id": "lunahorizonte",
       "dia": 75,
       "desde": "2026-03-16",
-      "sello": "cf561d36fca1a151"
+      "sello": "2faaa5a3e93b0c8a"
     },
     {
       "id": "acelerometro",
       "dia": 76,
       "desde": "2026-03-17",
-      "sello": "65c26e7c27703cd9"
+      "sello": "ef2cab96155c1be9"
     },
     {
       "id": "flaps",
       "dia": 77,
       "desde": "2026-03-18",
-      "sello": "ecfb18feda16a0cc"
+      "sello": "16031c70a33ba8fe"
     },
     {
       "id": "jpeg",
       "dia": 78,
       "desde": "2026-03-19",
-      "sello": "0fe492f740c09c1d"
+      "sello": "8b81f089f902ea85"
     },
     {
       "id": "horizonte",
       "dia": 79,
       "desde": "2026-03-20",
-      "sello": "0d1768c85019b372"
+      "sello": "8108c0270ea2b03f"
     },
     {
       "id": "regenerativa",
       "dia": 80,
       "desde": "2026-03-21",
-      "sello": "e5c9cbbbd2fd8472"
+      "sello": "aa627d099412caf9"
     },
     {
       "id": "cubito",
       "dia": 81,
       "desde": "2026-03-22",
-      "sello": "693a96a7575f7c7a"
+      "sello": "c6bc6ed6fd65a620"
     },
     {
       "id": "cuantica",
       "dia": 82,
       "desde": "2026-03-23",
-      "sello": "0b611cf5ae3c10e4"
+      "sello": "6deb2efe644f4f02"
     },
     {
       "id": "inversor",
       "dia": 83,
       "desde": "2026-03-24",
-      "sello": "88856461dc7ddd09"
+      "sello": "4e041a56eba3c077"
     },
     {
       "id": "marazul",
       "dia": 84,
       "desde": "2026-03-25",
-      "sello": "056104078c05a55b"
+      "sello": "426d958885f3259c"
     },
     {
       "id": "giroscopio",
       "dia": 85,
       "desde": "2026-03-26",
-      "sello": "9cdceee6509e53f7"
+      "sello": "4c3e823410bf42d9"
     },
     {
       "id": "hockeyhielo",
       "dia": 86,
       "desde": "2026-03-27",
-      "sello": "6793e7ae055d259c"
+      "sello": "4b2dd27b266ada73"
     },
     {
       "id": "ecg",
       "dia": 87,
       "desde": "2026-03-28",
-      "sello": "b59c0c0e1e9d2f2d"
+      "sello": "908da850d58d5d21"
     },
     {
       "id": "microfono",
@@ -523,49 +523,49 @@
       "id": "mpemba",
       "dia": 89,
       "desde": "2026-03-30",
-      "sello": "bac6dd655b567eec"
+      "sello": "f543f054b10ae2ce"
     },
     {
       "id": "lente",
       "dia": 90,
       "desde": "2026-03-31",
-      "sello": "e1a019ea5d29a72b"
+      "sello": "c8593c814dbceed4"
     },
     {
       "id": "neumaticos",
       "dia": 91,
       "desde": "2026-04-01",
-      "sello": "551c7f22883c8ac3"
+      "sello": "12502912a094fbc4"
     },
     {
       "id": "piloto",
       "dia": 92,
       "desde": "2026-04-02",
-      "sello": "7095f1a615ecf080"
+      "sello": "920d66be6de0bbb5"
     },
     {
       "id": "video",
       "dia": 93,
       "desde": "2026-04-03",
-      "sello": "ef7404b6562f620e"
+      "sello": "823db0d154639ed7"
     },
     {
       "id": "sal",
       "dia": 94,
       "desde": "2026-04-04",
-      "sello": "ad64a947b6a0044f"
+      "sello": "06842ff10820b122"
     },
     {
       "id": "entrelazamiento",
       "dia": 95,
       "desde": "2026-04-05",
-      "sello": "c354a049f7b3cf60"
+      "sello": "6d8753f87158d77b"
     },
     {
       "id": "vibracion",
       "dia": 96,
       "desde": "2026-04-06",
-      "sello": "40b0a074ed1489ba"
+      "sello": "560698e740e37896"
     },
     {
       "id": "induccion",
@@ -577,25 +577,25 @@
       "id": "rayo",
       "dia": 98,
       "desde": "2026-04-08",
-      "sello": "a497b2e6e23bf80b"
+      "sello": "7a6a619a9fe7610b"
     },
     {
       "id": "corrimiento",
       "dia": 99,
       "desde": "2026-04-09",
-      "sello": "12ed95c49d3b28c0"
+      "sello": "c4319dda41982168"
     },
     {
       "id": "bicicleta",
       "dia": 100,
       "desde": "2026-04-10",
-      "sello": "78b1ea9d19b20e81"
+      "sello": "6603bca905fd1afe"
     },
     {
       "id": "eeg",
       "dia": 101,
       "desde": "2026-04-11",
-      "sello": "c365879ed0b65f17"
+      "sello": "541a11b9e46de3d1"
     },
     {
       "id": "altavoz",
@@ -607,73 +607,73 @@
       "id": "remolino",
       "dia": 103,
       "desde": "2026-04-13",
-      "sello": "ec19f3e21b1c87d6"
+      "sello": "69b3bbbbd1138a78"
     },
     {
       "id": "aerodinamica",
       "dia": 104,
       "desde": "2026-04-14",
-      "sello": "25eb27a1a6e35a18"
+      "sello": "84d9e563315c8feb"
     },
     {
       "id": "bateria",
       "dia": 105,
       "desde": "2026-04-15",
-      "sello": "e07f801579a1e93b"
+      "sello": "feeb881f782e1599"
     },
     {
       "id": "meteo",
       "dia": 106,
       "desde": "2026-04-16",
-      "sello": "d92fb18a42cafe0a"
+      "sello": "cb2a87ed8713dc5b"
     },
     {
       "id": "vitro",
       "dia": 107,
       "desde": "2026-04-17",
-      "sello": "0a5fd5a33e49c36f"
+      "sello": "324723f2099b6f12"
     },
     {
       "id": "espectroscopia",
       "dia": 108,
       "desde": "2026-04-18",
-      "sello": "f702352c11976ad3"
+      "sello": "734ccf4b46b7b957"
     },
     {
       "id": "doblerendija",
       "dia": 109,
       "desde": "2026-04-19",
-      "sello": "e7a372cc06c773f4"
+      "sello": "ea2ee62720f190b6"
     },
     {
       "id": "trueno",
       "dia": 110,
       "desde": "2026-04-20",
-      "sello": "096261e752a2e01a"
+      "sello": "63e9ec097c9a20c0"
     },
     {
       "id": "radar",
       "dia": 111,
       "desde": "2026-04-21",
-      "sello": "8ad9cf3be83df6f1"
+      "sello": "16eb863b7b9d7ab0"
     },
     {
       "id": "llama",
       "dia": 112,
       "desde": "2026-04-22",
-      "sello": "46f54c857a4c5ee5"
+      "sello": "67b96526c334af5f"
     },
     {
       "id": "natacion",
       "dia": 113,
       "desde": "2026-04-23",
-      "sello": "e2dcb99a924747c5"
+      "sello": "3fad4b161c0ac2f6"
     },
     {
       "id": "fmri",
       "dia": 114,
       "desde": "2026-04-24",
-      "sello": "56b77df4d9db0cc6"
+      "sello": "b8478a274b721162"
     },
     {
       "id": "autotune",
@@ -691,19 +691,19 @@
       "id": "aleron",
       "dia": 117,
       "desde": "2026-04-27",
-      "sello": "01240a8b55b7c563"
+      "sello": "012caf848d3f3913"
     },
     {
       "id": "fuego",
       "dia": 118,
       "desde": "2026-04-28",
-      "sello": "e827b0372b4a2e49"
+      "sello": "5a72de4b2b9a51e2"
     },
     {
       "id": "fusion",
       "dia": 119,
       "desde": "2026-04-29",
-      "sello": "a37dfe2ba495f100"
+      "sello": "829bbdff2e6c1e43"
     },
     {
       "id": "led",
@@ -715,121 +715,121 @@
       "id": "relampago",
       "dia": 121,
       "desde": "2026-05-01",
-      "sello": "eb8db960d6863bcc"
+      "sello": "f13246bb1b0ff7fd"
     },
     {
       "id": "dualidad",
       "dia": 122,
       "desde": "2026-05-02",
-      "sello": "804dcdbce3bf3c2b"
+      "sello": "bf3a488ec2a516c2"
     },
     {
       "id": "turbulencias",
       "dia": 123,
       "desde": "2026-05-03",
-      "sello": "935efc5848cd12e0"
+      "sello": "d1ecec660d6c5afb"
     },
     {
       "id": "radaravion",
       "dia": 124,
       "desde": "2026-05-04",
-      "sello": "3a06beeeea91e648"
+      "sello": "ccbadc6613ad6d95"
     },
     {
       "id": "jabon",
       "dia": 125,
       "desde": "2026-05-05",
-      "sello": "c7b93cda26aa9e0a"
+      "sello": "c99b2015ca3374dc"
     },
     {
       "id": "flash",
       "dia": 126,
       "desde": "2026-05-06",
-      "sello": "df0d4c4118e92694"
+      "sello": "8ce33f1af40ff139"
     },
     {
       "id": "vientosolar",
       "dia": 127,
       "desde": "2026-05-07",
-      "sello": "e7748c871b7597a8"
+      "sello": "5435e58b63c16ef9"
     },
     {
       "id": "surf",
       "dia": 128,
       "desde": "2026-05-08",
-      "sello": "ece6dbab9a01186b"
+      "sello": "fba7e416c9d1ce38"
     },
     {
       "id": "termografia",
       "dia": 129,
       "desde": "2026-05-09",
-      "sello": "b550338d4e5433de"
+      "sello": "d6912e20ee81e1ab"
     },
     {
       "id": "sintetizador",
       "dia": 130,
       "desde": "2026-05-10",
-      "sello": "c80a5dc765478bba"
+      "sello": "70cddaa1d9a6c8de"
     },
     {
       "id": "turbo",
       "dia": 131,
       "desde": "2026-05-11",
-      "sello": "50102ae875ea27b8"
+      "sello": "d8f08b74dd4f9c06"
     },
     {
       "id": "ventanas",
       "dia": 132,
       "desde": "2026-05-12",
-      "sello": "98722ec3d9c87889"
+      "sello": "60a9b41b768845d2"
     },
     {
       "id": "tornado",
       "dia": 133,
       "desde": "2026-05-13",
-      "sello": "47f0c4d571b5d276"
+      "sello": "6a6fd6f3ecb0641a"
     },
     {
       "id": "pompas",
       "dia": 134,
       "desde": "2026-05-14",
-      "sello": "793f340d75502600"
+      "sello": "23f86d0935fb1cf7"
     },
     {
       "id": "incertidumbre",
       "dia": 135,
       "desde": "2026-05-15",
-      "sello": "ee0e7358fd71a319"
+      "sello": "178eebb98dce8dd7"
     },
     {
       "id": "flashmemoria",
       "dia": 136,
       "desde": "2026-05-16",
-      "sello": "a5bca71df41a4299"
+      "sello": "9bf940a0c3c08404"
     },
     {
       "id": "auroras",
       "dia": 137,
       "desde": "2026-05-17",
-      "sello": "5c2771c2efbd8edb"
+      "sello": "d1002eca17a0f290"
     },
     {
       "id": "supersonico",
       "dia": 138,
       "desde": "2026-05-18",
-      "sello": "6a73a7578fed5afc"
+      "sello": "a84ad47e3ff4ff36"
     },
     {
       "id": "bluetooth",
       "dia": 139,
       "desde": "2026-05-19",
-      "sello": "909035e880eaf93a"
+      "sello": "3878283ede6e8ea2"
     },
     {
       "id": "burbujas",
       "dia": 140,
       "desde": "2026-05-20",
-      "sello": "6a6255b6c0b5f533"
+      "sello": "d9cb410f653bec11"
     },
     {
       "id": "ollapresion",
@@ -841,55 +841,55 @@
       "id": "huracan",
       "dia": 142,
       "desde": "2026-05-22",
-      "sello": "c59f52a45095c689"
+      "sello": "2481c3efc9d255ee"
     },
     {
       "id": "suspension",
       "dia": 143,
       "desde": "2026-05-23",
-      "sello": "c409a77bbdccdc5e"
+      "sello": "2f8ca6403d34bb8a"
     },
     {
       "id": "golpe",
       "dia": 144,
       "desde": "2026-05-24",
-      "sello": "3301bb4aebafda28"
+      "sello": "388fc5ae389ad7a1"
     },
     {
       "id": "microscopio",
       "dia": 145,
       "desde": "2026-05-25",
-      "sello": "a565b24549825dbe"
+      "sello": "f75f6d9629a1a365"
     },
     {
       "id": "audioespacial",
       "dia": 146,
       "desde": "2026-05-26",
-      "sello": "8a6602b8efd12cdb"
+      "sello": "27c1e98a29fead78"
     },
     {
       "id": "procesador",
       "dia": 147,
       "desde": "2026-05-27",
-      "sello": "5e8fe977f4d4e60d"
+      "sello": "446a1d31f1f4cd51"
     },
     {
       "id": "espin",
       "dia": 148,
       "desde": "2026-05-28",
-      "sello": "7b2a584f4b861cf5"
+      "sello": "c7b89a8120f0bc9d"
     },
     {
       "id": "vino",
       "dia": 149,
       "desde": "2026-05-29",
-      "sello": "859f831b657eb584"
+      "sello": "c69d78840d6a5952"
     },
     {
       "id": "anillos",
       "dia": 150,
       "desde": "2026-05-30",
-      "sello": "548877aaa0fb96c9"
+      "sello": "0946d21a4e828937"
     },
     {
       "id": "aspiradora",
@@ -901,73 +901,73 @@
       "id": "granizo",
       "dia": 152,
       "desde": "2026-06-01",
-      "sello": "fee5d99068cba224"
+      "sello": "e9345242715d0481"
     },
     {
       "id": "lidar",
       "dia": 153,
       "desde": "2026-06-02",
-      "sello": "90d18e69712c7b79"
+      "sello": "853e42af04071e68"
     },
     {
       "id": "boom",
       "dia": 154,
       "desde": "2026-06-03",
-      "sello": "89e9765c238e4bc2"
+      "sello": "56afa06a9cae2d74"
     },
     {
       "id": "cablesubmarino",
       "dia": 155,
       "desde": "2026-06-04",
-      "sello": "fda49fae4bd7090d"
+      "sello": "cd54139ce57f4d85"
     },
     {
       "id": "frenos",
       "dia": 156,
       "desde": "2026-06-05",
-      "sello": "0e4a5cb09e566c1b"
+      "sello": "eb2c77f9e2304496"
     },
     {
       "id": "copa",
       "dia": 157,
       "desde": "2026-06-06",
-      "sello": "4e6f9ed166f20aa6"
+      "sello": "c4cb811a3049838a"
     },
     {
       "id": "pesas",
       "dia": 158,
       "desde": "2026-06-07",
-      "sello": "3f4b652ee0155674"
+      "sello": "6354014000a3e300"
     },
     {
       "id": "presionarterial",
       "dia": 159,
       "desde": "2026-06-08",
-      "sello": "d45f7175dde34aa2"
+      "sello": "e898bf4dc6fb0c98"
     },
     {
       "id": "reverberacion",
       "dia": 160,
       "desde": "2026-06-09",
-      "sello": "5219d38cd4bc5158"
+      "sello": "6c9e94369a360ad6"
     },
     {
       "id": "mareas",
       "dia": 161,
       "desde": "2026-06-10",
-      "sello": "73375717686f0718"
+      "sello": "98f3db38f2836131"
     },
     {
       "id": "pauli",
       "dia": 162,
       "desde": "2026-06-11",
-      "sello": "0016ab8fba191298"
+      "sello": "cfbdc7b584367e73"
     },
     {
       "id": "ketchup",
       "dia": 163,
       "desde": "2026-06-12",
-      "sello": "8ad742749b620593"
+      "sello": "bdbb8fe6935ae90b"
     },
     {
       "id": "estabilizacion",
@@ -979,67 +979,67 @@
       "id": "bascula",
       "dia": 165,
       "desde": "2026-06-14",
-      "sello": "ff9cc08e043140be"
+      "sello": "b8a44ef0ad7aa68e"
     },
     {
       "id": "nube",
       "dia": 166,
       "desde": "2026-06-15",
-      "sello": "aff3fecd962a8036"
+      "sello": "d0c68c3d95b33ff7"
     },
     {
       "id": "aparcamiento",
       "dia": 167,
       "desde": "2026-06-16",
-      "sello": "ca44a26dd4511214"
+      "sello": "ca67e78a00ef1626"
     },
     {
       "id": "luna",
       "dia": 168,
       "desde": "2026-06-17",
-      "sello": "15d0641b95773726"
+      "sello": "f11b6b88dd914fcd"
     },
     {
       "id": "helicoptero",
       "dia": 169,
       "desde": "2026-06-18",
-      "sello": "04f9e7d04000995c"
+      "sello": "5475e21939a42476"
     },
     {
       "id": "ping",
       "dia": 170,
       "desde": "2026-06-19",
-      "sello": "05d7899a7d0ac487"
+      "sello": "f300f9a59a15885c"
     },
     {
       "id": "miel",
       "dia": 171,
       "desde": "2026-06-20",
-      "sello": "6d39dcebb4cb0894"
+      "sello": "210d9b8cab1fe4af"
     },
     {
       "id": "halterofilia",
       "dia": 172,
       "desde": "2026-06-21",
-      "sello": "25acc735c72805da"
+      "sello": "1c476abd5338f377"
     },
     {
       "id": "pulsioximetro",
       "dia": 173,
       "desde": "2026-06-22",
-      "sello": "bb00bc735f7e510e"
+      "sello": "75ca46f7b05ec9b3"
     },
     {
       "id": "vozdigital",
       "dia": 174,
       "desde": "2026-06-23",
-      "sello": "494b3e840447d4fd"
+      "sello": "5d56cc7fd34f5a97"
     },
     {
       "id": "higgs",
       "dia": 175,
       "desde": "2026-06-24",
-      "sello": "2c19428d3c858a0f"
+      "sello": "ad5c4e0a57615fcc"
     },
     {
       "id": "zoom",
@@ -1051,31 +1051,31 @@
       "id": "extintor",
       "dia": 177,
       "desde": "2026-06-26",
-      "sello": "d1ed824b09443dfb"
+      "sello": "3a777468a52c89b3"
     },
     {
       "id": "niebla",
       "dia": 178,
       "desde": "2026-06-27",
-      "sello": "ade2ca7e9ed093b9"
+      "sello": "695ec719e0589fd1"
     },
     {
       "id": "aceite",
       "dia": 179,
       "desde": "2026-06-28",
-      "sello": "c235d9b5a605b7c9"
+      "sello": "a4a6313d3250b35e"
     },
     {
       "id": "precesion",
       "dia": 180,
       "desde": "2026-06-29",
-      "sello": "4c944a7461e554d2"
+      "sello": "2ce18bdc8e308d78"
     },
     {
       "id": "parabrisas",
       "dia": 181,
       "desde": "2026-06-30",
-      "sello": "cc432576593f097c"
+      "sello": "0a5e483c1a67a421"
     },
     {
       "id": "modonoche",
@@ -1087,31 +1087,31 @@
       "id": "presurizacion",
       "dia": 183,
       "desde": "2026-07-02",
-      "sello": "d91a53bb97aed71a"
+      "sello": "f896382d63334cb4"
     },
     {
       "id": "antena",
       "dia": 184,
       "desde": "2026-07-03",
-      "sello": "b01e0f1e8fc25af5"
+      "sello": "8215a7e847e31707"
     },
     {
       "id": "pan",
       "dia": 185,
       "desde": "2026-07-04",
-      "sello": "d111b3f6431f54d6"
+      "sello": "0ddb2e2755a10440"
     },
     {
       "id": "paracaidas",
       "dia": 186,
       "desde": "2026-07-05",
-      "sello": "f5c303ea822a3c53"
+      "sello": "ebfc7ebd5f9334e3"
     },
     {
       "id": "gafas",
       "dia": 187,
       "desde": "2026-07-06",
-      "sello": "01931ce5d5eeaf30"
+      "sello": "8207f9f39c4e3476"
     },
     {
       "id": "spotify",
@@ -1123,163 +1123,163 @@
       "id": "antimateria",
       "dia": 189,
       "desde": "2026-07-08",
-      "sello": "59b5b95f6b4353f6"
+      "sello": "978394e359c464d5"
     },
     {
       "id": "termostato",
       "dia": 190,
       "desde": "2026-07-09",
-      "sello": "f3a1934cb93efc2a"
+      "sello": "20547c10460d9aa5"
     },
     {
       "id": "rocio",
       "dia": 191,
       "desde": "2026-07-10",
-      "sello": "c6cdd91134a86dfb"
+      "sello": "5d53e5337b9dbba9"
     },
     {
       "id": "geoestacionario",
       "dia": 192,
       "desde": "2026-07-11",
-      "sello": "6970328b1acb8d45"
+      "sello": "3b2255e4b85757ec"
     },
     {
       "id": "cinturon",
       "dia": 193,
       "desde": "2026-07-12",
-      "sello": "df1debd8d1d821b9"
+      "sello": "a7fdc3da4bbb1e8c"
     },
     {
       "id": "tostada",
       "dia": 194,
       "desde": "2026-07-13",
-      "sello": "2a328102b39d5bd9"
+      "sello": "b626cb90e94a62fe"
     },
     {
       "id": "retratos",
       "dia": 195,
       "desde": "2026-07-14",
-      "sello": "d589f0930927486c"
+      "sello": "7683e8dbae76e105"
     },
     {
       "id": "reentrada",
       "dia": 196,
       "desde": "2026-07-15",
-      "sello": "013baf2a85f0131e"
+      "sello": "4720678bd4a01926"
     },
     {
       "id": "lavadora",
       "dia": 197,
       "desde": "2026-07-16",
-      "sello": "f40b4a51a81b6d84"
+      "sello": "38feea48c5ec0a44"
     },
     {
       "id": "olas",
       "dia": 198,
       "desde": "2026-07-17",
-      "sello": "403f75d272e179d8"
+      "sello": "b1e5da7c138ecf55"
     },
     {
       "id": "neutrinos",
       "dia": 199,
       "desde": "2026-07-18",
-      "sello": "bd40db81c61b80b0"
+      "sello": "b302b5afea23f9ee"
     },
     {
       "id": "pertiga",
       "dia": 200,
       "desde": "2026-07-19",
-      "sello": "b7b509d48842af6f"
+      "sello": "acff3310da5ed395"
     },
     {
       "id": "laserocular",
       "dia": 201,
       "desde": "2026-07-20",
-      "sello": "41e10d974f54ec63"
+      "sello": "80a4a6e29b50b2e4"
     },
     {
       "id": "reconocimientovoz",
       "dia": 202,
       "desde": "2026-07-21",
-      "sello": "24f5e671dfce7bfe"
+      "sello": "539e4d8ff9d9be17"
     },
     {
       "id": "espagueti",
       "dia": 203,
       "desde": "2026-07-22",
-      "sello": "611e7dac7a4ffdfe"
+      "sello": "828b3d14e8fdfbd1"
     },
     {
       "id": "estelas",
       "dia": 204,
       "desde": "2026-07-23",
-      "sello": "bc4a23cd91a45434"
+      "sello": "a39f5fad99a16dde"
     },
     {
       "id": "microondasenlace",
       "dia": 205,
       "desde": "2026-07-24",
-      "sello": "8c3d7d4a3b47b320"
+      "sello": "b674eaed011701ef"
     },
     {
       "id": "airdrop",
       "dia": 206,
       "desde": "2026-07-25",
-      "sello": "33a8a3226c5cd22c"
+      "sello": "3bf2074c58f77373"
     },
     {
       "id": "zonadeformable",
       "dia": 207,
       "desde": "2026-07-26",
-      "sello": "7f0da25c27f9de01"
+      "sello": "b5fdd867cf4dc72f"
     },
     {
       "id": "telescopio",
       "dia": 208,
       "desde": "2026-07-27",
-      "sello": "bc78e9f1b1745731"
+      "sello": "3adc4b2366edfb8a"
     },
     {
       "id": "pajita",
       "dia": 209,
       "desde": "2026-07-28",
-      "sello": "368caa9c1e15bd4e"
+      "sello": "c0bd5e72768cab79"
     },
     {
       "id": "lavavajillas",
       "dia": 210,
       "desde": "2026-07-29",
-      "sello": "f9a18276207e21d6"
+      "sello": "c792d1960db9623c"
     },
     {
       "id": "tsunami",
       "dia": 211,
       "desde": "2026-07-30",
-      "sello": "49cbea55ece6ed4d"
+      "sello": "33aa3e59cd947aa9"
     },
     {
       "id": "findmy",
       "dia": 212,
       "desde": "2026-07-31",
-      "sello": "01cec626d66408f9"
+      "sello": "55095439f803c393"
     },
     {
       "id": "casimir",
       "dia": 213,
       "desde": "2026-08-01",
-      "sello": "c0b62d9fef70e5d1"
+      "sello": "2301e3adb208d66c"
     },
     {
       "id": "patinaje",
       "dia": 214,
       "desde": "2026-08-02",
-      "sello": "604a251bd914c634"
+      "sello": "435bf5e22e57093e"
     },
     {
       "id": "desfibrilador",
       "dia": 215,
       "desde": "2026-08-03",
-      "sello": "09a1449325b89484"
+      "sello": "704211f84cc4a39c"
     },
     {
       "id": "vinilo",
@@ -1291,211 +1291,211 @@
       "id": "sifon",
       "dia": 217,
       "desde": "2026-08-05",
-      "sello": "57938acb2ec110d6"
+      "sello": "9cfa1e61a88be5e1"
     },
     {
       "id": "despegue",
       "dia": 218,
       "desde": "2026-08-06",
-      "sello": "e0cddb54cdf7f962"
+      "sello": "5e8fc2068e6aec6c"
     },
     {
       "id": "codigoqr",
       "dia": 219,
       "desde": "2026-08-07",
-      "sello": "4bc1b427d8f3e22b"
+      "sello": "c752780e4413e038"
     },
     {
       "id": "lagrange",
       "dia": 220,
       "desde": "2026-08-08",
-      "sello": "3b0ae512d45ffe86"
+      "sello": "7dfda03579f9a49e"
     },
     {
       "id": "diferencial",
       "dia": 221,
       "desde": "2026-08-09",
-      "sello": "4ec6575a8af0a25d"
+      "sello": "bc14c1d959f2ba1c"
     },
     {
       "id": "secadora",
       "dia": 222,
       "desde": "2026-08-10",
-      "sello": "a32b0674fb16b388"
+      "sello": "966a895d1dd180d1"
     },
     {
       "id": "terremoto",
       "dia": 223,
       "desde": "2026-08-11",
-      "sello": "4e41e11b6b56321f"
+      "sello": "d3b92040dd54fdfa"
     },
     {
       "id": "banda",
       "dia": 224,
       "desde": "2026-08-12",
-      "sello": "7cec1aab59bf9686"
+      "sello": "f80b56097b91f934"
     },
     {
       "id": "ducha",
       "dia": 225,
       "desde": "2026-08-13",
-      "sello": "61a45049e7779f6e"
+      "sello": "a2b22a6091a1e709"
     },
     {
       "id": "cero",
       "dia": 226,
       "desde": "2026-08-14",
-      "sello": "442f64e428c15734"
+      "sello": "a87a8665dfadb971"
     },
     {
       "id": "radiotelescopio",
       "dia": 227,
       "desde": "2026-08-15",
-      "sello": "2481058c58581dc9"
+      "sello": "daddb1a404dc5ca0"
     },
     {
       "id": "saltoaltura",
       "dia": 228,
       "desde": "2026-08-16",
-      "sello": "1a30f5478597c53f"
+      "sello": "afd6d659280f1738"
     },
     {
       "id": "marcapasos",
       "dia": 229,
       "desde": "2026-08-17",
-      "sello": "742db7af159daa67"
+      "sello": "82c6d524d258e365"
     },
     {
       "id": "bajo",
       "dia": 230,
       "desde": "2026-08-18",
-      "sello": "25c682de4717bfd1"
+      "sello": "9b3454237e8935d4"
     },
     {
       "id": "cargarapida",
       "dia": 231,
       "desde": "2026-08-19",
-      "sello": "b44d291137a7a3cd"
+      "sello": "1d5a5f964dd872d6"
     },
     {
       "id": "rebota",
       "dia": 232,
       "desde": "2026-08-20",
-      "sello": "ea79ab7f051d7200"
+      "sello": "9099baa8c0105ade"
     },
     {
       "id": "winglets",
       "dia": 233,
       "desde": "2026-08-21",
-      "sello": "215da4d5fd4cb786"
+      "sello": "8155d182461121f7"
     },
     {
       "id": "wifiestadio",
       "dia": 234,
       "desde": "2026-08-22",
-      "sello": "27855c5b208af2fd"
+      "sello": "68153bdbec80db50"
     },
     {
       "id": "huella",
       "dia": 235,
       "desde": "2026-08-23",
-      "sello": "225236748d5a9b15"
+      "sello": "536fc79efbbb895d"
     },
     {
       "id": "campanaextractora",
       "dia": 236,
       "desde": "2026-08-24",
-      "sello": "3cd45c45ea9647ed"
+      "sello": "49a65c83b81ff285"
     },
     {
       "id": "volcan",
       "dia": 237,
       "desde": "2026-08-25",
-      "sello": "f616c6812a7ed787"
+      "sello": "bfb3651000d585fe"
     },
     {
       "id": "cmb",
       "dia": 238,
       "desde": "2026-08-26",
-      "sello": "b54ea50ad6bec368"
+      "sello": "7ffd339135cab36d"
     },
     {
       "id": "espejo",
       "dia": 239,
       "desde": "2026-08-27",
-      "sello": "182d4e2baea97faf"
+      "sello": "3ada9c9e15da2747"
     },
     {
       "id": "bec",
       "dia": 240,
       "desde": "2026-08-28",
-      "sello": "66de07e90d8b6e3e"
+      "sello": "99a38a7e54b5fdbf"
     },
     {
       "id": "altimetro",
       "dia": 241,
       "desde": "2026-08-29",
-      "sello": "86581ff21bc4f96e"
+      "sello": "abacb565f5e9fa62"
     },
     {
       "id": "maraton",
       "dia": 242,
       "desde": "2026-08-30",
-      "sello": "e956013852294193"
+      "sello": "1873f93130580de2"
     },
     {
       "id": "protesis",
       "dia": 243,
       "desde": "2026-08-31",
-      "sello": "98860dba82ced01f"
+      "sello": "5ea572f77762d2c7"
     },
     {
       "id": "sirena",
       "dia": 244,
       "desde": "2026-09-01",
-      "sello": "3a0eba5ccf70bf92"
+      "sello": "68d8194934aed1a0"
     },
     {
       "id": "autonomia",
       "dia": 245,
       "desde": "2026-09-02",
-      "sello": "297e09890b344f76"
+      "sello": "d1493f1d4aa11207"
     },
     {
       "id": "tostadora",
       "dia": 246,
       "desde": "2026-09-03",
-      "sello": "c7127771a6567d1f"
+      "sello": "8ba9b95d37efced3"
     },
     {
       "id": "geiser",
       "dia": 247,
       "desde": "2026-09-04",
-      "sello": "58cf030d42832a6a"
+      "sello": "976db24692f4658f"
     },
     {
       "id": "polarizadas",
       "dia": 248,
       "desde": "2026-09-05",
-      "sello": "69b3a9f2b2f5ebbb"
+      "sello": "cd8a4cca618a86e4"
     },
     {
       "id": "altitud",
       "dia": 249,
       "desde": "2026-09-06",
-      "sello": "8cc391d1b691f87c"
+      "sello": "6f1c0d0025fadf5a"
     },
     {
       "id": "satelitetv",
       "dia": 250,
       "desde": "2026-09-07",
-      "sello": "f595123e77b23b48"
+      "sello": "4d0ea8f04b9481ff"
     },
     {
       "id": "pulsar",
       "dia": 251,
       "desde": "2026-09-08",
-      "sello": "8d4308e5662f9e40"
+      "sello": "8d62d623d0799f45"
     },
     {
       "id": "bateriafrio",
@@ -1507,19 +1507,19 @@
       "id": "dilatacion",
       "dia": 253,
       "desde": "2026-09-10",
-      "sello": "beb351d4716cecef"
+      "sello": "f6401282b60e1b70"
     },
     {
       "id": "apertura",
       "dia": 254,
       "desde": "2026-09-11",
-      "sello": "80366e12b92a1ee1"
+      "sello": "7d965d3b7ab80a87"
     },
     {
       "id": "bombillavieja",
       "dia": 255,
       "desde": "2026-09-12",
-      "sello": "6145eddf776253e8"
+      "sello": "efaabd66930b4986"
     },
     {
       "id": "copo",

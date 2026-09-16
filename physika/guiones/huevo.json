@@ -1,12 +1,71 @@
 {
-  "id": "huevo", "rotulo": "COTIDIANO", "titulo": "¿Qué revela el giro de un huevo sobre su interior?",
-  "entradilla": "Un huevo crudo no gira como un cuerpo rígido: su cáscara y su interior líquido pueden moverse de forma distinta. Si la envoltura se frena brevemente, el líquido conserva parte de su giro y puede devolver movimiento a la cáscara.",
-  "modelo": "huevo", "color": "ambar",
-  "medidas": {"inerciaCascara": 0.00002, "inerciaInterior": 0.00003, "giro": 20},
-  "tanteo": {"pregunta": "La cáscara está quieta y el interior gira a 20 rad/s; sus momentos de inercia son 0,00002 y 0,00003 kg·m², respectivamente. Sin par exterior, ¿qué velocidad angular alcanza el conjunto al volver a acoplarse?", "opciones": ["0 rad/s", "12 rad/s", "20 rad/s"], "valores": [0, 12, 20], "medido": "reinicio", "remate": "El interior pone otra vez el conjunto a {reinicio|1} rad/s, pero parte de la energía se disipa."},
-  "nucleo": [{"numero": 1, "nombre": "dos movimientos dentro de uno", "color": "ambar", "paneles": [
-    {"rotulo": "EL LÍQUIDO GUARDA MOMENTO", "clave": "Tras liberar la cáscara, el giro común sería {reinicio|1} rad/s.", "texto": "Imaginamos que la cáscara ya está quieta y el interior sigue girando a la velocidad indicada. La viscosidad ejerce un par que acelera una parte y frena la otra. Sin un par exterior apreciable durante ese acoplamiento, se conserva el momento angular total.", "detalle": "La velocidad final es el momento que conserva el líquido dividido entre la suma de los momentos de inercia. Estos miden cuánto cuesta cambiar el giro, no solo cuánta masa hay. El resultado queda entre el reposo de la cáscara y el giro inicial del interior.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["giro", "reinicio"], "rotulos": ["Interior: {giro|0} rad/s", "Conjunto: {reinicio|0} rad/s"]}},
-    {"rotulo": "CONSERVAR MOMENTO NO ES CONSERVAR ENERGÍA", "clave": "La energía de giro pasa de {energiaInicial|4} a {energiaFinal|4} J.", "texto": "Las capas del líquido rozan entre sí y con la pared. Esa fricción transforma energía mecánica en energía interna mientras redistribuye el movimiento. Por eso conservar momento angular no obliga a conservar toda la energía cinética del giro.", "detalle": "Un huevo cocido tiene un interior mucho más solidario con la cáscara: al detenerlo no queda una reserva líquida comparable que lo reactive. En un huevo real también hay balanceo, deslizamiento, adherencia y un frenado incompleto del contenido; nuestro modelo no predice la duración de la reactivación.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["energiaInicial", "energiaFinal"], "rotulos": ["Antes: {energiaInicial|4} J", "Después: {energiaFinal|4} J"]}}
-  ]}],
-  "cierre": {"titulo": "El movimiento delata la consistencia, no la seguridad.", "nota": "Parámetros ilustrativos: momentos de inercia en kg·m² y giro en rad/s. Modelo de dos componentes acoplados sin par externo después del frenado; no simula el flujo real de la clara.", "parrafos": ["El comportamiento puede orientar sobre el estado mecánico del interior, pero no certifica una cocción suficiente ni la ausencia de microorganismos. Una observación física no sustituye los criterios de seguridad alimentaria."]}
+  "id": "huevo",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Cómo mezcla un agitador de huevos sin romper la cáscara?",
+  "revisionEditorial": 2,
+  "entradilla": "Hay un pequeño utensilio que encierra un huevo en una cápsula y lo hace girar tirando de unas cuerdas. Por fuera sigue entero; por dentro puede acabar mezclado. Su secreto no es una cuchilla escondida, sino conseguir que la cáscara y el contenido no cambien de movimiento a la vez.",
+  "modelo": "huevo",
+  "color": "ambar",
+  "medidas": {
+    "inerciaCascara": 0.00002,
+    "inerciaInterior": 0.00003,
+    "giro": 20
+  },
+  "tanteo": {
+    "pregunta": "Si frenas un instante la cáscara y la sueltas, ¿qué puede hacer el líquido que seguía girando?",
+    "opciones": [
+      "Quedarse sin movimiento al instante",
+      "Volver a arrastrar la cáscara",
+      "Crear giro sin perder energía"
+    ],
+    "valores": [
+      0,
+      12,
+      20
+    ],
+    "medido": "reinicio",
+    "remate": "Puede arrastrarla de nuevo. El acoplamiento ideal deja {reinicio|1} rad/s, menos que el giro inicial del interior."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el interior llega tarde",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "TIRAR Y CAMBIAR",
+          "clave": "La cápsula obedece antes que el líquido.",
+          "texto": "Las cuerdas retorcidas convierten un tirón en giro. La cápsula sujeta la cáscara y la arrastra, pero el contenido necesita tiempo para acompañarla. Cuando cambia la velocidad o el sentido, las distintas partes del interior se deslizan unas respecto a otras. Esas diferencias pueden romper la membrana de la yema y mezclarla.",
+          "detalle": "La resistencia a cambiar de movimiento se llama inercia. Aquí importa la inercia de giro: no solo cuánta masa hay, sino cómo está repartida respecto al eje. No basta con girarlo todo rígidamente al mismo ritmo.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "huevo-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "DESPUÉS DEL FRENO",
+          "clave": "El líquido todavía puede devolver movimiento a la cáscara.",
+          "texto": "Imagina la cáscara quieta y el interior todavía girando. Si dejas libre el conjunto, el rozamiento transmite parte de ese movimiento hacia fuera. Al terminar comparten una velocidad menor. La suma del momento angular se conserva en esta etapa ideal sin empuje exterior, pero no toda la energía de movimiento.",
+          "detalle": "Parte acaba como calor durante el deslizamiento. El cálculo representa ese acoplamiento, no las sacudidas completas del utensilio ni cuánto tarda en mezclarse cada huevo. Las cuerdas aportan energía nueva en cada tirón.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "huevo-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Mezclar es hacer que unas partes adelanten a otras.",
+    "parrafos": [
+      "La cáscara puede seguir cerrada mientras dentro ocurre algo parecido a remover: capas que se arrastran y cambian de velocidad."
+    ],
+    "nota": "Inercias y giro ilustrativos. Modelo de dos partes acopladas, no simulación del alimento ni garantía del resultado de un agitador comercial."
+  }
 }

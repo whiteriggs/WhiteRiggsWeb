@@ -1,12 +1,74 @@
 {
-  "id": "violin", "rotulo": "MÚSICA", "titulo": "¿Para qué sirve la caja de un violín si la que vibra es la cuerda?",
-  "entradilla": "La cuerda inicia el movimiento, pero mueve muy poco aire directamente. A través del puente transmite energía a las tapas y al aire de la caja. Esas superficies convierten mejor parte de la vibración en sonido; no crean energía adicional.",
-  "modelo": "violin", "color": "ambar",
-  "medidas": {"energia": 0.001, "tiempoSolo": 4, "tiempoCaja": 1, "eficienciaSolo": 0.2, "eficienciaCaja": 0.5, "tiempo": 1},
-  "tanteo": {"pregunta": "Con igual energía inicial, el tiempo de decaimiento de la energía pasa de 4 s sin caja a 1 s con caja y la eficiencia acústica, del 20 % al 50 %. ¿Cuántas veces aumenta la potencia acústica inicial?", "opciones": ["Dos veces", "Diez veces", "No puede aumentar"], "valores": [2, 10, 1], "medido": "razonPotencias", "remate": "Aumenta {razonPotencias|0} veces porque la energía sale más deprisa y una fracción mayor se radia como sonido."},
-  "nucleo": [{"numero": 1, "nombre": "más sonido, otra descarga", "color": "ambar", "paneles": [
-    {"rotulo": "POTENCIA NO ES ENERGÍA", "clave": "Al principio: {potenciaSolo|2} frente a {potenciaCaja|2} mW.", "texto": "Asignamos la misma energía inicial a un modo en dos sistemas ilustrativos. Su energía decae exponencialmente: se multiplica por la exponencial del tiempo negativo dividido por una constante de decaimiento. La potencia acústica inicial es la energía inicial dividida por esa constante y multiplicada por la fracción que llega al aire.", "detalle": "La caja tiene aquí una constante de decaimiento menor. El sistema entrega más potencia al principio, pero gasta antes su reserva. Las fracciones radiadas distinguen el sonido emitido de otras pérdidas, como fricción interna. No suponemos que toda la energía perdida sea audible.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["potenciaSolo", "potenciaCaja"], "rotulos": ["Sin caja: {potenciaSolo|2} mW", "Con caja: {potenciaCaja|2} mW"]}},
-    {"rotulo": "DESPUÉS DE SOLTAR", "clave": "Quedan {energiaSolo|2} y {energiaCaja|2} mJ tras {tiempo|1} s.", "texto": "La comparación representa un decaimiento libre, después de cesar la excitación. Mientras el arco sigue rozando, aporta energía y puede mantener la vibración. Una caja real presenta muchos modos y no amplifica todas las frecuencias por igual: esa selección contribuye al timbre y a la proyección del violín.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["energiaSolo", "energiaCaja"], "rotulos": ["Sin caja: {energiaSolo|2} mJ", "Con caja: {energiaCaja|2} mJ"]}}
-  ]}],
-  "cierre": {"titulo": "La caja facilita la salida de energía.", "nota": "Modelo modal amortiguado de energía promediada, no ley de Sabine de una sala. Energia en J; tiempoSolo y tiempoCaja son constantes de decaimiento energético en s, no de amplitud. Eficiencias adimensionales elegidas: 0,2 y 0,5. Parámetros ilustrativos, no mediciones de un violín ni predicción de sonoridad percibida.", "parrafos": ["Un aumento de potencia acústica no equivale al mismo factor de volumen percibido. Además del nivel importan la frecuencia, el oído y el entorno donde escuchas."]}
+  "id": "violin",
+  "rotulo": "MÚSICA",
+  "titulo": "¿Para qué sirve la caja de un violín si la que vibra es la cuerda?",
+  "entradilla": "Miras un violín y parece que lo importante sean sus cuerdas. Sin embargo, una cuerda tensada entre dos soportes apenas llenaría una habitación. La enorme pieza de madera que el músico apoya bajo la barbilla no es un adorno ni un simple recipiente: es la encargada de poner mucho más aire en movimiento.",
+  "modelo": "violin",
+  "color": "ambar",
+  "medidas": {
+    "energia": 0.001,
+    "tiempoSolo": 4,
+    "tiempoCaja": 1,
+    "eficienciaSolo": 0.2,
+    "eficienciaCaja": 0.5,
+    "tiempo": 1
+  },
+  "tanteo": {
+    "pregunta": "Con la misma energía inicial en la cuerda, ¿cómo puede sonar al principio un violín con su caja?",
+    "opciones": [
+      "Igual de fuerte necesariamente",
+      "Más fuerte, entregando mejor la energía al aire",
+      "No puede entregar sonido al aire"
+    ],
+    "valores": [
+      1,
+      10,
+      0
+    ],
+    "medido": "razonPotencias",
+    "remate": "Puede sonar más fuerte al principio sin crear energía. En el ejemplo la potencia acústica inicial aumenta {razonPotencias|0} veces, pero la vibración también pierde energía más deprisa."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "madera que mueve aire",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "UN PUENTE MUY LITERAL",
+          "clave": "La cuerda mueve el puente; el puente empuja la tapa.",
+          "texto": "El arco hace vibrar la cuerda y esta tira del pequeño puente de madera que la sostiene. Sus patas transmiten ese movimiento a la tapa. La cuerda es delgada y mueve poco aire; la tapa ofrece una superficie mucho mayor. Esa conexión entre piezas permite transferir la vibración: hablamos de acoplamiento mecánico.",
+          "detalle": "El puente no amplifica usando electricidad. Lleva energía desde la cuerda hasta una estructura que puede entregarla al aire con mayor facilidad. El músico mantiene el sonido aportando energía con el arco.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "violin-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA CAJA TAMBIÉN ELIGE",
+          "clave": "No todas las vibraciones encuentran la misma respuesta.",
+          "texto": "La tapa, el fondo y el aire interior tienen maneras favoritas de moverse. Cuando una vibración encaja con alguna, la respuesta puede ser especialmente grande. Ese refuerzo es la resonancia. La forma del instrumento y sus materiales ayudan a decidir qué partes del sonido destacan y cuáles quedan más discretas.",
+            "detalle": "Por eso una caja no convierte todas las notas en copias más fuertes. También cambia el timbre. Nuestro ejemplo compara la potencia inicial de dos vibraciones que después decaen; no simula cada detalle de un violín real. La madera participa incluso cuando no consigues verla moverse.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "violin-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La cuerda empieza; la madera lo cuenta.",
+    "parrafos": [
+      "Cuando escuches un violín, no imagines solo cuatro cuerdas. Hay una pequeña estructura entera ayudándolas a conversar con el aire."
+    ],
+    "nota": "Energía, tiempos y eficiencias ilustrativos. Decaimiento idealizado, no mediciones de un fabricante; desplazamientos ampliados y sin escala."
+  },
+  "revisionEditorial": 2
 }

@@ -1,12 +1,73 @@
 {
-  "id": "bajo", "rotulo": "MÚSICA", "titulo": "¿Por qué a veces del vecino solo te llega el bombo?",
-  "entradilla": "No es que las ondas graves atraviesen cualquier pared sin pérdida. El aislamiento cambia con la frecuencia y con la construcción. Una pared puede atenuar mucho más unas bandas que otras, mientras que juntas, puertas y caminos estructurales ofrecen rutas adicionales para el sonido.",
-  "modelo": "bajo", "color": "coral",
-  "medidas": {"masaSuperficial": 10, "grave": 100, "agudo": 1000, "sonido": 343, "ajuste": 47},
-  "tanteo": {"pregunta": "Según esta aproximación de ley de masa, ¿cuánto aumenta el aislamiento al multiplicar la frecuencia por diez?", "opciones": ["20 dB", "10 dB", "Nada"], "valores": [20, 10, 0], "medido": "diferencia", "remate": "La mejora calculada es {diferencia|0} dB, manteniendo la misma masa por área y dentro del régimen del modelo."},
-  "nucleo": [{"numero": 1, "nombre": "la pared filtra", "color": "coral", "paneles": [
-    {"rotulo": "NO PASA LA MISMA FRACCIÓN", "clave": "Transmisión estimada: {transmisionGrave|3} % frente a {transmisionAgudo|3} %.", "texto": "Usamos una aproximación de ley de masa para un panel simple. Su pérdida de transmisión es veinte veces el logaritmo decimal del producto de masa superficial y frecuencia, menos un ajuste para las unidades y condiciones adoptadas. El aislamiento aumenta al crecer ese producto.", "detalle": "Convertimos los resultados en fracciones de potencia mediante diez elevado al negativo de la pérdida en decibelios dividida entre diez. Las cifras expresan esa misma magnitud. No representan porcentajes de amplitud ni volumen percibido; suponemos igual potencia incidente para comparar las bandas.", "color": "coral", "dibujo": {"tipo": "magnitudes", "claves": ["transmisionGrave", "transmisionAgudo"], "rotulos": ["Grave: {transmisionGrave|3} %", "Agudo: {transmisionAgudo|3} %"]}},
-    {"rotulo": "LA LONGITUD NO ES UN PASE LIBRE", "clave": "En aire: {longitudGrave|2} m frente a {longitudAgudo|3} m.", "texto": "La longitud de onda se calcula dividiendo la velocidad del sonido entre frecuencia. Esa escala ayuda a entender difracción y modos de una habitación, pero no decide sola la transmisión a través de un sólido. Rigidez, resonancias, coincidencia y uniones pueden invalidar la ley de masa utilizada aquí.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["longitudGrave", "longitudAgudo"], "rotulos": ["Grave: {longitudGrave|2} m", "Agudo: {longitudAgudo|3} m"]}}
-  ]}],
-  "cierre": {"titulo": "Oír el bombo no revela por dónde llega.", "nota": "Ejemplo ilustrativo, no diagnóstico de una vivienda: masa superficial en kg/m², frecuencias en Hz y sonido en m/s. Ajuste empírico de 47 dB para una aproximación de incidencia de campo y régimen dominado por masa, lejos de resonancia y coincidencia. Sin fugas, transmisión lateral ni acoplamiento estructural.", "parrafos": ["La estructura puede transmitir vibraciones que después radian dentro de otra habitación. Añadir absorción en el interior no equivale necesariamente a mejorar el aislamiento entre viviendas: son problemas distintos."]}
+  "id": "bajo",
+  "rotulo": "MÚSICA",
+  "titulo": "¿Por qué del altavoz del vecino te llega el bombo pero no la letra?",
+  "entradilla": "El vecino pone música. Tú no reconoces las palabras, pero el bombo atraviesa la tarde con una puntualidad irritante. La pared no está seleccionando canciones: responde de forma diferente a distintas vibraciones. Además de los posibles huecos, el propio tabique puede recibir movimiento por una cara y volver a emitir sonido por la otra.",
+  "modelo": "bajo",
+  "color": "ambar",
+  "medidas": {
+    "masaSuperficial": 10,
+    "grave": 100,
+    "agudo": 1000,
+    "sonido": 343,
+    "ajuste": 47
+  },
+  "tanteo": {
+    "pregunta": "En una pared que sigue aproximadamente la ley de masa, ¿qué sonido pierde más al atravesarla?",
+    "opciones": [
+      "El agudo",
+      "Ambos pierden lo mismo",
+      "El grave"
+    ],
+    "valores": [
+      20,
+      0,
+      -20
+    ],
+    "medido": "diferencia",
+    "remate": "El agudo. La diferencia calculada es {diferencia|0} dB para estas frecuencias y esta pared idealizada; una vivienda real tiene más caminos de transmisión."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "la pared también vibra",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL SONIDO EMPUJA EL TABIQUE",
+          "clave": "La pared tiene masa y no sigue igual cualquier movimiento.",
+          "texto": "El cono del altavoz empuja aire. Las variaciones de presión alcanzan la pared y tratan de moverla. Cambiar rápidamente la velocidad de una masa requiere esfuerzo, de modo que, en ciertas condiciones, las vibraciones rápidas encuentran más dificultad para transmitirse. Esa resistencia a cambiar el movimiento es la inercia, no una preferencia de la pared por los bajos.",
+          "detalle": "La aproximación llamada ley de masa resume cómo aumenta el aislamiento al aumentar la masa por superficie o la frecuencia. No funciona igual cerca de resonancias ni cuando intervienen fenómenos propios de una placa flexible.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "bajo-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL OTRO LADO TIENE AIRE",
+          "clave": "Una pared que se mueve puede convertirse en emisor.",
+          "texto": "El tabique no necesita tener un agujero para transmitir parte del sonido. Si vibra, también empuja el aire de tu habitación. Lo que escuchas es esa nueva radiación, junto con lo que llegue por ventanas, puertas y uniones. Los graves pueden sobrevivir mejor a la transmisión y destacar cuando otras partes de la canción ya se han debilitado.",
+          "detalle": "También puede viajar vibración por suelos y estructuras. Pegar espuma a tu pared no elimina automáticamente esos caminos: absorber dentro de una habitación y aislar entre habitaciones son tareas diferentes. Un diagnóstico serio busca por dónde entra realmente el ruido.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "bajo-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La letra desaparece antes que el pulso.",
+    "parrafos": [
+      "No siempre necesitas más volumen para notar el bombo: basta con que el resto de la música encuentre más obstáculos por el camino."
+    ],
+    "nota": "Ley de masa aproximada, pared y frecuencias ilustrativas. Dibujos cualitativos; no calculan aislamiento de una vivienda concreta."
+  },
+  "revisionEditorial": 2
 }

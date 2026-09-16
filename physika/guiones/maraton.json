@@ -1,12 +1,76 @@
 {
-  "id": "maraton", "rotulo": "DEPORTE", "titulo": "¿Qué condiciones ayudan a una maratón rápida?",
-  "entradilla": "Berlín ha sido escenario de grandes marcas, pero no tiene la exclusiva de los récords. Perfil, curvas, viento, temperatura, organización y nivel de los participantes se combinan. Ninguna fórmula de altitud o clima decide por sí sola dónde debe producirse la siguiente mejor marca.",
-  "modelo": "maraton", "color": "ambar",
-  "medidas": {"distancia": 42195, "velocidad": 5, "masa": 60, "desnivel": 100, "presion": 101325, "temperatura": 10, "areaArrastre": 0.5, "viento": 3},
-  "tanteo": {"pregunta": "A una rapidez media de 5 m/s, ¿cuánto tarda un recorrido de 42.195 m?", "opciones": ["Unos 84 minutos", "Unos 141 minutos", "Unos 253 minutos"], "valores": [84, 141, 253], "medido": "minutos", "remate": "Tarda {minutos|2} minutos. Es una conversión de distancia y rapidez, no una predicción del rendimiento de una persona."},
-  "nucleo": [{"numero": 1, "nombre": "el recorrido pone condiciones", "color": "ambar", "paneles": [
-    {"rotulo": "EL VIENTO SE MIDE RESPECTO AL CORREDOR", "clave": "La resistencia del aire pasa de {fuerzaCalma|1} N a {fuerzaViento|1} N con el viento frontal del ejemplo.", "texto": "A la rapidez respecto al suelo sumamos la del viento en contra para calcular la rapidez relativa al aire. El arrastre depende de su cuadrado. Las barras mantienen la misma postura ideal y la misma densidad, sin representar una medición de una carrera concreta.", "detalle": "La potencia mecánica que el corredor emplea contra esa fuerza es fuerza por rapidez respecto al suelo, no por rapidez relativa al aire. Resulta {potenciaViento|1} W en el caso con viento. Esta distinción evita atribuir al corredor todo el intercambio energético con la atmósfera.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["fuerzaCalma", "fuerzaViento"], "rotulos": ["Calma: {fuerzaCalma|1} N", "Frontal: {fuerzaViento|1} N"]}},
-    {"rotulo": "EL DESNIVEL TIENE UN COSTE MECÁNICO", "clave": "Elevar {masa|0} kg un desnivel neto de {desnivel|0} m añade {energiaEnKilojulios|1} kJ de energía potencial.", "texto": "Ese balance no mide calorías metabólicas. Tampoco convierte una bajada posterior en una devolución perfecta: frenar, cambiar apoyos y disipar energía tienen costes propios. Un recorrido con subidas y bajadas puede terminar a la misma altura y seguir siendo exigente.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["energiaEnKilojulios"], "rotulos": ["Energía potencial: {energiaEnKilojulios|1} kJ"]}}
-  ]}],
-  "cierre": {"titulo": "Las condiciones importan; la marca no sale de una sola variable.", "nota": "Distancia y desnivel neto en m, rapidez y viento frontal en m/s, masa en kg, presión en Pa, temperatura en °C y Cd·A en m². Aire seco ideal con R = 287,05 J/(kg·K). Área efectiva ilustrativa y constante; no se modela fisiología ni efecto de grupo.", "parrafos": ["La temperatura afecta a la densidad del aire y a la disipación corporal de calor, por mecanismos distintos. Esta cuenta no prescribe condiciones de entrenamiento ni identifica una temperatura óptima universal. Comparar récords exige distinguir fecha, categoría y homologación del resultado."]}
+  "id": "maraton",
+  "rotulo": "DEPORTE",
+  "titulo": "Bicicleta de carretera: ¿por qué el viento de frente se nota tanto?",
+  "revisionEditorial": 2,
+  "modelo": "maraton",
+  "color": "verde",
+  "medidas": {
+    "distancia": 42195,
+    "velocidad": 5,
+    "masa": 60,
+    "desnivel": 100,
+    "presion": 101325,
+    "temperatura": 10,
+    "areaArrastre": 0.5,
+    "viento": 3
+  },
+  "entradilla": "La bicicleta avanza al mismo ritmo sobre el asfalto, pero al girar una esquina aparece viento de frente y mantenerlo cuesta más. El velocímetro no cuenta toda la historia: mide respecto al suelo. El aire encuentra al conjunto bicicleta y ciclista con otra rapidez, y esa diferencia cambia la fuerza que se opone al avance.",
+  "tanteo": {
+    "pregunta": "A igual rapidez sobre el suelo, al aparecer viento de frente, la resistencia del aire…",
+    "opciones": [
+      "Disminuye",
+      "Aumenta",
+      "No cambia"
+    ],
+    "valores": [
+      0,
+      20,
+      100
+    ],
+    "medido": "fuerzaViento",
+    "remate": "Aumenta: pasa de {fuerzaCalma|2} a {fuerzaViento|2} N en el ejemplo. Son fuerzas ilustrativas, no prestaciones de una bicicleta comercial."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "dos formas de medir la rapidez",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "EL AIRE NO ESTÁ PEGADO AL ASFALTO",
+          "clave": "La rapidez relativa decide el encuentro.",
+          "texto": "Con aire quieto, la rapidez respecto al suelo coincide con la que importa para atravesarlo. Si el aire viene de frente, ambas contribuciones se suman. Es movimiento relativo: el mismo objeto puede tener velocidades distintas según desde dónde se describa. El primer panel mantiene la carretera fija y muestra el aire aproximándose.",
+          "detalle": "El modelo usa viento alineado con el recorrido y una forma constante. No incluye ráfagas laterales, cambios de postura ni tráfico. La densidad se estima a partir de presión y temperatura para que la fuerza responda a las condiciones del aire del ejemplo.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "maraton-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL FRENO CRECE MÁS QUE LA RAPIDEZ",
+          "clave": "El arrastre es aproximadamente cuadrático en este modelo.",
+          "texto": "Al aumentar la rapidez relativa, llega más aire por segundo y cada porción cambia más su movimiento. Esa combinación hace crecer la fuerza aproximadamente con el cuadrado de la rapidez. Es arrastre aerodinámico. Por eso un incremento aparentemente modesto del viento puede notarse mucho al intentar mantener la marcha.",
+          "detalle": "El segundo panel muestra la misma bicicleta y un flujo más denso de trazas, sin cambiar el tamaño del vehículo. La potencia mecánica para vencer esa fuerza se calcula con la rapidez respecto al suelo. No representa el gasto metabólico total ni un tiempo de competición.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "maraton-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El velocímetro mira el suelo; la resistencia también mira el aire.",
+    "nota": "Conjunto ciclista ideal con postura y viento constantes. Sin marcas, prestaciones comerciales ni gasto metabólico.",
+    "parrafos": [
+      "La bicicleta puede mantener el mismo número en la pantalla y afrontar un esfuerzo mecánico distinto. La diferencia está en el encuentro con el aire, no en una cuesta invisible. Separar las dos referencias ayuda a entender por qué la vuelta puede sentirse tan diferente de la ida."
+    ]
+  }
 }

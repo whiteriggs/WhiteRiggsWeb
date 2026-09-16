@@ -1,8 +1,8 @@
 {
   "id": "patinaje",
   "rotulo": "DEPORTE",
-  "titulo": "¿Por qué gira más rápido una patinadora al cerrar los brazos?",
-  "entradilla": "Porque nadie la empuja. Recoge los brazos de {radioEnCentimetros|0} a {radioCerradoEnCentimetros|0} centímetros y pasa de {vueltas|1} a {vueltasCerrado|1} vueltas por segundo sola, sin tocar el hielo con nada más que la punta de un patín.",
+  "titulo": "Patines de hielo: ¿por qué la pirueta acelera al recoger los brazos?",
+  "revisionEditorial": 2,
   "modelo": "giro",
   "color": "verde",
   "medidas": {
@@ -10,62 +10,62 @@
     "radio": 0.45,
     "radioCerrado": 0.22
   },
+  "entradilla": "Durante una pirueta, la persona acerca los brazos al cuerpo y gira más deprisa sin dar otro empujón visible contra el hielo. Los patines permiten un apoyo con poca resistencia al giro, pero no son un motor. El cambio decisivo ocurre en cómo se reparte la masa alrededor del eje mientras el cuerpo ya está girando.",
   "tanteo": {
-    "pregunta": "Al cerrar los brazos gira más rápido. ¿Qué le pasa a la energía del giro?",
-    "opciones": ["Se queda igual, solo se reparte", "Baja, porque ocupa menos", "Sube más del cuádruple"],
-    "valores": [1, 0.5, 4.2],
+    "pregunta": "Al recoger los brazos y acelerar el giro, ¿qué ocurre con su energía de rotación en el modelo ideal?",
+    "opciones": [
+      "Se mantiene igual",
+      "Disminuye",
+      "Aumenta por el trabajo muscular"
+    ],
+    "valores": [
+      1,
+      0.5,
+      4.2
+    ],
     "medido": "vecesMasRapido",
-    "remate": "Sube por {vecesMasRapido|1}, el mismo número por el que sube la velocidad. La energía no aparece de la nada: la ponen los brazos al tirar hacia dentro contra algo que empuja hacia fuera con fuerza."
+    "remate": "Aumenta. El modelo la multiplica por {vecesMasRapido|1}; esa energía procede del trabajo al cambiar la postura, no aparece gratis."
   },
   "nucleo": [
     {
       "numero": 1,
-      "nombre": "lo que no se puede perder",
+      "nombre": "cambiar el reparto",
       "color": "verde",
       "paneles": [
         {
-          "rotulo": "NADIE EMPUJA Y SIN EMBARGO ACELERA",
-          "clave": "Encoger de {radioEnCentimetros|0} a {radioCerradoEnCentimetros|0} centímetros multiplica las vueltas por {vecesMasRapido|1}.",
-          "texto": "Mientras nadie empuje de lado, hay una cantidad que la patinadora no puede cambiar aunque quiera: la masa por la distancia al eje al cuadrado, multiplicado por lo rápido que gira. Si acerca la masa al eje, lo único que le queda libre para compensar es la velocidad. Y como la distancia entra al cuadrado, compensar le sale caro.",
-          "detalle": "Ese cuadrado es todo el truco. Acercar los brazos a la mitad no la hace girar el doble de rápido: la hace girar cuatro veces más rápido. Por eso un gesto pequeño produce un cambio que parece trucado, y por eso la pirueta termina siempre igual, con los brazos pegados y la patinadora borrosa.",
+          "rotulo": "LA MASA SE ACERCA AL EJE",
+          "clave": "No todos los repartos cuestan lo mismo al girar.",
+          "texto": "Una masa alejada del eje contribuye más a la resistencia a cambiar el giro que la misma masa cerca de él. Esa propiedad se llama momento de inercia. Al recoger los brazos, el reparto cambia y el momento de inercia del conjunto disminuye. El primer panel muestra ambas posturas desde arriba.",
+          "detalle": "El radio del modelo es un radio de giro equivalente, no la longitud de un brazo. Resume el reparto de toda la masa en una distancia representativa. Por eso no debemos deducir una velocidad real mirando solo cuánto se han movido las manos.",
           "color": "verde",
           "dibujo": {
-            "tipo": "giro",
-            "rotulos": [
-              "brazos abiertos: {vueltas|1} vueltas/s",
-              "recogidos: {vueltasCerrado|1} vueltas/s",
-              "el rastro va acelerado, pero la razón entre las dos velocidades es la real"
-            ]
+            "tipo": "saludDeporteRenovado",
+            "trazado": "patinaje-1",
+            "claves": [],
+            "rotulos": []
           }
         },
         {
-          "rotulo": "POR ESO NO SE PUEDE AGUANTAR",
-          "clave": "Con los brazos recogidos, las manos notan {gravedadesCerrado|0} veces su propio peso tirando hacia fuera.",
-          "texto": "La pirueta cerrada no se acaba porque se acabe la música. Se acaba porque al girar así de rápido lo que tira de las manos hacia fuera pasa de un par de veces el peso a más de veinte, y los brazos no se sujetan solos: hay que apretarlos contra el cuerpo todo el rato.",
-          "detalle": "Es el mismo número que sale en el centrifugado de la lavadora y por el mismo motivo. Y explica por qué la salida de la pirueta es abrir los brazos: en cuanto la masa se aleja del eje, lo que tira se desploma y la patinadora frena sola, sin tener que rozar el hielo.",
+          "rotulo": "MENOS INERCIA, MÁS RAPIDEZ DE GIRO",
+          "clave": "Se conserva el momento angular si el momento externo es pequeño.",
+          "texto": "Cuando apenas actúa un momento externo alrededor del eje, se mantiene el producto entre inercia y velocidad angular. Es conservación del momento angular. Al disminuir una, aumenta la otra. El segundo panel compara la orientación alcanzada por dos repartos durante un mismo intervalo ilustrativo de la pirueta.",
+          "detalle": "La energía no tiene por qué mantenerse igual: el trabajo muscular al recoger los brazos puede aumentarla. El hielo sí ejerce fuerzas de apoyo y existe rozamiento; la aproximación relevante es que su momento alrededor del eje sea pequeño, no que desaparezcan todas las fuerzas.",
           "color": "verde",
           "dibujo": {
-            "tipo": "barras",
-            "claves": ["gravedadesCerrado", "gravedades"],
-            "rotulos": ["recogida: {gravedadesCerrado|0} veces el peso", "abierta: {gravedades|1} veces el peso"]
+            "tipo": "saludDeporteRenovado",
+            "trazado": "patinaje-2",
+            "claves": [],
+            "rotulos": []
           }
         }
       ]
     }
   ],
   "cierre": {
-    "titulo": "La única forma de acelerar sin empujar nada",
-    "nota": "Los {radioEnCentimetros|0} y {radioCerradoEnCentimetros|0} centímetros no son la longitud del brazo: son el radio de giro, que es la distancia a la que habría que poner toda la masa junta para que costara lo mismo moverla. El resto lo calcula la aplicación.",
+    "titulo": "Acercar masa al eje cambia el ritmo, pero cuesta trabajo.",
+    "nota": "Radio de giro equivalente y momento externo despreciable. No representa límites corporales ni una pirueta medida.",
     "parrafos": [
-      "En un mundo donde para ir más rápido siempre hay que empujar algo, la pirueta es la excepción que no lo parece. No hay suelo contra el que hacer fuerza, no hay aire que expulsar, no hay nada que quede atrás. Solo unos brazos que se acercan al pecho.",
-      "El truco es que la cantidad que se conserva no es la velocidad sino la velocidad multiplicada por el reparto de la masa. Cambiar el reparto obliga a la velocidad a moverse, y como el reparto va al cuadrado de la distancia, se mueve mucho. De {vueltasPorMinuto|0} vueltas por minuto a {vueltasPorMinutoCerrado|0}.",
-      "Lo que no se conserva es la energía: esa sube por {vecesMasRapido|1}, el mismo número. Y la ponen los brazos, tirando hacia dentro contra algo que empuja hacia fuera. Nadie gira más rápido gratis.",
-      "Es el mismo mecanismo que aprieta el ojo de un huracán, que hace que una estrella muerta del tamaño de una ciudad dé seiscientas vueltas por segundo, y que el agua que se va por el desagüe acabe girando cuando al llenar la pila casi no se movía."
+      "La pirueta no rompe la contabilidad de la energía ni necesita un nuevo empujón tangencial. Cambia una distribución interna mientras conserva aproximadamente otra cantidad. Los brazos y el apoyo permiten ver, en una escena cotidiana, la diferencia entre energía y momento angular."
     ]
-  },
-  "puente": {
-    "hacia": "remolino",
-    "frase": "Lo mismo, pero sin patinadora y sin brazos: el agua del fregadero encogiendo cuatrocientas veces de camino al desagüe."
-  },
-  "nota": "El radio de giro de una persona con los brazos abiertos y recogidos ronda estos valores, pero depende del cuerpo y de la postura. La velocidad de partida, {vueltas|1} vueltas por segundo, es la de una pirueta antes de cerrar."
+  }
 }

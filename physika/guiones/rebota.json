@@ -1,12 +1,71 @@
 {
-  "id": "rebota", "rotulo": "COTIDIANO", "titulo": "¿Por qué una pelota suele rebotar menos alto?",
-  "entradilla": "Durante el impacto, la pelota y el suelo se deforman. Parte de la energía almacenada vuelve al movimiento, pero otra parte se disipa en deformaciones internas, calor, vibraciones y sonido. La altura siguiente suele ser menor; no es una prohibición de recuperar altura si entra energía externa.",
-  "modelo": "rebota", "color": "verde",
-  "medidas": {"altura": 1, "masa": 0.06, "restitucion": 0.8},
-  "tanteo": {"pregunta": "Una pelota cae desde el reposo a 1 m del suelo y rebota verticalmente conservando el 80 % de la rapidez con la que llegó (restitución 0,8). Sin resistencia del aire y con el suelo inmóvil, ¿qué altura crees que alcanza el primer rebote?", "opciones": ["0,40 m", "0,64 m", "0,80 m"], "valores": [0.4, 0.64, 0.8], "medido": "alturaRebote", "remate": "Sube a {alturaRebote|2} m: la fracción de altura es el cuadrado del coeficiente de restitución."},
-  "nucleo": [{"numero": 1, "nombre": "la velocidad vuelve reducida", "color": "verde", "paneles": [
-    {"rotulo": "ALTURA Y VELOCIDAD NO PIERDEN LO MISMO", "clave": "El primer rebote conserva el {porcentaje|0} % de la altura inicial.", "texto": "Para un suelo inmóvil y un choque vertical, el coeficiente de restitución compara la rapidez de separación con la de aproximación. La altura de vuelo es proporcional al cuadrado de la rapidez. Por eso la reducción de altura no coincide directamente con la reducción de velocidad.", "detalle": "La curva aplica el mismo coeficiente en cada choque y representa alturas máximas frente al número de rebote. No es una trayectoria continua ni indica el tiempo entre impactos. La caída y la subida se calculan sin resistencia del aire y con el mismo nivel de contacto.", "color": "verde", "dibujo": {"tipo": "serie", "ejeX": "Número de rebote", "ejeY": "Altura máxima (m)", "claves": [], "rotulos": []}},
-    {"rotulo": "LA ENERGÍA CAMBIA DE FORMA", "clave": "De {energiaInicial|3} J mecánicos quedan {energiaFinal|3} J; se pierden {perdida|3} J de ese movimiento.", "texto": "Antes y después del ciclo de vuelo podemos comparar energía potencial gravitatoria. La diferencia no desaparece: pasa a energía interna y a movimientos que ya no elevan el centro de masa. Sonido audible es solo una de esas salidas y no suele explicar toda la pérdida.", "detalle": "La restitución depende de material, temperatura, presión interna y velocidad de impacto. Una pelota real no conserva necesariamente el mismo valor en todos los rebotes. Un suelo que se mueve puede aportar energía y devolverla más alta: eso queda fuera del choque pasivo considerado.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["energiaInicial", "energiaFinal", "perdida"], "rotulos": ["Inicial: {energiaInicial|3} J", "Recuperada: {energiaFinal|3} J", "Disipada: {perdida|3} J"]}}
-  ]}],
-  "cierre": {"titulo": "El rebote mide cuánto movimiento se recupera.", "nota": "Altura en m, masa en kg y restitución adimensional elegida. Choque normal con suelo inmóvil, coeficiente constante y sin aire; parámetros ilustrativos, no caracterización de una marca de pelota.", "parrafos": ["En el límite perfectamente elástico del modelo se recuperaría la misma altura. El comportamiento cotidiano se aparta de ese límite porque los materiales tienen mecanismos internos que consumen energía del movimiento organizado."]}
+  "id": "rebota",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué una pelota de goma no vuelve a la misma altura?",
+  "revisionEditorial": 2,
+  "entradilla": "Dejas caer una pelota de goma y rebota, pero cada salto suele ser más bajo que el anterior. La gravedad no se ha vuelto más fuerte entre dos botes. Parte de la energía que traía la pelota deja de estar disponible para elevarla después de cada choque con el suelo.",
+  "modelo": "rebota",
+  "color": "ambar",
+  "medidas": {
+    "altura": 1,
+    "masa": 0.06,
+    "restitucion": 0.8
+  },
+  "tanteo": {
+    "pregunta": "¿Adónde va parte de la energía que falta en el siguiente rebote?",
+    "opciones": [
+      "Desaparece sin dejar rastro",
+      "A calor, sonido y deformaciones",
+      "Se convierte en gravedad nueva"
+    ],
+    "valores": [
+      0.4,
+      0.64,
+      0.8
+    ],
+    "medido": "alturaRebote",
+    "remate": "Se reparte en otras formas. El primer rebote del ejemplo llega a {alturaRebote|2} m y deja {perdida|2} J fuera del movimiento de subida."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "aplastarse y recuperar",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL CHOQUE NO ES INSTANTÁNEO",
+          "clave": "La pelota guarda brevemente energía al deformarse.",
+          "texto": "Al tocar el suelo, la zona inferior se aplasta y la pelota se frena. La goma deformada empuja para recuperar su forma, y ese empuje puede lanzarla hacia arriba. Durante un pequeño intervalo la energía de movimiento se almacena en deformación, como ocurre en un muelle comprimido.",
+          "detalle": "Pero la goma no es un muelle perfecto. Sus cadenas internas se reorganizan con rozamiento y parte de la energía termina en calor. También vibran el suelo y el aire, produciendo el sonido del bote. Recuperar la forma no implica devolver toda la energía.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "rebota-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "RAPIDEZ Y ALTURA NO SON LO MISMO",
+          "clave": "Una reducción de rapidez produce una reducción mayor de altura.",
+          "texto": "La energía del movimiento depende del cuadrado de la rapidez. Si la pelota sale del choque más lenta de lo que llegó, dispone de menos energía para subir. El coeficiente de restitución compara esas velocidades en un choque sencillo; la altura del rebote depende de su cuadrado.",
+          "detalle": "En nuestro ejemplo la primera subida conserva {porcentaje|0} por ciento de la altura inicial. Los siguientes botes siguen bajando si el coeficiente se mantiene igual. En una pelota real puede variar con velocidad, temperatura, material y superficie.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "rebota-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El bote devuelve energía, no toda.",
+    "parrafos": [
+      "La pelota no pierde energía del universo: la reparte entre lugares que ya no elevan su centro. Un suelo elástico o en movimiento puede cambiar esa historia."
+    ],
+    "nota": "Pelota y suelo idealizados, coeficiente ilustrativo constante y sin aire. No son prestaciones de una marca ni un cálculo de impactos humanos."
+  }
 }

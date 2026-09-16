@@ -1,12 +1,72 @@
 {
-  "id": "marcapasos", "rotulo": "MEDICINA", "titulo": "¿Cómo puede durar años la batería de un marcapasos?",
-  "entradilla": "Un marcapasos no alimenta cada contracción como un motor. Proporciona estímulos eléctricos cuando su programación y las señales detectadas lo requieren; el músculo obtiene energía metabólica para contraerse. La batería sostiene electrónica y pulsos pequeños, con un presupuesto de consumo cuidadosamente diseñado.",
-  "modelo": "marcapasos", "color": "verde",
-  "medidas": {"energiaPila": 10000, "reposo": 20, "energiaPulso": 5, "frecuencia": 1},
-  "tanteo": {"pregunta": "Con una reserva ficticia de 10.000 J y un consumo medio total de 25 µW, ¿cuántos años resultan de dividir reserva entre consumo?", "opciones": ["Unos 1,3 años", "Unos 12,7 años", "Unos 127 años"], "valores": [1.3, 12.7, 127], "medido": "duracion", "remate": "El balance ideal da {duracion|1} años. No es una predicción de duración de un dispositivo implantado."},
-  "nucleo": [{"numero": 1, "nombre": "mucho tiempo con poca potencia", "color": "verde", "paneles": [
-    {"rotulo": "EL CONSUMO NO ES SOLO ESTIMULAR", "clave": "Electrónica: {reposo|1} µW. Pulsos: {pulsos|1} µW. Total: {total|1} µW.", "texto": "Multiplicar energía por pulso y número de pulsos por segundo da la potencia media de estimulación. Se suma al consumo de detección, control y otras funciones. Aunque cada pulso dure poco, el promedio permite compararlo con la electrónica que permanece activa entre pulsos.", "detalle": "Las barras comparten unidad y el total suma ambas contribuciones. El ejemplo atribuye una energía fija tomada de batería a cada pulso y un consumo de fondo constante; no representa una forma de onda ni su interacción con el tejido.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["reposo", "pulsos", "total"], "rotulos": ["Fondo: {reposo|1} µW", "Pulsos: {pulsos|1} µW", "Total: {total|1} µW"]}},
-    {"rotulo": "MÁS PULSOS NO DIVIDEN SIEMPRE POR DOS", "clave": "Balance inicial: {duracion|1} años. Doble frecuencia ficticia: {duracionDoble|1} años.", "texto": "Duplicar el número de pulsos duplica su contribución, pero no el consumo fijo. Por eso el tiempo total no se reduce necesariamente a la mitad. La energía disponible dividida por la potencia media da una escala temporal, no un calendario de sustitución.", "detalle": "Batería, autodescarga, impedancia, programación, telemetría y reservas de seguridad cambian la duración real. Existen distintas químicas y diseños; no todos los dispositivos comparten una batería ni prometen una década de funcionamiento.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["duracion", "duracionDoble"], "rotulos": ["Base: {duracion|1} años", "Doble: {duracionDoble|1} años"]}}
-  ]}],
-  "cierre": {"titulo": "La longevidad sale de un balance.", "nota": "energiaPila en J; reposo en µW; energiaPulso en µJ extraídos de batería; frecuencia en pulsos/s. Reserva y consumos ficticios constantes, año de 365,25 días. Sin ajustes clínicos ni predicción de recambio.", "parrafos": ["La eficiencia importa, pero también lo que el dispositivo necesita hacer a lo largo del tiempo. Este balance no sirve para modificar programación ni evaluar una batería real."]}
+  "id": "marcapasos",
+  "rotulo": "MEDICINA",
+  "titulo": "Marcapasos: ¿cómo trabaja tanto tiempo con una batería pequeña?",
+  "revisionEditorial": 2,
+  "modelo": "marcapasos",
+  "color": "verde",
+  "medidas": {
+    "energiaPila": 10000,
+    "reposo": 20,
+    "energiaPulso": 5,
+    "frecuencia": 1
+  },
+  "entradilla": "Un marcapasos contiene una batería y un circuito dentro de una carcasa pequeña. No mueve un motor ni alimenta una pantalla brillante todo el día. Su tarea combina vigilancia electrónica y pulsos eléctricos de poca energía. Para entender cómo administra su reserva, conviene separar lo que consume continuamente de lo que gasta en cada pulso.",
+  "tanteo": {
+    "pregunta": "Si el circuito mantiene su gasto de reposo pero entrega más pulsos iguales, la misma reserva ideal dura…",
+    "opciones": [
+      "Más",
+      "Menos",
+      "Exactamente lo mismo"
+    ],
+    "valores": [
+      127,
+      12.7,
+      1.3
+    ],
+    "medido": "duracionDoble",
+    "remate": "Menos. El balance pasa de {duracion|1} a {duracionDoble|1} años ideales al duplicar la frecuencia; no predice la duración de un implante."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "administrar una reserva",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "ESCUCHAR TAMBIÉN CONSUME",
+          "clave": "El circuito no se apaga entre todos los pulsos.",
+          "texto": "La electrónica necesita energía para detectar señales, mantener su referencia temporal y decidir su funcionamiento. Ese consumo continúa aunque en un intervalo no entregue un pulso. Se llama potencia de reposo en nuestro modelo. El dibujo separa batería, circuito y conexión de salida para mostrar que tienen trabajos distintos.",
+          "detalle": "La reserva de la batería es energía; el consumo continuo es energía por unidad de tiempo. Confundir ambas cosas haría pensar que basta con una batería grande sin importar el gasto. En un equipo pequeño, reducir una corriente permanente puede importar durante muchísimo tiempo.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "marcapasos-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LOS PULSOS SE SUMAN AL GASTO",
+          "clave": "Cada entrega usa una parte de la reserva.",
+          "texto": "Un pulso requiere energía durante un intervalo corto. Para conocer su contribución media, importa cuántas veces se repite, además de cuánto cuesta cada entrega. Sumando ese gasto al del circuito obtenemos una potencia media. Es un balance energético: la reserva disminuye con cada actividad del dispositivo.",
+          "detalle": "Duplicar la frecuencia de pulsos no duplica todo el consumo, porque el gasto de reposo permanece igual en esta comparación. La duración ideal sale de repartir la reserva entre el gasto total. No incluye envejecimiento de la batería, márgenes electrónicos ni cambios de funcionamiento.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "marcapasos-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La duración depende de gastar poco, no de gastar nada.",
+    "nota": "Balance de energía ficticio con consumos constantes. No describe una marca ni pronostica recambios o duración clínica.",
+    "parrafos": [
+      "El secreto no es una batería interminable. Es una tarea electrónica con consumos pequeños y cuidadosamente repartidos. La misma contabilidad aparece en cualquier aparato autónomo: importa tanto lo que hace de vez en cuando como lo que permanece encendido el resto del tiempo."
+    ]
+  }
 }

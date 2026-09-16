@@ -1,11 +1,71 @@
 {
-  "id": "agujeronegro", "rotulo": "ESPACIO", "titulo": "¿Qué es exactamente un agujero negro?",
-  "entradilla": "Una región del espacio-tiempo de la que ninguna señal puede salir hacia observadores lejanos. Su frontera es el horizonte de sucesos, no una pared sólida. Para entenderla hace falta relatividad general: no basta con imaginar un objeto que tira muy fuerte de la luz.",
-  "modelo": "agujeronegro", "color": "indigo", "medidas": {"masa": 1.98847e31},
-  "tanteo": {"pregunta": "En el modelo sin rotación, ¿qué radio tiene el horizonte para diez masas solares?", "opciones": ["Unos 3 metros", "Unos 30 kilómetros", "Unos 30.000 kilómetros"], "valores": [0.003, 30, 30000], "medido": "radioKm", "remate": "{radioKm|1} km. La masa fija una escala de longitud gravitatoria extraordinariamente compacta."},
-  "nucleo": [{"numero": 1, "nombre": "una frontera causal", "color": "indigo", "paneles": [
-    {"rotulo": "LA ESCALA DE SCHWARZSCHILD", "clave": "El horizonte del ejemplo tiene radio {radioKm|2} km y diámetro {diametroKm|2} km.", "texto": "La solución de Schwarzschild describe un agujero negro ideal esférico, sin carga ni rotación. Su radio de horizonte es dos veces G por la masa, dividido por la velocidad de la luz al cuadrado. La curva muestra que al multiplicar la masa se multiplica en la misma proporción ese radio.", "detalle": "Es un radio areal: una esfera de ese radio tiene el área correspondiente. No afirma que puedas introducir una regla radial desde el centro y medir una distancia euclídea ordinaria dentro del agujero negro.", "color": "indigo", "dibujo": {"tipo": "serie", "ejeX": "Masa / masa del ejemplo", "ejeY": "Radio del horizonte (km)", "claves": [], "rotulos": []}},
-    {"rotulo": "NO ES UNA ASPIRADORA", "clave": "La escala compacta es {radioKm|2} km; su gravedad lejana depende de la masa.", "texto": "Lejos de la región compacta, sustituir un cuerpo esférico por un agujero negro de igual masa no multiplica su atracción. Una órbita lejana puede seguir siendo una órbita. La materia solo cae si su trayectoria la lleva allí, o si pierde suficiente energía y momento angular.", "detalle": "Igualar la velocidad de escape newtoniana con la de la luz reproduce esta fórmula, pero es una analogía, no la explicación completa del horizonte. En relatividad general cambia la estructura causal: dentro, los caminos futuros de la luz no llevan al exterior.", "color": "indigo", "dibujo": {"tipo": "magnitudes", "claves": ["radioKm", "diametroKm"], "rotulos": ["Radio: {radioKm|2} km", "Diámetro: {diametroKm|2} km"]}}
-  ]}],
-  "cierre": {"titulo": "Lo decisivo es qué señales pueden salir.", "nota": "Masa ilustrativa 1,98847×10³¹ kg, diez masas solares usando 1,98847×10³⁰ kg. G = 6,67430×10⁻¹¹ m³/(kg·s²), c exacta. Solución de Schwarzschild. Referencia consultada: NASA Science, Black Hole Basics, https://science.nasa.gov/universe/black-holes/.", "parrafos": ["Los agujeros negros astrofísicos pueden rotar; entonces la geometría y el horizonte se describen de otra manera. Tampoco el anillo brillante de una imagen equivale al borde físico del horizonte.", "La relatividad clásica predice singularidades bajo ciertas condiciones. Eso señala límites de la descripción; no permite afirmar que conozcamos la física última del interior."]}
+  "id": "agujeronegro",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Qué significan los números de unos prismáticos para mirar las estrellas?",
+  "revisionEditorial": 2,
+  "entradilla": "En la caja de unos prismáticos pone diez por cincuenta. No son dos aumentos diferentes. El primer número dice cuánto agrandan el ángulo aparente; el segundo, el diámetro de sus objetivos en milímetros. Para mirar el cielo nocturno, esa segunda cifra puede importar tanto como la primera, y no por acercar más las cosas.",
+  "modelo": "agujeronegro",
+  "color": "indigo",
+  "medidas": {
+    "diametro": 50,
+    "aumentos": 10,
+    "pupila": 5
+  },
+  "tanteo": {
+    "pregunta": "Si mantienes el objetivo y aumentas la ampliación, ¿cómo cambia el disco de luz que sale del ocular?",
+    "opciones": [
+      "Se hace más ancho",
+      "Se hace más estrecho",
+      "Conserva siempre el diámetro del objetivo"
+    ],
+    "valores": [
+      10,
+      2.5,
+      50
+    ],
+    "medido": "pupilaDobleAumento",
+    "remate": "Se estrecha. En este ejemplo la pupila de salida mide {pupilaSalida|1} mm; duplicar los aumentos reduce ese diámetro a la mitad."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "recoger y entregar luz",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "DOS VENTANAS GRANDES AL CIELO",
+          "clave": "Cada objetivo recoge luz sobre una superficie.",
+          "texto": "Una estrella lejana entrega muy poca luz a tu ojo. El objetivo intercepta un haz más ancho y lo conduce hacia el ocular. Al comparar círculos, la superficie crece con el cuadrado del diámetro. Es geometría de apertura: doblar el diámetro permite recoger cuatro veces más luz, antes de contar las pérdidas ópticas.",
+          "detalle": "El objetivo ilustrado tiene {areaRelativa|0} veces el área de la pupila elegida. Esa comparación es por tubo; no significa que todas las escenas se vean cien veces más brillantes al mirar con ambos ojos.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "agujeronegro-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL OJO TIENE QUE RECIBIR EL HAZ",
+          "clave": "La pupila de salida debe encontrarse con la tuya.",
+          "texto": "Separa los prismáticos de la cara: cada ocular muestra un pequeño disco luminoso. Se llama pupila de salida. Su diámetro es el del objetivo dividido por los aumentos. Aquí mide {pupilaSalida|1} mm. Si tu pupila es menor, parte del haz no entra; por eso más vidrio no garantiza aprovechar toda la luz.",
+          "detalle": "Los prismas interiores enderezan la imagen y pliegan el recorrido. Ajustar la separación entre tubos y colocar bien los ojos evita perder campo. Para observar estrellas con muchos aumentos, un apoyo también ayuda a contener el temblor.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "agujeronegro-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Agrandar y recoger luz son trabajos distintos.",
+    "parrafos": [
+      "Los números de la caja cuentan ambos. Un objetivo amplio captura un haz grande; los aumentos determinan cómo se entrega al ojo. Elegir prismáticos consiste también en casar ese haz con tu pupila y tu forma de sujetarlos."
+    ],
+    "nota": "Óptica geométrica ideal, sin pérdidas ni obstrucciones. Nunca apuntar al Sol con prismáticos sin filtros solares específicos de apertura."
+  }
 }

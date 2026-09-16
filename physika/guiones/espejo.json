@@ -1,12 +1,71 @@
 {
-  "id": "espejo", "rotulo": "COTIDIANO", "titulo": "¿Qué dirección invierte realmente un espejo?",
-  "entradilla": "Un espejo plano no intercambia por sí mismo izquierda y derecha. Invierte la coordenada perpendicular a su superficie: delante se representa detrás. Las direcciones paralelas al vidrio se conservan. La confusión aparece al comparar la imagen con una persona imaginada que se ha dado la vuelta.",
-  "modelo": "espejo", "color": "azul",
-  "medidas": {"horizontal": 0.3, "vertical": 1.6, "normal": 0.8},
-  "tanteo": {"pregunta": "Un punto está a 0,8 m delante de un espejo plano ideal, medidos perpendicularmente al espejo. ¿Qué distancia crees que lo separa de su imagen virtual?", "opciones": ["0,8 m", "1,6 m", "3,2 m"], "valores": [0.8, 1.6, 3.2], "medido": "separacion", "remate": "La separación es {separacion|1} m: la imagen queda tan lejos detrás como el punto está delante."},
-  "nucleo": [{"numero": 1, "nombre": "la geometría no elige manos", "color": "azul", "paneles": [
-    {"rotulo": "FIJAMOS LOS EJES AL ESPEJO", "clave": "La imagen conserva horizontal {imagenHorizontal|1} m y vertical {imagenVertical|1} m.", "texto": "Elegimos dos ejes dentro del plano del espejo y otro perpendicular. Los rayos reflejados llegan al ojo siguiendo la ley de reflexión. Al prolongarlos hacia atrás parecen proceder de un punto virtual que mantiene las coordenadas paralelas y cambia el signo de la normal.", "detalle": "Las lecturas usan el mismo sistema de referencia para objeto e imagen; no giramos mentalmente el cuerpo al comparar. Si un punto estaba hacia un borde concreto del espejo, su imagen sigue hacia ese borde. La transformación no sabe qué llamamos mano izquierda.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["imagenHorizontal", "imagenVertical", "imagenNormal"], "rotulos": ["Horizontal: {imagenHorizontal|1} m", "Vertical: {imagenVertical|1} m", "Normal: {imagenNormal|1} m"]}},
-    {"rotulo": "EL CAMBIO ES DELANTE-DETRÁS", "clave": "La coordenada normal pasa de {normal|1} a {imagenNormal|1} m.", "texto": "La imagen no es un objeto material situado detrás del vidrio: es la posición desde la que parecen venir los rayos. El cambio de signo perpendicular altera la orientación espacial del conjunto. Por eso una figura y su reflejo no se superponen en general con una simple rotación.", "detalle": "Al imaginar a otra persona mirando hacia ti solemos girarla alrededor de un eje vertical. Esa comparación añade un intercambio lateral que no pertenece a la reflexión sola. Podríamos elegir otra rotación mental y describir de otra manera la aparente inversión.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["normal", "imagenNormal", "separacion"], "rotulos": ["Objeto: {normal|1} m", "Imagen: {imagenNormal|1} m", "Separación: {separacion|1} m"]}}
-  ]}],
-  "cierre": {"titulo": "El espejo cambia la normal, no el vocabulario del cuerpo.", "nota": "Coordenadas ilustrativas en m respecto a un espejo plano ideal situado en normal cero. Ejes paralelos fijos, imagen virtual; sin curvatura ni refracción del soporte de vidrio.", "parrafos": ["La escritura reflejada resulta extraña porque reconocemos la orientación de las letras. El mismo cambio geométrico actúa sobre cualquier objeto: no distingue palabras, caras ni direcciones privilegiadas dentro del plano del espejo."]}
+  "id": "espejo",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Qué invierte de verdad un espejo de cuerpo entero?",
+  "revisionEditorial": 2,
+  "entradilla": "Te miras en un espejo y parece que tu mano derecha se haya convertido en la izquierda de alguien enfrente. Sin embargo, tu cabeza sigue arriba y tus pies abajo. El espejo no sabe anatomía. Su regla es más sencilla: cambia la dirección perpendicular a su superficie.",
+  "modelo": "espejo",
+  "color": "ambar",
+  "medidas": {
+    "horizontal": 0.3,
+    "vertical": 1.6,
+    "normal": 0.8
+  },
+  "tanteo": {
+    "pregunta": "¿Qué dirección intercambia un espejo plano?",
+    "opciones": [
+      "Arriba y abajo",
+      "Delante y detrás de su superficie",
+      "Siempre el norte y el sur"
+    ],
+    "valores": [
+      0.8,
+      1.6,
+      3.2
+    ],
+    "medido": "separacion",
+    "remate": "Delante y detrás. El punto del ejemplo y su imagen quedan separados {separacion|1} m, simétricos respecto al espejo."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "la luz parece venir de detrás",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "UN RECORRIDO REFLEJADO",
+          "clave": "Los rayos salen con el mismo ángulo con el que llegan.",
+          "texto": "La luz de tu mano llega al espejo y rebota hacia tus ojos. La ley de la reflexión iguala los ángulos de llegada y salida respecto a la perpendicular. Si prolongas hacia atrás los rayos que recibes, parecen proceder de un punto situado detrás de la superficie.",
+          "detalle": "Ese punto es una imagen virtual: no hay una mano real dentro de la pared ni luz que haya atravesado hasta ella. En un espejo plano ideal queda a la misma distancia detrás que el objeto delante. Tus ojos interpretan esa procedencia aparente.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "espejo-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "POR QUÉ HABLAMOS DE IZQUIERDA",
+          "clave": "Comparas el reflejo con una persona que imaginas girada hacia ti.",
+          "texto": "El espejo conserva las posiciones laterales y verticales respecto a su plano. Lo que cambia de signo es la profundidad: delante pasa a detrás. La confusión aparece al imaginar que el reflejo es otra persona que se ha dado media vuelta para mirarte. Ese giro imaginario sí intercambia nuestros lados.",
+          "detalle": "Una flecha que apunte directamente al espejo aparece apuntando de regreso, mientras una flecha hacia arriba sigue arriba. Es una forma de distinguir la transformación geométrica real de las palabras izquierda y derecha, que dependen de quién se orienta.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "espejo-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El espejo cambia profundidad, no aprende tus manos.",
+    "parrafos": [
+      "La simetría respecto a una superficie explica todo el recorrido. El resto lo añadimos al interpretar el reflejo como alguien colocado frente a nosotros."
+    ],
+    "nota": "Espejo plano ideal y posiciones ilustrativas. No incluimos curvatura, doble reflexión del vidrio ni defectos ópticos de un espejo comercial."
+  }
 }

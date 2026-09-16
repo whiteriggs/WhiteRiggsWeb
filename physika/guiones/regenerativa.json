@@ -1,12 +1,71 @@
 {
-  "id": "regenerativa", "rotulo": "COCHES", "titulo": "¿Cuánta energía puede recuperar la frenada regenerativa?",
-  "entradilla": "Un motor eléctrico puede trabajar como generador: el giro de las ruedas alimenta una conversión de energía mecánica a eléctrica y aparece un par que se opone al movimiento. Parte de esa energía llega a la batería; otra parte se disipa por el camino.",
-  "modelo": "regenerativa", "color": "verde",
-  "medidas": {"masa": 1800, "velocidad": 20, "rendimiento": 0.7},
-  "tanteo": {"pregunta": "Un coche de 1.800 kg se detiene desde 20 m/s. Con rendimiento global del 70%, ¿cuánta energía vuelve a la batería?", "opciones": ["0,007 kWh", "0,070 kWh", "0,700 kWh"], "valores": [0.007, 0.07, 0.7], "medido": "recuperada", "remate": "Vuelven {recuperada|3} kWh de los {inicial|3} kWh cinéticos iniciales del modelo."},
-  "nucleo": [{"numero": 1, "nombre": "el generador cobra al movimiento", "color": "verde", "paneles": [
-    {"rotulo": "UNA RESERVA FINITA", "clave": "A {velocidadKmh|0} km/h, la traslación almacena {inicial|3} kWh.", "texto": "La energía cinética es la mitad de la masa por la velocidad al cuadrado. Para detener el vehículo, esa reserva debe transformarse o salir del sistema. El generador recupera una parte porque se resiste al giro: producir electricidad y frenar son dos caras de la misma conversión.", "detalle": "Las barras separan energía inicial, almacenada y perdida. Las dos últimas suman la primera. Se supone que toda la energía de traslación atraviesa el sistema regenerativo; aplicar después el rendimiento global deja {perdida|3} kWh como pérdidas.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["inicial", "recuperada", "perdida"], "rotulos": ["Inicial: {inicial|3} kWh", "Batería: {recuperada|3} kWh", "Pérdidas: {perdida|3} kWh"]}},
-    {"rotulo": "NO ES UN FRENO SIN LÍMITES", "clave": "La fracción almacenada elegida es {porcentaje|0}%.", "texto": "La batería debe poder aceptar potencia. Su carga y temperatura, los límites del motor y del inversor y la adherencia condicionan la recuperación. Cuando no basta, el sistema combina frenado regenerativo y de fricción. La distribución cambia según el coche y según la situación.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["recuperada"], "rotulos": ["Almacenada: {recuperada|3} kWh"]}}
-  ]}],
-  "cierre": {"titulo": "Recuperar no equivale a recuperar todo.", "nota": "Escenario horizontal de 1.800 kg y 20 m/s hasta reposo; rendimiento global ilustrativo 0,70 desde ruedas a energía almacenada. Se omiten inercias rotatorias, aire, rodadura y límites de potencia. No es una medición de autonomía ni de desgaste.", "parrafos": ["Las pastillas pueden trabajar menos en ciertos recorridos, pero no quedan eliminadas ni se puede deducir su duración con esta cuenta. La energía recuperable procede del movimiento o del descenso, no de una fuente gratuita: regenerar después de acelerar no devuelve toda la energía gastada."]}
+  "id": "regenerativa",
+  "revisionEditorial": 2,
+  "rotulo": "COCHES",
+  "titulo": "¿Cómo carga la batería un coche eléctrico mientras frena?",
+  "entradilla": "En algunos coches eléctricos, el indicador de energía cambia de sentido cuando el vehículo reduce velocidad. Durante un momento, las ruedas ayudan a cargar la batería. Parece un truco para ganar electricidad gratis, hasta que observas lo que ocurre a la vez: el coche está perdiendo el movimiento que antes le costó energía conseguir.",
+  "modelo": "regenerativa",
+  "color": "coral",
+  "medidas": {
+    "masa": 1800,
+    "velocidad": 20,
+    "rendimiento": 0.7
+  },
+  "tanteo": {
+    "pregunta": "¿Cuánta energía del movimiento puede devolver una frenada regenerativa a la batería del coche?",
+    "opciones": [
+      "Casi ninguna en cualquier situación",
+      "Una parte, con pérdidas",
+      "Más de la que tenía el coche en movimiento"
+    ],
+    "valores": [
+      0.007,
+      0.07,
+      0.7
+    ],
+    "medido": "recuperada",
+    "remate": "Una parte: el ejemplo devuelve {recuperada|3} kWh de {inicial|3} kWh iniciales. La energía recuperada no es una ganancia gratuita."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el motor trabaja al revés",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "AHORA LAS RUEDAS MUEVEN EL EJE",
+          "clave": "El motor puede funcionar como generador.",
+          "texto": "Para acelerar, la electricidad alimenta el motor y el motor mueve las ruedas. Al regenerar, las ruedas mantienen girando el eje y la máquina produce electricidad. Cambiar el campo magnético que atraviesa sus bobinas genera una tensión: es inducción electromagnética, la ley de Faraday funcionando dentro de un coche.",
+          "detalle": "Cuando circula corriente hacia la batería, la interacción magnética se opone al giro que la está generando. Esa oposición, descrita por la ley de Lenz, es precisamente parte de la frenada. Producir electricidad exige quitar energía al movimiento.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "regenerativa-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL CAMINO DE VUELTA TAMBIÉN PIERDE",
+          "clave": "Motor, electrónica y batería no son perfectos.",
+          "texto": "Los cables se calientan y la conversión eléctrica y química tampoco devuelve todo lo que recibe. Además, la batería puede limitar lo que acepta, por ejemplo según su temperatura o su estado de carga. El coche combina regeneración y frenos de fricción cuando hace falta: no toda reducción de velocidad termina convertida en carga.",
+          "detalle": "El balance ilustrativo recupera {recuperada|3} kWh y deja {perdida|3} kWh sin recuperar. Juntas suman la energía cinética inicial; no hemos añadido energía que venga de ninguna otra fuente.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "regenerativa-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Recuperar no es fabricar.",
+    "parrafos": [
+      "La batería recibe parte de una energía que ya llevaba el coche. Frenar y volver a acelerar sigue teniendo pérdidas, aunque una parte haga el viaje de regreso."
+    ],
+    "nota": "Masa, velocidad y rendimiento ilustrativos, no cifras de un fabricante. Balance de energía cinética traslacional; omite pendientes, ruedas, aire y límites variables de recarga. No es una recomendación de conducción."
+  }
 }

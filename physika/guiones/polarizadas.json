@@ -1,12 +1,72 @@
 {
-  "id": "polarizadas", "rotulo": "COTIDIANO", "titulo": "¿Cómo reducen unas gafas polarizadas el brillo del agua?",
-  "entradilla": "La luz reflejada por una superficie de agua puede estar parcialmente polarizada: su campo eléctrico no oscila igual en todas las direcciones. Un filtro transmite preferentemente una orientación y atenúa la perpendicular. Así puede reducir un reflejo sin oscurecer de igual manera todo el paisaje.",
-  "modelo": "polarizadas", "color": "azul",
-  "medidas": {"intensidad": 100, "angulo": 60, "indiceAgua": 1.333, "indiceAire": 1},
-  "tanteo": {"pregunta": "Luz linealmente polarizada de intensidad 100 unidades llega a un filtro ideal cuyo eje forma 60° con la polarización de entrada. ¿Qué intensidad crees que transmite?", "opciones": ["0 unidades", "25 unidades", "75 unidades"], "valores": [0, 25, 75], "medido": "transmitida", "remate": "Transmite {transmitida|0} unidades: proyectar el campo y calcular intensidad introduce un coseno al cuadrado."},
-  "nucleo": [{"numero": 1, "nombre": "elegir una dirección de vibración", "color": "azul", "paneles": [
-    {"rotulo": "GIRAR EL FILTRO CAMBIA LA TRANSMISIÓN", "clave": "Al ángulo elegido pasan {transmitida|1} de {intensidad|0} unidades.", "texto": "La ley de Malus toma la componente del campo eléctrico alineada con el eje transmisor. Esa amplitud lleva un coseno; como la intensidad depende de su cuadrado, la luz transmitida lleva un coseno al cuadrado. La curva recorre ángulos entre polarización incidente y filtro.", "detalle": "Esto supone luz totalmente polarizada y un filtro ideal. Con luz no polarizada, el promedio sobre orientaciones transmite {noPolarizada|0} unidades del mismo total, sin depender del giro. Un reflejo real suele mezclar ambas situaciones y no desaparece necesariamente por completo.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Ángulo relativo del filtro (°)", "ejeY": "Intensidad transmitida (u.)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL AGUA NO REFLEJA TODAS LAS ORIENTACIONES IGUAL", "clave": "El ángulo de Brewster aire-agua del ejemplo es {brewster|1}° respecto a la normal.", "texto": "En una interfaz ideal, la componente polarizada dentro del plano de incidencia no se refleja al ángulo de Brewster. La componente perpendicular puede seguir reflejándose. Para una superficie horizontal vista en esas condiciones, el reflejo resulta predominantemente polarizado en dirección horizontal.", "detalle": "El ángulo se obtiene del arco tangente del cociente de índices ópticos. Las olas inclinan muchas superficies locales y la escena aporta otros reflejos; una gafa real también absorbe y no tiene una extinción perfecta. Por eso la reducción del deslumbramiento depende de la posición de observación.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["brewster", "transmitida"], "rotulos": ["Brewster: {brewster|1}°", "Transmitida: {transmitida|1} u."]}}
-  ]}],
-  "cierre": {"titulo": "Reducir reflejos no equivale a protección completa.", "nota": "Intensidad en unidades relativas, ángulo en grados e índices adimensionales aproximados. Escenario ilustrativo con filtro ideal e interfaz plana no absorbente; Malus y Brewster, sin especificaciones de gafas comerciales.", "parrafos": ["Polarización y filtrado ultravioleta son propiedades distintas. La mejora del contraste no certifica protección UV ni permite mirar fuentes intensas: esa seguridad depende de otras características verificadas del producto."]}
+  "id": "polarizadas",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Cómo quitan reflejos del agua unas gafas polarizadas?",
+  "revisionEditorial": 2,
+  "entradilla": "Desde la orilla, el reflejo del cielo puede ocultar lo que hay bajo el agua. Te pones unas gafas polarizadas y parte del brillo disminuye mucho. No han oscurecido por igual todas las luces: su filtro distingue la orientación en la que oscila el campo eléctrico de la luz.",
+  "modelo": "polarizadas",
+  "color": "ambar",
+  "medidas": {
+    "intensidad": 100,
+    "angulo": 60,
+    "indiceAgua": 1.333,
+    "indiceAire": 1
+  },
+  "tanteo": {
+    "pregunta": "¿Qué selecciona el filtro de unas gafas polarizadas?",
+    "opciones": [
+      "La distancia de cada objeto",
+      "La orientación de la oscilación de la luz",
+      "Solo los colores verdes"
+    ],
+    "valores": [
+      0,
+      25,
+      75
+    ],
+    "medido": "transmitida",
+    "remate": "Selecciona orientación. El filtro ideal del ejemplo deja pasar {transmitida|0} unidades de la luz polarizada incidente."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un reflejo con orientación preferida",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "LA SUPERFICIE NO REFLEJA TODO IGUAL",
+          "clave": "El brillo del agua puede estar parcialmente polarizado.",
+          "texto": "La luz del entorno suele combinar muchas orientaciones de oscilación. Al reflejarse en agua, unas orientaciones se reflejan mejor que otras. Cerca de cierto ángulo, la diferencia es especialmente marcada. El reflejo acaba conteniendo más luz con una orientación preferida, a menudo horizontal sobre una superficie tranquila.",
+          "detalle": "Ese ángulo se llama ángulo de Brewster. La polarización no significa que el rayo viaje de lado: describe cómo oscila su campo eléctrico mientras avanza. Es una propiedad distinta del color y de la dirección del recorrido.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "polarizadas-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL FILTRO RECHAZA UNA PARTE",
+          "clave": "Las gafas transmiten mejor una orientación que la perpendicular.",
+          "texto": "El material polarizador absorbe de forma diferente las oscilaciones según su dirección. Bien orientado, reduce gran parte del reflejo horizontal sin quitar en la misma proporción toda la luz de los objetos. Si giras el filtro respecto a una luz polarizada, cambia cuánto logra atravesarlo.",
+          "detalle": "La ley de Malus describe el caso ideal: se proyecta el campo sobre el eje que pasa y la intensidad depende del cuadrado de esa proyección. No todos los reflejos desaparecen; el ángulo, la superficie y el filtro real limitan el efecto.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "polarizadas-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Menos deslumbramiento no es simplemente un cristal más oscuro.",
+    "parrafos": [
+      "Las gafas aprovechan una diferencia que el reflejo ya traía. La orientación de su filtro permite quitar especialmente esa parte de la luz."
+    ],
+    "nota": "Filtro y agua ideales, cifras ilustrativas. Polarización no equivale a protección ultravioleta certificada ni permite mirar al Sol; esas protecciones deben comprobarse aparte."
+  }
 }

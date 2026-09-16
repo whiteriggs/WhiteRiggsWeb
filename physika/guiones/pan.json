@@ -1,12 +1,73 @@
 {
-  "id": "pan", "rotulo": "COTIDIANO", "titulo": "¿Qué infla la masa del pan en el horno?",
-  "entradilla": "La masa contiene bolsas de gas encerradas en una red deformable. Al calentarse, el gas se expande y también pueden incorporarse vapor y gas liberado desde la disolución. El volumen final depende de que la estructura se estire y después se fije, no solo de la temperatura.",
-  "modelo": "pan", "color": "ambar",
-  "medidas": {"volumen": 0.0001, "temperaturaInicial": 298, "temperaturaFinal": 373, "presion": 101325, "molesExtra": 0.001},
-  "tanteo": {"pregunta": "El gas ideal de una burbuja pasa de 298 K a 373 K, sin añadir gas y a presión constante. ¿En qué porcentaje crees que aumenta su volumen?", "opciones": ["Un 2,5 %", "Un 25 %", "Un 125 %"], "valores": [2.5, 25, 125], "medido": "aumento", "remate": "Crece un {aumento|1} %. Eso no basta para explicar por sí solo cualquier aumento de una masa real."},
-  "nucleo": [{"numero": 1, "nombre": "el gas empuja y la masa responde", "color": "ambar", "paneles": [
-    {"rotulo": "CALENTAR LO QUE YA ESTABA DENTRO", "clave": "El gas inicial pasa de {inicialMl|1} a {calienteMl|1} mL.", "texto": "Para una cantidad fija de gas ideal a presión constante, el volumen es proporcional a la temperatura absoluta. Por eso se usan kelvin: duplicar una temperatura escrita en grados Celsius no significa duplicar el volumen. La cuenta separa la expansión térmica de la fabricación de gas.", "detalle": "La presión aproximadamente constante supone que la pared de las bolsas puede deformarse sin una resistencia creciente importante. Una masa real ejerce tensiones y puede perder gas. El ejemplo no convierte directamente estos mililitros en el volumen exterior de un pan.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["inicialMl", "calienteMl"], "rotulos": ["Inicial: {inicialMl|1} mL", "Caliente: {calienteMl|1} mL"]}},
-    {"rotulo": "AÑADIR MOLÉCULAS ES OTRO EFECTO", "clave": "Con los moles adicionales elegidos, el gas llegaría a {totalMl|1} mL.", "texto": "El dióxido de carbono producido durante la fermentación prepara muchas de las bolsas iniciales. Durante el calentamiento pueden cambiar la solubilidad y la cantidad de vapor. Añadir moles aumenta el volumen incluso si la temperatura ya está fijada; es distinto de expandir por calentamiento el gas que ya estaba presente.", "detalle": "En paralelo, las proteínas y el almidón cambian la respuesta de la masa y terminan fijando parte de la estructura porosa. Si la red se rompe o el gas escapa, el aumento no se conserva. La producción biológica tampoco sigue creciendo indefinidamente con el calor.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["calienteMl", "totalMl"], "rotulos": ["Solo calor: {calienteMl|1} mL", "Gas adicional: {totalMl|1} mL"]}}
-  ]}],
-  "cierre": {"titulo": "Subir exige gas y una estructura que lo retenga.", "nota": "Volumen en m³, temperaturas en K, presión en Pa y moles adicionales en mol, todos ilustrativos. Gas ideal a presión constante; moles impuestos, no calculados por fermentación, evaporación ni una receta.", "parrafos": ["La miga conserva un registro de expansión, unión y rotura de bolsas. Dos masas con igual cantidad de gas pueden acabar con alturas y poros muy distintos si cambia la resistencia de su red."]}
+  "id": "pan",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Qué infla el pan dentro de una panificadora?",
+  "revisionEditorial": 2,
+  "entradilla": "La panificadora amasa, espera y finalmente hornea sin que tengas que cambiar la masa de recipiente. Durante esas etapas, el bulto compacto se convierte en una estructura llena de pequeños huecos. La máquina no inyecta aire como una bomba: prepara y calienta una masa capaz de retener gas.",
+  "modelo": "pan",
+  "color": "ambar",
+  "medidas": {
+    "volumen": 0.0001,
+    "temperaturaInicial": 298,
+    "temperaturaFinal": 373,
+    "presion": 101325,
+    "molesExtra": 0.001
+  },
+  "tanteo": {
+    "pregunta": "Cuando empieza a calentarse una burbuja atrapada en la masa, ¿qué tiende a hacer su gas?",
+    "opciones": [
+      "Encogerse necesariamente",
+      "Expandirse si la masa puede ceder",
+      "Convertirse directamente en harina"
+    ],
+    "valores": [
+      2.5,
+      25,
+      125
+    ],
+    "medido": "aumento",
+    "remate": "Tiende a expandirse. Sin añadir gas y a presión constante, el ejemplo aumenta su volumen un {aumento|1} %."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "preparar bolsas antes de hornear",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "AMASAR Y DEJAR REPOSAR",
+          "clave": "La masa necesita una estructura que conserve las burbujas.",
+          "texto": "La pala mezcla y trabaja los ingredientes. En una masa de trigo ayuda a formar una red que puede estirarse y retener bolsas de gas. Durante el reposo, la levadura produce dióxido de carbono. La panificadora mantiene unas condiciones que permiten crecer a esas bolsas antes de comenzar el horneado.",
+          "detalle": "El gas no bastaría si escapara enseguida. La elasticidad de la masa y sus límites de resistencia deciden cuánto puede inflarse sin romperse. Recetas con otras harinas o agentes de levado necesitan comportamientos distintos; aquí seguimos una masa con levadura.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "pan-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL ÚLTIMO EMPUJÓN DE CALOR",
+          "clave": "El gas se expande mientras la estructura todavía puede deformarse.",
+          "texto": "Al hornear, el gas caliente tiende a ocupar más volumen. También puede incorporarse vapor y algo de gas adicional antes de que la actividad de la levadura se detenga. Más tarde, el calor transforma la estructura del alimento y fija los huecos. El pan ya no se comporta como masa cruda.",
+          "detalle": "La ley de los gases ideales separa dos aportes: calentar el gas existente y añadir gas nuevo. Ninguno describe por sí solo todo el crecimiento del pan. La presión, la humedad y la resistencia de cada pared de burbuja también cambian.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "pan-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La máquina organiza el tiempo de una espuma comestible.",
+    "parrafos": [
+      "Amasar prepara la red, reposar produce gas y hornear expande y fija. Saltarse una etapa no se compensa simplemente con más calor."
+    ],
+    "nota": "Gas ideal y volúmenes ilustrativos, no especificaciones de una panificadora. No calculamos una receta, la fermentación completa ni el tamaño final del pan."
+  }
 }

@@ -1,12 +1,13 @@
 {
+  "revisionEditorial": 2,
   "id": "microondasenlace", "rotulo": "REDES",
   "titulo": "¿Para qué son los platos de las torres de telefonía?",
-  "entradilla": "Muchos no hablan con satélites: enlazan con otra torre. Sus reflectores concentran las microondas en una dirección estrecha para transportar tráfico entre puntos. Ver la otra antena es importante, pero dejar libre solo la línea central puede no ser suficiente.",
+  "entradilla": "Ves unos platos pequeños a media altura de una torre. Muchos no hablan con satélites: enlazan con otra torre. Sus reflectores concentran las microondas en una dirección estrecha para transportar tráfico entre puntos. Ver la otra antena es importante, pero dejar libre solo la línea central puede no ser suficiente.",
   "modelo": "microondasenlace", "color": "azul",
   "medidas": {"frecuencia": 18000000000, "distancia": 20000, "diametro": 0.6, "eficiencia": 0.6, "despeje": 0.6},
   "tanteo": {
-    "pregunta": "En un enlace de 20 km a 18 GHz, ¿cuánto mide el radio de la primera zona de Fresnel en el punto medio?",
-    "opciones": ["Unos 0,9 m", "Unos 9 m", "Unos 90 m"], "valores": [0.9, 9, 90], "medido": "fresnel",
+    "pregunta": "¿Puede estorbar un árbol aunque no tape la línea recta entre dos platos?",
+    "opciones": ["No: fuera de esa línea no hay ondas", "Sí: puede invadir la zona de Fresnel", "Solo si toca físicamente ambos platos"], "valores": [0.9, 9, 90], "medido": "fresnel",
     "remate": "El radio es {fresnel|2} m. Despejar el {despejePorcentaje|0}% de ese radio exige {despejeMetros|2} m alrededor del eje en ese punto, según el criterio elegido."
   },
   "nucleo": [{
@@ -14,22 +15,22 @@
     "paneles": [{
       "rotulo": "EL CAMINO ES MÁS QUE UNA RECTA",
       "clave": "La primera zona de Fresnel alcanza {fresnel|2} m de radio en el centro.",
-      "texto": "Los caminos ligeramente apartados del eje tienen longitudes diferentes. Sus contribuciones llegan con fases distintas y pueden interferir. La primera zona de Fresnel caracteriza el volumen alrededor del trayecto directo donde un obstáculo puede alterar de forma importante esa suma.",
-      "detalle": "La curva es una función de radio frente a posición, no un dibujo a escala del enlace. Usamos la longitud de onda y las distancias a ambos extremos para calcular ese radio. Un árbol que no tapa la línea de visión aún puede introducir difracción y pérdidas al invadir esa zona.",
+      "texto": "Desde una torre puedes ver el plato de enfrente y aun así tener un enlace malo. Las ondas no se comportan como un hilo sin anchura. Las contribuciones que pasan cerca del camino directo llegan con fases diferentes y se suman. Un obstáculo puede cambiar esa suma.",
+      "detalle": "La zona de Fresnel describe el espacio alrededor del enlace que conviene mantener despejado. Un árbol que crece por debajo de la línea central puede invadirlo. La difracción explica parte de ese cambio; no hace falta que una rama toque la antena.",
       "color": "azul",
-      "dibujo": {"tipo": "serie", "ejeX": "Posición a lo largo del enlace (km)", "ejeY": "Radio de Fresnel (m)", "claves": [], "rotulos": []}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "microondasenlace-1", "claves": [], "rotulos": [], "pies": []}
     }, {
       "rotulo": "CONCENTRAR NO ES CREAR POTENCIA",
       "clave": "El plato idealizado tiene {gananciaDB|1} dBi de ganancia y un haz aproximado de {hazGrados|2} grados.",
-      "texto": "Una apertura grande respecto a la longitud de onda concentra mejor la radiación. La ganancia se compara con una fuente isotrópica y depende del área efectiva del reflector. La pérdida de espacio libre del recorrido es {perdidaDB|1} dB antes de incorporar las ganancias de ambas antenas.",
-      "detalle": "La estimación del ancho de haz depende de cómo se ilumina el reflector. Alinear antenas, considerar curvatura terrestre y refracción, evitar obstrucciones y reservar margen para lluvia requiere un diseño completo. Ni la ganancia ni despejar una fracción de Fresnel garantizan por sí solas disponibilidad continua.",
+      "texto": "El reflector hace que la radiación se concentre hacia el otro extremo. Un plato grande comparado con la longitud de onda puede formar un haz más estrecho. Es parecido a dirigir una linterna: llega más energía en una dirección porque se reparte menos hacia otras, no porque aparezca energía nueva.",
+      "detalle": "Esa concentración exige apuntar bien. Una pequeña desviación puede dejar al receptor fuera de la zona útil. Lluvia, relieve y curvatura terrestre también importan. Por eso instalar un enlace no consiste únicamente en comprar dos platos grandes y enfrentarlos a ojo.",
       "color": "azul",
-      "dibujo": {"tipo": "magnitudes", "claves": ["gananciaDB", "hazGrados"], "rotulos": ["Ganancia: {gananciaDB|1} dBi", "Haz: {hazGrados|2} grados"]}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "microondasenlace-2", "claves": [], "rotulos": [], "pies": []}
     }]
   }],
   "cierre": {
     "titulo": "El plato apunta a otro plato, no siempre al cielo.",
-    "nota": "frecuencia en Hz; distancia y diametro en m; eficiencia y despeje son fracciones. Parámetros ilustrativos. Ganancia de apertura, Fresnel paraxial y pérdida de Friis en espacio libre; ancho de haz aproximado 70 veces longitud de onda/diámetro, en grados. No incluye atmósfera, relieve ni curvatura terrestre en la curva.",
+    "nota": "Frecuencia en hercios, distancia y diámetro en metros. Fresnel y ganancia de apertura ideales. El dibujo exagera la anchura para verla; no representa un perfil real del terreno.",
     "parrafos": ["La difracción trata cómo los obstáculos modifican la propagación; la absorción trata energía que se pierde en materiales. Ambas pueden importar, pero no son el mismo fenómeno."]
   }
 }

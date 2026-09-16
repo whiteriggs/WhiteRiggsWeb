@@ -1,12 +1,72 @@
 {
-  "id": "bicicleta", "rotulo": "DEPORTE", "titulo": "¿Qué mantiene en equilibrio una bicicleta en marcha?",
-  "entradilla": "Las ruedas que giran influyen, pero no explican por sí solas el equilibrio. Dirigir el apoyo hacia donde cae la bicicleta, la geometría de la dirección, la distribución de masas y las correcciones del ciclista trabajan juntas. Estabilidad sin manos y equilibrio controlado tampoco son lo mismo.",
-  "modelo": "bicicleta", "color": "verde",
-  "medidas": {"velocidad": 5, "radioCurva": 10, "masaRueda": 1, "radioRueda": 0.34},
-  "tanteo": {"pregunta": "En una curva uniforme de 10 m de radio a 5 m/s, ¿qué inclinación ideal necesita el conjunto?", "opciones": ["Unos 2°", "Unos 14°", "Unos 45°"], "valores": [2, 14, 45], "medido": "inclinacion", "remate": "La inclinación calculada es {inclinacion|1}°. Sale del equilibrio de momentos y la aceleración centrípeta, sin necesitar el momento angular de las ruedas."},
-  "nucleo": [{"numero": 1, "nombre": "colocar el apoyo", "color": "verde", "paneles": [
-    {"rotulo": "GIRAR EXIGE INCLINARSE", "clave": "La aceleración lateral es {lateral|2} m/s²; la inclinación ideal, {inclinacion|1}°.", "texto": "En una curva estacionaria sobre suelo horizontal, la tangente de la inclinación del centro de masas respecto al apoyo vale rapidez al cuadrado dividida entre gravedad y radio. La gráfica mantiene el radio y cambia la rapidez: no representa un ensayo de estabilidad automática.", "detalle": "La resultante del contacto con el suelo debe proporcionar soporte vertical y aceleración hacia el centro de la curva. Esta cuenta supone neumáticos capaces de transmitir la fuerza necesaria y omite transitorios, anchura del neumático y movimientos internos del ciclista.", "color": "verde", "dibujo": {"tipo": "serie", "ejeX": "Rapidez (m/s)", "ejeY": "Inclinación (grados)", "claves": [], "rotulos": []}},
-    {"rotulo": "LA RUEDA SÍ TIENE MOMENTO ANGULAR", "clave": "La rueda idealizada como aro lleva {momento|2} kg·m²/s de momento angular.", "texto": "Para un aro, la inercia es masa por radio al cuadrado. Al rodar sin deslizar, su velocidad angular es rapidez dividida entre radio. Ese momento angular interviene al cambiar la orientación, pero conocerlo no permite decidir si una bicicleta concreta recuperará una perturbación.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["momento"], "rotulos": ["L: {momento|2} kg·m²/s"]}}
-  ]}],
-  "cierre": {"titulo": "Una rueda giratoria no sustituye a la dirección.", "nota": "Rapidez en m/s; radios de curva y rueda en m; masa de una rueda en kg. Curva estacionaria ilustrativa y rueda tratada como aro rígido. No es un modelo completo de bicicleta ni incluye neumáticos, avance, reparto real de masas o control humano.", "parrafos": ["Corregir con el manillar desplaza el apoyo y modifica la trayectoria. El acoplamiento entre caída y dirección depende del diseño; atribuirlo todo al efecto giroscópico deja fuera mecanismos esenciales."]}
+  "id": "bicicleta",
+  "rotulo": "DEPORTE",
+  "titulo": "Bicicleta: ¿por qué se inclina hacia dentro de una curva?",
+  "revisionEditorial": 2,
+  "modelo": "bicicleta",
+  "color": "verde",
+  "medidas": {
+    "velocidad": 5,
+    "radioCurva": 10,
+    "masaRueda": 1,
+    "radioRueda": 0.34
+  },
+  "entradilla": "Una bicicleta que gira se inclina hacia el interior de la curva. Vista de frente parece que vaya a caer, pero esa inclinación forma parte del equilibrio durante el giro. La rueda no está siguiendo una línea recta: el suelo tiene que cambiar continuamente la dirección del conjunto. La geometría de ese apoyo importa.",
+  "tanteo": {
+    "pregunta": "En una curva del mismo radio, al ir más rápido, la inclinación ideal hacia dentro debe ser…",
+    "opciones": [
+      "Menor",
+      "Mayor",
+      "Siempre nula"
+    ],
+    "valores": [
+      2,
+      14,
+      45
+    ],
+    "medido": "inclinacion",
+    "remate": "Mayor. El ejemplo da {inclinacion|1} grados. Es un equilibrio ideal, no una recomendación de velocidad o inclinación."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "equilibrarse mientras se gira",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA RUEDA CAMBIA DE DIRECCIÓN",
+          "clave": "Girar también es acelerar.",
+          "texto": "Aunque el velocímetro marque lo mismo, la dirección de la velocidad cambia durante una curva. Ese cambio necesita una fuerza hacia el interior, transmitida por el contacto con el suelo. Es aceleración centrípeta. El primer panel muestra la trayectoria desde arriba para separar avanzar de cambiar de dirección.",
+          "detalle": "La fuerza necesaria aumenta al ir más rápido y al cerrar la curva. No procede de que la rueda recuerde una forma circular ni de una fuerza almacenada en el manillar. Las interacciones entre neumático y suelo permiten que la trayectoria deje de ser recta.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "bicicleta-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL APOYO Y EL PESO DEBEN ENCAJAR",
+          "clave": "La inclinación evita un vuelco en el giro ideal.",
+          "texto": "El suelo aporta una fuerza vertical y otra lateral. Al inclinar el conjunto, la dirección resultante del apoyo puede alinearse con el centro de masas en el equilibrio ideal. Así se compensan los momentos que tenderían a volcarlo. Un momento de fuerza describe precisamente esa tendencia a hacer girar una estructura.",
+          "detalle": "El segundo panel mira la bicicleta de frente y marca contacto y centro de masas. La inclinación calculada sale de la rapidez y del radio de curva. No necesita atribuir todo el equilibrio al giro de las ruedas, aunque la dinámica de una bicicleta real sea más compleja.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "bicicleta-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Inclinarse puede ser la forma de no volcar al girar.",
+    "nota": "Curva uniforme sobre suelo horizontal con adherencia suficiente. Sin instrucciones de conducción ni estabilidad completa.",
+    "parrafos": [
+      "Una bicicleta recta y una bicicleta en curva no tienen que equilibrarse del mismo modo. Al cambiar la trayectoria, cambia la fuerza del apoyo. Mirar dónde toca la rueda y dónde está la masa ayuda a entender por qué el cuadro se inclina en lugar de permanecer vertical."
+    ]
+  }
 }

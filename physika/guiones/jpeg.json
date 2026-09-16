@@ -1,35 +1,36 @@
 {
+  "revisionEditorial": 2,
   "id": "jpeg", "rotulo": "REDES",
-  "titulo": "¿Por qué una foto comprimida puede pesar mucho menos?",
-  "entradilla": "Una imagen no es una lista de píxeles independientes: tiene zonas suaves, bordes y repeticiones. JPEG transforma pequeños bloques en patrones espaciales y puede describir con menos precisión los detalles menos relevantes. Reducir además las dimensiones de la foto es otro ahorro distinto.",
+  "titulo": "¿Por qué una foto JPEG puede perder detalle al guardarla?",
+  "entradilla": "Guardas una foto para enviarla y el archivo ocupa mucho menos. Una imagen no es una lista de píxeles independientes: tiene zonas suaves, bordes y repeticiones. JPEG transforma pequeños bloques en patrones espaciales y puede describir con menos precisión los detalles menos relevantes. Reducir además las dimensiones de la foto es otro ahorro distinto.",
   "modelo": "jpeg", "color": "coral",
   "medidas": {"coeficiente": 23, "paso": 10, "conservados": 10, "bitsCoeficiente": 10, "cabecera": 64, "bitsPixel": 8},
   "tanteo": {
-    "pregunta": "Si un coeficiente vale 23 y se redondea a múltiplos de 10, ¿qué valor se reconstruye?",
-    "opciones": ["20", "23", "30"], "valores": [20, 23, 30], "medido": "cuantizado",
+    "pregunta": "¿Qué paso puede borrar diferencias pequeñas de una foto JPEG?",
+    "opciones": ["Redondear la descripción de sus patrones", "Cambiar solo el nombre del archivo", "Copiar el archivo sin volver a comprimirlo"], "valores": [20, 23, 30], "medido": "cuantizado",
     "remate": "Se reconstruye {cuantizado|0}: se pierden {errorCoeficiente|0} unidades del coeficiente. La transformada sola no causa esa pérdida; la cuantización sí."
   },
   "nucleo": [{
     "numero": 1, "nombre": "cambiar de coordenadas y luego redondear", "color": "coral",
     "paneles": [{
-      "rotulo": "LOS ESCALONES SON LA PÉRDIDA",
+      "rotulo": "DESCRIBIR UNA MEZCLA DE PATRONES",
       "clave": "El coeficiente pasa de {coeficiente|0} a {cuantizado|0}; el error RMS del bloque es {errorRMS|3} niveles.",
-      "texto": "La transformada del coseno expresa un bloque de ocho por ocho píxeles como suma de patrones espaciales. Sin redondeo es reversible. Mostramos coeficientes no negativos: por debajo de medio paso se reconstruye cero; en cada semipaso se salta al múltiplo superior. Cada nivel permanece constante hasta el siguiente umbral.",
-      "detalle": "Para aislar el efecto, cambiamos únicamente ese coeficiente y dejamos exactos los demás. En una base ortonormal, el error conserva su energía al regresar a píxeles: su RMS es el error del coeficiente dividido por ocho. No es el error total de una fotografía ni una puntuación de calidad perceptual.",
+      "texto": "Imagina un pequeño trozo de cielo con una rama delante. JPEG lo describe combinando patrones: unos cambian suavemente y otros alternan claro y oscuro muy deprisa. La transformada discreta del coseno, una herramienta matemática emparentada con Fourier, calcula cuánto aporta cada patrón al bloque.",
+      "detalle": "Hasta aquí solo hemos cambiado la forma de describir la imagen. Sin redondeos, podríamos reconstruir el mismo bloque. La organización ayuda porque muchas fotos concentran buena parte de su información en unos pocos patrones, aunque no todas lo hacen igual.",
       "color": "coral",
-      "dibujo": {"tipo": "serie", "trazado": "escalones", "ejeX": "Coeficiente original (niveles)", "ejeY": "Coeficiente reconstruido (niveles)", "claves": [], "rotulos": []}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "jpeg-1", "claves": [], "rotulos": [], "pies": []}
     }, {
       "rotulo": "LOS CEROS SE DESCRIBEN BARATO",
       "clave": "Nuestro presupuesto pasa de {bitsOriginal|0} a {bitsModelo|0} bits: una razón de {razon|2}.",
-      "texto": "En un segundo ejemplo de contabilidad, conservamos {conservados|0} coeficientes y quedan {ceros|0} ceros. Asignamos {bitsCoeficiente|0} bits a cada coeficiente conservado y {cabecera|0} bits al resto de la descripción. Las barras comparan ese presupuesto elegido con los píxeles originales, no archivos producidos por un codificador JPEG.",
-      "detalle": "El formato real también codifica posiciones, diferencias y secuencias de ceros con códigos de longitud variable. El ahorro depende de textura, ruido, crominancia y calidad seleccionada. Una cuadrícula fina puede dejar artefactos antes que un cielo uniforme; no existe una reducción fija válida para todas las fotos.",
+      "texto": "Al bajar la calidad, el programa redondea esas cantidades con menos precisión. Algunas contribuciones pequeñas terminan en cero. Es cuantización: varias descripciones distintas pasan a ser iguales. Después se guardan las repeticiones de forma compacta. El ahorro llega con información que ya no podremos recuperar exactamente.",
+      "detalle": "Una rama fina puede perder definición antes de que notes cambios en el cielo. Guardar otra vez con pérdidas puede acumular errores. Copiar el mismo archivo, en cambio, no lo vuelve a comprimir ni estropea por sí solo la fotografía.",
       "color": "coral",
-      "dibujo": {"tipo": "barras", "claves": ["bitsOriginal", "bitsModelo"], "rotulos": ["Píxeles: {bitsOriginal|0} bits", "Modelo: {bitsModelo|0} bits"]}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "jpeg-2", "claves": [], "rotulos": [], "pies": []}
     }]
   }],
   "cierre": {
     "titulo": "La transformación organiza; el redondeo descarta.",
-    "nota": "DCT ortonormal de un bloque monocromo de 8×8. coeficiente y paso en niveles de la transformada; gráfica de cero a cuatro pasos, redondeo al más próximo y empate hacia arriba en este dominio. conservados es un recuento; bitsCoeficiente, cabecera y bitsPixel son presupuestos en bits. Error y tamaño son ejemplos independientes. No se simula JPEG binario ni WhatsApp.",
+    "nota": "Bloque monocromo de ocho por ocho píxeles. Coeficientes en niveles y presupuestos en bits. Error de un coeficiente y tamaño son ejemplos independientes, no un codificador JPEG real.",
     "parrafos": ["Volver a guardar una imagen con pérdidas puede acumular errores. Un archivo menor no demuestra por sí solo un algoritmo mejor: también puede contener menos píxeles o haber descartado más detalle."]
   }
 }

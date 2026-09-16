@@ -1,12 +1,74 @@
 {
-  "id": "neumaticos", "rotulo": "COCHES", "titulo": "¿Por qué un neumático se calienta al rodar?",
-  "entradilla": "El caucho entra en contacto con el suelo, se deforma y recupera su forma. Pero no devuelve toda la energía recibida: parte acaba como calor. Esa histéresis ayuda a entender el calentamiento; no demuestra que un neumático más caliente agarre siempre más.",
-  "modelo": "neumaticos", "color": "ambar",
-  "medidas": {"carga": 4000, "deformacion": 0.003, "fraccion": 0.2, "radio": 0.3, "velocidad": 20, "velocidadComparada": 40},
-  "tanteo": {"pregunta": "Con la misma energía perdida por vuelta, duplicar la velocidad multiplica la potencia térmica por…", "opciones": ["Uno", "Dos", "Cuatro"], "valores": [1, 2, 4], "medido": "duplicacion", "remate": "La pérdida por vuelta no cambia en este modelo y pasan {duplicacion|0} veces más vueltas cada segundo."},
-  "nucleo": [{"numero": 1, "nombre": "la deformación tiene memoria", "color": "ambar", "paneles": [
-    {"rotulo": "ENERGÍA POR CICLO", "clave": "El ciclo equivalente pierde {ciclo|2} J por revolución.", "texto": "Al cargar y descargar caucho, la fuerza no sigue exactamente el mismo camino frente a la deformación. El área encerrada entre ambos recorridos es energía disipada. Aquí sustituimos la rueda completa por un ciclo equivalente: carga por deformación característica por un factor de pérdida elegido.", "detalle": "No es una ley constitutiva del caucho ni el ciclo de un punto particular de la banda. Es una descripción energética agregada del neumático. Con {frecuencia|2} revoluciones por segundo, la pérdida mecánica equivale a {potencia|1} W. La curva mantiene fija la pérdida por vuelta y solo cambia cuántas vueltas ocurren.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Velocidad (m/s)", "ejeY": "Potencia disipada (W)", "claves": [], "rotulos": []}},
-    {"rotulo": "CALOR Y AGARRE NO SON SINÓNIMOS", "clave": "La pérdida equivale a una resistencia de {resistencia|2} N.", "texto": "Dividir energía por distancia recorrida convierte la pérdida en una fuerza de rodadura equivalente. No es la fuerza máxima de adherencia. Temperatura, frecuencia de deformación, compuesto y suelo cambian la respuesta viscoelástica; además, adhesión y textura intervienen en el agarre.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["ciclo", "resistencia"], "rotulos": ["Ciclo: {ciclo|2} J", "Rodadura: {resistencia|2} N"]}}
-  ]}],
-  "cierre": {"titulo": "Calentarse revela pérdidas, no una promesa de agarre.", "nota": "Ciclo equivalente ilustrativo por rueda: carga 4.000 N, deformación característica 0,003 m, factor de pérdida 0,2, radio 0,3 m y velocidades 20 y 40 m/s. No son coeficientes medidos de un neumático ni una estimación de su temperatura. Se omite refrigeración.", "parrafos": ["Un compuesto tiene una ventana de funcionamiento, no una mejora ilimitada con la temperatura. El modelo calcula disipación mecánica con parámetros constantes; predecir calentamiento y adherencia necesitaría propiedades térmicas y mecánicas medidas en condiciones concretas."]}
+  "id": "neumaticos",
+  "revisionEditorial": 2,
+  "rotulo": "COCHES",
+  "titulo": "¿Por qué se calientan los neumáticos del coche sin patinar?",
+  "entradilla": "Un neumático no necesita dejar una marca negra en el asfalto para calentarse. Basta con que ruede soportando el coche. Visto de cerca, deja de ser un círculo perfecto justo donde toca el suelo: esa pequeña zona aplastada viaja una y otra vez por toda la goma conforme gira la rueda.",
+  "modelo": "neumaticos",
+  "color": "coral",
+  "medidas": {
+    "carga": 4000,
+    "deformacion": 0.003,
+    "fraccion": 0.2,
+    "radio": 0.3,
+    "velocidad": 20,
+    "velocidadComparada": 40
+  },
+  "tanteo": {
+    "pregunta": "Aunque no patine, ¿qué hace la goma del neumático del coche al entrar y salir de la huella?",
+    "opciones": [
+      "Devuelve toda la energía sin calentarse",
+      "Se deforma y convierte parte de la energía en calor",
+      "Permanece completamente rígida"
+    ],
+    "valores": [
+      1,
+      2,
+      4
+    ],
+    "medido": "duplicacion",
+    "remate": "Se deforma con pérdidas. En el modelo, hacer {duplicacion|0} veces más vueltas cada segundo duplica el calor producido por segundo."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una goma que no devuelve todo",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "ENTRAR APLASTADO; SALIR REDONDO",
+          "clave": "Cada zona del neumático atraviesa la huella.",
+          "texto": "El peso deforma el neumático cuando una porción de goma llega al suelo. Al salir, esa porción recupera gran parte de su forma. Pero no es un muelle perfecto: para aplastarla hay que entregar algo más de energía de la que devuelve al recuperarse. La diferencia acaba aumentando la agitación interna del material, es decir, calentándolo.",
+          "detalle": "Ese retraso entre deformar y recuperar se llama histéresis. El caucho combina comportamientos elásticos y viscosos; por eso rodar tiene un coste incluso sin deslizar visiblemente sobre el asfalto.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "neumaticos-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "MÁS VUELTAS, MÁS REPETICIONES",
+          "clave": "La pérdida pequeña vuelve a ocurrir en cada vuelta.",
+          "texto": "La energía perdida en una sola deformación puede parecer poca. Sin embargo, a medida que la rueda gira, el proceso se repite sin descanso. Si idealizamos que cada vuelta pierde lo mismo, dar más vueltas en el mismo tiempo aumenta la potencia que se transforma en calor. No hace falta imaginar una rueda arrastrada para entenderlo.",
+          "detalle": "La cuenta asigna {ciclo|1} J por vuelta y obtiene {potencia|1} W a la primera velocidad. A la velocidad comparada obtiene {potenciaComparada|1} W; el dibujo representa el material, no una temperatura calculada.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "neumaticos-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Rodar también dobla la goma.",
+    "parrafos": [
+      "La huella cambia de sitio, pero nunca deja de existir. Esa sucesión de pequeñas deformaciones explica una parte de la resistencia a la rodadura del coche. La goma que acaba de salir del contacto volverá a pasar por él en la vuelta siguiente."
+    ],
+    "nota": "Carga, deformación y fracción perdida ilustrativas. Modelo de energía por vuelta constante, no ensayo de un neumático ni temperatura de servicio. No prescribe presiones ni condiciones de uso."
+  }
 }

@@ -1,12 +1,71 @@
 {
-  "id": "fmri", "rotulo": "MEDICINA", "titulo": "¿Qué ve la resonancia funcional cuando cambia la actividad cerebral?",
-  "entradilla": "La señal BOLD de la resonancia funcional es indirecta: depende de cambios en oxigenación sanguínea y propiedades magnéticas locales. No mide pensamientos ni cuenta impulsos neuronales. El acoplamiento entre actividad, consumo de oxígeno y circulación permite estudiar asociaciones, con retrasos y variaciones biológicas.",
-  "modelo": "fmri", "color": "indigo",
-  "medidas": {"eco": 30, "relajacionAntes": 40, "relajacionDespues": 42},
-  "tanteo": {"pregunta": "Con tiempo de eco TE de 30 ms y la misma señal inicial, ¿cuánto aumenta la señal al pasar T2* de 40 a 42 ms?", "opciones": ["Un 0,04 %", "Un 3,6 %", "Un 40 %"], "valores": [0.04, 3.6, 40], "medido": "cambio", "remate": "Aumenta {cambio|2} % respecto al estado anterior. No significa ese porcentaje más de actividad neuronal."},
-  "nucleo": [{"numero": 1, "nombre": "un contraste sensible a la sangre", "color": "indigo", "paneles": [
-    {"rotulo": "EL ECO PIERDE COHERENCIA", "clave": "Señal normalizada: {antes|2} % antes y {despues|2} % después.", "texto": "La desoxihemoglobina modifica la susceptibilidad magnética y contribuye a diferencias locales de campo. Eso afecta a la pérdida de coherencia de fase. En un modelo monoexponencial, la señal al tiempo de eco es la señal inicial multiplicada por una exponencial que depende de T2*.", "detalle": "Mantenemos fija la señal inicial para aislar ese efecto. Las barras son porcentajes de una misma referencia, no oxigenación arterial. El aumento de T2* conserva algo más de señal al recoger el eco y produce el cambio relativo calculado.", "color": "indigo", "dibujo": {"tipo": "barras", "claves": ["antes", "despues"], "rotulos": ["Antes: {antes|2} %", "Después: {despues|2} %"]}},
-    {"rotulo": "UN MAPA NO LEE LA MENTE", "clave": "Cambio de señal en este ejemplo: {cambio|2} %.", "texto": "Una respuesta vascular puede acompañar a actividad neuronal, pero depende también del flujo, volumen de sangre, metabolismo y estado del tejido. La respuesta hemodinámica no es instantánea. Comparar tareas requiere modelos estadísticos y controlar movimiento, respiración y otras variaciones.", "detalle": "Una zona coloreada suele representar una comparación estadística, no un pensamiento localizado que se enciende. Las inferencias sobre tareas o estados dependen de datos de entrenamiento, diseño experimental y supuestos; no equivalen a leer libremente lo que alguien piensa.", "color": "indigo", "dibujo": {"tipo": "magnitudes", "claves": ["cambio"], "rotulos": ["Cambio: {cambio|2} %"]}}
-  ]}],
-  "cierre": {"titulo": "BOLD observa una consecuencia vascular.", "nota": "eco, relajacionAntes y relajacionDespues en ms; valores ilustrativos, señal inicial constante y decaimiento T2* monoexponencial. Consultado NIBIB, «Magnetic Resonance Imaging (MRI)», como introducción. No se simula un mapa cerebral ni se ofrecen umbrales clínicos.", "parrafos": ["La resonancia funcional aporta información valiosa precisamente cuando se conserva la distinción entre lo medido y lo inferido. El contraste físico no elimina la necesidad de un experimento bien diseñado."]}
+  "id": "fmri",
+  "rotulo": "MEDICINA",
+  "titulo": "Escáner de resonancia funcional: ¿qué significan sus manchas de color?",
+  "revisionEditorial": 2,
+  "modelo": "fmri",
+  "color": "verde",
+  "medidas": {
+    "eco": 30,
+    "relajacionAntes": 40,
+    "relajacionDespues": 42
+  },
+  "entradilla": "En algunas imágenes del cerebro aparecen manchas de color sobre un fondo gris. Parece que una cámara hubiera fotografiado pensamientos encendiéndose, pero el escáner no ve eso. La resonancia funcional compara señales sensibles a cambios de la sangre. Los colores se añaden después para representar diferencias que no serían evidentes en una sola imagen.",
+  "tanteo": {
+    "pregunta": "Una señal que decae más despacio, observada tras la misma espera, ¿cómo queda respecto a otra que decae más deprisa?",
+    "opciones": [
+      "Más débil",
+      "Más intensa",
+      "Exactamente igual"
+    ],
+    "valores": [
+      0.04,
+      3.6,
+      40
+    ],
+    "medido": "cambio",
+    "remate": "Más intensa. Con las constantes del ejemplo aumenta {cambio|2} %. Ese porcentaje no mide cuánto piensa ni cuánta actividad tiene una persona."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "comparar respuestas magnéticas",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA SANGRE CAMBIA EL ENTORNO",
+          "clave": "La hemoglobina modifica la respuesta magnética.",
+          "texto": "La hemoglobina no se comporta magnéticamente igual cuando lleva oxígeno que cuando no lo lleva. Esas diferencias alteran el entorno de los núcleos que producen la señal de resonancia. La técnica aprovecha una consecuencia física de la sangre, no una luz emitida directamente por las neuronas al trabajar.",
+          "detalle": "El nombre habitual es contraste BOLD, sensible al nivel de oxigenación sanguínea. También intervienen el flujo y el volumen de sangre. En el dibujo, un vaso y varios portadores ilustran el origen del contraste sin asignarles porcentajes clínicos ni una escala de actividad cerebral.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "fmri-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL MOMENTO DE ESCUCHAR IMPORTA",
+          "clave": "Dos respuestas pueden perder intensidad a ritmos distintos.",
+          "texto": "Tras preparar los núcleos con radiofrecuencia, su respuesta conjunta va perdiendo coherencia. Si esa pérdida es algo más lenta, queda más señal al escuchar después del mismo intervalo. Se describe con una relajación efectiva llamada T2 estrella. Nuestro cálculo compara únicamente dos decaimientos con igual punto de partida.",
+          "detalle": "El dibujo mantiene fijo el instante de escucha mientras muestra ambas respuestas. Una diferencia pequeña puede resultar medible al repetir y analizar registros. Eso no convierte cada mancha de color en una etiqueta inequívoca de lo que ocurre en una zona.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "fmri-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El color muestra una comparación, no un pensamiento.",
+    "nota": "Decaimiento exponencial con igual señal inicial. Sin mapas diagnósticos ni equivalencia con actividad neuronal.",
+    "parrafos": [
+      "El escáner recoge una respuesta magnética y el análisis busca cambios relacionados con una tarea o un periodo. Entre ambas cosas hay medidas, referencias y supuestos. Recordarlo permite admirar la imagen sin atribuirle la capacidad de leer una mente."
+    ]
+  }
 }

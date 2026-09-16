@@ -1,12 +1,73 @@
 {
-  "id": "vozdigital", "rotulo": "MÚSICA", "titulo": "¿Cuántas veces por segundo mira el sonido tu móvil?",
-  "entradilla": "Digitalizar audio implica dos decisiones diferentes: cada cuánto medir la señal y con cuántos valores posibles guardar cada medida. La frecuencia de muestreo describe el tiempo; los bits de cuantificación describen los niveles de amplitud. Ninguna de las dos cifras, aislada, resume la calidad completa.",
-  "modelo": "vozdigital", "color": "azul",
-  "medidas": {"muestreo": 48000, "bits": 16, "canales": 1, "frecuencia": 20000, "duracion": 1},
-  "tanteo": {"pregunta": "¿Qué frontera de Nyquist corresponde a 48.000 muestras por segundo?", "opciones": ["24.000 Hz", "48.000 Hz", "16 Hz"], "valores": [24000, 48000, 16], "medido": "limite", "remate": "La frontera es {limite|0} Hz. Para reconstrucción ideal, la señal debe estar limitada estrictamente por debajo de esa frontera."},
-  "nucleo": [{"numero": 1, "nombre": "tiempo y amplitud no son lo mismo", "color": "azul", "paneles": [
-    {"rotulo": "POCAS MUESTRAS NO SIGNIFICAN ESCALONES", "clave": "El tono del ejemplo tiene {muestrasCiclo|1} muestras por ciclo.", "texto": "El intervalo temporal es {intervalo|2} microsegundos. El teorema de muestreo permite reconstruir idealmente una señal limitada en banda a partir de sus muestras uniformes, con valores exactos. No necesita que la línea que une muestras parezca un seno: esa línea no es el método de reconstrucción ideal.", "detalle": "Antes de muestrear hay que limitar las frecuencias para evitar aliasing. Los filtros reales necesitan una banda de transición y tienen límites prácticos. Justo en la frontera de Nyquist, una fase desfavorable puede hacer desaparecer las muestras de un tono; no debe prometerse reconstrucción para cualquier señal situada exactamente allí.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["frecuencia", "limite"], "rotulos": ["Tono: {frecuencia|0} Hz", "Frontera: {limite|0} Hz"]}},
-    {"rotulo": "CUÁNTOS VALORES CABEN", "clave": "{bits|0} bits permiten {niveles|0} niveles.", "texto": "Para un cuantificador uniforme con intervalo normalizado de menos uno a uno, el paso nominal es {paso|6}. Es una separación de amplitudes, no de instantes. Con {canales|0} canal y sin cabeceras ni compresión, la tasa PCM es {tasa|0} bits por segundo: muestreo por bits por canales.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["niveles", "tasa"], "rotulos": ["Niveles: {niveles|0}", "PCM: {tasa|0} bit/s"]}}
-  ]}],
-  "cierre": {"titulo": "Muestrear el tiempo no cuantifica la amplitud.", "nota": "Valores ilustrativos: muestreo y frecuencia en Hz, bits por muestra, canales enteros y duración en s. Cuantificador uniforme con rango nominal de amplitud 2, paso 2 dividido por niveles. Nyquist-Shannon supone señal limitada en banda y reconstrucción ideal; la cuantificación real introduce error.", "parrafos": ["Más muestras no garantizan menos ruido, y más bits no corrigen un micrófono saturado. El camino analógico, los filtros y el procesamiento también forman parte de una grabación."]}
+  "id": "vozdigital",
+  "rotulo": "MÚSICA",
+  "titulo": "¿Cómo guarda la grabadora del móvil una voz que no deja de moverse?",
+  "entradilla": "Pulsas grabar, hablas y guardas el archivo. Tu voz era un movimiento continuo del aire, pero la memoria del móvil almacena números separados. Entre una cosa y otra hay una idea sorprendente: no hace falta conservar cada instante imaginable, siempre que controles qué variaciones intentas guardar y tomes suficientes lecturas.",
+  "modelo": "vozdigital",
+  "color": "ambar",
+  "medidas": {
+    "muestreo": 48000,
+    "bits": 16,
+    "canales": 1,
+    "frecuencia": 20000,
+    "duracion": 1
+  },
+  "tanteo": {
+    "pregunta": "Con una cadencia de lectura fija, ¿puede la grabadora conservar fielmente vibraciones cada vez más rápidas sin límite?",
+    "opciones": [
+      "No: hay un límite inferior a la cadencia de lectura",
+      "Sí: el límite coincide con esa cadencia",
+      "Sí: el límite está por encima de esa cadencia"
+    ],
+    "valores": [
+      24000,
+      48000,
+      96000
+    ],
+    "medido": "limite",
+    "remate": "Hay un límite. En este ejemplo la frontera está en {limite|0} Hz y la señal debe quedar por debajo; los filtros reales necesitan además margen."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "lecturas de una voz",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "DEL AIRE A LOS NÚMEROS",
+          "clave": "El móvil mide una señal eléctrica a intervalos regulares.",
+          "texto": "Primero el micrófono convierte pequeñas variaciones de presión en una señal eléctrica. Después un conversor lee esa señal repetidamente y asigna un número a cada lectura. Tomar esas instantáneas es muestrear. Escoger entre valores numéricos disponibles es cuantificar. Son dos pasos distintos: cuándo miras y con qué precisión anotas lo que encuentras.",
+          "detalle": "Los puntos del dibujo son muestras, no agujeros en el sonido. Al reproducir, otro conversor y un filtro reconstruyen una señal continua que puede mover el altavoz. No escuchas números saltando directamente hacia el oído.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "vozdigital-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "ANTES HAY QUE FILTRAR",
+          "clave": "Una variación demasiado rápida puede disfrazarse de otra más lenta.",
+          "texto": "Si miras una rueda solo de vez en cuando, puede parecer que gira al revés. Con las señales ocurre una confusión parecida cuando las lecturas son insuficientes: el aliasing. Por eso se limita el contenido rápido antes de digitalizar. El criterio de Nyquist y Shannon establece las condiciones ideales para recuperar una señal limitada en frecuencia.",
+          "detalle": "Aumentar la precisión de cada número no arregla haber mirado demasiado despacio. Frecuencia de muestreo y resolución tienen trabajos diferentes. La calidad final también depende del micrófono, el ruido y los filtros, no solo del tamaño del archivo.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "vozdigital-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Guardar una voz empieza por saber cuándo mirar.",
+    "parrafos": [
+      "La grabadora convierte un movimiento en lecturas y luego hace el camino de vuelta para que puedas volver a escucharlo."
+    ],
+    "nota": "PCM ideal con parámetros ilustrativos, no ajustes garantizados de ninguna app. Señales gráficas esquemáticas y sin escala temporal."
+  },
+  "revisionEditorial": 2
 }

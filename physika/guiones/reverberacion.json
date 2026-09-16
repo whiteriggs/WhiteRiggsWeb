@@ -1,12 +1,72 @@
 {
-  "id": "reverberacion", "rotulo": "MÚSICA", "titulo": "¿Por qué una iglesia suena a iglesia?",
-  "entradilla": "Después de callar la fuente quedan reflexiones viajando por el recinto. En salas grandes y poco absorbentes, la energía puede tardar mucho en desaparecer. Esa cola es reverberación; no debe confundirse con un único eco separado ni con la vibración libre de una cuerda.",
-  "modelo": "reverberacion", "color": "ambar",
-  "medidas": {"volumen": 180, "absorcion": 30, "extra": 30, "sabine": 0.161},
-  "tanteo": {"pregunta": "En el régimen de Sabine, ¿cuántas veces se reduce el tiempo reverberante al duplicar la absorción equivalente?", "opciones": ["Dos veces", "Cuatro veces", "No cambia"], "valores": [2, 4, 1], "medido": "razon", "remate": "Pasa de {tiempo|3} a {tratado|3} s: una reducción por un factor {razon|1}, con volumen fijo."},
-  "nucleo": [{"numero": 1, "nombre": "energía que encuentra paredes", "color": "ambar", "paneles": [
-    {"rotulo": "UNA COLA EXPONENCIAL", "clave": "Una caída de sesenta decibelios tarda {tiempo|3} s.", "texto": "La fórmula de Sabine estima ese tiempo multiplicando el volumen por un coeficiente y dividiendo entre la absorción equivalente. Esta absorción suma áreas ponderadas por sus coeficientes de absorción: no es necesariamente el área visible de alfombras o paneles. Ambas dependen de la banda de frecuencia considerada.", "detalle": "El gráfico muestra el nivel de energía relativo al instante de apagar la fuente. Una disminución exponencial de energía se convierte en una recta al expresarla en decibelios. El modelo no dibuja la presión oscilante ni predice cada rebote individual.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (s)", "ejeY": "Nivel relativo (dB)", "claves": [], "rotulos": []}},
-    {"rotulo": "TRATAR LA SALA", "clave": "Con absorción extra, el tiempo baja a {tratado|3} s.", "texto": "La comparación añade absorción sin cambiar el volumen. Sabine requiere un campo aproximadamente difuso, bien mezclado, y absorción media relativamente baja. En recintos pequeños, con absorción concentrada, fuertes modos o reflexiones dominantes, una sola cifra puede describir mal lo que escucha una persona.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["tiempo", "tratado"], "rotulos": ["Antes: {tiempo|3} s", "Tratada: {tratado|3} s"]}}
-  ]}],
-  "cierre": {"titulo": "La sala también forma parte de la música.", "nota": "Escenario ilustrativo, no medición de una iglesia. Volumen en m³; absorcion y extra en m² de absorción equivalente para una banda. Coeficiente Sabine 0,161 s/m, aproximación en aire templado. Sin absorción atmosférica; campo difuso y decaimiento energético exponencial después de apagar la fuente.", "parrafos": ["La reverberación puede envolver música sostenida y a la vez reducir claridad del habla. El tiempo reverberante no sustituye a medidas de reflexiones tempranas, inteligibilidad o distribución espacial del sonido."]}
+  "id": "reverberacion",
+  "rotulo": "MÚSICA",
+  "titulo": "¿Por qué los paneles acústicos ayudan al micrófono de tu pódcast?",
+  "entradilla": "Compras un buen micrófono y tu voz sigue sonando como si grabaras dentro de un baño. El aparato no está necesariamente averiado: además de tu voz recoge sus vueltas por la habitación. Los paneles porosos de un estudio intentan reducir esas visitas repetidas, no hacer que el micrófono escuche por arte de magia.",
+  "modelo": "reverberacion",
+  "color": "ambar",
+  "medidas": {
+    "volumen": 180,
+    "absorcion": 30,
+    "extra": 30,
+    "sabine": 0.161
+  },
+  "tanteo": {
+    "pregunta": "Sin cambiar el tamaño de la habitación, ¿qué suele pasar con la cola del sonido si añades absorción acústica?",
+    "opciones": [
+      "Se apaga antes",
+      "Se queda igual",
+      "Dura más"
+    ],
+    "valores": [
+      2,
+      1,
+      0.5
+    ],
+    "medido": "razon",
+    "remate": "Se apaga antes. En el modelo pasa de {tiempo|3} a {tratado|3} s; no promete esa mejora para cualquier panel en cualquier habitación."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "la voz que vuelve",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL MICRÓFONO OYE LA SALA",
+          "clave": "La voz directa llega acompañada de muchas copias retrasadas.",
+          "texto": "Hablas hacia el micrófono, pero también mandas sonido hacia paredes, suelo y techo. Parte vuelve después de reflejarse. Cuando esos regresos se acumulan, ya no oyes necesariamente ecos separados: aparece una cola que acompaña a las palabras. Es la reverberación. Las superficies duras suelen devolver más sonido que una superficie absorbente adecuada.",
+          "detalle": "Una habitación vacía puede sonar mucho más viva que la misma habitación amueblada. Acercarse razonablemente al micrófono ayuda a que destaque la voz directa, aunque no transforma las paredes ni elimina todos los rebotes.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "reverberacion-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL PANEL NO GUARDA VOCES",
+          "clave": "El movimiento del aire pierde energía dentro del material.",
+          "texto": "En un absorbente poroso el aire entra por pasos estrechos. Al moverse roza las paredes internas y parte de la energía acústica acaba como calor. Esa disipación debilita lo que vuelve a la sala. La ecuación de Sabine relaciona de forma aproximada el tiempo de reverberación con el volumen y la absorción disponible.",
+            "detalle": "No cualquier espuma resuelve cualquier grave. Importan espesor, colocación y frecuencia. Además, absorber dentro no equivale a insonorizar hacia el vecino: impedir la transmisión por muros y huecos es otro problema, con otras soluciones constructivas. El material adecuado depende del objetivo.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "reverberacion-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Mejor grabación, menos vueltas de la misma voz.",
+    "parrafos": [
+      "El panel no mejora tu dicción. Reduce parte de la habitación que se cuela entre una palabra y la siguiente."
+    ],
+    "nota": "Sala difusa idealizada y absorciones equivalentes ilustrativas. Sabine no predice cada reflexión ni la eficacia de un producto concreto."
+  },
+  "revisionEditorial": 2
 }

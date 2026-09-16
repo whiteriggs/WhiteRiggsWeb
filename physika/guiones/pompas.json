@@ -1,12 +1,71 @@
 {
-  "id": "pompas", "rotulo": "COTIDIANO", "titulo": "¿Por qué una pompa de jabón tiene colores?",
-  "entradilla": "La película de una pompa puede ser casi transparente y, aun así, reflejar colores intensos. La luz que vuelve desde sus dos caras se superpone. Según el espesor y el ángulo de observación, algunas longitudes de onda se refuerzan y otras se debilitan.",
-  "modelo": "pompas", "color": "malva",
-  "medidas": {"indice": 1.33, "espesor": 0.0000001, "angulo": 60},
-  "tanteo": {"pregunta": "Una película de 100 nm de espesor e índice de refracción 1,33 tiene aire a ambos lados. Con luz perpendicular a ella, ¿qué longitud de onda crees que refuerza el primer máximo de la luz reflejada?", "opciones": ["266 nm", "532 nm", "1.064 nm"], "valores": [266, 532, 1064], "medido": "longitudNm", "remate": "El máximo ideal aparece en {longitudNm|0} nm: el espesor selecciona qué luz vuelve reforzada."},
-  "nucleo": [{"numero": 1, "nombre": "dos reflejos que se encuentran", "color": "malva", "paneles": [
-    {"rotulo": "EL CAMINO NO ES LA ÚNICA DIFERENCIA", "clave": "A incidencia normal, el primer máximo reflejado es {longitudNm|0} nm.", "texto": "Una parte de la luz se refleja al entrar en la película; otra atraviesa el líquido, se refleja en la cara posterior y sale. La primera reflexión introduce una inversión de fase que la segunda no tiene. Hay que contar esa diferencia además del camino óptico adicional.", "detalle": "Para una película de líquido entre aire, el primer máximo cumple que la longitud de onda en vacío equivale a cuatro veces índice por espesor. La curva cambia el espesor y sigue ese máximo, no el color completo que percibe el ojo bajo iluminación blanca.", "color": "malva", "dibujo": {"tipo": "serie", "ejeX": "Espesor de película (nm)", "ejeY": "Primer máximo (nm)", "claves": [], "rotulos": []}},
-    {"rotulo": "MIRAR DE LADO CAMBIA EL COLOR", "clave": "Al ángulo elegido, el máximo se desplaza a {oblicuaNm|0} nm.", "texto": "La inclinación modifica la diferencia de fase entre ambos reflejos. Primero calculamos el ángulo dentro del líquido mediante la ley de Snell; después aparece el coseno de ese ángulo en la condición de interferencia. El máximo se desplaza hacia longitudes de onda más cortas.", "detalle": "El dibujo compara longitudes de onda, no cantidades de energía. En una pompa real el espesor cambia por drenaje, evaporación y movimiento de la película. Las bandas se desplazan porque se modifica ese espesor local, aunque no se añadan pigmentos al jabón.", "color": "malva", "dibujo": {"tipo": "barras", "claves": ["longitudNm", "oblicuaNm"], "rotulos": ["Frontal: {longitudNm|0} nm", "Oblicua: {oblicuaNm|0} nm"]}}
-  ]}],
-  "cierre": {"titulo": "El color es una diferencia de fase.", "nota": "Espesor ilustrativo en m, ángulo exterior en grados e índice adimensional aproximado de agua. Película plana local, no absorbente, entre aire; primer orden y dispersión del índice despreciada.", "parrafos": ["Las regiones extremadamente finas pueden reflejar muy poca luz visible por cancelación. No significa que allí haya una tinta negra: la interferencia puede quitar intensidad de una dirección sin destruir la energía luminosa total."]}
+  "id": "pompas",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué el aro de un pompero muestra colores antes de soplar?",
+  "revisionEditorial": 2,
+  "entradilla": "Sacas el aro del pompero y ya tiene manchas de color, incluso antes de fabricar una burbuja. El líquido del bote no parece contener todos esos pigmentos. Los colores aparecen porque el aro sostiene una película muy fina, con dos superficies capaces de devolver parte de la luz.",
+  "modelo": "pompas",
+  "color": "ambar",
+  "medidas": {
+    "indice": 1.33,
+    "espesor": 1e-7,
+    "angulo": 60
+  },
+  "tanteo": {
+    "pregunta": "Si cambia el espesor de la película del pompero, ¿qué puede cambiar?",
+    "opciones": [
+      "Solo el tamaño del aro",
+      "El color que se refleja con más fuerza",
+      "El color original de la luz del Sol"
+    ],
+    "valores": [
+      266,
+      532,
+      1064
+    ],
+    "medido": "longitudNm",
+    "remate": "Cambia el color reforzado. La película ideal del ejemplo favorece {longitudNm|0} nm al mirarla de frente."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "dos reflejos se encuentran",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "IDA Y VUELTA EN UNA CAPA",
+          "clave": "Parte de la luz vuelve enseguida y parte recorre el líquido.",
+          "texto": "Al llegar al aro, una fracción de la luz se refleja en la primera superficie. Otra entra en la película, llega a la segunda y vuelve. Esos dos reflejos se superponen. Según la distancia recorrida y el cambio que ocurre al reflejarse, unas ondas se refuerzan y otras se debilitan.",
+          "detalle": "Esa suma se llama interferencia. La luz blanca contiene muchos colores, con distintas longitudes de onda, de modo que no todos encajan igual. La película selecciona cuáles regresan con más intensidad sin tener que teñirse de ellos.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "pompas-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "UN ARCOÍRIS QUE SE DESPLAZA",
+          "clave": "El líquido se mueve y el espesor deja de ser uniforme.",
+          "texto": "La gravedad hace escurrir líquido por la película y el aire también puede moverla. Una zona se vuelve más delgada que otra, así que cada región refuerza colores diferentes. Al inclinar el aro cambia además el camino de la luz dentro de la capa y el patrón vuelve a variar.",
+          "detalle": "Nuestro ejemplo compara la misma película de frente y oblicua: el máximo pasa de {longitudNm|0} a {oblicuaNm|0} nm. El dibujo separa los recorridos para entenderlos; una película real es muchísimo más fina que lo representado.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "pompas-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El aro sostiene una regla para la luz.",
+    "parrafos": [
+      "Los colores cuentan diferencias minúsculas de espesor. Al soplar cambia la forma, pero la pompa conserva las dos superficies que producen el mismo juego óptico."
+    ],
+    "nota": "Película uniforme ideal con aire a ambos lados. Espesor e índice ilustrativos; no simulamos todos los colores ni el drenaje de una pompa comercial."
+  }
 }

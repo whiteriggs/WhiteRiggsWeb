@@ -1,8 +1,9 @@
 {
   "id": "aleron",
+  "revisionEditorial": 2,
   "rotulo": "COCHES",
-  "titulo": "¿Por qué un Fórmula 1 podría circular por el techo de un túnel?",
-  "entradilla": "Porque a partir de cierta velocidad el aire lo aprieta contra el asfalto con más fuerza de la que pesa. Y la mayor parte de esa fuerza no viene de los alerones que se ven, sino del suelo del coche, que es un conducto que se estrecha.",
+  "titulo": "¿Cómo aprieta el alerón de un coche de Fórmula 1 las ruedas contra la pista?",
+  "entradilla": "Un alerón de Fórmula 1 se parece a un ala, pero busca el efecto contrario al de un avión: empujar el coche hacia el suelo. No añade una pesa escondida dentro del maletero. Modifica el movimiento y la presión del aire para crear una fuerza que cambia con la velocidad del coche.",
   "modelo": "fluido",
   "color": "coral",
   "medidas": {
@@ -15,55 +16,50 @@
     "velocidad": 83.333
   },
   "tanteo": {
-    "pregunta": "¿A partir de qué velocidad el aire aprieta el coche contra el suelo más de lo que pesa?",
-    "opciones": ["90 por hora", "190 por hora", "400 por hora"],
+    "pregunta": "¿Qué hace el alerón de un coche de carreras con el aire para aumentar la carga sobre las ruedas?",
+    "opciones": ["Solo actúa como un peso inmóvil", "Desvía aire hacia arriba y recibe una reacción hacia abajo", "Levanta el coche para quitar peso a las ruedas"],
     "valores": [90, 190, 400],
     "medido": "despegueEnKilometrosPorHora",
-    "remate": "Sobre {despegueEnKilometrosPorHora|0} por hora. Por encima de esa cifra el techo del túnel le vale tanto como el suelo; por debajo, se cae."
+    "remate": "Desvía aire y recibe una reacción. El umbral ideal de igualdad con el peso es {despegueEnKilometrosPorHora|0} km/h; no demuestra que un coche pueda circular invertido."
   },
   "nucleo": [
     {
       "numero": 1,
-      "nombre": "un peso que aparece al correr",
+      "nombre": "un ala orientada hacia la pista",
       "color": "coral",
       "paneles": [
         {
-          "rotulo": "LO QUE PESA Y LO QUE LE APRIETA",
-          "clave": "El coche pesa {masa|0} kilos. A {correEnKilometrosPorHora|0} por hora el aire lo empuja hacia abajo con {cargaEnKilos|0}.",
-          "texto": "Son {vecesElPeso|1} veces su propio peso, y no existían un momento antes: aparecen al correr y desaparecen al frenar. Por eso un Fórmula 1 parado es un coche flojo, con neumáticos fríos y sin agarre, y a trescientos por hora es otra cosa completamente distinta.",
-          "detalle": "También explica la curva rápida. El agarre de un neumático es proporcional a lo que lo aplasta, así que a más velocidad, más apretado y más se puede girar. Es un círculo que se muerde la cola: cuanto más rápido entras, más te agarra. Y al revés, que es lo que lo hace peligroso.",
+          "rotulo": "EL AIRE CAMBIA DE DIRECCIÓN",
+          "clave": "El perfil desvía aire hacia arriba y recibe carga hacia abajo.",
+          "texto": "Al rodear el perfil, el aire cambia de velocidad y dirección. Las presiones sobre sus caras dejan una fuerza neta que empuja el alerón hacia abajo. Mirado desde el aire que se aleja, hay un cambio de movimiento hacia arriba. Son dos maneras compatibles de describir la misma interacción: presiones y tercera ley de Newton.",
+          "detalle": "La carga aerodinámica se suma a la que ya transmitía el peso. En el ejemplo, a la velocidad elegida alcanza {vecesElPeso|1} veces el peso del coche. Eso no significa que el agarre crezca sin límite ni que los neumáticos respondan proporcionalmente en cualquier situación.",
           "color": "coral",
           "dibujo": {
-            "tipo": "barras",
-            "claves": ["masa", "cargaEnKilos"],
-            "rotulos": ["pesa {masa|0} kg", "le aprietan {cargaEnKilos|0} kg"]
+            "tipo": "transporteRenovado", "trazado": "aleron-1", "claves": [], "rotulos": []
           }
         },
         {
-          "rotulo": "EL TRUCO ESTÁ DEBAJO, NO ARRIBA",
-          "clave": "El suelo del coche estrecha el paso del aire a dos tercios, así que por el cuello va {vecesMasRapido|1} veces más rápido: {velocidadEnElCuelloEnKilometrosPorHora|0} por hora.",
-          "texto": "Y aquí viene el trato: acelerar un fluido se paga con presión. Donde corre más, aprieta menos. Debajo del coche la presión baja {caidaEnMilibares|0} milibares respecto al aire de fuera, y esa diferencia chupa el coche contra la pista con unos {succionPorMetroCuadrado|0} kilos por cada metro cuadrado de suelo.",
-          "detalle": "Por eso los coches van tan pegados al asfalto y por eso una vibración en la suspensión puede tirarlos a la grava: si el conducto se abre un centímetro, la succión se cae de golpe. No es un problema de alerones, es que el suelo ha dejado de ser un conducto.",
+          "rotulo": "EL SUELO TAMBIÉN TRABAJA",
+          "clave": "Un paso estrecho puede acelerar el aire bajo la carrocería.",
+          "texto": "El fondo del coche también puede organizar el aire para reducir la presión debajo. En un conducto ideal, si el mismo caudal atraviesa una sección menor, debe hacerlo más deprisa. La ecuación de continuidad describe ese reparto; Bernoulli relaciona velocidad y presión cuando se cumplen sus condiciones. No basta con dibujar cualquier hueco estrecho para garantizar succión.",
+          "detalle": "El conducto ilustrativo multiplica la velocidad por {vecesMasRapido|1}. Un fondo real tiene fugas laterales, pérdidas y separación del flujo; estas cuentas simples no predicen toda su carga ni su estabilidad.",
           "color": "coral",
           "dibujo": {
-            "tipo": "flujo",
-            "claves": [],
-            "rotulos": ["entra a {correEnKilometrosPorHora|0}", "{velocidadEnElCuelloEnKilometrosPorHora|0} km/h", "arriba el suelo del coche, abajo la presión"]
+            "tipo": "transporteRenovado", "trazado": "aleron-2", "claves": [], "rotulos": []
           }
         }
       ]
     }
   ],
   "cierre": {
-    "titulo": "Toda la carga que lo pega al suelo se la fabrica él corriendo.",
-    "nota": "El coeficiente de carga aerodinámica, 2,3 sobre dos metros cuadrados de superficie de referencia, es un valor típico de la era del efecto suelo y entra como dato. Las áreas del conducto son esquemáticas; lo que calcula la aplicación es la velocidad y la presión que se derivan de ellas.",
+    "titulo": "La fuerza aerodinámica no es un peso añadido.",
+    "nota": "Coeficientes, masa y conducto ilustrativos, no especificaciones de un Fórmula 1. Ala y conducto son aproximaciones separadas; no sumar sus resultados como carga total. No demuestran circulación invertida ni ofrecen consejos de conducción.",
     "parrafos": [
-      "La cuenta del conducto es la misma que la de una manguera cuando le pones el dedo: lo que entra tiene que salir, y si le quitas sitio tiene que correr más. Lo único que cambia es que aquí el sitio que se le quita vale dos toneladas de agarre.",
-      "Y es la misma física del ala de un avión, girada. Un avión usa el aire para levantar setenta toneladas; un Fórmula 1 lo usa para inventarse dos que no tiene. Las dos cuentas son media densidad por área por velocidad al cuadrado."
+      "El coche recibe carga sin ganar masa, pero debe pagar las pérdidas aerodinámicas con energía del motor. La orientación del ala decide el sentido buscado; el diseño completo determina cuánto se consigue."
     ]
   },
   "puente": {
     "hacia": "vuela",
-    "frase": "Pon el mismo perfil del derecho, hazlo cien veces más grande y en vez de pegar un coche al suelo levanta un edificio: la cuenta no cambia ni una letra."
+    "frase": "El ala del avión también cambia el movimiento del aire, pero busca una fuerza hacia arriba para sostener el peso."
   }
 }

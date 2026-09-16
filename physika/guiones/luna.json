@@ -1,11 +1,72 @@
 {
-  "id": "luna", "rotulo": "ESPACIO", "titulo": "¿Por qué la Luna nos enseña casi siempre la misma cara?",
-  "entradilla": "Porque sí gira sobre sí misma: completa una rotación en el mismo tiempo que tarda en dar una vuelta orbital respecto a las estrellas. No girar mostraría caras diferentes a la Tierra. El acoplamiento de marea sincronizó ambas vueltas a lo largo de su evolución.",
-  "modelo": "luna", "color": "azul", "medidas": {"sideral": 27.321661, "anio": 365.256363},
-  "tanteo": {"pregunta": "Con estos periodos medios, ¿cuánto tarda en repetirse la fase lunar?", "opciones": ["Unos 14 días", "Unos 29,5 días", "Unos 365 días"], "valores": [14, 29.5, 365], "medido": "sinodico", "remate": "{sinodico|2} días. El mes de las fases es más largo que la vuelta respecto a las estrellas."},
-  "nucleo": [{"numero": 1, "nombre": "girar para mirar", "color": "azul", "paneles": [
-    {"rotulo": "DOS GIROS SINCRONIZADOS", "clave": "Rotación y avance orbital medios: {giroDiario|3} grados por día.", "texto": "Imagina mantener un mismo lado del cuerpo mirando a un objeto mientras caminas alrededor. Tu orientación respecto a la habitación debe girar. Del mismo modo, la rotación lunar compensa su avance orbital para que una región permanezca orientada aproximadamente hacia la Tierra.", "detalle": "La recta muestra el ángulo de rotación respecto a las estrellas en el modelo uniforme. No es un dibujo de la órbita. Los ritmos iguales dejan un desfase relativo de {desfase|0} grados por día, aunque ambos ángulos cambien respecto al cielo lejano.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (días)", "ejeY": "Rotación sideral (°)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL SOL CAMBIA LA REFERENCIA", "clave": "Vuelta sideral: {sideral|2} días. Ciclo de fases: {sinodico|2} días.", "texto": "Durante una órbita lunar, la Tierra también avanza alrededor del Sol. Para recuperar la misma alineación con la luz solar, la Luna debe avanzar un poco más. Restamos las frecuencias orbitales y tomamos el inverso para calcular el periodo sinódico.", "detalle": "La cara lejana no es permanentemente oscura: también recibe el día solar. La órbita excéntrica, la inclinación y nuestro punto de observación producen libraciones, pequeños cambios aparentes de orientación que dejan ver algo más que un hemisferio a lo largo del tiempo.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["sideral", "sinodico"], "rotulos": ["Sideral: {sideral|2} días", "Fases: {sinodico|2} días"]}}
-  ]}],
-  "cierre": {"titulo": "La misma cara exige una rotación.", "nota": "Periodos medios aproximados: mes sideral 27,321661 días y año sideral terrestre 365,256363 días. Rotaciones uniformes, coplanares y prógradas; no efeméride de fases. Cinemática angular relativa y acoplamiento de marea.", "parrafos": ["Las mareas deforman los cuerpos y la disipación interna intercambia energía y momento angular entre rotación y órbita. El modelo calcula la sincronización final, no cuánto tardó en alcanzarse.", "Decir siempre la misma cara es una aproximación cotidiana. Las libraciones no rompen el acoplamiento: muestran que sincronización media y orientación instantánea no son exactamente lo mismo."]}
+  "id": "luna",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Cómo muestra las fases de la Luna un reloj de pulsera mecánico?",
+  "revisionEditorial": 2,
+  "entradilla": "En algunos relojes de pulsera hay una ventanita con una Luna dorada que aparece y desaparece. Dentro no hay una cámara mirando al cielo. Un disco avanza por pasos bajo una abertura y deja visible una porción distinta del dibujo. El calendario lunar está traducido a dientes, ruedas y una aproximación bastante ingeniosa.",
+  "modelo": "luna",
+  "color": "indigo",
+  "medidas": {
+    "sideral": 27.321661,
+    "anio": 365.256363,
+    "dientes": 59,
+    "lunas": 2
+  },
+  "tanteo": {
+    "pregunta": "Un mecanismo lunar sencillo, ¿mantiene una coincidencia perfecta con el cielo para siempre?",
+    "opciones": [
+      "Sí, sin ningún ajuste",
+      "No, acumula un pequeño desfase",
+      "Pierde una fase completa cada día"
+    ],
+    "valores": [
+      0,
+      -9,
+      -8760
+    ],
+    "medido": "errorAnualHoras",
+    "remate": "Acumula desfase: la aproximación mecánica equivale a {mecanico|1} días frente a {sinodico|2} días del ciclo medio calculado."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "meter un mes en una rueda",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "UNA RUEDA, DOS LUNAS",
+          "clave": "El disco avanza un diente cada día.",
+          "texto": "En un mecanismo sencillo, un disco lleva dos dibujos de la Luna separados media vuelta. Una rueda de cincuenta y nueve dientes avanza un diente al día. Cuando uno de los dibujos se esconde, el otro prepara el siguiente ciclo. Es una transmisión por engranajes: convierte pasos diarios en un periodo mucho más largo.",
+          "detalle": "Con {dientes|0} dientes y {lunas|0} lunas dibujadas, cada ciclo visible dura {mecanico|1} días. El contorno de la ventana recorta el dibujo; no reproduce una esfera iluminada real girando dentro de la caja.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "luna-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL CIELO NO CUENTA DIENTES ENTEROS",
+          "clave": "La fase depende de la posición respecto al Sol.",
+          "texto": "Mientras la Luna completa una órbita, la Tierra también avanza alrededor del Sol. Para repetir la iluminación vista desde aquí, la Luna debe recorrer un poco más. Ese periodo se llama mes sinódico. Con los periodos medios elegidos, dura {sinodico|2} días, ligeramente más que el ciclo del mecanismo sencillo.",
+          "detalle": "La diferencia es pequeña en una vuelta, pero se acumula con los meses. Existen relojes con transmisiones más elaboradas que aproximan mejor el ciclo. Eso no hace incorrecto al sencillo: explica por qué su manual prevé corregir la indicación periódicamente.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "luna-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La ventanita lleva una aproximación mecánica del cielo.",
+    "parrafos": [
+      "El reloj no consulta la Luna: conserva una cuenta desde el último ajuste. Sus engranajes convierten días en fases visibles. La pequeña diferencia entre dientes enteros y periodos astronómicos acaba explicando cuándo tendrás que corregirlo."
+    ],
+    "nota": "Mecanismo clásico ideal de 59 dientes y dos lunas, un paso diario. Periodos astronómicos medios; se omiten variaciones mensuales y errores del reloj."
+  }
 }

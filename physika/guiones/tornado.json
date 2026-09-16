@@ -1,11 +1,66 @@
 {
-  "id": "tornado", "rotulo": "NATURALEZA", "titulo": "¿Cómo se concentra el giro de un tornado?",
-  "entradilla": "La cizalladura del viento puede aportar rotación; las corrientes de una tormenta la inclinan y estiran. La formación de un tornado requiere una evolución compleja. Una cuenta sencilla sí explica por qué concentrar aire que ya gira puede acelerar muchísimo su movimiento.",
-  "modelo": "tornado", "color": "malva", "medidas": {"radioInicial": 1000, "radioFinal": 200, "velocidadInicial": 5},
-  "tanteo": {"pregunta": "La parcela gira a 5 m/s a 1.000 m del eje y se contrae hasta un radio de 200 m. Sin torque externo, ¿qué rapidez tangencial alcanza?", "opciones": ["1 m/s", "5 m/s", "25 m/s"], "valores": [1, 5, 25], "medido": "velocidad", "remate": "Alcanza {velocidad|0} m/s, multiplicando la rapidez inicial por {factor|0}. El radio y la rapidez compensan sus cambios."},
-  "nucleo": [{"numero": 1, "nombre": "conservar el momento angular", "color": "malva", "paneles": [
-    {"rotulo": "ACERCARSE AL EJE", "clave": "De {radioInicial|0} m a {radioFinal|0} m: de {velocidadInicial|0} a {velocidad|0} m/s.", "texto": "Seguimos una parcela de aire en un modelo axisimétrico sin torque. Su momento angular por unidad de masa es radio por velocidad tangencial. Si disminuye el radio, la velocidad debe aumentar. La curva muestra esa relación inversa; no es un perfil medido de un tornado concreto.", "detalle": "No llevamos la curva hasta el eje: la expresión ideal divergiría. Un vórtice real tiene un núcleo y procesos de mezcla, fricción y redistribución de momento que impiden interpretar esa singularidad matemática como una velocidad física infinita.", "color": "malva", "dibujo": {"tipo": "serie", "ejeX": "Radio (m)", "ejeY": "Velocidad tangencial (m/s)", "claves": [], "rotulos": []}},
-    {"rotulo": "GIRAR EXIGE ACELERACIÓN", "clave": "En el radio final, la aceleración centrípeta es {aceleracion|2} m/s².", "texto": "Aunque la rapidez fuera constante en una órbita circular, cambiaría la dirección de la velocidad. El gradiente de presión proporciona gran parte de esa aceleración hacia el centro. Concentrar giro no crea energía gratis: el trabajo de las fuerzas sobre el flujo alimenta el aumento de energía cinética.", "color": "malva", "dibujo": {"tipo": "barras", "claves": ["velocidadInicial", "velocidad"], "rotulos": ["Inicial: {velocidadInicial|0} m/s", "Final: {velocidad|0} m/s"]}}
-  ]}],
-  "cierre": {"titulo": "Concentrar rotación no explica toda su formación.", "nota": "Radios en metros y velocidad inicial en m/s, escenario ideal de momento angular conservado. Sin fricción, entrainment, fuerzas azimutales ni evolución de la tormenta. No pronostica tornados, intensidades ni trayectorias.", "parrafos": ["El embudo visible es condensación y, a veces, polvo o residuos; no delimita todo el viento peligroso. La aparición del embudo y la dinámica de la circulación son preguntas relacionadas, pero no idénticas."]}
+  "id": "tornado",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Cómo seca las hojas una centrifugadora de ensalada?",
+  "revisionEditorial": 2,
+  "entradilla": "Lavas unas hojas, las metes en la cesta y haces girar la centrifugadora. El agua aparece en el recipiente exterior mientras la ensalada queda dentro. No hay aire caliente ni un material que absorba la humedad. El mecanismo separa hojas y gotas porque la cesta puede retener unas mucho mejor que otras.",
+  "modelo": "naturaleza-tornado",
+  "color": "verde",
+  "medidas": {
+    "radio": 0.1,
+    "vueltasSegundo": 3
+  },
+  "tanteo": {
+    "pregunta": "Si la cesta gira más deprisa, ¿qué necesita una gota para seguir girando con ella?",
+    "opciones": [
+      "Menos empuje hacia el centro",
+      "Ningún empuje",
+      "Más empuje hacia el centro"
+    ],
+    "valores": [
+      1,
+      0,
+      35.53057584
+    ],
+    "medido": "aceleracion",
+    "remate": "Más empuje. En el borde ilustrativo la aceleración necesaria es {aceleracion|1} metros por segundo al cuadrado."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "la cesta gira, el agua escapa",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "GIRAR EXIGE CAMBIAR DE DIRECCIÓN",
+          "clave": "La cesta obliga a las hojas a seguir una curva.",
+          "texto": "Una hoja que da vueltas cambia continuamente la dirección de su velocidad. La pared de la cesta la empuja hacia el centro y le impide continuar recta. Esa necesidad de empuje interior se llama aceleración centrípeta. A igual tamaño de cesta, duplicar la rapidez de giro exige cuatro veces más aceleración, no solamente el doble.",
+          "detalle": "Las gotas están sujetas por contactos débiles con las hojas. Cuando esos contactos no bastan para mantenerlas en el giro, se desprenden. La cesta sigue reteniendo las hojas, que no caben por sus agujeros.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "tornado-1"
+          }
+        },
+        {
+          "rotulo": "EL AGUJERO DEJA CONTINUAR",
+          "clave": "La gota liberada sale aproximadamente por la tangente.",
+          "texto": "Vista desde fuera, una gota que pierde su sujeción continúa inicialmente en la dirección que llevaba, tangente al giro. Puede atravesar una abertura y acabar en el cuenco exterior. No necesita recibir una nueva fuerza misteriosa hacia fuera para escapar. Si miras desde la cesta giratoria, describirás ese movimiento usando una fuerza centrífuga aparente.",
+          "detalle": "El cuenco detiene y recoge el agua; por eso conviene vaciarlo. El modelo calcula la aceleración del borde, pero no cuánto tardará en secarse una hoja ni cuándo se desprende cada gota.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "tornado-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Separar no siempre exige evaporar.",
+    "parrafos": [
+      "La ensalada pierde agua líquida, no vapor. La combinación de una cesta perforada, un giro y un recipiente exterior permite retirar gotas sin cocinar las hojas."
+    ],
+    "nota": "Radio y giro ilustrativos. Movimiento circular uniforme y liberación tangencial ideal; no se modelan adhesión, salpicaduras ni prestaciones comerciales."
+  }
 }

@@ -1,11 +1,71 @@
 {
-  "id": "geoestacionario", "rotulo": "ESPACIO", "titulo": "¿Por qué una parabólica puede apuntar siempre al mismo sitio?",
-  "entradilla": "Un satélite geoestacionario gira alrededor de la Tierra al mismo ritmo que el suelo y sobre el ecuador. Desde una antena fija parece permanecer en una dirección estable. No está inmóvil en el espacio: su movimiento orbital acompaña a la rotación terrestre.",
-  "modelo": "geoestacionario", "color": "azul", "medidas": {"mu": 398600441800000, "radio": 6378137, "periodo": 86164.09},
-  "tanteo": {"pregunta": "¿A qué altura sobre el ecuador corresponde aproximadamente esa órbita circular?", "opciones": ["Unos 360 km", "Unos 35.800 km", "Unos 358.000 km"], "valores": [360, 35800, 358000], "medido": "alturaKm", "remate": "{alturaKm|0} km. La altura sale de exigir el periodo de la rotación sideral terrestre."},
-  "nucleo": [{"numero": 1, "nombre": "acompañar al suelo", "color": "azul", "paneles": [
-    {"rotulo": "EL PERIODO ELIGE EL RADIO", "clave": "Periodo: {horas|4} h. Radio desde el centro: {radioOrbital|0} km.", "texto": "La tercera ley de Kepler enlaza el cuadrado del periodo con el cubo del radio. Con el parámetro gravitatorio terrestre, fijar el periodo determina una órbita circular concreta. El radio central es mayor que la altura porque incluye el radio de la Tierra.", "detalle": "La curva muestra periodos de órbitas circulares a varios radios centrales. El día relevante es sideral, una rotación respecto a las estrellas. El día solar medio incluye además el avance de la Tierra alrededor del Sol y no proporciona exactamente el periodo correcto.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Radio central (km)", "ejeY": "Periodo (h)", "claves": [], "rotulos": []}},
-    {"rotulo": "SINCRÓNICO NO BASTA", "clave": "La rapidez orbital calculada es {velocidad|3} km/s.", "texto": "Para quedarse sobre una longitud terrestre, la órbita debe ser circular, ecuatorial y avanzar en el sentido de rotación de la Tierra. Una órbita inclinada con el mismo periodo es geosíncrona, pero el satélite se desplaza al norte y al sur visto desde tierra.", "detalle": "Si además es excéntrica cambia su rapidez angular y se desplaza también en longitud aparente. Los satélites reales realizan correcciones para limitar esas desviaciones. Una antena puede permanecer fija porque el movimiento residual cabe en su tolerancia de apuntado, no porque la gravedad se haya equilibrado con un motor permanente.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["alturaKm", "velocidad"], "rotulos": ["Altura: {alturaKm|0} km", "Rapidez: {velocidad|3} km/s"]}}
-  ]}],
-  "cierre": {"titulo": "Está quieto respecto a ti, no respecto al espacio.", "nota": "Órbita circular ecuatorial prógrada ideal. GM terrestre 3,986004418×10¹⁴ m³/s², radio ecuatorial 6.378.137 m y periodo sideral aproximado 86.164,09 s. Leyes de Newton y Kepler; sin achatamiento dinámico, Sol, Luna ni presión de radiación.", "parrafos": ["La geometría no permite cubrir por igual todos los lugares del planeta. Cerca de los polos estos satélites quedan muy bajos o bajo el horizonte.", "Que una antena sea parabólica no obliga a que apunte a un geoestacionario. Esta explicación corresponde a los enlaces que sí usan esa clase de órbita."]}
+  "id": "geoestacionario",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Por qué la parabólica de televisión puede quedarse atornillada mirando al mismo sitio?",
+  "revisionEditorial": 2,
+  "entradilla": "La parabólica del balcón lleva años apuntando al mismo punto del cielo. No tiene un motor persiguiendo el satélite durante el partido. Eso no significa que el satélite esté quieto en el espacio. Se mueve continuamente, pero su vuelta está coordinada con la rotación de la Tierra sobre la que está fijada la antena.",
+  "modelo": "geoestacionario",
+  "color": "indigo",
+  "medidas": {
+    "mu": 398600441800000,
+    "radio": 6378137,
+    "periodo": 86164.09
+  },
+  "tanteo": {
+    "pregunta": "¿Qué debe hacer un satélite para conservar su dirección desde una parabólica fija?",
+    "opciones": [
+      "Quedarse inmóvil en el espacio",
+      "Girar sobre el ecuador al ritmo terrestre",
+      "Cruzar rápidamente los polos"
+    ],
+    "valores": [
+      360,
+      35800,
+      358000
+    ],
+    "medido": "alturaKm",
+    "remate": "Girar con la Tierra en una órbita circular ecuatorial. Esa condición sitúa la altura ideal en {alturaKm|0} km."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "compartir el ritmo terrestre",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "DOS GIROS, UNA DIRECCIÓN RELATIVA",
+          "clave": "La antena y el satélite mantienen su separación angular.",
+          "texto": "Imagina una marca en el ecuador terrestre y un satélite que completa una vuelta en el mismo tiempo y sentido. Desde esa marca, el satélite conserva su posición aparente. Esa órbita se llama geoestacionaria. Requiere circularidad y plano ecuatorial; compartir solamente la duración de la vuelta no basta para quedarse fijo en el cielo.",
+          "detalle": "El periodo corresponde al día sideral, la rotación respecto a las estrellas. En el modelo dura {horas|2} horas. El satélite no está sostenido sobre una torre invisible: sigue cayendo alrededor de la Tierra.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "geoestacionario-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA ALTURA NO ES UN AJUSTE ARBITRARIO",
+          "clave": "La gravedad fija qué órbita tiene ese periodo.",
+          "texto": "En una órbita circular, la gravedad proporciona la aceleración que curva el movimiento. Al combinarla con la duración de una vuelta aparece la relación de Kepler entre periodo y radio orbital. Exigir el ritmo terrestre determina una altura de {alturaKm|0} km: más cerca, una órbita libre circular daría vueltas demasiado deprisa.",
+          "detalle": "Una vez orientada, la parábola concentra las ondas del satélite hacia el receptor situado en su foco. Su forma ayuda a captar señal; no mantiene al satélite en su sitio. Los operadores corrigen pequeñas desviaciones de la órbita real.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "geoestacionario-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La antena está quieta porque ambos extremos giran juntos.",
+    "parrafos": [
+      "El soporte puede ser fijo gracias a una elección orbital muy concreta. La parábola recoge la radio; la gravedad y el periodo elegido explican por qué el transmisor conserva su dirección aparente."
+    ],
+    "nota": "Órbita circular ecuatorial ideal, Tierra esférica y sin perturbaciones. Parábola esquemática; no calcula ganancia ni orientación para una ubicación concreta."
+  }
 }

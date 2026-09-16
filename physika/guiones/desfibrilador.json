@@ -1,12 +1,70 @@
 {
-  "id": "desfibrilador", "rotulo": "MEDICINA", "titulo": "¿Por qué desfibrilar no significa arrancar cualquier corazón parado?",
-  "entradilla": "La desfibrilación puede interrumpir ciertos ritmos eléctricos desorganizados, no crear por sí sola un latido normal desde cualquier situación. Fibrilación ventricular y taquicardia ventricular sin pulso son ritmos desfibrilables; la asistolia y la actividad eléctrica sin pulso no lo son. Esta distinción no constituye una pauta de actuación.",
-  "modelo": "desfibrilador", "color": "coral",
-  "medidas": {"capacidad": 100, "tension": 100},
-  "tanteo": {"pregunta": "En un condensador ideal ficticio de 100 µF a 100 V, ¿qué energía queda almacenada?", "opciones": ["0,125 J", "0,5 J", "2 J"], "valores": [0.125, 0.5, 2], "medido": "energia", "remate": "Almacena {energia|2} J. Es un ejemplo de electrostática, no una energía para desfibrilar."},
-  "nucleo": [{"numero": 1, "nombre": "interrumpir un ritmo y almacenar energía", "color": "coral", "paneles": [
-    {"rotulo": "EL VOLTAJE ENTRA AL CUADRADO", "clave": "Energía: {energia|2} J. A media tensión: {mediaTension|3} J.", "texto": "Un condensador separa cargas y almacena energía en su campo eléctrico. La energía es la mitad de la capacidad por el cuadrado de la tensión. Manteniendo capacidad, duplicar tensión da {dobleTension|2} J en este ejemplo: no solo el doble de energía.", "detalle": "Las barras comparan energía almacenada, no corriente por el cuerpo ni éxito de una descarga. La energía entregada depende del circuito, forma de onda, pérdidas y carga conectada. Aquí no se modelan electrodos, impedancia corporal ni administración de descargas.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["mediaTension", "energia", "dobleTension"], "rotulos": ["Media V: {mediaTension|3} J", "Base: {energia|2} J", "Doble V: {dobleTension|2} J"]}},
-    {"rotulo": "NO ES UN BOTÓN DE ENCENDIDO", "clave": "La cuenta solo explica {energia|2} J almacenados.", "texto": "Un campo eléctrico aplicado adecuadamente puede despolarizar suficiente tejido y terminar circuitos de activación que sostienen determinados ritmos. Eso puede permitir que reaparezca una organización eficaz, pero no garantiza recuperación. El objetivo no es dar fuerza mecánica a un corazón inmóvil.", "detalle": "La ausencia de pulso puede tener mecanismos eléctricos diferentes. Por eso el aspecto cinematográfico de una línea plana no describe una indicación de desfibrilación. El reconocimiento de ritmos y la respuesta clínica quedan fuera de esta explicación física.", "color": "coral", "dibujo": {"tipo": "magnitudes", "claves": ["energia"], "rotulos": ["Almacenada: {energia|2} J"]}}
-  ]}],
-  "cierre": {"titulo": "La energía no sustituye la organización eléctrica.", "nota": "capacidad en µF y tension en V, valores ficticios para E = CV²/2. No representan parámetros clínicos ni un equipo real. Sin instrucciones de construcción, prueba, colocación o uso de dispositivos.", "parrafos": ["El cálculo eléctrico ilustra cómo se almacena energía. No prescribe cuándo descargar, cuánto administrar ni cómo atender a una persona; esas decisiones no se deducen de la capacidad de un condensador."]}
+  "id": "desfibrilador",
+  "rotulo": "MEDICINA",
+  "titulo": "Desfibrilador: ¿cómo prepara un pulso eléctrico tan breve?",
+  "revisionEditorial": 2,
+  "modelo": "desfibrilador",
+  "color": "verde",
+  "medidas": {
+    "capacidad": 100,
+    "tension": 100
+  },
+  "entradilla": "En un desfibrilador hay una batería, pero la energía de un pulso no se entrega simplemente conectando esa pila directamente a los parches. Entre la reserva y la salida hay un circuito que carga un condensador. El aparato acumula energía durante un intervalo y después puede liberarla mucho más deprisa mediante una descarga controlada.",
+  "tanteo": {
+    "pregunta": "Al cargar el mismo condensador ideal a una tensión menor, ¿cuánta energía queda preparada para entregar?",
+    "opciones": [
+      "La misma energía",
+      "Menos energía",
+      "Más energía"
+    ],
+    "valores": [
+      0.5,
+      0.125,
+      0.25
+    ],
+    "medido": "mediaTension",
+    "remate": "Menos energía. Con la tensión reducida del ejemplo quedan {mediaTension|3} J almacenados, frente a {energia|3} J antes. No son energías de tratamiento."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "guardar y soltar",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "DOS CONDUCTORES, CARGAS SEPARADAS",
+          "clave": "El condensador guarda energía en un campo.",
+          "texto": "Un condensador contiene conductores separados por un aislante. El circuito lleva carga de un lado al otro y crea una diferencia de potencial. Entre ambos aparece un campo eléctrico que almacena energía. No hace falta imaginar electrones amontonados en una botella: importa la separación de cargas y la geometría del componente.",
+          "detalle": "Nuestro dibujo abre el condensador para mostrar dos placas idealizadas. Los componentes reales suelen plegar o enrollar superficies para aprovechar espacio. La capacidad resume cuánto puede separar el componente por cada incremento de tensión, dentro de las condiciones para las que está diseñado.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "desfibrilador-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "UN INTERRUPTOR CAMBIA EL CAMINO",
+          "clave": "La descarga usa la energía que ya estaba preparada.",
+          "texto": "Cuando el circuito habilita la salida, el condensador puede transferir energía por otro recorrido. Esa separación entre cargar y descargar permite concentrar la entrega en un intervalo breve. Es una diferencia entre energía, la cantidad transferida, y potencia, el ritmo al que se realiza la transferencia.",
+          "detalle": "La energía del condensador crece con el cuadrado de la tensión. Por eso una variación de tensión no produce una variación proporcional de energía. El segundo panel representa únicamente un circuito de descarga ideal, no conexiones de uso ni el funcionamiento clínico del desfibrilador.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "desfibrilador-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La batería abastece; el condensador concentra la entrega.",
+    "nota": "Condensador ficticio de 100 µF a 100 V. Sin procedimientos, ajustes ni energías clínicas.",
+    "parrafos": [
+      "El aparato reúne una reserva, un almacén intermedio y un camino controlado de salida. Entender ese reparto explica el pulso sin atribuirle poderes universales sobre el corazón. El cálculo cuenta energía eléctrica; no decide cuándo ni cómo utilizar un dispositivo médico."
+    ]
+  }
 }

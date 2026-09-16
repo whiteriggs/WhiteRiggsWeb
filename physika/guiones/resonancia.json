@@ -1,12 +1,70 @@
 {
-  "id": "resonancia", "rotulo": "MEDICINA", "titulo": "¿Qué hace el metal dentro de una resonancia magnética?",
-  "entradilla": "Aquí resonancia significa resonancia magnética, MRI: imágenes con un campo magnético y radiofrecuencia, no con rayos X. No todo metal se comporta igual. Que un objeto no sea atraído por el imán no demuestra que sea compatible con la exploración.",
-  "modelo": "resonancia", "color": "indigo",
-  "medidas": {"campo": 1.5, "giro": 42.57747892},
-  "tanteo": {"pregunta": "En este modelo, ¿a qué frecuencia precesan los protones a 1,5 teslas?", "opciones": ["Unos 6 MHz", "Unos 64 MHz", "Unos 640 MHz"], "valores": [6, 64, 640], "medido": "frecuencia", "remate": "La frecuencia de Larmor es {frecuencia|2} MHz: depende del núcleo y del campo aplicado."},
-  "nucleo": [{"numero": 1, "nombre": "orientar, excitar y escuchar", "color": "indigo", "paneles": [
-    {"rotulo": "EL RELOJ DEL PROTÓN", "clave": "A este campo: {frecuencia|2} MHz. Al duplicarlo: {doble|2} MHz.", "texto": "El campo crea una pequeña magnetización neta de los protones. Un pulso de radiofrecuencia puede inclinarla; su componente transversal induce una señal en las bobinas receptoras. Los gradientes hacen que la frecuencia y la fase dependan de la posición, permitiendo reconstruir de dónde procede la señal.", "detalle": "La relación de Larmor es lineal. Las barras representan frecuencias, no intensidad de la imagen ni peligrosidad. La relajación y la secuencia elegida cambian el contraste entre tejidos: escuchar a la frecuencia correcta no basta para fabricar una imagen anatómica.", "color": "indigo", "dibujo": {"tipo": "barras", "claves": ["frecuencia", "doble"], "rotulos": ["Campo: {frecuencia|1} MHz", "Doble: {doble|1} MHz"]}},
-    {"rotulo": "NO IONIZANTE NO SIGNIFICA INOCUO", "clave": "Radiofrecuencia: {frecuencia|2} MHz en el ejemplo.", "texto": "MRI emplea radiación no ionizante; TAC y radiografías emplean radiación ionizante. El campo estático puede atraer materiales ferromagnéticos. Además, piezas conductoras, cables y bucles pueden acoplarse a campos variables y calentarse, incluso sin una gran atracción magnética.", "detalle": "Existen implantes con compatibilidad condicional: depende del modelo, campo, secuencia y condiciones documentadas. El material por sí solo no autoriza la exploración. Este cálculo no evalúa implantes, calentamiento ni compatibilidad de un dispositivo concreto.", "color": "indigo", "dibujo": {"tipo": "magnitudes", "claves": ["frecuencia"], "rotulos": ["Larmor: {frecuencia|2} MHz"]}}
-  ]}],
-  "cierre": {"titulo": "No hay una regla universal para todo metal.", "nota": "Campo ilustrativo de 1,5 T; giro es la razón giromagnética del protón dividida por dos pi, en MHz/T. Ley de Larmor. Consultado NIBIB, «Magnetic Resonance Imaging (MRI)», para el mecanismo y la distinción respecto a rayos X. Sin evaluación clínica de seguridad.", "parrafos": ["El ruido mecánico de la máquina procede principalmente de fuerzas sobre las bobinas de gradiente. No es el sonido de los protones: la señal que permite ver el interior se detecta electromagnéticamente."]}
+  "id": "resonancia",
+  "rotulo": "MEDICINA",
+  "titulo": "Resonancia magnética: ¿cómo escucha el aparato lo que hay dentro?",
+  "revisionEditorial": 2,
+  "modelo": "resonancia",
+  "color": "verde",
+  "medidas": {
+    "campo": 1.5,
+    "giro": 42.57747892
+  },
+  "entradilla": "La camilla entra en un túnel y el aparato empieza su concierto de golpes. Aunque se parece a un escáner de rayos X, trabaja de otra manera: un imán, señales de radio y unas bobinas le permiten recoger respuestas del interior. La imagen empieza con algo mucho más pequeño que un órgano.",
+  "tanteo": {
+    "pregunta": "Si el imán principal se hace más intenso, ¿qué le ocurre al ritmo al que responden los mismos núcleos?",
+    "opciones": [
+      "Se hace más lento",
+      "Se hace más rápido",
+      "No cambia"
+    ],
+    "valores": [
+      6,
+      64,
+      640
+    ],
+    "medido": "frecuencia",
+    "remate": "Se hace más rápido. En el campo del ejemplo el ritmo es {frecuencia|2} MHz; con el doble de campo sería {doble|2} MHz."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "escuchar el interior",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "UN IMÁN PONE EL COMPÁS",
+          "clave": "Los núcleos responden a un ritmo concreto.",
+          "texto": "Muchos núcleos de hidrógeno del cuerpo se comportan como diminutos imanes. El campo del túnel organiza una pequeña preferencia colectiva, no una fila perfecta de todos ellos. Una señal de radio, ajustada al ritmo adecuado, aparta esa respuesta conjunta de su equilibrio. Ese encuentro de ritmos se llama resonancia magnética.",
+          "detalle": "El ritmo depende del campo aplicado: es la frecuencia de Larmor. El dibujo representa la orientación colectiva, no protones que dan vueltas por el cuerpo como canicas. Las bobinas rodean la zona observada para enviar o recoger señales.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "resonancia-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA RESPUESTA TRAE UNA DIRECCIÓN",
+          "clave": "Variar el campo permite localizar la señal.",
+          "texto": "Después del pulso, la respuesta cambia mientras el conjunto vuelve hacia el equilibrio. Las bobinas captan una señal eléctrica. Otros campos, que varían ligeramente de un lugar a otro, permiten distinguir posiciones: sin esas diferencias, escucharíamos una mezcla sin saber de dónde viene cada parte.",
+          "detalle": "Esos campos espaciales se llaman gradientes. Sus bobinas soportan fuerzas cuando cambia la corriente, y de ahí procede buena parte del ruido. El ordenador combina muchas medidas; no hay una cámara escondida fotografiando directamente el interior.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "resonancia-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Una imagen construida escuchando respuestas.",
+    "nota": "Frecuencia ideal de protones. Esquemas cualitativos, sin interpretar imágenes ni condiciones clínicas.",
+    "parrafos": [
+      "El túnel no necesita mirar con luz visible. Le basta con poner un compás, provocar una respuesta y marcar el lugar del que procede. Los golpes que se oyen acompañan esa tarea de poner coordenadas al eco magnético."
+    ]
+  }
 }

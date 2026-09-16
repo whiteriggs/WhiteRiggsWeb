@@ -1,67 +1,70 @@
 {
   "id": "puertamicroondas",
-  "rotulo": "LA FÍSICA QUE CREÍAS INÚTIL",
-  "titulo": "¿Por qué ves dentro del microondas sin cocerte la cara?",
-  "entradilla": "La puerta lleva una chapa agujereada. Por esos agujeros pasa la luz, porque si no no verías el plato girar. Y por los mismos agujeros no pasa la microonda, que está a un palmo de tu cara. La chapa no distingue entre una y otra: lo único que hay ahí es una comparación de tamaños.",
+  "rotulo": "CASA",
+  "titulo": "¿Por qué la puerta del microondas deja ver el plato y frena las microondas?",
+  "entradilla": "Miras girar el plato a través de una chapa llena de agujeros. Parece contradictorio: una puerta que debe contener radiación está agujereada justo delante de ti. La clave es que la luz visible y las microondas tienen escalas muy diferentes, y la chapa metálica no responde igual a ambas. Su material también importa.",
   "modelo": "rejilla",
   "color": "ambar",
   "tanteo": {
-    "pregunta": "Los agujeros de la puerta miden milímetro y medio. ¿Cuántas veces cabe un agujero en la onda que tiene que parar?",
-    "opciones": ["Dos veces", "Diez veces", "Más de ochenta veces"],
-    "valores": [2, 10, 80],
+    "pregunta": "Comparados con la longitud de onda usada para calentar, ¿cómo son los agujeros de la rejilla del microondas?",
+    "opciones": [
+      "Más grandes que la onda",
+      "De un tamaño parecido",
+      "Mucho más pequeños"
+    ],
+    "valores": [
+      0.5,
+      1,
+      80
+    ],
     "medido": "vecesQueCabeElAgujero",
-    "remate": "Cabe {vecesQueCabeElAgujero|0} veces. Para una onda de ese tamaño la rejilla no está agujereada: es una pared."
+    "remate": "Mucho más pequeños. En el ejemplo el diámetro cabe {vecesQueCabeElAgujero|0} veces en la longitud de onda. Eso ayuda al apantallamiento, pero no calcula la fuga de una puerta completa."
   },
   "nucleo": [
     {
       "numero": 1,
-      "nombre": "el tamaño manda",
-      "color": "azul",
+      "nombre": "una chapa para escalas distintas",
+      "color": "ambar",
       "paneles": [
         {
-          "rotulo": "TRES TAMAÑOS",
-          "clave": "Un agujero solo deja pasar una onda si la onda cabe por él.",
-          "texto": "La microonda mide {ondaEnCentimetros|1} centímetros. El agujero, {agujeroEnMilimetros|1} milímetros. La luz con la que ves el plato, {luzEnNanometros|0} nanómetros.",
-          "detalle": "Puestos en la misma regla, la microonda es {razonDeOndas|entera} veces más larga que la luz. El agujero está justo en medio: demasiado pequeño para una, enorme para la otra. No hay ningún material especial en esa chapa, solo un tamaño bien elegido.",
-          "color": "azul",
+          "rotulo": "PARA LA LUZ HAY VENTANAS",
+          "clave": "La luz visible puede atravesar los espacios abiertos.",
+          "texto": "La longitud de onda de la luz visible es mucho menor que el diámetro de los agujeros. Parte de esa luz encuentra pasos abiertos y llega a tus ojos; la que choca con metal no atraviesa igual. Por eso ves el interior, aunque la rejilla oscurece la imagen. No deja pasar toda la luz sin ninguna pérdida.",
+          "detalle": "Las microondas del ejemplo tienen una longitud de onda de {ondaEnCentimetros|1} centímetros. La comparación de tamaños ayuda, pero imaginar bolas que caben o no caben sería engañoso: las ondas interactúan con las cargas del metal y con la geometría.",
+          "color": "ambar",
           "dibujo": {
-            "tipo": "escala",
-            "claves": ["luzEnMetros", "agujeroEnMetros", "ondaEnMetros"],
-            "rotulos": ["la luz que ves", "el agujero", "la microonda"],
-            "pies": ["{luzEnNanometros|0} nm", "{agujeroEnMilimetros|1} mm", "{ondaEnCentimetros|1} cm"],
-            "marcas": [
-              { "valor": 0.000000001, "texto": "1 nm" },
-              { "valor": 0.000001, "texto": "1 µm" },
-              { "valor": 0.001, "texto": "1 mm" },
-              { "valor": 1, "texto": "1 m" }
-            ]
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "puertamicroondas-1",
+            "claves": [],
+            "rotulos": []
           }
         },
         {
-          "rotulo": "POR DEBAJO DEL CORTE",
-          "clave": "El campo penetra en el agujero, pero decae exponencialmente en profundidad.",
-          "texto": "La chapa refleja la radiación y cada agujero se comporta como una guía corta. Por debajo de la frecuencia de corte no hay propagación por su interior: queda un campo evanescente que disminuye según penetra.",
-          "detalle": "Para un agujero de {agujeroEnMilimetros|1} milímetros, la longitud de onda de corte es {corteEnCentimetros|2} centímetros. La microonda mide {ondaEnCentimetros|1}. La curva representa la amplitud relativa del primer modo de una guía circular ideal, no la potencia que escapa por una puerta real. El grosor de la chapa, el acoplamiento y el conjunto de agujeros también intervienen.",
-          "color": "azul",
+          "rotulo": "EL AGUJERO TAMBIÉN TIENE PROFUNDIDAD",
+          "clave": "El campo puede penetrar sin propagarse libremente por el hueco.",
+          "texto": "La chapa conductora refleja gran parte de las microondas. Un agujero puede describirse como un tramo corto de guía: si la frecuencia está por debajo de su corte, el campo disminuye al avanzar por él. Ese decaimiento se llama evanescencia. No equivale a una barrera perfecta ni permite deducir toda la fuga mirando solamente un diámetro.",
+          "detalle": "Influyen el espesor, el conjunto de perforaciones y los cierres de la puerta. Las juntas y los enclavamientos también forman parte de la seguridad. No retires la rejilla ni uses un aparato con la puerta dañada para experimentar con esta idea.",
+          "color": "verde",
           "dibujo": {
-            "tipo": "evanescencia",
-            "ejeX": "profundidad / diámetro",
-            "ejeY": "campo relativo (%)"
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "puertamicroondas-2",
+            "claves": [],
+            "rotulos": []
           }
         }
       ]
     }
   ],
   "cierre": {
-    "titulo": "La puerta no filtra: mide.",
-    "nota": "Chapa perforada ideal, agujeros circulares y onda llegando de frente.",
+    "titulo": "Ver dentro no significa dejar salir todo.",
     "parrafos": [
-      "De cada {deCadaCuantosPasaUno|entera} vatios que llegan a un agujero pasa uno: {atenuacion|0} decibelios de caída, y eso con un solo agujero.",
-      "Y la luz pasa entera porque para ella el agujero no es un agujero: es una ventana de {vecesQueCabeLaLuz|entera} longitudes de onda de ancho. Ahí no hay nada que cortar."
-    ]
+      "La puerta combina metal, pequeños huecos y cierres adecuados. La diferencia de escalas permite observar el plato sin convertir la rejilla en un hueco abierto."
+    ],
+    "nota": "Guía circular ideal y medidas ilustrativas. El campo dibujado es cualitativo: no representa potencia de fuga ni certifica una puerta."
   },
   "puente": {
     "hacia": "microondas",
-    "frase": "Ya sabes por qué la microonda no sale por la puerta. Lo que no hemos contado es qué hace dentro, que es aún más raro: no calienta la comida, calienta solo el agua de la comida."
-  }
+    "frase": "Dentro, el campo intercambia energía con componentes de la comida; el agua es importante, pero no es el único material que puede calentarse."
+  },
+  "revisionEditorial": 2
 }

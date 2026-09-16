@@ -1,12 +1,72 @@
 {
-  "id": "solar", "rotulo": "CASA", "titulo": "¿Cómo saca electricidad de la luz un panel solar?",
-  "entradilla": "En una célula fotovoltaica, algunos fotones generan electrones y huecos móviles. La estructura del semiconductor favorece su separación y permite entregar corriente a un circuito externo. No hay una pequeña turbina ni hace falta calentar agua: la conversión ocurre en el material.",
-  "modelo": "solar", "color": "verde",
-  "medidas": {"irradiancia": 800, "area": 2, "eficiencia": 0.2, "horas": 5},
-  "tanteo": {"pregunta": "Sobre 2 m² llegan 800 W/m². Con una eficiencia del 20 %, ¿qué potencia eléctrica sale?", "opciones": ["160 W", "320 W", "1.600 W"], "valores": [160, 320, 1600], "medido": "potencia", "remate": "Salen {potencia|0} W eléctricos de {incidente|0} W luminosos incidentes. La eficiencia se aplica a la potencia que realmente llega al panel."},
-  "nucleo": [{"numero": 1, "nombre": "luz, cargas y pérdidas", "color": "verde", "paneles": [
-    {"rotulo": "NO TODOS LOS FOTONES AYUDAN IGUAL", "clave": "El panel convierte el {porcentaje|0} %: entrega {potencia|0} W y deja {noElectrica|0} W sin convertir en electricidad.", "texto": "Un fotón necesita suficiente energía para producir una excitación útil. Si tiene menos, no aporta esa carga; si tiene más, buena parte del exceso termina como calor. También hay reflexión, recombinación y pérdidas resistivas. La unión permite extraer cargas, pero no multiplica la energía luminosa disponible.", "detalle": "La barra no eléctrica no significa que todo ese flujo caliente el panel: parte se refleja o atraviesa materiales. Tampoco se obtiene la potencia útil solo contando fotones; importan el espectro, la tensión de funcionamiento y la corriente que puede suministrar la célula.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["potencia", "noElectrica"], "rotulos": ["Eléctrica: {potencia|0} W", "No convertida: {noElectrica|0} W"]}},
-    {"rotulo": "LOS VATIOS NO SON LA COSECHA DEL DÍA", "clave": "Mantener {potencia|0} W durante {horas|0} horas produce {energia|2} kWh.", "texto": "La potencia describe el ritmo instantáneo. La energía acumula ese ritmo durante el tiempo. Aquí multiplicamos porque suponemos iluminación y eficiencia constantes. En un tejado real hay que sumar la potencia cambiante: una hora de sombra y una de sol no aportan necesariamente lo mismo.", "detalle": "El ejemplo termina en corriente continua a la salida del panel. Cableado, inversor y almacenamiento pueden reducir la energía posterior. La eficiencia elegida tampoco se mantiene exactamente con la temperatura: que el sol caliente más el módulo no implica que convierta mejor cada vatio recibido.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["potencia", "horas", "energia"], "rotulos": ["Potencia: {potencia|0} W", "Duración: {horas|0} h", "Energía: {energia|2} kWh"]}}
-  ]}],
-  "cierre": {"titulo": "La luz pone el presupuesto; la célula convierte una parte.", "nota": "Irradiancia en W/m², superficie en m², eficiencia adimensional y duración equivalente en h. Valores ilustrativos, no una predicción meteorológica ni la ficha de un módulo. Modelo P = irradiancia × área × eficiencia y E = P × tiempo.", "parrafos": ["La potencia nominal permite comparar módulos bajo condiciones definidas. Para explicar una factura o dimensionar una instalación también hacen falta orientación, sombras, clima y pérdidas del sistema."]}
+  "id": "solar",
+  "rotulo": "CASA",
+  "titulo": "¿Cómo saca electricidad de la luz un panel solar?",
+  "entradilla": "El panel solar del tejado no tiene hélices ni un pequeño motor escondido. Recibe luz y entrega electricidad sin una pieza que tenga que girar. Su secreto está en el material de las células y en cómo están preparadas sus capas: la luz pone cargas en condiciones de moverse y una unión ayuda a separarlas.",
+  "modelo": "solar",
+  "color": "ambar",
+  "medidas": {
+    "irradiancia": 800,
+    "area": 2,
+    "eficiencia": 0.2,
+    "horas": 5
+  },
+  "tanteo": {
+    "pregunta": "¿Qué parte de la energía luminosa que recibe un panel termina normalmente como electricidad útil?",
+    "opciones": [
+      "Ninguna",
+      "Una parte",
+      "Toda, sin pérdidas"
+    ],
+    "valores": [
+      0,
+      320,
+      1600
+    ],
+    "medido": "potencia",
+    "remate": "Una parte. Este ejemplo entrega {potencia|0} W eléctricos a partir de {incidente|0} W incidentes; el rendimiento no es una promesa comercial."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "luz que separa cargas",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "UNA CÉLULA NO ES UNA PILA LLENA",
+          "clave": "La luz aporta energía dentro del semiconductor.",
+          "texto": "En una célula de silicio, algunos fotones pueden ceder energía suficiente para liberar electrones de sus enlaces. Quedan un electrón móvil y un hueco, que también se comporta como portador de carga. La unión entre regiones del material favorece separarlos antes de que se recombinen. Ese aprovechamiento de la luz es el efecto fotovoltaico.",
+          "detalle": "No todos los fotones acaban produciendo electricidad aprovechable. Algunos se reflejan, otros no aportan la energía adecuada y parte de la energía recibida termina como calor. El panel no necesita ponerse al rojo para funcionar.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "solar-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "HACE FALTA CERRAR EL CAMINO",
+          "clave": "Los contactos llevan la carga a un circuito exterior.",
+          "texto": "Las finas pistas metálicas de la célula recogen carga. Cuando conectas un circuito adecuado, puede circular corriente y entregar energía a una carga exterior. La célula mantiene ese proceso mientras recibe luz suficiente. Una batería, si existe, realiza otra tarea: almacenar energía para utilizarla después, cuando la producción y el consumo no coinciden.",
+          "detalle": "Las células se conectan para formar módulos y el inversor adapta su salida a la instalación. El rendimiento depende de temperatura, iluminación, sombras y electrónica. La potencia de la etiqueta no significa que el tejado la entregue durante todo el día.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "solar-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La luz alimenta; el material organiza el camino.",
+    "parrafos": [
+      "Esas rayas sobre el panel no son decoración: ayudan a sacar del semiconductor parte de la energía que acaba de recibir."
+    ],
+    "nota": "Área, irradiancia, horas y eficiencia ilustrativas y constantes. Esquema cualitativo de una célula, no especificaciones de un módulo real."
+  },
+  "revisionEditorial": 2
 }

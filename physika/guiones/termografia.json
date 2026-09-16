@@ -1,12 +1,71 @@
 {
-  "id": "termografia", "rotulo": "MEDICINA", "titulo": "¿Qué mide una cámara térmica cuando apunta a la piel?",
-  "entradilla": "Una cámara térmica recibe radiación infrarroja de una superficie y estima su temperatura mediante calibración. No ve directamente la temperatura interna ni diagnostica fiebre por una imagen de colores. La piel intercambia calor con el entorno y puede estar a una temperatura distinta del interior.",
-  "modelo": "termografia", "color": "ambar",
-  "medidas": {"temperatura": 33, "ambiente": 20, "emisividad": 0.98},
-  "tanteo": {"pregunta": "¿Dónde cae el máximo espectral de un cuerpo negro a los 33 °C del ejemplo?", "opciones": ["Cerca de 0,5 µm", "Cerca de 9,5 µm", "Cerca de 95 µm"], "valores": [0.5, 9.5, 95], "medido": "pico", "remate": "La ley de Wien sitúa el máximo por longitud de onda en {pico|2} µm, dentro del infrarrojo térmico."},
-  "nucleo": [{"numero": 1, "nombre": "el calor tiene un espectro", "color": "ambar", "paneles": [
-    {"rotulo": "EL MÁXIMO SE DESPLAZA", "clave": "Superficie: {pico|2} µm. Referencia ambiental: {picoAmbiente|2} µm.", "texto": "Todos los cuerpos a estas temperaturas emiten en un abanico amplio de longitudes de onda. Al calentarlos, el máximo se desplaza hacia longitudes más cortas. No emiten únicamente en ese máximo: una cámara integra radiación en su banda de sensibilidad y la convierte en una estimación térmica.", "detalle": "La ley de Wien usa temperatura absoluta. Las barras comparan longitudes de onda, no grados Celsius como si fueran proporciones de calor. Una emisividad casi constante conserva aproximadamente la posición del máximo, aunque reduce la radiancia respecto al cuerpo negro ideal.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["pico", "picoAmbiente"], "rotulos": ["Piel ideal: {pico|2} µm", "Ambiente: {picoAmbiente|2} µm"]}},
-    {"rotulo": "LO RECIBIDO NO ES SOLO LO EMITIDO", "clave": "Intercambio radiativo neto ideal: {flujo|1} W/m².", "texto": "Una superficie también refleja parte de la radiación ambiental. La estimación depende de emisividad, temperatura reflejada, distancia y calibración. El cálculo neto resta la emisión del entorno a la de la superficie, suponiendo un recinto grande a temperatura uniforme.", "detalle": "Esa potencia por área no incluye convección, sudoración ni circulación sanguínea. No permite deducir temperatura interna. Los colores de la cámara son una escala elegida por software: cambiarla puede volver espectacular una diferencia térmica pequeña sin cambiar la medición.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["flujo"], "rotulos": ["Flujo neto: {flujo|1} W/m²"]}}
-  ]}],
-  "cierre": {"titulo": "Superficie caliente no es diagnóstico.", "nota": "temperatura = 33 °C y ambiente = 20 °C, escenarios no clínicos; emisividad gris elegida de 0,98. Wien para radiancia por longitud de onda y Stefan-Boltzmann para flujo neto hemisférico. No representa una cámara concreta.", "parrafos": ["Una temperatura superficial tiene condiciones de medida. Interpretarla como estado de salud exige información adicional que ni el espectro ideal ni esta cuenta proporcionan."]}
+  "id": "termografia",
+  "rotulo": "MEDICINA",
+  "titulo": "Cámara térmica: ¿cómo ve una mano en la oscuridad?",
+  "revisionEditorial": 2,
+  "modelo": "termografia",
+  "color": "verde",
+  "medidas": {
+    "temperatura": 33,
+    "ambiente": 20,
+    "emisividad": 0.98
+  },
+  "entradilla": "Apuntas una cámara térmica hacia una mano y aparece una silueta de colores aunque la habitación esté oscura. La mano no se ha vuelto naranja ni ha empezado a brillar para nuestros ojos. Emite radiación que ya estaba saliendo de su superficie, y el detector de la cámara está preparado para recibirla.",
+  "tanteo": {
+    "pregunta": "La radiación más característica de una mano a temperatura cotidiana está principalmente en…",
+    "opciones": [
+      "La luz visible",
+      "El infrarrojo térmico",
+      "Los rayos X"
+    ],
+    "valores": [
+      0.5,
+      9.5,
+      95
+    ],
+    "medido": "pico",
+    "remate": "El infrarrojo térmico. En el ejemplo, el máximo por longitud de onda está en {pico|2} micrómetros."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "luz que no vemos",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA SUPERFICIE YA EMITE",
+          "clave": "No hace falta una lámpara visible.",
+          "texto": "Los objetos a temperaturas habituales emiten radiación repartida entre muchas longitudes de onda. Buena parte está fuera de lo visible. Es radiación térmica. Una óptica apropiada conduce una banda infrarroja hasta el sensor, que registra cómo varía la señal de un punto a otro de la escena.",
+          "detalle": "Al subir la temperatura, el máximo del espectro se desplaza hacia longitudes más cortas: es la ley de Wien. Aquí calculamos ese máximo ideal. No significa que toda la energía salga en una única longitud ni que cualquier cámara detecte todo el espectro.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "termografia-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL SENSOR NO RECIBE SOLO TEMPERATURA",
+          "clave": "La superficie también puede reflejar el entorno.",
+          "texto": "Dos objetos a la misma temperatura pueden producir lecturas distintas. Uno emite bien en la banda observada; otro refleja más radiación de alrededor. Esa facilidad para emitir se llama emisividad. Para estimar una temperatura, el aparato necesita suponer o conocer algo sobre la superficie y el ambiente.",
+          "detalle": "Los colores de la pantalla son una traducción elegida por el equipo. Cambiar la paleta no cambia lo que está emitiendo la mano. El segundo dibujo separa radiación propia y reflejada, sin presentar colores como diagnósticos ni convertir el brillo en una temperatura exacta.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "termografia-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La oscuridad visible no apaga el infrarrojo.",
+    "nota": "Superficie gris ideal y máximo espectral de cuerpo negro. No mide temperatura interna ni establece umbrales clínicos.",
+    "parrafos": [
+      "La cámara hace visible una banda que nuestros ojos no captan. Lo sorprendente no es que invente luz, sino que recoge una emisión cotidiana. Para entender su imagen conviene mirar también el material, los reflejos y cómo se ha elegido representar la señal."
+    ]
+  }
 }

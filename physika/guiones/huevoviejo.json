@@ -1,12 +1,72 @@
 {
-  "id": "huevoviejo", "rotulo": "COTIDIANO", "titulo": "¿Por qué puede flotar un huevo viejo?",
-  "entradilla": "Con el tiempo, un huevo puede perder agua y gases a través de los poros de la cáscara. Su volumen exterior cambia poco, pero su masa disminuye y la cámara de aire crece. Eso favorece la flotación; no permite decidir si es seguro comerlo.",
-  "modelo": "huevoviejo", "color": "azul",
-  "medidas": {"masa": 0.060, "masaInicial": 0.064, "volumen": 0.000063, "densidadAgua": 1000},
-  "tanteo": {"pregunta": "Un huevo tiene una masa de 60 g y ocupa 63 cm³. ¿Qué densidad media crees que tiene?", "opciones": ["Unos 600 kg/m³", "Unos 950 kg/m³", "Unos 1.300 kg/m³"], "valores": [600, 950, 1300], "medido": "densidad", "remate": "Tiene {densidad|0} kg/m³, menos que el agua del escenario: puede flotar."},
-  "nucleo": [{"numero": 1, "nombre": "menos masa en el mismo volumen", "color": "azul", "paneles": [
-    {"rotulo": "EL AGUA EMPUJA SEGÚN EL VOLUMEN", "clave": "Sumergido por completo recibe {empuje|3} N de empuje frente a {peso|3} N de peso.", "texto": "La presión del agua crece con la profundidad. Sumada sobre toda la superficie, esa distribución produce un empuje hacia arriba igual al peso del agua desplazada. La cámara de aire no tira del huevo: reduce su densidad media al acompañar la pérdida de materia.", "detalle": "El diagrama considera únicamente el huevo y las fuerzas del agua y de la gravedad, sin apoyo en el fondo. Si el empuje supera al peso, comienza a subir. Al emerger, desplaza menos agua hasta que ambas fuerzas se equilibran.", "color": "azul", "dibujo": {"tipo": "fuerzas", "claves": ["empuje", "peso"], "rotulos": ["Empuje {empuje|3} N", "Peso {peso|3} N"], "angulos": [90, 270]}},
-    {"rotulo": "EL MISMO HUEVO, OTRA MASA", "clave": "Su peso inicial sería {pesoInicial|3} N; ahora flotaría con cerca del {sumergido|1} % del volumen sumergido.", "texto": "En el escenario inicial, el peso supera al empuje disponible con todo el huevo bajo el agua. Después de perder masa ocurre lo contrario. La fracción sumergida al flotar se obtiene dividiendo la densidad media del huevo entre la del agua.", "detalle": "Que se incline, se ponga de punta o llegue a emerger también depende de cómo estén repartidas las masas. La cámara suele crecer en un extremo y desplaza el centro de masa. Ese cambio de orientación no mide por sí solo cuánto tiempo lleva almacenado.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["pesoInicial", "empuje", "peso"], "rotulos": ["Inicial: {pesoInicial|3} N", "Empuje: {empuje|3} N", "Actual: {peso|3} N"]}}
-  ]}],
-  "cierre": {"titulo": "Flotar habla de densidad, no de patógenos.", "nota": "Masas en kg, volumen exterior en m³ y densidad del agua en kg/m³. Valores ilustrativos, no una cronología de envejecimiento. Empuje calculado con el principio de Arquímedes.", "parrafos": ["La temperatura, el almacenamiento y la permeabilidad de la cáscara cambian la pérdida de masa. Un huevo que se hunde puede ser inseguro y uno que flota no demuestra por ese hecho contaminación: no es una prueba sanitaria."]}
+  "id": "huevoviejo",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Cómo mide un densímetro de cocina con solo flotar?",
+  "revisionEditorial": 2,
+  "entradilla": "Un densímetro parece un termómetro alargado con una barriga de vidrio. Lo dejas en una bebida y se queda vertical, con una parte de la escala fuera. No necesita pila ni probar el sabor. La altura a la que flota cuenta cuánto pesa un mismo volumen de ese líquido.",
+  "modelo": "huevoviejo",
+  "color": "ambar",
+  "medidas": {
+    "masa": 0.06,
+    "masaInicial": 0.064,
+    "volumen": 0.000063,
+    "densidadAgua": 1000
+  },
+  "tanteo": {
+    "pregunta": "En un líquido más denso, ¿qué hará el mismo densímetro?",
+    "opciones": [
+      "Necesitará hundirse más",
+      "Quedará menos hundido",
+      "Medirá directamente el sabor"
+    ],
+    "valores": [
+      600,
+      950,
+      1300
+    ],
+    "medido": "densidad",
+    "remate": "Quedará menos hundido: necesita desplazar menos volumen para sostener el mismo peso."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una balanza sin plato",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "LO QUE SOSTIENE EL VIDRIO",
+          "clave": "El líquido desplazado determina el empuje.",
+          "texto": "Al entrar el densímetro, ocupa un espacio que antes estaba lleno de líquido. La presión sobre su parte inferior es mayor que arriba y aparece una fuerza ascendente. Su valor equivale al peso del líquido desalojado. Esa es la idea del principio de Arquímedes, también detrás de los barcos.",
+          "detalle": "El lastre de la barriga mantiene el instrumento derecho. Si pesa demasiado para el volumen disponible, se hunde: nuestro ejemplo compara un flotador de {masa|3} kg con otro lastrado a {masaInicial|3} kg, manteniendo el mismo volumen exterior.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "huevoviejo-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "UNA ESCALA QUE SUBE",
+          "clave": "Más densidad permite sostenerlo con menos volumen sumergido.",
+          "texto": "En una bebida más densa, cada pequeño volumen desplazado pesa más. El mismo instrumento encuentra el equilibrio antes de hundirse tanto. Su cuello estrecho convierte ese cambio de volumen en un desplazamiento visible de la escala. La lectura se hace donde la superficie del líquido corta el tallo.",
+          "detalle": "La escala debe estar calibrada para el instrumento y la temperatura. Azúcar, alcohol y otras sustancias modifican la densidad de maneras distintas: flotar no identifica por sí solo los ingredientes de una mezcla desconocida.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "huevoviejo-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La bebida hace de contrapeso.",
+    "parrafos": [
+      "No es el vidrio reconociendo azúcar: es un peso conocido buscando el volumen de líquido que puede sostenerlo. La escala traduce esa altura en una lectura útil."
+    ],
+    "nota": "Masas y volumen ilustrativos de flotación. El modelo conserva el balance de peso y empuje; no calibra un densímetro comercial ni evalúa alimentos."
+  }
 }

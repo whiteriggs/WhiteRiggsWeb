@@ -1,12 +1,71 @@
 {
-  "id": "despegue", "rotulo": "AVIACIÓN", "titulo": "¿Por qué suele favorecer el despegue el viento de frente?",
-  "entradilla": "El ala responde al movimiento respecto al aire, no al velocímetro del suelo. Con viento de frente puede alcanzarse una misma velocidad aerodinámica con menos velocidad terrestre. Pero no se despega siempre contra el viento: hay otros condicionantes y límites.",
-  "modelo": "despegue", "color": "verde",
-  "medidas": {"aire": 70, "viento": 10, "masa": 60000},
-  "tanteo": {"pregunta": "Con 10 m/s de viento de frente, ¿qué velocidad respecto al suelo corresponde a 70 m/s respecto al aire?", "opciones": ["80 m/s", "60 m/s", "70 m/s"], "valores": [80, 60, 70], "medido": "sueloFrente", "remate": "Son {sueloFrente|0} m/s. En esta situación colineal, el movimiento del aire y el del avión se restan al pasar al marco del suelo."},
-  "nucleo": [{"numero": 1, "nombre": "el mismo avión, dos referencias", "color": "verde", "paneles": [
-    {"rotulo": "LA SUSTENTACIÓN MIRA AL AIRE", "clave": "La velocidad terrestre pasa de {sueloCola|0} m/s con viento de cola a {sueloFrente|0} m/s con viento de frente.", "texto": "La curva mantiene fija la velocidad respecto al aire y varía el viento longitudinal. El signo positivo indica viento de frente; el negativo, viento de cola. La relación es lineal porque solo estamos cambiando de referencia, no simulando la aceleración del avión.", "detalle": "A igual densidad, configuración y velocidad aerodinámica, la sustentación del modelo es la misma en ambos extremos. El viento no proporciona una fuerza extra misteriosa: cambia qué velocidad terrestre corresponde a esa corriente relativa sobre el ala.", "color": "verde", "dibujo": {"tipo": "serie", "ejeX": "Viento de frente positivo (m/s)", "ejeY": "Velocidad respecto al suelo (m/s)", "claves": [], "rotulos": []}},
-    {"rotulo": "LA ENERGÍA DEPENDE DEL MARCO", "clave": "La energía cinética terrestre es {energiaFrente|0} MJ frente a {energiaCola|0} MJ.", "texto": "La energía cinética depende del cuadrado de la velocidad. En el marco del suelo, la razón entre esos valores es {razonEnergia|2}. Eso ayuda a entender por qué el viento longitudinal tiene consecuencias aunque el estado aerodinámico final sea parecido.", "detalle": "Esta comparación no es un cálculo de combustible ni de distancia de pista. El empuje, la resistencia, la rodadura y el viento durante la aceleración cambian el balance. Infraestructura, tráfico, obstáculos y componentes laterales también importan: el término «siempre» no describe todas las operaciones.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["energiaFrente", "energiaCola"], "rotulos": ["De frente {energiaFrente|0} MJ", "De cola {energiaCola|0} MJ"]}}
-  ]}],
-  "cierre": {"titulo": "El suelo y el aire no llevan el mismo reloj de velocidad.", "nota": "Velocidades en m/s y masa en kg, elegidas solo como escenario. Viento uniforme, colineal y estacionario; suma galileana de velocidades y energía respecto al suelo. No proporciona velocidades operativas, distancias de despegue ni instrucciones de vuelo.", "parrafos": ["Una ráfaga o un cambio de dirección exige otro problema, con dinámica y componentes vectoriales. El ejemplo conserva deliberadamente una geometría sencilla para mostrar qué mide cada velocidad."]}
+  "id": "despegue",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Por qué suele despegar el avión contra el viento?",
+  "entradilla": "La dirección elegida para despegar puede cambiar entre un viaje y otro. Parece raro: si quieres avanzar, lo intuitivo sería tener viento empujando por detrás. Pero las ruedas y las alas no miden la misma velocidad. Las ruedas recorren la pista; las alas necesitan encontrarse con suficiente aire, que también puede estar moviéndose.",
+  "modelo": "despegue",
+  "color": "verde",
+  "medidas": {
+    "aire": 70,
+    "viento": 10,
+    "masa": 60000
+  },
+  "tanteo": {
+    "pregunta": "Para conseguir la misma velocidad respecto al aire, con viento de frente el avión necesita avanzar sobre la pista…",
+    "opciones": [
+      "Más deprisa",
+      "Más despacio",
+      "Exactamente igual"
+    ],
+    "valores": [
+      80,
+      60,
+      70
+    ],
+    "medido": "sueloFrente",
+    "remate": "Más despacio: {sueloFrente|0} metros por segundo en el ejemplo, frente a {sueloCola|0} con viento de cola de igual intensidad."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el mismo avión, dos referencias",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA PISTA Y EL AIRE NO VAN JUNTOS",
+          "clave": "El viento de frente aporta corriente sobre el ala.",
+          "texto": "Piensa en una cinta transportadora de aire que se mueve hacia el avión. Aunque sus ruedas avanzaran a la misma velocidad, el ala encontraría más corriente que en un día sin viento. Comparar esos movimientos es trabajar con velocidad relativa: hay que indicar siempre respecto a qué estamos midiendo.",
+          "detalle": "El modelo suma movimientos en una sola dirección. Con viento lateral también importan los ángulos, así que no basta con sumar dos números. Aquí escogemos viento alineado con la pista para ver la idea sin esa complicación.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "despegue-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA MISMA CORRIENTE, MENOS VELOCIDAD EN TIERRA",
+          "clave": "La referencia del aire se alcanza antes en velocidad de suelo.",
+          "texto": "Si buscamos la misma velocidad del ala respecto al aire, el viento de frente permite alcanzarla con menos velocidad sobre la pista. En nuestro ejemplo, el avión también lleva menos energía de movimiento respecto al suelo. La energía cinética depende de la velocidad al cuadrado, no solo de cuánto pesa el avión.",
+          "detalle": "La comparación da {sueloFrente|0} metros por segundo frente a {sueloCola|0}. No calcula longitud de pista: aceleración, motores, pendiente y muchos otros factores harían falta para convertir esas velocidades en una distancia.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "despegue-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El ala no lee el velocímetro de las ruedas.",
+    "parrafos": [
+      "La aparente contradicción desaparece al separar dos referencias. El viento de cola ayuda a recorrer terreno durante el viaje, pero al despegar puede exigir más velocidad de suelo para conseguir la misma corriente sobre el ala."
+    ],
+    "nota": "Velocidades y masa ilustrativas. Viento colineal uniforme, suma galileana y energía respecto al suelo. No proporciona distancias, velocidades operativas ni procedimientos. El movimiento del dibujo compara referencias, no un despegue real."
+  },
+  "revisionEditorial": 2
 }

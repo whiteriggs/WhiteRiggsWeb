@@ -1,12 +1,72 @@
 {
-  "id": "abs", "rotulo": "COCHES", "titulo": "¿Por qué el ABS evita que las ruedas queden bloqueadas?",
-  "entradilla": "Una rueda bloqueada sigue rozando con el suelo, pero pierde gran parte de su capacidad de guiar el coche. El ABS regula la presión de frenado para limitar el bloqueo. No significa que acorte la distancia en toda superficie posible.",
-  "modelo": "abs", "color": "azul",
-  "medidas": {"velocidad": 20, "adherencia": 0.8, "deslizamiento": 0.6, "gravedad": 9.81},
-  "tanteo": {"pregunta": "El coche frena desde 20 m/s hasta detenerse. Con el coeficiente efectivo de 0,8 de este escenario, ¿qué distancia de frenado resulta, sin contar la reacción?", "opciones": ["Unos 13 m", "Unos 25 m", "Unos 51 m"], "valores": [13, 25, 51], "medido": "distancia", "remate": "Resultan {distancia|1} m desde {velocidadKmh|0} km/h, sin sumar reacción ni retardos."},
-  "nucleo": [{"numero": 1, "nombre": "frenar sin perder toda la dirección", "color": "azul", "paneles": [
-    {"rotulo": "UN MODELO DE ADHERENCIA", "clave": "Con los coeficientes elegidos: {distancia|1} m frente a {bloqueada|1} m.", "texto": "En terreno horizontal aproximamos la fuerza longitudinal disponible como coeficiente efectivo por peso. Trabajo y energía dan una distancia proporcional al cuadrado de la velocidad e inversamente proporcional al coeficiente. Las barras comparan metros desde una misma velocidad, no dos coches reales ensayados.", "detalle": "El caso regulado permite {aceleracion|2} m/s² de desaceleración constante. Se supone que la fuerza disponible se aprovecha inmediatamente. La transferencia de carga, los neumáticos y la actuación hidráulica hacen que una frenada real no tenga esa constancia.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["distancia", "bloqueada"], "rotulos": ["Regulado: {distancia|1} m", "Bloqueado: {bloqueada|1} m"]}},
-    {"rotulo": "DESLIZAR UN POCO NO ES BLOQUEAR", "clave": "La velocidad inicial es {velocidadKmh|0} km/h.", "texto": "Un neumático real desarrolla su fuerza con deformación y cierto deslizamiento longitudinal; no basta con oponer fricción estática y dinámica de bloques rígidos. El ABS observa el giro de las ruedas y modula el freno. La capacidad de frenar y la de girar comparten una reserva limitada de adherencia.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["aceleracion"], "rotulos": ["Desacel.: {aceleracion|2} m/s²"]}}
-  ]}],
-  "cierre": {"titulo": "Evitar el bloqueo no promete la distancia mínima universal.", "nota": "Velocidad 20 m/s; coeficientes efectivos ilustrativos 0,8 y 0,6, no mediciones ni una curva universal de neumático; gravedad 9,81 m/s². Modelo horizontal sin resistencia aerodinámica, reacción ni dinámica de suspensión.", "parrafos": ["Grava o nieve suelta pueden acumular material ante una rueda bloqueada y alterar la comparación de distancias. Esa excepción no elimina el problema de dirección. Aquí se explica el principio del sistema, no una técnica de conducción."]}
+  "id": "abs",
+  "revisionEditorial": 2,
+  "rotulo": "COCHES",
+  "titulo": "¿Qué hace el ABS del coche cuando el pedal tiembla?",
+  "entradilla": "En una frenada fuerte, el pedal puede vibrar como si algo estuviera protestando debajo del pie. Con el ABS actuando, esa pulsación acompaña a un trabajo muy rápido: impedir que una rueda deje de girar mientras el coche todavía avanza. Frenar no consiste simplemente en apretar cada vez más.",
+  "modelo": "abs",
+  "color": "coral",
+  "medidas": {
+    "velocidad": 20,
+    "adherencia": 0.8,
+    "deslizamiento": 0.6,
+    "gravedad": 9.81
+  },
+  "tanteo": {
+    "pregunta": "Si una rueda del coche está a punto de bloquearse, ¿qué hace el ABS?",
+    "opciones": [
+      "Aprieta todavía más ese freno",
+      "Alivia y vuelve a aplicar presión",
+      "Apaga todos los frenos"
+    ],
+    "valores": [
+      13,
+      25,
+      51
+    ],
+    "medido": "distancia",
+    "remate": "Alivia y vuelve a aplicar presión. Con los coeficientes ilustrativos, la parada resulta de {distancia|1} m frente a {bloqueada|1} m con la rueda bloqueada; no es una garantía universal."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "conservar el giro",
+      "color": "coral",
+      "paneles": [
+        {
+          "rotulo": "UNA RUEDA DA LA PISTA",
+          "clave": "Los sensores vigilan cómo cambia el giro.",
+          "texto": "Cada rueda lleva una señal de velocidad que la centralita puede comparar con las demás y con su evolución anterior. Si una rueda pierde giro demasiado deprisa, puede estar a punto de quedarse clavada. El neumático seguiría deslizándose por el suelo, pero le costaría más aportar la fuerza lateral que permite cambiar de dirección.",
+          "detalle": "La huella necesita rozamiento para frenar y para orientar el coche. Es la misma interacción física, no dos reservas independientes que puedan gastarse sin límite. El ABS no añade adherencia donde no la hay.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "abs-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "SOLTAR UN POCO PARA SEGUIR FRENANDO",
+          "clave": "Las válvulas modulan el freno de esa rueda.",
+          "texto": "Una válvula reduce la presión que aprieta las pastillas; la rueda recupera giro y el sistema vuelve a aumentarla. Repetir esa corrección es un ejemplo de realimentación: medir el resultado y ajustar la acción. El proceso sucede automáticamente, sin que el conductor tenga que acompasarse con cada rueda.",
+          "detalle": "En nuestra comparación, la frenada calculada con adherencia controlada ocupa {distancia|1} m. No incluye reacción del conductor y depende del firme elegido: hay superficies donde la distancia no mejora.",
+          "color": "coral",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "abs-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La vibración cuenta una corrección, no una adherencia infinita.",
+    "parrafos": [
+      "Lo importante es que el coche conserve capacidad de orientación durante la frenada. Sensores, válvulas y neumáticos trabajan juntos, dentro de lo que permite el contacto con la carretera. La rueda no tiene que detener su giro antes de que el coche deje de avanzar."
+    ],
+    "nota": "Coeficientes y velocidad ilustrativos, no prestaciones de un fabricante. Frenada rectilínea con coeficientes efectivos constantes; sin reacción, pendientes ni transitorios hidráulicos. No es una instrucción de conducción."
+  }
 }

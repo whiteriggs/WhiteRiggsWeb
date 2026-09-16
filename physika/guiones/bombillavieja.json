@@ -1,12 +1,71 @@
 {
-  "id": "bombillavieja", "rotulo": "CASA", "titulo": "¿Por qué una bombilla incandescente puede fundirse al encender?",
-  "entradilla": "El tungsteno frío tiene menor resistencia que cuando está incandescente. Al conectar la lámpara puede aparecer una corriente transitoria elevada mientras el filamento se calienta. Eso puede precipitar la rotura de una zona debilitada, pero las bombillas no fallan siempre al encender ni por una sola causa.",
-  "modelo": "bombillavieja", "color": "ambar",
-  "medidas": {"potencia": 60, "tension": 230, "razon": 12},
-  "tanteo": {"pregunta": "Una bombilla consume 60 W nominales en caliente a 230 V eficaces, y su resistencia caliente es doce veces la fría. Si el filamento permaneciera hipotéticamente frío a esa tensión, ¿qué corriente eficaz equivalente crees que daría?", "opciones": ["0,26 A", "3,13 A", "31,3 A"], "valores": [0.26, 3.13, 31.3], "medido": "corrienteFria", "remate": "El modelo de resistencia fría fija da {corrienteFria|2} A. No es la corriente sostenida real: la resistencia aumenta rápidamente al calentarse."},
-  "nucleo": [{"numero": 1, "nombre": "dos resistencias, no una recta hasta el brillo", "color": "ambar", "paneles": [
-    {"rotulo": "EL FILAMENTO CAMBIA CON LA TEMPERATURA", "clave": "En régimen caliente: {resistenciaCaliente|1} Ω; en el escenario frío: {resistenciaFria|1} Ω.", "texto": "Calculamos la resistencia caliente con tensión eficaz al cuadrado dividida por potencia nominal. La fría se obtiene de una razón de resistencias dada como dato. No extrapolamos un coeficiente térmico lineal desde la habitación hasta la incandescencia: ese modelo local no conserva precisión a lo largo de un intervalo tan amplio.", "detalle": "La razón elegida representa el tipo de dato que se obtendría comparando resistencias fría y caliente; no procede de una medición realizada para este guion ni identifica una lámpara comercial. La resistividad del tungsteno varía de forma no lineal en ese recorrido y también cambia la geometría del filamento.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["corrienteCaliente", "corrienteFria"], "rotulos": ["Caliente: {corrienteCaliente|2} A", "Fría fija: {corrienteFria|2} A"]}},
-    {"rotulo": "EL INSTANTE DE CONEXIÓN IMPORTA", "clave": "En la cresta de la tensión, el límite de resistencia fría daría {picoFrio|2} A.", "texto": "Conectar cerca del cruce por cero no produce esa corriente de inmediato. La tensión de la red cambia durante el calentamiento y el filamento deja de estar frío. La comparación congelada de resistencia daría {potenciaFria|0} W medios, pero no predice una duración ni una energía de arranque real.", "detalle": "Para calcular la onda transitoria harían falta capacidad térmica, pérdidas y resistencia en función de la temperatura. El envejecimiento puede adelgazar partes del filamento; corriente y tensiones térmicas pueden romper una zona débil. Vibraciones, tensión de alimentación y desgaste previo también influyen en cuándo falla.", "color": "ambar", "dibujo": {"tipo": "magnitudes", "claves": ["resistenciaFria", "resistenciaCaliente", "picoFrio"], "rotulos": ["Fría: {resistenciaFria|1} Ω", "Caliente: {resistenciaCaliente|1} Ω", "Cresta fría: {picoFrio|2} A"]}}
-  ]}],
-  "cierre": {"titulo": "El arranque exige un esfuerzo a un filamento que ya tiene historia.", "nota": "Potencia caliente en W, tensión eficaz sinusoidal en V, razón caliente/fría adimensional e ilustrativa. Ley de Ohm aplicada a dos estados de resistencia; no se usa coeficiente lineal de tungsteno ni se simula el calentamiento. Corriente fría eficaz equivalente y cresta hipotética, no mediciones de una onda de arranque.", "parrafos": ["La corriente transitoria explica un mecanismo plausible de fallo al conectar. No permite afirmar que todo filamento roto tenga esa causa ni que falle necesariamente en ese instante."]}
+  "id": "bombillavieja",
+  "rotulo": "CASA",
+  "titulo": "¿Por qué una bombilla incandescente puede fundirse justo al encender?",
+  "entradilla": "Pulsas el interruptor, ves un destello y la bombilla vieja se apaga para siempre. Parece mala suerte que falle precisamente al arrancar, pero el primer instante no se parece al funcionamiento normal. El filamento está frío y su resistencia eléctrica es menor que cuando lleva un rato brillando dentro de la ampolla.",
+  "modelo": "bombillavieja",
+  "color": "ambar",
+  "medidas": {
+    "potencia": 60,
+    "tension": 230,
+    "razon": 12
+  },
+  "tanteo": {
+    "pregunta": "A la misma tensión, ¿qué permite un filamento frío de menor resistencia respecto a uno ya caliente?",
+    "opciones": [
+      "La misma corriente",
+      "Una corriente inicial mayor",
+      "Una corriente menor"
+    ],
+    "valores": [
+      0.26,
+      3.13,
+      0.02
+    ],
+    "medido": "corrienteFria",
+    "remate": "Una corriente inicial mayor. Mantener hipotéticamente el filamento frío daría {corrienteFria|2} A frente a {corrienteCaliente|2} A en caliente; en realidad se calienta enseguida."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el arranque no es el régimen normal",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "FRÍO OFRECE MENOS RESISTENCIA",
+          "clave": "Al cerrar el circuito puede circular una corriente elevada.",
+          "texto": "El filamento de tungsteno no mantiene la misma resistencia a cualquier temperatura. En frío conduce mejor que cuando está incandescente. Al aplicar tensión, esa resistencia inicial baja permite una corriente más grande que la de funcionamiento. La relación entre tensión, corriente y resistencia se describe con la ley de Ohm para cada estado del material.",
+          "detalle": "Ese arranque elevado no se mantiene. El paso de corriente entrega energía al filamento, que se calienta rápidamente. El momento de conexión dentro del ciclo de la red también influye en la forma real del transitorio.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "bombillavieja-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "CALIENTE LIMITA MÁS LA CORRIENTE",
+          "clave": "La resistencia aumenta a medida que el filamento se calienta.",
+          "texto": "Al subir la temperatura, la estructura del metal dificulta más el movimiento de los portadores. Esa dependencia se expresa mediante un coeficiente térmico positivo de resistencia. El aumento reduce la corriente hasta alcanzar un equilibrio entre energía eléctrica recibida y energía emitida. La luz visible es solo una parte de esa emisión térmica.",
+          "detalle": "Con el uso, el filamento puede adelgazar de manera irregular. Un punto debilitado soporta peor el calentamiento rápido y puede romperse durante un encendido. No todas las averías ocurren entonces, ni el modelo eléctrico por sí solo predice cuándo fallará una bombilla determinada.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "bombillavieja-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Encender exige atravesar un estado distinto.",
+    "parrafos": [
+      "El mismo filamento que en caliente regula su corriente empieza cada encendido ofreciendo un camino más fácil, justo cuando todavía está frío."
+    ],
+    "nota": "Resistencias fría y caliente ilustrativas. La corriente fría calculada es una equivalencia estática, no una corriente sostenida ni el pico transitorio real."
+  },
+  "revisionEditorial": 2
 }

@@ -1,12 +1,73 @@
 {
-  "id": "protesis", "rotulo": "MEDICINA", "titulo": "¿Por qué el titanio favorece la osteointegración, aunque el acero también puede lograrla?",
-  "entradilla": "Es falso que solo el titanio pueda unirse al hueso: el acero también puede presentar osteointegración. La conexión estable entre hueso e implante depende de composición, superficie, estabilidad mecánica y respuesta biológica, no de una prohibición absoluta asociada a un metal.",
-  "modelo": "protesis", "color": "verde",
-  "medidas": {"moduloAcero": 200, "moduloTitanio": 110, "moduloHueso": 15, "carga": 100, "area": 100},
-  "tanteo": {"pregunta": "Con módulos elásticos de 110 GPa para titanio y 200 GPa para acero, ¿cuántas veces mayor es la deformación axial del titanio bajo la misma tensión?", "opciones": ["0,55 veces", "1,82 veces", "18,2 veces"], "valores": [0.55, 1.82, 18.2], "medido": "razon", "remate": "La razón es {razon|2}. Compara deformación elástica, no probabilidad de osteointegración."},
-  "nucleo": [{"numero": 1, "nombre": "biología y mecánica se encuentran", "color": "verde", "paneles": [
-    {"rotulo": "LA MISMA CARGA, DISTINTA DEFORMACIÓN", "clave": "Bajo {tension|2} MPa: acero {acero|2} µε; titanio {titanio|2} µε; hueso ideal {hueso|2} µε.", "texto": "La tensión axial es fuerza dividida por sección. En elasticidad lineal, dividirla por el módulo de Young da deformación relativa. Con geometría y carga iguales, el material de menor módulo se deforma más. Las barras muestran microdeformación, no desplazamiento absoluto ni resistencia a fractura.", "detalle": "Un implante demasiado rígido respecto al tejido puede alterar el reparto de cargas y contribuir al apantallamiento de tensiones. Eso depende también de forma, porosidad y fijación. El hueso real es anisótropo y variable; nuestra barra homogénea no reproduce una interfaz viva.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["acero", "titanio", "hueso"], "rotulos": ["Acero: {acero|1} µε", "Titanio: {titanio|1} µε", "Hueso: {hueso|1} µε"]}},
-    {"rotulo": "LA SUPERFICIE NO ES UN PEGAMENTO", "clave": "Razón de deformaciones metálicas: {razon|2}.", "texto": "El titanio forma una capa pasiva de óxido que contribuye a su resistencia a corrosión y buena interacción biológica. Rugosidad, química superficial y porosidad pueden favorecer el contacto con hueso. Los aceros implantables también se pasivan y pueden establecer contacto óseo directo bajo condiciones adecuadas.", "detalle": "Micromovimiento, infección, respuesta del organismo y diseño pueden impedir integración con cualquiera de los materiales. Ni el módulo de Young ni el nombre de una aleación garantizan éxito. Esta cuenta no compara resultados clínicos ni recomienda un implante.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["razon"], "rotulos": ["Razón: {razon|2}×"]}}
-  ]}],
-  "cierre": {"titulo": "El acero también puede osteointegrarse.", "nota": "Módulos ilustrativos en GPa: acero 200, titanio 110, hueso 15; carga axial 100 N y area 100 mm². Ley de Hooke lineal, pequeñas deformaciones, igual geometría. No son especificaciones de una prótesis ni una predicción biológica.", "parrafos": ["La osteointegración describe una unión funcional con el hueso, no una propiedad binaria que un material posea en cualquier circunstancia. La elección clínica necesita muchas más variables que esta comparación mecánica."]}
+  "id": "protesis",
+  "rotulo": "MEDICINA",
+  "titulo": "Prótesis de cadera: ¿por qué no basta con elegir el metal más rígido?",
+  "revisionEditorial": 2,
+  "modelo": "protesis",
+  "color": "verde",
+  "medidas": {
+    "moduloAcero": 200,
+    "moduloTitanio": 110,
+    "moduloHueso": 15,
+    "carga": 100,
+    "area": 100
+  },
+  "entradilla": "Una prótesis de cadera tiene una cabeza redondeada y un vástago que transmite cargas al hueso. Parece lógico pedirle que sea lo más rígida posible, pero no trabaja aislada sobre una mesa. Comparte esfuerzos con una estructura que también se deforma. El material y la forma cambian cómo se reparte ese trabajo mecánico.",
+  "tanteo": {
+    "pregunta": "Con la misma forma y la misma carga, el material de menor módulo elástico se deforma…",
+    "opciones": [
+      "Menos",
+      "Más",
+      "Exactamente igual"
+    ],
+    "valores": [
+      0.55,
+      1.82,
+      18.2
+    ],
+    "medido": "razon",
+    "remate": "Más. En la comparación ideal, el titanio se deforma {razon|2} veces lo que el acero. No es una comparación de éxito clínico."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "compartir una carga",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "UNA ARTICULACIÓN Y UN APOYO",
+          "clave": "La fuerza pasa por varias piezas.",
+          "texto": "La cabeza de la prótesis se articula con una superficie de apoyo y el vástago transmite esfuerzos al entorno. El contacto y la geometría guían ese recorrido. Una pieza no se entiende solo por el nombre del metal: también importan su sección, su longitud y cómo está unida a lo demás.",
+          "detalle": "El corte esquemático muestra cabeza, vástago y hueso alrededor. No dibuja un diseño comercial ni predice su comportamiento completo. Sirve para ver que una carga aplicada en la articulación tiene que encontrar un camino de transmisión, en lugar de desaparecer dentro del implante.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "protesis-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LO RÍGIDO TAMBIÉN SE DEFORMA",
+          "clave": "Una deformación pequeña puede ser importante.",
+          "texto": "Al cargar una pieza, sus distancias internas cambian un poco. Si recupera su forma al retirar la carga, hablamos de deformación elástica. El módulo de Young relaciona la tensión mecánica con esa deformación relativa. Un módulo mayor significa menos deformación para la misma tensión, dentro del régimen lineal.",
+          "detalle": "El segundo panel compara dos piezas iguales con deformaciones exageradas para que se vean. Nuestro modelo usa cargas axiales y módulos representativos. No calcula integración con el hueso, desgaste o vida útil: esos procesos no se pueden deducir de una simple comparación entre rigideces.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "protesis-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Un material forma parte de una estructura, no trabaja solo.",
+    "nota": "Elasticidad axial lineal; módulos ilustrativos. Deformación ampliada visualmente, sin elegir materiales para pacientes.",
+    "parrafos": [
+      "La pregunta interesante no es cuál metal gana una competición de dureza. Es cómo colaboran material, forma y apoyos para transmitir cargas. La prótesis recuerda una idea de ingeniería muy cotidiana: una pieza excelente puede comportarse de manera distinta cuando cambia lo que la rodea."
+    ]
+  }
 }

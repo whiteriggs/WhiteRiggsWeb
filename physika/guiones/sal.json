@@ -1,12 +1,73 @@
 {
-  "id": "sal", "rotulo": "COTIDIANO", "titulo": "¿Por qué la sal puede fundir hielo?",
-  "entradilla": "La sal no necesita estar caliente para favorecer la fusión. Al disolverse en el agua que moja el hielo, cambia el equilibrio entre líquido y sólido: la disolución puede permanecer líquida a temperaturas en las que el agua pura formaría hielo.",
-  "modelo": "sal", "color": "azul",
-  "medidas": {"masaSal": 0.01, "masaAgua": 1, "masaMolar": 0.05844, "factor": 1.8, "crioscopica": 1.86},
-  "tanteo": {"pregunta": "Una disolución diluida contiene 10 g de sal común (NaCl) por kilogramo de agua, con un factor efectivo de partículas de 1,8. ¿Cuánto crees que baja su punto de congelación respecto al agua pura?", "opciones": ["Unos 0,06 °C", "Unos 0,57 °C", "Unos 5,7 °C"], "valores": [0.06, 0.57, 5.7], "medido": "descenso", "remate": "El descenso estimado es {descenso|2} °C. No significa que cualquier cantidad de sal elimine cualquier helada."},
-  "nucleo": [{"numero": 1, "nombre": "el equilibrio cambia al disolver", "color": "azul", "paneles": [
-    {"rotulo": "IMPORTA LA CANTIDAD DE PARTÍCULAS", "clave": "La molalidad es {molalidad|3} mol/kg y el descenso calculado, {descenso|2} °C.", "texto": "El descenso crioscópico depende de las partículas disueltas por masa de agua. La sal se separa en iones, aunque sus interacciones hacen que una disolución real no se comporte como una colección completamente independiente. Un factor efectivo recoge aproximadamente esa desviación.", "detalle": "Multiplicamos molalidad, constante crioscópica y factor de partículas. La curva solo explora el intervalo diluido del ejemplo. No se prolonga hasta una salmuera saturada: allí hacen falta datos de equilibrio y actividad, no extrapolar indefinidamente una línea recta.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Sal añadida (g)", "ejeY": "Congelación estimada (°C)", "claves": [], "rotulos": []}},
-    {"rotulo": "FUNDIR SIGUE COSTANDO ENERGÍA", "clave": "El nuevo equilibrio se estima en {congelacion|2} °C para esta composición.", "texto": "Bajar el punto de congelación no proporciona gratis el calor de fusión. Si parte del hielo se derrite, absorbe energía del entorno y de la propia mezcla, que puede enfriarse. La sal altera qué fase es estable; el balance térmico determina cuánto puede transformarse.", "detalle": "La disolución necesita agua líquida y contacto con el hielo. Temperatura, dilución posterior y cantidad de material disponible condicionan la acción sobre una carretera. Con frío suficiente, una sal concreta deja de ser eficaz aunque siga habiendo cristales sobre la superficie.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["molalidad", "congelacion"], "rotulos": ["Soluto: {molalidad|3} mol/kg", "Equilibrio: {congelacion|2} °C"]}}
-  ]}],
-  "cierre": {"titulo": "Cambiar de fase no es lo mismo que calentarse.", "nota": "Masas ilustrativas en kg, masa molar de NaCl en kg/mol, constante del agua en K·kg/mol. Factor efectivo elegido de disociación e interacciones; aproximación diluida, no tabla vial ni dosificación.", "parrafos": ["El hielo que se forma suele incorporar poca sal y deja el líquido restante más concentrado. Por eso el proceso cambia su propia composición: fundir y volver a congelar no mantiene necesariamente la misma salmuera en todo momento."]}
+  "id": "sal",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué una heladera de manivela lleva sal alrededor del recipiente?",
+  "revisionEditorial": 2,
+  "entradilla": "En una heladera tradicional, la crema va en un recipiente y alrededor hay hielo con sal. La sal no pertenece al sabor del helado: trabaja por fuera. Su función es conseguir que el baño que rodea la crema pueda estar más frío que una mezcla corriente de hielo y agua.",
+  "modelo": "sal",
+  "color": "ambar",
+  "medidas": {
+    "masaSal": 0.01,
+    "masaAgua": 1,
+    "masaMolar": 0.05844,
+    "factor": 1.8,
+    "crioscopica": 1.86
+  },
+  "tanteo": {
+    "pregunta": "¿Qué cambia la sal en el agua que rodea el hielo?",
+    "opciones": [
+      "Hace que congele a mayor temperatura",
+      "Permite que siga líquida a menor temperatura",
+      "La convierte en una fuente de calor"
+    ],
+    "valores": [
+      0.06,
+      0.57,
+      5.7
+    ],
+    "medido": "descenso",
+    "remate": "Baja su temperatura de congelación. En nuestra disolución diluida el descenso es {descenso|2} °C; un baño real necesita otro cálculo."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "la sal se queda fuera del postre",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "HIELO QUE PUEDE FUNDIRSE",
+          "clave": "El agua con sal no se congela igual que el agua pura.",
+          "texto": "La sal se disuelve en la pequeña cantidad de agua líquida que rodea los trozos de hielo. Sus partículas dificultan que el agua se incorpore al cristal en las mismas condiciones. El equilibrio cambia y parte del hielo puede fundirse aunque el baño esté por debajo del punto habitual de congelación.",
+          "detalle": "Ese cambio se llama descenso crioscópico. No significa que la sal produzca frío de la nada: fundir hielo requiere energía. El baño la toma de sí mismo y de lo que lo rodea, incluida la mezcla del helado.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "sal-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA MANIVELA TAMBIÉN CUENTA",
+          "clave": "Remover acerca mezcla nueva a la pared fría.",
+          "texto": "El recipiente separa el baño salado del alimento. El calor de la crema atraviesa esa pared y llega al baño. Las palas movidas por la manivela raspan y remueven, evitando que solo se congele una capa pegada al borde. También ayudan a repartir los cristales que van apareciendo.",
+          "detalle": "Así trabajan juntas la transferencia de calor y la agitación. La cantidad de hielo, la concentración de sal y la composición del postre limitan el resultado. Añadir sal sin medida no garantiza una temperatura concreta ni una textura perfecta.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "sal-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La sal enfría el baño, la manivela reparte el trabajo.",
+    "parrafos": [
+      "El sabor queda dentro y el mecanismo térmico fuera. La pared deja pasar energía sin mezclar ambos líquidos."
+    ],
+    "nota": "Disolución diluida ilustrativa con factor efectivo de partículas. No representa las concentraciones habituales de una heladera ni prescribe cantidades de preparación."
+  }
 }

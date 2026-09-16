@@ -1,12 +1,71 @@
 {
-  "id": "empana", "rotulo": "COTIDIANO", "titulo": "¿Por qué se empañan las gafas al entrar en un bar?",
-  "entradilla": "Tus gafas llegan frías de la calle. El aire del interior puede contener suficiente vapor de agua para que, al enfriarse junto a los cristales, parte pase a líquido. No aparece humo: aparecen pequeñas gotas que desvían la luz.",
-  "modelo": "empana", "color": "azul",
-  "medidas": {"aire": 22, "humedad": 0.65, "superficie": 10},
-  "tanteo": {"pregunta": "El aire está a 22 °C y tiene un 65 % de humedad relativa. ¿Por debajo de qué temperatura crees que comenzará a condensarse agua sobre un cristal?", "opciones": ["Unos 5 °C", "Unos 15 °C", "Unos 25 °C"], "valores": [5, 15, 25], "medido": "rocio", "remate": "El punto de rocío es {rocio|1} °C; el cristal está por debajo."},
-  "nucleo": [{"numero": 1, "nombre": "el límite lo pone el vapor", "color": "azul", "paneles": [
-    {"rotulo": "UN UMBRAL, NO UNA TEMPERATURA MÁGICA", "clave": "Con humedad del {humedadPorcentaje|0} %, el punto de rocío es {rocio|1} °C.", "texto": "La humedad relativa compara la presión del vapor presente con la presión de saturación a esa temperatura. Al enfriar el aire sin quitarle vapor, esa proporción crece. El punto de rocío es la temperatura a la que alcanza la saturación; por debajo puede depositarse agua sobre una superficie.", "detalle": "La curva mantiene fija la temperatura del bar y cambia la humedad. Cuanto más vapor contiene el aire, menos frío tiene que estar el cristal para empañarse. Calculamos el umbral con la aproximación empírica de Magnus, no con una regla fija para todas las habitaciones.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Humedad relativa (%)", "ejeY": "Punto de rocío (°C)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL CRISTAL CRUZA EL LÍMITE", "clave": "La superficie está {margen|1} °C por debajo del punto de rocío.", "texto": "El agua suele nuclear en irregularidades y formar gotitas. Cada una crea nuevas fronteras entre aire, agua y vidrio: la luz se refracta y se dispersa, y el contraste de lo que miras disminuye. El vapor gaseoso, en cambio, no explica por sí solo esa pantalla blanquecina.", "detalle": "Cuando el cristal se calienta, puede dejar de sostener la condensación y las gotas evaporarse. La rapidez depende de su masa térmica, del aire que circula y del tratamiento superficial; el cálculo del umbral no calcula cuánto tardarán en despejarse las gafas.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["superficie", "rocio"], "rotulos": ["Cristal: {superficie|1} °C", "Rocío: {rocio|1} °C"]}}
-  ]}],
-  "cierre": {"titulo": "La diferencia invisible se vuelve agua.", "nota": "Escenario ilustrativo: aire y superficie en °C; humedad como fracción. Magnus usa coeficientes empíricos para saturación sobre agua líquida. No representa heladas ni mide un bar real.", "parrafos": ["No hace falta que el aire del bar esté saturado en conjunto: basta con que la capa que toca el cristal se enfríe lo suficiente. Esa distinción explica también las ventanas mojadas en una habitación aparentemente seca."]}
+  "id": "empana",
+  "rotulo": "COTIDIANO",
+  "titulo": "¿Por qué se empañan las gafas al entrar en una cafetería?",
+  "revisionEditorial": 2,
+  "entradilla": "Vienes de la calle con las gafas frías. Entras en una cafetería y, de pronto, el cristal se vuelve una nube. No han aparecido arañazos ni se ha escapado agua de tus ojos. El aire del local acaba de encontrar una superficie donde dejar parte de su humedad.",
+  "modelo": "empana",
+  "color": "ambar",
+  "medidas": {
+    "aire": 22,
+    "humedad": 0.65,
+    "superficie": 10
+  },
+  "tanteo": {
+    "pregunta": "¿Qué ayuda a que estas gafas vuelvan a verse transparentes?",
+    "opciones": [
+      "Enfriar todavía más el cristal",
+      "Dejar que el cristal se temple",
+      "Añadir más humedad al aire"
+    ],
+    "valores": [
+      5,
+      15,
+      25
+    ],
+    "medido": "rocio",
+    "remate": "Templarlas. En el ejemplo el rocío aparece por debajo de {rocio|1} °C; el cristal frío favorece las gotas."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "agua que ya estaba en el aire",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "EL ENCUENTRO FRÍO",
+          "clave": "El vapor invisible se convierte en pequeñas gotas.",
+          "texto": "Hay moléculas de agua circulando entre las del aire aunque no veas niebla. Cerca de tus lentes frías, ese aire se enfría. Llega un momento en que el agua se acumula como líquido sobre el cristal más deprisa de lo que vuelve al aire. A ese cambio lo llamamos condensación.",
+          "detalle": "La temperatura que marca el comienzo se llama punto de rocío. Depende de la temperatura y humedad del local; no existe una temperatura mágica de empañado que sirva para todas las gafas y todos los días.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "empana-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "POR QUÉ NO VES",
+          "clave": "Las gotas desvían la luz hacia muchas direcciones.",
+          "texto": "Un cristal limpio deja que la luz de cada objeto siga un recorrido ordenado hasta tus ojos. Las gotitas tienen superficies curvas y desvían parte de esa luz. La imagen pierde contraste y parece lechosa. No es que el agua sea opaca: el problema está en repartirla en pequeños bultos.",
+          "detalle": "Cuando las lentes se templan, las gotas pueden evaporarse y el recorrido vuelve a despejarse. Algunos tratamientos antivaho reparten el agua en una película más uniforme: cambian cómo moja el cristal, no eliminan el vapor del local.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "cotidianoRenovado",
+            "trazado": "empana-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Tus gafas revelan agua invisible.",
+    "parrafos": [
+      "El vaho cuenta un encuentro entre aire húmedo y cristal frío. Al equilibrarse las temperaturas desaparece la ocasión de fabricar nuevas gotas."
+    ],
+    "nota": "Humedad y temperaturas ilustrativas. La aproximación de Magnus estima el rocío; no calcula el tiempo de secado ni certifica tratamientos antivaho."
+  }
 }

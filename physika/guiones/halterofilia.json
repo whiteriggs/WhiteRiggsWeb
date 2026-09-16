@@ -1,12 +1,71 @@
 {
-  "id": "halterofilia", "rotulo": "DEPORTE", "titulo": "¿Qué guarda una barra cuando se dobla?",
-  "entradilla": "Una barra cargada no es perfectamente rígida. Puede flexionarse y almacenar energía elástica, que después devuelve mientras vibra. Eso cambia el momento en que se mueven las cargas, pero no crea energía ni garantiza que cualquier flexión facilite un levantamiento.",
-  "modelo": "halterofilia", "color": "ambar",
-  "medidas": {"rigidez": 20000, "deformacion": 0.04, "deformacionComparada": 0.08},
-  "tanteo": {"pregunta": "Dentro de un modelo elástico lineal, doblar la deformación multiplica la energía almacenada por…", "opciones": ["Uno", "Dos", "Cuatro"], "valores": [1, 2, 4], "medido": "factor", "remate": "La energía se multiplica por {factor|0}. En esta comparación pasa de {energia|0} a {energiaComparada|0} J."},
-  "nucleo": [{"numero": 1, "nombre": "flexión y devolución", "color": "ambar", "paneles": [
-    {"rotulo": "UN RESORTE EQUIVALENTE", "clave": "Con {deformacionEnMilimetros|0} mm de deformación, la fuerza equivalente es {fuerza|0} N.", "texto": "Reducimos la flexión a una coordenada de deformación y una rigidez equivalente. La fuerza restauradora es proporcional a esa deformación. La gráfica muestra la energía, que crece con su cuadrado porque hace falta más fuerza a medida que la barra se dobla.", "detalle": "La rigidez depende de material, geometría, distribución de discos y puntos de apoyo. La fuerza equivalente es la asociada a nuestra coordenada; no debe confundirse automáticamente con la fuerza que hace cada mano o con todo el peso levantado.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Deformación (m)", "ejeY": "Energía elástica (J)", "claves": [], "rotulos": []}},
-    {"rotulo": "LA ENERGÍA NO SALE DE LA NADA", "clave": "Energías almacenadas: {energia|0} J frente a {energiaComparada|0} J.", "texto": "Quien deforma la barra aporta ese trabajo, o lo aporta el movimiento de las cargas. Al recuperar su forma puede devolver parte de él. La disipación y el desfase entre atleta y oscilación pueden reducir o invertir cualquier ventaja temporal.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["energia", "energiaComparada"], "rotulos": ["Menor: {energia|0} J", "Mayor: {energiaComparada|0} J"]}}
-  ]}],
-  "cierre": {"titulo": "La elasticidad cambia el tiempo del esfuerzo.", "nota": "Rigidez equivalente en N/m y deformaciones en m respecto a la forma sin esa carga. Valores ilustrativos, no especificaciones de una barra homologada. Ley de Hooke en régimen elástico lineal; se omiten amortiguamiento, modos de vibración y deformación permanente.", "parrafos": ["Para saber si ayuda en un levantamiento haría falta la dinámica completa del conjunto y de su contacto con el suelo. Este balance energético no proporciona una técnica de entrenamiento ni justifica aumentar una carga o forzar una barra real."]}
+  "id": "halterofilia",
+  "rotulo": "DEPORTE",
+  "titulo": "Barra de pesas: ¿qué guarda cuando se dobla?",
+  "revisionEditorial": 2,
+  "modelo": "halterofilia",
+  "color": "verde",
+  "medidas": {
+    "rigidez": 20000,
+    "deformacion": 0.04,
+    "deformacionComparada": 0.08
+  },
+  "entradilla": "Una barra cargada con discos no siempre permanece perfectamente recta. Puede arquearse y oscilar al cambiar la carga o el movimiento. Esa flexión no es solo una curiosidad visual: parte del trabajo realizado queda almacenado en el material. La barra se parece, en ese aspecto, a un muelle largo que también tiene que sostener peso.",
+  "tanteo": {
+    "pregunta": "Al flexionar más una barra dentro de su régimen elástico, ¿qué ocurre con la energía que puede devolver al recuperar la forma?",
+    "opciones": [
+      "Desaparece por completo",
+      "Se mantiene siempre igual",
+      "Aumenta con el trabajo almacenado"
+    ],
+    "valores": [
+      1,
+      2,
+      4
+    ],
+    "medido": "factor",
+    "remate": "Aumenta: procede del trabajo hecho para flexionarla. Las dos deformaciones del ejemplo almacenan {energia|0} y {energiaComparada|0} J; la barra no crea esa energía."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un metal que devuelve",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LOS DISCOS DOBLAN LA BARRA",
+          "clave": "Una pieza rígida no es infinitamente rígida.",
+          "texto": "Al recibir carga, unas zonas de la barra se estiran y otras se comprimen. Si la deformación permanece dentro de su régimen recuperable, la pieza vuelve hacia su forma inicial al descargarla. Es elasticidad. El primer panel marca los apoyos y deja que los extremos cargados bajen respecto al centro.",
+          "detalle": "La rigidez depende del material y de la geometría de la sección. Nuestro modelo resume esa respuesta en una relación lineal entre fuerza y deformación. No representa una marca ni el límite de carga de una barra real, y amplía la flexión para hacerla legible.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "halterofilia-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "CADA TRAMO CUESTA MÁS",
+          "clave": "La resistencia aumenta mientras se deforma.",
+          "texto": "Para doblarla un poco más, hay que trabajar contra una fuerza que ya ha aumentado. Por eso la energía no crece simplemente al mismo ritmo que la deformación. En el régimen lineal crece con su cuadrado. Es energía potencial elástica, preparada para transformarse cuando la barra recupere su forma.",
+          "detalle": "El segundo panel muestra la recuperación y una posición intermedia, con los discos aún unidos a la barra. Parte de la energía puede quedar como oscilación y parte disiparse. No aparece una reserva extra independiente del trabajo que se hizo para flexionarla.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "halterofilia-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La barra no solo sostiene discos: también cambia de forma.",
+    "nota": "Rigidez lineal equivalente y deformaciones supuestas. Sin límites de carga ni técnicas de levantamiento.",
+    "parrafos": [
+      "Mirar la flexión permite ver una energía que normalmente queda escondida en deformaciones diminutas. La barra devuelve parte de lo que recibió, como otros elementos elásticos. Su respuesta depende de la carga y del tiempo, no únicamente del número escrito en los discos de sus extremos."
+    ]
+  }
 }

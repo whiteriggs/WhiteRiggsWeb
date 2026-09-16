@@ -1,12 +1,72 @@
 {
-  "id": "arco", "rotulo": "DEPORTE", "titulo": "¿Dónde se guarda la energía de un arco tensado?",
-  "entradilla": "La cuerda transmite la fuerza, pero en un arco sencillo la mayor reserva de energía está en las palas deformadas. Tensarlo exige trabajo a lo largo de toda la apertura. La fuerza al final del recorrido no cuenta por sí sola cuánto has almacenado.",
-  "modelo": "arco", "color": "ambar",
-  "medidas": {"fuerzaFinal": 200, "apertura": 0.5, "fraccion": 0.7, "masa": 0.025},
-  "tanteo": {"pregunta": "Si la fuerza aumenta linealmente desde cero hasta 200 N durante medio metro, ¿qué energía se almacena?", "opciones": ["25 J", "50 J", "100 J"], "valores": [25, 50, 100], "medido": "energia", "remate": "El área bajo la curva es {energia|0} J. Multiplicar la fuerza final por todo el recorrido daría demasiado."},
-  "nucleo": [{"numero": 1, "nombre": "el trabajo es un área", "color": "ambar", "paneles": [
-    {"rotulo": "CADA CENTÍMETRO CUESTA", "clave": "La rigidez ideal es {rigidez|0} N/m; almacenar energía requiere {energia|0} J.", "texto": "La gráfica representa fuerza frente a apertura. En este resorte ideal aparece una recta y el área es un triángulo: la fuerza media equivale a la mitad de la final. El área tiene unidades de newton multiplicado por metro, es decir, julios.", "detalle": "Un arco real puede tener precarga y una curva no lineal. Los compuestos usan poleas para cambiar la fuerza durante el recorrido, y la fuerza máxima no tiene por qué aparecer al final. En esos casos hay que integrar la curva real, no imponerle este triángulo.", "color": "ambar", "dibujo": {"tipo": "serie", "ejeX": "Apertura (m)", "ejeY": "Fuerza (N)", "claves": [], "rotulos": []}},
-    {"rotulo": "NO TODO VIAJA CON LA FLECHA", "clave": "La flecha recibe {energiaUtil|0} J y sale a {velocidad|1} m/s en el ejemplo.", "texto": "Igualamos la energía transferida con la energía cinética de la flecha. Las palas y la cuerda también se mueven, y quedan vibraciones, sonido y calentamiento. La parte transferida es un dato del escenario; no se deduce únicamente de la apertura.", "color": "ambar", "dibujo": {"tipo": "barras", "claves": ["energia", "energiaUtil"], "rotulos": ["Almacenada: {energia|0} J", "Flecha: {energiaUtil|0} J"]}}
-  ]}],
-  "cierre": {"titulo": "La fuerza dibuja la reserva.", "nota": "Modelo ilustrativo de Hooke sin precarga: fuerzaFinal en N, apertura en m y masa de la flecha en kg. La fracción transferida, {fraccion|2}, es una hipótesis adimensional, no una eficiencia universal. Se omiten la resistencia del aire y la flexión de la flecha.", "parrafos": ["Duplicar la apertura de este resorte no duplicaría la energía: también aumentaría la fuerza. Eso es una propiedad de la idealización elástica, no una indicación para tensar más un arco real."]}
+  "id": "arco",
+  "rotulo": "DEPORTE",
+  "titulo": "Arco deportivo: ¿dónde guarda la energía antes de soltar la flecha?",
+  "revisionEditorial": 2,
+  "modelo": "arco",
+  "color": "verde",
+  "medidas": {
+    "fuerzaFinal": 200,
+    "apertura": 0.5,
+    "fraccion": 0.7,
+    "masa": 0.025
+  },
+  "entradilla": "Tiras de la cuerda de un arco y sus palas se doblan. Mientras sujetas la posición parece que no pasa nada, pero ya has hecho trabajo sobre el material. Al soltar, esa forma deformada puede recuperar parte de su movimiento y transferir energía a la flecha. La cuerda transmite; las palas son el almacén principal.",
+  "tanteo": {
+    "pregunta": "En un arco cuya resistencia aumenta al abrirlo, ¿todo el recorrido exige la misma fuerza que al final?",
+    "opciones": [
+      "Sí, desde el comienzo",
+      "No, antes exige menos",
+      "No, antes exige más"
+    ],
+    "valores": [
+      25,
+      50,
+      100
+    ],
+    "medido": "energia",
+    "remate": "Antes exige menos en este modelo lineal. El trabajo total almacenado es {energia|0} J, no la fuerza final multiplicada sin más por todo el recorrido."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un almacén que se dobla",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LAS PALAS CAMBIAN DE FORMA",
+          "clave": "La apertura requiere trabajo.",
+          "texto": "Al separar la cuerda de su posición de reposo, las palas se deforman y se oponen al movimiento. Tu mano realiza trabajo porque aplica una fuerza mientras recorre una distancia. Esa energía queda en parte almacenada como energía potencial elástica, la misma idea que aparece al comprimir un muelle.",
+          "detalle": "En nuestro arco ideal, la fuerza crece proporcionalmente con la apertura. Es una aproximación de elasticidad lineal, no la curva de cualquier arco comercial. El dibujo deja quieta la empuñadura y muestra cómo se desplazan las puntas y cambia la forma de las palas.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "arco-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA CUERDA ENTREGA PARTE DE LO GUARDADO",
+          "clave": "La energía no acaba toda en la flecha.",
+          "texto": "Al liberar la cuerda, las palas recuperan su forma y empujan la flecha a través de ella. Pero también se mueven la propia cuerda y las palas, y quedan vibraciones y sonido. La energía se reparte. Por eso el modelo asigna solo una fracción del trabajo almacenado al movimiento de la flecha.",
+          "detalle": "Con esa fracción calculamos una velocidad ideal usando la energía cinética, la asociada al movimiento. No es una especificación de un producto. El segundo panel muestra la recuperación de las palas y la salida de la flecha, sin añadir energía que no estuviera previamente almacenada.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "arco-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El lanzamiento empieza mientras todavía estás tirando.",
+    "nota": "Arco lineal ideal y fracción útil supuesta. Sin predicción de alcance ni rendimiento comercial.",
+    "parrafos": [
+      "La flecha sale cuando termina la espera, pero su energía empezó a prepararse antes. El arco cambia esfuerzo sostenido durante una apertura por una entrega rápida. Sus palas no crean un empujón: devuelven parte del trabajo que recibieron al doblarse."
+    ]
+  }
 }

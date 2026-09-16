@@ -1,14 +1,15 @@
 {
+  "revisionEditorial": 2,
   "id": "radio",
   "rotulo": "REDES",
-  "titulo": "¿Cómo cabe una voz dentro de una onda de radio?",
-  "entradilla": "La voz no viaja escondida en una cresta. El transmisor convierte el sonido en una señal eléctrica y usa esa señal para cambiar una propiedad de una onda mucho más rápida. El receptor detecta esas variaciones y vuelve a mover un altavoz.",
+  "titulo": "¿Cómo saca una voz la radio AM de la cocina?",
+  "entradilla": "Giras el dial de la radio de la cocina y aparece una voz entre el ruido. La voz no viaja escondida en una cresta. El transmisor convierte el sonido en una señal eléctrica y usa esa señal para cambiar una propiedad de una onda mucho más rápida. El receptor detecta esas variaciones y vuelve a mover un altavoz.",
   "modelo": "radio",
   "color": "ambar",
   "medidas": {"frecuencia": 1000000, "audio": 1000, "modulacion": 0.6, "portadoraW": 100},
   "tanteo": {
-    "pregunta": "En AM ideal con un tono de 1.000 Hz, ¿qué separación hay entre las dos bandas laterales?",
-    "opciones": ["1 kHz", "2 kHz", "1.000 kHz"],
+    "pregunta": "¿Qué necesita seguir una radio AM para recuperar la voz?",
+    "opciones": ["La temperatura de la antena", "Las variaciones de amplitud de la señal", "El movimiento del locutor por el estudio"],
     "valores": [1, 2, 1000], "medido": "ancho",
     "remate": "La separación es {ancho|0} kHz: aparecen componentes a {inferiorKHz|0} y {superiorKHz|0} kHz alrededor de la portadora."
   },
@@ -17,22 +18,22 @@
     "paneles": [{
       "rotulo": "MODULAR NO ES SUMAR SONIDO AL AIRE",
       "clave": "Una modulación del {modulacionPorcentaje|0}% cambia la amplitud alrededor de su valor central.",
-      "texto": "La curva dibuja la envolvente normalizada, no las oscilaciones rápidas de la portadora. El tono hace crecer y disminuir esa envolvente siguiendo un coseno. Un detector de amplitud puede recuperar esa variación sin contar cada oscilación de radio por separado.",
-      "detalle": "Este ejemplo es AM convencional con un solo tono, no toda una conversación. Multiplicar la portadora por una amplitud variable genera una componente por encima y otra por debajo. La voz contiene muchas frecuencias y forma bandas completas; filtrar demasiado estrecho elimina parte del mensaje.",
+      "texto": "El micrófono convierte las variaciones de presión de la voz en electricidad. El transmisor usa esa señal lenta para cambiar la amplitud de otra oscilación mucho más rápida. Se llama modulación de amplitud, o AM. La onda no lleva aire del estudio hasta tu cocina.",
+      "detalle": "La línea exterior sigue el sonido mientras dentro caben muchas oscilaciones de radio. Una portadora sin cambios no cuenta qué está diciendo el locutor. Aquí usamos un tono sencillo para ver con claridad esa diferencia de ritmos.",
       "color": "ambar",
-      "dibujo": {"tipo": "serie", "ejeX": "Tiempo (ms)", "ejeY": "Envolvente relativa", "claves": [], "rotulos": []}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "radio-1", "claves": [], "rotulos": [], "pies": []}
     }, {
-      "rotulo": "LA INFORMACIÓN OCUPA LOS LADOS",
+      "rotulo": "RECUPERAR LA ENVOLVENTE",
       "clave": "Cada lateral lleva {lateral|1} W; el total transmitido es {totalW|1} W.",
-      "texto": "Las barras separan la potencia de la portadora y la de cada componente lateral, todas en vatios. La portadora sirve de referencia al receptor, pero sus oscilaciones sin modular no cuentan qué palabra se está pronunciando. Aumentar el volumen de modulación aumenta la potencia lateral de forma cuadrática.",
-      "detalle": "Si se supera la modulación completa, la envolvente puede cruzarse y un detector sencillo distorsiona. FM cambia la frecuencia instantánea, y los sistemas digitales eligen símbolos y códigos: no deben interpretarse con esta distribución particular de potencia de AM.",
+      "texto": "Al sintonizar eliges una región de frecuencias. Después, un detector sencillo rectifica la señal y un filtro suaviza los picos rápidos. Queda una variación lenta parecida a la voz original. Tras amplificarla, una bobina mueve el altavoz y vuelve a agitar el aire que escuchas.",
+      "detalle": "El filtro debe quitar la oscilación rápida sin borrar cambios importantes del sonido. La FM utiliza otro mecanismo: cambia la frecuencia instantánea. Un receptor no puede interpretar ambos sistemas aplicando sin más el mismo detector de amplitud.",
       "color": "ambar",
-      "dibujo": {"tipo": "barras", "claves": ["portadoraW", "lateral", "lateral"], "rotulos": ["Portadora: {portadoraW|0} W", "Inferior: {lateral|1} W", "Superior: {lateral|1} W"]}
+      "dibujo": {"tipo": "tecnologiaRenovada", "trazado": "radio-2", "claves": [], "rotulos": [], "pies": []}
     }]
   }],
   "cierre": {
     "titulo": "Transportar una voz es transportar variaciones.",
-    "nota": "AM sinusoidal ideal: frecuencia y audio en Hz, modulacion adimensional entre cero y uno, portadoraW en W. Potencia por banda lateral igual a potencia de portadora multiplicada por el cuadrado del índice de modulación y dividida entre cuatro. Parámetros didácticos; no se propone construir un emisor.",
+    "nota": "AM ideal con un tono. Frecuencias en hercios, potencia en vatios y modulación como fracción. Valores didácticos, no especificaciones de una emisora.",
     "parrafos": ["El ancho de banda aquí es una separación de frecuencias. No es una velocidad de descarga: esa requiere además decidir cómo se codifica la información y cuánto ruido admite el enlace."]
   }
 }

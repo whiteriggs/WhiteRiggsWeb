@@ -1,11 +1,67 @@
 {
-  "id": "rayoverde", "rotulo": "NATURALEZA", "titulo": "¿Existe de verdad el rayo verde?",
-  "entradilla": "Sí: en ciertas puestas y salidas aparece un breve borde o destello verde. La atmósfera refracta los colores de forma ligeramente distinta. No es un rayo que el Sol encienda, y su visibilidad depende mucho de la estructura del aire.",
-  "modelo": "rayoverde", "color": "verde", "medidas": {"indiceVerde": 1.000280, "indiceRojo": 1.000276, "cenital": 85},
-  "tanteo": {"pregunta": "A la elevación del ejemplo, ¿de qué orden es la separación calculada entre verde y rojo?", "opciones": ["Unos 9 segundos de arco", "Unos 9 grados", "Exactamente cero"], "valores": [9, 32400, 0], "medido": "separacion", "remate": "Son {separacion|1} segundos de arco: una separación pequeña, no un gran abanico de colores."},
-  "nucleo": [{"numero": 1, "nombre": "un prisma de aire", "color": "verde", "paneles": [
-    {"rotulo": "LOS COLORES NO SE DESVÍAN IGUAL", "clave": "A {altura|0}° de elevación, la separación aproximada es {separacion|1} segundos de arco.", "texto": "Usamos la primera aproximación de refracción atmosférica: el desplazamiento crece con el exceso del índice sobre el vacío y con la tangente del ángulo cenital. Al restar los desplazamientos de ambos colores queda una separación que aumenta al bajar el Sol.", "detalle": "La curva termina antes del horizonte. Allí la aproximación plana pierde validez: la curvatura terrestre y el perfil vertical de temperatura y densidad ya no pueden esconderse en un único índice. Prolongar la tangente hasta una divergencia no describiría un destello real.", "color": "verde", "dibujo": {"tipo": "serie", "ejeX": "Ángulo cenital (grados)", "ejeY": "Separación verde-rojo (arcsec)", "claves": [], "rotulos": []}},
-    {"rotulo": "UN BORDE PEQUEÑO PUEDE DESTACAR", "clave": "El verde se desplaza más: {verdeArco|1} frente a {rojoArco|1} segundos de arco.", "texto": "La separación cromática coloca el borde verde ligeramente más alto. Al ocultarse la parte roja, ese borde puede destacar; los espejismos pueden ampliarlo. La fuerte pérdida de luz azul a través del largo trayecto ayuda a que el color visible sea verde y no necesariamente el más refractado.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["separacion"], "rotulos": ["Separación: {separacion|1} arcsec"]}}
-  ]}],
-  "cierre": {"titulo": "Un fenómeno real, una aparición nada garantizada.", "nota": "Índices efectivos adimensionales ilustrativos y ángulo cenital en grados, limitado aquí a 85°. La fórmula R ≈ (n − 1) tan(z) muestra dispersión diferencial, no simula la formación completa del rayo verde.", "parrafos": ["No calculamos ni su duración ni la probabilidad de verlo. Turbulencia, extinción y estratificación cambian el resultado. Nunca debe mirarse directamente al Sol con prismáticos o telescopio sin un sistema solar adecuado."]}
+  "id": "rayoverde",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Cómo une los dientes una cremallera?",
+  "revisionEditorial": 2,
+  "entradilla": "Tiras de una pieza diminuta y dos filas de dientes sueltos se convierten en una unión continua. Una cremallera no va pegando piezas ni lleva un motor escondido. El cursor obliga a las dos filas a recorrer un pasillo con una forma muy concreta, y ese recorrido hace casi todo el trabajo.",
+  "modelo": "naturaleza-rayoverde",
+  "color": "verde",
+  "medidas": {
+    "fuerza": 8,
+    "recorrido": 0.02,
+    "separacion": 0.004
+  },
+  "tanteo": {
+    "pregunta": "¿Qué hace principalmente el cursor al cerrar la cremallera?",
+    "opciones": [
+      "Convierte el tirón en empujes laterales",
+      "Pega los dientes con calor",
+      "Imanta ambas filas"
+    ],
+    "valores": [
+      40,
+      0,
+      400
+    ],
+    "medido": "fuerzaLateral",
+    "remate": "Guía y empuja lateralmente. La cuña ideal convierte el tirón ilustrativo en {fuerzaLateral|0} N conjugados al cierre de las filas."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "un pasillo en forma de Y",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "DOS ENTRADAS, UNA SALIDA",
+          "clave": "Las paredes inclinadas acercan los dientes.",
+          "texto": "Mira el cursor como si le quitáramos el techo. Tiene dos entradas separadas que se juntan en un canal estrecho. Al avanzar, sus paredes empujan cada fila hacia la otra y los dientes encajan de forma alternada. Es una cuña: una máquina simple que cambia la dirección de una fuerza mediante superficies inclinadas.",
+          "detalle": "Los dientes tienen salientes y huecos que se retienen entre sí. El cursor organiza el encuentro, pero una vez que ha pasado son esas formas las que mantienen cerrada la unión de la prenda.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "rayoverde-1"
+          }
+        },
+        {
+          "rotulo": "RECORRIDO A CAMBIO DE FUERZA",
+          "clave": "Un tirón largo puede producir un cierre lateral pequeño.",
+          "texto": "El cursor recorre bastante camino mientras las filas se acercan solo un poco. Ese intercambio permite ejercer un empuje lateral mayor que el tirón, sin crear energía. Es la conservación del trabajo en una cuña ideal: lo que ganas en fuerza lo pagas en recorrido. Una cremallera real pierde parte del trabajo por rozamiento.",
+          "detalle": "Al abrirla, la pieza central del cursor separa las filas y deshace el encaje. Si queda tela atrapada, ese canal ya no puede guiar bien los dientes; tirar más fuerte no soluciona la geometría.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "rayoverde-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El tirador mueve; la forma decide.",
+    "parrafos": [
+      "Un mecanismo que parece coser a toda velocidad solo está guiando piezas. La próxima vez que cierres una chaqueta, el pequeño cursor será menos misterioso."
+    ],
+    "nota": "Cuña ideal sin fricción; fuerza lateral conjugada al cambio de separación total. Medidas ilustrativas, no fuerzas de uso de una cremallera comercial."
+  }
 }

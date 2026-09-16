@@ -1,51 +1,72 @@
 {
   "id": "cohete",
   "rotulo": "ESPACIO",
-  "titulo": "¿Contra qué empuja un cohete si no hay aire?",
-  "entradilla": "Contra la materia que él mismo expulsa. El motor acelera gases hacia atrás y el vehículo recibe un empuje hacia delante. La atmósfera no es una pared necesaria: el cohete lleva a bordo lo que necesita expulsar.",
+  "titulo": "¿Cómo empuja el motor de un Falcon cuando ya no queda aire?",
+  "revisionEditorial": 2,
+  "entradilla": "Ves despegar un Falcon y la llamarada parece apoyarse contra el suelo. Pero el motor sigue trabajando cuando el cohete está muy lejos de la plataforma, incluso fuera de la atmósfera. Lo que necesita no es una pared invisible: lleva dentro aquello que va a lanzar hacia atrás.",
   "modelo": "cohete",
-  "color": "ambar",
-  "medidas": {"inicial": 1000, "final": 500, "escapeEfectivo": 3000, "caudal": 5},
-  "tanteo": {
-    "pregunta": "Sin gravedad ni rozamiento, ¿cuánto cambia su velocidad este cohete al consumir la mitad de su masa inicial?",
-    "opciones": ["Nada: necesita aire", "Unos 2.100 m/s", "Exactamente 3.000 m/s"],
-    "valores": [0, 2100, 3000],
-    "medido": "cambio",
-    "remate": "Cambia {cambio|0} m/s. La velocidad efectiva de escape entra en la cuenta, pero no es una velocidad máxima del cohete. También importa cuánta masa va perdiendo."
+  "color": "indigo",
+  "medidas": {
+    "inicial": 1000,
+    "final": 500,
+    "escapeEfectivo": 3000,
+    "caudal": 5
   },
-  "nucleo": [{
-    "numero": 1,
-    "nombre": "el momento se reparte",
-    "color": "ambar",
-    "paneles": [
-      {
-        "rotulo": "DOS FUERZAS, DOS CUERPOS",
-        "clave": "Un caudal de {caudal|0} kg/s y una velocidad de escape efectiva de {escapeEfectivo|0} m/s producen {empujeEnKilonewtons|0} kN de empuje.",
-        "texto": "Las flechas tienen igual magnitud y sentidos opuestos, pero no actúan sobre el mismo cuerpo. Una corresponde a la fuerza de los gases sobre el cohete y la otra a la del cohete sobre los gases. Por eso no se cancelan al calcular la aceleración del vehículo.",
-        "detalle": "El empuje se obtiene multiplicando el caudal másico por la velocidad de escape efectiva. Esta última incorpora el término de presión de la tobera: no es necesariamente la velocidad local de cada partícula de gas. Un cohete químico lleva combustible y oxidante; no depende del oxígeno del aire para quemar.",
-        "color": "ambar",
-        "dibujo": {"tipo": "reaccion", "claves": ["empuje"], "rotulos": []}
-      },
-      {
-        "rotulo": "EL PROPULSOR TAMBIÉN PESA",
-        "clave": "Con {propelente|0} kg de propelente gana {cambio|0} m/s. Con {doblePropelente|0} kg, manteniendo la masa final, gana {cambioDoble|0} m/s: no el doble.",
-        "texto": "El propelente extra permite empujar durante más tiempo, pero al principio también hay que acelerarlo. La ecuación de Tsiolkovski recoge ambas cosas: el cambio de velocidad crece con el logaritmo de la razón entre masa inicial y final.",
-        "detalle": "En el primer caso, el encendido dura {duracion|0} segundos a caudal constante. El mismo empuje produce {aceleracionInicial|0} m/s² al principio y {aceleracionFinal|0} m/s² justo antes de apagarse, porque queda menos masa. La cuenta usa escape efectivo constante y no incluye pérdidas gravitatorias ni aerodinámicas.",
-        "color": "ambar",
-        "dibujo": {
-          "tipo": "barras",
-          "claves": ["cambio", "cambioDoble"],
-          "rotulos": ["{propelente|0} kg: {cambio|0} m/s", "{doblePropelente|0} kg: {cambioDoble|0} m/s"]
+  "tanteo": {
+    "pregunta": "Si desaparece el aire exterior, ¿qué puede hacer un motor cohete encendido?",
+    "opciones": [
+      "Dejar de empujar",
+      "Seguir acelerando la nave",
+      "Alcanzar una velocidad máxima fijada por el escape"
+    ],
+    "valores": [
+      0,
+      2100,
+      3000
+    ],
+    "medido": "cambio",
+    "remate": "Puede seguir acelerando. El ejemplo ideal cambia su velocidad {cambio|0} m/s al expulsar parte de su masa."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "llevar lo que empujas",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "EL GAS SALE POR LA TOBERA",
+          "clave": "Gas hacia atrás; nave hacia delante.",
+          "texto": "El combustible y el oxidante reaccionan en una cámara. El gas caliente se expande por la tobera y sale dirigido hacia atrás. Al darle ese movimiento, el motor recibe un empuje contrario. Es la conservación de la cantidad de movimiento: la nave no consigue velocidad gratis, intercambia movimiento con el material que expulsa.",
+          "detalle": "Aquí salen {caudal|0} kg cada segundo. La velocidad efectiva de escape resume también la contribución de la presión en la salida; no representa una corriente de aire que empuje desde fuera.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "cohete-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "CADA VEZ QUEDA MENOS NAVE",
+          "clave": "El mismo empuje acelera más una masa menor.",
+          "texto": "Los depósitos se vacían mientras el motor funciona. Por eso no puedes calcular todo el vuelo como si el cohete pesara siempre lo mismo. La ecuación del cohete, asociada a Tsiolkovski, reúne esos pequeños intercambios. Gastar la mitad de la masa permite aquí un cambio de velocidad de {cambio|0} m/s.",
+          "detalle": "La cifra no es la velocidad final de un Falcon. Ignoramos gravedad y rozamiento, y usamos masas de ejemplo. Tampoco hay un techo universal igual a la velocidad del gas: importa la relación entre masa inicial y final.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "cohete-2",
+            "claves": [],
+            "rotulos": []
+          }
         }
-      }
-    ]
-  }],
+      ]
+    }
+  ],
   "cierre": {
-    "titulo": "No necesita una pared. Necesita expulsar masa.",
-    "nota": "Maniobra ideal en el espacio, sin fuerzas externas: masa inicial de {inicial|0} kg y final de {final|0} kg, escape efectivo constante de {escapeEfectivo|0} m/s y caudal de {caudal|0} kg/s. Valores ilustrativos, no un lanzamiento real. Referencias: NASA Glenn, «Ideal Rocket Equation» y «Rocket Thrust», en www1.grc.nasa.gov/beginners-guide-to-aeronautics/.",
+    "titulo": "El cohete lleva su propio material de reacción.",
     "parrafos": [
-      "Los gases salen hacia atrás respecto al cohete. Eso no obliga a que se muevan hacia atrás respecto a la Tierra: si el vehículo ya va muy deprisa, pueden seguir avanzando respecto al suelo, pero más despacio que él.",
-      "Al apagar el motor no desaparece la velocidad. En este modelo sin fuerzas externas, el vehículo sigue moviéndose de manera uniforme. En una misión real, la gravedad sigue curvando su trayectoria aunque el motor esté apagado."
-    ]
+      "La llama visible no es el apoyo. El truco está en expulsar masa con dirección y en que la nave restante pesa cada vez menos. Por eso el motor puede funcionar en el vacío."
+    ],
+    "nota": "Modelo ideal de masa variable; escape efectivo constante, sin gravedad ni resistencia. Parámetros ilustrativos, no especificaciones del Falcon."
   }
 }

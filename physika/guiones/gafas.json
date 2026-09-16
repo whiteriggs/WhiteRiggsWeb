@@ -1,12 +1,69 @@
 {
-  "id": "gafas", "rotulo": "MEDICINA", "titulo": "¿Qué significan de verdad las dioptrías?",
-  "entradilla": "Una dioptría expresa potencia óptica: cuánto hace converger o divergir la luz una lente. No es un porcentaje de visión ni una medida directa de gravedad de una enfermedad. Su signo distingue lentes convergentes y divergentes dentro de una convención óptica.",
-  "modelo": "gafas", "color": "azul",
-  "medidas": {"focal": -0.5},
-  "tanteo": {"pregunta": "¿Qué potencia tiene una lente delgada ideal con distancia focal de −0,5 m?", "opciones": ["−0,5 D", "−2 D", "+2 D"], "valores": [-0.5, -2, 2], "medido": "potencia", "remate": "Tiene {potencia|1} D: la potencia es el inverso de la distancia focal expresada en metros."},
-  "nucleo": [{"numero": 1, "nombre": "el inverso de una distancia", "color": "azul", "paneles": [
-    {"rotulo": "UN SIGNO CON SENTIDO", "clave": "Focal del ejemplo: potencia {potencia|1} D.", "texto": "Una lente divergente hace que rayos paralelos salgan separándose como si procedieran de un foco virtual. Por eso su focal y su potencia tienen signo negativo. Una convergente puede reunirlos en un foco real y recibe signo positivo en esta convención.", "detalle": "La gráfica dibuja potencia frente a distancia focal, no el recorrido de un rayo ni una sección del ojo. Al acercar la focal a cero por el lado negativo, aumenta el valor absoluto de la potencia. La curva evita cero, donde el inverso no está definido.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Distancia focal (m)", "ejeY": "Potencia (D)", "claves": [], "rotulos": []}},
-    {"rotulo": "NO ES UNA NOTA DE LA VISTA", "clave": "Con el doble de distancia focal firmada: {dobleFocal|1} D.", "texto": "Duplicar el módulo de la focal reduce a la mitad el módulo de la potencia. Eso no implica ver la mitad ni tener la mitad de un problema visual. La agudeza, acomodación, astigmatismo y estado ocular no caben en un único inverso de distancia.", "detalle": "En aproximación paraxial, las potencias de lentes delgadas en contacto se suman. Cuando hay separación, espesor o geometrías complejas aparecen términos adicionales. Una graduación real incluye información y condiciones que no estamos modelando aquí.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["potencia", "dobleFocal"], "rotulos": ["Lente: {potencia|1} D", "Doble focal: {dobleFocal|1} D"]}}
-  ]}],
-  "cierre": {"titulo": "Una dioptría es un metro inverso.", "nota": "focal = −0,5 m, lente delgada ideal en aire y rayos paraxiales. Convención cartesiana: foco virtual negativo. Escenario óptico, no graduación personalizada ni consejo para elegir gafas.", "parrafos": ["La utilidad de la unidad está en describir cómo una lente cambia un haz. Interpretar una receta o decidir una corrección necesita una evaluación que esta demostración matemática no sustituye."]}
+  "id": "gafas",
+  "rotulo": "MEDICINA",
+  "titulo": "Gafas: ¿qué cambia una lente antes de que la luz llegue al ojo?",
+  "revisionEditorial": 2,
+  "modelo": "gafas",
+  "color": "verde",
+  "medidas": {
+    "focal": -0.5
+  },
+  "entradilla": "Pones unas gafas delante de una página y las letras parecen cambiar de tamaño o de posición. La lente no redibuja la tinta ni mueve el papel. Cambia el camino de la luz antes de que entre en el ojo. Lo que después vemos empieza con ese pequeño desvío repartido por su superficie.",
+  "tanteo": {
+    "pregunta": "Una lente más fina por el centro, como la divergente del ejemplo, ¿qué hace con un haz paralelo?",
+    "opciones": [
+      "Lo reúne en un foco real detrás",
+      "Lo abre",
+      "Lo deja siempre paralelo"
+    ],
+    "valores": [
+      -0.5,
+      -2,
+      2
+    ],
+    "medido": "potencia",
+    "remate": "Lo abre. Su potencia es {potencia|1} dioptrías; el signo negativo identifica la lente divergente de este modelo."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "cambiar caminos",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "DOS SUPERFICIES DESVÍAN LA LUZ",
+          "clave": "La forma decide cómo sale el haz.",
+          "texto": "La luz cambia de dirección al pasar entre materiales cuando llega oblicuamente a la frontera. Es refracción. En una lente, la inclinación de las superficies cambia de un punto a otro. Por eso los rayos no reciben todos el mismo desvío: pueden reunirse o separarse al salir.",
+          "detalle": "Nuestra lente divergente es más fina en el centro. Los rayos que entran paralelos salen abriéndose. El dibujo prolonga hacia atrás esos caminos con líneas discontinuas para señalar de dónde parecerían proceder, aunque la luz no haya viajado realmente por esas prolongaciones.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "gafas-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL FOCO RESUME EL EFECTO",
+          "clave": "Más desvío, menor distancia focal en valor absoluto.",
+          "texto": "Si prolongamos los rayos divergentes hacia atrás, encontramos un foco virtual. La distancia hasta él resume la fuerza óptica de la lente. Las dioptrías expresan el inverso de esa distancia en metros. No son un número de aumentos ni una puntuación universal sobre cuánto puede ver alguien.",
+          "detalle": "Al duplicar la distancia focal, la potencia se reduce a la mitad, conservando su signo. El segundo panel compara dos lentes ideales y sus prolongaciones. No representa una graduación recomendada: un ojo real y unas gafas reales requieren más información que esta relación sencilla.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "gafas-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Las gafas preparan la luz antes de que entre.",
+    "nota": "Lente delgada divergente ideal. Sin prescripciones ni evaluación de la visión.",
+    "parrafos": [
+      "La montura sostiene una geometría cuidadosamente fabricada. Lo que parece un cristal transparente está organizando trayectorias a cada instante. El ojo recibe un haz distinto del que habría llegado sin gafas, aunque la página siga exactamente donde estaba y conserve las mismas letras."
+    ]
+  }
 }

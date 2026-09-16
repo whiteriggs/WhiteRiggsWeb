@@ -1,11 +1,70 @@
 {
-  "id": "mareas", "rotulo": "ESPACIO", "titulo": "¿Por qué muchas costas tienen dos pleamares y otras no?",
-  "entradilla": "La Luna no atrae por igual todas las partes de la Tierra. Esa diferencia estira el conjunto en la dirección Tierra-Luna y permite entender una componente de marea con dos máximos. Pero cada océano responde con sus cuencas, profundidades y resonancias: no todas las costas tienen dos pleamares diarias.",
-  "modelo": "mareas", "color": "azul", "medidas": {"muLuna": 4902800066000, "radio": 6371000, "distancia": 384400000, "factorDistancia": 1.1, "rotacion": 86164.09, "orbitaDias": 27.321661},
-  "tanteo": {"pregunta": "En el modelo semidiurno lunar ideal, ¿qué separación temporal hay entre máximos?", "opciones": ["6 horas", "12,42 horas", "24 horas"], "valores": [6, 12.42, 24], "medido": "horas", "remate": "{horas|2} horas. No son exactamente doce horas solares y no es una tabla de mareas de tu playa."},
-  "nucleo": [{"numero": 1, "nombre": "la diferencia importa", "color": "azul", "paneles": [
-    {"rotulo": "RESTAR LA CAÍDA DEL CENTRO", "clave": "Escala de aceleración diferencial: {microaceleracion|3} micrómetros/s².", "texto": "La cara cercana recibe más atracción lunar que el centro; la lejana recibe menos. Al restar la aceleración común del centro, ambos extremos se alejan de él en sentidos opuestos. No es que la Luna repela el agua del lado lejano.", "detalle": "Sobre el eje, la primera aproximación es dos veces GM lunar por radio terrestre, dividido por distancia al cubo. La curva muestra esa dependencia cúbica, más sensible a la distancia que la atracción total. No representa metros de altura del mar.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Distancia / distancia media", "ejeY": "Aceleración diferencial (µm/s²)", "claves": [], "rotulos": []}},
-    {"rotulo": "EL OCÉANO NO ES UN ANILLO LIBRE", "clave": "A distancia multiplicada por {factorDistancia|1}, la escala baja a {microcomparada|3} micrómetros/s².", "texto": "Mientras la Tierra gira, la Luna avanza en su órbita. El tiempo de volver a orientarnos hacia ella supera una rotación sideral. Dividir ese ciclo relativo en dos da el intervalo ideal de {horas|2} horas para la componente semidiurna.", "detalle": "Los continentes impiden que una protuberancia de agua recorra libremente el planeta. La profundidad y forma de las cuencas, la rotación terrestre, la inclinación lunar y la contribución solar producen patrones semidiurnos, mixtos o diurnos. El viento y la presión añaden variaciones meteorológicas.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["microaceleracion", "microcomparada"], "rotulos": ["Media: {microaceleracion|3} µm/s²", "Lejos: {microcomparada|3} µm/s²"]}}
-  ]}],
-  "cierre": {"titulo": "La Luna fuerza; cada cuenca responde.", "nota": "Modelo diferencial de primer orden, órbita lunar circular ecuatorial. GM lunar 4,902800066×10¹² m³/s², distancia 384.400 km, radio terrestre 6.371 km; periodos siderales en segundos y días. Distancia comparada 1,1 veces la inicial. Referencia consultada: NOAA, Types and Causes of Tidal Cycles, https://oceanservice.noaa.gov/education/tutorial_tides/tides07_cycles.html.", "parrafos": ["Esta cuenta no predice alturas ni horarios locales. Para navegar o entrar en una zona intermareal se necesita una predicción oficial de la localidad, no dividir un día en dos.", "El mecanismo también deforma la Tierra sólida. El agua hace visible una respuesta que no pertenece exclusivamente a los océanos."]}
+  "id": "mareas",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Por qué un reloj de mareas no da una vuelta cada doce horas?",
+  "revisionEditorial": 2,
+  "entradilla": "Un reloj de mareas de pared tiene una aguja y palabras como pleamar y bajamar. Parece un reloj normal al que le han cambiado la esfera, pero su mecanismo avanza a otro ritmo. Si completara exactamente dos vueltas por día solar, pronto dejaría de acompañar incluso una marea lunar ideal.",
+  "modelo": "mareas",
+  "color": "indigo",
+  "medidas": {
+    "rotacion": 86164.09,
+    "orbitaDias": 27.321661
+  },
+  "tanteo": {
+    "pregunta": "En un reloj de mareas lunar ideal, ¿cómo se compara una vuelta con doce horas solares?",
+    "opciones": [
+      "Dura menos",
+      "Dura algo más",
+      "Dura exactamente lo mismo"
+    ],
+    "valores": [
+      6,
+      12.42,
+      12
+    ],
+    "medido": "horas",
+    "remate": "Dura algo más: {horas|2} horas. La Luna se mueve mientras la Tierra gira, por lo que el ritmo no coincide con el reloj doméstico."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "seguir otro ritmo",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "LA TIERRA TIENE QUE ALCANZAR A LA LUNA",
+          "clave": "Una vuelta respecto a las estrellas no completa el encuentro.",
+          "texto": "Durante una rotación terrestre, la Luna avanza en su órbita. Un lugar de la Tierra necesita girar un poco más para quedar de nuevo orientado hacia ella. Es movimiento relativo: el ritmo del encuentro se obtiene restando velocidades angulares. El día lunar medio resulta más largo que el día solar de nuestros relojes.",
+          "detalle": "Con los periodos elegidos, dos ciclos semidiurnos suman un retraso de {retrasoMinutos|1} minutos respecto a un día solar. No es que la maquinaria vaya mal: intenta seguir una referencia que también está moviéndose.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "mareas-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL MECANISMO SIGUE UN PROMEDIO",
+          "clave": "La aguja convierte ese periodo en una vuelta de esfera.",
+          "texto": "Un mecanismo de mareas sencillo hace una vuelta en aproximadamente {horas|2} horas. Su aguja va recorriendo las posiciones entre pleamar y bajamar siguiendo ese promedio lunar. La transmisión no mide el mar: solo transforma un avance regular del reloj en otro más lento, elegido para representar un ciclo ideal.",
+          "detalle": "Las costas reales también responden al Sol, la forma del fondo, las bahías y el tiempo meteorológico. Ajustar el reloj en una pleamar no garantiza las siguientes. Para navegar o acceder a una zona costera, consulta predicciones locales oficiales.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "mareas-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La aguja recuerda un ritmo, no vigila el océano.",
+    "parrafos": [
+      "El reloj resume una relación astronómica en un movimiento mecánico. Explica por qué la marea no repite su horario solar cada día, pero no sustituye una predicción del agua que encontrarás en una playa concreta."
+    ],
+    "nota": "Promedio lunar semidiurno; no predice alturas ni horas locales de marea. No usar este modelo para decisiones de seguridad costera."
+  }
 }

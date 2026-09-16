@@ -1,11 +1,69 @@
 {
-  "id": "espectroscopia", "rotulo": "ESPACIO", "titulo": "¿Cómo sabemos de qué está hecha una estrella que no tocaremos nunca?",
-  "entradilla": "La luz trae las diferencias de energía de los átomos que la emitieron o absorbieron. Separarla por longitudes de onda revela líneas: un patrón que podemos comparar con el de los mismos átomos en el laboratorio. No hace falta recoger una muestra de la estrella.",
-  "modelo": "espectroscopia", "color": "azul", "medidas": {"rydberg": 10967758.34},
-  "tanteo": {"pregunta": "En el hidrógeno ideal, ¿dónde cae la transición del nivel 3 al 2?", "opciones": ["Unos 65 nm", "Unos 656 nm", "Unos 6.560 nm"], "valores": [65, 656, 6560], "medido": "alfaNm", "remate": "{alfaNm|2} nm en vacío: la línea H alfa está en el rojo visible."},
-  "nucleo": [{"numero": 1, "nombre": "los saltos tienen firma", "color": "azul", "paneles": [
-    {"rotulo": "DOS SALTOS DEL HIDRÓGENO", "clave": "H alfa: {alfaNm|2} nm. H beta: {betaNm|2} nm.", "texto": "La fórmula de Rydberg relaciona el inverso de la longitud de onda con la diferencia entre inversos de cuadrados de los niveles. Aquí calculamos las transiciones desde los niveles tercero y cuarto hasta el segundo: pertenecen a la serie de Balmer.", "detalle": "El dibujo compara longitudes en nanómetros. La separación entre ambas líneas no es un adorno de color: proviene de niveles energéticos distintos del mismo átomo. Para absorber esos fotones el átomo debe encontrarse en el estado inicial adecuado; su abundancia por sí sola no garantiza una línea intensa.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["alfaNm", "betaNm"], "rotulos": ["H alfa: {alfaNm|1} nm", "H beta: {betaNm|1} nm"]}},
-    {"rotulo": "EL FOTÓN PAGA LA DIFERENCIA", "clave": "Energía por fotón: {energiaAlfa|2} eV en H alfa y {energiaBeta|2} eV en H beta.", "texto": "Multiplicar la constante de Planck por la frecuencia da la energía del fotón. Como frecuencia y longitud de onda son inversamente proporcionales, la línea más corta transporta más energía por fotón. La estrella no puede elegir arbitrariamente cualquier salto entre esos niveles.", "detalle": "En una atmósfera estelar real las líneas se ensanchan y desplazan por temperatura, presión, campos magnéticos y movimiento. Inferir cantidades de elementos requiere modelar ionización y transporte de radiación, no contar simplemente cuántas rayas oscuras aparecen en una fotografía.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["energiaAlfa", "energiaBeta"], "rotulos": ["H alfa: {energiaAlfa|2} eV", "H beta: {energiaBeta|2} eV"]}}
-  ]}],
-  "cierre": {"titulo": "La química deja su patrón en la luz.", "nota": "Rydberg efectivo para hidrógeno con masa nuclear finita: 10.967.758,34 m⁻¹. Modelo de niveles no relativista; longitudes en vacío, sin estructura fina ni desplazamiento Doppler. Constantes h y c exactas; conversión eV con carga elemental exacta. Referencia contextual consultada: Einstein Online, Gravitational redshift and White Dwarf stars, https://www.einstein-online.info/en/spotlight/redshift_white_dwarfs/.", "parrafos": ["Por eso una línea tabulada en aire puede llevar una longitud ligeramente distinta de la calculada aquí en vacío. Comparar sin declarar el medio introduciría un desplazamiento ficticio.", "El patrón identifica hidrógeno; su forma y sus intensidades ayudan a reconstruir las condiciones de la región que produjo la luz, no todo el interior estelar de una sola vez."]}
+  "id": "espectroscopia",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Qué revela el espectroscopio que se acopla a un telescopio?",
+  "revisionEditorial": 2,
+  "entradilla": "Por el ocular ves una estrella como un punto. Acoplas un espectroscopio y aparece una franja de colores atravesada por marcas. El accesorio no ha acercado una muestra de gas: ha separado la luz que ya llegaba. Esas marcas permiten buscar materiales que nunca podrás llevar a un laboratorio sobre la mesa.",
+  "modelo": "espectroscopia",
+  "color": "indigo",
+  "medidas": {
+    "rydberg": 10967758.34
+  },
+  "tanteo": {
+    "pregunta": "Al separar la luz de un gas de hidrógeno caliente, ¿qué aparece?",
+    "opciones": [
+      "Solo un color elegido al azar",
+      "Líneas en posiciones características",
+      "Una única línea que cambia arbitrariamente"
+    ],
+    "valores": [
+      65,
+      656,
+      6560
+    ],
+    "medido": "alfaNm",
+    "remate": "Líneas características: una de ellas cae cerca de {alfaNm|1} nm, en el rojo. Su posición viene del átomo, no del color de la carcasa."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "ordenar la luz y reconocer marcas",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "LA REJILLA SEPARA LOS COLORES",
+          "clave": "Distintas longitudes de onda salen en direcciones distintas.",
+          "texto": "Una rendija delimita la entrada. Después, una rejilla con muchos surcos reparte la luz según su longitud de onda. Las ondas de esos surcos se refuerzan en direcciones diferentes para cada color. Es difracción e interferencia. La cámara registra posiciones separadas donde antes recibía los colores mezclados en el mismo punto.",
+          "detalle": "Una calibración convierte posiciones de la imagen en longitudes de onda. Aquí no calculamos los ángulos de la rejilla: el modelo calcula las marcas del hidrógeno que el instrumento podría usar como referencia para reconocer una muestra.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "espectroscopia-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL ÁTOMO NO ADMITE CUALQUIER SALTO",
+          "clave": "Cada transición intercambia una energía determinada.",
+          "texto": "Los electrones ligados a un átomo tienen niveles de energía permitidos. Al pasar entre ellos pueden emitir o absorber un fotón de energía concreta. Esa es la cuantización de la energía. La fórmula de Rydberg permite calcular, para el hidrógeno ideal, marcas como {alfaNm|1} y {betaNm|1} nm.",
+          "detalle": "Un gas luminoso puede producir líneas brillantes; un gas delante de una fuente continua puede dejar líneas oscuras. Temperatura, movimiento y mezclas complican la lectura real. No basta con encontrar una raya roja para identificar una estrella entera.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "espectroscopia-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El accesorio ordena pistas que ya estaban viajando.",
+    "parrafos": [
+      "Separar la luz transforma un punto en información medible. El instrumento decide dónde registra cada longitud de onda; el átomo decide qué energías puede intercambiar. Juntas, ambas cosas permiten reconocer materiales a distancia."
+    ],
+    "nota": "Transiciones ideales de hidrógeno en vacío. No se calculan eficiencia, resolución ni geometría del espectroscopio; rayos ilustrativos."
+  }
 }

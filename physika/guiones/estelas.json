@@ -1,12 +1,70 @@
 {
-  "id": "estelas", "rotulo": "AVIACIÓN", "titulo": "¿Por qué unos aviones dejan raya blanca y otros no?",
-  "entradilla": "Las estelas de condensación son nubes de cristales de hielo. El escape aporta vapor y partículas, y al mezclarse con aire suficientemente frío puede iniciar su formación. Que persistan depende mucho de la temperatura y de la humedad del aire que las rodea.",
-  "modelo": "estelas", "color": "azul",
-  "medidas": {"temperatura": 223.15, "humedad": 1.2},
-  "tanteo": {"pregunta": "Si la presión de vapor es 1,2 veces la de saturación sobre hielo, ¿cuál es la humedad relativa respecto al hielo?", "opciones": ["20 %", "120 %", "1,2 %"], "valores": [20, 120, 1.2], "medido": "humedadPorcentaje", "remate": "Es {humedadPorcentaje|0} %. Estar por encima de saturación respecto al hielo favorece la persistencia de cristales ya formados."},
-  "nucleo": [{"numero": 1, "nombre": "el frío cambia el umbral", "color": "azul", "paneles": [
-    {"rotulo": "POCO VAPOR PUEDE SER MUCHO", "clave": "A {celsius|1} °C, la presión de saturación sobre hielo es {saturacion|2} Pa.", "texto": "La curva calcula cómo cambia la presión de vapor de equilibrio sobre hielo con la temperatura. En aire muy frío basta una presión parcial pequeña para acercarse a saturación. No es que el aire funcione como una esponja con huecos: hay un equilibrio entre vapor y fase condensada.", "detalle": "La humedad relativa se define respecto a una superficie de referencia. Agua líquida e hielo no tienen la misma presión de saturación a igual temperatura. Por eso puede haber sobresaturación respecto al hielo sin estar saturado respecto al agua líquida.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Temperatura (°C)", "ejeY": "Saturación sobre hielo (Pa)", "claves": [], "rotulos": []}},
-    {"rotulo": "FORMARSE NO ES LO MISMO QUE DURAR", "clave": "El ejemplo tiene {vapor|2} Pa de vapor, {exceso|2} Pa por encima del equilibrio sobre hielo.", "texto": "Si ya existen cristales, un ambiente sobresaturado puede permitir que crezcan tomando vapor. En aire subsaturado tienden a sublimarse y la estela puede desaparecer pronto. El contenido de vapor de este ejemplo es solo {gramos|3} g/m³.", "detalle": "La formación inicial requiere analizar la mezcla del escape caliente y húmedo con aire ambiente; también influyen presión, combustible y eficiencia del motor. Nuestro cálculo no resuelve ese criterio de mezcla ni garantiza formación. Capas atmosféricas distintas pueden explicar estelas discontinuas sin cambios visibles en el avión.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["saturacion", "vapor"], "rotulos": ["Equilibrio {saturacion|2} Pa", "Vapor {vapor|2} Pa"]}}
-  ]}],
-  "cierre": {"titulo": "Una raya cuenta algo del aire que atraviesa.", "nota": "Temperatura en K y humedad respecto al hielo como razón adimensional, ambas ilustrativas. Presión de saturación calculada con la parametrización de Murphy y Koop para hielo; vapor tratado como gas ideal con constante 461,5 J/(kg·K). Curva limitada a 200–250 K. No predice formación inicial ni duración.", "parrafos": ["Temperatura y humedad importan juntas. La altura por sí sola no determina si habrá una estela, y observar su longitud no permite reconstruir todas las condiciones atmosféricas ni la composición del escape."]}
+  "id": "estelas",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Por qué algunos aviones dejan una raya blanca que no se borra?",
+  "entradilla": "Dos aviones cruzan el cielo: detrás de uno queda una línea que se ensancha; la del otro desaparece enseguida. No hace falta que sus motores estén haciendo cosas completamente distintas. La temperatura y la humedad del aire que atraviesan pueden cambiar mucho con la altura, aunque desde el suelo todo parezca el mismo cielo azul.",
+  "modelo": "estelas",
+  "color": "azul",
+  "medidas": {
+    "temperatura": 223.15,
+    "humedad": 1.2
+  },
+  "tanteo": {
+    "pregunta": "Para que los cristales de una estela ya formada puedan persistir, ¿qué ambiente favorece el ejemplo?",
+    "opciones": [
+      "Aire seco respecto al hielo",
+      "Aire sobresaturado respecto al hielo",
+      "Aire casi sin vapor"
+    ],
+    "valores": [
+      20,
+      120,
+      1.2
+    ],
+    "medido": "humedadPorcentaje",
+    "remate": "El ejemplo tiene {humedadPorcentaje|0} % de humedad respecto al hielo. Esa sobresaturación favorece la persistencia, no determina por sí sola la formación inicial."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el frío cambia el umbral",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "EL ESCAPE ENCUENTRA AIRE FRÍO",
+          "clave": "El vapor se mezcla con el ambiente y puede formar cristales.",
+          "texto": "La combustión produce agua, además de otros gases. Al mezclarse el escape con aire muy frío, pueden aparecer gotitas y cristales de hielo. La línea blanca es luz dispersada por esas partículas, no el vapor invisible por sí solo. Condensación y congelación son los cambios de estado que hacen visible la mezcla.",
+          "detalle": "No basta con decir que hace frío. La formación depende del recorrido de temperatura y humedad durante la mezcla, así como de las partículas disponibles. Nuestro cálculo no predice ese primer nacimiento de la estela.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "estelas-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL CRISTAL PIERDE O GANA AGUA",
+          "clave": "La humedad decide si el hielo se alimenta o se desgasta.",
+          "texto": "Una vez formado el hielo, el ambiente puede aportar más vapor a sus superficies o permitir que pierdan moléculas. Pasar directamente de hielo a vapor se llama sublimación. Si el aire está suficientemente húmedo respecto al hielo, los cristales pueden persistir e incluso crecer mientras el viento dispersa la línea.",
+          "detalle": "La humedad del ejemplo es {humedadPorcentaje|0} % respecto al hielo, por encima del equilibrio. Ese valor no es la humedad relativa doméstica referida al agua líquida. Las dos referencias tienen presiones de saturación diferentes.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "estelas-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "El cielo decide qué huella permanece.",
+    "parrafos": [
+      "Una raya larga cuenta tanto sobre el aire como sobre el avión. Ver dos huellas distintas no permite deducir por sí solo diferencias de combustible: pueden estar cruzando capas con condiciones muy diferentes."
+    ],
+    "nota": "Temperatura y humedad ilustrativas. Saturación sobre hielo mediante Murphy y Koop y vapor ideal. Sin predicción de formación inicial, duración ni crecimiento exacto. Cristales ampliados y mezcla esquemática, no simulación meteorológica."
+  },
+  "revisionEditorial": 2
 }

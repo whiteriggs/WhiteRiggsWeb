@@ -1,12 +1,74 @@
 {
-  "id": "sustentacion", "rotulo": "AVIACIÓN", "titulo": "¿Por qué un avión puede volar boca abajo?",
-  "entradilla": "La curvatura del ala no decide por sí sola hacia dónde empuja el aire. También importa su orientación respecto a la corriente. Un avión adecuado puede producir sustentación hacia arriba estando invertido: no necesita que dos partículas de aire vuelvan a reunirse al salir del ala.",
-  "modelo": "sustentacion", "color": "azul",
-  "medidas": {"densidad": 1.225, "velocidad": 60, "area": 16, "coeficiente": 0.8, "masa": 2500, "factorVelocidad": 2},
-  "tanteo": {"pregunta": "Con la misma orientación aerodinámica y densidad, duplicar la velocidad multiplica la sustentación por…", "opciones": ["Dos", "Cuatro", "Ocho"], "valores": [2, 4, 8], "medido": "multiplicador", "remate": "El factor es {multiplicador|0}: la presión dinámica depende del cuadrado de la velocidad, mientras se mantenga el coeficiente."},
-  "nucleo": [{"numero": 1, "nombre": "el aire cambia de dirección", "color": "azul", "paneles": [
-    {"rotulo": "PRESIÓN Y MOVIMIENTO", "clave": "El ejemplo produce {fuerza|0} N de sustentación a {velocidad|0} m/s.", "texto": "La sustentación se calcula como presión dinámica por superficie y coeficiente de sustentación. La curva mantiene ese coeficiente fijo; no representa una maniobra ni el paso por la pérdida. Doblar la velocidad aumenta la presión dinámica, incluso sin cambiar el ala.", "detalle": "El reparto de presiones sobre el ala y la desviación del aire son descripciones compatibles. Bernoulli relaciona presión y velocidad bajo sus hipótesis; Newton relaciona la fuerza con el cambio de cantidad de movimiento. Ninguna exige tiempos de tránsito iguales por ambas caras.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Velocidad del aire (m/s)", "ejeY": "Sustentación (N)", "claves": [], "rotulos": []}},
-    {"rotulo": "INVERTIDO NO ES IMPOSIBLE", "clave": "El peso es {peso|0} N; el equilibrio ideal aparece a {equilibrio|1} m/s con este coeficiente.", "texto": "En vuelo invertido, la orientación respecto al aire puede dar una fuerza hacia arriba aunque la curvatura habitual quede al revés. Los perfiles simétricos ilustran especialmente bien por qué la curvatura no es un requisito único para sustentar.", "detalle": "Aquí definimos positiva la fuerza hacia arriba y elegimos un coeficiente ilustrativo. No lo deducimos de un ángulo ni suponemos que cualquier avión admita vuelo invertido: estructura, lubricación, combustible y control también imponen límites.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["fuerza", "peso"], "rotulos": ["Sustentación {fuerza|0} N", "Peso {peso|0} N"]}}
-  ]}],
-  "cierre": {"titulo": "El ala no tiene un arriba mágico.", "nota": "Ejemplo estacionario incompresible: densidad en kg/m³, velocidad en m/s, área en m², masa en kg y coeficiente adimensional ilustrativo. Gravedad estándar. El modelo no calcula separación ni compresibilidad.", "parrafos": ["Una forma de ala ayuda a obtener un reparto de presiones, pero no sustituye a la corriente y al ángulo de ataque. La ecuación resume el resultado aerodinámico; no explica por sí sola cómo se obtiene el coeficiente."]}
+  "id": "sustentacion",
+  "rotulo": "AVIACIÓN",
+  "titulo": "¿Por qué un avión acrobático puede volar boca abajo?",
+  "entradilla": "En una exhibición, un avión se da la vuelta y continúa volando. Si el secreto fuera solamente tener el ala abombada por arriba, debería caerse inmediatamente. La maniobra deja ver una pieza que falta en esa explicación: no basta mirar la forma del ala; también importa cómo encuentra el aire.",
+  "modelo": "sustentacion",
+  "color": "azul",
+  "medidas": {
+    "densidad": 1.225,
+    "velocidad": 60,
+    "area": 16,
+    "coeficiente": 0.8,
+    "masa": 2500,
+    "factorVelocidad": 2
+  },
+  "tanteo": {
+    "pregunta": "Si el aire pasa el doble de rápido y mantenemos la misma orientación aerodinámica, ¿la fuerza del ala aumenta solo el doble?",
+    "opciones": [
+      "Sí, solo el doble",
+      "No, aumenta más",
+      "No aumenta"
+    ],
+    "valores": [
+      2,
+      4,
+      1
+    ],
+    "medido": "multiplicador",
+    "remate": "Aumenta por un factor {multiplicador|0} en este modelo. La velocidad interviene al cuadrado si el coeficiente se mantiene."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "el aire cambia de dirección",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "EL ALA ENCUENTRA LA CORRIENTE",
+          "clave": "La inclinación cambia cómo se desvía el aire.",
+          "texto": "Imagina un avión de papel: su ala no necesita una joroba pronunciada para producir una fuerza. Su orientación hace que la corriente cambie de dirección. El ángulo entre el ala y el aire que llega se llama ángulo de ataque. Es diferente de la inclinación respecto al horizonte, especialmente si el avión está subiendo o bajando.",
+          "detalle": "El aire empuja mediante presiones diferentes sobre ambas caras de la superficie. Bernoulli relaciona presión y velocidad bajo ciertas condiciones; Newton relaciona la fuerza con el cambio de movimiento. Son descripciones compatibles, no explicaciones rivales.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "sustentacion-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "BOCA ABAJO, FUERZA HACIA ARRIBA",
+          "clave": "Un avión preparado puede sostenerse con el ala invertida.",
+          "texto": "Al quedar invertido, el piloto puede cambiar la orientación respecto a la corriente para seguir desviando aire hacia abajo. Un perfil simétrico ayuda a imaginarlo: ninguna cara tiene un permiso exclusivo para quedar arriba. Importa obtener una fuerza suficiente en la dirección necesaria sin perder el control del flujo.",
+          "detalle": "La comparación calcula {fuerza|0} newtons con un coeficiente elegido. No deduce ese coeficiente del ángulo dibujado. Tampoco supone que cualquier avión pueda volar invertido: combustible, lubricación y estructura ponen límites reales.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "transporteRenovado",
+            "trazado": "sustentacion-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La forma ayuda; la orientación también manda.",
+    "parrafos": [
+      "El truco de la exhibición no contradice la física del vuelo. Corrige una explicación demasiado corta: el ala y el aire trabajan juntos, y cambiar su encuentro cambia la fuerza que aparece."
+    ],
+    "nota": "Coeficiente y condiciones ilustrativos. Modelo estacionario incompresible sin separación del flujo ni maniobra dinámica. El dibujo no predice el coeficiente ni constituye una instrucción de pilotaje."
+  },
+  "revisionEditorial": 2
 }

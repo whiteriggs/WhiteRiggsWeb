@@ -1,12 +1,71 @@
 {
-  "id": "tostadora", "rotulo": "CASA", "titulo": "¿Por qué brilla el hilo de la tostadora y no su cable?",
-  "entradilla": "La misma corriente puede atravesar un elemento calefactor y su cable de alimentación, pero no producir el mismo calor en ambos. La resistencia del elemento es mucho mayor y concentra la disipación. Alcanzar una temperatura concreta depende después de su tamaño, material y capacidad para perder calor.",
-  "modelo": "tostadora", "color": "coral",
-  "medidas": {"potencia": 1000, "tension": 230, "resistenciaCable": 0.1},
-  "tanteo": {"pregunta": "Si el elemento disipa 1.000 W a 230 V, ¿qué potencia disipa un cable de 0,1 Ω que lleva la misma corriente?", "opciones": ["Unos 0,02 W", "Unos 1,9 W", "100 W"], "valores": [0.02, 1.9, 100], "medido": "cable", "remate": "El cable disipa {cable|2} W con {corriente|2} A. El calentamiento resistivo depende de corriente al cuadrado por resistencia."},
-  "nucleo": [{"numero": 1, "nombre": "la corriente es común, la resistencia no", "color": "coral", "paneles": [
-    {"rotulo": "DÓNDE SE DISIPA LA ENERGÍA", "clave": "El elemento tiene {resistencia|1} Ω en funcionamiento y recibe {potencia|0} W.", "texto": "Usamos la tensión eficaz en sus bornes y su potencia para obtener corriente y resistencia caliente. El cable elegido añade mucha menos resistencia al mismo recorrido. Aplicando la ley de Joule a ambos se ve por qué la disipación se concentra donde interesa producir calor.", "detalle": "El escenario trata el elemento como una resistencia a su temperatura de trabajo. No supone resistencia constante desde el encendido. Tampoco dice que los cables no se calienten: una resistencia de contacto elevada o una corriente excesiva puede producir un calentamiento peligroso fuera del elemento previsto.", "color": "coral", "dibujo": {"tipo": "barras", "claves": ["potencia", "cable"], "rotulos": ["Elemento: {potencia|0} W", "Cable: {cable|2} W"]}},
-    {"rotulo": "TEMPERATURA NO ES LO MISMO QUE VATIOS", "clave": "La disipación conjunta del modelo es {total|2} W.", "texto": "Una pieza se calienta mientras recibe más energía de la que pierde por radiación, convección y conducción. Un hilo fino de aleación resistiva puede alcanzar incandescencia porque combina disipación y geometría apropiadas. El pan recibe energía por radiación y aire caliente, además de intercambios con su entorno inmediato.", "detalle": "No calculamos el color del hilo ni la temperatura del pan solo con la potencia. También intervienen humedad, superficie y tiempo. Las reacciones de dorado requieren condiciones térmicas adecuadas, pero no existe una conversión directa y universal entre un vatio eléctrico y un tono de tostado.", "color": "coral", "dibujo": {"tipo": "magnitudes", "claves": ["corriente", "resistencia", "total"], "rotulos": ["Corriente: {corriente|2} A", "Elemento: {resistencia|1} Ω", "Disipación: {total|2} W"]}}
-  ]}],
-  "cierre": {"titulo": "El diseño decide dónde quiere disipar energía.", "nota": "Potencia del elemento en W, tensión eficaz en sus bornes en V y resistencia total del cable en Ω. Parámetros ilustrativos, sin termostato ni transitorio térmico. P = V²/R e I²R; la tensión indicada es la del elemento, no se añade dos veces la caída del cable. No se ofrecen procedimientos de reparación o modificación.", "parrafos": ["La disipación pequeña de un cable en este ejemplo no prueba que cualquier cable sea seguro. Es un cálculo de circuito idealizado, no una evaluación de una instalación o electrodoméstico."]}
+  "id": "tostadora",
+  "rotulo": "CASA",
+  "titulo": "¿Por qué brilla el hilo de la tostadora y no el cable del enchufe?",
+  "entradilla": "Dentro de la tostadora ves hilos al rojo junto al pan. Por el cable exterior también circula corriente, pero no debería ponerse incandescente. La diferencia no es que la electricidad se vuelva caliente al entrar en la carcasa: los materiales, las dimensiones y la resistencia de cada tramo deciden dónde se entrega más energía.",
+  "modelo": "tostadora",
+  "color": "ambar",
+  "medidas": {
+    "potencia": 1000,
+    "tension": 230,
+    "resistenciaCable": 0.1
+  },
+  "tanteo": {
+    "pregunta": "Si el cable y el calentador llevan la misma corriente, ¿qué sucede en un cable de resistencia mucho menor?",
+    "opciones": [
+      "No se disipa absolutamente nada",
+      "Se disipa mucho menos calor",
+      "Se disipa tanto como en el calentador"
+    ],
+    "valores": [
+      0,
+      1.9,
+      1000
+    ],
+    "medido": "cable",
+    "remate": "Se disipa mucho menos. El cable ilustrativo entrega {cable|2} W como calor con {corriente|2} A; pequeño no significa exactamente cero."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "elegir dónde calentar",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "UNA RESISTENCIA JUNTO AL PAN",
+          "clave": "El elemento calefactor convierte electricidad en calor.",
+          "texto": "El calentador utiliza un material y una forma que ofrecen resistencia suficiente al paso de corriente. Los portadores transfieren energía al material y lo calientan: efecto Joule. A temperatura elevada emite radiación, parte visible y parte infrarroja. El pan recibe energía de ese entorno caliente y empieza a secarse y tostarse en su superficie.",
+          "detalle": "El hilo debe soportar temperatura y oxidación durante muchos ciclos. No cualquier cable sirve como resistencia de tostadora. Su colocación cerca de las rebanadas permite dirigir una parte importante del intercambio hacia el alimento sin tocarlo necesariamente.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "tostadora-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL CABLE ESTÁ HECHO PARA CONDUCIR",
+          "clave": "Menos resistencia significa menos calentamiento a igual corriente.",
+          "texto": "El cable de alimentación utiliza conductores adecuados y una sección suficiente para que su resistencia sea baja. Por él puede circular la misma corriente que por el elemento, pero la potencia disipada resulta mucho menor. No es una contradicción: la corriente por sí sola no decide dónde se calienta más el circuito.",
+          "detalle": "Un contacto flojo, un cable dañado o una sección inadecuada pueden crear un punto caliente peligroso. Eso no es funcionamiento normal. Desconecta un aparato averiado y sigue indicaciones de seguridad; nunca introduzcas objetos metálicos para investigar dentro de una tostadora enchufada.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "tostadora-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La electricidad recorre todo; el diseño concentra el calor.",
+    "parrafos": [
+      "La tostadora funciona porque distingue entre un camino que debe transportar energía y otro que debe entregarla justo al lado del pan."
+    ],
+    "nota": "Circuito resistivo ideal con potencia, tensión y resistencia de cable ilustrativas. No calcula temperaturas ni dimensiona una instalación eléctrica."
+  },
+  "revisionEditorial": 2
 }

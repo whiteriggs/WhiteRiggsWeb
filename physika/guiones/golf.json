@@ -1,12 +1,74 @@
 {
-  "id": "golf", "rotulo": "DEPORTE", "titulo": "¿Cómo pueden los hoyuelos reducir el arrastre de una bola?",
-  "entradilla": "Una superficie más rugosa no siempre frena más. En ciertos regímenes de vuelo, los hoyuelos favorecen la transición de la capa límite y retrasan la separación del aire. La estela puede estrecharse y disminuir el arrastre de presión, aunque aumente parte del rozamiento superficial.",
-  "modelo": "golf", "color": "verde",
-  "medidas": {"radio": 0.02135, "velocidad": 40, "densidad": 1.225, "viscosidad": 0.0000181, "coeficienteLiso": 0.5, "coeficienteHoyuelos": 0.25},
-  "tanteo": {"pregunta": "Si a la misma velocidad el coeficiente baja de 0,50 a 0,25, ¿qué porcentaje de arrastre queda?", "opciones": ["25 %", "50 %", "100 %"], "valores": [25, 50, 100], "medido": "porcentaje", "remate": "Queda el {porcentaje|0} % en esta comparación. La reducción se supone en los coeficientes; la fuerza se calcula a partir de ellos."},
-  "nucleo": [{"numero": 1, "nombre": "la estela también cobra", "color": "verde", "paneles": [
-    {"rotulo": "DOS COEFICIENTES, UNA VELOCIDAD", "clave": "Arrastre liso: {fuerzaLisa|2} N. Con hoyuelos: {fuerzaHoyuelos|2} N.", "texto": "La fuerza es la presión dinámica multiplicada por el área frontal y el coeficiente de arrastre. Ambas barras representan fuerzas bajo idénticas condiciones de aire y velocidad. No son distancias de vuelo ni prueban que una bola llegue el doble de lejos.", "detalle": "El fluido próximo a la superficie pierde velocidad por viscosidad. Una capa límite turbulenta puede intercambiar más cantidad de movimiento con el aire exterior y resistir mejor la separación frente a un gradiente adverso de presión. El balance entre fricción y estela decide el resultado.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["fuerzaLisa", "fuerzaHoyuelos"], "rotulos": ["Lisa: {fuerzaLisa|2} N", "Hoyuelos: {fuerzaHoyuelos|2} N"]}},
-    {"rotulo": "IMPORTA EL RÉGIMEN DE FLUJO", "clave": "El número de Reynolds calculado con el diámetro es {reynolds|0}.", "texto": "Reynolds compara efectos inerciales y viscosos. Cambiar rapidez, tamaño o viscosidad modifica el régimen, así que no existe una reducción fija válida para cualquier golpe. Los umbrales de flujo en una tubería tampoco se trasladan directamente a una esfera.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["reynolds"], "rotulos": ["Re: {reynolds|0}"]}}
-  ]}],
-  "cierre": {"titulo": "La textura cambia dónde se separa el aire.", "nota": "Radio en m, velocidad en m/s, densidad en kg/m³ y viscosidad dinámica en Pa·s. Cd liso {coeficienteLiso|2} y con hoyuelos {coeficienteHoyuelos|2}: valores comparativos ilustrativos, no mediciones de una marca ni constantes universales. Ley cuadrática de arrastre y definición de Reynolds.", "parrafos": ["El giro añade sustentación y altera el vuelo. Esta cuenta solo aísla el arrastre instantáneo; predecir el alcance requiere coeficientes experimentales dependientes del régimen e integrar toda la trayectoria."]}
+  "id": "golf",
+  "rotulo": "DEPORTE",
+  "titulo": "Bola de golf: ¿por qué tiene hoyuelos en vez de ser lisa?",
+  "revisionEditorial": 2,
+  "modelo": "golf",
+  "color": "verde",
+  "medidas": {
+    "radio": 0.02135,
+    "velocidad": 40,
+    "densidad": 1.225,
+    "viscosidad": 0.0000181,
+    "coeficienteLiso": 0.5,
+    "coeficienteHoyuelos": 0.25
+  },
+  "entradilla": "Una bola de golf parece diseñada al revés: si queremos que atraviese el aire con poca resistencia, ¿por qué llenarla de pequeños huecos? Porque no basta con mirar el roce justo en la superficie. También importa la gran región de aire que queda detrás. Los hoyuelos cambian esa estela al modificar lo que sucede cerca de la bola.",
+  "tanteo": {
+    "pregunta": "En el régimen adecuado, ¿puede una superficie con hoyuelos tener menos arrastre total que una lisa?",
+    "opciones": [
+      "No, la rugosidad siempre lo aumenta",
+      "Sí, al reducir la estela",
+      "Solo si deja de tocar el aire"
+    ],
+    "valores": [
+      25,
+      50,
+      100
+    ],
+    "medido": "porcentaje",
+    "remate": "Sí. Con los coeficientes supuestos queda el {porcentaje|0} % del arrastre de la esfera lisa; no es una ventaja garantizada a cualquier velocidad."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "cuidar lo que queda detrás",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA BOLA LISA DEJA UNA ESTELA",
+          "clave": "El aire puede separarse pronto de la superficie.",
+          "texto": "El aire cercano a la bola pierde velocidad por su interacción con la superficie. Si no consigue seguir rodeándola, el flujo se separa y deja una región de baja presión detrás. Esa diferencia entre delante y detrás contribuye al arrastre. La capa delgada próxima a la superficie se llama capa límite.",
+          "detalle": "El primer panel muestra una separación temprana y una estela ancha como esquema de un régimen concreto. No pretende describir cualquier esfera lisa a cualquier rapidez. El comportamiento depende del tamaño, la velocidad y las propiedades del aire, resumidos parcialmente por el número de Reynolds.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "golf-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LOS HOYUELOS CAMBIAN LA SEPARACIÓN",
+          "clave": "Más mezcla cerca de la pared puede estrechar la estela.",
+          "texto": "Los hoyuelos favorecen perturbaciones y mezcla en la capa cercana. En condiciones adecuadas, esa capa puede seguir la superficie durante más recorrido antes de separarse. Aunque cambie el rozamiento superficial, la reducción de la estela puede compensarlo y disminuir la fuerza total que frena la bola.",
+          "detalle": "El segundo panel compara una separación más retrasada sobre la misma geometría esférica. Los coeficientes del cálculo son datos supuestos para ilustrar esa diferencia; el modelo no los deduce de cada hoyuelo. Tampoco calcula aquí el alcance completo, que depende además del lanzamiento y del giro.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "golf-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "A veces, mejorar la superficie significa dejarla menos lisa.",
+    "nota": "Coeficientes de arrastre ilustrativos a igual rapidez. Esquemas de flujo cualitativos, sin promesas comerciales.",
+    "parrafos": [
+      "La sorpresa aparece al mirar detrás de la bola. Una textura que parece estorbar puede ayudar a controlar dónde abandona el aire la superficie. El diseño no busca eliminar toda turbulencia: busca que el conjunto de fuerzas resulte más favorable en su régimen de trabajo."
+    ]
+  }
 }

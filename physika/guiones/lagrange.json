@@ -1,11 +1,71 @@
 {
-  "id": "lagrange", "rotulo": "ESPACIO", "titulo": "¿Por qué el James Webb orbita alrededor de L2?",
-  "entradilla": "Webb no está aparcado inmóvil en un punto vacío. Recorre una órbita de halo alrededor de la región de L2 del sistema Sol-Tierra y acompaña a la Tierra alrededor del Sol. Esa geometría ayuda a mantener las fuentes de calor hacia el lado protegido por su escudo.",
-  "modelo": "lagrange", "color": "indigo", "medidas": {"separacion": 149597870700, "masaPlaneta": 5.9722e24, "masaSol": 1.98847e30},
-  "tanteo": {"pregunta": "¿A qué distancia aproximada de la Tierra sitúa el modelo de masas pequeñas la región de L2?", "opciones": ["Unos 15.000 km", "Unos 1,5 millones de km", "Unos 150 millones de km"], "valores": [15000, 1500000, 150000000], "medido": "distanciaKm", "remate": "{distanciaKm|0} km. Es una escala aproximada del equilibrio rotante, no la distancia instantánea de Webb."},
-  "nucleo": [{"numero": 1, "nombre": "seguir el mismo año", "color": "indigo", "paneles": [
-    {"rotulo": "NO SE CANCELA LA GRAVEDAD", "clave": "Distancia característica a L2: {distanciaKm|0} km.", "texto": "Más lejos del Sol, un cuerpo aislado necesitaría normalmente más tiempo para completar su órbita. Cerca de L2, la atracción adicional terrestre permite acompañar el giro anual. En el sistema de referencia que rota con la Tierra, gravedad y término centrífugo permiten un equilibrio ideal.", "detalle": "La aproximación de Hill da la separación Sol-Tierra multiplicada por la raíz cúbica de la masa terrestre dividida por tres masas solares. La curva varía la masa planetaria manteniendo lo demás fijo. No calcula una órbita de halo ni resuelve toda la dinámica de tres cuerpos.", "color": "indigo", "dibujo": {"tipo": "serie", "ejeX": "Masa planetaria / terrestre", "ejeY": "Distancia característica (km)", "claves": [], "rotulos": []}},
-    {"rotulo": "EQUILIBRIO NO SIGNIFICA ESTABILIDAD", "clave": "La luz tardaría {luzSegundos|2} s en recorrer esa distancia característica.", "texto": "L2 es inestable: las perturbaciones pueden crecer y alejar una nave de la región. Webb necesita maniobras de mantenimiento. Su órbita alrededor de L2, en vez de ocupar exactamente el punto, ayuda además a evitar sombras de la Tierra y la Luna.", "detalle": "La masa planetaria hipotéticamente duplicada llevaría la escala a {dobleMasaKm|0} km, no al doble. Esa dependencia cúbica no proporciona el presupuesto de combustible ni la frecuencia de correcciones de una misión: esos datos dependen de su trayectoria y de fuerzas adicionales.", "color": "indigo", "dibujo": {"tipo": "barras", "claves": ["distanciaKm", "dobleMasaKm"], "rotulos": ["Tierra: {distanciaKm|0} km", "Masa doble: {dobleMasaKm|0} km"]}}
-  ]}],
-  "cierre": {"titulo": "Un buen vecindario orbital, no un aparcamiento.", "nota": "Problema circular restringido Sol-Tierra y aproximación de Hill para masa planetaria pequeña. Separación de una unidad astronómica; masas aproximadas 5,9722×10²⁴ y 1,98847×10³⁰ kg. Referencia consultada: NASA, Webb's Orbit, https://science.nasa.gov/mission/webb/orbit/. No efeméride ni simulación de estabilidad de Webb.", "parrafos": ["En un marco inercial la nave no está libre de aceleración: sigue una trayectoria alrededor del Sol. El equilibrio es relativo a un marco rotante.", "La cercanía angular de Sol y Tierra permite al escudo mantener el telescopio frío mientras mira hacia fuera. Esa ventaja térmica es tan importante como la economía orbital."]}
+  "id": "lagrange",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Por qué el James Webb lleva su parasol siempre entre el telescopio y el Sol?",
+  "revisionEditorial": 2,
+  "entradilla": "El James Webb tiene un espejo dorado llamativo, pero debajo despliega algo parecido a una cometa plateada. Ese parasol separa una cara caliente y otra fría. Para observar infrarrojo conviene que el propio telescopio no brille demasiado en esa banda. La posición de su órbita ayuda a mantener juntas las principales fuentes de calentamiento.",
+  "modelo": "lagrange",
+  "color": "indigo",
+  "medidas": {
+    "separacion": 149597870700,
+    "masaPlaneta": 5.9722e+24,
+    "masaSol": 1.98847e+30
+  },
+  "tanteo": {
+    "pregunta": "¿Qué ventaja ofrece la región del segundo punto de Lagrange para el parasol del Webb?",
+    "opciones": [
+      "Elimina toda la gravedad",
+      "Agrupa Sol y Tierra en el mismo lado general",
+      "Hace innecesario orientar el telescopio"
+    ],
+    "valores": [
+      15000,
+      1500000,
+      150000000
+    ],
+    "medido": "distanciaKm",
+    "remate": "Agrupa las fuentes en el mismo lado general. El modelo sitúa la región a unos {distanciaKm|0} km de la Tierra, no en su sombra permanente."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "poner lo caliente al otro lado",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "ACOMPAÑAR A LA TIERRA DESDE MÁS LEJOS",
+          "clave": "La gravedad combinada permite compartir el ritmo anual.",
+          "texto": "L2 está más allá de la Tierra visto desde el Sol. Allí, la atracción terrestre se suma a la solar de una manera que permite acompañar el movimiento anual terrestre. Es un equilibrio en un sistema de referencia que gira. La aproximación de masas pequeñas sitúa esa región a {distanciaKm|0} km de nuestro planeta.",
+          "detalle": "Webb no está inmóvil sobre un punto ni se mantiene allí por falta de gravedad. Sigue una órbita alrededor de esa región y necesita correcciones. La distancia calculada es una escala aproximada, no su posición instantánea.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "lagrange-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "EL PARASOL SEPARA DOS ENTORNOS",
+          "clave": "Las capas interceptan radiación antes de que alcance los instrumentos.",
+          "texto": "Desde esa ubicación, Sol y Tierra quedan en el mismo lado general del observatorio. El parasol puede interponerse frente a ambos mientras el telescopio mira hacia el lado frío. Las capas reflectantes y separadas reducen la transferencia de energía. Es control térmico por radiación, especialmente importante cuando no hay aire que se lleve el calor.",
+          "detalle": "El calor interceptado debe radiarse hacia el espacio. El parasol no es un refrigerador mágico ni permite cualquier orientación. Nuestro modelo orbital no calcula temperaturas ni intercambio entre capas; el segundo dibujo explica únicamente qué lado se protege y por dónde llega la radiación.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "lagrange-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La órbita también es parte del diseño térmico.",
+    "parrafos": [
+      "Situar el observatorio y orientar su parasol resuelven juntos un problema práctico: mantener lo caliente lejos de los instrumentos infrarrojos. L2 ayuda a ordenar la geometría; no apaga el Sol ni elimina la gravedad."
+    ],
+    "nota": "Distancia aproximada de L2 para masas pequeñas. No simula órbita halo, restricciones de apuntado ni temperaturas del Webb. Capas térmicas cualitativas."
+  }
 }

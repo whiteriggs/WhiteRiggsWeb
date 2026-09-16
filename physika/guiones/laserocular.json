@@ -1,12 +1,70 @@
 {
-  "id": "laserocular", "rotulo": "MEDICINA", "titulo": "¿Cómo cambia la óptica de la córnea con un láser?",
-  "entradilla": "Algunas técnicas de cirugía refractiva modifican la geometría de la córnea para cambiar su potencia óptica. La luz no convence al ojo de enfocar: interacciona con el tejido y permite modificarlo de forma controlada. Existen técnicas distintas y no todas utilizan el mismo mecanismo láser.",
-  "modelo": "laserocular", "color": "azul",
-  "medidas": {"longitud": 193, "visible": 550},
-  "tanteo": {"pregunta": "¿Qué energía lleva cada fotón de longitud de onda 193 nm del ejemplo?", "opciones": ["Unos 0,64 eV", "Unos 6,4 eV", "Unos 64 eV"], "valores": [0.64, 6.4, 64], "medido": "energia", "remate": "Cada fotón lleva {energia|2} eV. La energía por fotón no determina por sí sola cuánto tejido se modifica."},
-  "nucleo": [{"numero": 1, "nombre": "cambiar una superficie óptica", "color": "azul", "paneles": [
-    {"rotulo": "FOTONES MÁS ENERGÉTICOS", "clave": "Ultravioleta: {energia|2} eV. Referencia visible: {visible|2} eV.", "texto": "La energía de un fotón es la constante de Planck multiplicada por la velocidad de la luz y dividida por su longitud de onda. La radiación ultravioleta del ejemplo aporta {razon|2} veces la energía por fotón de la referencia visible, aunque ambas fuentes podrían tener potencias totales muy diferentes.", "detalle": "En la ablación con excímero, la absorción superficial de ultravioleta favorece procesos fotoquímicos y expulsión de material; también pueden intervenir procesos térmicos. No basta con que un fotón tenga cierta energía: importan absorción, número de fotones, duración y propiedades del tejido.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["energia", "visible"], "rotulos": ["UV: {energia|2} eV", "Visible: {visible|2} eV"]}},
-    {"rotulo": "GEOMETRÍA, NO UNA DOSIS CALCULADA", "clave": "Relación de energías por fotón: {razon|2}.", "texto": "Modificar la curvatura cambia cómo se refracta la luz en la interfaz. Ese principio óptico explica el objetivo, pero no determina un procedimiento. Otras técnicas emplean pulsos ultracortos y fotodisrupción para crear planos dentro del tejido, en lugar de la misma ablación superficial.", "detalle": "Esta cuenta no calcula profundidad, patrón de aplicación, energía de pulsos ni parámetros quirúrgicos. Tampoco permite elegir técnica o predecir resultados: espesor, forma y estado ocular imponen restricciones que un modelo de fotones no evalúa.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["razon"], "rotulos": ["Energía relativa: {razon|2}×"]}}
-  ]}],
-  "cierre": {"titulo": "La luz modifica materia y la forma modifica el enfoque.", "nota": "longitud = 193 nm y visible = 550 nm son referencias espectrales; energía calculada con Planck en eV por fotón. No son ajustes de un equipo, una dosis ni una recomendación de cirugía. Sin experimentos con láseres.", "parrafos": ["Un láser puede concentrar energía de maneras muy distintas. Comparar longitudes de onda ayuda a entender interacciones, pero no convierte una fuente de luz cualquiera en una herramienta médica segura."]}
+  "id": "laserocular",
+  "rotulo": "MEDICINA",
+  "titulo": "Láser ocular: ¿cómo puede modificar una superficie sin una cuchilla?",
+  "revisionEditorial": 2,
+  "modelo": "laserocular",
+  "color": "verde",
+  "medidas": {
+    "longitud": 193,
+    "visible": 550
+  },
+  "entradilla": "En determinados equipos de cirugía ocular, un láser cambia una superficie mediante pulsos de luz. No actúa como una cuchilla minúscula dibujada por un rayo visible. En el caso del láser excímero, la radiación ultravioleta es absorbida en una capa superficial y puede retirar material. El truco depende tanto de la luz como del material.",
+  "tanteo": {
+    "pregunta": "Comparado con un fotón visible, uno ultravioleta de longitud de onda más corta lleva…",
+    "opciones": [
+      "Menos energía",
+      "Más energía",
+      "Siempre la misma energía"
+    ],
+    "valores": [
+      0.64,
+      6.4,
+      64
+    ],
+    "medido": "energia",
+    "remate": "Más energía por fotón. El ultravioleta del ejemplo lleva {energia|2} eV, frente a {visible|2} eV del visible comparado."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "luz absorbida en superficie",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA CAPA SUPERFICIAL RECIBE EL PULSO",
+          "clave": "Absorber luz puede retirar material.",
+          "texto": "La superficie absorbe la radiación y sus moléculas reciben energía. Bajo condiciones concretas, esa interacción rompe enlaces y expulsa material de una capa fina. Se llama ablación. El dibujo muestra una sección ampliada de una superficie y un pulso que llega, no una profundidad real ni una pauta de aplicación.",
+          "detalle": "No todos los láseres oculares funcionan así. Algunos trabajan con otras longitudes de onda y mecanismos. Aquí seguimos el excímero del ejemplo: describir un pulso como luz no significa que no pueda transformar materia ni que toda su energía termine en el mismo proceso.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "laserocular-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA FORMA CAMBIA EL CAMINO",
+          "clave": "Una superficie distinta refracta de otra manera.",
+          "texto": "La córnea forma parte de la óptica del ojo. Cambiar su curvatura modifica cómo desvía la luz que entra. Es refracción, la misma familia de fenómeno que aprovechan las lentes de unas gafas. El segundo panel compara superficies idealizadas y los caminos ópticos que salen de ellas.",
+          "detalle": "La energía por fotón aumenta al acortarse la longitud de onda, pero no determina por sí sola cuánto material se retira. También importan la energía total del pulso, su distribución y la respuesta del tejido. Nuestro cálculo solo compara fotones, no resultados de una intervención.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "saludDeporteRenovado",
+            "trazado": "laserocular-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La luz cambia una forma; la forma cambia la luz.",
+    "nota": "Fotones de 193 y 550 nm. Esquemas sin escala de ablación, dosificación ni predicción clínica.",
+    "parrafos": [
+      "El mecanismo enlaza dos historias: primero la absorción transforma una superficie y después esa superficie refracta de otra manera. Son procesos distintos, aunque participen en el mismo aparato. Conocerlos no permite decidir una intervención ni anticipar su resultado en una persona."
+    ]
+  }
 }

@@ -1,11 +1,71 @@
 {
-  "id": "horizonte", "rotulo": "ESPACIO", "titulo": "¿Qué verías cayendo dentro de un agujero negro?",
-  "entradilla": "No hay una película universal de esa caída. Lo que ves depende de tu movimiento, de la luz alrededor y de la masa y rotación del agujero negro. Podemos calcular una comparación más precisa: cómo se relacionan un reloj mantenido inmóvil fuera del horizonte y otro muy lejano.",
-  "modelo": "horizonte", "color": "indigo", "medidas": {"radios": 1.3333333333333333, "tiempoLocal": 60},
-  "tanteo": {"pregunta": "A cuatro tercios del radio del horizonte, ¿cuánto tiempo lejano corresponde a un minuto del reloj estático?", "opciones": ["30 segundos", "120 segundos", "600 segundos"], "valores": [30, 120, 600], "medido": "tiempoLejano", "remate": "{tiempoLejano|0} segundos. Es una comparación de relojes estáticos, no el tiempo que tarda alguien en cruzar el horizonte."},
-  "nucleo": [{"numero": 1, "nombre": "elegir al observador", "color": "indigo", "paneles": [
-    {"rotulo": "UN RELOJ SOSTENIDO", "clave": "El ritmo local respecto al tiempo lejano es {ritmo|2}.", "texto": "Para Schwarzschild, ese ritmo es la raíz cuadrada de uno menos el radio del horizonte dividido por el radio del reloj. La curva se acerca a cero al aproximarse al horizonte, pero solo describe relojes inmóviles respecto al agujero negro y situados fuera de él.", "detalle": "Sostener el reloj requiere aceleración: no es una trayectoria de caída libre. Al acercarse al horizonte, la aceleración necesaria crece sin límite. Por eso no podemos prolongar esta familia de observadores hasta un supuesto reloj estático colocado sobre la frontera.", "color": "indigo", "dibujo": {"tipo": "serie", "ejeX": "Radio / radio del horizonte", "ejeY": "Ritmo local / lejano", "claves": [], "rotulos": []}},
-    {"rotulo": "CAER ES OTRO PROBLEMA", "clave": "{tiempoLocal|0} s locales corresponden a {tiempoLejano|0} s lejanos en el caso estático.", "texto": "Una señal que sale de ese reloj llega al infinito con corrimiento gravitatorio al rojo de {rojoGravitatorio|2}. Si el emisor cae, también importa su movimiento y aparece una contribución Doppler. No basta con usar esta gráfica como si fuese la vista desde su casco.", "detalle": "Un observador en caída libre puede cruzar un horizonte ideal en un tiempo propio finito. El observador exterior recibe señales cada vez más débiles y enrojecidas; no conserva una imagen brillante congelada para siempre. Las fuerzas de marea pueden destruir al viajero antes o después del cruce según el caso.", "color": "indigo", "dibujo": {"tipo": "barras", "claves": ["tiempoLocal", "tiempoLejano"], "rotulos": ["Local: {tiempoLocal|0} s", "Lejano: {tiempoLejano|0} s"]}}
-  ]}],
-  "cierre": {"titulo": "El horizonte no es un fotograma congelado.", "nota": "Modelo estático de Schwarzschild, sin rotación ni carga. Radio de posición expresado en radios del horizonte; intervalo local en segundos. La comparación se hace con el tiempo de un observador estático en el infinito. Referencia contextual consultada: NASA Science, Black Hole Basics, https://science.nasa.gov/universe/black-holes/.", "parrafos": ["No se calcula aquí una trayectoria de caída ni una imagen óptica. La luz recibida exige seguir rayos y especificar el movimiento del observador.", "La fórmula no describe un observador estático dentro del horizonte. Extrapolarla allí produciría una cuenta sin el significado físico que acabamos de darle."]}
+  "id": "horizonte",
+  "rotulo": "ESPACIO",
+  "titulo": "¿Por qué cuesta cerrar la mano dentro de un traje espacial?",
+  "revisionEditorial": 2,
+  "entradilla": "En una salida espacial, hasta sujetar una herramienta puede cansar las manos. El guante no es simplemente grueso. Está presurizado y tiende a recuperar su forma cuando intentas doblarlo. El astronauta necesita una pequeña atmósfera alrededor del cuerpo, pero esa misma protección convierte cada articulación en un problema de diseño.",
+  "modelo": "horizonte",
+  "color": "indigo",
+  "medidas": {
+    "interior": 30000,
+    "exterior": 0,
+    "area": 0.01
+  },
+  "tanteo": {
+    "pregunta": "Al presurizar un traje en el vacío, ¿qué tiende a hacer su envoltura flexible?",
+    "opciones": [
+      "Quedarse floja",
+      "Expandirse y tensarse",
+      "Ser comprimida desde fuera"
+    ],
+    "valores": [
+      0,
+      300,
+      -300
+    ],
+    "medido": "fuerza",
+    "remate": "Tiende a expandirse. Sobre la superficie plana del ejemplo, la diferencia de presión produce {fuerza|0} N hacia fuera."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "llevar una atmósfera puesta",
+      "color": "indigo",
+      "paneles": [
+        {
+          "rotulo": "EL GAS EMPUJA TODAS LAS PAREDES",
+          "clave": "La presión interior no encuentra otra igual fuera.",
+          "texto": "Las moléculas del gas chocan contra la envoltura. Fuera casi no hay gas que compense esos empujes. La diferencia entre presiones ejerce una fuerza sobre cada superficie. Es la relación entre presión, fuerza y área: una diferencia modesta, repartida sobre una zona grande, puede producir una fuerza considerable.",
+          "detalle": "Con {kilopascales|0} kPa de diferencia, nuestra superficie plana recibe {fuerza|0} N. La cifra no es la fuerza que debe hacer un dedo: en un guante real intervienen superficies curvas, tejidos, juntas y brazos de palanca.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "horizonte-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "DOBLAR SIN APLASTAR UNA BOLSA",
+          "clave": "Las articulaciones limitan cuánto cambia el volumen.",
+          "texto": "Si doblar una junta obligara a comprimir mucho el gas, habría que trabajar contra la presión en cada movimiento. Los trajes combinan capas resistentes, pliegues y articulaciones que facilitan girar manteniendo aproximadamente el volumen. La física se nota en la mano: no basta con elegir una tela que sea blanda al tocarla.",
+          "detalle": "La capa que retiene el gas y la que limita la expansión tienen trabajos distintos. El aislamiento y la protección exterior añaden otras funciones. Nuestro esquema separa presión y movimiento; no reproduce la construcción de un modelo concreto de traje.",
+          "color": "indigo",
+          "dibujo": {
+            "tipo": "espacioRenovado",
+            "trazado": "horizonte-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Un traje espacial también es un recipiente a presión.",
+    "parrafos": [
+      "Proteger al astronauta y dejarle moverse son objetivos que tiran en direcciones distintas. El guante debe retener una atmósfera sin convertirse en un globo rígido cada vez que intenta agarrar una herramienta."
+    ],
+    "nota": "Balance estático sobre una superficie plana ilustrativa. No calcula esfuerzo muscular, tensión del tejido ni condiciones médicas de presurización."
+  }
 }

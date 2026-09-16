@@ -1,12 +1,72 @@
 {
-  "id": "bateriacasa", "rotulo": "CASA", "titulo": "¿Cómo se guarda el sol para después de cenar?",
-  "entradilla": "Una batería no almacena luz ni acumula electricidad como agua en una cubeta. Al cargarla cambia el estado químico de sus materiales. Durante la descarga, una reacción favorable impulsa electrones por el circuito externo mientras los iones se desplazan por el interior.",
-  "modelo": "bateriacasa", "color": "verde",
-  "medidas": {"capacidad": 10, "fraccion": 0.8, "rendimiento": 0.9, "consumo": 0.6},
-  "tanteo": {"pregunta": "Reservamos 8 kWh almacenados y llegan al consumo el 90 %. A 0,6 kW constantes, ¿cuánto duran?", "opciones": ["1,2 horas", "12 horas", "24 horas"], "valores": [1.2, 12, 24], "medido": "autonomia", "remate": "La cuenta da {autonomia|1} horas: {util|1} kWh útiles divididos entre {consumo|1} kW de consumo constante."},
-  "nucleo": [{"numero": 1, "nombre": "química para desplazar el horario", "color": "verde", "paneles": [
-    {"rotulo": "ALMACENADO NO SIGNIFICA ENTREGADO", "clave": "De {reservada|1} kWh reservados, llegan {util|1} kWh y se pierden {perdida|1} kWh.", "texto": "La diferencia representa pérdidas en la descarga y conversión incluidas en nuestro rendimiento. La resistencia interna calienta la batería y la electrónica también consume. El dibujo reparte una misma energía inicial entre lo que llega a la carga y lo que no llega: no compara capacidad con potencia.", "detalle": "Usamos solo una fracción de la capacidad nominal como ventana disponible. Los límites reales dependen del sistema de gestión, temperatura, envejecimiento y fabricante. El rendimiento de ida y vuelta incluye además la carga; no debe confundirse con el factor de descarga elegido aquí.", "color": "verde", "dibujo": {"tipo": "barras", "claves": ["util", "perdida"], "rotulos": ["Útil: {util|1} kWh", "Pérdidas: {perdida|1} kWh"]}},
-    {"rotulo": "UNA RESERVA NO ES UNA POTENCIA", "clave": "El consumo de {consumo|1} kW agota esa energía útil en {autonomia|1} h.", "texto": "Los kilovatios hora dicen cuánta energía queda; los kilovatios, a qué ritmo se entrega. Una batería con mucha capacidad puede tener un inversor que limite la potencia instantánea. Por eso la autonomía calculada no garantiza que pueda alimentar cualquier conjunto de aparatos conectados a la vez.", "detalle": "Si el consumo varía, hay que integrar su potencia a lo largo del tiempo. Esta división sencilla supone demanda constante, rendimiento constante y ausencia de autoconsumo adicional. No calcula picos de arranque, reserva de emergencia, degradación ni la energía solar necesaria para volver a cargarla.", "color": "verde", "dibujo": {"tipo": "magnitudes", "claves": ["util", "consumo", "autonomia"], "rotulos": ["Disponible: {util|1} kWh", "Demanda: {consumo|1} kW", "Autonomía: {autonomia|1} h"]}}
-  ]}],
-  "cierre": {"titulo": "La batería cambia el horario, no aumenta la cosecha.", "nota": "Capacidad nominal ilustrativa en kWh; fracción disponible y rendimiento de descarga adimensionales; consumo en kW. La energía inicial ya está almacenada: no se incluye eficiencia de carga ni se afirma un rendimiento de ciclo completo.", "parrafos": ["Guardar energía puede hacerla disponible cuando falta el sol, pero siempre tiene pérdidas. La química hace posible esa flexibilidad; la electrónica y los límites operativos deciden cómo se utiliza."]}
+  "id": "bateriacasa",
+  "rotulo": "CASA",
+  "titulo": "¿Cómo guarda una batería doméstica el sol para después de cenar?",
+  "entradilla": "Los paneles producen al mediodía, pero enciendes las luces cuando ya está oscuro. La batería doméstica permite separar esos momentos. No guarda rayos de sol dentro de una caja ni mantiene electrones dando vueltas durante horas: utiliza electricidad para cambiar el estado de materiales que después pueden devolver parte de esa energía.",
+  "modelo": "bateriacasa",
+  "color": "ambar",
+  "medidas": {
+    "capacidad": 10,
+    "fraccion": 0.8,
+    "rendimiento": 0.9,
+    "consumo": 0.6
+  },
+  "tanteo": {
+    "pregunta": "Tras reservar una parte de la carga y contar las pérdidas, ¿la energía que llega a casa puede ser menor que la reservada dentro?",
+    "opciones": [
+      "No, siempre llega exactamente toda",
+      "Sí, una parte se pierde al entregarla",
+      "No, llega más de la que estaba reservada"
+    ],
+    "valores": [
+      8,
+      7.2,
+      10
+    ],
+    "medido": "util",
+    "remate": "Sí. De {reservada|1} kWh reservados llegan {util|1} kWh en el ejemplo; se disipan {perdida|1} kWh durante la entrega idealizada."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "guardar cambiando materiales",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "CARGAR NO ES LLENAR DE LUZ",
+          "clave": "La electricidad fuerza un cambio en los electrodos.",
+          "texto": "Dentro hay electrodos y un medio por el que pueden viajar iones. Al cargar, la fuente exterior impulsa procesos que cambian cómo se distribuyen esos iones y el estado de los materiales. Los electrones recorren el circuito exterior, no el mismo camino interior que los iones. Es almacenamiento electroquímico: energía asociada al estado de la batería.",
+          "detalle": "El separador evita el contacto directo entre electrodos y permite el transporte iónico. Su papel no es dejar pasar electrones de un lado a otro. La electrónica supervisa temperatura, tensión y límites de carga para proteger las celdas.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "bateriacasa-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "DESCARGAR ES HACER EL CAMINO INVERSO",
+          "clave": "Las reacciones pueden alimentar un consumidor exterior.",
+          "texto": "Cuando la batería alimenta la casa, los procesos avanzan en el sentido de descarga y permiten que circule corriente por los aparatos. La energía almacenada disminuye. Parte se pierde como calor en celdas y electrónica, de modo que la energía útil no coincide necesariamente con la capacidad anunciada ni con todo lo que se empleó al cargar.",
+          "detalle": "También puede reservarse carga para cuidar la batería o mantener un respaldo. La autonomía cambia con el consumo: una casa no demanda siempre lo mismo. Nuestro ejemplo lo mantiene constante para separar esa cuenta del mecanismo interior.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "bateriacasa-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "No guardas el sol: guardas una posibilidad de devolver energía.",
+    "parrafos": [
+      "La caja de la pared conecta dos momentos del día mediante cambios reversibles en sus materiales, con límites y pérdidas reales."
+    ],
+    "nota": "Capacidad, reserva, rendimiento y consumo ilustrativos. Esquema genérico de batería recargable; no describe una química o marca concreta."
+  },
+  "revisionEditorial": 2
 }

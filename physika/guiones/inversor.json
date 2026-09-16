@@ -1,12 +1,73 @@
 {
-  "id": "inversor", "rotulo": "CASA", "titulo": "¿Cómo convierte un inversor corriente continua en alterna?",
-  "entradilla": "Los paneles y baterías entregan corriente continua, mientras la red doméstica usa una tensión que cambia de signo periódicamente. Un inversor conmuta semiconductores y filtra el resultado para producir una salida alterna. La forma final puede aproximarse a una sinusoide sin que la batería invierta su química cada ciclo.",
-  "modelo": "inversor", "color": "azul",
-  "medidas": {"eficaz": 230, "frecuencia": 50, "potencia": 920, "rendimiento": 0.92, "continua": 48},
-  "tanteo": {"pregunta": "Una sinusoide de 230 V eficaces, ¿qué valor alcanza en su cresta positiva?", "opciones": ["230 V", "Unos 325 V", "460 V"], "valores": [230, 325, 460], "medido": "pico", "remate": "Alcanza {pico|1} V: el valor eficaz se multiplica por la raíz de dos, no por dos."},
-  "nucleo": [{"numero": 1, "nombre": "cambiar de signo sin perder la cuenta", "color": "azul", "paneles": [
-    {"rotulo": "EFICAZ NO ES MÁXIMO", "clave": "A {frecuencia|0} Hz, un ciclo completo dura {periodo|1} ms.", "texto": "La gráfica muestra dos ciclos ideales de tensión, no de potencia. La tensión pasa por valores positivos y negativos. El valor eficaz se define a partir de la media del cuadrado: en una resistencia permite calcular el mismo calentamiento medio que una tensión continua de igual valor.", "detalle": "La frecuencia cuenta ciclos completos, no cada inversión de signo. No todas las cargas toman una corriente sinusoidal ni en fase con la tensión. La convención de la red cambia entre países; estos parámetros ilustran una red habitual europea, no una característica universal de cualquier enchufe.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Tiempo (ms)", "ejeY": "Tensión (V)", "claves": [], "rotulos": []}},
-    {"rotulo": "LA CONVERSIÓN TIENE UN COSTE", "clave": "Para entregar {potencia|0} W, entran {entrada|0} W y se pierden {perdida|0} W.", "texto": "Dividimos la potencia de salida por el rendimiento del escenario. En el lado de continua eso exige {corriente|1} A a {continua|0} V. No se deduce la corriente de entrada usando la tensión de alterna: son lados distintos del convertidor y la energía, no la corriente, es la que se conserva entre ellos.", "detalle": "La salida calculada es potencia activa. El ejemplo omite factor de potencia, consumo en espera, ondulación y límites térmicos. Un equipo conectado a red necesita sincronización y protecciones específicas; esta explicación no describe conexiones ni procedimientos para manipular instalaciones.", "color": "azul", "dibujo": {"tipo": "barras", "claves": ["potencia", "perdida"], "rotulos": ["Salida: {potencia|0} W", "Pérdidas: {perdida|0} W"]}}
-  ]}],
-  "cierre": {"titulo": "La forma cambia; el balance energético permanece.", "nota": "Tensión eficaz y continua en V, frecuencia en Hz, potencia activa en W y rendimiento adimensional. Sinusoide y conversión estacionaria ideales con valores ilustrativos. No se simulan la conmutación de alta frecuencia ni los algoritmos de control de un inversor real.", "parrafos": ["Una tensión alterna no implica que toda la energía viaje de vuelta a la batería en cada semiciclo. En una resistencia, tensión y corriente cambian juntas de signo y la potencia disipada sigue siendo positiva."]}
+  "id": "inversor",
+  "rotulo": "CASA",
+  "titulo": "¿Qué hace el inversor solar entre el panel y los enchufes?",
+  "entradilla": "El panel del tejado entrega electricidad, pero entre él y la casa hay otra caja que trabaja sin llamar mucho la atención: el inversor. No está ahí solamente para contar lo que produces. Tiene que convertir una alimentación con polaridad fija en otra compatible con la instalación, donde la tensión cambia de sentido repetidamente.",
+  "modelo": "inversor",
+  "color": "ambar",
+  "medidas": {
+    "eficaz": 230,
+    "frecuencia": 50,
+    "potencia": 920,
+    "rendimiento": 0.92,
+    "continua": 48
+  },
+  "tanteo": {
+    "pregunta": "Al transformar la electricidad para alimentar la casa, ¿el inversor entrega normalmente toda la potencia que recibe?",
+    "opciones": [
+      "Sí, no pierde ninguna",
+      "No, una parte se disipa",
+      "No entrega ninguna al circuito"
+    ],
+    "valores": [
+      0,
+      80,
+      1000
+    ],
+    "medido": "perdida",
+    "remate": "Una parte se disipa. En el ejemplo entran {entrada|0} W y se pierden {perdida|0} W; transformar la corriente no fabrica energía."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "interruptores que cambian el sentido",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "CONECTAR UNA DIAGONAL",
+          "clave": "Unos interruptores electrónicos eligen la polaridad de salida.",
+          "texto": "Imagina una carga entre las ramas de un puente de interruptores. Al cerrar una pareja adecuada, un extremo queda conectado al positivo de la alimentación y el otro al negativo. La corriente dispone de un recorrido. Esos interruptores son transistores: pueden cambiar de estado muy deprisa sin contactos mecánicos que hagan clic cada vez.",
+          "detalle": "El dibujo es un puente simplificado para mostrar conexiones, no un circuito que debas montar. Un equipo real incorpora control, protección y etapas adicionales. Nunca conecta sin coordinación las dos ramas que cortocircuitarían la alimentación.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "inversor-1",
+            "claves": [],
+            "rotulos": []
+          }
+        },
+        {
+          "rotulo": "LA OTRA DIAGONAL INVIERTE",
+          "clave": "Cambiar las conexiones cambia el sentido de la tensión.",
+          "texto": "Al utilizar la pareja opuesta se invierte qué extremo recibe cada polaridad. Alternar de manera controlada esas conexiones permite construir corriente alterna a partir de continua. En muchos inversores se modula la anchura de pulsos rápidos, técnica conocida como PWM, y un filtro suaviza su efecto para obtener la forma de salida buscada.",
+          "detalle": "Si está conectado a la red, el inversor también debe sincronizarse y cumplir protecciones. No basta producir una onda bonita. Las pérdidas en los componentes explican por qué puede calentarse aunque no haya ninguna pieza girando dentro de la caja.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "hogarSonidoRenovado",
+            "trazado": "inversor-2",
+            "claves": [],
+            "rotulos": []
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La caja cambia el recorrido, no la cantidad de energía disponible.",
+    "parrafos": [
+      "Mientras los paneles capturan luz, el inversor coordina conexiones para que esa electricidad pueda participar en el funcionamiento de la casa."
+    ],
+    "nota": "Tensiones, potencia y rendimiento ilustrativos. Puente y filtrado simplificados; no son un esquema de conexión ni especificaciones comerciales."
+  },
+  "revisionEditorial": 2
 }

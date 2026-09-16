@@ -1,11 +1,67 @@
 {
-  "id": "cieloazul", "rotulo": "NATURALEZA", "titulo": "¿Por qué el cielo es azul?",
-  "entradilla": "El aire no lleva un pigmento azul. Sus moléculas desvían parte de la luz solar y lo hacen con más eficacia para las longitudes de onda cortas. Cuando miras lejos del Sol, recibes esa luz desviada, no el haz solar directo.",
-  "modelo": "cieloazul", "color": "azul", "medidas": {"azul": 4.5e-7, "rojo": 6.5e-7},
-  "tanteo": {"pregunta": "Comparamos luz azul de 450 nm y roja de 650 nm. Con igual luz incidente, ¿cuántas veces más se dispersa el azul que el rojo?", "opciones": ["Lo mismo", "Unas 4,4 veces", "Unas 40 veces"], "valores": [1, 4.4, 40], "medido": "razon", "remate": "La razón calculada es {razon|2}. Una diferencia moderada de longitud de onda se amplifica al elevarla a la cuarta potencia."},
-  "nucleo": [{"numero": 1, "nombre": "la luz toma un desvío", "color": "azul", "paneles": [
-    {"rotulo": "LA CUARTA POTENCIA", "clave": "El azul de {azulNm|0} nm se dispersa {razon|2} veces más que el rojo de {rojoNm|0} nm.", "texto": "En el régimen de Rayleigh, la intensidad dispersada varía aproximadamente con el inverso de la cuarta potencia de la longitud de onda. La curva compara longitudes de onda a igual intensidad incidente, dirección y cantidad de moléculas; toma el rojo como referencia. No es un espectro medido del cielo.", "detalle": "El campo eléctrico de la luz induce una pequeña respuesta oscilante en las moléculas. Esa respuesta vuelve a radiar luz en distintas direcciones. La dependencia angular y la polarización también importan, aunque aquí las mantenemos iguales para aislar el efecto del color.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Longitud de onda (nm)", "ejeY": "Dispersión relativa al rojo", "claves": [], "rotulos": []}},
-    {"rotulo": "NO BASTA CON ELEGIR EL VIOLETA", "clave": "Dispersar más no equivale a percibir más.", "texto": "El violeta también se dispersa intensamente, pero el color observado combina el espectro solar, la transmisión atmosférica y la sensibilidad de nuestros conos. El azul del cielo es una sensación producida por una mezcla de longitudes de onda; no una luz monocromática que el aire fabrique.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["razon"], "rotulos": ["Razón azul/rojo: {razon|2}"]}}
-  ]}],
-  "cierre": {"titulo": "El cielo muestra luz que cambió de dirección.", "nota": "Ley de Rayleigh en el límite de dispersores mucho menores que la longitud de onda. azul y rojo están en metros y son dos elecciones ilustrativas del visible. Se omite la débil dispersión del índice molecular; no se calcula un color fotométrico real.", "parrafos": ["Las gotas de nube y muchas partículas de aerosol son demasiado grandes para este modelo simple. Dispersan los colores de otra manera: por eso una nube blanca y un cielo azul pueden compartir la misma luz de partida."]}
+  "id": "cieloazul",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Cómo frena la lluvia un chubasquero?",
+  "revisionEditorial": 2,
+  "entradilla": "La lluvia forma bolitas sobre un chubasquero nuevo. Lo sacudes y muchas salen rodando sin empapar la tela. No hace falta imaginar una pared de goma completamente cerrada: algunas prendas llevan una membrana con poros diminutos. La dificultad para el agua no es encontrar un hueco, sino entrar en él.",
+  "modelo": "naturaleza-cieloazul",
+  "color": "verde",
+  "medidas": {
+    "tension": 0.072,
+    "angulo": 120,
+    "radio": 0.000001
+  },
+  "tanteo": {
+    "pregunta": "En una membrana igual de repelente, ¿qué ocurre al hacer más pequeños los poros?",
+    "opciones": [
+      "El agua entra más fácilmente",
+      "Cuesta más empujar el agua dentro",
+      "Desaparece toda transpiración"
+    ],
+    "valores": [
+      1000,
+      72000,
+      1000000
+    ],
+    "medido": "presion",
+    "remate": "Cuesta más. El poro ilustrativo exige {presion|0} Pa; reducir su radio a la mitad duplica esa presión."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una entrada que se resiste",
+      "color": "verde",
+      "paneles": [
+        {
+          "rotulo": "LA GOTA NO QUIERE EXTENDERSE",
+          "clave": "El tratamiento exterior favorece gotas abombadas.",
+          "texto": "El agua tiende a mantenerse unida, y ciertas superficies no le resultan fáciles de mojar. Por eso la gota se abomba en vez de extenderse entre las fibras. La tensión superficial describe esa tendencia a reducir su superficie; el ángulo de contacto indica cómo se encuentra la gota con el material.",
+          "detalle": "No todas las prendas impermeables usan el mismo sistema. Aquí seguimos una membrana porosa repelente al agua. El acabado exterior ayuda a que la tela no se sature, pero no sustituye a la membrana.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "cieloazul-1"
+          }
+        },
+        {
+          "rotulo": "EL PORO TIENE UNA BARRERA",
+          "clave": "Para entrar, el agua necesita curvar su superficie.",
+          "texto": "Al apretar agua contra un poro, su superficie se curva dentro de la entrada. En un material repelente hace falta presión para obligarla a avanzar. La ley de Young y Laplace relaciona esa presión con la curvatura. Un poro más estrecho puede resistir más presión, siempre que conserve las mismas propiedades superficiales.",
+          "detalle": "Nuestro poro ideal equivale a una columna de agua de {columna|1} metros. No es la clasificación impermeable de una chaqueta: costuras, desgaste, suciedad y defectos también pueden dejar pasar agua.",
+          "color": "verde",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "cieloazul-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Un agujero puede ser una barrera.",
+    "parrafos": [
+      "La prenda combina superficies y tamaños. Que deje escapar vapor tampoco garantiza comodidad infinita: la humedad exterior y el sudor condicionan cuánto puede transportarse realmente. Por eso importa también ventilar la chaqueta durante el esfuerzo."
+    ],
+    "nota": "Poro cilíndrico y parámetros ilustrativos. Modelo capilar estático, sin tejido real ni predicción de transpirabilidad comercial."
+  }
 }

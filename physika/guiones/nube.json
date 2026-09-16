@@ -1,11 +1,67 @@
 {
-  "id": "nube", "rotulo": "NATURALEZA", "titulo": "¿Por qué parece flotar una nube tan pesada?",
-  "entradilla": "Una nube visible no es vapor: contiene gotas diminutas o cristales de hielo. Su agua puede sumar una masa enorme porque ocupa un volumen enorme. Las gotas caen respecto al aire, pero tan despacio que pequeñas corrientes y la renovación continua de condensación cambian la imagen.",
-  "modelo": "nube", "color": "azul", "medidas": {"radio": 0.00001, "densidadAgua": 1000, "densidadAire": 1.2, "viscosidad": 0.000018, "contenido": 0.0005, "volumen": 1000000000},
-  "tanteo": {"pregunta": "La gota tiene 10 micrómetros de radio y densidad de 1.000 kg/m³; el aire, densidad de 1,2 kg/m³ y viscosidad de 18 micropascales·segundo. ¿A qué velocidad terminal cae respecto al aire en reposo?", "opciones": ["Unos 0,012 m/s", "Unos 12 m/s", "Unos 120 m/s"], "valores": [0.012, 12, 120], "medido": "velocidad", "remate": "Solo {centimetros|2} cm/s. Una nube no necesita que toda su masa se sostenga como un único bloque."},
-  "nucleo": [{"numero": 1, "nombre": "lo diminuto cae de otra manera", "color": "azul", "paneles": [
-    {"rotulo": "EL ROZAMIENTO VISCOSO CUENTA", "clave": "Una gota de radio {radioMicras|0} micras cae a {centimetros|2} cm/s.", "texto": "Para gotas suficientemente pequeñas usamos la ley de Stokes: el arrastre crece linealmente con velocidad y radio. Al equilibrarlo con peso menos flotación, la velocidad terminal resulta proporcional al cuadrado del radio. La curva muestra esa dependencia para tamaños hasta el ejemplo.", "detalle": "Comprobamos el número de Reynolds: resulta {reynolds|3}, pequeño frente a la unidad. Esa condición justifica el régimen viscoso elegido. No extenderíamos esta fórmula sin más a una gota grande de lluvia, cuyo flujo y arrastre son distintos.", "color": "azul", "dibujo": {"tipo": "serie", "ejeX": "Radio de gota (micras)", "ejeY": "Caída terminal (cm/s)", "claves": [], "rotulos": []}},
-    {"rotulo": "MASA REPARTIDA", "clave": "El volumen y contenido elegidos suman {toneladas|0} toneladas de agua líquida.", "texto": "Multiplicamos volumen de nube por contenido de agua líquida por unidad de volumen. Esa es la masa de gotas, no la del aire ni toda el agua en fase de vapor. Cada gota intercambia fuerzas con el aire localmente; sumar toneladas no convierte la nube en una bolsa compacta.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["toneladas", "centimetros"], "rotulos": ["Agua líquida: {toneladas|0} t", "Caída: {centimetros|2} cm/s"]}}
-  ]}],
-  "cierre": {"titulo": "La nube es una región que se renueva.", "nota": "Radio en m, densidades y contenido líquido en kg/m³, viscosidad dinámica en Pa·s y volumen en m³. Valores ilustrativos, gotas esféricas aisladas, Stokes con Reynolds menor que uno. No representa todos los tipos de nube.", "parrafos": ["El ascenso de aire puede compensar la caída, y gotas que evaporan se sustituyen por otras que condensan. La forma que ves no tiene por qué estar hecha de las mismas gotas unos instantes después."]}
+  "id": "nube",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Cómo hace niebla un humidificador ultrasónico sin hervir?",
+  "revisionEditorial": 2,
+  "entradilla": "Enciendes un humidificador ultrasónico y sale una pequeña nube blanca, aunque el agua del depósito no está hirviendo. Lo que ves no es vapor de agua invisible que acaba de salir de una caldera. Son gotitas líquidas suspendidas en el aire, producidas por una pieza que sacude el agua muchísimo más deprisa que tu mano.",
+  "modelo": "naturaleza-nube",
+  "color": "azul",
+  "medidas": {
+    "frecuencia": 1700000,
+    "tension": 0.072,
+    "densidad": 1000
+  },
+  "tanteo": {
+    "pregunta": "¿Qué forma la nube visible que sale de este humidificador?",
+    "opciones": [
+      "Gotitas de agua líquida",
+      "Agua convertida toda en gas visible",
+      "Humo de una combustión"
+    ],
+    "valores": [
+      0.000005,
+      1,
+      10
+    ],
+    "medido": "longitud",
+    "remate": "Son gotitas. La superficie vibra con una escala capilar de {micras|1} micras en el ejemplo; no es una medida del tamaño de todas las gotas."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "una pastilla que sacude el agua",
+      "color": "azul",
+      "paneles": [
+        {
+          "rotulo": "LA ELECTRICIDAD MUEVE UNA CERÁMICA",
+          "clave": "El disco transmite vibraciones al líquido.",
+          "texto": "En la base hay un transductor piezoeléctrico. Una señal eléctrica alterna lo deforma repetidamente y comunica esa vibración al agua. Aquí usamos el efecto piezoeléctrico inverso: electricidad que produce movimiento. La superficie desarrolla ondulaciones diminutas; con suficiente excitación, sus crestas pueden desprender gotas. No es necesario llevar todo el depósito a ebullición.",
+          "detalle": "El nivel de agua importa porque el disco debe transferir bien su movimiento. La electrónica y la geometría del depósito están diseñadas para trabajar juntas; no basta con hacer vibrar cualquier recipiente.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "nube-1"
+          }
+        },
+        {
+          "rotulo": "EL VENTILADOR SACA LAS GOTITAS",
+          "clave": "Una corriente de aire lleva la niebla hasta la salida.",
+          "texto": "Las ondulaciones pequeñas están gobernadas principalmente por la tensión superficial, que intenta alisar el agua. Se llaman ondas capilares. Su relación entre frecuencia y longitud permite calcular una escala del movimiento. Después, un pequeño ventilador arrastra las gotitas hacia la boquilla; algunas se evaporan y otras pueden depositarse en superficies cercanas.",
+          "detalle": "Subir la frecuencia reduce la longitud capilar del modelo. Eso no determina por sí solo el tamaño exacto del aerosol: la potencia, las ondas excitadas y las condiciones del líquido también intervienen.",
+          "color": "azul",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "nube-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "La nube empieza en una superficie que vibra.",
+    "parrafos": [
+      "El aparato dispersa lo que contiene el agua, por eso importa limpiarlo y seguir sus instrucciones. La niebla visible no demuestra que la habitación necesite todavía más humedad."
+    ],
+    "nota": "Frecuencia, tensión superficial y densidad ilustrativas. Dispersión capilar ideal en agua profunda; no predicción de diámetro de gotas ni especificaciones comerciales."
+  }
 }

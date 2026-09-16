@@ -1,11 +1,67 @@
 {
-  "id": "granizo", "rotulo": "NATURALEZA", "titulo": "¿Cómo crece una piedra grande de granizo?",
-  "entradilla": "Dentro de una nube convectiva, una partícula de hielo puede recoger gotas superenfriadas que se congelan al contacto. Corrientes ascendentes fuertes prolongan su estancia en regiones favorables al crecimiento. No todas las piedras siguen un recorrido simple de subir y bajar repetidamente.",
-  "modelo": "granizo", "color": "azul", "medidas": {"radio": 0.02, "densidadHielo": 917, "densidadAire": 1, "arrastre": 0.5},
-  "tanteo": {"pregunta": "La piedra esférica tiene 2 cm de radio, densidad de 917 kg/m³ y coeficiente de arrastre de 0,5 en aire de 1 kg/m³. ¿Qué corriente ascendente la equilibraría aproximadamente?", "opciones": ["Unos 3 m/s", "Unos 31 m/s", "Unos 300 m/s"], "valores": [3, 31, 300], "medido": "velocidad", "remate": "Haría falta aproximadamente {velocidad|1} m/s de aire relativo para igualar el peso efectivo mediante arrastre."},
-  "nucleo": [{"numero": 1, "nombre": "sostener mientras crece", "color": "azul", "paneles": [
-    {"rotulo": "DOS FUERZAS SOBRE LA MISMA PIEDRA", "clave": "Diámetro {diametroCm|0} cm, masa {gramos|1} g y rapidez de equilibrio {velocidad|1} m/s.", "texto": "El peso efectivo apunta hacia abajo: es el peso menos el pequeño empuje del aire. El arrastre apunta contra el movimiento relativo. Una corriente que sube puede ejercer arrastre hacia arriba sobre una piedra que permanece aproximadamente a la misma altura.", "detalle": "Igualamos el peso efectivo al arrastre cuadrático, calculado con densidad del aire, área frontal y un coeficiente elegido. Las flechas corresponden a una sola piedra en equilibrio instantáneo. No son una pareja de acción y reacción que debamos cancelar entre cuerpos distintos.", "color": "azul", "dibujo": {"tipo": "fuerzas", "claves": ["pesoEfectivo", "arrastreEquilibrio"], "rotulos": ["Peso efectivo (N)", "Arrastre (N)"], "angulos": [270, 90]}},
-    {"rotulo": "CRECER CAMBIA EL EQUILIBRIO", "clave": "Cada fuerza vale {pesoEfectivo|3} N en este instante ideal.", "texto": "La masa de una esfera aumenta con el cubo del radio, mientras su área frontal crece con el cuadrado. Manteniendo densidades y coeficiente, las piedras mayores requieren más rapidez relativa para sostenerse. Al cambiar el tamaño o salir de la corriente favorable, pueden empezar a caer.", "color": "azul", "dibujo": {"tipo": "magnitudes", "claves": ["velocidad", "gramos"], "rotulos": ["Aire relativo: {velocidad|1} m/s", "Masa: {gramos|1} g"]}}
-  ]}],
-  "cierre": {"titulo": "La corriente compra tiempo, no fabrica hielo por sí sola.", "nota": "Radio en m, densidades en kg/m³ y coeficiente de arrastre adimensional ilustrativo. Esfera de hielo compacto, gravedad 9,81 m/s² y arrastre estacionario. No se calcula velocidad de impacto ni se pronostica tamaño de granizo.", "parrafos": ["La disponibilidad de agua superenfriada, la temperatura y el tiempo de residencia determinan el crecimiento. Formas irregulares, poros, fusión y cambios de densidad del aire alejan una piedra real de esta esfera ideal."]}
+  "id": "granizo",
+  "rotulo": "NATURALEZA",
+  "titulo": "¿Por qué se aplasta la espuma de un casco de bicicleta?",
+  "revisionEditorial": 2,
+  "entradilla": "Un casco de bicicleta puede quedar marcado después de un golpe aunque por fuera parezca casi intacto. Dentro lleva una espuma que no está solamente para resultar cómoda. En muchos cascos, esa espuma está diseñada para deformarse de manera permanente y gastar parte de la energía del impacto mientras la cabeza va frenando.",
+  "modelo": "naturaleza-granizo",
+  "color": "ambar",
+  "medidas": {
+    "masa": 5,
+    "velocidad": 4,
+    "recorrido": 0.02
+  },
+  "tanteo": {
+    "pregunta": "Para frenar la misma energía, ¿qué permite un recorrido de aplastamiento mayor?",
+    "opciones": [
+      "Una fuerza media mayor necesariamente",
+      "Una fuerza media menor",
+      "Que la energía desaparezca sin cambios"
+    ],
+    "valores": [
+      10000,
+      2000,
+      0
+    ],
+    "medido": "fuerza",
+    "remate": "Una fuerza media menor. Duplicar el recorrido reduce de {fuerza|0} N a {dobleRecorrido|0} N la media ideal."
+  },
+  "nucleo": [
+    {
+      "numero": 1,
+      "nombre": "ganar espacio para frenar",
+      "color": "ambar",
+      "paneles": [
+        {
+          "rotulo": "LA CARCASA REPARTE EL CONTACTO",
+          "clave": "La carga llega a una zona de espuma.",
+          "texto": "La carcasa exterior ayuda a repartir el contacto y protege el material interior. Debajo hay una estructura celular: muchos huecos pequeños separados por paredes finas. Durante un impacto esas paredes pueden doblarse, romperse y compactarse. No toda la energía vuelve después como en un muelle. Parte queda disipada en la deformación del material.",
+          "detalle": "El casco debe quedar bien colocado y sujeto para que esa estructura actúe donde corresponde. Aquí observamos solamente un mecanismo de absorción; el ajuste y otros aspectos de protección no salen de esta cuenta.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "granizo-1"
+          }
+        },
+        {
+          "rotulo": "FRENAR NO ES PARAR DE GOLPE",
+          "clave": "La espuma añade recorrido a la detención.",
+          "texto": "Una masa que se mueve lleva energía cinética. Para detenerla, una fuerza debe hacer trabajo durante un recorrido. Si la misma energía se retira en más distancia, la fuerza media necesaria baja. Es el teorema del trabajo y la energía. Esa es una de las razones por las que dejar deformarse al casco puede ser útil.",
+          "detalle": "El ejemplo retira {energia|0} julios en una distancia elegida. La fuerza calculada es una media ideal, no el pico del golpe ni una medida de riesgo de lesión en una persona.",
+          "color": "ambar",
+          "dibujo": {
+            "tipo": "naturalezaRenovada",
+            "trazado": "granizo-2"
+          }
+        }
+      ]
+    }
+  ],
+  "cierre": {
+    "titulo": "Que una pieza se deforme puede ser su trabajo.",
+    "parrafos": [
+      "La espuma aplastada no recupera necesariamente su capacidad inicial. Tras un impacto, sigue las indicaciones de sustitución del fabricante aunque no veas una gran grieta en el exterior."
+    ],
+    "nota": "Masa, velocidad y recorrido ilustrativos; balance unidimensional sin rebote. No es ensayo de homologación, cálculo biomecánico ni garantía de protección."
+  }
 }

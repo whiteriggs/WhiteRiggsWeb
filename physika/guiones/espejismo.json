@@ -1,65 +1,66 @@
 {
   "id": "espejismo",
   "rotulo": "NATURALEZA",
-  "titulo": "¿Por qué se ve agua en la carretera en verano?",
-  "entradilla": "Porque eso no es agua: es el cielo. El asfalto calienta el aire pegado a él, el aire caliente se vuelve un pelín menos denso, y la luz que venía de arriba llega tan de refilón que rebota entera antes de tocar el suelo.",
-  "modelo": "frontera",
+  "titulo": "¿Cómo agranda las letras una lupa?",
+  "revisionEditorial": 2,
+  "entradilla": "Acercas una lupa a una letra pequeña y la letra crece sin que el papel cambie de tamaño. Si sigues alejando la lupa, llega un momento en que la imagen deja de servir para leer. El cristal no aumenta todo de cualquier manera: la distancia entre el objeto y la lente decide qué imagen puedes ver.",
+  "modelo": "naturaleza-espejismo",
   "color": "malva",
   "medidas": {
-    "dentro": 1.000293,
-    "fuera": 1.00026,
-    "entrada": 89.7
+    "focal": 0.1,
+    "objeto": 0.05
   },
   "tanteo": {
-    "pregunta": "¿Cuánto tiene que inclinarse tu mirada para que la carretera se vuelva un espejo?",
-    "opciones": ["Menos de cuarenta y cinco grados", "Unos setenta grados", "Casi noventa: rozando el suelo"],
-    "valores": [45, 70, 89.5],
-    "medido": "critico",
-    "remate": "A partir de {critico|1} grados. Por eso el charco está siempre lejos y desaparece al acercarte: de cerca ya no miras suficientemente de refilón."
+    "pregunta": "Con el papel dentro de la distancia focal, ¿cómo se ve la letra a través de la lupa?",
+    "opciones": [
+      "Más pequeña y del revés",
+      "Siempre del mismo tamaño",
+      "Más grande y derecha"
+    ],
+    "valores": [
+      0.5,
+      1,
+      2
+    ],
+    "medido": "aumento",
+    "remate": "Más grande y derecha. La lente ideal del ejemplo forma una imagen con aumento lateral {aumento|1}."
   },
   "nucleo": [
     {
       "numero": 1,
-      "nombre": "un espejo hecho de aire",
+      "nombre": "rayos que parecen venir de más atrás",
       "color": "malva",
       "paneles": [
         {
-          "rotulo": "EL AIRE CALIENTE ES MENOS DENSO",
-          "clave": "Entre el aire fresco de arriba y el ardiendo de abajo hay {diferencia|5} de índice.",
-          "texto": "Nada más. Pero eso basta para que exista una frontera, y toda frontera entre dos índices tiene su ángulo crítico: el ángulo a partir del cual la luz ya no puede pasar al otro lado y se da la vuelta entera.",
-          "detalle": "En realidad no hay una frontera sino un degradado: el aire se va calentando poco a poco hacia el suelo. La luz no da un salto seco, va curvándose. El resultado se ve igual, y la cuenta del ángulo crítico sigue dando la buena.",
+          "rotulo": "EL CRISTAL REDIRIGE LA LUZ",
+          "clave": "La lente curva desvía más los rayos alejados del centro.",
+          "texto": "La luz que sale de cada punto de la letra llega al cristal por caminos distintos. Las superficies curvas cambian sus direcciones y hacen que esos caminos se abran menos al salir. Es refracción. Una lente convergente tiene una distancia focal: la distancia a la que reúne rayos que llegan paralelos a su eje.",
+          "detalle": "La letra cercana no envía rayos paralelos. Si está más cerca que el foco, la lente no llega a reunirlos al otro lado; todavía salen separados, aunque con otra inclinación.",
           "color": "malva",
           "dibujo": {
-            "tipo": "rayo",
-            "claves": ["dentro", "fuera", "seQueda"],
-            "rotulos": ["aire fresco", "aire ardiendo sobre el asfalto"]
+            "tipo": "naturalezaRenovada",
+            "trazado": "espejismo-1"
           }
         },
         {
-          "rotulo": "LO QUE VES ES EL CIELO DEL REVÉS",
-          "clave": "El charco no refleja: transmite. Lo que llega a tus ojos es luz que venía del cielo y se dio la vuelta a un palmo del suelo.",
-          "texto": "Por eso el charco es azul, por eso tiembla como el agua, y por eso los coches que pasan salen reflejados boca abajo. Un espejismo no es una ilusión de tu cabeza: es una imagen real, que una cámara fotografía igual que tú la ves.",
-          "detalle": "El mismo mecanismo, con el gradiente al revés, produce el espejismo superior: aire frío pegado al suelo y templado arriba, y entonces ves barcos flotando sobre el horizonte o costas que están detrás de la curvatura de la Tierra. Los marinos llevan siglos viéndolo.",
+          "rotulo": "EL OJO PROLONGA LOS CAMINOS",
+          "clave": "La imagen virtual queda del mismo lado que el papel.",
+          "texto": "Tu ojo interpreta los rayos como si hubieran viajado en línea recta desde un punto situado detrás de la letra. Al prolongarlos hacia atrás encontramos una imagen mayor y derecha. Se llama imagen virtual porque los rayos no se reúnen realmente allí. No podrías recogerla colocando una pantalla en ese sitio.",
+          "detalle": "La ecuación de lentes delgadas sitúa esa imagen a {imagenCm|0} centímetros de la lupa en nuestro ejemplo. El tamaño angular que percibes también depende de dónde pongas el ojo y de cómo enfoques.",
           "color": "malva",
           "dibujo": {
-            "tipo": "rayo",
-            "claves": ["dentro", "fuera", "seEscapa"],
-            "rotulos": ["aire fresco", "aire ardiendo sobre el asfalto"]
+            "tipo": "naturalezaRenovada",
+            "trazado": "espejismo-2"
           }
         }
       ]
     }
   ],
   "cierre": {
-    "titulo": "Toda la carretera mojada de agosto cabe en {diferencia|5}.",
-    "nota": "Índices del aire a nivel del mar: 1,000293 a veinte grados y en torno a 1,00026 a cincuenta, que es lo que se alcanza a un palmo del asfalto en un día de verano.",
+    "titulo": "La letra crece en el recorrido de la luz.",
     "parrafos": [
-      "Es la quinta cifra decimal la que hace el truco, y solo funciona porque miras casi rozando el suelo. Cualquier otra cosa a esa diferencia de índice sería invisible.",
-      "Ese es el motivo de que el charco siempre esté a la misma distancia y nunca llegues a él. No está en ningún sitio: está en el ángulo desde el que miras, así que se mueve contigo."
-    ]
-  },
-  "puente": {
-    "hacia": "arcoiris",
-    "frase": "Aquí la luz se dobla en aire y te inventa un charco. En una gota de lluvia se dobla tanto que se abre en colores, y también te enseña algo que no está en ninguna parte."
+      "La lupa permite mirar un objeto cercano con comodidad. Su aumento no es una ampliación digital: ocurre antes de que la luz llegue a tus ojos."
+    ],
+    "nota": "Lente delgada ideal, rayos próximos al eje y medidas ilustrativas. Aumento lateral, no aumento comercial ni angular. Nunca mirar al Sol con una lupa."
   }
 }

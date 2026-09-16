@@ -1,37 +1,11 @@
 {
-  "id": "cafe",
-  "rotulo": "COTIDIANO",
-  "titulo": "¿Enfría antes el café si echas la leche al final?",
-  "entradilla": "Quieres beberlo dentro de unos minutos. Puedes echar la leche ahora y esperar, o dejar que el café se enfríe solo y añadirla justo antes de beber. Aunque termines con las mismas cantidades, el orden cambia la temperatura.",
-  "modelo": "enfriamiento",
-  "color": "ambar",
-  "medidas": {"cafe": 85, "leche": 5, "ambiente": 22, "capacidadCafe": 836, "capacidadLeche": 195, "conductancia": 1.2, "segundos": 300},
-  "tanteo": {
-    "pregunta": "Tras cinco minutos, ¿qué opción deja más fría la mezcla en este ejemplo?",
-    "opciones": ["La leche al principio", "Da igual el orden", "La leche al final"],
-    "valores": [-4, 0, 4],
-    "medido": "diferencia",
-    "remate": "La leche al final: queda {diferencia|1} grados más fría. El café ha perdido calor mientras estaba más caliente y aún no tenía la capacidad térmica extra de la leche."
-  },
-  "nucleo": [{
-    "numero": 1,
-    "nombre": "la historia de la taza importa",
-    "color": "ambar",
-    "paneles": [{
-      "rotulo": "DOS CAMINOS, LA MISMA MEZCLA",
-      "clave": "Tras {minutos|0} minutos, leche primero: {lechePrimero|1} °C. Leche al final: {lecheUltimo|1} °C.",
-      "texto": "La línea continua empieza más abajo porque ya se ha mezclado la leche. La discontinua empieza con el café solo y cae de golpe cuando se añade la leche. Antes de ese último paso, el café solo sigue a {cafeSolo|1} °C: no compares esa temperatura con la del café que ya lleva leche.",
-      "detalle": "Usamos la ley de enfriamiento de Newton: la potencia térmica perdida es proporcional a la diferencia con el ambiente. Al principio, el café solo pierde {ritmoInicialSolo|1} vatios en este ejemplo. Al mezclar, el calor que pierde el café lo gana la leche; la temperatura final se calcula ponderando por las capacidades térmicas, no haciendo una media simple.",
-      "color": "ambar",
-      "dibujo": {"tipo": "enfriamiento", "claves": [], "rotulos": []}
-    }]
-  }],
-  "cierre": {
-    "titulo": "Para este café, la leche espera.",
-    "nota": "Ejemplo ilustrativo: 200 g de café tratado como agua, capacidad térmica {capacidadCafe|0} J/K, y 50 g de leche, {capacidadLeche|0} J/K. Temperaturas iniciales de {cafe|0} °C y {leche|0} °C, ambiente a {ambiente|0} °C. Conductancia constante elegida de {conductancia|1} W/K, igual en ambos casos; no es una medición de una taza real. La leche tardía se mantiene a su temperatura inicial hasta añadirla.",
-    "parrafos": [
-      "Sin esperar, ambos caminos son exactamente la misma mezcla. La diferencia aparece durante la espera: añadir leche cambia tanto la temperatura como la cantidad de calor necesaria para bajar un grado.",
-      "No es una ley universal para cualquier taza. Evaporación, aire en movimiento, geometría del recipiente, capacidad térmica de la taza y leche que se calienta fuera de la nevera pueden cambiar el resultado. Aquí comparamos un modelo térmico sencillo, con temperatura uniforme y mezcla instantánea."
-    ]
-  }
+  "id":"cafe", "rotulo":"COTIDIANO", "titulo":"¿Puede una jarrita de leche enfriar más el café si esperas?", "revisionEditorial":2,
+  "entradilla":"En la bandeja vienen la taza de café y una jarrita de leche fría. Quieres beber dentro de un rato sin quemarte. Puedes mezclarlo todo ahora o reservar la leche. Parece una diferencia de costumbres, pero cada elección le da al calor una historia distinta.",
+  "modelo":"enfriamiento", "color":"ambar", "medidas":{"cafe":85,"leche":5,"ambiente":22,"capacidadCafe":836,"capacidadLeche":195,"conductancia":1.2,"segundos":300},
+  "tanteo":{"pregunta":"Para beberlo dentro de un rato, ¿cuándo enfriará más la leche este café?","opciones":["Al echarla al principio","Da igual cuándo la eche","Al reservarla para el final"],"valores":[-4,0,4],"medido":"diferencia","remate":"En este ejemplo, al final: la mezcla queda {diferencia|1} grados más fría. No es una regla para cualquier taza."},
+  "nucleo":[{"numero":1,"nombre":"la jarrita puede esperar","color":"ambar","paneles":[
+    {"rotulo":"ANTES DE MEZCLAR","clave":"Cuanto más caliente está el café, más deprisa cede calor.","texto":"El café calienta el aire y la taza que lo rodean. Si añades leche fría enseguida, reduces esa diferencia de temperatura. Desde entonces pierde calor más despacio. Dejarlo solo conserva durante más tiempo un contraste grande con el ambiente: tiene más facilidad para desprenderse de energía.","detalle":"Esa relación sencilla se llama ley de enfriamiento de Newton. No dice que todos los cafés se enfríen igual: la forma del recipiente, una corriente de aire y la evaporación también importan. Aquí mantenemos iguales esas condiciones.","color":"ambar","dibujo":{"tipo":"cotidianoRenovado","trazado":"cafe-1","claves":[],"rotulos":[]}},
+    {"rotulo":"LA MEZCLA FINAL","clave":"La leche recibe calor; no fabrica frío.","texto":"Al vaciar la jarrita, el café entrega energía a la leche hasta que ambos quedan a una misma temperatura. La cantidad de cada líquido importa: una gota fría no puede hacer el trabajo de una jarra entera. Esto es un balance de energía, no una media cualquiera.","detalle":"Con nuestras cantidades, esperar deja la mezcla a {lecheUltimo|1} °C, frente a {lechePrimero|1} °C mezclando al principio. Comparamos las bebidas ya mezcladas, nunca café solo contra café con leche.","color":"ambar","dibujo":{"tipo":"cotidianoRenovado","trazado":"cafe-2","claves":[],"rotulos":[]}}
+  ]}],
+  "cierre":{"titulo":"La misma jarrita, dos historias térmicas.","parrafos":["La ventaja aparece durante la espera. Sin esperar, los dos caminos dan la misma mezcla. El truco consiste en dejar que el café pierda energía antes de sumar la leche."],"nota":"Cantidades y conductancia ilustrativas. Suponemos mezcla uniforme y leche mantenida fría; ignoramos evaporación y capacidad térmica de la taza. No son prestaciones de una jarrita comercial."}
 }
