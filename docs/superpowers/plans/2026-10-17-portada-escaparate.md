@@ -207,7 +207,7 @@ test('easeOutExpo y easeInOut van de 0 a 1', () => {
 
 - [ ] **Step 2: Ver que fallan**
 
-Run: `node --test tests/`
+Run: `node --test tests/home-core.test.js`
 Expected: FAIL con `Cannot find module '../home.js'`.
 
 - [ ] **Step 3: Implementar `home.js`**
@@ -541,7 +541,7 @@ Expected: FAIL con `Cannot find module '../home.js'`.
 
 - [ ] **Step 4: Ver que pasan**
 
-Run: `node --test tests/`
+Run: `node --test tests/home-core.test.js`
 Expected: 10 tests, todos en PASS.
 
 - [ ] **Step 5: Commit**
@@ -1474,7 +1474,7 @@ const PRECACHE = [
 3. ES ↔ EN: textos, titular animado de nuevo y cifras en el formato de cada idioma.
 4. Enlaces: App Store (5), Detalles (5), dock (5) y pie (5).
 5. `git diff --stat HEAD~4 -- styles.css script.js support privacy` no muestra cambios.
-6. `node --test tests/` en verde.
+6. `node --test tests/home-core.test.js` en verde.
 
 - [ ] **Step 3: Commit**
 
