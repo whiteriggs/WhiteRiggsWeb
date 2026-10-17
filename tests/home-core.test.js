@@ -86,10 +86,29 @@ test('con el umbral de móvil no hay huecos sin capítulo activo dentro del esca
   }
 });
 
-test('railProgress va de 0 en la primera app a 1 en la última', () => {
-  assert.equal(h.railProgress(0.5, 5), 0);
-  close(h.railProgress(2.5, 5), 0.5, 1e-9);
-  assert.equal(h.railProgress(4.5, 5), 1);
-  assert.equal(h.railProgress(-1, 5), 0);
-  assert.equal(h.railProgress(9, 5), 1);
+test('textState: el texto está pleno en el centro de su capítulo', () => {
+  const s = h.textState(0.5, 0);
+  assert.equal(s.opacity, 1);
+  assert.equal(s.d, 0);
+  assert.equal(h.textState(2.55, 2).opacity, 1);
+});
+
+test('textState: en la frontera entre apps ambos textos están a 0', () => {
+  assert.equal(h.textState(1, 0).opacity, 0);
+  assert.equal(h.textState(1, 1).opacity, 0);
+  assert.equal(h.textState(3, 0).opacity, 0);
+});
+
+test('textState: se desvanece de forma continua al alejarse del centro', () => {
+  const a = h.textState(0.7, 0).opacity;
+  const b = h.textState(0.8, 0).opacity;
+  const c = h.textState(0.9, 0).opacity;
+  assert.ok(a > b && b > c && c > 0, `${a} > ${b} > ${c} > 0`);
+  close(h.textState(0.3, 0).opacity, a, 1e-9);
+});
+
+test('textState: d crece con el scroll (el texto sube) y cambia de signo en el centro', () => {
+  assert.ok(h.textState(0.3, 0).d < 0);
+  assert.ok(h.textState(0.7, 0).d > 0);
+  close(h.textState(0.7, 0).d, 0.2, 1e-9);
 });

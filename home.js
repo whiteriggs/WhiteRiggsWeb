@@ -49,9 +49,14 @@
     return narrow ? 0.5 : 0.42;
   }
 
-  // Avance de la linea del indicador: 0 con la primera app centrada, 1 con la ultima.
-  function railProgress(pos, n) {
-    return clamp((pos - 0.5) / (n - 1));
+  // Texto de movil guiado por el scroll. d es la distancia al centro del capitulo (en capitulos):
+  // pleno mientras |d| < TEXT_HOLD y se apaga hasta 0 en la frontera (|d| = 0,5), justo cuando el
+  // icono esta de canto. El CSS usa d para desplazar cada capa a su propia velocidad.
+  const TEXT_HOLD = 0.12;
+
+  function textState(pos, i) {
+    const d = pos - (i + 0.5);
+    return { opacity: clamp(1 - (Math.abs(d) - TEXT_HOLD) / (0.5 - TEXT_HOLD)), d };
   }
 
   const DOWNLOAD_LABEL = {
@@ -114,7 +119,7 @@
     const faces = $$('.stage-face');
     const halos = $$('.halo');
     const railBtns = $$('.rail button');
-    const rail = $('.rail');
+    const chapterInners = $$('.chapter-inner');
     const dockSection = $('.dock-section');
     const dockSlots = $$('.dock-slot');
     const dockMoves = $$('.dock-move');
@@ -169,7 +174,8 @@
         slot: { cx: s.left + s.width / 2, cy: s.top + s.height / 2, w: s.width },
         lead: docRect(leadIcon),
         dock: dockSlots.map(docRect),
-        half: activeHalf(narrow.matches)
+        half: activeHalf(narrow.matches),
+        narrow: narrow.matches
       };
       lastY = -1;
     }
@@ -219,7 +225,13 @@
         if (act >= 0) countUp(chapters[act]);
       }
       doc.classList.toggle('rail-on', pos > 0.15 && pos < n - 0.1 && pDock === 0);
-      if (rail) setVar(rail, '--rail-p', railProgress(pos, n).toFixed(4));
+      if (L.narrow) {
+        chapterInners.forEach((el, i) => {
+          const t = textState(pos, i);
+          setVar(el, '--o', t.opacity.toFixed(3));
+          setVar(el, '--d', t.d.toFixed(4));
+        });
+      }
 
       // 4. Dock: los cinco iconos salen del escenario y se posan en su sitio.
       doc.classList.toggle('dock-on', pDock > 0);
@@ -328,7 +340,7 @@
     };
   }
 
-  const core = { clamp, lerp, smooth, easeOutExpo, easeInOut, sectionProgress, showcaseState, activeChapter, activeHalf, railProgress, downloadLabel };
+  const core = { clamp, lerp, smooth, easeOutExpo, easeInOut, sectionProgress, showcaseState, activeChapter, activeHalf, textState, downloadLabel };
   root.HomeCore = core;
   root.initHome = initHome;
   if (typeof module === 'object' && module.exports) module.exports = core;

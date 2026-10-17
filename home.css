@@ -617,75 +617,40 @@ main, .site-footer { position: relative; z-index: 1; }
 
   .js-motion .stage::after { background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.55) 60%); }
 
-  .js-motion .chapter { min-height: 75svh; padding: 0; }
+  .js-motion .chapter { min-height: 65svh; padding: 0; }
 
-  /* Los cinco textos viven fijos bajo el icono y se funden entre si: siempre hay uno a la vista.
-     Los capitulos quedan como espaciadores que marcan el ritmo del scroll. */
+  /* Los cinco textos viven fijos bajo el icono. home.js escribe --o (opacidad) y --d (distancia al
+     centro del capitulo) en cada frame: el texto entra desde abajo, sube con el dedo y sale por arriba,
+     y en la frontera entre apps, con el icono de canto, ambos textos estan a cero. */
   .js-motion .chapter-inner {
     position: fixed;
     top: calc(var(--stage-top) + var(--stage-size) + 28px);
     left: 20px;
     right: 20px;
     width: auto;
-    visibility: hidden;
-    transition: visibility 0s linear 0.25s;
+    opacity: var(--o, 0);
+    pointer-events: none;
   }
 
-  .js-motion .chapter.is-active .chapter-inner { visibility: visible; transition-delay: 0s; }
+  .js-motion .chapter.is-active .chapter-inner { pointer-events: auto; }
 
   .js-motion .chapter-inner > * { max-width: none; }
+  .js-motion .chapter-name { overflow: visible; }
 
-  /* El texto saliente se va rapido y el entrante espera un instante: nunca se ven dos a la vez. */
-  .js-motion .chapter:not(.is-active) :is(.chapter-cat, .chapter-desc, .chapter-downloads, .chapter-actions, .chapter-name span) {
-    transition-duration: 0.25s;
-    transition-delay: 0s;
+  /* Cada capa a su velocidad, mas rapida cuanto mas arriba: al salir se abren en abanico y no se pisan. */
+  html.js-motion .chapter .chapter-inner :is(.chapter-cat, .chapter-desc, .chapter-downloads, .chapter-actions),
+  html.js-motion .chapter .chapter-inner .chapter-name span {
+    opacity: 1;
+    transition: none;
   }
 
-  .js-motion .chapter.is-active .chapter-cat { transition-delay: 0.12s; }
-  .js-motion .chapter.is-active .chapter-name span { transition-delay: 0.12s; }
-  .js-motion .chapter.is-active .chapter-desc { transition-delay: 0.24s; }
-  .js-motion .chapter.is-active .chapter-downloads { transition-delay: 0.32s; }
-  .js-motion .chapter.is-active .chapter-actions { transition-delay: 0.4s; }
+  html.js-motion .chapter .chapter-inner .chapter-cat { transform: translateY(calc(var(--d, 0) * -150px)); }
+  html.js-motion .chapter .chapter-inner .chapter-name span { transform: translateY(calc(var(--d, 0) * -130px)); }
+  html.js-motion .chapter .chapter-inner .chapter-desc { transform: translateY(calc(var(--d, 0) * -105px)); }
+  html.js-motion .chapter .chapter-inner .chapter-downloads { transform: translateY(calc(var(--d, 0) * -90px)); }
+  html.js-motion .chapter .chapter-inner .chapter-actions { transform: translateY(calc(var(--d, 0) * -75px)); }
 
   .chapter-name { font-size: clamp(40px, 12vw, 60px); }
-
-  /* Indicador de progreso: el rail se vuelve una fila de mini iconos abajo. */
-  .js-motion .rail {
-    position: fixed;
-    left: 50%;
-    bottom: calc(14px + env(safe-area-inset-bottom));
-    z-index: 5;
-    display: flex;
-    gap: 6px;
-    padding: 6px 8px;
-    translate: -50% 0;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s;
-  }
-
-  .js-motion.rail-on .rail { opacity: 1; pointer-events: auto; }
-
-  .js-motion .rail::before,
-  .js-motion .rail::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 26px;
-    height: 2px;
-    margin-top: -1px;
-    border-radius: 1px;
-  }
-
-  .js-motion .rail::before { right: 26px; background: rgba(255, 255, 255, 0.14); }
-  .js-motion .rail::after { width: calc((100% - 52px) * var(--rail-p, 0)); background: rgba(255, 255, 255, 0.75); }
-
-  .js-motion .rail button { position: relative; z-index: 1; width: 36px; height: 36px; padding: 6px; }
 
   .dock { gap: 10px; padding: 12px 14px; }
   .dock::before { border-radius: 26px; }
