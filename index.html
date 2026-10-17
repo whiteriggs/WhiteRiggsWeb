@@ -2,224 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>The White Riggs — Crafting Software with Intention</title>
   <meta name="description" content="The White Riggs is an independent iOS software studio creating elegant, minimal, and purposeful mobile experiences.">
-  
-  <!-- Open Graph -->
+
   <meta property="og:title" content="The White Riggs">
   <meta property="og:description" content="Independent iOS studio crafting purposeful software.">
   <meta property="og:type" content="website">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/riggs-icon-192.png?v=1">
-
-  <!-- PWA -->
   <link rel="manifest" href="manifest.webmanifest?v=1">
   <link rel="apple-touch-icon" href="assets/riggs-icon-180.png?v=1">
-  <meta name="theme-color" content="#050508">
+  <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="White Riggs">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=10">
+  <!-- Antes del primer pintado: decide si hay coreografia o lista estatica. -->
+  <script>if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-motion');</script>
+  <link rel="preload" as="image" href="assets/home/curiosity-512.webp">
+  <link rel="stylesheet" href="home.css?v=1">
 </head>
-<body class="body-home">
+<body>
 
-  <!-- Header / Navigation -->
-  <header>
-    <div class="nav-container">
-      <a href="#" class="brand-link">
-        <img src="assets/riggs-logo.png?v=4" alt="Riggs Logo" class="brand-logo-img">
-        <span class="brand-title">The White Riggs</span>
+  <header class="site-header">
+    <div class="nav">
+      <a href="#top" class="brand">
+        <img src="assets/home/riggs-256.webp" alt="" width="30" height="30">
+        <span>The White Riggs</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="#apps" data-es="Apps" data-en="Apps">Apps</a></li>
-        <li><a href="#about" data-es="El estudio" data-en="About">About</a></li>
-        <li>
-          <div class="lang-toggle-inline">
-            <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
-            <button type="button" class="lang-btn active" data-lang-btn="en">EN</button>
-          </div>
-        </li>
-      </ul>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#apps" data-es="Apps" data-en="Apps">Apps</a>
+        <a href="#riggs" data-es="Riggs" data-en="Riggs">Riggs</a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn" data-lang-btn="es" aria-pressed="false">ES</button>
+        <button type="button" class="lang-btn active" data-lang-btn="en" aria-pressed="true">EN</button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero container fade-in">
-      <div class="hero-badge" data-es="Estudio iOS independiente" data-en="Independent iOS Studio">Independent iOS Studio</div>
-      <h1 class="hero-title" data-es="La simplicidad es la máxima sofisticación." data-en="Simplicity is the ultimate sophistication.">Simplicity is the ultimate sophistication.</h1>
-      <p class="hero-subtitle" data-es="Aplicaciones móviles elegantes y sin distracciones, diseñadas para inspirar y emocionar." data-en="Creating elegant, highly focused mobile applications designed to inspire and delight.">Creating elegant, highly focused mobile applications designed to inspire and delight.</p>
-    </section>
-
-    <!-- Apps Section -->
-    <section id="apps" class="apps-section container fade-in">
-      <h2 class="section-title" data-es="Hecho para iOS" data-en="Crafted for iOS">Crafted for iOS</h2>
-      
-      <div class="apps-grid">
-
-        <!-- App 1: Curiosity -->
-        <article class="app-card app-card-curiosity">
-          <div class="app-card-top">
-            <div class="app-header">
-              <img src="assets/curiosity-icon.png?v=4" alt="Curiosity Icon" class="app-icon">
-              <div class="app-title-group">
-                <h3>Curiosity</h3>
-                <div class="app-category" data-es="Educación y ciencia" data-en="Education &amp; Science">Education &amp; Science</div>
-              </div>
-            </div>
-            <p class="app-description" data-es="Tu dosis diaria de asombro galáctico. Descubre datos curiosos de ciencia, historia y naturaleza en una interfaz inmersiva inspirada en los planetas." data-en="Your daily dose of galactic wonder. Explore curious facts about science, history, and nature with an immersive interface inspired by the planets.">
-              Your daily dose of galactic wonder. Explore curious facts about science, history, and nature with an immersive interface inspired by the planets.
-            </p>
-            <p class="app-downloads" data-descargas="WhiteRiggs.Curiosity" hidden></p>
-          </div>
-          <div class="app-actions">
-            <a href="https://apps.apple.com/es/app/curiosity/id6756880503" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span>App Store</span>
-            </a>
-            <a href="support/curiosity.html" rel="noopener noreferrer" class="btn btn-secondary">
-              <span data-es="Detalles" data-en="Details">Details</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- App 2: GetMeOut! Escape -->
-        <article class="app-card app-card-getmeout">
-          <div class="app-card-top">
-            <div class="app-header">
-              <img src="assets/getmeout-icon.png?v=4" alt="GetMeOut Icon" class="app-icon">
-              <div class="app-title-group">
-                <h3>GetMeOut! Escape</h3>
-                <div class="app-category" data-es="Utilidades y productividad" data-en="Utilities &amp; Productivity">Utilities &amp; Productivity</div>
-              </div>
-            </div>
-            <p class="app-description" data-es="Tu escape profesional de bolsillo. Genera una excusa creíble con un toque, programa una llamada falsa realista y sal de cualquier momento incómodo con estilo." data-en="Your professional pocket escape. Generate a believable excuse in one tap, schedule a realistic fake call, and walk away from any awkward moment with style.">
-              Your professional pocket escape. Generate a believable excuse in one tap, schedule a realistic fake call, and walk away from any awkward moment with style.
-            </p>
-            <p class="app-downloads" data-descargas="com.whiteriggs.GetMeOut" hidden></p>
-          </div>
-          <div class="app-actions">
-            <a href="https://apps.apple.com/es/app/getmeout-escape/id6761269060" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span>App Store</span>
-            </a>
-            <a href="support/getmeout.html" rel="noopener noreferrer" class="btn btn-secondary">
-              <span data-es="Detalles" data-en="Details">Details</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- App 3: Wyrms -->
-        <article class="app-card app-card-wyrms">
-          <div class="app-card-top">
-            <div class="app-header">
-              <img src="assets/wyrms-icon.png?v=4" alt="Wyrms Icon" class="app-icon">
-              <div class="app-title-group">
-                <h3>Wyrms</h3>
-                <div class="app-category" data-es="Juegos de mesa" data-en="Board Games">Board Games</div>
-              </div>
-            </div>
-            <p class="app-description" data-es="Carrera de dragones y juego de memoria. Una aventura por turnos para 2 a 4 jugadores, contra amigos o contra la máquina. Lleva a tus dragones alrededor del volcán hasta la victoria." data-en="Dragon Race &amp; Memory Board Game. A turn-based memory adventure for 2 to 4 players, against friends or the CPU. Race your dragons around the volcano to claim victory.">
-              Dragon Race &amp; Memory Board Game. A turn-based memory adventure for 2 to 4 players, against friends or the CPU. Race your dragons around the volcano to claim victory.
-            </p>
-            <p class="app-downloads" data-descargas="WhiteRiggs.CarreraDeDragones" hidden></p>
-          </div>
-          <div class="app-actions">
-            <a href="https://apps.apple.com/es/app/wyrms/id6759536991" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span>App Store</span>
-            </a>
-            <a href="support/wyrms.html" rel="noopener noreferrer" class="btn btn-secondary">
-              <span data-es="Detalles" data-en="Details">Details</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- App 4: FutLine -->
-        <article class="app-card app-card-futline">
-          <div class="app-card-top">
-            <div class="app-header">
-              <img src="assets/futline-icon.png?v=1" alt="FutLine Icon" class="app-icon">
-              <div class="app-title-group">
-                <h3>FutLine</h3>
-                <div class="app-category" data-es="Trivial y deportes" data-en="Trivia &amp; Sports">Trivia &amp; Sports</div>
-              </div>
-            </div>
-            <p class="app-description" data-es="Coloca cada jugador en su sitio de la historia. Ordena por temporada de debut, goles o partidos en 573 barajas: tu equipo, las grandes competiciones y la historia del fútbol. Tres fallos y te expulsan." data-en="Put every player where they belong in history. Order them by debut season, goals or appearances across 573 decks: your club, the big competitions and the story of football. Three mistakes and you are sent off.">
-              Put every player where they belong in history. Order them by debut season, goals or appearances across 573 decks: your club, the big competitions and the story of football. Three mistakes and you are sent off.
-            </p>
-            <p class="app-downloads" data-descargas="WhiteRiggs.FutLine" hidden></p>
-          </div>
-          <div class="app-actions">
-            <a href="https://apps.apple.com/es/app/futline/id6799069857" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span>App Store</span>
-            </a>
-            <a href="support/futline.html" rel="noopener noreferrer" class="btn btn-secondary">
-              <span data-es="Detalles" data-en="Details">Details</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- App 5: Escalofrio -->
-        <article class="app-card app-card-escalofrio">
-          <div class="app-card-top">
-            <div class="app-header">
-              <img src="assets/escalofrio-icon.png?v=1" alt="Escalofrío Icon" class="app-icon">
-              <div class="app-title-group">
-                <h3>Escalofrío</h3>
-                <div class="app-category" data-es="Juegos de mesa" data-en="Board Games">Board Games</div>
-              </div>
-            </div>
-            <p class="app-description" data-es="Sube al castillo sin perderte de vista. De dos a cuatro jugadores alrededor de un solo iPhone o iPad: en cuanto te echan la sábana por encima, tu peón deja de ser tuyo a la vista de todos y solo tu memoria sabe cuál sigue siendo." data-en="Climb the castle without losing sight of yourself. Two to four players around a single iPhone or iPad: the moment they throw the sheet over your pawn, nobody can tell which one is yours — only your memory knows.">
-              Climb the castle without losing sight of yourself. Two to four players around a single iPhone or iPad: the moment they throw the sheet over your pawn, nobody can tell which one is yours — only your memory knows.
-            </p>
-            <p class="app-downloads" data-descargas="com.whiteriggs.escalofrio" hidden></p>
-          </div>
-          <div class="app-actions">
-            <a href="https://apps.apple.com/es/app/escalofrio/id6805952829" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              <span>App Store</span>
-            </a>
-            <a href="support/escalofrio.html" rel="noopener noreferrer" class="btn btn-secondary">
-              <span data-es="Detalles" data-en="Details">Details</span>
-            </a>
-          </div>
-        </article>
-
+  <!-- Escenario fijo: halo de color e icono heroe. Solo existe con .js-motion. -->
+  <div class="stage" aria-hidden="true">
+    <div class="halo" style="--c1:196 83 47;--c2:42 15 8"></div>
+    <div class="halo" style="--c1:34 168 102;--c2:6 48 26"></div>
+    <div class="halo" style="--c1:251 165 0;--c2:58 38 0"></div>
+    <div class="halo" style="--c1:93 113 144;--c2:20 26 36"></div>
+    <div class="halo" style="--c1:239 118 13;--c2:58 24 4"></div>
+    <div class="stage-slot">
+      <div class="stage-icon">
+        <div class="stage-flip">
+          <img class="stage-face is-shown" style="--c1:196 83 47" src="assets/home/curiosity-512.webp" srcset="assets/home/curiosity-512.webp 512w, assets/home/curiosity-1024.webp 1024w" sizes="420px" alt="" width="512" height="512">
+          <img class="stage-face" style="--c1:34 168 102" src="assets/home/futline-512.webp" srcset="assets/home/futline-512.webp 512w, assets/home/futline-1024.webp 1024w" sizes="420px" alt="" width="512" height="512" decoding="async">
+          <img class="stage-face" style="--c1:251 165 0" src="assets/home/getmeout-512.webp" srcset="assets/home/getmeout-512.webp 512w, assets/home/getmeout-1024.webp 1024w" sizes="420px" alt="" width="512" height="512" decoding="async">
+          <img class="stage-face" style="--c1:93 113 144" src="assets/home/escalofrio-512.webp" srcset="assets/home/escalofrio-512.webp 512w, assets/home/escalofrio-1024.webp 1024w" sizes="420px" alt="" width="512" height="512" decoding="async">
+          <img class="stage-face" style="--c1:239 118 13" src="assets/home/wyrms-512.webp" srcset="assets/home/wyrms-512.webp 512w, assets/home/wyrms-1024.webp 1024w" sizes="420px" alt="" width="512" height="512" decoding="async">
+          <span class="shine"></span>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <nav class="rail" aria-label="Apps">
+    <button type="button" aria-label="Curiosity"><img src="assets/home/curiosity-256.webp" alt="" width="32" height="32"></button>
+    <button type="button" aria-label="FutLine"><img src="assets/home/futline-256.webp" alt="" width="32" height="32"></button>
+    <button type="button" aria-label="GetMeOut! Escape"><img src="assets/home/getmeout-256.webp" alt="" width="32" height="32"></button>
+    <button type="button" aria-label="Escalofrío"><img src="assets/home/escalofrio-256.webp" alt="" width="32" height="32"></button>
+    <button type="button" aria-label="Wyrms"><img src="assets/home/wyrms-256.webp" alt="" width="32" height="32"></button>
+  </nav>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="hero-badge" data-es="Estudio iOS independiente" data-en="Independent iOS Studio">Independent iOS Studio</p>
+        <h1 class="hero-title" data-es="La simplicidad es la máxima sofisticación." data-en="Simplicity is the ultimate sophistication.">Simplicity is the ultimate sophistication.</h1>
+        <p class="hero-subtitle" data-es="Aplicaciones móviles elegantes y sin distracciones, diseñadas para inspirar y emocionar." data-en="Creating elegant, highly focused mobile applications designed to inspire and delight.">Creating elegant, highly focused mobile applications designed to inspire and delight.</p>
+      </div>
+      <div class="constellation" aria-hidden="true">
+        <div class="c-icon" style="--x:21%;--y:36%;--size:84px;--depth:1.4;--phase:-1.2s"><div class="c-move"><img src="assets/home/futline-256.webp" alt="" width="84" height="84"></div></div>
+        <div class="c-icon" style="--x:79%;--y:30%;--size:76px;--depth:1.1;--phase:-3.4s"><div class="c-move"><img src="assets/home/getmeout-256.webp" alt="" width="76" height="76"></div></div>
+        <div class="c-icon" style="--x:30%;--y:88%;--size:62px;--depth:0.7;--phase:-5.1s"><div class="c-move"><img src="assets/home/escalofrio-256.webp" alt="" width="62" height="62"></div></div>
+        <div class="c-icon" style="--x:70%;--y:87%;--size:70px;--depth:0.9;--phase:-2.3s"><div class="c-move"><img src="assets/home/wyrms-256.webp" alt="" width="70" height="70"></div></div>
+        <div class="c-icon" data-lead style="--x:50%;--y:48%;--size:var(--lead-size);--depth:0"><div class="c-move"><img src="assets/home/curiosity-256.webp" srcset="assets/home/curiosity-256.webp 1x, assets/home/curiosity-512.webp 2x" alt="" width="132" height="132"></div></div>
+      </div>
+      <p class="scroll-hint" data-es="Desliza" data-en="Scroll">Scroll</p>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section container fade-in">
-      <div class="about-card">
-        <img src="assets/riggs-logo.png?v=4" alt="Riggs the Golden Retriever" class="about-avatar">
-        <p class="about-quote" data-es="«En honor a Riggs, un Golden Retriever blanco cuya lealtad, ternura y alegría inspiran todo lo que se construye bajo esta marca.»" data-en="&quot;Named in honor of Riggs, a white Golden Retriever whose loyalty, warmth, and joyful spirit inspire everything built under this brand.&quot;">"Named in honor of Riggs, a white Golden Retriever whose loyalty, warmth, and joyful spirit inspire everything built under this brand."</p>
-        <div class="about-author" data-es="Estudio The White Riggs" data-en="The White Riggs Studio">The White Riggs Studio</div>
-      </div>
+    <section class="showcase" id="apps" aria-label="Apps">
+
+      <article class="chapter" data-app="curiosity">
+        <div class="chapter-inner">
+          <img class="chapter-icon" src="assets/home/curiosity-256.webp" srcset="assets/home/curiosity-256.webp 1x, assets/home/curiosity-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+          <p class="chapter-cat" data-es="Educación y ciencia" data-en="Education &amp; Science">Education &amp; Science</p>
+          <h2 class="chapter-name"><span>Curiosity</span></h2>
+          <p class="chapter-desc" data-es="Tu dosis diaria de asombro galáctico. Descubre datos curiosos de ciencia, historia y naturaleza en una interfaz inmersiva inspirada en los planetas." data-en="Your daily dose of galactic wonder. Explore curious facts about science, history, and nature with an immersive interface inspired by the planets.">Your daily dose of galactic wonder. Explore curious facts about science, history, and nature with an immersive interface inspired by the planets.</p>
+          <p class="chapter-downloads" data-descargas="WhiteRiggs.Curiosity" hidden></p>
+          <div class="chapter-actions">
+            <a class="btn btn-primary" href="https://apps.apple.com/es/app/curiosity/id6756880503" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span>App Store</span></a>
+            <a class="btn btn-glass" href="support/curiosity.html"><span data-es="Detalles" data-en="Details">Details</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="chapter" data-app="futline">
+        <div class="chapter-inner">
+          <img class="chapter-icon" src="assets/home/futline-256.webp" srcset="assets/home/futline-256.webp 1x, assets/home/futline-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+          <p class="chapter-cat" data-es="Trivial y deportes" data-en="Trivia &amp; Sports">Trivia &amp; Sports</p>
+          <h2 class="chapter-name"><span>FutLine</span></h2>
+          <p class="chapter-desc" data-es="Coloca cada jugador en su sitio de la historia. Ordena por temporada de debut, goles o partidos en 573 barajas: tu equipo, las grandes competiciones y la historia del fútbol. Tres fallos y te expulsan." data-en="Put every player where they belong in history. Order them by debut season, goals or appearances across 573 decks: your club, the big competitions and the story of football. Three mistakes and you are sent off.">Put every player where they belong in history. Order them by debut season, goals or appearances across 573 decks: your club, the big competitions and the story of football. Three mistakes and you are sent off.</p>
+          <p class="chapter-downloads" data-descargas="WhiteRiggs.FutLine" hidden></p>
+          <div class="chapter-actions">
+            <a class="btn btn-primary" href="https://apps.apple.com/es/app/futline/id6799069857" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span>App Store</span></a>
+            <a class="btn btn-glass" href="support/futline.html"><span data-es="Detalles" data-en="Details">Details</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="chapter" data-app="getmeout">
+        <div class="chapter-inner">
+          <img class="chapter-icon" src="assets/home/getmeout-256.webp" srcset="assets/home/getmeout-256.webp 1x, assets/home/getmeout-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+          <p class="chapter-cat" data-es="Utilidades y productividad" data-en="Utilities &amp; Productivity">Utilities &amp; Productivity</p>
+          <h2 class="chapter-name"><span>GetMeOut! Escape</span></h2>
+          <p class="chapter-desc" data-es="Tu escape profesional de bolsillo. Genera una excusa creíble con un toque, programa una llamada falsa realista y sal de cualquier momento incómodo con estilo." data-en="Your professional pocket escape. Generate a believable excuse in one tap, schedule a realistic fake call, and walk away from any awkward moment with style.">Your professional pocket escape. Generate a believable excuse in one tap, schedule a realistic fake call, and walk away from any awkward moment with style.</p>
+          <p class="chapter-downloads" data-descargas="com.whiteriggs.GetMeOut" hidden></p>
+          <div class="chapter-actions">
+            <a class="btn btn-primary" href="https://apps.apple.com/es/app/getmeout-escape/id6761269060" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span>App Store</span></a>
+            <a class="btn btn-glass" href="support/getmeout.html"><span data-es="Detalles" data-en="Details">Details</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="chapter" data-app="escalofrio">
+        <div class="chapter-inner">
+          <img class="chapter-icon" src="assets/home/escalofrio-256.webp" srcset="assets/home/escalofrio-256.webp 1x, assets/home/escalofrio-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+          <p class="chapter-cat" data-es="Juegos de mesa" data-en="Board Games">Board Games</p>
+          <h2 class="chapter-name"><span>Escalofrío</span></h2>
+          <p class="chapter-desc" data-es="Sube al castillo sin perderte de vista. De dos a cuatro jugadores alrededor de un solo iPhone o iPad: en cuanto te echan la sábana por encima, tu peón deja de ser tuyo a la vista de todos y solo tu memoria sabe cuál sigue siendo." data-en="Climb the castle without losing sight of yourself. Two to four players around a single iPhone or iPad: the moment they throw the sheet over your pawn, nobody can tell which one is yours — only your memory knows.">Climb the castle without losing sight of yourself. Two to four players around a single iPhone or iPad: the moment they throw the sheet over your pawn, nobody can tell which one is yours — only your memory knows.</p>
+          <p class="chapter-downloads" data-descargas="com.whiteriggs.escalofrio" hidden></p>
+          <div class="chapter-actions">
+            <a class="btn btn-primary" href="https://apps.apple.com/es/app/escalofrio/id6805952829" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span>App Store</span></a>
+            <a class="btn btn-glass" href="support/escalofrio.html"><span data-es="Detalles" data-en="Details">Details</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="chapter" data-app="wyrms">
+        <div class="chapter-inner">
+          <img class="chapter-icon" src="assets/home/wyrms-256.webp" srcset="assets/home/wyrms-256.webp 1x, assets/home/wyrms-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+          <p class="chapter-cat" data-es="Juegos de mesa" data-en="Board Games">Board Games</p>
+          <h2 class="chapter-name"><span>Wyrms</span></h2>
+          <p class="chapter-desc" data-es="Carrera de dragones y juego de memoria. Una aventura por turnos para 2 a 4 jugadores, contra amigos o contra la máquina. Lleva a tus dragones alrededor del volcán hasta la victoria." data-en="Dragon Race &amp; Memory Board Game. A turn-based memory adventure for 2 to 4 players, against friends or the CPU. Race your dragons around the volcano to claim victory.">Dragon Race &amp; Memory Board Game. A turn-based memory adventure for 2 to 4 players, against friends or the CPU. Race your dragons around the volcano to claim victory.</p>
+          <p class="chapter-downloads" data-descargas="WhiteRiggs.CarreraDeDragones" hidden></p>
+          <div class="chapter-actions">
+            <a class="btn btn-primary" href="https://apps.apple.com/es/app/wyrms/id6759536991" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span>App Store</span></a>
+            <a class="btn btn-glass" href="support/wyrms.html"><span data-es="Detalles" data-en="Details">Details</span></a>
+          </div>
+        </div>
+      </article>
+
     </section>
+
+    <section class="dock-section">
+      <h2 class="dock-title" data-es="Cinco apps. Un mismo cuidado." data-en="Five apps. One standard of care.">Five apps. One standard of care.</h2>
+      <nav class="dock" aria-label="Apps">
+        <a class="dock-item" href="support/curiosity.html"><span class="dock-slot"><span class="dock-move"><img src="assets/home/curiosity-512.webp" alt="" width="72" height="72" loading="lazy"></span></span><span class="dock-label">Curiosity</span></a>
+        <a class="dock-item" href="support/futline.html"><span class="dock-slot"><span class="dock-move"><img src="assets/home/futline-512.webp" alt="" width="72" height="72" loading="lazy"></span></span><span class="dock-label">FutLine</span></a>
+        <a class="dock-item" href="support/getmeout.html"><span class="dock-slot"><span class="dock-move"><img src="assets/home/getmeout-512.webp" alt="" width="72" height="72" loading="lazy"></span></span><span class="dock-label">GetMeOut!</span></a>
+        <a class="dock-item" href="support/escalofrio.html"><span class="dock-slot"><span class="dock-move"><img src="assets/home/escalofrio-512.webp" alt="" width="72" height="72" loading="lazy"></span></span><span class="dock-label">Escalofrío</span></a>
+        <a class="dock-item" href="support/wyrms.html"><span class="dock-slot"><span class="dock-move"><img src="assets/home/wyrms-512.webp" alt="" width="72" height="72" loading="lazy"></span></span><span class="dock-label">Wyrms</span></a>
+      </nav>
+    </section>
+
+    <section class="riggs" id="riggs">
+      <img src="assets/home/riggs-256.webp" alt="Riggs" width="96" height="96" loading="lazy">
+      <blockquote data-es="«En honor a Riggs, un Golden Retriever blanco cuya lealtad, ternura y alegría inspiran todo lo que se construye bajo esta marca.»" data-en="&quot;Named in honor of Riggs, a white Golden Retriever whose loyalty, warmth, and joyful spirit inspire everything built under this brand.&quot;">"Named in honor of Riggs, a white Golden Retriever whose loyalty, warmth, and joyful spirit inspire everything built under this brand."</blockquote>
+      <p class="riggs-sign" data-es="Estudio The White Riggs" data-en="The White Riggs Studio">The White Riggs Studio</p>
+    </section>
+
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <div data-es="© 2026 The White Riggs. Todos los derechos reservados." data-en="© 2026 The White Riggs. All rights reserved.">&copy; 2026 The White Riggs. All rights reserved.</div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p data-es="© 2026 The White Riggs. Todos los derechos reservados." data-en="© 2026 The White Riggs. All rights reserved.">&copy; 2026 The White Riggs. All rights reserved.</p>
       <ul class="footer-links">
         <li><a href="support/curiosity.html" data-es="Soporte de Curiosity" data-en="Curiosity Support">Curiosity Support</a></li>
-        <li><a href="support/getmeout.html" data-es="Soporte de GetMeOut" data-en="GetMeOut Support">GetMeOut Support</a></li>
-        <li><a href="support/wyrms.html" data-es="Soporte de Wyrms" data-en="Wyrms Support">Wyrms Support</a></li>
         <li><a href="support/futline.html" data-es="Soporte de FutLine" data-en="FutLine Support">FutLine Support</a></li>
+        <li><a href="support/getmeout.html" data-es="Soporte de GetMeOut" data-en="GetMeOut Support">GetMeOut Support</a></li>
         <li><a href="support/escalofrio.html" data-es="Soporte de Escalofrío" data-en="Escalofrío Support">Escalofrío Support</a></li>
+        <li><a href="support/wyrms.html" data-es="Soporte de Wyrms" data-en="Wyrms Support">Wyrms Support</a></li>
       </ul>
     </div>
   </footer>
 
   <script src="script.js?v=8"></script>
+  <script src="home.js?v=1"></script>
   <script>
+    const pintarDescargas = initDescargas();
+    const home = initHome();
     initLangSwitcher({
       langs: ['es', 'en'],
       probe: 'en',
@@ -229,7 +209,7 @@
         es: 'The White Riggs — Software hecho con intención',
         en: 'The White Riggs — Crafting Software with Intention'
       },
-      onChange: initDescargas()
+      onChange: lang => { pintarDescargas(lang); home.onLang(lang); }
     });
   </script>
 </body>
