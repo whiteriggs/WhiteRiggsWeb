@@ -71,3 +71,25 @@ test('easeOutExpo y easeInOut van de 0 a 1', () => {
   assert.equal(h.easeInOut(1), 1);
   close(h.easeInOut(0.5), 0.5, 1e-9);
 });
+
+test('activeHalf: en móvil el capítulo activo cubre todo el capítulo', () => {
+  assert.equal(h.activeHalf(true), 0.5);
+  assert.equal(h.activeHalf(false), 0.42);
+});
+
+test('con el umbral de móvil no hay huecos sin capítulo activo dentro del escaparate', () => {
+  const half = h.activeHalf(true);
+  for (let i = 1; i < 500; i++) {
+    const pos = i / 100;
+    if (Number.isInteger(pos)) continue;
+    assert.notEqual(h.activeChapter(pos, 5, half), -1, `pos ${pos}`);
+  }
+});
+
+test('railProgress va de 0 en la primera app a 1 en la última', () => {
+  assert.equal(h.railProgress(0.5, 5), 0);
+  close(h.railProgress(2.5, 5), 0.5, 1e-9);
+  assert.equal(h.railProgress(4.5, 5), 1);
+  assert.equal(h.railProgress(-1, 5), 0);
+  assert.equal(h.railProgress(9, 5), 1);
+});

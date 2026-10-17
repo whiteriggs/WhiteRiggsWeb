@@ -44,6 +44,16 @@
     return Math.abs(pos - (i + 0.5)) < half ? i : -1;
   }
 
+  // En movil el texto vive fijo bajo el icono: siempre tiene que haber una app activa.
+  function activeHalf(narrow) {
+    return narrow ? 0.5 : 0.42;
+  }
+
+  // Avance de la linea del indicador: 0 con la primera app centrada, 1 con la ultima.
+  function railProgress(pos, n) {
+    return clamp((pos - 0.5) / (n - 1));
+  }
+
   const DOWNLOAD_LABEL = {
     es: n => n.toLocaleString('es-ES') + ' descargas en el último año',
     en: n => n.toLocaleString('en-US') + ' downloads in the last year'
@@ -104,6 +114,7 @@
     const faces = $$('.stage-face');
     const halos = $$('.halo');
     const railBtns = $$('.rail button');
+    const rail = $('.rail');
     const dockSection = $('.dock-section');
     const dockSlots = $$('.dock-slot');
     const dockMoves = $$('.dock-move');
@@ -158,7 +169,7 @@
         slot: { cx: s.left + s.width / 2, cy: s.top + s.height / 2, w: s.width },
         lead: docRect(leadIcon),
         dock: dockSlots.map(docRect),
-        half: narrow.matches ? 0.34 : 0.42
+        half: activeHalf(narrow.matches)
       };
       lastY = -1;
     }
@@ -208,6 +219,7 @@
         if (act >= 0) countUp(chapters[act]);
       }
       doc.classList.toggle('rail-on', pos > 0.15 && pos < n - 0.1 && pDock === 0);
+      if (rail) setVar(rail, '--rail-p', railProgress(pos, n).toFixed(4));
 
       // 4. Dock: los cinco iconos salen del escenario y se posan en su sitio.
       doc.classList.toggle('dock-on', pDock > 0);
@@ -316,7 +328,7 @@
     };
   }
 
-  const core = { clamp, lerp, smooth, easeOutExpo, easeInOut, sectionProgress, showcaseState, activeChapter, downloadLabel };
+  const core = { clamp, lerp, smooth, easeOutExpo, easeInOut, sectionProgress, showcaseState, activeChapter, activeHalf, railProgress, downloadLabel };
   root.HomeCore = core;
   root.initHome = initHome;
   if (typeof module === 'object' && module.exports) module.exports = core;
