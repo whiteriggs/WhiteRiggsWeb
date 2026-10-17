@@ -1,14 +1,21 @@
 // Red primero: el sitio es estático y no queremos servir una versión vieja.
 // La caché solo entra en juego cuando no hay conexión.
-const CACHE = 'riggs-v1';
+const CACHE = 'riggs-v2';
 const PRECACHE = [
   './',
   './index.html',
-  './styles.css',
+  './home.css',
+  './home.js',
   './script.js',
-  './assets/riggs-logo.png',
+  './styles.css',
   './assets/riggs-icon-192.png',
-  './assets/riggs-icon-512.png'
+  './assets/riggs-icon-512.png',
+  './assets/home/riggs-256.webp',
+  './assets/home/curiosity-512.webp',
+  './assets/home/futline-512.webp',
+  './assets/home/getmeout-512.webp',
+  './assets/home/escalofrio-512.webp',
+  './assets/home/wyrms-512.webp'
 ];
 
 self.addEventListener('install', (event) => {
