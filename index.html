@@ -18,10 +18,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="White Riggs">
 
-  <!-- Antes del primer pintado: decide si hay coreografia o lista estatica. -->
-  <script>if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('js-motion');</script>
+  <!-- Antes del primer pintado. Sin JS no se ejecuta y queda la lista estatica.
+       La coreografia se muestra siempre, aunque el sistema pida reducir movimiento (decision del 2026-10-18). -->
+  <script>document.documentElement.classList.add('js-motion');</script>
   <link rel="preload" as="image" href="assets/home/curiosity-512.webp">
-  <link rel="stylesheet" href="home.css?v=2">
+  <link rel="stylesheet" href="home.css?v=3">
 </head>
 <body>
 

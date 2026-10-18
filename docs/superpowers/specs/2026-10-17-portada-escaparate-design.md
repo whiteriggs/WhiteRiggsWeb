@@ -164,7 +164,7 @@ Contrato con el CSS: JS escribe solo variables CSS (`--p`, `--flip`, `--c1`, `--
 ### `home.css`
 
 Tokens en `:root`, una sección por escena y una capa final con `@media (max-width: 760px)` para
-móvil y `@media (prefers-reduced-motion: reduce)`.
+móvil.
 
 ### Iconos
 
@@ -178,11 +178,12 @@ móvil y `@media (prefers-reduced-motion: reduce)`.
 
 ## Accesibilidad y degradación
 
-- **`prefers-reduced-motion: reduce`.** Sin volteo, sin scrubbing, sin parallax, sin flotación y sin
-  conteo: las cifras de descargas se muestran directamente con su valor final. Los capítulos se
-  muestran como bloques estáticos (icono y texto) y el escenario fijo desaparece.
+- **`prefers-reduced-motion: reduce`.** *Cambio del 2026-10-18:* se ignora y la coreografía se muestra
+  siempre. En Windows, con «Efectos de animación» desactivado (habitual en equipos en modo de
+  rendimiento, escritorio remoto o máquinas virtuales), Chrome pide reducir movimiento y la portada
+  quedaba como lista estática. Lo cubre `tests/home-motion.test.js`.
 - **Sin JS.** El HTML base es una lista legible de capítulos, cada uno con su icono, texto y botones.
-  El escenario fijo se activa solo cuando `home.js` añade `html.js-motion`.
+  El escenario fijo se activa solo cuando el script del `<head>` añade `html.js-motion`.
 - **Teclado.** Todos los enlaces y botones son alcanzables y tienen `:focus-visible` visible. El
   volteo no debe ocultar el foco.
 - **Lectores de pantalla.** Los iconos decorativos del escenario y de la constelación llevan `alt=""`
