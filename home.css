@@ -1,5 +1,5 @@
 /* Portada de The White Riggs. Las subpaginas siguen con styles.css.
-   Sin .js-motion (sin JS o con movimiento reducido) todo es una lista estatica. */
+   Sin .js-motion (sin JS) todo es una lista estatica. */
 
 :root {
   --bg: #000;
@@ -25,10 +25,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html { scroll-behavior: smooth; }
+  scroll-behavior: smooth;
 }
 
 body { line-height: 1.47; letter-spacing: -0.015em; overflow-x: clip; }
@@ -663,11 +660,4 @@ main, .site-footer { position: relative; z-index: 1; }
   :root { --stage-size: min(40vw, 170px); --stage-top: calc(var(--header-h) + 2vh); }
   .chapter-name { font-size: clamp(36px, 10vw, 48px); }
   .chapter-desc { font-size: 16px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-  }
 }

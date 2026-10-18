@@ -1,6 +1,6 @@
 // Red primero: el sitio es estático y no queremos servir una versión vieja.
 // La caché solo entra en juego cuando no hay conexión.
-const CACHE = 'riggs-v3';
+const CACHE = 'riggs-v4';
 const PRECACHE = [
   './',
   './index.html',
