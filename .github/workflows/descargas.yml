@@ -1,15 +1,18 @@
 name: Descargas
 
-# Apple publica el informe de un dia a las 5:00 de la manana en California, que
-# son las 12:00 UTC en verano y las 13:00 en invierno. Se mira a las 14:00 para
-# no pedir un informe que todavia no existe.
+# Apple publica normalmente a las 08:00 PT (15:00/16:00 UTC).
+# El margen evita consultar el diario antes de que este disponible.
 on:
   schedule:
-    - cron: "40 14 * * *"
+    - cron: "40 17 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: descargas
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -24,7 +27,10 @@ jobs:
       - run: pip install cryptography
 
       # La clave privada solo existe durante el job y nunca sale del runner.
-      - name: Leer las descargas del ultimo ano
+      - name: Comprobar el acumulado
+        run: python3 -m unittest discover -s tests -p 'test_descargas.py'
+
+      - name: Leer las descargas totales
         env:
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
@@ -33,18 +39,17 @@ jobs:
         run: |
           umask 077
           printf '%s' "$ASC_KEY_P8" > "$RUNNER_TEMP/clave.p8"
-          ASC_KEY="$RUNNER_TEMP/clave.p8" python3 scripts/descargas.py mes12 --json data/descargas.json
-          rm -f "$RUNNER_TEMP/clave.p8"
+          trap 'rm -f "$RUNNER_TEMP/clave.p8"' EXIT
+          ASC_KEY="$RUNNER_TEMP/clave.p8" python3 scripts/descargas.py total --json data/descargas.json
 
-      - name: Publicar si cambio alguna cifra
+      - name: Conservar historico y publicar el total
         run: |
-          git diff --quiet -I'"actualizado"' data/descargas.json && {
-            echo "Mismas cifras que ayer."
-            git checkout data/descargas.json
+          git add data/descargas.json data/descargas-historico.json
+          git diff --cached --quiet && {
+            echo "Sin cambios en el historico."
             exit 0
           }
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/descargas.json
           git commit -m "Descargas al dia"
           git push

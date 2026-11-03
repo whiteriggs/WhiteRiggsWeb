@@ -64,6 +64,13 @@ test('downloadLabel usa el mismo texto que script.js', () => {
   assert.equal(h.downloadLabel('fr', 5), '5 downloads in the last year');
 });
 
+test('downloadLabel distingue el total historico del antiguo dato anual', () => {
+  assert.equal(h.downloadLabel('es', 631, 'total'), '631 descargas totales');
+  assert.equal(h.downloadLabel('en', 1234, 'total'), '1,234 total downloads');
+  assert.equal(h.downloadLabel('fr', 631, 'total'), '631 total downloads');
+  assert.equal(h.downloadLabel('es', 592), '592 descargas en el último año');
+});
+
 test('easeOutExpo y easeInOut van de 0 a 1', () => {
   assert.equal(h.easeOutExpo(0), 0);
   assert.equal(h.easeOutExpo(1), 1);

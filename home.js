@@ -63,9 +63,14 @@
     es: n => n.toLocaleString('es-ES') + ' descargas en el último año',
     en: n => n.toLocaleString('en-US') + ' downloads in the last year'
   };
+  const TOTAL_DOWNLOAD_LABEL = {
+    es: n => n.toLocaleString('es-ES') + ' descargas totales',
+    en: n => n.toLocaleString('en-US') + ' total downloads'
+  };
 
-  function downloadLabel(lang, n) {
-    return (DOWNLOAD_LABEL[lang] || DOWNLOAD_LABEL.en)(n);
+  function downloadLabel(lang, n, periodo) {
+    const labels = periodo === 'total' ? TOTAL_DOWNLOAD_LABEL : DOWNLOAD_LABEL;
+    return (labels[lang] || labels.en)(n);
   }
 
   function splitWords(el) {
@@ -135,6 +140,7 @@
     let activeIdx = -2;
     let velocity = 0;
     let totals = null;
+    let periodo = null;
     const counted = new Set();
     const pointer = { x: 0, y: 0 };
     const tilt = { x: 0, y: 0 };
@@ -256,7 +262,7 @@
       const t0 = performance.now();
       (function step(now) {
         const t = clamp((now - t0) / 1200);
-        el.textContent = downloadLabel(doc.lang, Math.round(total * easeOutExpo(t)));
+        el.textContent = downloadLabel(doc.lang, Math.round(total * easeOutExpo(t)), periodo);
         if (t < 1) requestAnimationFrame(step);
       })(t0);
     }
@@ -322,6 +328,7 @@
         .then(r => (r.ok ? r.json() : null))
         .then(json => {
           totals = json && json.apps;
+          periodo = json && json.periodo;
           if (activeIdx >= 0) countUp(chapters[activeIdx]);
         })
         .catch(() => {});

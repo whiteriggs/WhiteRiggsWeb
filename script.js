@@ -73,10 +73,15 @@ function initDescargas() {
     es: n => n.toLocaleString('es-ES') + ' descargas en el último año',
     en: n => n.toLocaleString('en-US') + ' downloads in the last year'
   };
+  const rotuloTotal = {
+    es: n => n.toLocaleString('es-ES') + ' descargas totales',
+    en: n => n.toLocaleString('en-US') + ' total downloads'
+  };
 
   function pintar(lang) {
     if (!datos) return;
-    const texto = rotulo[lang] || rotulo.en;
+    const textos = datos.periodo === 'total' ? rotuloTotal : rotulo;
+    const texto = textos[lang] || textos.en;
     marcas.forEach(el => {
       const total = datos.apps[el.getAttribute('data-descargas')];
       if (!total) return;
