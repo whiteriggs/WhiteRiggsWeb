@@ -1,13 +1,14 @@
 {
-  "actualizado": "2026-11-02",
-  "meses": 12,
-  "paises": 31,
+  "actualizado": "2026-11-03",
+  "periodo": "total",
+  "desde": "2026-01-01",
+  "hasta": "2026-11-02",
+  "paises": 35,
   "apps": {
-    "Javi.com.TimeClock": 1,
-    "WhiteRiggs.CarreraDeDragones": 11,
-    "WhiteRiggs.Curiosity": 592,
-    "WhiteRiggs.FutLine": 25,
+    "WhiteRiggs.CarreraDeDragones": 15,
+    "WhiteRiggs.Curiosity": 633,
+    "WhiteRiggs.FutLine": 32,
     "com.whiteriggs.GetMeOut": 29,
-    "com.whiteriggs.escalofrio": 13
+    "com.whiteriggs.escalofrio": 24
   }
 }

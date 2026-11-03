@@ -1,0 +1,422 @@
+{
+  "version": 1,
+  "desde": "2026-01-01",
+  "informes": {
+    "MONTHLY:2026-01": {
+      "apps": {},
+      "paises": []
+    },
+    "MONTHLY:2026-02": {
+      "apps": {},
+      "paises": []
+    },
+    "MONTHLY:2026-03": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 26,
+        "com.whiteriggs.GetMeOut": 9
+      },
+      "paises": [
+        "ES",
+        "MX",
+        "QA",
+        "US"
+      ]
+    },
+    "MONTHLY:2026-04": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 30,
+        "com.whiteriggs.GetMeOut": 8
+      },
+      "paises": [
+        "AR",
+        "AZ",
+        "BR",
+        "CL",
+        "ES",
+        "FR",
+        "GB",
+        "KR",
+        "LV",
+        "MX",
+        "PE",
+        "PL",
+        "US"
+      ]
+    },
+    "MONTHLY:2026-05": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 63,
+        "com.whiteriggs.GetMeOut": 10
+      },
+      "paises": [
+        "AE",
+        "AF",
+        "AU",
+        "CL",
+        "CO",
+        "ES",
+        "FR",
+        "IL",
+        "MX",
+        "US"
+      ]
+    },
+    "MONTHLY:2026-06": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 118
+      },
+      "paises": [
+        "AR",
+        "CA",
+        "ES",
+        "FR",
+        "GB",
+        "MX",
+        "US"
+      ]
+    },
+    "MONTHLY:2026-07": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 173
+      },
+      "paises": [
+        "AR",
+        "AU",
+        "CN",
+        "CO",
+        "CR",
+        "DE",
+        "ES",
+        "FR",
+        "IN",
+        "MX",
+        "PL",
+        "US"
+      ]
+    },
+    "MONTHLY:2026-08": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 126,
+        "WhiteRiggs.FutLine": 11,
+        "WhiteRiggs.CarreraDeDragones": 9,
+        "com.whiteriggs.GetMeOut": 1
+      },
+      "paises": [
+        "AR",
+        "AU",
+        "CH",
+        "CL",
+        "DZ",
+        "ES",
+        "FR",
+        "GB",
+        "HK",
+        "IN",
+        "LK",
+        "MX",
+        "PK",
+        "SA",
+        "US"
+      ]
+    },
+    "MONTHLY:2026-09": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 55,
+        "WhiteRiggs.FutLine": 14,
+        "com.whiteriggs.GetMeOut": 1,
+        "WhiteRiggs.CarreraDeDragones": 2,
+        "com.whiteriggs.escalofrio": 13
+      },
+      "paises": [
+        "AR",
+        "BR",
+        "CL",
+        "DE",
+        "ES",
+        "FR",
+        "GB",
+        "JP",
+        "MX",
+        "PL",
+        "QA",
+        "US"
+      ]
+    },
+    "DAILY:2026-10-01": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 2
+      },
+      "paises": [
+        "ES"
+      ]
+    },
+    "DAILY:2026-10-02": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "ES"
+      ]
+    },
+    "DAILY:2026-10-03": {
+      "apps": {},
+      "paises": []
+    },
+    "DAILY:2026-10-04": {
+      "apps": {},
+      "paises": []
+    },
+    "DAILY:2026-10-05": {
+      "apps": {
+        "com.whiteriggs.escalofrio": 1,
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "ES"
+      ]
+    },
+    "DAILY:2026-10-06": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "ES"
+      ]
+    },
+    "DAILY:2026-10-07": {
+      "apps": {
+        "WhiteRiggs.FutLine": 1,
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "ES"
+      ]
+    },
+    "DAILY:2026-10-08": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1,
+        "WhiteRiggs.FutLine": 3,
+        "com.whiteriggs.escalofrio": 1,
+        "WhiteRiggs.CarreraDeDragones": 1
+      },
+      "paises": [
+        "FR",
+        "JP",
+        "PL",
+        "VE"
+      ]
+    },
+    "DAILY:2026-10-09": {
+      "apps": {
+        "WhiteRiggs.CarreraDeDragones": 1,
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "ES",
+        "FR"
+      ]
+    },
+    "DAILY:2026-10-10": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "IQ"
+      ]
+    },
+    "DAILY:2026-10-11": {
+      "apps": {
+        "com.whiteriggs.escalofrio": 2,
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "AU",
+        "ES"
+      ]
+    },
+    "DAILY:2026-10-12": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 5
+      },
+      "paises": [
+        "ES",
+        "US"
+      ]
+    },
+    "DAILY:2026-10-13": {
+      "apps": {
+        "WhiteRiggs.CarreraDeDragones": 1,
+        "WhiteRiggs.FutLine": 1,
+        "com.whiteriggs.escalofrio": 1,
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "AR",
+        "ES",
+        "KR",
+        "PA"
+      ]
+    },
+    "DAILY:2026-10-14": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "ES"
+      ]
+    },
+    "DAILY:2026-10-15": {
+      "apps": {},
+      "paises": []
+    },
+    "DAILY:2026-10-16": {
+      "apps": {
+        "com.whiteriggs.escalofrio": 1,
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "ES",
+        "US"
+      ]
+    },
+    "DAILY:2026-10-17": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 5
+      },
+      "paises": [
+        "ES",
+        "MX",
+        "US"
+      ]
+    },
+    "DAILY:2026-10-18": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 2,
+        "com.whiteriggs.escalofrio": 1
+      },
+      "paises": [
+        "AR",
+        "GB",
+        "MX"
+      ]
+    },
+    "DAILY:2026-10-19": {
+      "apps": {
+        "com.whiteriggs.escalofrio": 1,
+        "WhiteRiggs.Curiosity": 2
+      },
+      "paises": [
+        "ES",
+        "US"
+      ]
+    },
+    "DAILY:2026-10-20": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 2,
+        "WhiteRiggs.FutLine": 1
+      },
+      "paises": [
+        "ES",
+        "MX"
+      ]
+    },
+    "DAILY:2026-10-21": {
+      "apps": {},
+      "paises": []
+    },
+    "DAILY:2026-10-22": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 3
+      },
+      "paises": [
+        "ES",
+        "US"
+      ]
+    },
+    "DAILY:2026-10-23": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 2
+      },
+      "paises": [
+        "IN",
+        "MX"
+      ]
+    },
+    "DAILY:2026-10-24": {
+      "apps": {},
+      "paises": []
+    },
+    "DAILY:2026-10-25": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 2
+      },
+      "paises": [
+        "ES",
+        "US"
+      ]
+    },
+    "DAILY:2026-10-26": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "ES"
+      ]
+    },
+    "DAILY:2026-10-27": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "MX"
+      ]
+    },
+    "DAILY:2026-10-28": {
+      "apps": {},
+      "paises": []
+    },
+    "DAILY:2026-10-29": {
+      "apps": {},
+      "paises": []
+    },
+    "DAILY:2026-10-30": {
+      "apps": {
+        "com.whiteriggs.escalofrio": 2,
+        "WhiteRiggs.Curiosity": 2
+      },
+      "paises": [
+        "AR",
+        "CR",
+        "GB",
+        "ID"
+      ]
+    },
+    "DAILY:2026-10-31": {
+      "apps": {
+        "com.whiteriggs.escalofrio": 1,
+        "WhiteRiggs.FutLine": 1
+      },
+      "paises": [
+        "ES"
+      ]
+    },
+    "DAILY:2026-11-01": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "MX"
+      ]
+    },
+    "DAILY:2026-11-02": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1,
+        "WhiteRiggs.CarreraDeDragones": 1
+      },
+      "paises": [
+        "ID",
+        "US"
+      ]
+    }
+  }
+}
