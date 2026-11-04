@@ -417,6 +417,14 @@
         "ID",
         "US"
       ]
+    },
+    "DAILY:2026-11-03": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "LK"
+      ]
     }
   }
 }
