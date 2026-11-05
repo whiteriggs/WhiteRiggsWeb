@@ -425,6 +425,15 @@
       "paises": [
         "LK"
       ]
+    },
+    "DAILY:2026-11-04": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 3
+      },
+      "paises": [
+        "ES",
+        "IT"
+      ]
     }
   }
 }
