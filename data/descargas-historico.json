@@ -210,6 +210,17 @@
       "paises": [
         "MX"
       ]
+    },
+    "DAILY:2026-11-06": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 5,
+        "WhiteRiggs.CarreraDeDragones": 1
+      },
+      "paises": [
+        "ES",
+        "MX",
+        "US"
+      ]
     }
   }
 }
