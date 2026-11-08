@@ -221,6 +221,15 @@
         "MX",
         "US"
       ]
+    },
+    "DAILY:2026-11-07": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 2
+      },
+      "paises": [
+        "MX",
+        "PE"
+      ]
     }
   }
 }
