@@ -239,6 +239,15 @@
         "IL",
         "RU"
       ]
+    },
+    "DAILY:2026-11-09": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 2
+      },
+      "paises": [
+        "AZ",
+        "MX"
+      ]
     }
   }
 }

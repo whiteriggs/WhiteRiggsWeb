@@ -1,12 +1,12 @@
 {
-  "actualizado": "2026-11-09",
+  "actualizado": "2026-11-10",
   "periodo": "total",
   "desde": "2026-01-01",
-  "hasta": "2026-11-08",
+  "hasta": "2026-11-09",
   "paises": 37,
   "apps": {
     "WhiteRiggs.CarreraDeDragones": 16,
-    "WhiteRiggs.Curiosity": 647,
+    "WhiteRiggs.Curiosity": 649,
     "WhiteRiggs.FutLine": 32,
     "com.whiteriggs.GetMeOut": 29,
     "com.whiteriggs.escalofrio": 24
