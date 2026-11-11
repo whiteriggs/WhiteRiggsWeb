@@ -248,6 +248,15 @@
         "AZ",
         "MX"
       ]
+    },
+    "DAILY:2026-11-10": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 2
+      },
+      "paises": [
+        "ES",
+        "US"
+      ]
     }
   }
 }
