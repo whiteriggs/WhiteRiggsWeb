@@ -265,6 +265,39 @@
       "paises": [
         "FR"
       ]
+    },
+    "DAILY:2026-11-12": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "FR"
+      ]
+    },
+    "DAILY:2026-11-13": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 2
+      },
+      "paises": [
+        "ES",
+        "US"
+      ]
+    },
+    "DAILY:2026-11-14": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "US"
+      ]
+    },
+    "DAILY:2026-11-15": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "US"
+      ]
     }
   }
 }
