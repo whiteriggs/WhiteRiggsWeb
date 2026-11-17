@@ -298,6 +298,16 @@
       "paises": [
         "US"
       ]
+    },
+    "DAILY:2026-11-16": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1,
+        "com.whiteriggs.escalofrio": 1
+      },
+      "paises": [
+        "ES",
+        "MX"
+      ]
     }
   }
 }
