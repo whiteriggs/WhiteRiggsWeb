@@ -316,6 +316,14 @@
       "paises": [
         "ES"
       ]
+    },
+    "DAILY:2026-11-18": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 1
+      },
+      "paises": [
+        "US"
+      ]
     }
   }
 }
