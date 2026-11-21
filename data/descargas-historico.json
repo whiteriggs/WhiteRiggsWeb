@@ -332,6 +332,14 @@
       "paises": [
         "KW"
       ]
+    },
+    "DAILY:2026-11-20": {
+      "apps": {
+        "com.whiteriggs.GetMeOut": 1
+      },
+      "paises": [
+        "US"
+      ]
     }
   }
 }
