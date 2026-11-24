@@ -344,6 +344,16 @@
     "DAILY:2026-11-21": {
       "apps": {},
       "paises": []
+    },
+    "DAILY:2026-11-22": {
+      "apps": {
+        "WhiteRiggs.Curiosity": 5
+      },
+      "paises": [
+        "AR",
+        "ES",
+        "US"
+      ]
     }
   }
 }
